@@ -6,7 +6,7 @@
 #     - DATA_LOCATION : localisation des données (exemple /apps/"service")
 #     - URL_LOKI : lien du serveur loki (exemple : ndd/loki/api/v1/push)
 #     - NDD : lien du nom de domaine (exemple : papamica.fr)
-#     - DATA : localisation de vos fichiers à explorer.
+#     - DATA : localisation de vos fichiers à explorer
 
 # Fonctionne avec Portainer
 version: "2"
@@ -21,6 +21,8 @@ services:
       - $DATA:/srv
       - $DATA_LOCATION/config.json:/config.json
       - $DATA_LOCATION/database.db:/database.db
+#    ports:
+#      - 8080:80
 
 
     networks:

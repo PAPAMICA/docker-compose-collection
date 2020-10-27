@@ -67,6 +67,8 @@ services:
       - DEBUG=false
     depends_on:
       - postgres
+#    ports:
+#      - 8000:8000
 
     #Facultatif  
     networks:

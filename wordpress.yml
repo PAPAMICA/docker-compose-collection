@@ -6,23 +6,52 @@
 #     - DATA_LOCATION : localisation des données (exemple /apps/"service")
 #     - URL_LOKI : lien du serveur loki (exemple : ndd/loki/api/v1/push)
 #     - NDD : lien du nom de domaine (exemple : papamica.fr)
+#     - DB_USER : nom d'utilisateur pour la base de données (exemple : papamica)
+#     - DB_PASSWORD : mot de passe pour la base de données
+#     - DB_ROOT : mot de passe ROOT pour la base de données
 
 # Fonctionne avec Portainer
 version: "2"
-services:
-  # Hastebin : https://hastebin.com/about.md
-  hastebin:
-    image: rlister/hastebin
-    container_name: $SERVICE
-    restart: always
-    environment:
-      STORAGE_TYPE: file
-    volumes:
-      - $DATA_LOCATION/data:/data
-#    ports:
-#      - 8080:80
 
-    # Facultatif  
+services:
+   # Base de données
+   $SERVICE-db:
+     container_name: $SERVICE-db
+     image: mysql:5.7
+     volumes:
+       - $DATA_LOCATION/db:/var/lib/mysql
+     restart: always
+     environment:
+       MYSQL_ROOT_PASSWORD: $DB_ROOT
+       MYSQL_DATABASE: wordpress
+       MYSQL_USER: $DB_USER
+       MYSQL_PASSWORD: $DB_PASSWORD
+
+     #Facultatif  
+     networks:
+       - proxy
+     logging:
+       driver: loki
+       options:
+         loki-url: "$URL_LOKI"
+         loki-external-labels: service={{.Name}}
+
+   $SERVICE:
+     container_name: $SERVICE
+     depends_on:
+       - $SERVCIE-db
+     image: wordpress:latest
+     restart: always
+     volumes:
+       - $DATA_LOCATION/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+       - $DATA_LOCATION/html:/var/www/html
+     environment:
+       WORDPRESS_DB_HOST: $SERVICE-db:3306
+       WORDPRESS_DB_USER: $DB_USER
+       WORDPRESS_DB_PASSWORD: $DB_PASSWORD
+       WORDPRESS_DB_NAME: wordpress
+
+     # Facultatif  
     networks:
       - proxy
     logging:
@@ -41,8 +70,9 @@ services:
       - "traefik.http.routers.$SERVICE-secure.tls=true"
       - "traefik.http.routers.$SERVICE-secure.tls.certresolver=http"
       - "traefik.docker.network=proxy"
-      
+  
 networks:
   proxy:
     external:
       name: proxy
+     

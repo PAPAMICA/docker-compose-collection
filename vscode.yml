@@ -6,19 +6,20 @@
 #     - DATA_LOCATION : localisation des données (exemple /apps/"service")
 #     - URL_LOKI : lien du serveur loki (exemple : ndd/loki/api/v1/push)
 #     - NDD : lien du nom de domaine (exemple : papamica.fr)
+#     - PASSWORD : mot de passe d'accès
 
 # Fonctionne avec Portainer
 version: "2"
+
 services:
-  # Hastebin : https://hastebin.com/about.md
-  hastebin:
-    image: rlister/hastebin
+  postgres:
     container_name: $SERVICE
+    image: codercom/code-server
+    volumes:
+      - $DATA_LOCATION/project:/home/coder/project
     restart: always
     environment:
-      STORAGE_TYPE: file
-    volumes:
-      - $DATA_LOCATION/data:/data
+      - PASSWORD=$PASSWORD
 #    ports:
 #      - 8080:80
 

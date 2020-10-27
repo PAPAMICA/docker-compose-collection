@@ -10,19 +10,18 @@
 # Fonctionne avec Portainer
 version: "2"
 services:
-  # Hastebin : https://hastebin.com/about.md
-  hastebin:
-    image: rlister/hastebin
+  sinusbot:
+    image: sinusbot/docker
     container_name: $SERVICE
     restart: always
-    environment:
-      STORAGE_TYPE: file
     volumes:
-      - $DATA_LOCATION/data:/data
+      - $DATA_LOCATION/scripts:/opt/sinusbot/scripts
+      - $DATA_LOCATION/data:/opt/sinusbot/data
+#      - $DATA_LOCATION/config:/jts3servermod
 #    ports:
-#      - 8080:80
+#      - 8087:8087
 
-    # Facultatif  
+    #Facultatif  
     networks:
       - proxy
     logging:
@@ -40,9 +39,12 @@ services:
       - "traefik.http.routers.$SERVICE-secure.rule=Host(`$SERVICE.$NDD`)"
       - "traefik.http.routers.$SERVICE-secure.tls=true"
       - "traefik.http.routers.$SERVICE-secure.tls.certresolver=http"
+      - "traefik.http.services.$SERVICE-secure.loadbalancer.server.port=8087"
       - "traefik.docker.network=proxy"
-      
+
+  
 networks:
   proxy:
     external:
       name: proxy
+  

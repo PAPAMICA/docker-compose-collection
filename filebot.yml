@@ -20,6 +20,8 @@ services:
       - $DATA_LOCATION/config:/config:rw
       - $DATA:/storage:rw
     restart: always
+#    ports:
+#      - 5800:5800
 
     # Facultatif  
     logging:

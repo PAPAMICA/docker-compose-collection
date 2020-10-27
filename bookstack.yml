@@ -6,21 +6,33 @@
 #     - DATA_LOCATION : localisation des données (exemple /apps/"service")
 #     - URL_LOKI : lien du serveur loki (exemple : ndd/loki/api/v1/push)
 #     - NDD : lien du nom de domaine (exemple : papamica.fr)
+#     - DB_USER : nom d'utilisateur pour la base de données (exemple : papamica)
+#     - DB_PASSWORD : mot de passe pour la base de données
+#     - DB_ROOT : mot de passe ROOT pour la base de données
+#     - DATA : localisation de vos fichiers à explorer
 
 # Fonctionne avec Portainer
 version: "2"
 services:
-  # Hastebin : https://hastebin.com/about.md
-  hastebin:
-    image: rlister/hastebin
+  # BookStack : https://www.bookstackapp.com/
+  bookstack:
+    image: linuxserver/bookstack
     container_name: $SERVICE
-    restart: always
     environment:
-      STORAGE_TYPE: file
+      - PUID=1000
+      - PGID=1000
+      - DB_HOST=bookstack_db
+      - DB_USER=$DB_USER
+      - DB_PASS=$DB_PASSWORD
+      - DB_DATABASE=bookstackapp
+      - APP_URL=https://$SERVICE.$NDD
     volumes:
-      - $DATA_LOCATION/data:/data
+      - $DATA_LOCATION/config:/config
 #    ports:
-#      - 8080:80
+#      - 6875:80
+    restart: unless-stopped
+    depends_on:
+      - bookstack_db
 
     # Facultatif  
     networks:
@@ -41,6 +53,31 @@ services:
       - "traefik.http.routers.$SERVICE-secure.tls=true"
       - "traefik.http.routers.$SERVICE-secure.tls.certresolver=http"
       - "traefik.docker.network=proxy"
+
+  # Base de données    
+  bookstack_db:
+    image: linuxserver/mariadb
+    container_name: bookstack_db
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - MYSQL_ROOT_PASSWORD=$DB_ROOT
+      - TZ=Europe/Paris
+      - MYSQL_DATABASE=bookstackapp
+      - MYSQL_USER=$DB_USER
+      - MYSQL_PASSWORD=$DB_PASSWORD
+    volumes:
+      - $DATA_LOCATION/db:/config
+    restart: unless-stopped
+
+    # Facultatif
+    networks:
+      - proxy
+    logging:
+      driver: loki
+      options:
+        loki-url: "$URL_LOKI"
+        loki-external-labels: service={{.Name}}
       
 networks:
   proxy:

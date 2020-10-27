@@ -6,19 +6,40 @@
 #     - DATA_LOCATION : localisation des données (exemple /apps/"service")
 #     - URL_LOKI : lien du serveur loki (exemple : ndd/loki/api/v1/push)
 #     - NDD : lien du nom de domaine (exemple : papamica.fr)
+#     - DB_USER : nom d'utilisateur pour la base de données (exemple : papamica)
+#     - DB_PASSWORD : mot de passe pour la base de données
+#     - DB_ROOT : mot de passe ROOT pour la base de données
+#     - DATA : localisation de vos fichiers à explorer
 
 # Fonctionne avec Portainer
 version: "2"
 services:
-  # Hastebin : https://hastebin.com/about.md
-  hastebin:
-    image: rlister/hastebin
+  # Nextcloud : https://nextcloud.com/
+  nextcloud:
+    image: wonderfall/nextcloud
     container_name: $SERVICE
     restart: always
+    depends_on:
+      - nextcloud-db
     environment:
-      STORAGE_TYPE: file
+      - UID=1000
+      - GID=1000
+      - UPLOAD_MAX_SIZE=20G
+      - APC_SHM_SIZE=128M
+      - OPCACHE_MEM_SIZE=128
+      - CRON_PERIOD=15m
+      - TZ=Europe/Paris
+      - DOMAIN=$SERVICE.$NDD
+      - DB_TYPE=mysql
+      - DB_NAME=nextcloud
+      - DB_USER=$DB_USER
+      - DB_PASSWORD=$DB_PASSWORD
+      - DB_HOST=nextcloud-db
     volumes:
-      - $DATA_LOCATION/data:/data
+      - $DATA:/data
+      - $DATA_LOCATION/config:/config
+      - $DATA_LOCATION/apps:/apps2
+      - $DATA_LOCATION/themes:/nextcloud/themes
 #    ports:
 #      - 8080:80
 
@@ -41,7 +62,29 @@ services:
       - "traefik.http.routers.$SERVICE-secure.tls=true"
       - "traefik.http.routers.$SERVICE-secure.tls.certresolver=http"
       - "traefik.docker.network=proxy"
-      
+
+  # Base de donnée
+  nextcloud-db:
+    image: mariadb:10.4.12
+    container_name: nextcloud-mariadb
+    restart: always
+    volumes:
+      - $DATA_LOCATION/db:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=$DB_ROOT
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=$DB_USER
+      - MYSQL_PASSWORD=$DB_PASSWORD
+
+    # Facultatif  
+    networks:
+      - proxy
+    logging:
+      driver: loki
+      options:
+        loki-url: "$URL_LOKI"
+        loki-external-labels: service={{.Name}}
+
 networks:
   proxy:
     external:

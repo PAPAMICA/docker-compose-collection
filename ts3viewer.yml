@@ -1,3 +1,4 @@
+
 # Docker-compose mis à disposition par Mickael "PAPAMICA" Asseline
 # Date de mise à jour : 27/10/2020
 
@@ -6,23 +7,30 @@
 #     - DATA_LOCATION : localisation des données (exemple /apps/"service")
 #     - URL_LOKI : lien du serveur loki (exemple : ndd/loki/api/v1/push)
 #     - NDD : lien du nom de domaine (exemple : papamica.fr)
+#     - TS_SERVER : ip du serveur TeamSpeak
+#     - TS_PORT : port du serveur TeamSpeak
 
 # Fonctionne avec Portainer
 version: "2"
 services:
-  # Hastebin : https://hastebin.com/about.md
-  hastebin:
-    image: rlister/hastebin
+  ts3viewer:
+    image: jotschi/ts3viewer
     container_name: $SERVICE
     restart: always
-    environment:
-      STORAGE_TYPE: file
     volumes:
-      - $DATA_LOCATION/data:/data
-#    ports:
-#      - 8080:80
+      - $DATA_LOCATION/viewer:/var/www/html/
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TS_PORT=10011
+      - TS_HOST=$TS_SERVER
+      - TS_SERVER_PORT=$TS_PORT
+      - TS_VIEWER_LIGHT_MODE="false"
+      - TS_VIEWER_CACHE_TIME="20"
+#      - TS_QUERY_LOGIN="LOGIN_NAME"
+#      - TS_QUERY_PASS="PASSWORD"
 
-    # Facultatif  
+    # Facultatif
     networks:
       - proxy
     logging:
@@ -41,7 +49,7 @@ services:
       - "traefik.http.routers.$SERVICE-secure.tls=true"
       - "traefik.http.routers.$SERVICE-secure.tls.certresolver=http"
       - "traefik.docker.network=proxy"
-      
+
 networks:
   proxy:
     external:

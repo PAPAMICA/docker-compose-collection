@@ -1,0 +1,51 @@
+# Docker-compose mis à disposition par Mickael "PAPAMICA" Asseline
+# Date de mise à jour : 27/10/2020
+
+# Variables d'environnement à déclarer :
+#     - SERVICE : nom du service (exemple : plex)
+#     - DATA_LOCATION : localisation des données (exemple /apps/"service")
+#     - URL_LOKI : lien du serveur loki (exemple : ndd/loki/api/v1/push)
+#     - NDD : lien du nom de domaine (exemple : papamica.fr)
+#     - TS3QUERY_PASSWORD : mot de passe admin query
+
+# Fonctionne avec Portainer
+version: "2"
+services:
+  teamspeak:
+    image: mbentley/teamspeak
+    restart: always
+    container_name: $SERVICE
+    volumes:
+      - $DATA_LOCATION/data:/data
+    ports:
+      - 9987:9987/udp
+      - 10011:10011
+      - 30033:30033
+      - 10022:10022
+    environment:
+      - UID=1000
+      - GID=1000
+      - TS3SERVER_LICENSE=accept
+    command: serveradmin_password=$TS3QUERY_PASSWORD
+
+    #Facultatif
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.ts.rule=Host(`$SERVICE.$NDD`)
+      - traefik.http.routers.ts.entryPoints=http
+      - traefik.ts.port=9987
+      - traefik.ts2.port=30033
+      - traefik.query.port=10011
+      - traefik.query2.port=10022
+    networks:
+      - proxy
+    logging:
+      driver: loki
+      options:
+        loki-url: "$URL_LOKI"
+        loki-external-labels: service={{.Name}}
+    
+networks:
+  proxy:
+    external:
+      name: proxy

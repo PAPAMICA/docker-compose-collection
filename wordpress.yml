@@ -51,7 +51,6 @@ services:
        WORDPRESS_DB_PASSWORD: $DB_PASSWORD
        WORDPRESS_DB_NAME: wordpress
 
-    #Facultatif
     networks:
       - proxy
     logging:

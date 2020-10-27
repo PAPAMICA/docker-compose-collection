@@ -51,24 +51,25 @@ services:
        WORDPRESS_DB_PASSWORD: $DB_PASSWORD
        WORDPRESS_DB_NAME: wordpress
 
-    networks:
-      - proxy
-    logging:
-      driver: loki
-      options:
-        loki-url: "$URL_LOKI"
-        loki-external-labels: service={{.Name}}
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.$SERVICE.entrypoints=http"
-      - "traefik.http.routers.$SERVICE.rule=Host(`$SERVICE.$NDD`)"
-      - "traefik.http.middlewares.$SERVICE-https-redirect.redirectscheme.scheme=https"
-      - "traefik.http.routers.$SERVICE.middlewares=$SERVICE-https-redirect"
-      - "traefik.http.routers.$SERVICE-secure.entrypoints=https"
-      - "traefik.http.routers.$SERVICE-secure.rule=Host(`$SERVICE.$NDD`)"
-      - "traefik.http.routers.$SERVICE-secure.tls=true"
-      - "traefik.http.routers.$SERVICE-secure.tls.certresolver=http"
-      - "traefik.docker.network=proxy"
+     # Facultatif
+     networks:
+       - proxy
+     logging:
+       driver: loki
+       options:
+         loki-url: "$URL_LOKI"
+         loki-external-labels: service={{.Name}}
+     labels:
+       - "traefik.enable=true"
+       - "traefik.http.routers.$SERVICE.entrypoints=http"
+       - "traefik.http.routers.$SERVICE.rule=Host(`$SERVICE.$NDD`)"
+       - "traefik.http.middlewares.$SERVICE-https-redirect.redirectscheme.scheme=https"
+       - "traefik.http.routers.$SERVICE.middlewares=$SERVICE-https-redirect"
+       - "traefik.http.routers.$SERVICE-secure.entrypoints=https"
+       - "traefik.http.routers.$SERVICE-secure.rule=Host(`$SERVICE.$NDD`)"
+       - "traefik.http.routers.$SERVICE-secure.tls=true"
+       - "traefik.http.routers.$SERVICE-secure.tls.certresolver=http"
+       - "traefik.docker.network=proxy"
   
 networks:
   proxy:

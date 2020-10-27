@@ -43,7 +43,7 @@ sudo docker-compose -f service.yml --env-file env up -d
 + 6 - Compose path : service.yml
 + 7 - Ajouter les variables d'environnement requises "+ add environment variable"
 + 8 - Déployer avec le bouton "Deploy the stack"
-<br/>
+
 ![PORTAINER](https://zupimages.net/up/20/44/m6sv.png)
 
 

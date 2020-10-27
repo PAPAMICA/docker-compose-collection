@@ -1,0 +1,114 @@
+# Docker-compose mis à disposition par Mickael "PAPAMICA" Asseline
+# Date de mise à jour : 27/10/2020
+
+# Variables d'environnement à déclarer :
+#     - SERVICE : nom du service (exemple : plex)
+#     - DATA_LOCATION : localisation des données (exemple /apps/"service")
+#     - URL_LOKI : lien du serveur loki (exemple : ndd/loki/api/v1/push)
+#     - NDD : lien du nom de domaine (exemple : papamica.fr)
+#     - DB_USER : nom d'utilisateur pour la base de données (exemple : papamica)
+#     - DB_PASSWORD : mot de passe pour la base de données
+#     - DB_ROOT : mot de passe ROOT pour la base de données
+
+# Fonctionne avec Portainer
+version: "2"
+services:
+  # Base de données
+  postgres-server:    # The Postgres Database Service
+    image: postgres:12.2
+    restart: always
+    container_name: $SERVICE-db
+    environment:   # Username, password and database name variables
+      POSTGRES_USER: $DB_USER
+      POSTGRES_PASSWORD: $DB_PASSWORD
+      POSTGRES_DB: zabbix
+      PG_DATA: /var/lib/postgresql/data/pgdata #data storage
+    volumes:
+      - $DATA_LOCATION/db:/var/lib/postgresql/data
+
+    # Facultatif  
+    networks:
+      - proxy
+    logging:
+      driver: loki
+      options:
+        loki-url: "$URL_LOKI"
+        loki-external-labels: service={{.Name}}
+
+  zabbix-server:     # The main Zabbix Server Software Service
+    image: zabbix/zabbix-server-pgsql:ubuntu-5.0.2
+    restart: always
+    container_name: $SERVICE
+    environment:   # The Postgres database value variable
+      POSTGRES_USER: $DB_USER
+      POSTGRES_PASSWORD: $DB_PASSWORD
+      POSTGRES_DB: zabbix
+      ZBX_HISTORYSTORAGETYPES: log,text #Zabbix configuration variables
+      ZBX_DEBUGLEVEL: 1
+      ZBX_HOUSEKEEPINGFREQUENCY: 1
+      ZBX_MAXHOUSEKEEPERDELETE: 5000
+      ZBX_STARTVMWARECOLLECTORS: 10
+      ZBX_VMWAREFREQUENCY: 30
+      ZBX_VMWAREPERFFREQUENCY: 30
+      ZBX_VMWARECACHESIZE: 16M
+      ZBX_VMWARETIMEOUT: 10
+    depends_on:
+      - postgres-server
+    ports:
+      - 10051:10051
+    volumes:  # Volumes for scripts and related files you can add
+      - $DATA_LOCATION/alertscripts:/usr/lib/zabbix/alertscripts
+
+    # Facultatif  
+    networks:
+      - proxy
+    logging:
+      driver: loki
+      options:
+        loki-url: "$URL_LOKI"
+        loki-external-labels: service={{.Name}}
+
+  zabbix-web:    # The main Zabbix web UI or interface
+    image: zabbix/zabbix-web-nginx-pgsql:ubuntu-5.0.2
+    restart: always
+    container_name: $SERVICE-web
+    environment:  # Postgre database variables
+      POSTGRES_USER: $DB_USER
+      POSTGRES_PASSWORD: $DB_PASSWORD
+      POSTGRES_DB: zabbix
+      ZBX_SERVER_HOST: zabbix-server  # Zabbix related and Php variables
+      ZBX_POSTMAXSIZE: 64M
+      PHP_TZ: "Europe/Paris"
+      ZBX_MAXEXECUTIONTIME: 500
+    depends_on:
+      - postgres-server
+      - zabbix-server
+#    ports:    # Port where Zabbix UI is available
+#      - 8090:8080
+
+    # Facultatif
+    networks:
+      - proxy
+    logging:
+      driver: loki
+      options:
+        loki-url: "$URL_LOKI"
+        loki-external-labels: service={{.Name}}
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.$SERVICE.entrypoints=http"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$SERVICE.$NDD`)"
+      - "traefik.http.middlewares.$SERVICE-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.$SERVICE.middlewares=$SERVICE-https-redirect"
+      - "traefik.http.routers.$SERVICE-secure.entrypoints=https"
+      - "traefik.http.routers.$SERVICE-secure.rule=Host(`$SERVICE.$NDD`)"
+      - "traefik.http.routers.$SERVICE-secure.tls=true"
+      - "traefik.http.routers.$SERVICE-secure.tls.certresolver=http"
+      - "traefik.http.services.$SERVICE-secure.loadbalancer.server.port=8080"
+      - "traefik.docker.network=proxy"
+      
+
+networks:
+  proxy:
+    external:
+      name: proxy

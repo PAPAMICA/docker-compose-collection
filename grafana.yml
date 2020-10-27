@@ -1,0 +1,57 @@
+# Docker-compose mis à disposition par Mickael "PAPAMICA" Asseline
+# Date de mise à jour : 27/10/2020
+
+# Variables d'environnement à déclarer :
+#     - SERVICE : nom du service (exemple : plex)
+#     - DATA_LOCATION : localisation des données (exemple /apps/"service")
+#     - URL_LOKI : lien du serveur loki (exemple : ndd/loki/api/v1/push)
+#     - NDD : lien du nom de domaine (exemple : papamica.fr)
+
+# Fonctionne avec Portainer
+version: "2"
+services:
+  grafana-xxl:  #optional more functional and creative UI
+    image: monitoringartist/grafana-xxl:7.1
+    restart: always
+    container_name: $SERVICE
+    volumes: 
+      - $DATA_LOCATION/config:/etc/grafana
+      - $DATA_LOCATION/data:/var/lib/grafana
+    environment:
+#      - GF_PATHS_DATA=/config/data
+#      - GF_PATHS_LOGS=/config/logs
+#      - GF_PATHS_PLUGINS=/config/plugins
+#      - UPGRADEALL=false
+      - GF_PANELS_DISABLE_SANITIZE_HTML=true
+      - GF_INSTALL_PLUGINS=grafana-piechart-panel,grafana-worldmap-panel,alexanderzobnin-zabbix-app
+      - GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS=alexanderzobnin-zabbix-datasource
+#    ports:
+#      - 3001:3000
+
+    # Facultatif  
+    networks:
+      - proxy
+    networks:
+      - proxy
+    logging:
+      driver: loki
+      options:
+        loki-url: "$URL_LOKI"
+        loki-external-labels: service={{.Name}}
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.$SERVICE.entrypoints=http"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$SERVICE.$NDD`)"
+      - "traefik.http.middlewares.$SERVICE-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.$SERVICE.middlewares=$SERVICE-https-redirect"
+      - "traefik.http.routers.$SERVICE-secure.entrypoints=https"
+      - "traefik.http.routers.$SERVICE-secure.rule=Host(`$SERVICE.$NDD`)"
+      - "traefik.http.routers.$SERVICE-secure.tls=true"
+      - "traefik.http.routers.$SERVICE-secure.tls.certresolver=http"
+      - "traefik.http.services.$SERVICE-secure.loadbalancer.server.port=3000"
+      - "traefik.docker.network=proxy"
+      
+networks:
+  proxy:
+    external:
+      name: proxy

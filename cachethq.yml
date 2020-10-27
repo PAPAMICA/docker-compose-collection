@@ -1,0 +1,111 @@
+# Docker-compose mis à disposition par Mickael "PAPAMICA" Asseline
+# Date de mise à jour : 27/10/2020
+
+# Variables d'environnement à déclarer :
+#     - DATA_LOCATION : localisation des données (exemple /apps/"service")
+#     - URL_LOKI : lien du serveur loki (exemple : ndd/loki/api/v1/push)
+#     - NDD : lien du nom de domaine (exemple : papamica.fr)
+#     - DB_USER : nom d'utilisateur pour la base de données (exemple : papamica)
+#     - DB_PASSWORD : mot de passe pour la base de données
+
+# Fonctionne avec Portainer
+
+version: "2"
+
+services:
+  # Base de données
+  postgres:
+    container_name: cachet-db
+    image: postgres:9.5
+    volumes:
+      - $DATA_LOCATION/db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=$DB_USER
+      - POSTGRES_PASSWORD=$DB_PASSWORD
+    restart: always
+    
+    # Facultatif
+    networks:
+      - proxy
+    logging:
+      driver: loki
+      options:
+        loki-url: "$URL_LOKI"
+        loki-external-labels: service={{.Name}}
+
+  # CachetHQ : https://github.com/CachetHQ/Cachet
+  cachet:
+    image: cachethq/docker
+    container_name: cachet
+    restart: always
+#    volumes:
+#      - $DATA_LOCATION/data:/var/www/html/
+    links:
+      - postgres:postgres
+    environment:
+      - TZ=Europe/Paris
+      - MAIL_DRIVER=smtp
+#      - MAIL_HOST=
+#      - MAIL_PORT=587
+#      - MAIL_USERNAME=
+#      - MAIL_PASSWORD=
+#      - MAIL_ADDRESS=
+#      - MAIL_NAME=Notifications
+#      - MAIL_ENCRYPTION=tls
+      - DB_DRIVER=pgsql
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_DATABASE=postgres
+      - DB_USERNAME=$DB_USER
+      - DB_PASSWORD=$DB_PASSWORD
+      - DB_PREFIX=chq_
+      - APP_KEY=
+      - APP_LOG=errorlog
+#      - APP_ENV=${APP_ENV:-production}
+      - APP_DEBUG=false
+      - DEBUG=false
+    depends_on:
+      - postgres
+
+    #Facultatif  
+    networks:
+      - proxy
+    logging:
+      driver: loki
+      options:
+        loki-url: "$URL_LOKI"
+        loki-external-labels: service={{.Name}}
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.status.entrypoints=http"
+      - "traefik.http.routers.status.rule=Host(`status.$NDD`)"
+      - "traefik.http.middlewares.status-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.status.middlewares=status-https-redirect"
+      - "traefik.http.routers.status-secure.entrypoints=https"
+      - "traefik.http.routers.status-secure.rule=Host(`status.$NDD`)"
+      - "traefik.http.routers.status-secure.tls=true"
+      - "traefik.http.routers.status-secure.tls.certresolver=http"
+      - "traefik.http.services.status-secure.loadbalancer.server.port=8000"
+      - "traefik.docker.network=proxy"
+
+  # Script zabbix-cachet : https://github.com/qk4l/zabbix-cachet
+  zabbix-cachet:
+    image: qk4l/zabbix-cachet
+    container_name: cachet-zabbix
+    volumes:
+      - $DATA_LOCATION/config.yml:/config.yml
+    restart: always
+
+    # Facultatif
+    networks:
+      - proxy
+    logging:
+      driver: loki
+      options:
+        loki-url: "$URL_LOKI"
+        loki-external-labels: service={{.Name}}
+      
+networks:
+  proxy:
+    external:
+      name: proxy

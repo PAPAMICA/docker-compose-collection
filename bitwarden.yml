@@ -1,0 +1,49 @@
+# Docker-compose mis à disposition par Mickael "PAPAMICA" Asseline
+# Date de mise à jour : 27/10/2020
+
+# Variables d'environnement à déclarer :
+#     - DATA_LOCATION : localisation des données (exemple /apps/"service")
+#     - URL_LOKI : lien du serveur loki
+#     - NDD : lien du nom de domaine (exemple : papamica.fr)
+
+# Fonctionne avec Portainer
+version: "2"
+services:
+  # Bitwarden : https://bitwarden.com/
+  bitwarden:
+    image: bitwardenrs/server
+    container_name: bitwarden
+    restart: always
+    volumes:
+      - $DATA_LOCATION/bw-data:/data
+    environment:
+      WEBSOCKET_ENABLED: 'true' # Required to use websockets
+      SIGNUPS_ALLOWED: 'true'   # set to false to disable signups
+      TZ: 'Europe/Paris'
+    ports:
+      - 3012:3012
+
+    # Facultatif  
+    logging:
+      driver: loki
+      options:
+        loki-url: "$URL_LOKI"
+        loki-external-labels: service={{.Name}}
+    networks:
+      - proxy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.password.entrypoints=http"
+      - "traefik.http.routers.password.rule=Host(`password.$NDD`)"
+      - "traefik.http.middlewares.password-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.password.middlewares=password-https-redirect"
+      - "traefik.http.routers.password-secure.entrypoints=https"
+      - "traefik.http.routers.password-secure.rule=Host(`password.$NDD`)"
+      - "traefik.http.routers.password-secure.tls=true"
+      - "traefik.http.routers.password-secure.tls.certresolver=http"
+      - "traefik.docker.network=proxy"
+  
+networks:
+  proxy:
+    external:
+      name: proxy

@@ -9,7 +9,7 @@
 Ces docker-compose permettent de déployer plusieurs services facilement et rapidement. Vous pouvez les utiliser avec Portainer directement ou via les commandes de docker-compose.
 Tous les docker-compose sont commentés et sont configurés à l'aide de variables.
 
-Ils intégrent tous le suport de Traefik et de Loki.
+Ils intégrent tous le support de Traefik et de Loki.
 
 # Debian
 
@@ -35,14 +35,15 @@ sudo docker-compose -f service.yml --env-file env up -d
 # Portainer
 
 ### Utilisation
-1 - Aller dans le sous menu "Stacks"
-2 - Cliquer sur "+ Add stack"
-3 - Nommer le stack dans le champs "Name"
-4 - Selectionner "Git Repository"
-5 - Repository URL : https://github.com/PAPAMICA/docker-compose-collection/
-6 - Compose path : service.yml
-7 - Ajouter les variables d'environnement requises "+ add environment variable"
-8 - Déployer avec le bouton "Deploy the stack"
++ 1 - Aller dans le sous menu "Stacks"
++ 2 - Cliquer sur "+ Add stack"
++ 3 - Nommer le stack dans le champs "Name"
++ 4 - Selectionner "Git Repository"
++ 5 - Repository URL : https://github.com/PAPAMICA/docker-compose-collection/
++ 6 - Compose path : service.yml
++ 7 - Ajouter les variables d'environnement requises "+ add environment variable"
++ 8 - Déployer avec le bouton "Deploy the stack"
+<br/>
 ![PORTAINER](https://zupimages.net/up/20/44/m6sv.png)
 
 

@@ -2,6 +2,7 @@
 # Date de mise à jour : 27/10/2020
 
 # Variables d'environnement à déclarer :
+#     - SERVICE : nom du service (exemple : plex)
 #     - DATA_LOCATION : localisation des données (exemple /apps/"service")
 #     - URL_LOKI : lien du serveur loki (exemple : ndd/loki/api/v1/push)
 #     - NDD : lien du nom de domaine (exemple : papamica.fr)
@@ -36,7 +37,7 @@ services:
   # CachetHQ : https://github.com/CachetHQ/Cachet
   cachet:
     image: cachethq/docker
-    container_name: cachet
+    container_name: $SERVICE
     restart: always
 #    volumes:
 #      - $DATA_LOCATION/data:/var/www/html/
@@ -77,34 +78,18 @@ services:
         loki-external-labels: service={{.Name}}
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.status.entrypoints=http"
-      - "traefik.http.routers.status.rule=Host(`status.$NDD`)"
-      - "traefik.http.middlewares.status-https-redirect.redirectscheme.scheme=https"
-      - "traefik.http.routers.status.middlewares=status-https-redirect"
-      - "traefik.http.routers.status-secure.entrypoints=https"
-      - "traefik.http.routers.status-secure.rule=Host(`status.$NDD`)"
-      - "traefik.http.routers.status-secure.tls=true"
-      - "traefik.http.routers.status-secure.tls.certresolver=http"
-      - "traefik.http.services.status-secure.loadbalancer.server.port=8000"
+      - "traefik.http.routers.$SERVICE.entrypoints=http"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$SERVICE.$NDD`)"
+      - "traefik.http.middlewares.$SERVICE-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.$SERVICE.middlewares=$SERVICE-https-redirect"
+      - "traefik.http.routers.$SERVICE-secure.entrypoints=https"
+      - "traefik.http.routers.$SERVICE-secure.rule=Host(`$SERVICE.$NDD`)"
+      - "traefik.http.routers.$SERVICE-secure.tls=true"
+      - "traefik.http.routers.$SERVICE-secure.tls.certresolver=http"
+      - "traefik.http.services.$SERVICE-secure.loadbalancer.server.port=8000"
       - "traefik.docker.network=proxy"
 
-  # Script zabbix-cachet : https://github.com/qk4l/zabbix-cachet
-  zabbix-cachet:
-    image: qk4l/zabbix-cachet
-    container_name: cachet-zabbix
-    volumes:
-      - $DATA_LOCATION/config.yml:/config.yml
-    restart: always
-
-    # Facultatif
-    networks:
-      - proxy
-    logging:
-      driver: loki
-      options:
-        loki-url: "$URL_LOKI"
-        loki-external-labels: service={{.Name}}
-      
+  
 networks:
   proxy:
     external:

@@ -8,12 +8,12 @@
 #     - NDD : lien du nom de domaine (exemple : papamica.fr)
 
 # Fonctionne avec Portainer
-version: "3"
+version: "2"
 services:
   # Wiznote : https://www.wiz.cn/
   wiznote:
     image: wiznote/wizserver
-#    container_name: $SERVICE
+    container_name: $SERVICE
     restart: always
     volumes:
       - $DATA_LOCATION/data:/wiz/storage

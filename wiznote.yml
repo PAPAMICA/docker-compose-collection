@@ -8,7 +8,7 @@
 #     - NDD : lien du nom de domaine (exemple : papamica.fr)
 
 # Fonctionne avec Portainer
-version: "2"
+version: "3"
 services:
   # Wiznote : https://www.wiz.cn/
   wiznote:

@@ -17,7 +17,9 @@ services:
     restart: always
     volumes:
       - $DATA_LOCATION/data:/wiz/storage
-#    ports:
+      - /etc/localtime:/etc/localtime
+    ports:
+       - 9269:9269/udp
 #      - 8080:80
 
     # Facultatif  

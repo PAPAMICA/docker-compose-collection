@@ -7,6 +7,9 @@
 #     - URL_LOKI : lien du serveur loki (exemple : ndd/loki/api/v1/push)
 #     - NDD : lien du nom de domaine (exemple : papamica.fr)
 #     - DATA : localisation de vos fichiers à explorer
+#     - DB_USER : nom d'utilisateur pour la base de données (exemple : papamica)
+#     - DB_PASSWORD : mot de passe pour la base de données
+#     - DB_ROOT : mot de passe ROOT pour la base de données
 
 # Fonctionne avec Portainer
 version: "2"
@@ -25,7 +28,7 @@ services:
       - $DATA:/data
 #    ports:
 #      - 80:80
-
+    
     # Facultatif  
     networks:
       - proxy
@@ -45,6 +48,30 @@ services:
       - "traefik.http.routers.$SERVICE-secure.tls=true"
       - "traefik.http.routers.$SERVICE-secure.tls.certresolver=http"
       - "traefik.docker.network=proxy"
+
+  
+  # Base de donnée
+  projectsend-db:
+    image: mariadb:10.4.12
+    container_name: $SERVICE-db
+    restart: always
+    volumes:
+      - $DATA_LOCATION/db:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=$DB_ROOT
+      - MYSQL_DATABASE=$SERVICE
+      - MYSQL_USER=$DB_USER
+      - MYSQL_PASSWORD=$DB_PASSWORD
+
+    # Facultatif  
+    networks:
+      - proxy
+    logging:
+      driver: loki
+      options:
+        loki-url: "$URL_LOKI"
+        loki-external-labels: service={{.Name}}
+
 networks:
   proxy:
     external:

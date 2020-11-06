@@ -9,7 +9,7 @@
 #     - DATA : localisation de vos fichiers à explorer
 
 # Fonctionne avec Portainer
-version: "2.1"
+version: "2"
 services:
   projectsend:
     image: ghcr.io/linuxserver/projectsend

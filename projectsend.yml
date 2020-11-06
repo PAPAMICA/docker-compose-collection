@@ -45,3 +45,7 @@ services:
       - "traefik.http.routers.$SERVICE-secure.tls=true"
       - "traefik.http.routers.$SERVICE-secure.tls.certresolver=http"
       - "traefik.docker.network=proxy"
+networks:
+  proxy:
+    external:
+      name: proxy

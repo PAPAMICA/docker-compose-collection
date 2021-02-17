@@ -1340,20 +1340,7 @@
   "type": 3,
   "title": "Zabbix-CachetHQ",
   "description": "Automatisation de la page CachetHQ avec Zabbix",
-  "note": "&lt;p&gt;Site de l'application : &lt;a href=&quot;https://cachethq.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;CachetHQ&lt;/a&gt;&lt;/p&gt;
-  &lt;p&gt;La documentation est disponible ici : &lt;a href=&quot;https://docs.cachethq.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://docs.cachethq.io/&lt;/a&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&lt;strong&gt;ATTENTION :&amp;nbsp;&lt;/strong&gt;&lt;span style=&quot;color: #000000;&quot;&gt;c&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
-  &lt;p&gt;&amp;nbsp;&lt;/p&gt;
-  &lt;table style=&quot;height: 18px; width: 53.267%; border-collapse: collapse; border-style: hidden;&quot; border=&quot;1&quot;&gt;
-  &lt;tbody&gt;
-  &lt;tr style=&quot;height: 18px;&quot;&gt;
-  &lt;td style=&quot;width: 48.404%; height: 18px;&quot;&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;&lt;span style=&quot;color: #000000;&quot;&gt;Template mis &amp;agrave; disposition par &lt;a href=&quot;mickaelasseline.com/fr&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;PAPAMICA&lt;/a&gt;&lt;/span&gt;&lt;/span&gt;&lt;/td&gt;
-  &lt;td style=&quot;width: 2.6738%; border-style: hidden; height: 18px;&quot;&gt;&amp;nbsp;&lt;/td&gt;
-  &lt;td style=&quot;width: 2.6738%; height: 18px;&quot;&gt;&lt;a href=&quot;https://twitter.com/PAPAMICA__&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;img src=&quot;http://culliganrecrute.fr/wp-content/uploads/2018/01/twitter-logo-1-1.png&quot; alt=&quot;&quot; width=&quot;20&quot; height=&quot;20&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-  &lt;td style=&quot;width: 4.54545%; height: 18px; border-style: hidden;&quot;&gt;&lt;a href=&quot;https://www.linkedin.com/in/mickael-asseline/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;img src=&quot;https://www.hesus.eu/wp-content/uploads/2019/05/linkedin-icon-logo-png-transparent.png&quot; alt=&quot;&quot; width=&quot;20&quot; height=&quot;20&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;/tbody&gt;
-  &lt;/table&gt;",
+  "note": "<p>Site de l'application : <a href=\"https:\/\/cachethq.io\/\" target=\"_blank\" rel=\"noopener\">CachetHQ<\/a><\/p>\r\n<p>La documentation est disponible ici : <a href=\"https:\/\/docs.cachethq.io\/\" target=\"_blank\" rel=\"noopener\">https:\/\/docs.cachethq.io\/<\/a><\/p>\r\n<p><span style=\"color: #ff0000;\"><strong>ATTENTION :&nbsp;<\/strong><span style=\"color: #000000;\">c<\/span><\/span><\/p>\r\n<p>&nbsp;<\/p>\r\n<table style=\"height: 18px; width: 53.267%; border-collapse: collapse; border-style: hidden;\" border=\"1\">\r\n<tbody>\r\n<tr style=\"height: 18px;\">\r\n<td style=\"width: 48.404%; height: 18px;\"><span style=\"color: #ff0000;\"><span style=\"color: #000000;\">Template mis &agrave; disposition par <a href=\"mickaelasseline.com\/fr\" target=\"_blank\" rel=\"noopener\">PAPAMICA<\/a><\/span><\/span><\/td>\r\n<td style=\"width: 2.6738%; border-style: hidden; height: 18px;\">&nbsp;<\/td>\r\n<td style=\"width: 2.6738%; height: 18px;\"><a href=\"https:\/\/twitter.com\/PAPAMICA__\" target=\"_blank\" rel=\"noopener\"><img src=\"http:\/\/culliganrecrute.fr\/wp-content\/uploads\/2018\/01\/twitter-logo-1-1.png\" alt=\"\" width=\"20\" height=\"20\" \/><\/a><\/td>\r\n<td style=\"width: 4.54545%; height: 18px; border-style: hidden;\"><a href=\"https:\/\/www.linkedin.com\/in\/mickael-asseline\/\" target=\"_blank\" rel=\"noopener\"><img src=\"https:\/\/www.hesus.eu\/wp-content\/uploads\/2019\/05\/linkedin-icon-logo-png-transparent.png\" alt=\"\" width=\"20\" height=\"20\" \/><\/a><\/td>\r\n<\/tr>\r\n<\/tbody>\r\n<\/table>",
   "categories": [
 	  "Automatisation",
 	  "PAPAMICA"

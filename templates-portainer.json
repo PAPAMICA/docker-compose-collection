@@ -1340,6 +1340,7 @@
   "type": 3,
   "title": "Zabbix-CachetHQ",
   "description": "Automatisation de la page CachetHQ avec Zabbix",
+  "note": "You can use this field to specify extra information. It supports HTML.",
   "categories": [
 	  "Automatisation",
 	  "PAPAMICA"
@@ -1371,9 +1372,6 @@
   }]
   
 },
-{
-	"note": "You can use this field to specify extra information. It supports HTML."
-  },
 
 
 

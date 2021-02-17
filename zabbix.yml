@@ -38,7 +38,7 @@ services:
   zabbix-server:     # The main Zabbix Server Software Service
     image: zabbix/zabbix-server-pgsql:ubuntu-5.0.2
     restart: always
-    container_name: $SERVICE
+    container_name: $SERVICE-server
     environment:   # The Postgres database value variable
       POSTGRES_USER: $DB_USER
       POSTGRES_PASSWORD: $DB_PASSWORD

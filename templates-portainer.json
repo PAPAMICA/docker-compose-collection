@@ -1369,8 +1369,11 @@
 	  "label": "Lien du nom de domaine",
 	  "description": "exemple : papamica.fr"
   }]
+  
 },
-
+{
+	"note": "You can use this field to specify extra information. It supports HTML."
+  },
 
 
 

@@ -1061,6 +1061,30 @@
 	    "description": "CockroachDB cluster",
 	    "note": "Deploys an insecure CockroachDB cluster, please refer to <a href=\"https://www.cockroachlabs.com/docs/stable/orchestrate-cockroachdb-with-docker-swarm.html\" target=\"_blank\">CockroachDB documentation</a> for production deployments.",
 	    "stackfile": "https://raw.githubusercontent.com/portainer/templates/master/stacks/cockroachdb/edge/docker-stack.yml"
-	  }
+      },
+      {
+        "type": 3,
+        "title": "Hastebin by PAPAMICA",
+        "description": "Partage de fichiers textes (Alternatice à Pastebin)",
+        "categories": [
+            "Alternative OpenSource"
+        ],
+        "platform": "linux",
+        "logo": "https://pbs.twimg.com/profile_images/1664989409/twitter_400x400.png",
+        "repository": {
+            "url": "https://github.com/PAPAMICA/docker-compose-collection",
+            "stackfile": "hastebin.yml"
+        },
+        "env": [{
+            "name": "SERVICE",
+            "label": "Nom du service",
+            "name": "DATA_LOCATION",
+            "label": "Localisation des données (exemple /apps/'service')",
+            "name": "URL_LOKI",
+            "label": "Lien du serveur loki (exemple : ndd/loki/api/v1/push)",
+            "name": "NDD",
+            "label": "Lien du nom de domaine (exemple : papamica.fr)"
+        }]
+    }
 	]
 }

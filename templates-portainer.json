@@ -1100,6 +1100,7 @@
 	  "type": 3,
 	  "title": "Sinusbot",
 	  "description": "Bot d'automatisation pour TeamSpeak et Discord",
+	  "note": "<p>Site de l'application : <a href=\"https:\/\/www.sinusbot.com\/\" target=\"_blank\" rel=\"noopener\">Sinusbot.com<\/a>",
 	  "categories": [
 		  "Automatisation",
 		  "PAPAMICA"
@@ -1134,6 +1135,7 @@
 	  "type": 3,
 	  "title": "Teamspeak",
 	  "description": "Serveur de discussions vocales",
+	  "note": "<p>Site de l'application : <a href=\"https:\/\/www.teamspeak.com\/en\/\" target=\"_blank\" rel=\"noopener\">TeamSpeak.com<\/a>",
 	  "categories": [
 		  "Discussion",
 		  "PAPAMICA"
@@ -1172,6 +1174,7 @@
 	"type": 3,
 	"title": "Bitwarden",
 	"description": "Gestionnaire de mots de passe et de 2FA (Alternatice à Dashlane)",
+	"note": "<p>Site de l'application : <a href=\"https:\/\/bitwarden.com\/\" target=\"_blank\" rel=\"noopener\">Bitwarden.com<\/a>",
 	"categories": [
 		"SelfHosting",
 		"PAPAMICA"
@@ -1206,6 +1209,7 @@
   "type": 3,
   "title": "Bookstack",
   "description": "Wiki et documentation en ligne",
+  "note": "<p>Site de l'application : <a href=\"https:\/\/www.bookstackapp.com\/\" target=\"_blank\" rel=\"noopener\">BookStackApp.com<\/a>",
   "categories": [
 	  "SelfHosting",
 	  "PAPAMICA"
@@ -1252,6 +1256,7 @@
   "type": 3,
   "title": "CachetHQ",
   "description": "Page de status en ligne",
+  "note": "<p>Site de l'application : <a href=\"https:\/\/cachethq.io\/\" target=\"_blank\" rel=\"noopener\">CachetHQ<\/a>",
   "categories": [
 	  "SelfHosting",
 	  "PAPAMICA"
@@ -1294,6 +1299,7 @@
   "type": 3,
   "title": "Zabbix",
   "description": "Page de status en ligne",
+  "note": "<p>Site de l'application : <a href=\"https:\/\/www.zabbix.com\/\" target=\"_blank\" rel=\"noopener\">Zabbix.com<\/a><p><strong>Identifiant :&nbsp;<\/strong>Admin \/ zabbix<\/p> ",
   "categories": [
 	  "Monitoring",
 	  "PAPAMICA"
@@ -1340,7 +1346,7 @@
   "type": 3,
   "title": "Zabbix-CachetHQ",
   "description": "Automatisation de la page CachetHQ avec Zabbix",
-  "note": "<p>Site de l'application : <a href=\"https:\/\/cachethq.io\/\" target=\"_blank\" rel=\"noopener\">CachetHQ<\/a><p><strong>ATTENTION :&nbsp;<\/strong>c<\/p>\r\n",
+  "note": "<p>Site de l'application : <a href=\"https:\/\/github.com\/qk4l\/zabbix-cachet\" target=\"_blank\" rel=\"noopener\">Github.com<\/a><p><strong>ATTENTION :&nbsp;<\/strong>Il faut modifier le fichier <code> config.yml <\/code><\/p> ",
   "categories": [
 	  "Automatisation",
 	  "PAPAMICA"
@@ -1380,6 +1386,7 @@
 	  "type": 3,
 	  "title": "Wordpress",
 	  "description": "Création de site web avec un CMS simple et performant",
+	  "note": "<p>Site de l'application : <a href=\"https:\/\/wordpress.com\" target=\"_blank\" rel=\"noopener\">Wordpress.com<\/a>",
 	  "categories": [
 		  "CMS",
 		  "PAPAMICA"

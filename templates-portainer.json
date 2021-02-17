@@ -1067,7 +1067,7 @@
         "title": "Hastebin by PAPAMICA",
         "description": "Partage de fichiers textes (Alternatice à Pastebin)",
         "categories": [
-            "Alternative OpenSource"
+			"Alternative OpenSource"
         ],
         "platform": "linux",
         "logo": "https://pbs.twimg.com/profile_images/1664989409/twitter_400x400.png",
@@ -1094,6 +1094,51 @@
             "label": "Lien du nom de domaine",
             "description": "exemple : papamica.fr"
         }]
-    }
+    },
+	{
+	  "type": 3,
+	  "title": "Wordpress by PAPAMICA",
+	  "description": "Créatino de site web avec un CMS simple et performant",
+	  "categories": [
+		  "CMS"
+	  ],
+	  "platform": "linux",
+	  "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/WordPress_blue_logo.svg/1024px-WordPress_blue_logo.svg.png",
+	  "repository": {
+		  "url": "https://github.com/PAPAMICA/docker-compose-collection",
+		  "stackfile": "wordpress.yml"
+	  },
+	  "env": [{
+		  "name": "SERVICE",
+		  "label": "Nom du service"
+		  },
+		  {
+		  "name": "DATA_LOCATION",
+		  "label": "Localisation des données",
+		  "description": "exemple /apps/'service'"
+		  },
+		  {
+		  "name": "URL_LOKI",
+		  "label": "Lien du serveur loki",
+		  "description": "exemple : ndd/loki/api/v1/push"
+		  },
+		  {
+		  "name": "URL_WEBSITE",
+		  "label": "Lien complet du site internet",
+		  "description": "exemple : papamica.fr"
+	 	  },
+	 	  {
+	 	  "name": "DB_USER",
+		  "label": "Utilisateur de la base de données"
+	 	  },
+	 	  {
+	 	  "name": "DB_PASSWORD",
+	 	  "label": "Mot de passe de l'utilisateur"
+	 	  },
+	 	  {
+	  	  "name": "DB_ROOT",
+	 	  "label": "Mot de passe root"
+	 	  }]
+  }
 	]
 }

@@ -12,16 +12,35 @@
 #     - DB_ROOT : mot de passe ROOT pour la base de données
 
 # Fonctionne avec Portainer
-version: "2"
-
+version: '2'
 services:
-  tsweb:
-    image: yeahnice1/ts-website
-    container_name: $SERVICE
-    volumes:
-      - $DATA_LOCATION/config:/var/www/html
+  mariadb:
+    image: mariadb:10.4.12
+    container_name: $SERVICE-db
     restart: always
-     # Facultatif  
+    volumes:
+      - $DATA_LOCATION/db:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=$DB_ROOT
+      - MYSQL_DATABASE=RanksystemDatabase
+      - MYSQL_USER=$DB_USER
+      - MYSQL_PASSWORD=$DB_PASSWORD 
+    networks:
+      - proxy
+    logging:
+      driver: loki
+      options:
+        loki-url: "$URL_LOKI"
+        loki-external-labels: service={{.Name}}
+
+  ranksystem:
+    image: jusito/docker-teamspeak-ranksystem:develop
+    container_name: $SERVICE
+    restart: always
+    volumes:
+      -  $DATA_LOCATION/tsrank:/var/www/html
+    depends_on:
+      - mariadb
     networks:
       - proxy
     logging:
@@ -40,29 +59,8 @@ services:
       - "traefik.http.routers.$SERVICE-secure.tls=true"
       - "traefik.http.routers.$SERVICE-secure.tls.certresolver=http"
       - "traefik.docker.network=proxy"
-      
-  
-  tsweb-db:
-    image: mariadb:10.4.12
-    container_name: $SERVICE-mariadb
-    restart: always
-    volumes:
-      - $DATA_LOCATION/db:/var/lib/mysql
-    environment:
-      - MYSQL_ROOT_PASSWORD=$DB_ROOT
-      - MYSQL_DATABASE=tsweb
-      - MYSQL_USER=$DB_USER
-      - MYSQL_PASSWORD=$DB_PASSWORD
-    networks:
-      - proxy
-    logging:
-      driver: loki
-      options:
-        loki-url: "$URL_LOKI"
-        loki-external-labels: service={{.Name}}
 
-
-
+    
 networks:
   proxy:
     external:

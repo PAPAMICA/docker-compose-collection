@@ -93,7 +93,7 @@
 	  "description": "Serveur de discussions vocales",
 	  "note": "<p>Site de l'application : <a href=\"https:\/\/www.teamspeak.com\/en\/\" target=\"_blank\" rel=\"noopener\">TeamSpeak.com<\/a>",
 	  "categories": [
-		  "Discussion",
+		  "Communication",
 		  "PAPAMICA"
 	  ],
 	  "platform": "linux",
@@ -126,6 +126,158 @@
 		  "description": "exemple : papamica.fr"
 	  }]
   },
+
+  
+  {
+	"type": 3,
+	"title": "TeamSpeak Online Viewer",
+	"description": "Interface web pour serveur TeamSpeak",
+	"note": "<p>Site de l'application : <a href=\"https:\/\/github.com\/Wruczek\/ts-website\" target=\"_blank\" rel=\"noopener\">Github.com<\/a>",
+	"categories": [
+		"Communication",
+		"PAPAMICA"
+	],
+	"platform": "linux",
+	"logo": "https://cdn2.iconfinder.com/data/icons/gaming-platforms-logo-shapes/250/teamspeak_logo-512.png",
+	"repository": {
+		"url": "https://github.com/PAPAMICA/docker-compose-collection",
+		"stackfile": "ts3viewer.yml"
+	},
+	"env": [{
+		"name": "SERVICE",
+		"label": "Nom du service"
+		},
+		{
+		"name": "DATA_LOCATION",
+		"label": "Localisation des données",
+		"description": "exemple /apps/'service'"
+		},
+		{
+		"name": "URL_LOKI",
+		"label": "Lien du serveur loki",
+		"description": "exemple : ndd/loki/api/v1/push"
+		},
+	 {
+	 "name": "DB_USER",
+	"label": "Utilisateur de la base de données"
+	 },
+	 {
+	 "name": "DB_PASSWORD",
+	 "label": "Mot de passe de l'utilisateur"
+	 },
+	 {
+	  "name": "DB_ROOT",
+	 "label": "Mot de passe root"
+	 },
+		{
+		"name": "NDD",
+		"label": "Lien du nom de domaine",
+		"description": "exemple : papamica.fr"
+	}]
+},
+
+  
+{
+	"type": 3,
+	"title": "TeamSpeak Bot Stats",
+	"description": "Bot pour les statistiques de serveur TeamSpeak",
+	"note": "<p>Site de l'application : <a href=\"https:\/\/ts-ranksystem.com\/\" target=\"_blank\" rel=\"noopener\">TS-RankSystem.com<\/a>",
+	"categories": [
+		"Communication",
+		"PAPAMICA"
+	],
+	"platform": "linux",
+	"logo": "https://cdn2.iconfinder.com/data/icons/gaming-platforms-logo-shapes/250/teamspeak_logo-512.png",
+	"repository": {
+		"url": "https://github.com/PAPAMICA/docker-compose-collection",
+		"stackfile": "ts3rank.yml"
+	},
+	"env": [{
+		"name": "SERVICE",
+		"label": "Nom du service"
+		},
+		{
+		"name": "DATA_LOCATION",
+		"label": "Localisation des données",
+		"description": "exemple /apps/'service'"
+		},
+		{
+		"name": "URL_LOKI",
+		"label": "Lien du serveur loki",
+		"description": "exemple : ndd/loki/api/v1/push"
+		},
+	 {
+	 "name": "DB_USER",
+	"label": "Utilisateur de la base de données"
+	 },
+	 {
+	 "name": "DB_PASSWORD",
+	 "label": "Mot de passe de l'utilisateur"
+	 },
+	 {
+	  "name": "DB_ROOT",
+	 "label": "Mot de passe root"
+	 },
+		{
+		"name": "NDD",
+		"label": "Lien du nom de domaine",
+		"description": "exemple : papamica.fr"
+	}]
+},
+
+{
+	"type": 3,
+	"title": "NextCloud",
+	"description": "Serveur de partages de fichiers et bien plus !",
+	"note": "<p>Site de l'application : <a href=\"https:\/\/ts-ranksystem.com\/\" target=\"_blank\" rel=\"noopener\">TS-RankSystem.com<\/a>",
+	"categories": [
+		"Communication",
+		"PAPAMICA"
+	],
+	"platform": "linux",
+	"logo": "https://www.biganet.net/wordpress/wp-content/uploads/2020/08/nextcloud.png",
+	"repository": {
+		"url": "https://github.com/PAPAMICA/docker-compose-collection",
+		"stackfile": "nextcloud.yml"
+	},
+	"env": [{
+		"name": "SERVICE",
+		"label": "Nom du service"
+		},
+		{
+		"name": "DATA_LOCATION",
+		"label": "Localisation des données",
+		"description": "exemple /apps/'service'"
+		},
+		{
+			"name": "DATA",
+			"label": "Localisation de vos fichiers à explorer",
+			"description": "exemple /data"
+			},
+		{
+		"name": "URL_LOKI",
+		"label": "Lien du serveur loki",
+		"description": "exemple : ndd/loki/api/v1/push"
+		},
+	 {
+	 "name": "DB_USER",
+	"label": "Utilisateur de la base de données"
+	 },
+	 {
+	 "name": "DB_PASSWORD",
+	 "label": "Mot de passe de l'utilisateur"
+	 },
+	 {
+	  "name": "DB_ROOT",
+	 "label": "Mot de passe root"
+	 },
+		{
+		"name": "NDD",
+		"label": "Lien du nom de domaine",
+		"description": "exemple : papamica.fr"
+	}]
+},
+
   {
 	"type": 3,
 	"title": "Bitwarden",
@@ -208,6 +360,142 @@
 	   "description": "exemple : papamica.fr"
    }]
 },
+
+
+{
+	"type": 3,
+	"title": "Website-HTML",
+	"description": "Simple site internet HTML sous PHP 7.4",
+	"note": "<p>Site de l'application : <a href=\"https:\/\/github.com\/LavoWeb\/Docker\" target=\"_blank\" rel=\"noopener\">Github.com<\/a>",
+	"categories": [
+		"SelfHosted",
+		"PAPAMICA"
+	],
+	"platform": "linux",
+	"logo": "http://assets.stickpng.com/thumbs/5847f5bdcef1014c0b5e489c.png",
+	"repository": {
+		"url": "https://github.com/PAPAMICA/docker-compose-collection",
+		"stackfile": "website-html.yml"
+	},
+	"env": [{
+		"name": "SERVICE",
+		"label": "Nom du service"
+		},
+		{
+		"name": "DATA_LOCATION",
+		"label": "Localisation des données",
+		"description": "exemple /apps/'service'"
+		},
+		{
+		"name": "URL_LOKI",
+		"label": "Lien du serveur loki",
+		"description": "exemple : ndd/loki/api/v1/push"
+		},
+		{
+		"name": "NDD",
+		"label": "Lien du nom de domaine",
+		"description": "exemple : papamica.fr"
+	}]
+},
+
+{
+	"type": 3,
+	"title": "VS Code Online",
+	"description": "Visual Studio Code en ligne",
+	"note": "<p>Site de l'application : <a href=\"https:\/\/github.com\/cdr\/code-server\" target=\"_blank\" rel=\"noopener\">Github.com<\/a>",
+	"categories": [
+		"SelfHosted",
+		"PAPAMICA"
+	],
+	"platform": "linux",
+	"logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/1024px-Visual_Studio_Code_1.35_icon.svg.png",
+	"repository": {
+		"url": "https://github.com/PAPAMICA/docker-compose-collection",
+		"stackfile": "vscode.yml"
+	},
+	"env": [{
+		"name": "SERVICE",
+		"label": "Nom du service"
+		},
+		{
+		"name": "DATA_LOCATION",
+		"label": "Localisation des données",
+		"description": "exemple /apps/'service'"
+		},
+		{
+			"name": "PASSWORD",
+			"label": "Mot de passe d'accès"
+			},
+		{
+		"name": "URL_LOKI",
+		"label": "Lien du serveur loki",
+		"description": "exemple : ndd/loki/api/v1/push"
+		},
+		{
+		"name": "NDD",
+		"label": "Lien du nom de domaine",
+		"description": "exemple : papamica.fr"
+	}]
+},
+
+
+{
+	"type": 3,
+	"title": "Grafana",
+	"description": "Une interface web pour vos graphiques et explorer vos données !",
+	"note": "<p>Site de l'application : <a href=\"https:\/\/grafana.com\/\" target=\"_blank\" rel=\"noopener\">Grafana.com<\/a><p><strong>ATTENTION :&nbsp;<\/strong>Il faut cr\u00E9er et modifier le fichier <code>grafana.ini <\/code><\/p> ",
+	"categories": [
+		"SelfHosted",
+		"PAPAMICA"
+	],
+	"platform": "linux",
+	"logo": "https://upload.wikimedia.org/wikipedia/en/thumb/a/a1/Grafana_logo.svg/1200px-Grafana_logo.svg.png",
+	"repository": {
+		"url": "https://github.com/PAPAMICA/docker-compose-collection",
+		"stackfile": "grafana.yml"
+	},
+	"env": [{
+		"name": "SERVICE",
+		"label": "Nom du service"
+		},
+		{
+		"name": "DATA_LOCATION",
+		"label": "Localisation des données",
+		"description": "exemple /apps/'service'"
+		},
+		{
+		"name": "URL_LOKI",
+		"label": "Lien du serveur loki",
+		"description": "exemple : ndd/loki/api/v1/push"
+		},
+		{
+		"name": "NDD",
+		"label": "Lien du nom de domaine",
+		"description": "exemple : papamica.fr"
+	}]
+},
+
+{
+	"type": 3,
+	"title": "Loki",
+	"description": "Un concentrateur de logs",
+	"note": "<p>Site de l'application : <a href=\"https:\/\/grafana.com\/oss\/loki\/\" target=\"_blank\" rel=\"noopener\">Grafana.com<\/a><p><strong>ATTENTION :&nbsp;<\/strong>Merci de lire la documentation :<\/p> ",
+	"categories": [
+		"SelfHosted",
+		"PAPAMICA"
+	],
+	"platform": "linux",
+	"logo": "https://img.stackshare.io/service/10079/loki.png",
+	"repository": {
+		"url": "https://github.com/PAPAMICA/docker-compose-collection",
+		"stackfile": "loki.yml"
+	},
+	"env": [{
+		"name": "SERVICE",
+		"label": "Nom du service"
+		}]
+},
+
 {
   "type": 3,
   "title": "CachetHQ",

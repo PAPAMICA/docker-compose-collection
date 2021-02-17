@@ -1064,10 +1064,11 @@
       },
       {
         "type": 3,
-        "title": "Hastebin by PAPAMICA",
+        "title": "Hastebin",
         "description": "Partage de fichiers textes (Alternatice à Pastebin)",
         "categories": [
-			"SelfHosting"
+			"SelfHosting",
+			"PAPAMICA"
         ],
         "platform": "linux",
         "logo": "https://pbs.twimg.com/profile_images/1664989409/twitter_400x400.png",
@@ -1097,10 +1098,11 @@
     },
 	{
 	  "type": 3,
-	  "title": "Sinusbot by PAPAMICA",
+	  "title": "Sinusbot",
 	  "description": "Bot d'automatisation pour TeamSpeak et Discord",
 	  "categories": [
-		  "Automatisation"
+		  "Automatisation",
+		  "PAPAMICA"
 	  ],
 	  "platform": "linux",
 	  "logo": "https://www.4netplayers.com/wp-content/uploads/2018/10/300x300_sinusbot_logo.png",
@@ -1130,10 +1132,11 @@
   },
 	{
 	  "type": 3,
-	  "title": "Teamspeak by PAPAMICA",
+	  "title": "Teamspeak",
 	  "description": "Serveur de discussions vocales",
 	  "categories": [
-		  "Discussion"
+		  "Discussion",
+		  "PAPAMICA"
 	  ],
 	  "platform": "linux",
 	  "logo": "https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/092018/untitled-3_52.png?weCp0Mz2VN0H8IuP_O1T3gMe47LBfc6N&itok=IG4MtYuO",
@@ -1167,13 +1170,14 @@
   },
   {
 	"type": 3,
-	"title": "Bitwarden by PAPAMICA",
+	"title": "Bitwarden",
 	"description": "Gestionnaire de mots de passe et de 2FA (Alternatice à Dashlane)",
 	"categories": [
-		"SelfHosting"
+		"SelfHosting",
+		"PAPAMICA"
 	],
 	"platform": "linux",
-	"logo": "",
+	"logo": "https://upload.wikimedia.org/wikipedia/commons/0/03/Bitwarden_Logo.png",
 	"repository": {
 		"url": "https://github.com/PAPAMICA/docker-compose-collection",
 		"stackfile": "bitwarden.yml"
@@ -1200,10 +1204,11 @@
 },
 {
   "type": 3,
-  "title": "Bookstack by PAPAMICA",
+  "title": "Bookstack",
   "description": "Wiki et documentation en ligne",
   "categories": [
-	  "SelfHosting"
+	  "SelfHosting",
+	  "PAPAMICA"
   ],
   "platform": "linux",
   "logo": "https://s3-us-west-2.amazonaws.com/linuxserver-docs/images/bookstack-logo500x500.png",
@@ -1236,14 +1241,20 @@
 	   {
 		"name": "DB_ROOT",
 	   "label": "Mot de passe root"
-	   }]
+	   },
+	   {
+	   "name": "NDD",
+	   "label": "Lien du nom de domaine",
+	   "description": "exemple : papamica.fr"
+   }]
 },
 {
   "type": 3,
-  "title": "CachetHQ by PAPAMICA",
+  "title": "CachetHQ",
   "description": "Page de status en ligne",
   "categories": [
-	  "SelfHosting"
+	  "SelfHosting",
+	  "PAPAMICA"
   ],
   "platform": "linux",
   "logo": "https://avatars.githubusercontent.com/u/9951502?s=400&v=4",
@@ -1272,7 +1283,92 @@
 	   {
 	   "name": "DB_PASSWORD",
 	   "label": "Mot de passe de l'utilisateur"
-	   }]
+	   },
+	   {
+	   "name": "NDD",
+	   "label": "Lien du nom de domaine",
+	   "description": "exemple : papamica.fr"
+   }]
+},
+{
+  "type": 3,
+  "title": "Zabbix",
+  "description": "Page de status en ligne",
+  "categories": [
+	  "Monitoring",
+	  "PAPAMICA"
+  ],
+  "platform": "linux",
+  "logo": "https://www.logolynx.com/images/logolynx/89/891729651d169fe5627ad2e67241eec9.jpeg",
+  "repository": {
+	  "url": "https://github.com/PAPAMICA/docker-compose-collection",
+	  "stackfile": "zabbix.yml"
+  },
+  "env": [{
+	  "name": "SERVICE",
+	  "label": "Nom du service"
+	  },
+	  {
+	  "name": "DATA_LOCATION",
+	  "label": "Localisation des données",
+	  "description": "exemple /apps/'service'"
+	  },
+	  {
+	  "name": "URL_LOKI",
+	  "label": "Lien du serveur loki",
+	  "description": "exemple : ndd/loki/api/v1/push"
+	  },
+	   {
+	   "name": "DB_USER",
+	  "label": "Utilisateur de la base de données"
+	   },
+	   {
+	   "name": "DB_PASSWORD",
+	   "label": "Mot de passe de l'utilisateur"
+	   },
+	   {
+		"name": "DB_ROOT",
+	   "label": "Mot de passe root"
+	   },
+	   {
+	   "name": "NDD",
+	   "label": "Lien du nom de domaine",
+	   "description": "exemple : papamica.fr"
+   }]
+},
+{
+  "type": 3,
+  "title": "Zabbix-CachetHQ",
+  "description": "Automatisation de la page CachetHQ avec Zabbix",
+  "categories": [
+	  "Automatisation",
+	  "PAPAMICA"
+  ],
+  "platform": "linux",
+  "logo": "https://img2.freepng.fr/20180702/lf/kisspng-test-automation-software-testing-manual-testing-se-5b3a7da291d414.6876755115305599065973.jpg",
+  "repository": {
+	  "url": "https://github.com/PAPAMICA/docker-compose-collection",
+	  "stackfile": "zabbix-cachethq.yml"
+  },
+  "env": [{
+	  "name": "SERVICE",
+	  "label": "Nom du service"
+	  },
+	  {
+	  "name": "DATA_LOCATION",
+	  "label": "Localisation des données",
+	  "description": "exemple /apps/'service'"
+	  },
+	  {
+	  "name": "URL_LOKI",
+	  "label": "Lien du serveur loki",
+	  "description": "exemple : ndd/loki/api/v1/push"
+	  },
+	  {
+	  "name": "NDD",
+	  "label": "Lien du nom de domaine",
+	  "description": "exemple : papamica.fr"
+  }]
 },
 
 
@@ -1281,10 +1377,11 @@
 
 	{
 	  "type": 3,
-	  "title": "Wordpress by PAPAMICA",
+	  "title": "Wordpress",
 	  "description": "Création de site web avec un CMS simple et performant",
 	  "categories": [
-		  "CMS"
+		  "CMS",
+		  "PAPAMICA"
 	  ],
 	  "platform": "linux",
 	  "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/WordPress_blue_logo.svg/1024px-WordPress_blue_logo.svg.png",

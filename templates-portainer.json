@@ -1078,18 +1078,21 @@
         "env": [{
             "name": "SERVICE",
             "label": "Nom du service"
-        },
-        {
+            },
+            {
             "name": "DATA_LOCATION",
-            "label": "Localisation des données (exemple /apps/'service')"
-        },
-        {
+            "label": "Localisation des données (exemple /apps/'service')",
+            "description": "Azure primary key"
+            },
+            {
             "name": "URL_LOKI",
-            "label": "Lien du serveur loki (exemple : ndd/loki/api/v1/push)"
-        },
-        {
+            "label": "Lien du serveur loki (exemple : ndd/loki/api/v1/push)",
+            "description": "Azure primary key"
+            },
+            {
             "name": "NDD",
-            "label": "Lien du nom de domaine (exemple : papamica.fr)"
+            "label": "Lien du nom de domaine",
+            "description": "exemple : papamica.fr"
         }]
     }
 	]

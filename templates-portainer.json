@@ -1097,8 +1097,45 @@
     },
 	{
 	  "type": 3,
+	  "title": "Teamspeak by PAPAMICA",
+	  "description": "Serveur de discussions vocales",
+	  "categories": [
+		  "Discussion"
+	  ],
+	  "platform": "linux",
+	  "logo": "https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/092018/untitled-3_52.png?weCp0Mz2VN0H8IuP_O1T3gMe47LBfc6N&itok=IG4MtYuO",
+	  "repository": {
+		  "url": "https://github.com/PAPAMICA/docker-compose-collection",
+		  "stackfile": "teamspeak.yml"
+	  },
+	  "env": [{
+		  "name": "SERVICE",
+		  "label": "Nom du service"
+		  },
+		  {
+		  "name": "DATA_LOCATION",
+		  "label": "Localisation des données",
+		  "description": "exemple /apps/'service'"
+		  },
+		  {
+		  "name": "URL_LOKI",
+		  "label": "Lien du serveur loki",
+		  "description": "exemple : ndd/loki/api/v1/push"
+		  },
+		  {
+		  "name": "TS3QUERY_PASSWORD",
+		  "label": "Mot de passe admin Query"
+		  },
+		  {
+		  "name": "NDD",
+		  "label": "Lien du nom de domaine",
+		  "description": "exemple : papamica.fr"
+	  }]
+  },
+	{
+	  "type": 3,
 	  "title": "Wordpress by PAPAMICA",
-	  "description": "Créatino de site web avec un CMS simple et performant",
+	  "description": "Création de site web avec un CMS simple et performant",
 	  "categories": [
 		  "CMS"
 	  ],

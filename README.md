@@ -34,7 +34,13 @@ sudo docker-compose -f service.yml --env-file env up -d
 
 # Portainer
 
-### Utilisation
+UPDATE 2021 :
+### Utilisation (2021)
+Ajoutez l'URL de mon repo directement dans Portainer :
+![PORTAINER](https://i.imgur.com/M49ssCN.png)
+
+
+### Utilisation (2020)
 + 1 - Aller dans le sous menu "Stacks"
 + 2 - Cliquer sur "+ Add stack"
 + 3 - Nommer le stack dans le champs "Name"

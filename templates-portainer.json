@@ -1067,7 +1067,7 @@
         "title": "Hastebin by PAPAMICA",
         "description": "Partage de fichiers textes (Alternatice à Pastebin)",
         "categories": [
-			"Alternative OpenSource"
+			"SelfHosting"
         ],
         "platform": "linux",
         "logo": "https://pbs.twimg.com/profile_images/1664989409/twitter_400x400.png",
@@ -1165,6 +1165,120 @@
 		  "description": "exemple : papamica.fr"
 	  }]
   },
+  {
+	"type": 3,
+	"title": "Bitwarden by PAPAMICA",
+	"description": "Gestionnaire de mots de passe et de 2FA (Alternatice à Dashlane)",
+	"categories": [
+		"SelfHosting"
+	],
+	"platform": "linux",
+	"logo": "",
+	"repository": {
+		"url": "https://github.com/PAPAMICA/docker-compose-collection",
+		"stackfile": "bitwarden.yml"
+	},
+	"env": [{
+		"name": "SERVICE",
+		"label": "Nom du service"
+		},
+		{
+		"name": "DATA_LOCATION",
+		"label": "Localisation des données",
+		"description": "exemple /apps/'service'"
+		},
+		{
+		"name": "URL_LOKI",
+		"label": "Lien du serveur loki",
+		"description": "exemple : ndd/loki/api/v1/push"
+		},
+		{
+		"name": "NDD",
+		"label": "Lien du nom de domaine",
+		"description": "exemple : papamica.fr"
+	}]
+},
+{
+  "type": 3,
+  "title": "Bookstack by PAPAMICA",
+  "description": "Wiki et documentation en ligne",
+  "categories": [
+	  "SelfHosting"
+  ],
+  "platform": "linux",
+  "logo": "https://alternative.me/media/256/bookstack-icon-ks2r4navbx1gj5ne-c.png",
+  "repository": {
+	  "url": "https://github.com/PAPAMICA/docker-compose-collection",
+	  "stackfile": "bookstack.yml"
+  },
+  "env": [{
+	  "name": "SERVICE",
+	  "label": "Nom du service"
+	  },
+	  {
+	  "name": "DATA_LOCATION",
+	  "label": "Localisation des données",
+	  "description": "exemple /apps/'service'"
+	  },
+	  {
+	  "name": "URL_LOKI",
+	  "label": "Lien du serveur loki",
+	  "description": "exemple : ndd/loki/api/v1/push"
+	  },
+	   {
+	   "name": "DB_USER",
+	  "label": "Utilisateur de la base de données"
+	   },
+	   {
+	   "name": "DB_PASSWORD",
+	   "label": "Mot de passe de l'utilisateur"
+	   },
+	   {
+		"name": "DB_ROOT",
+	   "label": "Mot de passe root"
+	   }]
+},
+{
+  "type": 3,
+  "title": "CachetHQ by PAPAMICA",
+  "description": "Page de status en ligne",
+  "categories": [
+	  "SelfHosting"
+  ],
+  "platform": "linux",
+  "logo": "",
+  "repository": {
+	  "url": "https://github.com/PAPAMICA/docker-compose-collection",
+	  "stackfile": "cachethq.yml"
+  },
+  "env": [{
+	  "name": "SERVICE",
+	  "label": "Nom du service"
+	  },
+	  {
+	  "name": "DATA_LOCATION",
+	  "label": "Localisation des données",
+	  "description": "exemple /apps/'service'"
+	  },
+	  {
+	  "name": "URL_LOKI",
+	  "label": "Lien du serveur loki",
+	  "description": "exemple : ndd/loki/api/v1/push"
+	  },
+	   {
+	   "name": "DB_USER",
+	  "label": "Utilisateur de la base de données"
+	   },
+	   {
+	   "name": "DB_PASSWORD",
+	   "label": "Mot de passe de l'utilisateur"
+	   }]
+},
+
+
+
+
+
 	{
 	  "type": 3,
 	  "title": "Wordpress by PAPAMICA",

@@ -34,7 +34,7 @@ sudo docker-compose -f service.yml --env-file env up -d
 
 # Portainer
 
-UPDATE 2021 :
+**UPDATE 2021 :**
 ### Utilisation (2021)
 Ajoutez l'URL de mon repo directement dans Portainer :
 ![PORTAINER](https://i.imgur.com/M49ssCN.png)

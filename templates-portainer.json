@@ -1077,15 +1077,15 @@
         },
         "env": [{
             "name": "SERVICE",
-            "label": "Nom du service",
+            "label": "Nom du service"
         },
         {
             "name": "DATA_LOCATION",
-            "label": "Localisation des données (exemple /apps/'service')",
+            "label": "Localisation des données (exemple /apps/'service')"
         },
         {
             "name": "URL_LOKI",
-            "label": "Lien du serveur loki (exemple : ndd/loki/api/v1/push)",
+            "label": "Lien du serveur loki (exemple : ndd/loki/api/v1/push)"
         },
         {
             "name": "NDD",

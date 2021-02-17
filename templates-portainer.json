@@ -1097,6 +1097,39 @@
     },
 	{
 	  "type": 3,
+	  "title": "Sinusbot by PAPAMICA",
+	  "description": "Bot d'automatisation pour TeamSpeak et Discord",
+	  "categories": [
+		  "Automatisation"
+	  ],
+	  "platform": "linux",
+	  "logo": "https://www.4netplayers.com/wp-content/uploads/2018/10/300x300_sinusbot_logo.png",
+	  "repository": {
+		  "url": "https://github.com/PAPAMICA/docker-compose-collection",
+		  "stackfile": "sinusbot.yml"
+	  },
+	  "env": [{
+		  "name": "SERVICE",
+		  "label": "Nom du service"
+		  },
+		  {
+		  "name": "DATA_LOCATION",
+		  "label": "Localisation des données",
+		  "description": "exemple /apps/'service'"
+		  },
+		  {
+		  "name": "URL_LOKI",
+		  "label": "Lien du serveur loki",
+		  "description": "exemple : ndd/loki/api/v1/push"
+		  },
+		  {
+		  "name": "NDD",
+		  "label": "Lien du nom de domaine",
+		  "description": "exemple : papamica.fr"
+	  }]
+  },
+	{
+	  "type": 3,
 	  "title": "Teamspeak by PAPAMICA",
 	  "description": "Serveur de discussions vocales",
 	  "categories": [

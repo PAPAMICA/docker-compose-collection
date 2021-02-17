@@ -1206,7 +1206,7 @@
 	  "SelfHosting"
   ],
   "platform": "linux",
-  "logo": "https://alternative.me/media/256/bookstack-icon-ks2r4navbx1gj5ne-c.png",
+  "logo": "https://s3-us-west-2.amazonaws.com/linuxserver-docs/images/bookstack-logo500x500.png",
   "repository": {
 	  "url": "https://github.com/PAPAMICA/docker-compose-collection",
 	  "stackfile": "bookstack.yml"
@@ -1246,7 +1246,7 @@
 	  "SelfHosting"
   ],
   "platform": "linux",
-  "logo": "",
+  "logo": "https://avatars.githubusercontent.com/u/9951502?s=400&v=4",
   "repository": {
 	  "url": "https://github.com/PAPAMICA/docker-compose-collection",
 	  "stackfile": "cachethq.yml"

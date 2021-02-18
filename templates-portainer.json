@@ -520,6 +520,58 @@
 	 }]
   },
 
+  {
+	"type": 3,
+	"title": "YourLS",
+	"description": "Raccourcisseur d'URL avec statistiques",
+	"note": "<p>Site de l'application : <a href=\"https:\/\/yourls.orgi\" target=\"_blank\" rel=\"noopener\">YourLS.org<\/a>",
+	"categories": [
+		"SelfHosted",
+		"PAPAMICA"
+	],
+	"platform": "linux",
+	"logo": "https://yourls.inscomers.net/logo.png",
+	"repository": {
+		"url": "https://github.com/PAPAMICA/docker-compose-collection",
+		"stackfile": "yourls.yml"
+	},
+	"env": [{
+		"name": "SERVICE",
+		"label": "Nom du service"
+		},
+		{
+		"name": "DATA_LOCATION",
+		"label": "Localisation des données",
+		"description": "exemple /apps/'service'"
+		},
+		{
+		"name": "URL_LOKI",
+		"label": "Lien du serveur loki",
+		"description": "exemple : ndd/loki/api/v1/push"
+		},
+		 {
+		 "name": "DB_USER",
+		"label": "Utilisateur de la base de données"
+		 },
+		 {
+		 "name": "DB_PASSWORD",
+		 "label": "Mot de passe de l'utilisateur"
+		 },
+		 {
+		 "name": "ADMIN_USER",
+		"label": "Utilisateur administrateur de YourLS"
+		 },
+		 {
+		 "name": "ADMIN_PASSWORD",
+		 "label": "Mot de passe de l'administrateur de YourLS"
+		 },
+		 {
+		 "name": "WEBSITE",
+		 "label": "Lien du service",
+		 "description": "exemple : url.papamica.fr"
+	 }]
+  },
+
 {
 	"type": 3,
 	"title": "Grafana",

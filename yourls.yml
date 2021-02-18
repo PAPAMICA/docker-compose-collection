@@ -1,0 +1,76 @@
+# Docker-compose mis à disposition par Mickael "PAPAMICA" Asseline
+# Date de mise à jour : 18/02/2021
+
+# Variables d'environnement à déclarer :
+#     - SERVICE : nom du service (exemple : plex)
+#     - DATA_LOCATION : localisation des données (exemple /apps/"service")
+#     - URL_LOKI : lien du serveur loki (exemple : ndd/loki/api/v1/push)
+#     - DB_USER : nom d'utilisateur pour la base de données (exemple : papamica)
+#     - DB_PASSWORD : mot de passe pour la base de données
+#     - WEBSITE : Site web du service (exemple : url.papamica.fr)
+#     - ADMIN_USER : Utilisateur administrateur
+#     - ADMIN_PASSWORD : Mot de passe de l'administrateur
+
+# Fonctionne avec Portainer
+version: "2"
+
+services:
+  yourls:
+    image: yourls:apache
+    container_name: $SERVICE
+    volumes:
+      - $DATA_LOCATION/config:/var/www/html
+    environment:
+      YOURLS_DB_USER: $DB_USER
+      YOURLS_DB_PASS: $DB_PASSWORD
+      YOURLS_DB_HOST: $SERVICE-db
+      YOURLS_DB_NAME: yourls
+      YOURLS_SITE: https://$WEBSITE
+      YOURLS_PASS: $ADMIN_PASSWORD
+      YOURLS_USER: $ADMIN_USER
+    depends_on:
+      - $SERVICE-db
+    networks:
+      - proxy
+    logging:
+      driver: loki
+      options:
+        loki-url: "$URL_LOKI"
+        loki-external-labels: service={{.Name}}
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.$SERVICE.entrypoints=http"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$WEBSITE`)"
+      - "traefik.http.middlewares.$SERVICE-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.$SERVICE.middlewares=$SERVICE-https-redirect"
+      - "traefik.http.routers.$SERVICE-secure.entrypoints=https"
+      - "traefik.http.routers.$SERVICE-secure.rule=Host(`$WEBSITE`)"
+      - "traefik.http.routers.$SERVICE-secure.tls=true"
+      - "traefik.http.routers.$SERVICE-secure.tls.certresolver=http"
+      - "traefik.docker.network=proxy"
+
+
+  yourls-db:
+    image: mysql:5.7
+    container_name: yourls-db
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=$DB_PASSWORD
+      - MYSQL_DATABASE=yourls
+      - MYSQL_USER=$DB_USER
+      - MYSQL_PASSWORD=$DB_PASSWORD
+    volumes:
+      - $DATA_LOCATION/data:/var/lib/mysql
+    networks:
+      - proxy
+    logging:
+      driver: loki
+      options:
+        loki-url: "$URL_LOKI"
+        loki-external-labels: service={{.Name}}
+          
+  
+networks:
+  proxy:
+    external:
+      name: proxy

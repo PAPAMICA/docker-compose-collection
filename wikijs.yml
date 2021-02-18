@@ -1,0 +1,72 @@
+# Docker-compose mis à disposition par Mickael "PAPAMICA" Asseline
+# Date de mise à jour : 27/10/2020
+
+# Variables d'environnement à déclarer :
+#     - SERVICE : nom du service (exemple : plex)
+#     - DATA_LOCATION : localisation des données (exemple /apps/"service")
+#     - URL_LOKI : lien du serveur loki (exemple : ndd/loki/api/v1/push)
+#     - NDD : lien du nom de domaine (exemple : papamica.fr)
+#     - DB_USER : nom d'utilisateur pour la base de données (exemple : papamica)
+#     - DB_PASSWORD : mot de passe pour la base de données
+
+
+# Fonctionne avec Portainer
+version: "2"
+services:
+
+  wiki-db:
+    image: postgres:11-alpine
+    container_name: $SERVICE-db
+    environment:
+      POSTGRES_DB: wiki
+      POSTGRES_PASSWORD: $DB_PASSWORD
+      POSTGRES_USER: $DB_USER
+    restart: unless-stopped
+    volumes:
+      - $DATA_LOCATION/db:/var/lib/postgresql/data
+    networks:
+      - proxy
+    logging:
+      driver: loki
+      options:
+        loki-url: "$URL_LOKI"
+        loki-external-labels: service={{.Name}}
+
+  wiki:
+    image: requarks/wiki:2
+    container_name: $SERVICE
+    depends_on:
+      - wiki-db
+    environment:
+      DB_TYPE: postgres
+      DB_HOST: $SERVICE-db
+      DB_PORT: 5432
+      DB_USER: $DB_USER
+      DB_PASS: $DB_PASSWORD
+      DB_NAME: wiki
+    restart: unless-stopped
+# Facultatif  
+    networks:
+      - proxy
+    logging:
+      driver: loki
+      options:
+        loki-url: "$URL_LOKI"
+        loki-external-labels: service={{.Name}}
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.$SERVICE.entrypoints=http"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$SERVICE.$NDD`)"
+      - "traefik.http.middlewares.$SERVICE-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.$SERVICE.middlewares=$SERVICE-https-redirect"
+      - "traefik.http.routers.$SERVICE-secure.entrypoints=https"
+      - "traefik.http.routers.$SERVICE-secure.rule=Host(`$SERVICE.$NDD`)"
+      - "traefik.http.routers.$SERVICE-secure.tls=true"
+      - "traefik.http.routers.$SERVICE-secure.tls.certresolver=http"
+      - "traefik.http.services.$SERVICE-secure.loadbalancer.server.port=3000"
+      - "traefik.docker.network=proxy"
+      
+networks:
+  proxy:
+    external:
+      name: proxy

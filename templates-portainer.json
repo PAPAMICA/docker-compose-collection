@@ -476,6 +476,49 @@
 	}]
 },
 
+{
+	"type": 3,
+	"title": "Wiki.js",
+	"description": "Wiki autohébergé",
+	"note": "<p>Site de l'application : <a href=\"https:\/\/js.wiki\" target=\"_blank\" rel=\"noopener\">js.wiki<\/a>",
+	"categories": [
+		"SelfHosted",
+		"PAPAMICA"
+	],
+	"platform": "linux",
+	"logo": "https://k-fortytwo.de/wiki.png",
+	"repository": {
+		"url": "https://github.com/PAPAMICA/docker-compose-collection",
+		"stackfile": "wikijs.yml"
+	},
+	"env": [{
+		"name": "SERVICE",
+		"label": "Nom du service"
+		},
+		{
+		"name": "DATA_LOCATION",
+		"label": "Localisation des données",
+		"description": "exemple /apps/'service'"
+		},
+		{
+		"name": "URL_LOKI",
+		"label": "Lien du serveur loki",
+		"description": "exemple : ndd/loki/api/v1/push"
+		},
+		 {
+		 "name": "DB_USER",
+		"label": "Utilisateur de la base de données"
+		 },
+		 {
+		 "name": "DB_PASSWORD",
+		 "label": "Mot de passe de l'utilisateur"
+		 },
+		 {
+		 "name": "NDD",
+		 "label": "Lien du nom de domaine",
+		 "description": "exemple : papamica.fr"
+	 }]
+  },
 
 {
 	"type": 3,

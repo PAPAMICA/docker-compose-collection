@@ -399,6 +399,43 @@
 	}]
 },
 
+
+{
+	"type": 3,
+	"title": "Jirafeau",
+	"description": "Partages de fichiers (alternative à WeTransfert)",
+	"note": "<p>Site de l'application : <a href=\"https:\/\/gitlab.com\/mojo42\/Jirafeau\" target=\"_blank\" rel=\"noopener\">Gitlab.com<\/a>",
+	"categories": [
+		"SelfHosted",
+		"PAPAMICA"
+	],
+	"platform": "linux",
+	"logo": "https://framalibre.org/sites/default/files/leslogos/JirafeauLogo.jpeg",
+	"repository": {
+		"url": "https://github.com/PAPAMICA/docker-compose-collection",
+		"stackfile": "jirafeau.yml"
+	},
+	"env": [{
+		"name": "SERVICE",
+		"label": "Nom du service"
+		},
+		{
+		"name": "DATA_LOCATION",
+		"label": "Localisation des données",
+		"description": "exemple /apps/'service'"
+		},
+		{
+		"name": "URL_LOKI",
+		"label": "Lien du serveur loki",
+		"description": "exemple : ndd/loki/api/v1/push"
+		},
+		{
+		"name": "NDD",
+		"label": "Lien du nom de domaine",
+		"description": "exemple : papamica.fr"
+	}]
+},
+
 {
 	"type": 3,
 	"title": "VS Code Online",

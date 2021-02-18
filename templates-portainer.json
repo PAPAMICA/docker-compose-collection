@@ -21,7 +21,8 @@
       {
         "type": 3,
         "title": "Hastebin",
-        "description": "Partage de fichiers textes (Alternative à Pastebin)",
+		"description": "Partage de fichiers textes (Alternative à Pastebin)",
+		"note": "<p>Site de l'application : <a href=\"https:\/\/hastebin.com\/\" target=\"_blank\" rel=\"noopener\">Hastebin.com<\/a>",
         "categories": [
 			"SelfHosting",
 			"PAPAMICA"
@@ -229,7 +230,7 @@
 	"type": 3,
 	"title": "NextCloud",
 	"description": "Serveur de partages de fichiers et bien plus !",
-	"note": "<p>Site de l'application : <a href=\"https:\/\/ts-ranksystem.com\/\" target=\"_blank\" rel=\"noopener\">TS-RankSystem.com<\/a>",
+	"note": "<p>Site de l'application : <a href=\"https:\/\/nextcloud.com\/\" target=\"_blank\" rel=\"noopener\">NextCloud.com<\/a>",
 	"categories": [
 		"Communication",
 		"PAPAMICA"

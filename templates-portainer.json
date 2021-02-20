@@ -572,6 +572,58 @@
 	 }]
   },
 
+  {
+	"type": 3,
+	"title": "Astuto",
+	"description": "Page de retour des utilisateurs",
+	"note": "<p>Site de l'application : <a href=\"https:\/\/github.com\/riggraz\/astuto\" target=\"_blank\" rel=\"noopener\">Github.com<\/a>",
+	"categories": [
+		"SelfHosted",
+		"PAPAMICA"
+	],
+	"platform": "linux",
+	"logo": "https://i.pinimg.com/originals/16/de/5f/16de5f8dd1ffe99f9e169a0605a960b3.png",
+	"repository": {
+		"url": "https://github.com/PAPAMICA/docker-compose-collection",
+		"stackfile": "astuto.yml"
+	},
+	"env": [{
+		"name": "SERVICE",
+		"label": "Nom du service"
+		},
+		{
+		"name": "DATA_LOCATION",
+		"label": "Localisation des données",
+		"description": "exemple /apps/'service'"
+		},
+		{
+		"name": "URL_LOKI",
+		"label": "Lien du serveur loki",
+		"description": "exemple : ndd/loki/api/v1/push"
+		},
+		 {
+		 "name": "DB_USER",
+		"label": "Utilisateur de la base de données"
+		 },
+		 {
+		 "name": "DB_PASSWORD",
+		 "label": "Mot de passe de l'utilisateur"
+		 },
+		 {
+		 "name": "SECRET_KEY",
+		"label": "Mot de passe administrateur de l'application"
+		 },
+		 {
+		 "name": "APP_NAME",
+		 "label": "Nom de l'application"
+		 },
+		 {
+		 "name": "NDD",
+		 "label": "Lien du nom de domaine",
+		 "description": "exemple : papamica.fr"
+	 }]
+  },  
+
 {
 	"type": 3,
 	"title": "Grafana",

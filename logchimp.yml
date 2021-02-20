@@ -10,15 +10,15 @@
 #     - DB_USER : nom d'utilisateur pour la base de données (exemple : papamica)
 #     - DB_PASSWORD : mot de passe pour la base de données
 #     - SECRET_KEY : mot de passe d'accès administrateur à l'application
-#     - APP_NAME : Nom de l'application
 
 # Fonctionne avec Portainer
 version: '2'
 services:
-  astuto-db:
-    image: postgres
+  logchimp-db:
+    image: postgres:12.4
     container_name: $SERVICE-db
     environment:
+      - POSTGRES_DB=logchimp
       - POSTGRES_USER=$DB_USER
       - POSTGRES_PASSWORD=$DB_PASSWORD
     volumes:
@@ -31,23 +31,19 @@ services:
         loki-url: "$URL_LOKI"
         loki-external-labels: service={{.Name}}
         
-  astuto:
-    image: alextracy/astuto
+  logchimp:
+    image: tiredofit/logchimp
     container_name: $SERVICE
     environment:
-      - UPDATE=0
-      - ENVIRONMENT=production
-      - SECRET_KEY_BASE=$SECRET_KEY
-      - POSTGRES_USER=$DB_USER
-      - POSTGRES_PASSWORD=$DB_PASSWORD
-      - EMAIL_CONFIRMATION=no
-      - APP_NAME=$APP_NAME
-      - SHOW_LOGO=no
-      - POSTS_PER_PAGE=15
-    volumes:
-      - $DATA_LOCATION/data:/astuto
+      - DB_HOST=$SERVICE-db
+      - DB_NAME=logchimp
+      - APP_KEY=$SECRET_KEY
+      - DB_USER =$DB_USER
+      - DB_PASS=$DB_PASSWORD
+#    volumes:
+#      - $DATA_LOCATION/data:/astuto
     depends_on:
-      - astuto-db
+      - logchimp-db
     networks:
       - proxy
     logging:
@@ -65,7 +61,7 @@ services:
       - "traefik.http.routers.$SERVICE-secure.rule=Host(`$SERVICE.$NDD`)"
       - "traefik.http.routers.$SERVICE-secure.tls=true"
       - "traefik.http.routers.$SERVICE-secure.tls.certresolver=http"
-      - "traefik.http.services.$SERVICE-secure.loadbalancer.server.port=3000"
+      - "traefik.http.services.$SERVICE-secure.loadbalancer.server.port=8080"
       - "traefik.docker.network=proxy"
 
 

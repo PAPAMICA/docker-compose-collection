@@ -574,7 +574,7 @@
 
   {
 	"type": 3,
-	"title": "Astuto",
+	"title": "logchimp",
 	"description": "Page de retour des utilisateurs",
 	"note": "<p>Site de l'application : <a href=\"https:\/\/github.com\/riggraz\/astuto\" target=\"_blank\" rel=\"noopener\">Github.com<\/a>",
 	"categories": [
@@ -582,10 +582,10 @@
 		"PAPAMICA"
 	],
 	"platform": "linux",
-	"logo": "https://i.pinimg.com/originals/16/de/5f/16de5f8dd1ffe99f9e169a0605a960b3.png",
+	"logo": "https://res.cloudinary.com/practicaldev/image/fetch/s--0crlSnO9--/c_fill,f_auto,fl_progressive,h_320,q_auto,w_320/https://dev-to-uploads.s3.amazonaws.com/uploads/organization/profile_image/342/be63345a-a365-4052-a52e-f1394e165c48.png",
 	"repository": {
 		"url": "https://github.com/PAPAMICA/docker-compose-collection",
-		"stackfile": "astuto.yml"
+		"stackfile": "logchimp.yml"
 	},
 	"env": [{
 		"name": "SERVICE",
@@ -612,10 +612,6 @@
 		 {
 		 "name": "SECRET_KEY",
 		"label": "Mot de passe administrateur de l'application"
-		 },
-		 {
-		 "name": "APP_NAME",
-		 "label": "Nom de l'application"
 		 },
 		 {
 		 "name": "NDD",

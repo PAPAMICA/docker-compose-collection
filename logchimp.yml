@@ -7,7 +7,6 @@
 #     - DATA_LOCATION : localisation des données (exemple /apps/"service")
 #     - URL_LOKI : lien du serveur loki (exemple : ndd/loki/api/v1/push)
 #     - NDD : lien du nom de domaine (exemple : papamica.fr)
-#     - DB_USER : nom d'utilisateur pour la base de données (exemple : papamica)
 #     - DB_PASSWORD : mot de passe pour la base de données
 #     - SECRET_KEY : mot de passe d'accès administrateur à l'application
 
@@ -38,7 +37,7 @@ services:
       - DB_HOST=$SERVICE-db
       - DB_NAME=logchimp
       - APP_KEY=$SECRET_KEY
-      - DB_USER =logchimp
+      - DB_USER=logchimp
       - DB_PASS=$DB_PASSWORD
 #    volumes:
 #      - $DATA_LOCATION/data:/astuto
@@ -61,7 +60,7 @@ services:
       - "traefik.http.routers.$SERVICE-secure.rule=Host(`$SERVICE.$NDD`)"
       - "traefik.http.routers.$SERVICE-secure.tls=true"
       - "traefik.http.routers.$SERVICE-secure.tls.certresolver=http"
-      - "traefik.http.services.$SERVICE-secure.loadbalancer.server.port=8080"
+#      - "traefik.http.services.$SERVICE-secure.loadbalancer.server.port=8080"
       - "traefik.docker.network=proxy"
 
 

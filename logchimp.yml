@@ -19,7 +19,7 @@ services:
     container_name: $SERVICE-db
     environment:
       - POSTGRES_DB=logchimp
-      - POSTGRES_USER=$DB_USER
+      - POSTGRES_USER=logchimp
       - POSTGRES_PASSWORD=$DB_PASSWORD
     volumes:
       - $DATA_LOCATION/db:/var/lib/postgresql/data
@@ -38,7 +38,7 @@ services:
       - DB_HOST=$SERVICE-db
       - DB_NAME=logchimp
       - APP_KEY=$SECRET_KEY
-      - DB_USER =$DB_USER
+      - DB_USER =logchimp
       - DB_PASS=$DB_PASSWORD
 #    volumes:
 #      - $DATA_LOCATION/data:/astuto

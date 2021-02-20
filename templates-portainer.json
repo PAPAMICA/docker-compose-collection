@@ -602,10 +602,6 @@
 		"description": "exemple : ndd/loki/api/v1/push"
 		},
 		 {
-		 "name": "DB_USER",
-		"label": "Utilisateur de la base de données"
-		 },
-		 {
 		 "name": "DB_PASSWORD",
 		 "label": "Mot de passe de l'utilisateur"
 		 },

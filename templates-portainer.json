@@ -616,6 +616,50 @@
 	 }]
   },  
 
+  {
+	"type": 3,
+	"title": "Etherpad",
+	"description": "Collaboration en live sur des documents",
+	"note": "<p>Site de l'application : <a href=\"https:\/\/etherpad.org\" target=\"_blank\" rel=\"noopener\">Etherpad.org<\/a>",
+	"categories": [
+		"SelfHosted",
+		"PAPAMICA"
+	],
+	"platform": "linux",
+	"logo": "https://pbs.twimg.com/profile_images/1336377123964145665/2gTadaDt.jpg",
+	"repository": {
+		"url": "https://github.com/PAPAMICA/docker-compose-collection",
+		"stackfile": "etherpad.yml"
+	},
+	"env": [{
+		"name": "SERVICE",
+		"label": "Nom du service"
+		},
+		{
+		"name": "DATA_LOCATION",
+		"label": "Localisation des données",
+		"description": "exemple /apps/'service'"
+		},
+		{
+		"name": "URL_LOKI",
+		"label": "Lien du serveur loki",
+		"description": "exemple : ndd/loki/api/v1/push"
+		},
+		 {
+		 "name": "DB_PASSWORD",
+		 "label": "Mot de passe de l'utilisateur"
+		 },
+		 {
+		 "name": "SECRET_KEY",
+		"label": "Mot de passe administrateur de l'application"
+		 },
+		 {
+		 "name": "NDD",
+		 "label": "Lien du nom de domaine",
+		 "description": "exemple : papamica.fr"
+	 }]
+  },  
+
 {
 	"type": 3,
 	"title": "Grafana",

@@ -1,0 +1,68 @@
+# Docker-compose mis à disposition par Mickael "PAPAMICA" Asseline
+# Date de mise à jour : 21/04/2021
+
+# Variables d'environnement à déclarer :
+#     - SERVICE : nom du service (exemple : plex)
+#     - DATA_LOCATION : localisation des données (exemple /apps/"service")
+#     - URL_LOKI : lien du serveur loki (exemple : ndd/loki/api/v1/push)
+#     - NDD : lien du nom de domaine (exemple : papamica.fr)
+#     - DB_PASSWORD : mot de passe pour la base de données
+#     - SECRET_KEY : mot de passe d'accès administrateur à l'application
+
+# Fonctionne avec Portainer
+version: '2'
+services:
+  etherpad-db:
+    image: postgres:12.4
+    container_name: $SERVICE-db
+    environment:
+      - POSTGRES_DB=etherpad
+      - POSTGRES_USER=etherpad
+      - POSTGRES_PASSWORD=$DB_PASSWORD
+    volumes:
+      - $DATA_LOCATION/db:/var/lib/postgresql/data
+    networks:
+      - proxy
+    logging:
+      driver: loki
+      options:
+        loki-url: "$URL_LOKI"
+        loki-external-labels: service={{.Name}}
+
+  # Etherpad : https://etherpad.org     
+  etherpad:
+    image: etherpad/etherpad
+    container_name: $SERVICE
+    environment:
+      - DB_HOST=$SERVICE-db
+      - DB_NAME=etherpad
+      - DB_USER=etherpad
+      - DB_PASS=$DB_PASSWORD
+      - ADMIN_PASSWORD=$SECRET_KEY
+    depends_on:
+      - etherpad-db
+    networks:
+      - proxy
+    logging:
+      driver: loki
+      options:
+        loki-url: "$URL_LOKI"
+        loki-external-labels: service={{.Name}}
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.$SERVICE.entrypoints=http"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$SERVICE.$NDD`)"
+      - "traefik.http.middlewares.$SERVICE-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.$SERVICE.middlewares=$SERVICE-https-redirect"
+      - "traefik.http.routers.$SERVICE-secure.entrypoints=https"
+      - "traefik.http.routers.$SERVICE-secure.rule=Host(`$SERVICE.$NDD`)"
+      - "traefik.http.routers.$SERVICE-secure.tls=true"
+      - "traefik.http.routers.$SERVICE-secure.tls.certresolver=http"
+      - "traefik.http.services.$SERVICE-secure.loadbalancer.server.port=9001"
+      - "traefik.docker.network=proxy"
+
+
+networks:
+  proxy:
+    external:
+      name: proxy

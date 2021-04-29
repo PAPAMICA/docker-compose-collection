@@ -19,7 +19,7 @@ services:
     image: postgres:12.3
     container_name: $SERVICE-db
     environment:
-      POSTGRES_DB: taiga
+      POSTGRES_DB: $DB_USER
       POSTGRES_USER: $DB_USER
       POSTGRES_PASSWORD: $DB_PASSWORD
     volumes:
@@ -37,7 +37,7 @@ services:
     container_name: $SERVICE-back
     environment: 
       # Database settings
-      - POSTGRES_DB: taiga
+      - POSTGRES_DB: $DB_USER
       - POSTGRES_USER: $DB_USER
       - POSTGRES_PASSWORD: $DB_PASSWORD
       - POSTGRES_HOST: taiga-db
@@ -81,7 +81,7 @@ services:
     entrypoint: ["/taiga-back/docker/async_entrypoint.sh"]
     environment: 
       # Database settings
-      - POSTGRES_DB: taiga
+      - POSTGRES_DB: $DB_USER
       - POSTGRES_USER: $DB_USER
       - POSTGRES_PASSWORD: $DB_PASSWORD
       - POSTGRES_HOST: taiga-db

@@ -362,6 +362,60 @@
    }]
 },
 
+{
+	"type": 3,
+	"title": "Taiga",
+	"description": "Gestion de projet. Alternative à Trello",
+	"note": "<p>Site de l'application : <a href=\"https:\/\/www.taiga.io\/\" target=\"_blank\" rel=\"noopener\">taiga.io<\/a>",
+	"categories": [
+		"SelfHosting",
+		"PAPAMICA"
+	],
+	"platform": "linux",
+	"logo": "http://assets.stickpng.com/images/58482ca9cef1014c0b5e4a46.png",
+	"repository": {
+		"url": "https://github.com/PAPAMICA/docker-compose-collection",
+		"stackfile": "taiga.yml"
+	},
+	"env": [{
+		"name": "SERVICE",
+		"label": "Nom du service"
+		},
+		{
+		"name": "URL",
+		"label": "Lien de l'application",
+		"description": "exemple 'taiga.papamica.com'"
+		},
+		{
+		"name": "URL_WS",
+		"label": "Lien pour les websockets",
+		"description": "exemple 'ws://taiga.papamica.com'"
+		},
+		{
+		"name": "SECRET",
+		"label": "Mot de passe de l'application",
+		"description": "exemple ws://taiga.papamica.com'"
+		},
+		{
+		"name": "DATA_LOCATION",
+		"label": "Localisation des données",
+		"description": "exemple /apps/'service'"
+		},
+		{
+		"name": "URL_LOKI",
+		"label": "Lien du serveur loki",
+		"description": "exemple : ndd/loki/api/v1/push"
+		},
+		 {
+		 "name": "DB_USER",
+		"label": "Utilisateur de la base de données"
+		 },
+		 {
+		 "name": "DB_PASSWORD",
+		 "label": "Mot de passe de l'utilisateur"
+		 }]
+  },
+
 
 {
 	"type": 3,

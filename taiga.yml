@@ -37,7 +37,7 @@ services:
     container_name: $SERVICE-back
     environment: 
       # Database settings
-      - POSTGRES_DB: $DB_USER
+      - POSTGRES_DB: "$DB_USER"
       - POSTGRES_USER: $DB_USER
       - POSTGRES_PASSWORD: $DB_PASSWORD
       - POSTGRES_HOST: taiga-db

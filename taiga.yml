@@ -19,7 +19,7 @@ services:
     image: postgres:12.3
     container_name: $SERVICE-db
     environment:
-      POSTGRES_DB: $DB_USER
+      POSTGRES_DB: taiga
       POSTGRES_USER: $DB_USER
       POSTGRES_PASSWORD: $DB_PASSWORD
     volumes:
@@ -37,14 +37,14 @@ services:
     container_name: $SERVICE-back
     environment: 
       # Database settings
-      - POSTGRES_DB: "$DB_USER"
-      - POSTGRES_USER: $DB_USER
-      - POSTGRES_PASSWORD: $DB_PASSWORD
-      - POSTGRES_HOST: taiga-db
+      POSTGRES_DB: taiga
+      POSTGRES_USER: $DB_USER
+      POSTGRES_PASSWORD: $DB_PASSWORD
+      POSTGRES_HOST: taiga-db
       # Taiga settings
-      - TAIGA_SECRET_KEY: $SECRET
-      - TAIGA_SITES_DOMAIN: $URL
-      - TAIGA_SITES_SCHEME: "https"
+      TAIGA_SECRET_KEY: $SECRET
+      TAIGA_SITES_DOMAIN: $URL
+      TAIGA_SITES_SCHEME: "https"
       # Email settings. Uncomment following lines and configure your SMTP server
       # EMAIL_BACKEND: "django.core.mail.backends.smtp.EmailBackend"
       # DEFAULT_FROM_EMAIL: "no-reply@example.com"
@@ -56,10 +56,10 @@ services:
       # EMAIL_HOST_PASSWORD: "password"
       # Rabbitmq settings
       # Should be the same as in taiga-async-rabbitmq and taiga-events-rabbitmq
-      - RABBITMQ_USER: taiga
-      - RABBITMQ_PASS: taiga
+      RABBITMQ_USER: taiga
+      RABBITMQ_PASS: taiga
       # Telemetry settings
-      - ENABLE_TELEMETRY: "True"
+      ENABLE_TELEMETRY: "True"
     volumes:
       - $DATA_LOCATION/static-data:/taiga-back/static
       - $DATA_LOCATION/media-data:/taiga-back/media
@@ -81,14 +81,14 @@ services:
     entrypoint: ["/taiga-back/docker/async_entrypoint.sh"]
     environment: 
       # Database settings
-      - POSTGRES_DB: $DB_USER
-      - POSTGRES_USER: $DB_USER
-      - POSTGRES_PASSWORD: $DB_PASSWORD
-      - POSTGRES_HOST: taiga-db
+      POSTGRES_DB: taiga
+      POSTGRES_USER: $DB_USER
+      POSTGRES_PASSWORD: $DB_PASSWORD
+      POSTGRES_HOST: taiga-db
       # Taiga settings
-      - TAIGA_SECRET_KEY: $SECRET
-      - TAIGA_SITES_DOMAIN: $URL
-      - TAIGA_SITES_SCHEME: "https"
+      TAIGA_SECRET_KEY: $SECRET
+      TAIGA_SITES_DOMAIN: $URL
+      TAIGA_SITES_SCHEME: "https"
       # Email settings. Uncomment following lines and configure your SMTP server
       # EMAIL_BACKEND: "django.core.mail.backends.smtp.EmailBackend"
       # DEFAULT_FROM_EMAIL: "no-reply@example.com"
@@ -100,10 +100,10 @@ services:
       # EMAIL_HOST_PASSWORD: "password"
       # Rabbitmq settings
       # Should be the same as in taiga-async-rabbitmq and taiga-events-rabbitmq
-      - RABBITMQ_USER: taiga
-      - RABBITMQ_PASS: taiga
+      RABBITMQ_USER: taiga
+      RABBITMQ_PASS: taiga
       # Telemetry settings
-      - ENABLE_TELEMETRY: "True"
+      ENABLE_TELEMETRY: "True"
     volumes:
       - $DATA_LOCATION/static-data:/taiga-back/static
       - $DATA_LOCATION/media-data:/taiga-back/media

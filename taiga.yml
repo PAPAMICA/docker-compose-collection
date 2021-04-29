@@ -20,8 +20,8 @@ services:
     container_name: $SERVICE-db
     environment:
       POSTGRES_DB: taiga
-      POSTGRES_USER: taiga
-      POSTGRES_PASSWORD: taiga
+      POSTGRES_USER: $DB_USER
+      POSTGRES_PASSWORD: $DB_PASSWORD
     volumes:
       - $DATA_LOCATION/db:/var/lib/postgresql/data
     networks:

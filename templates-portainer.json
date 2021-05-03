@@ -492,6 +492,42 @@
 
 {
 	"type": 3,
+	"title": "Matomo",
+	"description": "Analyse de traffic web (alternative à Google Analytics)",
+	"note": "<p>Site de l'application : <a href=\"https:\/\/fr.matomo.org\" target=\"_blank\" rel=\"noopener\">matomo.org<\/a>",
+	"categories": [
+		"SelfHosted",
+		"PAPAMICA"
+	],
+	"platform": "linux",
+	"logo": "https://ronan-chardonneau.co.uk/img/matomo-logo-80-80.png",
+	"repository": {
+		"url": "https://github.com/PAPAMICA/docker-compose-collection",
+		"stackfile": "matomo.yml"
+	},
+	"env": [{
+		"name": "SERVICE",
+		"label": "Nom du service"
+		},
+		{
+		"name": "DATA_LOCATION",
+		"label": "Localisation des données",
+		"description": "exemple /apps/'service'"
+		},
+		{
+		"name": "URL_LOKI",
+		"label": "Lien du serveur loki",
+		"description": "exemple : ndd/loki/api/v1/push"
+		},
+		{
+		"name": "URL",
+		"label": "Lien du service",
+		"description": "exemple : service.papamica.fr"
+	}]
+},
+
+{
+	"type": 3,
 	"title": "VS Code Online",
 	"description": "Visual Studio Code en ligne",
 	"note": "<p>Site de l'application : <a href=\"https:\/\/github.com\/cdr\/code-server\" target=\"_blank\" rel=\"noopener\">Github.com<\/a>",

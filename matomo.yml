@@ -1,0 +1,77 @@
+# Docker-compose mis à disposition par Mickael "PAPAMICA" Asseline
+# Date de mise à jour : 03/05/2021
+
+# Variables d'environnement à déclarer :
+#     - SERVICE : nom du service (exemple : plex)
+#     - DATA_LOCATION : localisation des données (exemple /apps/"service")
+#     - URL_LOKI : lien du serveur loki (exemple : ndd/loki/api/v1/push)
+#     - URL : lien du nom de domaine (exemple : service.papamica.fr)
+
+# Fonctionne avec Portainer
+version: "2"
+services:
+  # Matomo : https://fr.matomo.org
+  matomo:
+    image: docker.io/bitnami/matomo:4
+    container_name: $SERVICE
+    restart: unless-stopped
+    environment:
+      - MATOMO_DATABASE_HOST=matomo-db
+      - MATOMO_DATABASE_PORT_NUMBER=3306
+      - MATOMO_DATABASE_USER=bn_matomo
+      - MATOMO_DATABASE_NAME=bitnami_matomo
+      - ALLOW_EMPTY_PASSWORD=yes
+    volumes:
+      - $DATA_LOCATION/data:/bitnami/matomo
+    depends_on:
+      - matomo-db
+
+    # Facultatif  
+    networks:
+      - proxy
+    logging:
+      driver: loki
+      options:
+        loki-url: "$URL_LOKI"
+        loki-external-labels: service={{.Name}}
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.$SERVICE.entrypoints=http"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
+      - "traefik.http.middlewares.$SERVICE-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.$SERVICE.middlewares=$SERVICE-https-redirect"
+      - "traefik.http.routers.$SERVICE-secure.entrypoints=https"
+      - "traefik.http.routers.$SERVICE-secure.rule=Host(`$URL`)"
+      - "traefik.http.routers.$SERVICE-secure.tls=true"
+      - "traefik.http.routers.$SERVICE-secure.tls.certresolver=http"
+      - "traefik.http.services.$SERVICE-secure.loadbalancer.server.port=8443"
+      - "traefik.docker.network=proxy"
+
+  # Base de données    
+  matomo-db:
+    image: docker.io/bitnami/mariadb:10.3
+    container_name: $SERVICE-db
+    restart: unless-stopped
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+      - MARIADB_USER=bn_matomo
+      - MARIADB_DATABASE=matomo
+      # Flag necessary for the database max allowed packet check
+      # https://matomo.org/faq/troubleshooting/faq_183/
+      - MARIADB_EXTRA_FLAGS=--max_allowed_packet=64MB
+    volumes:
+      - $DATA_LOCATION/db:/bitnami/mariadb
+
+    # Facultatif
+    networks:
+      - proxy
+    logging:
+      driver: loki
+      options:
+        loki-url: "$URL_LOKI"
+        loki-external-labels: service={{.Name}}
+      
+networks:
+  proxy:
+    external:
+      name: proxy

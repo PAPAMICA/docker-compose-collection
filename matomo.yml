@@ -49,18 +49,22 @@ services:
 
   # Base de données    
   matomo-db:
-    image: docker.io/bitnami/mariadb:10.3
+    image: linuxserver/mariadb
     container_name: $SERVICE-db
     restart: unless-stopped
     environment:
-      - ALLOW_EMPTY_PASSWORD=yes
-      - MARIADB_USER=bn_matomo
-      - MARIADB_DATABASE=matomo
+      - PUID=1000
+      - PGID=1000
+      - MYSQL_ROOT_PASSWORD=Matomo$1309!
+      - TZ=Europe/Paris
+      - MYSQL_DATABASE=matomo
+      - MYSQL_USER=matomo
+      - MYSQL_PASSWORD=Matomo$1309
       # Flag necessary for the database max allowed packet check
       # https://matomo.org/faq/troubleshooting/faq_183/
       - MARIADB_EXTRA_FLAGS=--max_allowed_packet=64MB
     volumes:
-      - $DATA_LOCATION/db:/bitnami/mariadb
+      - $DATA_LOCATION/db:/config
 
     # Facultatif
     networks:

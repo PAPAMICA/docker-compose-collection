@@ -18,7 +18,9 @@ services:
     environment:
       - MATOMO_DATABASE_HOST=matomo-db
       - MATOMO_DATABASE_PORT_NUMBER=3306
-      - MATOMO_DATABASE_USER=bn_matomo
+      - MATOMO_DATABASE_NAME=matomo
+      - MATOMO_DATABASE_USER=matomo
+      - MATOMO_DATABASE_PASSWORD=Matomo1309
       - MATOMO_DATABASE_NAME=bitnami_matomo
       - ALLOW_EMPTY_PASSWORD=yes
     volumes:

@@ -21,8 +21,6 @@ services:
       - MATOMO_DATABASE_NAME=matomo
       - MATOMO_DATABASE_USER=matomo
       - MATOMO_DATABASE_PASSWORD=Matomo1309
-      - MATOMO_DATABASE_NAME=bitnami_matomo
-      - ALLOW_EMPTY_PASSWORD=yes
     volumes:
       - $DATA_LOCATION/data:/bitnami/matomo
     depends_on:

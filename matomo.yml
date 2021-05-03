@@ -43,7 +43,6 @@ services:
       - "traefik.http.routers.$SERVICE-secure.rule=Host(`$URL`)"
       - "traefik.http.routers.$SERVICE-secure.tls=true"
       - "traefik.http.routers.$SERVICE-secure.tls.certresolver=http"
-      - "traefik.http.services.$SERVICE-secure.loadbalancer.server.port=8443"
       - "traefik.docker.network=proxy"
 
   # Base de données    

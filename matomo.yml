@@ -55,11 +55,11 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - MYSQL_ROOT_PASSWORD=Matomo$1309!
+      - MYSQL_ROOT_PASSWORD=Matomo1309!
       - TZ=Europe/Paris
       - MYSQL_DATABASE=matomo
       - MYSQL_USER=matomo
-      - MYSQL_PASSWORD=Matomo$1309
+      - MYSQL_PASSWORD=Matomo1309
       # Flag necessary for the database max allowed packet check
       # https://matomo.org/faq/troubleshooting/faq_183/
       - MARIADB_EXTRA_FLAGS=--max_allowed_packet=64MB

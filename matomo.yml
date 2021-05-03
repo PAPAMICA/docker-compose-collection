@@ -12,17 +12,16 @@ version: "2"
 services:
   # Matomo : https://fr.matomo.org
   matomo:
-    image: docker.io/bitnami/matomo:4
+    image: matomo
     container_name: $SERVICE
     restart: unless-stopped
     environment:
       - MATOMO_DATABASE_HOST=matomo-db
-      - MATOMO_DATABASE_PORT_NUMBER=3306
-      - MATOMO_DATABASE_NAME=matomo
-      - MATOMO_DATABASE_USER=matomo
+      - MATOMO_DATABASE_DBNAME=matomo
+      - MATOMO_DATABASE_USERNAME=matomo
       - MATOMO_DATABASE_PASSWORD=Matomo1309
     volumes:
-      - $DATA_LOCATION/data:/bitnami/matomo
+      - $DATA_LOCATION/data:/var/www/html matomo
     depends_on:
       - matomo-db
 

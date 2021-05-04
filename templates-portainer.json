@@ -55,6 +55,41 @@
     },
 	{
 	  "type": 3,
+	  "title": "Vault",
+	  "description": "Gestion et stockages de secrets",
+	  "note": "<p>Site de l'application : <a href=\"https:\/\/vaultproject.io\/\" target=\"_blank\" rel=\"noopener\">Vaultproject.io<\/a>",
+	  "categories": [
+		  "SelfHosting",
+		  "PAPAMICA"
+	  ],
+	  "platform": "linux",
+	  "logo": "https://www.pngkey.com/png/detail/232-2321777_vault-logo-hashicorp-vault-icon.png",
+	  "repository": {
+		  "url": "https://github.com/PAPAMICA/docker-compose-collection",
+		  "stackfile": "vault.yml"
+	  },
+	  "env": [{
+		  "name": "SERVICE",
+		  "label": "Nom du service"
+		  },
+		  {
+		  "name": "DATA_LOCATION",
+		  "label": "Localisation des données",
+		  "description": "exemple /apps/'service'"
+		  },
+		  {
+		  "name": "URL_LOKI",
+		  "label": "Lien du serveur loki",
+		  "description": "exemple : ndd/loki/api/v1/push"
+		  },
+		  {
+		  "name": "URL",
+		  "label": "Lien de l'application",
+		  "description": "exemple : service.papamica.fr"
+	  }]
+  },
+	{
+	  "type": 3,
 	  "title": "Sinusbot",
 	  "description": "Bot d'automatisation pour TeamSpeak et Discord",
 	  "note": "<p>Site de l'application : <a href=\"https:\/\/www.sinusbot.com\/\" target=\"_blank\" rel=\"noopener\">Sinusbot.com<\/a>",

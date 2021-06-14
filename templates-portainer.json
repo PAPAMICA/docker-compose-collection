@@ -349,6 +349,42 @@
 		"description": "exemple : papamica.fr"
 	}]
 },
+
+{
+	"type": 3,
+	"title": "PrivateBin",
+	"description": "Partage de secrets avec API (Alternatice à Pastebin)",
+	"note": "<p>Site de l'application : <a href=\"https:\/\/privatebin.info\/\" target=\"_blank\" rel=\"noopener\">PrivateBin.info<\/a>",
+	"categories": [
+		"SelfHosting",
+		"PAPAMICA"
+	],
+	"platform": "linux",
+	"logo": "https://avatars.githubusercontent.com/u/20367028?s=200&v=4",
+	"repository": {
+		"url": "https://github.com/PAPAMICA/docker-compose-collection",
+		"stackfile": "pastebin.yml"
+	},
+	"env": [{
+		"name": "SERVICE",
+		"label": "Nom du service"
+		},
+		{
+		"name": "DATA_LOCATION",
+		"label": "Localisation des données",
+		"description": "exemple /apps/'service'"
+		},
+		{
+		"name": "URL_LOKI",
+		"label": "Lien du serveur loki",
+		"description": "exemple : ndd/loki/api/v1/push"
+		},
+		{
+		"name": "URL",
+		"label": "Lien du nom de domaine",
+		"description": "exemple : privatebin.papamica.fr"
+	}]
+},
 {
   "type": 3,
   "title": "Bookstack",

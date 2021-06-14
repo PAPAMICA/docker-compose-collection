@@ -11,7 +11,7 @@
 version: "2"
 services:
   # PrivateBin : https://privatebin.info
-  bitwarden:
+  privatebin:
     image: jgeusebroek/privatebin
     container_name: $SERVICE
     restart: always
@@ -21,7 +21,7 @@ services:
     environment:
       hostname: 'privatebin'
       name: 'privatebin'   # set to false to disable signups
-    ports:
+    #ports:
       #- 8080:80
 
     # Facultatif  

@@ -20,7 +20,7 @@ services:
       - $DATA_LOCATION/cfg:/privatebin/cfg
     environment:
       hostname: 'privatebin'
-      name: 'privatebin'   # set to false to disable signups
+      name: 'privatebin'
     #ports:
       #- 8080:80
 

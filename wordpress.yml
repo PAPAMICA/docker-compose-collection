@@ -46,7 +46,7 @@ services:
        - $DATA_LOCATION/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
        - $DATA_LOCATION/html:/var/www/html
      environment:
-       WORDPRESS_DB_HOST: wordpress-db:3306
+       WORDPRESS_DB_HOST: $SERVICE-db:3306
        WORDPRESS_DB_USER: $DB_USER
        WORDPRESS_DB_PASSWORD: $DB_PASSWORD
        WORDPRESS_DB_NAME: wordpress

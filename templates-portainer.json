@@ -360,7 +360,7 @@
 	"platform": "linux",
 	"logo": "https://gitlab.com/kallioli/docker-server-container/-/raw/master/img/ouroboros_logo.png",
 	"repository": {
-		"url": "https://gitlab.com/kallioli/docker-server-container",
+		"url": "https://github.com/PAPAMICA/docker-compose-collection",
 		"stackfile": "ouroboros.yml"
 	},
 	"env": [{

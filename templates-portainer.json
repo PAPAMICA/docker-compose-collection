@@ -355,7 +355,8 @@
 	"description": "Application de mise à jour automatique de conteneurs",
 	"note": "<p>Site de l'application : <a href=\"https:\/\/github.com/pyouroboros/ouroboros\/\" target=\"_blank\" rel=\"noopener\">https://github.com/pyouroboros/ouroboros<\/a>",
 	"categories": [
-		"Utilitaire"
+		"Utilitaire",
+		"PAPAMICA"
 	],
 	"platform": "linux",
 	"logo": "https://gitlab.com/kallioli/docker-server-container/-/raw/master/img/ouroboros_logo.png",

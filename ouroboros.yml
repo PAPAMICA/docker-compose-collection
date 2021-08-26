@@ -1,0 +1,47 @@
+# Docker-compose mis à disposition par Kevin Allioli
+# Date de mise à jour : 21/03/2021
+
+# Variables d'environnement à déclarer :
+#     - SERVICE : nom du service (exemple : pgadmin)
+#     - CLEANUP : Suppression des anciennes images après mise à jour (true, false)
+#     - INTERVAL : temps en seconde avant nouvelle vérification (exemple : 86400)
+#     - LOG_LVL: niveau de log (debug, info, warn, error, critical)
+#     - AUTO_UPDATE : mettre à jour ourobos lui-même (true , false)
+#     - IGNORE : nom des conteneurs à ignorer
+#     - TZ : Timezone du service (exemple : Europe/Paris)
+#     - URL_LOKI : url du serveur loki
+
+# Fonctionne avec Portainer
+
+version: '2'
+services:
+  ouroboros:
+    container_name: $SERVICE
+    hostname: ouroboros
+    image: pyouroboros/ouroboros
+    environment:
+      - CLEANUP=$CLEANUP
+      - INTERVAL=$INTERVAL
+      - LOG_LEVEL=$LOG_LVL
+      - SELF_UPDATE=$AUTO_UPDATE
+      - IGNORE=$IGNORE
+      - TZ=$TZ
+    healthcheck:
+      test: grep -q "ouroboros" /proc/1/status || exit 1
+      interval: 1m
+      timeout: 30s
+      retries: 3
+    logging:
+      driver: loki
+      options:
+        loki-url: "$URL_LOKI"
+        loki-external-labels: service={{.Name}}
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - proxy
+networks:
+  proxy:
+    external:
+      name: proxy

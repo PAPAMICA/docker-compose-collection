@@ -349,6 +349,53 @@
 		"description": "exemple : papamica.fr"
 	}]
 },
+{
+	"type": 3,
+	"title": "Ouroboros",
+	"description": "Application de mise à jour automatique de conteneurs",
+	"note": "<p>Site de l'application : <a href=\"https:\/\/github.com/pyouroboros/ouroboros\/\" target=\"_blank\" rel=\"noopener\">https://github.com/pyouroboros/ouroboros<\/a>",
+	"categories": [
+		"Utilitaire"
+	],
+	"platform": "linux",
+	"logo": "https://gitlab.com/kallioli/docker-server-container/-/raw/master/img/ouroboros_logo.png",
+	"repository": {
+		"url": "https://gitlab.com/kallioli/docker-server-container",
+		"stackfile": "ouroboros.yml"
+	},
+	"env": [{
+		"name": "SERVICE",
+		"label": "Nom du service"
+	},
+	{
+		"name": "CLEANUP",
+		"label": "Supprimer les anciennes images"
+	},
+	{
+		"name": "INTERVAL",
+		"label": "Interval en seconde entre chaque mise à jour"
+	},
+	{
+		"name": "LOG_LEVEL",
+		"label": "Niveau de log"
+	},
+	{
+		"name": "SELF_UPDATE",
+		"label": "Mettre à jour ouroboros lui-même"
+	},
+	{
+		"name": "IGNORE",
+		"label": "Nom des conteneurs à ignorer"
+	},
+	{
+		"name": "TZ",
+		"label": "Timezone du service"
+	},
+	{
+		"name": "URL_LOKI",
+		"label": "Url du service loki"
+	}]
+},
 
 {
 	"type": 3,

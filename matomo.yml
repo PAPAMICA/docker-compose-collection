@@ -12,7 +12,7 @@ version: "2"
 services:
   # Matomo : https://fr.matomo.org
   matomo:
-    image: matomo
+    image: matomo:latest
     container_name: $SERVICE
     restart: unless-stopped
     environment:

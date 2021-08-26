@@ -15,7 +15,7 @@
 version: "2"
 services:
   projectsend:
-    image: ghcr.io/linuxserver/projectsend
+    image: ghcr.io/linuxserver/projectsend:latest
     container_name: $SERVICE
     restart: unless-stopped
     environment:

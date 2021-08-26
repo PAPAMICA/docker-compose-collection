@@ -36,7 +36,7 @@ services:
         loki-external-labels: service={{.Name}}
 
   zabbix-server:     # The main Zabbix Server Software Service
-    image: zabbix/zabbix-server-pgsql:ubuntu-5.0.2
+    image: zabbix/zabbix-server-pgsql:latest
     restart: always
     container_name: $SERVICE-server
     environment:   # The Postgres database value variable
@@ -69,7 +69,7 @@ services:
         loki-external-labels: service={{.Name}}
 
   zabbix-web:    # The main Zabbix web UI or interface
-    image: zabbix/zabbix-web-nginx-pgsql:ubuntu-5.0.2
+    image: zabbix/zabbix-web-nginx-pgsql:latest
     restart: always
     container_name: $SERVICE-web
     environment:  # Postgre database variables

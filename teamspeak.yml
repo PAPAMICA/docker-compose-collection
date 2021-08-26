@@ -12,7 +12,7 @@
 version: "2"
 services:
   teamspeak:
-    image: mbentley/teamspeak
+    image: mbentley/teamspeak:latest
     restart: always
     container_name: $SERVICE
     volumes:

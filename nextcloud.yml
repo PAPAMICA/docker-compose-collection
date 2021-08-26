@@ -16,7 +16,7 @@ version: "2"
 services:
   # Nextcloud : https://nextcloud.com/
   nextcloud:
-    image: wonderfall/nextcloud
+    image: wonderfall/nextcloud:latest
     container_name: $SERVICE
     restart: always
     depends_on:

@@ -31,7 +31,7 @@ services:
         loki-external-labels: service={{.Name}}
         
   logchimp:
-    image: tiredofit/logchimp
+    image: tiredofit/logchimp:latest
     container_name: $SERVICE
     environment:
       - DB_HOST=$SERVICE-db

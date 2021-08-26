@@ -36,7 +36,7 @@ services:
 
   # CachetHQ : https://github.com/CachetHQ/Cachet
   cachet:
-    image: cachethq/docker
+    image: cachethq/docker:latest
     container_name: $SERVICE
     restart: always
 #    volumes:

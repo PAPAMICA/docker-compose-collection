@@ -18,7 +18,7 @@ services:
   ouroboros:
     container_name: $SERVICE
     hostname: ouroboros
-    image: pyouroboros/ouroboros
+    image: pyouroboros/ouroboros:latest
     environment:
       - CLEANUP=$CLEANUP
       - INTERVAL=$INTERVAL

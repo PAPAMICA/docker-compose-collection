@@ -14,7 +14,7 @@ version: "2"
 services:
   postgres:
     container_name: $SERVICE
-    image: codercom/code-server
+    image: codercom/code-server:latest
     volumes:
       - $DATA_LOCATION/project:/home/coder/project
     restart: always

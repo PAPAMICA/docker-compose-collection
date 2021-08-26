@@ -11,7 +11,7 @@
 version: "2"
 services:
   sinusbot:
-    image: sinusbot/docker
+    image: sinusbot/docker:latest
     container_name: $SERVICE
     restart: always
     volumes:

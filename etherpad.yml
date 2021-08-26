@@ -31,7 +31,7 @@ services:
 
   # Etherpad : https://etherpad.org     
   etherpad:
-    image: etherpad/etherpad
+    image: etherpad/etherpad:latest
     container_name: $SERVICE
     environment:
       - DB_HOST=$SERVICE-db

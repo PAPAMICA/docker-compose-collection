@@ -19,7 +19,7 @@ version: "2"
 services:
   #POLR : https://polrproject.org/
   polr:
-    image: ajanvier/polr
+    image: ajanvier/polr:latest
     container_name: $SERVICE
     environment:
       - DB_HOST=polr-db

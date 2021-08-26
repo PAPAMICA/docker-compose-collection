@@ -14,7 +14,7 @@ version: "2"
 services:
   # FileBrowser : https://github.com/filebrowser/filebrowser
   filebrowser:
-    image: filebrowser/filebrowser
+    image: filebrowser/filebrowser:latest
     container_name: $SERVICE
     restart: always
     volumes:

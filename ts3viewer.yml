@@ -16,7 +16,7 @@ version: "2"
 
 services:
   tsweb:
-    image: yeahnice1/ts-website
+    image: yeahnice1/ts-website:latest
     container_name: $SERVICE
     volumes:
       - $DATA_LOCATION/config:/var/www/html

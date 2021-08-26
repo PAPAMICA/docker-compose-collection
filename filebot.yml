@@ -14,7 +14,7 @@ version: "2"
 services:
   # Filebot : https://www.filebot.net/
   filebot:
-    image: jlesage/filebot
+    image: jlesage/filebot:latest
     container_name: $SERVICE
     volumes:
       - $DATA_LOCATION/config:/config:rw

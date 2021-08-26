@@ -12,7 +12,7 @@ version: "2"
 services:
   # Bitwarden : https://bitwarden.com/
   bitwarden:
-    image: bitwardenrs/server
+    image: bitwardenrs/server:latest
     container_name: $SERVICE
     restart: always
     volumes:

@@ -14,7 +14,7 @@ version: "2"
 services:
   # Script zabbix-cachet : https://github.com/qk4l/zabbix-cachet
   zabbix-cachet:
-    image: qk4l/zabbix-cachet
+    image: qk4l/zabbix-cachet:latest
     container_name: $SERVICE
     volumes:
       - $DATA_LOCATION/config.yml:/config.yml

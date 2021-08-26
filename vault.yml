@@ -11,7 +11,7 @@
 version: '2'
 services:
   vault:
-    image: vault
+    image: vault:latest
     container_name: $SERVICE
     restart: always
     volumes:

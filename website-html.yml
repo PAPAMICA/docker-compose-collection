@@ -12,7 +12,7 @@ version: "2"
 
 services:
   web:
-    image: lavoweb/php-7.3
+    image: lavoweb/php-7.3:latest
     container_name: $SERVICE
     volumes:
       - $DATA_LOCATION/html:/var/www/html

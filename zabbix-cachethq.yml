@@ -19,6 +19,12 @@ services:
     volumes:
       - $DATA_LOCATION/config.yml:/config.yml
     restart: always
+    healthcheck:
+      test: grep -qr "python" /proc/*/status || exit 1
+      interval: 1m
+      timeout: 30s
+      retries: 3
+
 
     # Facultatif
     networks:

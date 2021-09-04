@@ -1,0 +1,56 @@
+# Docker-compose mis à disposition par Mickael "PAPAMICA" Asseline
+# Date de mise à jour : 04/09/2021
+
+# Variables d'environnement à déclarer :
+#     - SERVICE : nom du service (exemple : mariadb)
+#     - KC_USER : utilisteur admin 
+#     - KC_PASSWORD : mot de passe de l'utilisateur admin
+#     - KC_DB_HOST : nom du conteneur du SGBD
+#     - KC_DATABASE : nom de la BDD
+#     - KC_DB_USER : nom utilisateur BDD
+#     - KC_DB_PASSWORD : mot de passe de la BDD
+#     - NDD : Nom de domaine de l'application (ex : auth.papamica.com)
+
+# Fonctionne avec Portainer
+
+version: "2"
+services:
+  keycloak:
+    image: jboss/keycloak:latest
+    container_name: $SERVICE
+    restart: unless-stopped
+    environment:
+      KEYCLOAK_USER: $KC_USER
+      KEYCLOAK_PASSWORD: $KC_PASSWORD
+      PROXY_ADDRESS_FORWARDING: 'true'
+      DB_ADDR: $KC_DB_HOST
+      DB_DATABASE: $KC_DATABASE
+      DB_USER: $KC_DB_USER
+      DB_PASSWORD: $KC_DB_PASSWORD
+    healthcheck:
+      test: curl --fail http://localhost:8080/auth/realms/master
+      interval: 1m
+      timeout: 30s
+      retries: 3
+    logging:
+      driver: loki
+      options:
+        loki-url: "$URL_LOKI"
+        loki-external-labels: service={{.Name}}
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.$SERVICE.entrypoints=http"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$NDD`)"
+      - "traefik.http.middlewares.$SERVICE-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.$SERVICE.middlewares=$SERVICE-https-redirect"
+      - "traefik.http.routers.$SERVICE-secure.entrypoints=https"
+      - "traefik.http.routers.$SERVICE-secure.rule=Host(`$NDD`)"
+      - "traefik.http.routers.$SERVICE-secure.tls=true"
+      - "traefik.http.routers.$SERVICE-secure.tls.certresolver=http"
+      - "traefik.docker.network=proxy"
+    networks:
+      - proxy
+networks:
+  proxy:
+    external:
+      name: proxy

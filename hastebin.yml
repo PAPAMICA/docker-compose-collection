@@ -22,6 +22,13 @@ services:
 #    ports:
 #      - 8080:80
 
+    healthcheck:
+      test: wget -s 'http://localhost:7777'
+      interval: 1m
+      timeout: 30s
+      retries: 3
+
+
     # Facultatif  
     networks:
       - proxy

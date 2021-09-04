@@ -58,6 +58,12 @@ services:
       - 10051:10051
     volumes:  # Volumes for scripts and related files you can add
       - $DATA_LOCATION/alertscripts:/usr/lib/zabbix/alertscripts
+    healthcheck:
+      test: grep -qr "zabbix_server" /proc/*/status || exit 1
+      interval: 1m
+      timeout: 30s
+      retries: 3
+
 
     # Facultatif  
     networks:
@@ -85,6 +91,12 @@ services:
       - zabbix-server
 #    ports:    # Port where Zabbix UI is available
 #      - 8090:8080
+    healthcheck:
+      test: curl --fail http://localhost:8080 || exit 1
+      interval: 1m
+      timeout: 30s
+      retries: 3
+
 
     # Facultatif
     networks:

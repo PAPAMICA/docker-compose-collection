@@ -25,6 +25,14 @@ services:
       - POSTGRES_PASSWORD=$DB_PASSWORD
     restart: always
     
+    #HealthCheck
+    healthcheck:
+      test: curl --fail http://localhost:8000 || exit 1
+      interval: 1m
+      timeout: 30s
+      retries: 3
+
+
     # Facultatif
     networks:
       - proxy

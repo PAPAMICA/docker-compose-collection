@@ -45,6 +45,13 @@ services:
       DB_PASS: $DB_PASSWORD
       DB_NAME: wiki
     restart: unless-stopped
+
+    healthcheck:
+      test: curl --fail http://localhost:3000 || exit 1
+      interval: 1m
+      timeout: 30s
+      retries: 3
+
 # Facultatif  
     networks:
       - proxy

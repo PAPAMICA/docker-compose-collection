@@ -19,6 +19,12 @@ services:
       - $DATA_LOCATION/cfg:/cfg
       - $DATA_LOCATION/data:/data
       - $DATA_LOCATION/media:/jirafeau/media
+    healthcheck:
+      test: wget -nv -t1 --spider 'http://localhost:80'
+      interval: 1m
+      timeout: 30s
+      retries: 3
+
     networks:
       - proxy
     logging:

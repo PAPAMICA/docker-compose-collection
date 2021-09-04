@@ -397,6 +397,107 @@
 		"label": "Url du service loki"
 	}]
 },
+{
+	"type": 3,
+	"title": "OpenVPN AS",
+	"description": "Serveur VPN",
+	"note": "<p>Site de l'application : <a href=\"https:\/\/openvpn.net\/\" target=\"_blank\" rel=\"noopener\">openvpn.net<\/a>",
+	"categories": [
+		"Sécurité",
+		"PAPAMICA"
+	],
+	"platform": "linux",
+	"logo": "https://gitlab.com/kallioli/docker-server-container/-/raw/master/img/openvpn_logo.png",
+	"repository": {
+		"url": "https://github.com/PAPAMICA/docker-compose-collection",
+		"stackfile": "openvpn.yml"
+	},
+	"env": [{
+		"name": "SERVICE",
+		"label": "Nom du service"
+	},
+	{
+		"name": "PUID",
+		"label": "Identifiant utilisateur openvpn"
+	},
+	{
+		"name": "PGID",
+		"label": "Identifiant du groupe openvpn"
+	},
+	{
+		"name": "TZ",
+		"label": "Timezone du service"
+	},
+	{
+		"name": "INTERFACE",
+		"label": "Nom de l'interface réseau"
+	},
+	{
+		"name": "DATA_LOCATION",
+		"label": "Localisation des données du service"
+	},
+	{
+		"name": "URL_LOKI",
+		"label": "Url du service loki"
+	},
+	{
+		"name": "NDD",
+		"label": "Nom de domaine"
+	}]
+},
+{
+	"type": 3,
+	"title": "Keycloak",
+	"description": "Serveur d'authentification SSO",
+	"note": "<p>Site de l'application : <a href=\"https:\/\/keycloak.org\/\" target=\"_blank\" rel=\"noopener\">keycloak.org<\/a>",
+	"categories": [
+		"Sécurité",
+		"PAPAMICA"
+	],
+	"platform": "linux",
+	"logo": "https://gitlab.com/kallioli/docker-server-container/-/raw/master/img/keycloak_logo.png",
+	"repository": {
+		"url": "https://github.com/PAPAMICA/docker-compose-collection",
+		"stackfile": "keycloak.yml"
+	},
+	"env": [{
+		"name": "SERVICE",
+		"label": "Nom du service"
+	},
+	{
+		"name": "KC_USER",
+		"label": "Nom de l'utilisateur administrateur"
+	},
+	{
+		"name": "KC_PASSWORD",
+		"label": "Mot de passe administrateur"
+	},
+	{
+		"name": "KC_DB_HOST",
+		"label": "Serveur SGBD"
+	},
+	{
+		"name": "KC_DATABASE",
+		"label": "Nom de la BDD"
+	},
+	{
+		"name": "KC_DB_USER",
+		"label": "Utilisateur de la BDD"
+	},
+	{
+		"name": "KC_DB_PASSWORD",
+		"label": "Mot de passe de la BDD"
+	},
+	{
+		"name": "URL_LOKI",
+		"label": "Url du service loki"
+	},
+	{
+		"name": "NDD",
+		"label": "Nom de domaine"
+	}]
+},
+
 
 {
 	"type": 3,

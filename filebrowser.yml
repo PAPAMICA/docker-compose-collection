@@ -23,6 +23,11 @@ services:
       - $DATA_LOCATION/database.db:/database.db
 #    ports:
 #      - 8080:80
+    healthcheck:
+      test: wget -nv -t1 --spider 'http://localhost:80'
+      interval: 1m
+      timeout: 30s
+      retries: 3
 
 
     networks:

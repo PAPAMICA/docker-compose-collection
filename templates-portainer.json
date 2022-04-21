@@ -21,7 +21,7 @@
 		  "type": 3,
 		  "title": "Traefik",
 		  "description": "Reverse proxy",
-		  "note": "<p>Site de l'application : <a href=\"https:\/\/traefik.io\/\" target=\"_blank\" rel=\"noopener\">traefik.io<\/a>",
+		  "note": "<p>Site de l'application : <a href=\"https:\/\/traefik.io\/\" target=\"_blank\" rel=\"noopener\">traefik.io<\/a> <p><strong>ATTENTION :&nbsp;<\/strong>Il faut cr\u00E9er et modifier les fichiers de configuration (voir documentation)<\/p>",
 		  "categories": [
 			  "SelfHosting",
 			  "PAPAMICA"

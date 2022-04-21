@@ -1,0 +1,44 @@
+# Docker-compose mis à disposition par Mickael "PAPAMICA" Asseline
+# Date de mise à jour : 21/05/2022
+
+# Variables d'environnement à déclarer :
+#     - SERVICE : nom du service (exemple : plex)
+#     - DATA_LOCATION : localisation des données (exemple /apps/"service")
+#     - URL : Site web du service (exemple : url.papamica.fr)
+#     - ADMIN : ADMIN_USER:ADMIN_PASSWORD
+
+# Fonctionne avec Portainer
+version: "3.3"
+services:
+    traefik:
+        image: traefik:latest
+        container_name: $SERVICE
+        restart: always
+        healthcheck:
+          test: grep -qr "traefik" /proc/*/status || exit 1
+          interval: 1m
+          timeout: 30s
+          retries: 3
+        ports:
+            - 80:80
+            - 443:443
+        volumes:
+            - /etc/localtime:/etc/localtime:ro
+            - /var/run/docker.sock:/var/run/docker.sock:ro
+            - $DATA_LOCATION/traefik/config/traefik.yml:/traefik.yml:ro
+            - $DATA_LOCATION/traefik/config/config.yml:/config.yml:ro  
+            - $DATA_LOCATION/traefik/config/acme.json:/acme.json
+        labels:
+          traefik.enable: true
+          traefik.http.routers.api.entrypoints: https
+          traefik.http.routers.api.rule: Host(`$URL`)
+          traefik.http.routers.api.service: api@internal
+          traefik.http.routers.api.middlewares: auth
+          traefik.http.middlewares.auth.basicauth.users: $ADMIN
+        networks:
+            - proxy
+
+networks:
+    proxy:
+        external:
+            name: proxy

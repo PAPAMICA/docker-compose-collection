@@ -17,6 +17,41 @@
 				"container": "/var/lib/registry"
 			}]
 		},
+		{
+		  "type": 3,
+		  "title": "Traefik",
+		  "description": "Reverse proxy",
+		  "note": "<p>Site de l'application : <a href=\"https:\/\/traefik.io\/\" target=\"_blank\" rel=\"noopener\">traefik.io<\/a>",
+		  "categories": [
+			  "SelfHosting",
+			  "PAPAMICA"
+		  ],
+		  "platform": "linux",
+		  "logo": "https://styles.redditmedia.com/t5_fucxb/styles/communityIcon_dr8ojdk0l2d51.png",
+		  "repository": {
+			  "url": "https://github.com/PAPAMICA/docker-compose-collection",
+			  "stackfile": "traefik.yml"
+		  },
+		  "env": [{
+			  "name": "SERVICE",
+			  "label": "Nom du service"
+			  },
+			  {
+			  "name": "DATA_LOCATION",
+			  "label": "Localisation des données",
+			  "description": "exemple /_data/apps"
+			  },
+			  {
+			  "name": "ADMIN",
+			  "label": "Utilisateur et mot de passe admin (voir documentation)",
+			  "description": "exemple PAPAMICA:{SHA}XXXXXxxxxxXXXXxxX="
+			  },
+			  {
+			  "name": "URL",
+			  "label": "Lien du dashboard complet",
+			  "description": "exemple : traefik.papamica.com"
+		  }]
+	  },
 		
       {
         "type": 3,

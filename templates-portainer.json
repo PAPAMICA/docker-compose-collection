@@ -53,6 +53,34 @@
 		  }]
 	  },
 		
+	  {
+		"type": 3,
+		"title": "PhpMyAdmin",
+		"description": "Web panel for manage databases",
+		"categories": [
+			"SelfHosting",
+			"PAPAMICA"
+		],
+		"platform": "linux",
+		"logo": "https://pic.clubic.com/v1/images/1501275/raw",
+		"repository": {
+			"url": "https://github.com/PAPAMICA/docker-compose-collection",
+			"stackfile": "phpmyadmin.yml"
+		},
+		"env": [{
+			"name": "SERVICE",
+			"label": "Nom du service"
+			},
+			{
+			"name": "ROOT_PASSWORD",
+			"label": "Mot de passe Root"
+			},
+			{
+			"name": "URL",
+			"label": "Lien de l'application",
+			"description": "exemple : phpmyadmin.papamica.com"
+		}]
+	},
       {
         "type": 3,
         "title": "Hastebin",

@@ -1,0 +1,31 @@
+# Docker-compose mis à disposition par Mickael "PAPAMICA" Asseline
+# Date de mise à jour : 28/04/2022
+
+# Variables d'environnement à déclarer :
+#     - SERVICE : nom du service (exemple : plex)
+#     - ROOT_PASSWORD : Mot de passe Root
+#     - URL : lien du nom de domaine (exemple : phpadmin.papamica.fr)
+
+# Fonctionne avec Portainer
+version: "2"
+services:
+  teamspeak:
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    container_name: $SERVICE
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: $ROOT_PASSWORD 
+    networks:
+      - proxy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
+      - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+      - "traefik.http.services.$SERVICE.loadbalancer.server.port=80"
+      - "traefik.docker.network=proxy"
+    
+networks:
+  proxy:
+    external:
+      name: proxy

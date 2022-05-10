@@ -499,10 +499,6 @@
                 {
                     "name": "DB_PASSWORD",
                     "label": "Database user password"
-                },
-                {
-                    "name": "SECRET_KEY",
-                    "label": "App password"
                 }
             ]
         },

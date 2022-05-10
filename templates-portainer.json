@@ -96,7 +96,7 @@
             "type": 3,
             "title": "CachetHQ",
             "description": "Uptime monitor alternative",
-            "note": "Website: <a href='https://cachethq.io/' target='_blank' rel='noopener'>CachetHQ.io</a></br>Warning: Check log at the first run!",
+            "note": "Website: <a href='https://cachethq.io/' target='_blank' rel='noopener'>CachetHQ.io</a></br></br>Warning: Check log at the first run!",
             "categories": [
                 "SelfHosted",
                 "Monitoring",

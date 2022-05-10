@@ -19,19 +19,23 @@
             "env": [
                 {
                     "name": "SERVICE",
-                    "label": "name of the service (no spaces or points)"
+                    "label": "name of the service",
+                    "description": "no spaces or points"
                 },
                 {
                     "name": "DATA_LOCATION",
-                    "label": "data localization (example: /apps/service)"
+                    "label": "data localization",
+                    "description": "example: /apps/service"
                 },
                 {
                     "name": "URL",
-                    "label": "service link (example: service.papamica.fr or service.com)"
+                    "label": "service link",
+                    "description": "example: service.papamica.fr or service.com"
                 },
                 {
                     "name": "NETWORK",
-                    "label": "your Traefik network (example: proxy)"
+                    "label": "your Traefik network",
+                    "description": "example: proxy"
                 }
             ]
         },
@@ -53,19 +57,23 @@
             "env": [
                 {
                     "name": "SERVICE",
-                    "label": "name of the service (no spaces or points)"
+                    "label": "name of the service",
+                    "description": "no spaces or points"
                 },
                 {
                     "name": "DATA_LOCATION",
-                    "label": "data localization (example: /apps/service)"
+                    "label": "data localization",
+                    "description": "example: /apps/service"
                 },
                 {
                     "name": "URL",
-                    "label": "service link (example: service.papamica.fr or service.com)"
+                    "label": "service link",
+                    "description": "example: service.papamica.fr or service.com"
                 },
                 {
                     "name": "NETWORK",
-                    "label": "your Traefik network (example: proxy)"
+                    "label": "your Traefik network",
+                    "description": "example: proxy"
                 }
             ]
         },
@@ -87,19 +95,23 @@
             "env": [
                 {
                     "name": "SERVICE",
-                    "label": "name of the service (no spaces or points)"
+                    "label": "name of the service",
+                    "description": "no spaces or points"
                 },
                 {
                     "name": "DATA_LOCATION",
-                    "label": "data localization (example: /apps/service)"
+                    "label": "data localization",
+                    "description": "example: /apps/service"
                 },
                 {
                     "name": "URL",
-                    "label": "service link (example: service.papamica.fr or service.com)"
+                    "label": "service link",
+                    "description": "example: service.papamica.fr or service.com"
                 },
                 {
                     "name": "NETWORK",
-                    "label": "your Traefik network (example: proxy)"
+                    "label": "your Traefik network",
+                    "description": "example: proxy"
                 }
             ]
         },
@@ -121,19 +133,23 @@
             "env": [
                 {
                     "name": "SERVICE",
-                    "label": "name of the service (no spaces or points)"
+                    "label": "name of the service",
+                    "description": "no spaces or points"
                 },
                 {
                     "name": "DATA_LOCATION",
-                    "label": "data localization (example: /apps/service)"
+                    "label": "data localization",
+                    "description": "example: /apps/service"
                 },
                 {
                     "name": "URL",
-                    "label": "service link (example: service.papamica.fr or service.com)"
+                    "label": "service link",
+                    "description": "example: service.papamica.fr or service.com"
                 },
                 {
                     "name": "NETWORK",
-                    "label": "your Traefik network (example: proxy)"
+                    "label": "your Traefik network",
+                    "description": "example: proxy"
                 }
             ]
         }

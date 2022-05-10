@@ -400,16 +400,15 @@
         },
         {
             "type": 3,
-            "title": "Grafana",
-            "description": "From heatmaps to histograms, graphs to geomaps: fast and furious visualizations any way you want.",
-            "note": "Website: <a href='https://grafana.com/grafana/dashboards/' target='_blank' rel='noopener'>Grafana.com</a>",
+            "title": "Keycloak",
+            "description": " Add authentication to applications and secure services with minimum effort.",
+            "note": "Website: <a href='https://www.keycloak.org/' target='_blank' rel='noopener'>Keycloak.org</a>",
             "categories": [
                 "SelfHosted",
-                "Monitoring",
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://seeklogo.com/images/G/grafana-logo-15BA0AFA8A-seeklogo.com.png",
+            "logo": "https://dyltqmyl993wv.cloudfront.net/assets/stacks/keycloak/img/keycloak-stack-220x234.png",
             "repository": {
                 "url": "https://github.com/PAPAMICA/docker-compose-collection",
                 "stackfile": "keycloak.yml"

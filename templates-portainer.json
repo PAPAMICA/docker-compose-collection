@@ -2,7 +2,7 @@
     "version": "2",
     "templates": [
         {
-            "type": "3",
+            "type": 3,
             "title": "Website HTML PHP",
             "description": "Simple HTML website under PHP 7.4",
             "note": "\"<p>Website: <a href=\"https://github.com/LavoWeb/Docker\" target=\"_blank\" rel=\"noopener\">Github.com</a>\"",
@@ -36,7 +36,7 @@
             ]
         },
         {
-            "type": "3",
+            "type": 3,
             "title": "Website HTML PHP 2",
             "description": "Simple HTML website under PHP 7.4",
             "note": "\"<p>Website: <a href=\"https://github.com/LavoWeb/Docker\" target=\"_blank\" rel=\"noopener\">Github.com</a>\"",

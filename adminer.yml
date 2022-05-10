@@ -10,12 +10,11 @@
 version: "2"
 services:
   teamspeak:
-    image: phpmyadmin/phpmyadmin
+    image: adminer
     restart: always
     container_name: $SERVICE
     environment:
-      PMA_HOST: db
-      MYSQL_ROOT_PASSWORD: $ROOT_PASSWORD 
+      - ADMINER_DESIGN='hydra'
     networks:
       - proxy
     labels:

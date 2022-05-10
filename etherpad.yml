@@ -1,33 +1,43 @@
-# Docker-compose mis à disposition par Mickael "PAPAMICA" Asseline
-# Date de mise à jour : 21/04/2021
+# Docker-compose provided by Mickael "PAPAMICA" Asseline
+# Update : 10/05/2022
 
-# Variables d'environnement à déclarer :
-#     - SERVICE : nom du service (exemple : plex)
-#     - DATA_LOCATION : localisation des données (exemple /apps/"service")
-#     - URL_LOKI : lien du serveur loki (exemple : ndd/loki/api/v1/push)
-#     - NDD : lien du nom de domaine (exemple : papamica.fr)
-#     - DB_PASSWORD : mot de passe pour la base de données
-#     - SECRET_KEY : mot de passe d'accès administrateur à l'application
+#& type: 3
+#& title: Etherpad
+#& description: Online editor providing collaborative editing in really real-time
+#& note: Website: <a href='https://etherpad.org/' target='_blank' rel='noopener'>etherpad.org</a>
+#& categories: SelfHosted, PAPAMICA
+#& platform: linux
+#& logo: https://n30.tech/images/etherpad.png
 
-# Fonctionne avec Portainer
+#% SERVICE: Name of the service (No spaces or points)
+#% DATA_LOCATION: data localization (Example: /apps/service)
+#% URL: Service link (Example: service.papamica.fr or service.com)
+#% NETWORK: Your Traefik network (Example: proxy)
+#% DB_USER: Database user
+#% DB_PASSWORD: Database user password
+#% ADMIN_PASSWORD: Administration password
+
+# Work with Portainer
 version: '2'
 services:
   etherpad-db:
-    image: postgres:12.4
+    image: postgres:14.2
     container_name: $SERVICE-db
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $DB_USER"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
     environment:
       - POSTGRES_DB=etherpad
-      - POSTGRES_USER=etherpad
+      - POSTGRES_USER=$DB_USER
       - POSTGRES_PASSWORD=$DB_PASSWORD
     volumes:
       - $DATA_LOCATION/db:/var/lib/postgresql/data
     networks:
-      - proxy
-    logging:
-      driver: loki
-      options:
-        loki-url: "$URL_LOKI"
-        loki-external-labels: service={{.Name}}
+      - default
 
   # Etherpad : https://etherpad.org     
   etherpad:
@@ -36,33 +46,29 @@ services:
     environment:
       - DB_HOST=$SERVICE-db
       - DB_NAME=etherpad
-      - DB_USER=etherpad
+      - DB_USER=$DB_USER
       - DB_PASS=$DB_PASSWORD
-      - ADMIN_PASSWORD=$SECRET_KEY
+      - ADMIN_PASSWORD=$ADMIN_PASSWORD
     depends_on:
       - etherpad-db
+    healthcheck:
+      test: curl --fail http://localhost:9001 || exit 1
+      interval: 1m
+      timeout: 30s
+      retries: 3
     networks:
-      - proxy
-    logging:
-      driver: loki
-      options:
-        loki-url: "$URL_LOKI"
-        loki-external-labels: service={{.Name}}
+      - default
     labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
       - "traefik.enable=true"
-      - "traefik.http.routers.$SERVICE.entrypoints=http"
-      - "traefik.http.routers.$SERVICE.rule=Host(`$SERVICE.$NDD`)"
-      - "traefik.http.middlewares.$SERVICE-https-redirect.redirectscheme.scheme=https"
-      - "traefik.http.routers.$SERVICE.middlewares=$SERVICE-https-redirect"
-      - "traefik.http.routers.$SERVICE-secure.entrypoints=https"
-      - "traefik.http.routers.$SERVICE-secure.rule=Host(`$SERVICE.$NDD`)"
-      - "traefik.http.routers.$SERVICE-secure.tls=true"
-      - "traefik.http.routers.$SERVICE-secure.tls.certresolver=http"
-      - "traefik.http.services.$SERVICE-secure.loadbalancer.server.port=9001"
+      - "traefik.http.routers.$SERVICE.entrypoints=https"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
+      - "traefik.http.routers.$SERVICE.tls=true"
+      - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+      - "traefik.http.services.$SERVICE.loadbalancer.server.port=9001"
       - "traefik.docker.network=proxy"
 
-
 networks:
-  proxy:
+  default:
     external:
-      name: proxy
+      name: $NETWORK

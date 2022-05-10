@@ -1,0 +1,74 @@
+# Docker-compose provided by Mickael "PAPAMICA" Asseline
+# Update : 10/05/2022
+
+#& type: 3
+#& title: Plausible
+#& description: Light alternative to Google Analitycs
+#& note: Website: <a href='https://plausible.io/' target='_blank' rel='noopener'>Plausible.io</a>
+#& categories: SelfHosted, PAPAMICA
+#& platform: linux
+#& logo: https://avatars.githubusercontent.com/u/54802774?s=200&v=4
+
+#% SERVICE: Name of the service (No spaces or points)
+#% DATA_LOCATION: Data localization (Example: /apps/service)
+#% URL: Service URL (Example: service.papamica.fr or service.com)
+#% NETWORK: Your Traefik network (Example: proxy)
+#% ADMIN_EMAIL: Admin mail
+#% ADMIN_NAME: Admin username
+#% ADMIN_PASSWORD: Admin password
+#% SECRET: Generate encryption
+
+# Work with Portainer
+version: "3.3"
+services:
+  postgres:
+    container_name: $SERVICE-db
+    image: postgres:14
+    volumes:
+      - $DATA_LOCATION/db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=postgres
+    restart: always
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $DB_USER"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+    networks:
+      - default
+
+  plausible:
+    image: plausible/analytics:latest
+    restart: always
+    command: sh -c "sleep 10 && /entrypoint.sh db createdb && /entrypoint.sh db migrate && /entrypoint.sh db init-admin && /entrypoint.sh run"
+    depends_on:
+      - postgres
+    healthcheck:
+      test: curl --fail http://localhost:8000 || exit 1
+      interval: 1m
+      timeout: 30s
+      retries: 3
+    environment:
+      - ADMIN_USER_EMAIL=$ADMIN_EMAIL
+      - ADMIN_USER_NAME=$ADMIN_NAME
+      - ADMIN_USER_PWD=$ADMIN_PASSWORD
+      - BASE_URL=https://$URL
+      - SECRET_KEY_BASE=$SECRET
+    networks:
+      - default
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+      - "traefik.enable=true"
+      - "traefik.http.routers.$SERVICE.entrypoints=https"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
+      - "traefik.http.routers.$SERVICE.tls=true"
+      - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+      - "traefik.http.services.$SERVICE.loadbalancer.server.port=8000"
+      - "traefik.docker.network=$NETWORK"
+
+networks:
+  default:
+    external:
+      name: $NETWORK

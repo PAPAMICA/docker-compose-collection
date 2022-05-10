@@ -458,6 +458,52 @@
         },
         {
             "type": 3,
+            "title": "Matomo",
+            "description": "Google Analitycs alternative !",
+            "note": "Website: <a href='https://fr.matomo.org' target='_blank' rel='noopener'>Matomo.org</a>",
+            "categories": [
+                "SelfHosted",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://cdn1.oxatis.com/Files/112496/Img/16/matomo-new.png",
+            "repository": {
+                "url": "https://github.com/PAPAMICA/docker-compose-collection",
+                "stackfile": "matomo.yml"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service",
+                    "description": "No spaces or points"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "Data localization",
+                    "description": "Example: /apps/service"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service URL",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network",
+                    "description": "Example: proxy"
+                },
+                {
+                    "name": "DB_USER",
+                    "label": "Database user"
+                },
+                {
+                    "name": "DB_PASSWORD",
+                    "label": "Database user password"
+                }
+            ]
+        },
+        {
+            "type": 3,
             "title": "Vaultwarden",
             "description": "Password manager",
             "note": "Website: <a href='https://github.com/dani-garcia/vaultwarden' target='_blank' rel='noopener'>Github.com</a>",

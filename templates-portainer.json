@@ -5,7 +5,6 @@
             "type": "3",
             "title": "Website HTML PHP",
             "description": "Simple HTML website under PHP 7.4",
-            "note": "Website: <a href='https://github.com/LavoWeb/Docker' target='_blank' rel='noopener'>Github.com</a>",
             "categories": [
                 "SelfHosted",
                 "PAPAMICA"
@@ -39,7 +38,6 @@
             "type": "3",
             "title": "Website HTML PHP 3",
             "description": "Simple HTML website under PHP 7.4",
-            "note": "Website: <a href='https://github.com/LavoWeb/Docker' target='_blank' rel='noopener'>Github.com</a>",
             "categories": [
                 "SelfHosted",
                 "PAPAMICA"
@@ -73,7 +71,6 @@
             "type": "3",
             "title": "Website HTML PHP 2",
             "description": "Simple HTML website under PHP 7.4",
-            "note": "Website: <a href='https://github.com/LavoWeb/Docker' target='_blank' rel='noopener'>Github.com</a>",
             "categories": [
                 "SelfHosted",
                 "PAPAMICA"

@@ -3,10 +3,13 @@ import glob
 import os
 import re
 import json
+from textwrap import indent
 
 GITHUB_REPOSITORY_URL = 'https://github.com/PAPAMICA/docker-compose-collection'
-
-
+try:
+    os.remove("./templates-portainer.json") 
+except:
+    print ("file don't exist")
 result = {}
 result["version"] = "2"
 result["templates"] = []
@@ -46,5 +49,6 @@ for filename in glob.glob("*.y*ml"):
         #print (f"{filename} not updated !")
 
 result["templates"] = templates
-json_data = json.dumps(result)
-print (json_data)
+json_data = json.dumps(result, indent=4)
+with open('templates-portainer.json', 'w') as outfile:
+    outfile.write(json_data)

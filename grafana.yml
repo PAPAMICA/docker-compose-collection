@@ -1,63 +1,54 @@
-# Docker-compose mis à disposition par Mickael "PAPAMICA" Asseline
-# Date de mise à jour : 27/10/2020
+# Docker-compose provided by Mickael "PAPAMICA" Asseline
+# Update : 10/05/2022
 
-# Variables d'environnement à déclarer :
-#     - SERVICE : nom du service (exemple : plex)
-#     - DATA_LOCATION : localisation des données (exemple /apps/"service")
-#     - URL_LOKI : lien du serveur loki (exemple : ndd/loki/api/v1/push)
-#     - NDD : lien du nom de domaine (exemple : papamica.fr)
+#& type: 3
+#& title: Grafana
+#& description: From heatmaps to histograms, graphs to geomaps: fast and furious visualizations any way you want.
+#& note: Website: <a href='https://grafana.com/grafana/dashboards/' target='_blank' rel='noopener'>Grafana.com</a>
+#& categories: SelfHosted, Monitoring, PAPAMICA
+#& platform: linux
+#& logo: https://seeklogo.com/images/G/grafana-logo-15BA0AFA8A-seeklogo.com.png
 
-# Fonctionne avec Portainer
+#% SERVICE: Name of the service (No spaces or points)
+#% DATA_LOCATION: Data localization (Example: /apps/service)
+#% PLUGINS: Plugins to install (Example: alexanderzobnin-zabbix-app,grafana-singlestat-panel)
+#% URL: Service link (Example: service.papamica.fr or service.com)
+#% NETWORK: Your Traefik network (Example: proxy)
+
+# Work with Portainer
 version: "2"
 services:
-  grafana-xxl:  #optional more functional and creative UI
-    image: monitoringartist/grafana-xxl:7.1
+  grafana:
+    image: grafana/grafana:latest
     restart: always
     container_name: $SERVICE
     volumes: 
       - $DATA_LOCATION/config:/etc/grafana
       - $DATA_LOCATION/data:/var/lib/grafana
     environment:
-#      - GF_PATHS_DATA=/config/data
-#      - GF_PATHS_LOGS=/config/logs
-#      - GF_PATHS_PLUGINS=/config/plugins
-#      - UPGRADEALL=false
       - GF_PANELS_DISABLE_SANITIZE_HTML=true
-      - GF_INSTALL_PLUGINS=grafana-piechart-panel,grafana-worldmap-panel,alexanderzobnin-zabbix-app
-      - GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS=alexanderzobnin-zabbix-datasource
-#    ports:
-#      - 3001:3000
+      - GF_SERVER_DOMAIN=$URL
+      - GF_SERVER_ROOT_URL=https://$URL
+      - GF_INSTALL_PLUGINS=$PLUGINS
+      - GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS=$PLUGINS
     healthcheck:
       test: wget -nv -t1 --spider 'http://localhost:3000/'
       interval: 1m
       timeout: 30s
       retries: 3
-
-
-    # Facultatif  
     networks:
-      - proxy
-    networks:
-      - proxy
-    logging:
-      driver: loki
-      options:
-        loki-url: "$URL_LOKI"
-        loki-external-labels: service={{.Name}}
+      - default
     labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
       - "traefik.enable=true"
-      - "traefik.http.routers.$SERVICE.entrypoints=http"
-      - "traefik.http.routers.$SERVICE.rule=Host(`$SERVICE.$NDD`)"
-      - "traefik.http.middlewares.$SERVICE-https-redirect.redirectscheme.scheme=https"
-      - "traefik.http.routers.$SERVICE.middlewares=$SERVICE-https-redirect"
-      - "traefik.http.routers.$SERVICE-secure.entrypoints=https"
-      - "traefik.http.routers.$SERVICE-secure.rule=Host(`$SERVICE.$NDD`)"
-      - "traefik.http.routers.$SERVICE-secure.tls=true"
-      - "traefik.http.routers.$SERVICE-secure.tls.certresolver=http"
-      - "traefik.http.services.$SERVICE-secure.loadbalancer.server.port=3000"
-      - "traefik.docker.network=proxy"
+      - "traefik.http.routers.$SERVICE.entrypoints=https"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
+      - "traefik.http.routers.$SERVICE.tls=true"
+      - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+      - "traefik.http.services.$SERVICE.loadbalancer.server.port=3000"
+      - "traefik.docker.network=$NETWORK"
       
 networks:
-  proxy:
+  default:
     external:
-      name: proxy
+      name: $NETWORK

@@ -1,16 +1,3 @@
-# Docker-compose mis à disposition par Mickael "PAPAMICA" Asseline
-# Date de mise à jour : 04/09/2021
-
-# Variables d'environnement à déclarer :
-#     - SERVICE : nom du service (exemple : mariadb)
-#     - KC_USER : utilisteur admin 
-#     - KC_PASSWORD : mot de passe de l'utilisateur admin
-#     - KC_DB_HOST : nom du conteneur du SGBD
-#     - KC_DATABASE : nom de la BDD
-#     - KC_DB_USER : nom utilisateur BDD
-#     - KC_DB_PASSWORD : mot de passe de la BDD
-#     - NDD : Nom de domaine de l'application (ex : auth.papamica.com)
-
 # Docker-compose provided by Mickael "PAPAMICA" Asseline
 # Update : 10/05/2022
 
@@ -24,14 +11,39 @@
 
 #% SERVICE: Name of the service (No spaces or points)
 #% DATA_LOCATION: Data localization (Example: /apps/service)
-#% PLUGINS: Plugins to install (Example: alexanderzobnin-zabbix-app,grafana-singlestat-panel)
 #% URL: Service URL (Example: service.papamica.fr or service.com)
 #% NETWORK: Your Traefik network (Example: proxy)
+#% DB_USER: Database user
+#% DB_PASSWORD: Database user password
+#% DB_ROOT_PASSWORD: Database root password
+#% KC_USER: User for Keycloak
+#% KC_PASSWORD: Password for Keycloak user
+
 
 # Work with Portainer
 
 version: "2"
 services:
+  mariadb:
+    image: mariadb:10.4.12
+    container_name: $SERVICE-db
+    restart: always
+    healthcheck:
+        test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+        timeout: 20s
+        retries: 10
+    volumes:
+      - $DATA_LOCATION/db:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=$DB_ROOT_PASSWORD
+      - MYSQL_DATABASE=keycloak
+      - MYSQL_USER=$DB_USER
+      - MYSQL_PASSWORD=$DB_PASSWORD 
+    labels:
+      - "autoupdate=monitor"
+    networks:
+      - default
+
   keycloak:
     image: jboss/keycloak:latest
     container_name: $SERVICE
@@ -40,34 +52,28 @@ services:
       KEYCLOAK_USER: $KC_USER
       KEYCLOAK_PASSWORD: $KC_PASSWORD
       PROXY_ADDRESS_FORWARDING: 'true'
-      DB_ADDR: $KC_DB_HOST
-      DB_DATABASE: $KC_DATABASE
-      DB_USER: $KC_DB_USER
-      DB_PASSWORD: $KC_DB_PASSWORD
+      DB_ADDR: $SERVICE-db
+      DB_DATABASE: keycloak
+      DB_USER: $DB_USER
+      DB_PASSWORD: $DB_PASSWORD
+    volumes:
+      - /etc/localtime:/etc/localtime
     healthcheck:
       test: curl --fail http://localhost:8080/auth/realms/master
       interval: 1m
       timeout: 30s
       retries: 3
-    logging:
-      driver: loki
-      options:
-        loki-url: "$URL_LOKI"
-        loki-external-labels: service={{.Name}}
     labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
       - "traefik.enable=true"
-      - "traefik.http.routers.$SERVICE.entrypoints=http"
-      - "traefik.http.routers.$SERVICE.rule=Host(`$NDD`)"
-      - "traefik.http.middlewares.$SERVICE-https-redirect.redirectscheme.scheme=https"
-      - "traefik.http.routers.$SERVICE.middlewares=$SERVICE-https-redirect"
-      - "traefik.http.routers.$SERVICE-secure.entrypoints=https"
-      - "traefik.http.routers.$SERVICE-secure.rule=Host(`$NDD`)"
-      - "traefik.http.routers.$SERVICE-secure.tls=true"
-      - "traefik.http.routers.$SERVICE-secure.tls.certresolver=http"
-      - "traefik.docker.network=proxy"
+      - "traefik.http.routers.$SERVICE.entrypoints=https"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
+      - "traefik.http.routers.$SERVICE.tls=true"
+      - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+      - "traefik.docker.network=$NETWORK"
     networks:
-      - proxy
+      - default
 networks:
-  proxy:
+  default:
     external:
-      name: proxy
+      name: $NETWORK

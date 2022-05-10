@@ -15,7 +15,6 @@
 #% NETWORK: Your Traefik network (Example: proxy)
 #% DB_USER: Database user
 #% DB_PASSWORD: Database user password
-#% SECRET_KEY: App password
 
 # Work with Portainer
 version: '2'
@@ -29,24 +28,34 @@ services:
       - POSTGRES_PASSWORD=$DB_PASSWORD
     volumes:
       - $DATA_LOCATION/db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $DB_USER"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
     networks:
       - default
     labels:  
     - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
         
   logchimp:
-    image: philippetrounev/logchimp:latest
+    image: ghcr.io/logchimp/logchimp
     container_name: $SERVICE
     environment:
-      - DB_HOST=$SERVICE-db
-      - DB_NAME=logchimp
-      - APP_KEY=$SECRET_KEY
-      - DB_USER=logchimp
-      - DB_PASS=$DB_PASSWORD
+      - PG_HOST=$SERVICE-db
+      - PG_DATABASE=logchimp
+      - APP_KEY=5tknMGisZP4pCqcCkoU
+      - PG_USER=logchimp
+      - PG_PASSWORD=$DB_PASSWORD
 #    volumes:
 #      - $DATA_LOCATION/data:/astuto
     depends_on:
       - logchimp-db
+    healthcheck:
+      test: curl --fail http://localhost:8080 || exit 1
+      interval: 1m
+      timeout: 30s
+      retries: 3
     networks:
       - default
     labels:
@@ -56,6 +65,7 @@ services:
       - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
       - "traefik.http.routers.$SERVICE.tls=true"
       - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+      - "traefik.http.services.$SERVICE.loadbalancer.server.port=8080"
       - "traefik.docker.network=$NETWORK"
 
 

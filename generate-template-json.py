@@ -38,7 +38,10 @@ for filename in glob.glob("*.y*ml"):
                 envtemp = {}
                 dataenv=line[3:-1].split(': ', 1)
                 envtemp["name"] = dataenv[0]
-                envtemp["label"] = dataenv[1]
+                envdesctotal = dataenv[1].split(' (')
+                envdesc = envdesctotal[1]
+                envtemp["label"] = envdesctotal[0]
+                envtemp["description"] = envdesc[:-1]
                 env.append(envtemp)
         if data:
             repository = {

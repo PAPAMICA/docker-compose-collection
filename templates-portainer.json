@@ -2,7 +2,7 @@
     "version": "2",
     "templates": [
         {
-            "type": 3,
+            "type": "3",
             "title": "Website HTML PHP",
             "description": "Simple HTML website under PHP 7.4",
             "categories": [
@@ -35,7 +35,7 @@
             ]
         },
         {
-            "type": 3,
+            "type": "3",
             "title": "Website HTML PHP 3",
             "description": "Simple HTML website under PHP 7.4",
             "categories": [
@@ -68,7 +68,7 @@
             ]
         },
         {
-            "type": 3,
+            "type": "3",
             "title": "Website HTML PHP 2",
             "description": "Simple HTML website under PHP 7.4",
             "categories": [

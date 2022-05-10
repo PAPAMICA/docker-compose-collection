@@ -4,7 +4,7 @@
 #& type: 3
 #& title: CachetHQ
 #& description: Uptime monitor alternative
-#& note: Website: <a href='https://cachethq.io/' target='_blank' rel='noopener'>CachetHQ.io</a>
+#& note: Website: <a href='https://cachethq.io/' target='_blank' rel='noopener'>CachetHQ.io</a></br>Warning: Check log at the first run!
 #& categories: SelfHosted, Monitoring, PAPAMICA
 #& platform: linux
 #& logo: http://cachethq.io/img/social/CachetFB-V.png
@@ -31,10 +31,10 @@ services:
       - POSTGRES_PASSWORD=$DB_PASSWORD
     restart: always
     healthcheck:
-      test: curl --fail http://localhost:8000 || exit 1
-      interval: 1m
-      timeout: 30s
-      retries: 3
+      test: ["CMD-SHELL", "pg_isready"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
     labels:
       - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
     networks:
@@ -47,6 +47,11 @@ services:
     restart: always
     links:
       - postgres:postgres
+    healthcheck:
+      test: curl --fail http://localhost:8000 || exit 1
+      interval: 1m
+      timeout: 30s
+      retries: 3
     environment:
       - TZ=$TIME_ZONE
 #      - MAIL_DRIVER=smtp
@@ -75,6 +80,7 @@ services:
       - default
     labels:
       - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+      - "traefik.enable=true"
       - "traefik.http.routers.$SERVICE.entrypoints=https"
       - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
       - "traefik.http.routers.$SERVICE.tls=true"

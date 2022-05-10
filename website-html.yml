@@ -9,10 +9,10 @@
 #& platform: linux
 #& logo: http://assets.stickpng.com/thumbs/5847f5bdcef1014c0b5e489c.png
 
-#% SERVICE: name of the service (no spaces or points)
-#% DATA_LOCATION: data localization (example: /apps/service)
-#% URL: service link (example: service.papamica.fr or service.com)
-#% NETWORK: your Traefik network (example: proxy)
+#% SERVICE: name of the service (No spaces or points)
+#% DATA_LOCATION: data localization (Example: /apps/service)
+#% URL: service link (Example: service.papamica.fr or service.com)
+#% NETWORK: your Traefik network (Example: proxy)
 
 # Work with Portainer
 version: "2"

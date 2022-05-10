@@ -125,6 +125,61 @@
                     "description": "Example: proxy"
                 }
             ]
+        },
+        {
+            "type": 3,
+            "title": "Bookstack",
+            "description": "Wiki selfhosted",
+            "note": "Website: <a href='https://www.bookstackapp.com/' target='_blank' rel='noopener'>Bookstackapp.com</a>",
+            "categories": [
+                "SelfHosted",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/BookStack_logo.svg/1075px-BookStack_logo.svg.png",
+            "repository": {
+                "url": "https://github.com/PAPAMICA/docker-compose-collection",
+                "stackfile": "bookstack.yml"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service",
+                    "description": "No spaces or points"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "data localization",
+                    "description": "Example: /apps/service"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service link",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network",
+                    "description": "Example: proxy"
+                },
+                {
+                    "name": "DB_USER",
+                    "label": "Database user"
+                },
+                {
+                    "name": "DB_PASSWORD",
+                    "label": "Database user password"
+                },
+                {
+                    "name": "DB_ROOT",
+                    "label": "Database root password"
+                },
+                {
+                    "name": "TIME_ZONE",
+                    "label": "Time zone",
+                    "description": "Example : Europe/Paris"
+                }
+            ]
         }
     ]
 }

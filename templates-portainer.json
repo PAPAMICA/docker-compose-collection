@@ -539,19 +539,7 @@
                     "description": "Example: proxy"
                 },
                 {
-                    "name": "ADMIN_EMAIL",
-                    "label": "Admin mail"
-                },
-                {
-                    "name": "ADMIN_NAME",
-                    "label": "Admin username"
-                },
-                {
-                    "name": "ADMIN_PASSWORD",
-                    "label": "Admin password"
-                },
-                {
-                    "name": "SECRET",
+                    "name": "HASH_SALT",
                     "label": "Generate encryption"
                 }
             ]

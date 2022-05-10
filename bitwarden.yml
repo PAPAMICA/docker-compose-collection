@@ -40,7 +40,7 @@ services:
       - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
       - "traefik.enable=true"
       - "traefik.http.routers.$SERVICE.entrypoints=https"
-      - "traefik.http.routers.$SERVICE.rule=Host(`$SERVICE.$NDD`)"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
       - "traefik.http.routers.$SERVICE.tls=true"
       - "traefik.http.routers.$SERVICE.tls.certresolver=http"
       - "traefik.docker.network=$NETWORK"

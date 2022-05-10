@@ -1,59 +1,55 @@
-# Docker-compose mis à disposition par Mickael "PAPAMICA" Asseline
-# Date de mise à jour : 27/10/2020
+# Docker-compose provided by Mickael "PAPAMICA" Asseline
+# Update : 10/05/2022
 
-# Variables d'environnement à déclarer :
-#     - SERVICE : nom du service (exemple : plex)
-#     - DATA_LOCATION : localisation des données (exemple /apps/"service")
-#     - URL_LOKI : lien du serveur loki (exemple : ndd/loki/api/v1/push)
-#     - NDD : lien du nom de domaine (exemple : papamica.fr)
-#     - DB_USER : nom d'utilisateur pour la base de données (exemple : papamica)
-#     - DB_PASSWORD : mot de passe pour la base de données
+#& type: 3
+#& title: CachetHQ
+#& description: Uptime monitor alternative
+#& note: Website: <a href='https://cachethq.io/' target='_blank' rel='noopener'>CachetHQ.io</a>
+#& categories: SelfHosted, Monitoring, PAPAMICA
+#& platform: linux
+#& logo: http://cachethq.io/img/social/CachetFB-V.png
 
-# Fonctionne avec Portainer
+#% SERVICE: Name of the service (No spaces or points)
+#% DATA_LOCATION: data localization (Example: /apps/service)
+#% URL: Service link (Example: service.papamica.fr or service.com)
+#% NETWORK: Your Traefik network (Example: proxy)
+#% DB_USER: Database user
+#% DB_PASSWORD: Database user password
+#% TIME_ZONE: Time zone (Example : Europe/Paris)
 
+# Work with Portainer
 version: "2"
 
 services:
-  # Base de données
   postgres:
-    container_name: cachet-db
-    image: postgres:9.5
+    container_name: $SERVICE-db
+    image: postgres:14
     volumes:
       - $DATA_LOCATION/db:/var/lib/postgresql/data
     environment:
       - POSTGRES_USER=$DB_USER
       - POSTGRES_PASSWORD=$DB_PASSWORD
     restart: always
-    
-    #HealthCheck
     healthcheck:
       test: curl --fail http://localhost:8000 || exit 1
       interval: 1m
       timeout: 30s
       retries: 3
-
-
-    # Facultatif
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
     networks:
-      - proxy
-    logging:
-      driver: loki
-      options:
-        loki-url: "$URL_LOKI"
-        loki-external-labels: service={{.Name}}
+      - default
 
   # CachetHQ : https://github.com/CachetHQ/Cachet
   cachet:
     image: cachethq/docker:latest
     container_name: $SERVICE
     restart: always
-#    volumes:
-#      - $DATA_LOCATION/data:/var/www/html/
     links:
       - postgres:postgres
     environment:
-      - TZ=Europe/Paris
-      - MAIL_DRIVER=smtp
+      - TZ=$TIME_ZONE
+#      - MAIL_DRIVER=smtp
 #      - MAIL_HOST=
 #      - MAIL_PORT=587
 #      - MAIL_USERNAME=
@@ -75,32 +71,19 @@ services:
       - DEBUG=false
     depends_on:
       - postgres
-#    ports:
-#      - 8000:8000
-
-    #Facultatif  
     networks:
-      - proxy
-    logging:
-      driver: loki
-      options:
-        loki-url: "$URL_LOKI"
-        loki-external-labels: service={{.Name}}
+      - default
     labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.$SERVICE.entrypoints=http"
-      - "traefik.http.routers.$SERVICE.rule=Host(`$SERVICE.$NDD`)"
-      - "traefik.http.middlewares.$SERVICE-https-redirect.redirectscheme.scheme=https"
-      - "traefik.http.routers.$SERVICE.middlewares=$SERVICE-https-redirect"
-      - "traefik.http.routers.$SERVICE-secure.entrypoints=https"
-      - "traefik.http.routers.$SERVICE-secure.rule=Host(`$SERVICE.$NDD`)"
-      - "traefik.http.routers.$SERVICE-secure.tls=true"
-      - "traefik.http.routers.$SERVICE-secure.tls.certresolver=http"
-      - "traefik.http.services.$SERVICE-secure.loadbalancer.server.port=8000"
-      - "traefik.docker.network=proxy"
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+      - "traefik.http.routers.$SERVICE.entrypoints=https"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
+      - "traefik.http.routers.$SERVICE.tls=true"
+      - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+      - "traefik.http.services.$SERVICE.loadbalancer.server.port=8000"
+      - "traefik.docker.network=$NETWORK"
 
   
 networks:
-  proxy:
+  default:
     external:
-      name: proxy
+      name: $NETWORK

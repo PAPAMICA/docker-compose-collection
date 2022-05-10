@@ -504,18 +504,18 @@
         },
         {
             "type": 3,
-            "title": "Plausible",
+            "title": "umami",
             "description": "Light alternative to Google Analitycs",
-            "note": "Website: <a href='https://plausible.io/' target='_blank' rel='noopener'>Plausible.io</a>",
+            "note": "Website: <a href='https://umami.is/' target='_blank' rel='noopener'>Umami.is</a>",
             "categories": [
                 "SelfHosted",
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://avatars.githubusercontent.com/u/54802774?s=200&v=4",
+            "logo": "https://img.stackshare.io/service/20837/umami.png",
             "repository": {
                 "url": "https://github.com/PAPAMICA/docker-compose-collection",
-                "stackfile": "plausible.yml"
+                "stackfile": "umami.yml"
             },
             "env": [
                 {

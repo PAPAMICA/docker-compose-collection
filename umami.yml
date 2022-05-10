@@ -13,10 +13,7 @@
 #% DATA_LOCATION: Data localization (Example: /apps/service)
 #% URL: Service URL (Example: service.papamica.fr or service.com)
 #% NETWORK: Your Traefik network (Example: proxy)
-#% ADMIN_EMAIL: Admin mail
-#% ADMIN_NAME: Admin username
-#% ADMIN_PASSWORD: Admin password
-#% SECRET: Generate encryption
+#% HASH_SALT: Generate encryption
 
 # Work with Portainer
 version: "3.3"

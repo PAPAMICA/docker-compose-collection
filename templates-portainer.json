@@ -324,6 +324,44 @@
         },
         {
             "type": 3,
+            "title": "Hastebin",
+            "description": "Share your code easily",
+            "note": "Website: <a href='https://hastebin.com/about.md' target='_blank' rel='noopener'>Hastebin.com</a>",
+            "categories": [
+                "SelfHosted",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://progsoft.net/images/hastebin-icon-b45e3f5695d3f577b2630648bd00584195822e3d.png",
+            "repository": {
+                "url": "https://github.com/PAPAMICA/docker-compose-collection",
+                "stackfile": "hastebin.yml"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service",
+                    "description": "No spaces or points"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "Data localization",
+                    "description": "Example: /apps/service"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service link",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network",
+                    "description": "Example: proxy"
+                }
+            ]
+        },
+        {
+            "type": 3,
             "title": "Vaultwarden",
             "description": "Password manager",
             "note": "Website: <a href='https://github.com/dani-garcia/vaultwarden' target='_blank' rel='noopener'>Github.com</a>",

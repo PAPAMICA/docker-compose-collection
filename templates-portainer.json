@@ -506,7 +506,7 @@
             "type": 3,
             "title": "umami",
             "description": "Light alternative to Google Analitycs",
-            "note": "Website: <a href='https://umami.is/' target='_blank' rel='noopener'>Umami.is</a>",
+            "note": "Website: <a href='https://umami.is/' target='_blank' rel='noopener'>Umami.is</a></br></br>Warning: RTFM ! You need to add one file and restart ! ",
             "categories": [
                 "SelfHosted",
                 "PAPAMICA"

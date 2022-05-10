@@ -1,15 +1,21 @@
-# Docker-compose mis à disposition par Mickael "PAPAMICA" Asseline
-# Date de mise à jour : 27/10/2020
+# Docker-compose provided by Mickael "PAPAMICA" Asseline
+# Update : 10/05/2022
 
-# Variables d'environnement à déclarer :
-#     - SERVICE : nom du service (exemple : plex)
-#     - DATA_LOCATION : localisation des données (exemple /apps/"service")
-#     - URL_LOKI : lien du serveur loki (exemple : ndd/loki/api/v1/push)
-#     - NDD : lien du nom de domaine (exemple : papamica.fr)
+#& type: 3
+#& title: Website HTML PHP
+#& description: Simple HTML website under PHP 7.4
+#& note: Website: <a href='https://github.com/LavoWeb/Docker' target='_blank' rel='noopener'>Github.com</a>
+#& categories: SelfHosted, PAPAMICA
+#& platform: linux
+#& logo: http://assets.stickpng.com/thumbs/5847f5bdcef1014c0b5e489c.png
 
-# Fonctionne avec Portainer
+#% SERVICE: name of the service (No spaces or points)
+#% DATA_LOCATION: data localization (Example: /apps/service)
+#% URL: service link (Example: service.papamica.fr or service.com)
+#% NETWORK: your Traefik network (Example: proxy)
+
+# Work with Portainer
 version: "2"
-
 services:
   web:
     image: lavoweb/php-7.3:latest
@@ -17,30 +23,17 @@ services:
     volumes:
       - $DATA_LOCATION/html:/var/www/html
     restart: always
-#    ports:
-#     - 8080:80
-
-    # Facultatif
     networks:
-      - proxy
-    logging:
-      driver: loki
-      options:
-        loki-url: "$URL_LOKI"
-        loki-external-labels: service={{.Name}}
+      - default
     labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
       - "traefik.enable=true"
-      - "traefik.http.routers.$SERVICE.entrypoints=http"
-      - "traefik.http.routers.$SERVICE.rule=Host(`$SERVICE.$NDD`)"
-      - "traefik.http.middlewares.$SERVICE-https-redirect.redirectscheme.scheme=https"
-      - "traefik.http.routers.$SERVICE.middlewares=$SERVICE-https-redirect"
-      - "traefik.http.routers.$SERVICE-secure.entrypoints=https"
-      - "traefik.http.routers.$SERVICE-secure.rule=Host(`$SERVICE.$NDD`)"
-      - "traefik.http.routers.$SERVICE-secure.tls=true"
-      - "traefik.http.routers.$SERVICE-secure.tls.certresolver=http"
-      - "traefik.docker.network=proxy"
-
+      - "traefik.http.routers.$SERVICE.entrypoints=https"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
+      - "traefik.http.routers.$SERVICE.tls=true"
+      - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+      - "traefik.docker.network=$NETWORK"
 networks:
-  proxy:
+  default:
     external:
-      name: proxy
+      name: $NETWORK

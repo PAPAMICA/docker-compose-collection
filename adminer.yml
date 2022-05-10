@@ -1,0 +1,37 @@
+# Docker-compose provided by Mickael "PAPAMICA" Asseline
+# Update : 10/05/2022
+
+#& type: 3
+#& title: Adminer
+#& description: Managment of MySQL
+#& note: Website: <a href='https://www.adminer.org/' target='_blank' rel='noopener'>Adminer.org</a>
+#& categories: SelfHosted, Database, PAPAMICA
+#& platform: linux
+#& logo: https://git.spip.net/repo-avatars/1417-1f8a32370f4028c9c0c216787ad4916c
+
+#% SERVICE: Name of the service (No spaces or points)
+#% URL: Service link (Example: service.papamica.fr or service.com)
+#% NETWORK: Your Traefik network (Example: proxy)
+
+# Work with Portainer
+version: "2"
+services:
+  adminer:
+    image: adminer
+    restart: always
+    container_name: $SERVICE
+    environment:
+      - ADMINER_DESIGN='hydra'
+    networks:
+      - default
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+      - "traefik.enable=true"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
+      - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+      - "traefik.http.services.$SERVICE.loadbalancer.server.port=80"
+      - "traefik.docker.network=$NETWORK"
+networks:
+  default:
+    external:
+      name: $NETWORK

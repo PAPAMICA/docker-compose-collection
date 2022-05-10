@@ -28,6 +28,13 @@ for filename in glob.glob("*.y*ml"):
             if data[0] == "categories":
                 categories = data[1].split(', ')
                 dataset[data[0]] = categories
+            if data[0] == "note":
+                note = data[1].translate(str.maketrans({"-":  r"\-",
+                                                        "]":  r"\]",
+                                                        "^":  r"\^",
+                                                        "$":  r"\$",
+                                                        "*":  r"\*"}))
+                dataset[data[0]] = note
             else:
                 dataset[data[0]] = data[1]
         if re.search('#%', line):

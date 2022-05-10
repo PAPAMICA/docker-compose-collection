@@ -3,6 +3,200 @@
     "templates": [
         {
             "type": 3,
+            "title": "Adminer",
+            "description": "Managment of MySQL",
+            "note": "Website: <a href='https://www.adminer.org/' target='_blank' rel='noopener'>Adminer.org</a>",
+            "categories": [
+                "SelfHosted",
+                "Database",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://git.spip.net/repo-avatars/1417-1f8a32370f4028c9c0c216787ad4916c",
+            "repository": {
+                "url": "https://github.com/PAPAMICA/docker-compose-collection",
+                "stackfile": "adminer.yml"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service",
+                    "description": "No spaces or points"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service link",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network",
+                    "description": "Example: proxy"
+                }
+            ]
+        },
+        {
+            "type": 3,
+            "title": "Vaultwarden",
+            "description": "Password manager",
+            "note": "Website: <a href='https://github.com/dani-garcia/vaultwarden' target='_blank' rel='noopener'>Github.com</a>",
+            "categories": [
+                "SelfHosted",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/0/03/Bitwarden_Logo.png",
+            "repository": {
+                "url": "https://github.com/PAPAMICA/docker-compose-collection",
+                "stackfile": "bitwarden.yml"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service",
+                    "description": "No spaces or points"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "data localization",
+                    "description": "Example: /apps/service"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service link",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network",
+                    "description": "Example: proxy"
+                },
+                {
+                    "name": "SIGNUPS_ALLOWED",
+                    "label": "Autorize signup ?",
+                    "description": "True or False"
+                },
+                {
+                    "name": "TIME_ZONE",
+                    "label": "Time zone",
+                    "description": "Example : Europe/Paris"
+                },
+                {
+                    "name": "ADMIN_TOKEN",
+                    "label": "Admin token",
+                    "description": "For manage with url/admin"
+                }
+            ]
+        },
+        {
+            "type": 3,
+            "title": "Bookstack",
+            "description": "Wiki selfhosted",
+            "note": "Website: <a href='https://www.bookstackapp.com/' target='_blank' rel='noopener'>Bookstackapp.com</a>",
+            "categories": [
+                "SelfHosted",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/BookStack_logo.svg/1075px-BookStack_logo.svg.png",
+            "repository": {
+                "url": "https://github.com/PAPAMICA/docker-compose-collection",
+                "stackfile": "bookstack.yml"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service",
+                    "description": "No spaces or points"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "data localization",
+                    "description": "Example: /apps/service"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service link",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network",
+                    "description": "Example: proxy"
+                },
+                {
+                    "name": "DB_USER",
+                    "label": "Database user"
+                },
+                {
+                    "name": "DB_PASSWORD",
+                    "label": "Database user password"
+                },
+                {
+                    "name": "DB_ROOT",
+                    "label": "Database root password"
+                },
+                {
+                    "name": "TIME_ZONE",
+                    "label": "Time zone",
+                    "description": "Example : Europe/Paris"
+                }
+            ]
+        },
+        {
+            "type": 3,
+            "title": "CachetHQ",
+            "description": "Uptime monitor alternative",
+            "note": "Website: <a href='https://cachethq.io/' target='_blank' rel='noopener'>CachetHQ.io</a></br></br>Warning: Check log at the first run!",
+            "categories": [
+                "SelfHosted",
+                "Monitoring",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "http://cachethq.io/img/social/CachetFB-V.png",
+            "repository": {
+                "url": "https://github.com/PAPAMICA/docker-compose-collection",
+                "stackfile": "cachethq.yml"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service",
+                    "description": "No spaces or points"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "data localization",
+                    "description": "Example: /apps/service"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service link",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network",
+                    "description": "Example: proxy"
+                },
+                {
+                    "name": "DB_USER",
+                    "label": "Database user"
+                },
+                {
+                    "name": "DB_PASSWORD",
+                    "label": "Database user password"
+                },
+                {
+                    "name": "TIME_ZONE",
+                    "label": "Time zone",
+                    "description": "Example : Europe/Paris"
+                }
+            ]
+        },
+        {
+            "type": 3,
             "title": "Etherpad",
             "description": "Online editor providing collaborative editing in really real-time",
             "note": "Website: <a href='https://etherpad.org/' target='_blank' rel='noopener'>etherpad.org</a>",
@@ -86,200 +280,6 @@
                     "name": "NETWORK",
                     "label": "your Traefik network",
                     "description": "Example: proxy"
-                }
-            ]
-        },
-        {
-            "type": 3,
-            "title": "Vaultwarden",
-            "description": "Password manager",
-            "note": "Website: <a href='https://github.com/dani-garcia/vaultwarden' target='_blank' rel='noopener'>Github.com</a>",
-            "categories": [
-                "SelfHosted",
-                "PAPAMICA"
-            ],
-            "platform": "linux",
-            "logo": "https://upload.wikimedia.org/wikipedia/commons/0/03/Bitwarden_Logo.png",
-            "repository": {
-                "url": "https://github.com/PAPAMICA/docker-compose-collection",
-                "stackfile": "bitwarden.yml"
-            },
-            "env": [
-                {
-                    "name": "SERVICE",
-                    "label": "Name of the service",
-                    "description": "No spaces or points"
-                },
-                {
-                    "name": "DATA_LOCATION",
-                    "label": "data localization",
-                    "description": "Example: /apps/service"
-                },
-                {
-                    "name": "URL",
-                    "label": "Service link",
-                    "description": "Example: service.papamica.fr or service.com"
-                },
-                {
-                    "name": "NETWORK",
-                    "label": "Your Traefik network",
-                    "description": "Example: proxy"
-                },
-                {
-                    "name": "SIGNUPS_ALLOWED",
-                    "label": "Autorize signup ?",
-                    "description": "True or False"
-                },
-                {
-                    "name": "TIME_ZONE",
-                    "label": "Time zone",
-                    "description": "Example : Europe/Paris"
-                },
-                {
-                    "name": "ADMIN_TOKEN",
-                    "label": "Admin token",
-                    "description": "For manage with url/admin"
-                }
-            ]
-        },
-        {
-            "type": 3,
-            "title": "CachetHQ",
-            "description": "Uptime monitor alternative",
-            "note": "Website: <a href='https://cachethq.io/' target='_blank' rel='noopener'>CachetHQ.io</a></br></br>Warning: Check log at the first run!",
-            "categories": [
-                "SelfHosted",
-                "Monitoring",
-                "PAPAMICA"
-            ],
-            "platform": "linux",
-            "logo": "http://cachethq.io/img/social/CachetFB-V.png",
-            "repository": {
-                "url": "https://github.com/PAPAMICA/docker-compose-collection",
-                "stackfile": "cachethq.yml"
-            },
-            "env": [
-                {
-                    "name": "SERVICE",
-                    "label": "Name of the service",
-                    "description": "No spaces or points"
-                },
-                {
-                    "name": "DATA_LOCATION",
-                    "label": "data localization",
-                    "description": "Example: /apps/service"
-                },
-                {
-                    "name": "URL",
-                    "label": "Service link",
-                    "description": "Example: service.papamica.fr or service.com"
-                },
-                {
-                    "name": "NETWORK",
-                    "label": "Your Traefik network",
-                    "description": "Example: proxy"
-                },
-                {
-                    "name": "DB_USER",
-                    "label": "Database user"
-                },
-                {
-                    "name": "DB_PASSWORD",
-                    "label": "Database user password"
-                },
-                {
-                    "name": "TIME_ZONE",
-                    "label": "Time zone",
-                    "description": "Example : Europe/Paris"
-                }
-            ]
-        },
-        {
-            "type": 3,
-            "title": "Adminer",
-            "description": "Managment of MySQL",
-            "note": "Website: <a href='https://www.adminer.org/' target='_blank' rel='noopener'>Adminer.org</a>",
-            "categories": [
-                "SelfHosted",
-                "Database",
-                "PAPAMICA"
-            ],
-            "platform": "linux",
-            "logo": "https://git.spip.net/repo-avatars/1417-1f8a32370f4028c9c0c216787ad4916c",
-            "repository": {
-                "url": "https://github.com/PAPAMICA/docker-compose-collection",
-                "stackfile": "adminer.yml"
-            },
-            "env": [
-                {
-                    "name": "SERVICE",
-                    "label": "Name of the service",
-                    "description": "No spaces or points"
-                },
-                {
-                    "name": "URL",
-                    "label": "Service link",
-                    "description": "Example: service.papamica.fr or service.com"
-                },
-                {
-                    "name": "NETWORK",
-                    "label": "Your Traefik network",
-                    "description": "Example: proxy"
-                }
-            ]
-        },
-        {
-            "type": 3,
-            "title": "Bookstack",
-            "description": "Wiki selfhosted",
-            "note": "Website: <a href='https://www.bookstackapp.com/' target='_blank' rel='noopener'>Bookstackapp.com</a>",
-            "categories": [
-                "SelfHosted",
-                "PAPAMICA"
-            ],
-            "platform": "linux",
-            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/BookStack_logo.svg/1075px-BookStack_logo.svg.png",
-            "repository": {
-                "url": "https://github.com/PAPAMICA/docker-compose-collection",
-                "stackfile": "bookstack.yml"
-            },
-            "env": [
-                {
-                    "name": "SERVICE",
-                    "label": "Name of the service",
-                    "description": "No spaces or points"
-                },
-                {
-                    "name": "DATA_LOCATION",
-                    "label": "data localization",
-                    "description": "Example: /apps/service"
-                },
-                {
-                    "name": "URL",
-                    "label": "Service link",
-                    "description": "Example: service.papamica.fr or service.com"
-                },
-                {
-                    "name": "NETWORK",
-                    "label": "Your Traefik network",
-                    "description": "Example: proxy"
-                },
-                {
-                    "name": "DB_USER",
-                    "label": "Database user"
-                },
-                {
-                    "name": "DB_PASSWORD",
-                    "label": "Database user password"
-                },
-                {
-                    "name": "DB_ROOT",
-                    "label": "Database root password"
-                },
-                {
-                    "name": "TIME_ZONE",
-                    "label": "Time zone",
-                    "description": "Example : Europe/Paris"
                 }
             ]
         }

@@ -26,3 +26,9 @@ jobs:
       # Runs a single command using the runners shell
       - name: Generate json file
         run: python3 generate-template-json.py
+      - name: stage changed files
+        run: git add .
+      - name: commit changed files
+        run: git commit -m "Auto generate templates-portainer.json"
+      - name: push code
+        run: git push

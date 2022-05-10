@@ -22,6 +22,11 @@ services:
     container_name: $SERVICE
     environment:
       - ADMINER_DESIGN='hydra'
+    healthcheck:
+      test: curl --fail http://localhost:80 || exit 1
+      interval: 1m
+      timeout: 30s
+      retries: 3
     networks:
       - default
     labels:

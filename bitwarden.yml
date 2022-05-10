@@ -32,6 +32,11 @@ services:
       SIGNUPS_ALLOWED: '$SIGNUPS_ALLOWED'   # set to false to disable signups
       TZ: '$TIME_ZONE'
       ADMIN_TOKEN: '$ADMIN_TOKEN'
+    healthcheck:
+      test: curl --fail http://localhost:80 || exit 1
+      interval: 1m
+      timeout: 30s
+      retries: 3
     ports:
       - 3012:3012
     networks:

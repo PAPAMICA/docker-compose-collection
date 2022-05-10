@@ -25,6 +25,11 @@ services:
     restart: always
     networks:
       - default
+    healthcheck:
+      test: curl --fail http://localhost:80 || exit 1
+      interval: 1m
+      timeout: 30s
+      retries: 3
     labels:
       - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
       - "traefik.enable=true"

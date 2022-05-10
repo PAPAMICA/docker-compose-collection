@@ -38,6 +38,40 @@
                     "description": "example: proxy"
                 }
             ]
+        },
+        {
+            "type": 3,
+            "title": "Adminer",
+            "description": "Managment of MySQL",
+            "note": "Website: <a href='https://www.adminer.org/' target='_blank' rel='noopener'>Adminer.org</a>",
+            "categories": [
+                "SelfHosted",
+                "Database",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://git.spip.net/repo-avatars/1417-1f8a32370f4028c9c0c216787ad4916c",
+            "repository": {
+                "url": "https://github.com/PAPAMICA/docker-compose-collection",
+                "stackfile": "adminer.yml"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service",
+                    "description": "No spaces or points"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service link",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network",
+                    "description": "Example: proxy"
+                }
+            ]
         }
     ]
 }

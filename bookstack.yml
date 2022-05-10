@@ -1,17 +1,24 @@
-# Docker-compose mis à disposition par Mickael "PAPAMICA" Asseline
-# Date de mise à jour : 27/10/2020
+# Docker-compose provided by Mickael "PAPAMICA" Asseline
+# Update : 10/05/2022
 
-# Variables d'environnement à déclarer :
-#     - SERVICE : nom du service (exemple : plex)
-#     - DATA_LOCATION : localisation des données (exemple /apps/"service")
-#     - URL_LOKI : lien du serveur loki (exemple : ndd/loki/api/v1/push)
-#     - NDD : lien du nom de domaine (exemple : papamica.fr)
-#     - DB_USER : nom d'utilisateur pour la base de données (exemple : papamica)
-#     - DB_PASSWORD : mot de passe pour la base de données
-#     - DB_ROOT : mot de passe ROOT pour la base de données
-#     - DATA : localisation de vos fichiers à explorer
+#& type: 3
+#& title: Bookstack
+#& description: Wiki selfhosted
+#& note: Website: <a href='https://www.bookstackapp.com/' target='_blank' rel='noopener'>Bookstackapp.com</a>
+#& categories: SelfHosted, PAPAMICA
+#& platform: linux
+#& logo: https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/BookStack_logo.svg/1075px-BookStack_logo.svg.png
 
-# Fonctionne avec Portainer
+#% SERVICE: Name of the service (No spaces or points)
+#% DATA_LOCATION: data localization (Example: /apps/service)
+#% URL: Service link (Example: service.papamica.fr or service.com)
+#% NETWORK: Your Traefik network (Example: proxy)
+#% DB_USER: Database user
+#% DB_PASSWORD: Database user password
+#% DB_ROOT: Database root password
+#% TIME_ZONE: Time zone (Example : Europe/Paris)
+
+# Work with Portainer
 version: "2"
 services:
   # BookStack : https://www.bookstackapp.com/
@@ -28,33 +35,20 @@ services:
       - APP_URL=https://$SERVICE.$NDD
     volumes:
       - $DATA_LOCATION/config:/config
-#    ports:
-#      - 6875:80
     restart: unless-stopped
     depends_on:
       - bookstack_db
-
-    # Facultatif  
     networks:
-      - proxy
-    logging:
-      driver: loki
-      options:
-        loki-url: "$URL_LOKI"
-        loki-external-labels: service={{.Name}}
+      - default
     labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
       - "traefik.enable=true"
-      - "traefik.http.routers.$SERVICE.entrypoints=http"
-      - "traefik.http.routers.$SERVICE.rule=Host(`$SERVICE.$NDD`)"
-      - "traefik.http.middlewares.$SERVICE-https-redirect.redirectscheme.scheme=https"
-      - "traefik.http.routers.$SERVICE.middlewares=$SERVICE-https-redirect"
-      - "traefik.http.routers.$SERVICE-secure.entrypoints=https"
-      - "traefik.http.routers.$SERVICE-secure.rule=Host(`$SERVICE.$NDD`)"
-      - "traefik.http.routers.$SERVICE-secure.tls=true"
-      - "traefik.http.routers.$SERVICE-secure.tls.certresolver=http"
-      - "traefik.docker.network=proxy"
-
-  # Base de données    
+      - "traefik.http.routers.$SERVICE.entrypoints=https"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
+      - "traefik.http.routers.$SERVICE.tls=true"
+      - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+      - "traefik.docker.network=$NETWORK"
+  
   bookstack_db:
     image: linuxserver/mariadb:version-10.5.12-r0
     container_name: bookstack_db
@@ -62,24 +56,17 @@ services:
       - PUID=1000
       - PGID=1000
       - MYSQL_ROOT_PASSWORD=$DB_ROOT
-      - TZ=Europe/Paris
+      - TZ=$TIME_ZONE
       - MYSQL_DATABASE=bookstackapp
       - MYSQL_USER=$DB_USER
       - MYSQL_PASSWORD=$DB_PASSWORD
     volumes:
       - $DATA_LOCATION/db:/config
     restart: unless-stopped
-
-    # Facultatif
     networks:
-      - proxy
-    logging:
-      driver: loki
-      options:
-        loki-url: "$URL_LOKI"
-        loki-external-labels: service={{.Name}}
+      - default
       
 networks:
-  proxy:
+  default:
     external:
-      name: proxy
+      name: $NETWORK

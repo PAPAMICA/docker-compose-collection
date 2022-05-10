@@ -37,59 +37,6 @@
         },
         {
             "type": 3,
-            "title": "Vaultwarden",
-            "description": "Password manager",
-            "note": "Website: <a href='https://github.com/dani-garcia/vaultwarden' target='_blank' rel='noopener'>Github.com</a>",
-            "categories": [
-                "SelfHosted",
-                "PAPAMICA"
-            ],
-            "platform": "linux",
-            "logo": "https://upload.wikimedia.org/wikipedia/commons/0/03/Bitwarden_Logo.png",
-            "repository": {
-                "url": "https://github.com/PAPAMICA/docker-compose-collection",
-                "stackfile": "bitwarden.yml"
-            },
-            "env": [
-                {
-                    "name": "SERVICE",
-                    "label": "Name of the service",
-                    "description": "No spaces or points"
-                },
-                {
-                    "name": "DATA_LOCATION",
-                    "label": "data localization",
-                    "description": "Example: /apps/service"
-                },
-                {
-                    "name": "URL",
-                    "label": "Service link",
-                    "description": "Example: service.papamica.fr or service.com"
-                },
-                {
-                    "name": "NETWORK",
-                    "label": "Your Traefik network",
-                    "description": "Example: proxy"
-                },
-                {
-                    "name": "SIGNUPS_ALLOWED",
-                    "label": "Autorize signup ?",
-                    "description": "True or False"
-                },
-                {
-                    "name": "TIME_ZONE",
-                    "label": "Time zone",
-                    "description": "Example : Europe/Paris"
-                },
-                {
-                    "name": "ADMIN_TOKEN",
-                    "label": "Admin token",
-                    "description": "For manage with url/admin"
-                }
-            ]
-        },
-        {
-            "type": 3,
             "title": "Bookstack",
             "description": "Wiki selfhosted",
             "note": "Website: <a href='https://www.bookstackapp.com/' target='_blank' rel='noopener'>Bookstackapp.com</a>",
@@ -242,6 +189,102 @@
                 {
                     "name": "ADMIN_PASSWORD",
                     "label": "Administration password"
+                }
+            ]
+        },
+        {
+            "type": 3,
+            "title": "Filebot",
+            "description": "The ultimate TV and Movie Renamer",
+            "note": "Website: <a href='https://www.filebot.net/' target='_blank' rel='noopener'>filebot.net</a>",
+            "categories": [
+                "SelfHosted",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://www.filebot.net/images/filebot.logo.svg",
+            "repository": {
+                "url": "https://github.com/PAPAMICA/docker-compose-collection",
+                "stackfile": "filebot.yml"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service",
+                    "description": "No spaces or points"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "Data localization",
+                    "description": "Example: /apps/service"
+                },
+                {
+                    "name": "FOLDER",
+                    "label": "Folder of yours files",
+                    "description": "Example: /data/movies"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service link",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network",
+                    "description": "Example: proxy"
+                }
+            ]
+        },
+        {
+            "type": 3,
+            "title": "Vaultwarden",
+            "description": "Password manager",
+            "note": "Website: <a href='https://github.com/dani-garcia/vaultwarden' target='_blank' rel='noopener'>Github.com</a>",
+            "categories": [
+                "SelfHosted",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/0/03/Bitwarden_Logo.png",
+            "repository": {
+                "url": "https://github.com/PAPAMICA/docker-compose-collection",
+                "stackfile": "vaultwarden.yml"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service",
+                    "description": "No spaces or points"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "data localization",
+                    "description": "Example: /apps/service"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service link",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network",
+                    "description": "Example: proxy"
+                },
+                {
+                    "name": "SIGNUPS_ALLOWED",
+                    "label": "Autorize signup ?",
+                    "description": "True or False"
+                },
+                {
+                    "name": "TIME_ZONE",
+                    "label": "Time zone",
+                    "description": "Example : Europe/Paris"
+                },
+                {
+                    "name": "ADMIN_TOKEN",
+                    "label": "Admin token",
+                    "description": "For manage with url/admin"
                 }
             ]
         },

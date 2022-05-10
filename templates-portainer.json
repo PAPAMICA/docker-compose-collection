@@ -504,6 +504,60 @@
         },
         {
             "type": 3,
+            "title": "Plausible",
+            "description": "Light alternative to Google Analitycs",
+            "note": "Website: <a href='https://plausible.io/' target='_blank' rel='noopener'>Plausible.io</a>",
+            "categories": [
+                "SelfHosted",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://avatars.githubusercontent.com/u/54802774?s=200&v=4",
+            "repository": {
+                "url": "https://github.com/PAPAMICA/docker-compose-collection",
+                "stackfile": "plausible.yml"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service",
+                    "description": "No spaces or points"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "Data localization",
+                    "description": "Example: /apps/service"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service URL",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network",
+                    "description": "Example: proxy"
+                },
+                {
+                    "name": "ADMIN_EMAIL",
+                    "label": "Admin mail"
+                },
+                {
+                    "name": "ADMIN_NAME",
+                    "label": "Admin username"
+                },
+                {
+                    "name": "ADMIN_PASSWORD",
+                    "label": "Admin password"
+                },
+                {
+                    "name": "SECRET",
+                    "label": "Generate encryption"
+                }
+            ]
+        },
+        {
+            "type": 3,
             "title": "Vaultwarden",
             "description": "Password manager",
             "note": "Website: <a href='https://github.com/dani-garcia/vaultwarden' target='_blank' rel='noopener'>Github.com</a>",

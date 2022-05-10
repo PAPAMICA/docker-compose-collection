@@ -26,6 +26,8 @@ jobs:
       # Runs a single command using the runners shell
       - name: Generate json file
         run: python3 generate-template-json.py
+      - name: switching from HTTPS to SSH
+        run: git remote set-url origin ${{ secrets.ssh }}
       - name: stage changed files
         run: git add .
       - name: commit changed files

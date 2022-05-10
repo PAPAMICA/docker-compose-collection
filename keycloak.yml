@@ -11,7 +11,24 @@
 #     - KC_DB_PASSWORD : mot de passe de la BDD
 #     - NDD : Nom de domaine de l'application (ex : auth.papamica.com)
 
-# Fonctionne avec Portainer
+# Docker-compose provided by Mickael "PAPAMICA" Asseline
+# Update : 10/05/2022
+
+#& type: 3
+#& title: Grafana
+#& description: From heatmaps to histograms, graphs to geomaps: fast and furious visualizations any way you want.
+#& note: Website: <a href='https://grafana.com/grafana/dashboards/' target='_blank' rel='noopener'>Grafana.com</a>
+#& categories: SelfHosted, Monitoring, PAPAMICA
+#& platform: linux
+#& logo: https://seeklogo.com/images/G/grafana-logo-15BA0AFA8A-seeklogo.com.png
+
+#% SERVICE: Name of the service (No spaces or points)
+#% DATA_LOCATION: Data localization (Example: /apps/service)
+#% PLUGINS: Plugins to install (Example: alexanderzobnin-zabbix-app,grafana-singlestat-panel)
+#% URL: Service URL (Example: service.papamica.fr or service.com)
+#% NETWORK: Your Traefik network (Example: proxy)
+
+# Work with Portainer
 
 version: "2"
 services:

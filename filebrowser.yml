@@ -12,7 +12,7 @@
 #% SERVICE: Name of the service (No spaces or points)
 #% DATA_LOCATION: Data localization (Example: /apps/service)
 #% FOLDER: Folder of yours files (Example: /data/movies)
-#% URL: Service link (Example: service.papamica.fr or service.com)
+#% URL: Service URL (Example: service.papamica.fr or service.com)
 #% NETWORK: Your Traefik network (Example: proxy)
 
 # Work with Portainer

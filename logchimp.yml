@@ -47,8 +47,6 @@ services:
       - APP_KEY=5tknMGisZP4pCqcCkoU
       - PG_USER=logchimp
       - PG_PASSWORD=$DB_PASSWORD
-#    volumes:
-#      - $DATA_LOCATION/data:/astuto
     depends_on:
       - logchimp-db
     healthcheck:

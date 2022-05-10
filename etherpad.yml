@@ -30,6 +30,7 @@ services:
       retries: 5
     labels:
       - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+    restart: always
     environment:
       - POSTGRES_DB=etherpad
       - POSTGRES_USER=$DB_USER
@@ -51,6 +52,7 @@ services:
       - ADMIN_PASSWORD=$ADMIN_PASSWORD
     depends_on:
       - etherpad-db
+    restart: always
     healthcheck:
       test: curl --fail http://localhost:9001 || exit 1
       interval: 1m

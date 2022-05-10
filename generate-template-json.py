@@ -52,3 +52,5 @@ result["templates"] = templates
 json_data = json.dumps(result, indent=4)
 with open('templates-portainer.json', 'w') as outfile:
     outfile.write(json_data)
+
+print ("File generated !")

@@ -2,12 +2,12 @@
 # Update : 10/05/2022
 
 #& type: 3
-#& title: Plausible
+#& title: umami
 #& description: Light alternative to Google Analitycs
-#& note: Website: <a href='https://plausible.io/' target='_blank' rel='noopener'>Plausible.io</a>
+#& note: Website: <a href='https://umami.is/' target='_blank' rel='noopener'>Umami.is</a>
 #& categories: SelfHosted, PAPAMICA
 #& platform: linux
-#& logo: https://avatars.githubusercontent.com/u/54802774?s=200&v=4
+#& logo: https://img.stackshare.io/service/20837/umami.png
 
 #% SERVICE: Name of the service (No spaces or points)
 #% DATA_LOCATION: Data localization (Example: /apps/service)
@@ -27,10 +27,12 @@ services:
     volumes:
       - $DATA_LOCATION/db:/var/lib/postgresql/data
     environment:
-      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=umami
+      - POSTGRES_USER=$DB_USER
+      - POSTGRES_PASSWORD=$DB_PASSWORD
     restart: always
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U $DB_USER"]
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -39,23 +41,21 @@ services:
     networks:
       - default
 
-  plausible:
-    image: plausible/analytics:latest
+  umami:
+    image: ghcr.io/mikecao/umami:postgresql-latest
+    container_name: $SERVICE
     restart: always
-    command: sh -c "sleep 10 && /entrypoint.sh db createdb && /entrypoint.sh db migrate && /entrypoint.sh db init-admin && /entrypoint.sh run"
     depends_on:
       - postgres
     healthcheck:
-      test: curl --fail http://localhost:8000 || exit 1
+      test: curl --fail http://localhost:3000 || exit 1
       interval: 1m
       timeout: 30s
       retries: 3
     environment:
-      - ADMIN_USER_EMAIL=$ADMIN_EMAIL
-      - ADMIN_USER_NAME=$ADMIN_NAME
-      - ADMIN_USER_PWD=$ADMIN_PASSWORD
-      - BASE_URL=https://$URL
-      - SECRET_KEY_BASE=$SECRET
+      - DATABASE_URL=postgresql://$DB_USER:$DB_PASSWORD@$SERVICE-db:5432/umami
+      - DATABASE_TYPE=postgresql
+      - HASH_SALT=$HASH_SALT
     networks:
       - default
     labels:
@@ -65,7 +65,7 @@ services:
       - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
       - "traefik.http.routers.$SERVICE.tls=true"
       - "traefik.http.routers.$SERVICE.tls.certresolver=http"
-      - "traefik.http.services.$SERVICE.loadbalancer.server.port=8000"
+      - "traefik.http.services.$SERVICE.loadbalancer.server.port=3000"
       - "traefik.docker.network=$NETWORK"
 
 networks:

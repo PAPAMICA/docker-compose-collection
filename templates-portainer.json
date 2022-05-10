@@ -3,6 +3,56 @@
     "templates": [
         {
             "type": 3,
+            "title": "Etherpad",
+            "description": "Online editor providing collaborative editing in really real-time",
+            "note": "Website: <a href='https://etherpad.org/' target='_blank' rel='noopener'>etherpad.org</a>",
+            "categories": [
+                "SelfHosted",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://n30.tech/images/etherpad.png",
+            "repository": {
+                "url": "https://github.com/PAPAMICA/docker-compose-collection",
+                "stackfile": "etherpad.yml"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service",
+                    "description": "No spaces or points"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "data localization",
+                    "description": "Example: /apps/service"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service link",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network",
+                    "description": "Example: proxy"
+                },
+                {
+                    "name": "DB_USER",
+                    "label": "Database user"
+                },
+                {
+                    "name": "DB_PASSWORD",
+                    "label": "Database user password"
+                },
+                {
+                    "name": "ADMIN_PASSWORD",
+                    "label": "Administration password"
+                }
+            ]
+        },
+        {
+            "type": 3,
             "title": "Website HTML PHP",
             "description": "Simple HTML website under PHP 7.4",
             "note": "Website: <a href='https://github.com/LavoWeb/Docker' target='_blank' rel='noopener'>Github.com</a>",

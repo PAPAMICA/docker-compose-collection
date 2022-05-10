@@ -4,7 +4,7 @@
 #& type: 3
 #& title: CachetHQ
 #& description: Uptime monitor alternative
-#& note: Website: <a href='https://cachethq.io/' target='_blank' rel='noopener'>CachetHQ.io</a></br>Warning: Check log at the first run!
+#& note: Website: <a href='https://cachethq.io/' target='_blank' rel='noopener'>CachetHQ.io</a></br></br>Warning: Check log at the first run!
 #& categories: SelfHosted, Monitoring, PAPAMICA
 #& platform: linux
 #& logo: http://cachethq.io/img/social/CachetFB-V.png
@@ -31,7 +31,7 @@ services:
       - POSTGRES_PASSWORD=$DB_PASSWORD
     restart: always
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready"]
+      test: ["CMD-SHELL", "pg_isready -U $DB_USER"]
       interval: 10s
       timeout: 5s
       retries: 5

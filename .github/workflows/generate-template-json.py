@@ -15,7 +15,7 @@ result["version"] = "2"
 result["templates"] = []
 templates = []
 
-for filename in sorted(glob.glob("*.y*ml")):
+for filename in sorted(glob.glob("composes-files/*.y*ml")):
     try:
         data = []
         dataset = {}

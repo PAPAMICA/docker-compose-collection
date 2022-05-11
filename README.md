@@ -18,28 +18,28 @@ https://github.com/PAPAMICA/docker-environment
 | Status | Service | Update |
 |:--:|--|--|
 | ✅ | adminer.yml | 2022-10-05
- |
+
 | ✅ | bookstack.yml | 2022-10-05
- |
+
 | ✅ | cachethq.yml | 2022-10-05
- |
+
 | ✅ | etherpad.yml | 2022-10-05
- |
+
 | ✅ | filebot.yml | 2022-10-05
- |
+
 | ✅ | filebrowser.yml | 2022-10-05
- |
+
 | 🚸 | gitlab.yml | - |
 | ✅ | grafana.yml | 2022-10-05
- |
+
 | ✅ | hastebin.yml | 2022-10-05
- |
+
 | ✅ | jirafeau.yml | 2022-10-05
- |
+
 | ✅ | keycloak.yml | 2022-10-05
- |
+
 | ✅ | matomo.yml | 2022-10-05
- |
+
 | 🚸 | nextcloud.yml | - |
 | 🚸 | openvpn.yml | - |
 | 🚸 | ouroboros.yml | - |
@@ -53,13 +53,13 @@ https://github.com/PAPAMICA/docker-environment
 | 🚸 | ts3rank.yml | - |
 | 🚸 | ts3viewer.yml | - |
 | ✅ | umami.yml | 10/05/2022
- |
+
 | 🚸 | vault.yml | - |
 | ✅ | vaultwarden.yml | 10/05/2022
- |
+
 | 🚸 | vscode.yml | - |
 | ✅ | website-html.yml | 10/05/2022
- |
+
 | 🚸 | wikijs.yml | - |
 | 🚸 | wiznote.yml | - |
 | 🚸 | wordpress.yml | - |

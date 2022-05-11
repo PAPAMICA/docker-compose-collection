@@ -42,7 +42,6 @@ https://github.com/PAPAMICA/docker-environment
 | ✅ | matomo.yml | 2022-10-05 |
 | ✅ | nextcloud.yml | 2022-05-11 |
 | 🚸 | openvpn.yml | - |
-| 🚸 | ouroboros.yml | - |
 | 🚸 | privatebin.yml | - |
 | 🚸 | projectsend.yml | - |
 | 🚸 | shorturl.yml | - |
@@ -59,7 +58,7 @@ https://github.com/PAPAMICA/docker-environment
 | ✅ | website-html.yml | 2022-05-10 |
 | 🚸 | wikijs.yml | - |
 | 🚸 | wiznote.yml | - |
-| 🚸 | wordpress.yml | - |
+| ✅ | wordpress.yml | 2022-05-11 |
 | 🚸 | yourls.yml | - |
 | 🚸 | zabbix-cachethq.yml | - |
 | 🚸 | zabbix-proxy.yml | - |

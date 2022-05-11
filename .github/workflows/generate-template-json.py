@@ -26,8 +26,6 @@ for filename in sorted(glob.glob("composes-files/*.y*ml")):
         categories = []
         file_name=filename.split('/')
         file_name=file_name[1]
-        time_modified=os.path.getmtime(filename)
-        date_modified=datetime.datetime.fromtimestamp(time_modified).strftime('%d-%m-%y %H:%M:%S')
         file = open(filename)
         for line in file.readlines():
             if re.search('#&', line):
@@ -43,6 +41,8 @@ for filename in sorted(glob.glob("composes-files/*.y*ml")):
                     dataset[data[0]] = title
                 else:
                     dataset[data[0]] = data[1]
+            if re.search('# Update:', line):
+                date=line[10:]
             if re.search('#%', line):
                 envtemp = {}
                 dataenv=line[3:-1].split(': ', 1)
@@ -65,11 +65,11 @@ for filename in sorted(glob.glob("composes-files/*.y*ml")):
             dataset["env"] = env
             templates.append(dataset)
             print (f" ✅ {filename} ")
-            SERVICES=SERVICES + f"\n| ✅ | {file_name} | {date_modified} |"
+            SERVICES=SERVICES + f"\n| ✅ | {file_name} | {date} |"
             
         else:
             print (f" 🚸 {filename} not updated !")
-            SERVICES=SERVICES + f"\n| 🚸 | {file_name} | {date_modified} |"
+            SERVICES=SERVICES + f"\n| 🚸 | {file_name} |  |"
     except:
          print (f" ❌ {filename} error !")
 

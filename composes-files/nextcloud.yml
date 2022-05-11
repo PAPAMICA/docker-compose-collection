@@ -28,6 +28,11 @@ services:
     restart: always
     depends_on:
       - nextcloud-db
+    healthcheck:
+      test: curl --fail http://localhost:80 || exit 1
+      interval: 1m
+      timeout: 30s
+      retries: 3
     environment:
       - DB_TYPE=mysql
       - DB_NAME=nextcloud
@@ -54,6 +59,10 @@ services:
     container_name: $SERVICE-db
     command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
     restart: always
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
     volumes:
       - $DATA_LOCATION/db:/var/lib/mysql
     environment:

@@ -49,3 +49,58 @@ sudo docker-compose -f service.yml --env-file env up -d
 - **docker-compose up -d** : Launch the containers created with the scripts (in the script folder)
 -   **docker logs -f <id_container>** : Display the container logs
 -   **docker exec -it <id_container> bash** : Get a shell in container
+
+# Add new docker-compose file
+I automated the creation of the json template file for Portainer and the update of the README.md.
+
+If you want to add a new docker-compose, you must use the following template:
+```yaml
+# Docker-compose provided by Mickael "PAPAMICA" Asseline
+# Update: 2022-10-05
+
+#& type: 3
+#& title: Hastebin
+#& description: Share your code easily
+#& note: Website: <a href='https://hastebin.com/about.md' target='_blank' rel='noopener'>Hastebin.com</a>
+#& categories: SelfHosted, PAPAMICA
+#& platform: linux
+#& logo: https://progsoft.net/images/hastebin-icon-b45e3f5695d3f577b2630648bd00584195822e3d.png
+
+#% SERVICE: Name of the service (No spaces or points)
+#% DATA_LOCATION: Data localization (Example: /apps/service)
+#% URL: Service URL (Example: service.papamica.fr or service.com)
+#% NETWORK: Your Traefik network (Example: proxy)
+
+# Work with Portainer
+version: "2"
+services:
+  # Hastebin : https://hastebin.com/about.md
+  hastebin:
+    image: rlister/hastebin:latest
+    container_name: $SERVICE
+    restart: always
+    environment:
+      STORAGE_TYPE: file
+    volumes:
+      - $DATA_LOCATION/data:/data
+    healthcheck:
+      test: wget -s 'http://localhost:7777'
+      interval: 1m
+      timeout: 30s
+      retries: 3 
+    networks:
+      - default
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+      - "traefik.enable=true"
+      - "traefik.http.routers.$SERVICE.entrypoints=https"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
+      - "traefik.http.routers.$SERVICE.tls=true"
+      - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+      - "traefik.docker.network=$NETWORK"
+      
+networks:
+  default:
+    external:
+      name: $NETWORK
+```

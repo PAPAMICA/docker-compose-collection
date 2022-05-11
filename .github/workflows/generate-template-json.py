@@ -44,7 +44,7 @@ for filename in sorted(glob.glob("composes-files/*.y*ml")):
             if re.search('# Update:', line):
                 date=line[10:-1]
             if re.search('# Maintainer:', line):
-                date=line[13:-1]
+                maintainer=line[13:-1]
             if re.search('#%', line):
                 envtemp = {}
                 dataenv=line[3:-1].split(': ', 1)

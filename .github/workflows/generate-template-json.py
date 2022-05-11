@@ -57,8 +57,8 @@ for filename in sorted(glob.glob("composes-files/*.y*ml")):
                 env.append(envtemp)
         if data:
             repository = {
+                "stackfile": filename,
                 "url": GITHUB_REPOSITORY_URL,
-                "stackfile": filename
             }
             dataset["repository"] = repository
             #dataset["type"] = 3

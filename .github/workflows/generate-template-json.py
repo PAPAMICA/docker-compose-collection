@@ -69,7 +69,7 @@ for filename in sorted(glob.glob("composes-files/*.y*ml")):
             
         else:
             print (f" 🚸 {filename} not updated !")
-            SERVICES=SERVICES + f"\n| 🚸 | {file_name} |  |"
+            SERVICES=SERVICES + f"\n| 🚸 | {file_name} | - |"
     except:
          print (f" ❌ {filename} error !")
 

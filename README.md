@@ -1,7 +1,17 @@
 
 # Docker-compose by PAPAMICA
-|  ![PAPAMICA](https://zupimages.net/up/20/04/7vtd.png) |  [Wiki-Tech.io](https://Wiki-Tech.io/)<br/> [Tech2Tech.fr](https://www.tech2tech.fr/) <br/> [Twitter @PAPAMICA__](https://twitter.com/PAPAMICA__) <br/> [LinkedIn](https://www.linkedin.com/in/mickael-asseline/)<br/> |
-|:--------:| :-------------|
+
+<p align="center">
+  <a href="https://papamica.com">
+    <img src="https://zupimages.net/up/20/04/7vtd.png" width="140px" alt="PAPAMICA" />
+  </a>
+</p>
+<p align="center">
+    <a href="https://github.com/PAPAMICA/docker-compose-collection#list-of-services-availables">List of services</a> |
+    <a href="https://github.com/PAPAMICA/docker-compose-collection#utilisation">How to use</a> |
+    <a href="https://github.com/PAPAMICA/docker-compose-collection#add-new-docker-compose-file">Add a new service</a>
+    <br /><br />
+</p>
 
 
 These docker-compose allow you to deploy multiple services easily and quickly. You can use them with Portainer directly or via docker-compose commands.
@@ -9,7 +19,8 @@ All docker-compose are commented and are configured using variables.
 
 They all include support for Traefik.
 
-You can deploye a compatible Docker environment with Portainer and Traefik with :
+You can deploye a compatible Docker environment with Portainer and Traefik with:
+
 https://github.com/PAPAMICA/docker-environment
 
 
@@ -54,7 +65,7 @@ https://github.com/PAPAMICA/docker-environment
 | 🚸 | zabbix-proxy.yml | - |
 | 🚸 | zabbix.yml | - |
 
-
+---
 # Utilisation
 ## Portainer
 Add the URL of my repo directly in Portainer:
@@ -86,6 +97,7 @@ sudo docker-compose -f service.yml --env-file env up -d
 -   **docker logs -f <id_container>** : Display the container logs
 -   **docker exec -it <id_container> bash** : Get a shell in container
 
+---
 # Add new docker-compose file
 I automated the creation of the json template file for Portainer and the update of the README.md.
 

@@ -26,43 +26,26 @@ https://github.com/PAPAMICA/docker-environment
 
 
 ## List of services availables:
-| Status | Service | Update |
+| Status | Service | Update | Maintainer |
 |:--:|--|--|
-| ✅ | adminer.yml | 2022-10-05 |
-| ✅ | bookstack.yml | 2022-10-05 |
-| ✅ | cachethq.yml | 2022-10-05 |
-| ✅ | etherpad.yml | 2022-10-05 |
-| ✅ | filebot.yml | 2022-10-05 |
-| ✅ | filebrowser.yml | 2022-10-05 |
-| 🚸 | gitlab.yml | - |
-| ✅ | grafana.yml | 2022-10-05 |
-| ✅ | hastebin.yml | 2022-10-05 |
-| ✅ | jirafeau.yml | 2022-10-05 |
-| ✅ | keycloak.yml | 2022-10-05 |
-| ✅ | matomo.yml | 2022-10-05 |
-| ✅ | nextcloud.yml | 2022-05-11 |
-| 🚸 | openvpn.yml | - |
-| 🚸 | privatebin.yml | - |
-| 🚸 | projectsend.yml | - |
-| 🚸 | shorturl.yml | - |
-| 🚸 | sinusbot.yml | - |
-| 🚸 | taiga.yml | - |
-| 🚸 | teamspeak.yml | - |
-| 🚸 | traefik.yml | - |
-| 🚸 | ts3rank.yml | - |
-| 🚸 | ts3viewer.yml | - |
-| ✅ | umami.yml | 2022-05-10 |
-| 🚸 | vault.yml | - |
-| ✅ | vaultwarden.yml | 2022-05-10 |
-| ✅ | vscode.yml | 2022-05-11 |
-| ✅ | website-html.yml | 2022-05-10 |
-| 🚸 | wikijs.yml | - |
-| 🚸 | wiznote.yml | - |
-| ✅ | wordpress.yml | 2022-05-11 |
-| 🚸 | yourls.yml | - |
-| 🚸 | zabbix-cachethq.yml | - |
-| 🚸 | zabbix-proxy.yml | - |
-| 🚸 | zabbix.yml | - |
+| 🚸 | gitlab.yml | - | - |
+| 🚸 | openvpn.yml | - | - |
+| 🚸 | privatebin.yml | - | - |
+| 🚸 | projectsend.yml | - | - |
+| 🚸 | shorturl.yml | - | - |
+| 🚸 | sinusbot.yml | - | - |
+| 🚸 | taiga.yml | - | - |
+| 🚸 | teamspeak.yml | - | - |
+| 🚸 | traefik.yml | - | - |
+| 🚸 | ts3rank.yml | - | - |
+| 🚸 | ts3viewer.yml | - | - |
+| 🚸 | vault.yml | - | - |
+| 🚸 | wikijs.yml | - | - |
+| 🚸 | wiznote.yml | - | - |
+| 🚸 | yourls.yml | - | - |
+| 🚸 | zabbix-cachethq.yml | - | - |
+| 🚸 | zabbix-proxy.yml | - | - |
+| 🚸 | zabbix.yml | - | - |
 
 ---
 # Utilisation

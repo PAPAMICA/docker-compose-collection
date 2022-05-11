@@ -41,9 +41,9 @@ https://github.com/PAPAMICA/docker-environment
 | 🚸 | traefik.yml | - |
 | 🚸 | ts3rank.yml | - |
 | 🚸 | ts3viewer.yml | - |
-| ✅ | umami.yml | 10/05/2022 |
+| ✅ | umami.yml | 2022-05-10 |
 | 🚸 | vault.yml | - |
-| ✅ | vaultwarden.yml | 10/05/2022 |
+| ✅ | vaultwarden.yml | 2022-05-10 |
 | 🚸 | vscode.yml | - |
 | ✅ | website-html.yml | 10/05/2022 |
 | 🚸 | wikijs.yml | - |

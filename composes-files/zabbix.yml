@@ -1,50 +1,55 @@
 # Maintainer: Mickael "PAPAMICA" Asseline
-# Docker-compose mis à disposition par Mickael "PAPAMICA" Asseline
-# Date de mise à jour : 27/10/2020
+# Update: 2022-10-05
 
-# Variables d'environnement à déclarer :
-#     - SERVICE : nom du service (exemple : plex)
-#     - DATA_LOCATION : localisation des données (exemple /apps/"service")
-#     - URL_LOKI : lien du serveur loki (exemple : ndd/loki/api/v1/push)
-#     - NDD : lien du nom de domaine (exemple : papamica.fr)
-#     - DB_USER : nom d'utilisateur pour la base de données (exemple : papamica)
-#     - DB_PASSWORD : mot de passe pour la base de données
-#     - DB_ROOT : mot de passe ROOT pour la base de données
+#& type: 3
+#& title: Zabbix
+#& description: Best monitoring tools
+#& note: Website: <a href='https://www.zabbix.com/' target='_blank' rel='noopener'>Zabbix.com</a>
+#& categories: SelfHosted, Monitoring, PAPAMICA
+#& platform: linux
+#& logo: https://juliebarbaroux.tech/wp-content/uploads/2020/11/zabbix.png
 
-# Fonctionne avec Portainer
-version: "2"
+#% SERVICE: Name of the service (No spaces or points)
+#% DATA_LOCATION: data localization (Example: /apps/service)
+#% URL: Service URL (Example: service.papamica.fr or service.com)
+#% NETWORK: Your Traefik network (Example: proxy)
+#% DB_USER: Database user
+#% DB_PASSWORD: Database user password
+#% TIME_ZONE: Time zone (Example : Europe/Paris)
+
+# Work with Portainer
+version: '2'
 services:
-  # Base de données
-  postgres-server:    # The Postgres Database Service
-    image: postgres:12.2
+  postgres-server:
+    image: postgres:14.2
     restart: always
     container_name: $SERVICE-db
-    environment:   # Username, password and database name variables
+    environment:
       POSTGRES_USER: $DB_USER
       POSTGRES_PASSWORD: $DB_PASSWORD
       POSTGRES_DB: zabbix
-      PG_DATA: /var/lib/postgresql/data/pgdata #data storage
+      PG_DATA: /var/lib/postgresql/data/pgdata
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $DB_USER"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
     volumes:
       - $DATA_LOCATION/db:/var/lib/postgresql/data
-
-    # Facultatif  
+    labels:
+      - "autoupdate=monitor"
     networks:
-      - proxy
-    logging:
-      driver: loki
-      options:
-        loki-url: "$URL_LOKI"
-        loki-external-labels: service={{.Name}}
+      - default
 
-  zabbix-server:     # The main Zabbix Server Software Service
-    image: zabbix/zabbix-server-pgsql:latest
+  zabbix-server:
+    image: zabbix/zabbix-server-pgsql:6.0.2-ubuntu
     restart: always
     container_name: $SERVICE-server
-    environment:   # The Postgres database value variable
+    environment:
       POSTGRES_USER: $DB_USER
       POSTGRES_PASSWORD: $DB_PASSWORD
       POSTGRES_DB: zabbix
-      ZBX_HISTORYSTORAGETYPES: log,text #Zabbix configuration variables
+      ZBX_HISTORYSTORAGETYPES: log,text
       ZBX_DEBUGLEVEL: 1
       ZBX_HOUSEKEEPINGFREQUENCY: 1
       ZBX_MAXHOUSEKEEPERDELETE: 5000
@@ -53,75 +58,53 @@ services:
       ZBX_VMWAREPERFFREQUENCY: 30
       ZBX_VMWARECACHESIZE: 16M
       ZBX_VMWARETIMEOUT: 10
-    depends_on:
-      - postgres-server
-    ports:
-      - 10051:10051
-    volumes:  # Volumes for scripts and related files you can add
-      - $DATA_LOCATION/alertscripts:/usr/lib/zabbix/alertscripts
+      ZBX_CACHESIZE: 2G
     healthcheck:
       test: grep -qr "zabbix_server" /proc/*/status || exit 1
       interval: 1m
       timeout: 30s
       retries: 3
-
-
-    # Facultatif  
+    depends_on:
+      - postgres-server
+    labels:
+      - "autoupdate=monitor"
+    ports:
+      - 10051:10051
+    volumes:
+      - $DATA_LOCATION/alertscripts:/usr/lib/zabbix/alertscripts
     networks:
-      - proxy
-    logging:
-      driver: loki
-      options:
-        loki-url: "$URL_LOKI"
-        loki-external-labels: service={{.Name}}
-
-  zabbix-web:    # The main Zabbix web UI or interface
-    image: zabbix/zabbix-web-nginx-pgsql:latest
+      - default
+      
+  zabbix-web:
+    image: zabbix/zabbix-web-nginx-pgsql:6.0.2-ubuntu
     restart: always
     container_name: $SERVICE-web
-    environment:  # Postgre database variables
+    environment:
       POSTGRES_USER: $DB_USER
       POSTGRES_PASSWORD: $DB_PASSWORD
       POSTGRES_DB: zabbix
-      ZBX_SERVER_HOST: zabbix-server  # Zabbix related and Php variables
+      ZBX_SERVER_HOST: $SERVICE-server
       ZBX_POSTMAXSIZE: 64M
-      PHP_TZ: "Europe/Paris"
+      PHP_TZ: $TIME_ZONE
       ZBX_MAXEXECUTIONTIME: 500
-    depends_on:
-      - postgres-server
-      - zabbix-server
-#    ports:    # Port where Zabbix UI is available
-#      - 8090:8080
     healthcheck:
       test: curl --fail http://localhost:8080 || exit 1
       interval: 1m
       timeout: 30s
       retries: 3
-
-
-    # Facultatif
+    depends_on:
+      - postgres-server
+      - zabbix-server
     networks:
-      - proxy
-    logging:
-      driver: loki
-      options:
-        loki-url: "$URL_LOKI"
-        loki-external-labels: service={{.Name}}
+      - default
     labels:
+      - "autoupdate=monitor"
       - "traefik.enable=true"
-      - "traefik.http.routers.$SERVICE.entrypoints=http"
-      - "traefik.http.routers.$SERVICE.rule=Host(`$SERVICE.$NDD`)"
-      - "traefik.http.middlewares.$SERVICE-https-redirect.redirectscheme.scheme=https"
-      - "traefik.http.routers.$SERVICE.middlewares=$SERVICE-https-redirect"
-      - "traefik.http.routers.$SERVICE-secure.entrypoints=https"
-      - "traefik.http.routers.$SERVICE-secure.rule=Host(`$SERVICE.$NDD`)"
-      - "traefik.http.routers.$SERVICE-secure.tls=true"
-      - "traefik.http.routers.$SERVICE-secure.tls.certresolver=http"
-      - "traefik.http.services.$SERVICE-secure.loadbalancer.server.port=8080"
-      - "traefik.docker.network=proxy"
-      
-
+      - "traefik.http.routers.zabbix-secure.rule=Host(`$URL`)"
+      - "traefik.http.routers.zabbix-secure.tls.certresolver=http"
+      - "traefik.http.services.zabbix-secure.loadbalancer.server.port=8080"
+      - "traefik.docker.network=$NETWORK"
 networks:
-  proxy:
+  default:
     external:
-      name: proxy
+      name: $NETWORK

@@ -81,7 +81,7 @@ try:
             os.remove("./README.md") 
         except:
             print ("file don't exist")
-        readme_template = open("/.github/workflows/readme-template.md", "rt")
+        readme_template = open(".github/workflows/readme-template.md", "rt")
         readme_result = open("README.md", "wt")
         for line in readme_template:
             readme_result.write(line.replace('##SERVICES##', SERVICES))

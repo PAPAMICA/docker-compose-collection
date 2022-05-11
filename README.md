@@ -26,7 +26,7 @@ https://github.com/PAPAMICA/docker-environment
 
 
 ## List of services availables:
-| Status | Service | Update |
+| Status | Service | Update |
 |:--:|--|--|
 | ✅ | adminer.yml | 2022-10-05 |
 | ✅ | bookstack.yml | 2022-10-05 |

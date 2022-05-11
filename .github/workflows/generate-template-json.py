@@ -65,11 +65,11 @@ for filename in sorted(glob.glob("composes-files/*.y*ml")):
             dataset["env"] = env
             templates.append(dataset)
             print (f" ✅ {filename} ")
-            SERVICES=SERVICES + f"\n| ✅ | {file_name} | {date} |"
+            SERVICES=SERVICES + f"\n| ✅ | {file_name} | prout |"
             
         else:
             print (f" 🚸 {filename} not updated !")
-            SERVICES=SERVICES + f"\n| 🚸 | {file_name} | {date} |"
+            SERVICES=SERVICES + f"\n| 🚸 | {file_name} | prout |"
     except:
          print (f" ❌ {filename} error !")
 

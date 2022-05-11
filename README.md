@@ -27,7 +27,7 @@ https://github.com/PAPAMICA/docker-environment
 
 ## List of services availables:
 | Status | Service | Update | Maintainer |
-|:--:|--|--|
+|:--:|--|--|--|
 | 🚸 | gitlab.yml | - | - |
 | 🚸 | openvpn.yml | - | - |
 | 🚸 | privatebin.yml | - | - |

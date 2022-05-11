@@ -10,7 +10,7 @@
 #& logo: https://upload.wikimedia.org/wikipedia/commons/0/03/Bitwarden_Logo.png
 
 #% SERVICE: Name of the service (No spaces or points)
-#% DATA_LOCATION: data localization (Example: /apps/service)
+#% DATA_LOCATION: Data localization (Example: /apps/service)
 #% URL: Service link (Example: service.papamica.fr or service.com)
 #% NETWORK: Your Traefik network (Example: proxy)
 #% SIGNUPS_ALLOWED: Autorize signup ? (True or False)

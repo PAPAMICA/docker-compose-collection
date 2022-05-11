@@ -1,35 +1,34 @@
-# Docker-compose mis à disposition par Mickael "PAPAMICA" Asseline
-# Date de mise à jour : 27/10/2020
+# Docker-compose provided by Mickael "PAPAMICA" Asseline
+# Update: 2022-05-11
 
-# Variables d'environnement à déclarer :
-#     - SERVICE : nom du service (exemple : plex)
-#     - DATA_LOCATION : localisation des données (exemple /apps/"service")
-#     - URL_LOKI : lien du serveur loki (exemple : ndd/loki/api/v1/push)
-#     - NDD : lien du nom de domaine (exemple : papamica.fr)
-#     - DB_USER : nom d'utilisateur pour la base de données (exemple : papamica)
-#     - DB_PASSWORD : mot de passe pour la base de données
-#     - DB_ROOT : mot de passe ROOT pour la base de données
-#     - DATA : localisation de vos fichiers à explorer
+#& type: 3
+#& title: NextCloud
+#& description: A personnal cloud, alternative to Google Drive, etc...
+#& note: Website: <a href='https://nextcloud.com/' target='_blank' rel='noopener'>NextCloud.com</a>
+#& categories: SelfHosted, PAPAMICA
+#& platform: linux
+#& logo: https://alternative.me/media/1280/nextcloud-screenshot-h7bxcd9k35twayd9.png
 
-# Fonctionne avec Portainer
+#% SERVICE: Name of the service (No spaces or points)
+#% DATA_LOCATION: Data localization (Example: /apps/service)
+#% URL: Service link (Example: service.papamica.fr or service.com)
+#% NETWORK: Your Traefik network (Example: proxy)
+#% DB_USER: Database user
+#% DB_PASSWORD: Password for database user
+#% DB_ROOT: Password for database root
+#% DATA: Folder of your data
+
+# Work with Portainer
 version: "2"
 services:
   # Nextcloud : https://nextcloud.com/
   nextcloud:
-    image: wonderfall/nextcloud:latest
+    image: nextcloud:24
     container_name: $SERVICE
     restart: always
     depends_on:
       - nextcloud-db
     environment:
-      - UID=1000
-      - GID=1000
-      - UPLOAD_MAX_SIZE=20G
-      - APC_SHM_SIZE=128M
-      - OPCACHE_MEM_SIZE=128
-      - CRON_PERIOD=15m
-      - TZ=Europe/Paris
-      - DOMAIN=$SERVICE.$NDD
       - DB_TYPE=mysql
       - DB_NAME=nextcloud
       - DB_USER=$DB_USER
@@ -37,36 +36,23 @@ services:
       - DB_HOST=nextcloud-db
     volumes:
       - $DATA:/data
-      - $DATA_LOCATION/config:/config
-      - $DATA_LOCATION/apps:/apps2
-      - $DATA_LOCATION/themes:/nextcloud/themes
-#    ports:
-#      - 8080:80
-
-    # Facultatif  
+      - $DATA_LOCATION/config:/var/www/html
     networks:
-      - proxy
-    logging:
-      driver: loki
-      options:
-        loki-url: "$URL_LOKI"
-        loki-external-labels: service={{.Name}}
+      - default
     labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
       - "traefik.enable=true"
-      - "traefik.http.routers.$SERVICE.entrypoints=http"
-      - "traefik.http.routers.$SERVICE.rule=Host(`$SERVICE.$NDD`)"
-      - "traefik.http.middlewares.$SERVICE-https-redirect.redirectscheme.scheme=https"
-      - "traefik.http.routers.$SERVICE.middlewares=$SERVICE-https-redirect"
-      - "traefik.http.routers.$SERVICE-secure.entrypoints=https"
-      - "traefik.http.routers.$SERVICE-secure.rule=Host(`$SERVICE.$NDD`)"
-      - "traefik.http.routers.$SERVICE-secure.tls=true"
-      - "traefik.http.routers.$SERVICE-secure.tls.certresolver=http"
-      - "traefik.docker.network=proxy"
+      - "traefik.http.routers.$SERVICE.entrypoints=https"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
+      - "traefik.http.routers.$SERVICE.tls=true"
+      - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+      - "traefik.docker.network=$NETWORK"
 
   # Base de donnée
   nextcloud-db:
     image: mariadb:10.4.12
-    container_name: nextcloud-mariadb
+    container_name: $SERVICE-db
+    command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
     restart: always
     volumes:
       - $DATA_LOCATION/db:/var/lib/mysql
@@ -78,14 +64,9 @@ services:
 
     # Facultatif  
     networks:
-      - proxy
-    logging:
-      driver: loki
-      options:
-        loki-url: "$URL_LOKI"
-        loki-external-labels: service={{.Name}}
+      - default
 
 networks:
-  proxy:
+  default:
     external:
-      name: proxy
+      name: $NETWORK

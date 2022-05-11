@@ -504,6 +504,60 @@
         },
         {
             "type": 3,
+            "title": "NextCloud",
+            "description": "A personnal cloud, alternative to Google Drive, etc...",
+            "note": "Website: <a href='https://nextcloud.com/' target='_blank' rel='noopener'>NextCloud.com</a>",
+            "categories": [
+                "SelfHosted",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://alternative.me/media/1280/nextcloud-screenshot-h7bxcd9k35twayd9.png",
+            "repository": {
+                "stackfile": "composes-files/nextcloud.yml",
+                "url": "https://github.com/PAPAMICA/docker-compose-collection"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service",
+                    "description": "No spaces or points"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "Data localization",
+                    "description": "Example: /apps/service"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service link",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network",
+                    "description": "Example: proxy"
+                },
+                {
+                    "name": "DB_USER",
+                    "label": "Database user"
+                },
+                {
+                    "name": "DB_PASSWORD",
+                    "label": "Password for database user"
+                },
+                {
+                    "name": "DB_ROOT",
+                    "label": "Password for database root"
+                },
+                {
+                    "name": "DATA",
+                    "label": "Folder of your data"
+                }
+            ]
+        },
+        {
+            "type": 3,
             "title": "umami",
             "description": "Light alternative to Google Analitycs",
             "note": "Website: <a href='https://umami.is/' target='_blank' rel='noopener'>Umami.is</a></br></br>Warning: RTFM ! You need to add one file and restart ! ",
@@ -567,7 +621,7 @@
                 },
                 {
                     "name": "DATA_LOCATION",
-                    "label": "data localization",
+                    "label": "Data localization",
                     "description": "Example: /apps/service"
                 },
                 {

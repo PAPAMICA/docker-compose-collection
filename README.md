@@ -40,7 +40,7 @@ https://github.com/PAPAMICA/docker-environment
 | ✅ | jirafeau.yml | 2022-10-05 |
 | ✅ | keycloak.yml | 2022-10-05 |
 | ✅ | matomo.yml | 2022-10-05 |
-| 🚸 | nextcloud.yml | - |
+| ✅ | nextcloud.yml | 2022-05-11 |
 | 🚸 | openvpn.yml | - |
 | 🚸 | ouroboros.yml | - |
 | 🚸 | privatebin.yml | - |

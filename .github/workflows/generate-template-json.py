@@ -91,8 +91,7 @@ try:
         readme_template = open(".github/workflows/Readme-template.md", "rt")
         readme_result = open("README.md", "wt")
         for line in readme_template:
-            readme_result.write(line.replace('##SERVICES##', SERVICES))
-            readme_result.write(line.replace('##SERVICES_TODO##', SERVICES_TODO))
+            readme_result.write(line.replace('##SERVICES##', SERVICES).replace('##SERVICES_TODO##', SERVICES_TODO))
         readme_template.close()
         readme_result.close()
         print ("\n ✅ README.md generated !")

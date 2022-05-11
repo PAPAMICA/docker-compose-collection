@@ -8,6 +8,7 @@ from textwrap import indent
 
 GITHUB_REPOSITORY_URL = 'https://github.com/PAPAMICA/docker-compose-collection'
 SERVICES="|:--:|--|--|--|"
+SERVICES_TODO="|:--:|--|"
 try:
     os.remove("./templates-portainer.json") 
 except:
@@ -26,6 +27,7 @@ for filename in sorted(glob.glob("composes-files/*.y*ml")):
         categories = []
         file_name=filename.split('/')
         file_name=file_name[1]
+        file_name=file_name[:-3]
         file = open(filename)
         for line in file.readlines():
             if re.search('#&', line):
@@ -71,7 +73,7 @@ for filename in sorted(glob.glob("composes-files/*.y*ml")):
             
         else:
             print (f" 🚸 {filename} not updated !")
-            SERVICES=SERVICES + f"\n| 🚸 | {file_name} | - | - |"
+            SERVICES_TODO=SERVICES_TODO + f"\n| 🚸 | {file_name} |"
     except:
          print (f" ❌ {filename} error !")
 
@@ -90,6 +92,7 @@ try:
         readme_result = open("README.md", "wt")
         for line in readme_template:
             readme_result.write(line.replace('##SERVICES##', SERVICES))
+            readme_result.write(line.replace('##SERVICES_TODO##', SERVICES_TODO))
         readme_template.close()
         readme_result.close()
         print ("\n ✅ README.md generated !")

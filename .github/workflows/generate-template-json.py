@@ -75,7 +75,23 @@ try:
     json_data = json.dumps(result, indent=4)
     with open('./templates-portainer.json', 'w') as outfile:
         outfile.write(json_data)
-    print ("\n ✅ File generated !")
+    print ("\n ✅ templates-portainer.json generated !")
+    try:
+        try:
+            os.remove("./README.md") 
+        except:
+            print ("file don't exist")
+        readme_template = open("/.github/workflows/readme-template.md", "rt")
+        readme_result = open("README.md", "wt")
+        for line in readme_template:
+            readme_result.write(line.replace('##SERVICES##', SERVICES))
+        readme_template.close()
+        readme_result.close()
+        print ("\n ✅ README.md generated !")
+    except:
+        print (" ❌ Error when generate README.md !")
+
+
     print (SERVICES)
 except:
-    print (" ❌ Error when generate !")
+    print (" ❌ Error when generate templates-portainer.json !")

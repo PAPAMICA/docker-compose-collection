@@ -27,7 +27,7 @@ for filename in sorted(glob.glob("composes-files/*.y*ml")):
         file_name=filename.split('/')
         file_name=file_name[1]
         time_modified=os.path.getmtime(filename)
-        date_modified=datetime.datetime.fromtimestamp(time_modified)
+        date_modified=datetime.datetime.fromtimestamp(time_modified).strftime('%d-%m-%y %H:%M:%S')
         file = open(filename)
         for line in file.readlines():
             if re.search('#&', line):

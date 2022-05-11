@@ -33,6 +33,9 @@ for filename in sorted(glob.glob("composes-files/*.y*ml")):
                 elif data[0] == "categories":
                     categories = data[1].split(', ')
                     dataset[data[0]] = categories
+                elif data[0] == "title":
+                    title = data[1]
+                    dataset[data[0]] = title
                 else:
                     dataset[data[0]] = data[1]
             if re.search('#%', line):
@@ -57,10 +60,11 @@ for filename in sorted(glob.glob("composes-files/*.y*ml")):
             dataset["env"] = env
             templates.append(dataset)
             print (f" ✅ {filename} ")
+            SERVICES=SERVICES + f"\n| ✅ | {title} | 2020-01-20 |"
             
         else:
             print (f" 🚸 {filename} not updated !")
-            SERVICES=SERVICES + f"\n| 🚸 | {filename} | 2020-01-20 |"
+            SERVICES=SERVICES + f"\n| 🚸 | {title} | 2020-01-20 |"
     except:
          print (f" ❌ {filename} error !")
 

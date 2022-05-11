@@ -17,42 +17,56 @@ https://github.com/PAPAMICA/docker-environment
 ## List of services availables:
 | Status | Service | Update |
 |:--:|--|--|
-| ✅ | adminer.yml | prout |
-| ✅ | bookstack.yml | prout |
-| ✅ | cachethq.yml | prout |
-| ✅ | etherpad.yml | prout |
-| ✅ | filebot.yml | prout |
-| ✅ | filebrowser.yml | prout |
-| 🚸 | gitlab.yml | prout |
-| ✅ | grafana.yml | prout |
-| ✅ | hastebin.yml | prout |
-| ✅ | jirafeau.yml | prout |
-| ✅ | keycloak.yml | prout |
-| ✅ | matomo.yml | prout |
-| 🚸 | nextcloud.yml | prout |
-| 🚸 | openvpn.yml | prout |
-| 🚸 | ouroboros.yml | prout |
-| 🚸 | privatebin.yml | prout |
-| 🚸 | projectsend.yml | prout |
-| 🚸 | shorturl.yml | prout |
-| 🚸 | sinusbot.yml | prout |
-| 🚸 | taiga.yml | prout |
-| 🚸 | teamspeak.yml | prout |
-| 🚸 | traefik.yml | prout |
-| 🚸 | ts3rank.yml | prout |
-| 🚸 | ts3viewer.yml | prout |
-| ✅ | umami.yml | prout |
-| 🚸 | vault.yml | prout |
-| ✅ | vaultwarden.yml | prout |
-| 🚸 | vscode.yml | prout |
-| ✅ | website-html.yml | prout |
-| 🚸 | wikijs.yml | prout |
-| 🚸 | wiznote.yml | prout |
-| 🚸 | wordpress.yml | prout |
-| 🚸 | yourls.yml | prout |
-| 🚸 | zabbix-cachethq.yml | prout |
-| 🚸 | zabbix-proxy.yml | prout |
-| 🚸 | zabbix.yml | prout |
+| ✅ | adminer.yml | 2022-10-05
+ |
+| ✅ | bookstack.yml | 2022-10-05
+ |
+| ✅ | cachethq.yml | 2022-10-05
+ |
+| ✅ | etherpad.yml | 2022-10-05
+ |
+| ✅ | filebot.yml | 2022-10-05
+ |
+| ✅ | filebrowser.yml | 2022-10-05
+ |
+| 🚸 | gitlab.yml | - |
+| ✅ | grafana.yml | 2022-10-05
+ |
+| ✅ | hastebin.yml | 2022-10-05
+ |
+| ✅ | jirafeau.yml | 2022-10-05
+ |
+| ✅ | keycloak.yml | 2022-10-05
+ |
+| ✅ | matomo.yml | 2022-10-05
+ |
+| 🚸 | nextcloud.yml | - |
+| 🚸 | openvpn.yml | - |
+| 🚸 | ouroboros.yml | - |
+| 🚸 | privatebin.yml | - |
+| 🚸 | projectsend.yml | - |
+| 🚸 | shorturl.yml | - |
+| 🚸 | sinusbot.yml | - |
+| 🚸 | taiga.yml | - |
+| 🚸 | teamspeak.yml | - |
+| 🚸 | traefik.yml | - |
+| 🚸 | ts3rank.yml | - |
+| 🚸 | ts3viewer.yml | - |
+| ✅ | umami.yml | 10/05/2022
+ |
+| 🚸 | vault.yml | - |
+| ✅ | vaultwarden.yml | 10/05/2022
+ |
+| 🚸 | vscode.yml | - |
+| ✅ | website-html.yml | 10/05/2022
+ |
+| 🚸 | wikijs.yml | - |
+| 🚸 | wiznote.yml | - |
+| 🚸 | wordpress.yml | - |
+| 🚸 | yourls.yml | - |
+| 🚸 | zabbix-cachethq.yml | - |
+| 🚸 | zabbix-proxy.yml | - |
+| 🚸 | zabbix.yml | - |
 
 
 # Utilisation

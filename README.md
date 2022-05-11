@@ -28,7 +28,19 @@ https://github.com/PAPAMICA/docker-environment
 ## List of services availables:
 | Status | Service | Update | Maintainer |
 |:--:|--|--|--|
+| ✅ | adminer.yml | 2022-10-05 |  Mickael "PAPAMICA" Asseline |
+| ✅ | bookstack.yml | 2022-10-05 |  Mickael "PAPAMICA" Asseline |
+| ✅ | cachethq.yml | 2022-10-05 |  Mickael "PAPAMICA" Asseline |
+| ✅ | etherpad.yml | 2022-10-05 |  Mickael "PAPAMICA" Asseline |
+| ✅ | filebot.yml | 2022-10-05 |  Mickael "PAPAMICA" Asseline |
+| ✅ | filebrowser.yml | 2022-10-05 |  Mickael "PAPAMICA" Asseline |
 | 🚸 | gitlab.yml | - | - |
+| ✅ | grafana.yml | 2022-10-05 |  Mickael "PAPAMICA" Asseline |
+| ✅ | hastebin.yml | 2022-10-05 |  Mickael "PAPAMICA" Asseline |
+| ✅ | jirafeau.yml | 2022-10-05 |  Mickael "PAPAMICA" Asseline |
+| ✅ | keycloak.yml | 2022-10-05 |  Mickael "PAPAMICA" Asseline |
+| ✅ | matomo.yml | 2022-10-05 |  Mickael "PAPAMICA" Asseline |
+| ✅ | nextcloud.yml | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
 | 🚸 | openvpn.yml | - | - |
 | 🚸 | privatebin.yml | - | - |
 | 🚸 | projectsend.yml | - | - |
@@ -39,9 +51,14 @@ https://github.com/PAPAMICA/docker-environment
 | 🚸 | traefik.yml | - | - |
 | 🚸 | ts3rank.yml | - | - |
 | 🚸 | ts3viewer.yml | - | - |
+| ✅ | umami.yml | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | 🚸 | vault.yml | - | - |
+| ✅ | vaultwarden.yml | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| ✅ | vscode.yml | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
+| ✅ | website-html.yml | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | 🚸 | wikijs.yml | - | - |
 | 🚸 | wiznote.yml | - | - |
+| ✅ | wordpress.yml | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
 | 🚸 | yourls.yml | - | - |
 | 🚸 | zabbix-cachethq.yml | - | - |
 | 🚸 | zabbix-proxy.yml | - | - |

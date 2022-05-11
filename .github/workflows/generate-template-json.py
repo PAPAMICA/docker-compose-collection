@@ -27,7 +27,7 @@ for filename in sorted(glob.glob("composes-files/*.y*ml")):
         categories = []
         file_name=filename.split('/')
         file_name=file_name[1]
-        file_name=file_name[:-3]
+        file_name=file_name[:-4]
         file = open(filename)
         for line in file.readlines():
             if re.search('#&', line):

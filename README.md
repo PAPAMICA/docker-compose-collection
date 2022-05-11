@@ -28,38 +28,123 @@ https://github.com/PAPAMICA/docker-environment
 ## List of services availables:
 | Status | Service | Update | Maintainer |
 |:--:|--|--|--|
+| 🚸 | adguard.yml | - | - |
 | ✅ | adminer.yml | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| 🚸 | airsonic.yml | - | - |
+| 🚸 | apprise-api.yml | - | - |
+| 🚸 | audacity.yml | - | - |
+| 🚸 | authelia.yml | - | - |
+| 🚸 | bazarr.yml | - | - |
 | ✅ | bookstack.yml | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | cachethq.yml | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| 🚸 | calibre-web.yml | - | - |
+| 🚸 | chevereto.yml | - | - |
+| 🚸 | dashmachine.yml | - | - |
+| 🚸 | deemix.yml | - | - |
+| 🚸 | deluge.yml | - | - |
+| 🚸 | domotics.yml | - | - |
+| 🚸 | duplicaty.yml | - | - |
+| 🚸 | elasticsearch.yml | - | - |
+| 🚸 | emby.yml | - | - |
+| 🚸 | embystat.yml | - | - |
+| 🚸 | emulatorjs.yml | - | - |
 | ✅ | etherpad.yml | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | filebot.yml | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | filebrowser.yml | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| 🚸 | freshrss.yml | - | - |
 | 🚸 | gitlab.yml | - | - |
 | ✅ | grafana.yml | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| 🚸 | grav.yml | - | - |
+| 🚸 | guacamole.yml | - | - |
 | ✅ | hastebin.yml | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| 🚸 | heimdall.yml | - | - |
+| 🚸 | homeassistant.yml | - | - |
+| 🚸 | homer.yml | - | - |
+| 🚸 | httpd.yml | - | - |
+| 🚸 | jacket.yml | - | - |
+| 🚸 | jellyfin.yml | - | - |
+| 🚸 | jenkins.yml | - | - |
 | ✅ | jirafeau.yml | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| 🚸 | joomla.yml | - | - |
 | ✅ | keycloak.yml | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| 🚸 | lidarr.yml | - | - |
+| 🚸 | lychee.yml | - | - |
+| 🚸 | magento.yml | - | - |
+| 🚸 | mariadb.yml | - | - |
 | ✅ | matomo.yml | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| 🚸 | mautic.yml | - | - |
+| 🚸 | mcmyadmin2.yml | - | - |
+| 🚸 | minetest.yml | - | - |
+| 🚸 | minio.yml | - | - |
+| 🚸 | murmur.yml | - | - |
+| 🚸 | n8m.yml | - | - |
 | ✅ | nextcloud.yml | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
+| 🚸 | nginx-proxy-manager.yml | - | - |
+| 🚸 | nginx.yml | - | - |
+| 🚸 | nzbget.yml | - | - |
+| 🚸 | ombi.yml | - | - |
+| 🚸 | openvpn-as.yml | - | - |
 | 🚸 | openvpn.yml | - | - |
+| 🚸 | organizr.yml | - | - |
+| 🚸 | owncoud.yml | - | - |
+| 🚸 | paperless-ng.yml | - | - |
+| 🚸 | papermerge.yml | - | - |
+| 🚸 | petio.yml | - | - |
+| 🚸 | phpmyadmin.yml | - | - |
+| 🚸 | pi-hole.yml | - | - |
+| 🚸 | piwigo.yml | - | - |
+| 🚸 | pixapop.yml | - | - |
+| 🚸 | plex.yml | - | - |
+| 🚸 | plone.yml | - | - |
+| 🚸 | postgresql.yml | - | - |
 | 🚸 | privatebin.yml | - | - |
 | 🚸 | projectsend.yml | - | - |
+| 🚸 | prowlarr.yml | - | - |
+| 🚸 | radarr.yml | - | - |
+| 🚸 | raneto.yml | - | - |
+| 🚸 | rdesktop.yml | - | - |
+| 🚸 | reactive-resume.yml | - | - |
+| 🚸 | redis.yml | - | - |
+| 🚸 | redmine.yml | - | - |
+| 🚸 | registry.yml | - | - |
+| 🚸 | requestrr.yml | - | - |
+| 🚸 | rutorrent.yml | - | - |
+| 🚸 | scality-s3.yml | - | - |
+| 🚸 | scrutiny.yml | - | - |
+| 🚸 | shiori.yml | - | - |
 | 🚸 | shorturl.yml | - | - |
 | 🚸 | sinusbot.yml | - | - |
+| 🚸 | snapdrop.yml | - | - |
+| 🚸 | snibox.yml | - | - |
+| 🚸 | snipe-it.yml | - | - |
+| 🚸 | sonarr.yml | - | - |
 | 🚸 | taiga.yml | - | - |
+| 🚸 | tautulli.yml | - | - |
 | 🚸 | teamspeak.yml | - | - |
+| 🚸 | thelounge.yml | - | - |
+| 🚸 | tiddlywiki.yml | - | - |
+| 🚸 | tiny-tiny-rss.yml | - | - |
 | 🚸 | traefik.yml | - | - |
+| 🚸 | transmission.yml | - | - |
 | 🚸 | ts3rank.yml | - | - |
 | 🚸 | ts3viewer.yml | - | - |
 | ✅ | umami.yml | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| 🚸 | unify-controller.yml | - | - |
+| 🚸 | urbackup.yml | - | - |
 | 🚸 | vault.yml | - | - |
 | ✅ | vaultwarden.yml | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | vscode.yml | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
 | ✅ | website-html.yml | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| 🚸 | webtop.yml | - | - |
+| 🚸 | whoogle.yml | - | - |
 | 🚸 | wikijs.yml | - | - |
+| 🚸 | wireguard.yml | - | - |
 | 🚸 | wiznote.yml | - | - |
 | ✅ | wordpress.yml | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
+| 🚸 | wowza.yml | - | - |
+| 🚸 | yatch.yml | - | - |
 | 🚸 | yourls.yml | - | - |
+| 🚸 | youtube-dl.yml | - | - |
 | 🚸 | zabbix-cachethq.yml | - | - |
 | 🚸 | zabbix-proxy.yml | - | - |
 | ✅ | zabbix.yml | 2022-05-11 |  Mickael "PAPAMICA" Asseline |

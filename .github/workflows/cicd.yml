@@ -25,7 +25,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Generate json file
-        run: python3 generate-template-json.py
+        run: python3 .githug/workflows/generate-template-json.py
       - name: update file and push to remote
         run: |
           git config --global user.name "github-actions[bot]"

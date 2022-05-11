@@ -28,18 +28,18 @@ https://github.com/PAPAMICA/docker-environment
 ## List of services availables:
 | Status | Service | Update | Maintainer |
 |:--:|--|--|--|
-| ✅ | adminer.yml | 2022-10-05 |  Mickael "PAPAMICA" Asseline |
-| ✅ | bookstack.yml | 2022-10-05 |  Mickael "PAPAMICA" Asseline |
-| ✅ | cachethq.yml | 2022-10-05 |  Mickael "PAPAMICA" Asseline |
-| ✅ | etherpad.yml | 2022-10-05 |  Mickael "PAPAMICA" Asseline |
-| ✅ | filebot.yml | 2022-10-05 |  Mickael "PAPAMICA" Asseline |
-| ✅ | filebrowser.yml | 2022-10-05 |  Mickael "PAPAMICA" Asseline |
+| ✅ | adminer.yml | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| ✅ | bookstack.yml | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| ✅ | cachethq.yml | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| ✅ | etherpad.yml | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| ✅ | filebot.yml | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| ✅ | filebrowser.yml | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | 🚸 | gitlab.yml | - | - |
-| ✅ | grafana.yml | 2022-10-05 |  Mickael "PAPAMICA" Asseline |
-| ✅ | hastebin.yml | 2022-10-05 |  Mickael "PAPAMICA" Asseline |
-| ✅ | jirafeau.yml | 2022-10-05 |  Mickael "PAPAMICA" Asseline |
-| ✅ | keycloak.yml | 2022-10-05 |  Mickael "PAPAMICA" Asseline |
-| ✅ | matomo.yml | 2022-10-05 |  Mickael "PAPAMICA" Asseline |
+| ✅ | grafana.yml | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| ✅ | hastebin.yml | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| ✅ | jirafeau.yml | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| ✅ | keycloak.yml | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| ✅ | matomo.yml | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | nextcloud.yml | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
 | 🚸 | openvpn.yml | - | - |
 | 🚸 | privatebin.yml | - | - |
@@ -62,7 +62,7 @@ https://github.com/PAPAMICA/docker-environment
 | 🚸 | yourls.yml | - | - |
 | 🚸 | zabbix-cachethq.yml | - | - |
 | 🚸 | zabbix-proxy.yml | - | - |
-| ✅ | zabbix.yml | 2022-10-05 |  Mickael "PAPAMICA" Asseline |
+| ✅ | zabbix.yml | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
 
 ---
 # Utilisation

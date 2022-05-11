@@ -15,6 +15,10 @@ https://github.com/PAPAMICA/docker-environment
 
 
 ## List of services availables:
+| Status | Service | Update |
+|--|--|--|
+| ✅ | Traefik | 2021-10-23 |
+| 🚸 | Portainer | 2022-01-10 |
 
 + **Traefik**
 + **Portainer**

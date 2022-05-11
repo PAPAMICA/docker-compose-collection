@@ -65,6 +65,8 @@ services:
       retries: 10
     volumes:
       - $DATA_LOCATION/db:/var/lib/mysql
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
     environment:
       - MYSQL_ROOT_PASSWORD=$DB_ROOT
       - MYSQL_DATABASE=nextcloud

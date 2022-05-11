@@ -6,6 +6,7 @@ import json
 from textwrap import indent
 
 GITHUB_REPOSITORY_URL = 'https://github.com/PAPAMICA/docker-compose-collection/composes-files'
+SERVICES="|:--:|--|--|"
 try:
     os.remove("./templates-portainer.json") 
 except:
@@ -59,6 +60,7 @@ for filename in sorted(glob.glob("composes-files/*.y*ml")):
             
         else:
             print (f" 🚸 {filename} not updated !")
+            SERVICES=SERVICES + f"\n| 🚸 | {filename} | 2020-01-20 |"
     except:
          print (f" ❌ {filename} error !")
 
@@ -68,5 +70,6 @@ try:
     with open('./templates-portainer.json', 'w') as outfile:
         outfile.write(json_data)
     print ("\n ✅ File generated !")
+    print (SERVICES)
 except:
     print (" ❌ Error when generate !")

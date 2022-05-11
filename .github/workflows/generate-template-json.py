@@ -3,6 +3,7 @@ import glob
 import os
 import re
 import json
+import datetime
 from textwrap import indent
 
 GITHUB_REPOSITORY_URL = 'https://github.com/PAPAMICA/docker-compose-collection/composes-files'
@@ -25,7 +26,8 @@ for filename in sorted(glob.glob("composes-files/*.y*ml")):
         categories = []
         file_name=filename.split('/')
         file_name=file_name[1]
-        date_modified=os.path.getmtime(filename)
+        time_modified=os.path.getmtime(filename)
+        date_modified=datetime.datetime.fromtimestamp(time_modified)
         file = open(filename)
         for line in file.readlines():
             if re.search('#&', line):

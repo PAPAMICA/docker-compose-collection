@@ -44,7 +44,7 @@ https://github.com/PAPAMICA/docker-environment
 | ✅ | umami.yml | 2022-05-10 |
 | 🚸 | vault.yml | - |
 | ✅ | vaultwarden.yml | 2022-05-10 |
-| 🚸 | vscode.yml | - |
+| ✅ | vscode.yml | 2022-05-11 |
 | ✅ | website-html.yml | 2022-05-10 |
 | 🚸 | wikijs.yml | - |
 | 🚸 | wiznote.yml | - |

@@ -599,6 +599,48 @@
         },
         {
             "type": 3,
+            "title": "VSCode Online",
+            "description": "Web interface for VSCode",
+            "note": "Website: <a href='https://github.com/coder/code-server' target='_blank' rel='noopener'>Github.com</a>",
+            "categories": [
+                "SelfHosted",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/2048px-Visual_Studio_Code_1.35_icon.svg.png",
+            "repository": {
+                "url": "https://github.com/PAPAMICA/docker-compose-collection/composes-files",
+                "stackfile": "composes-files/vscode.yml"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "name of the service",
+                    "description": "No spaces or points"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "data localization",
+                    "description": "Example: /apps/service"
+                },
+                {
+                    "name": "URL",
+                    "label": "service URL",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "your Traefik network",
+                    "description": "Example: proxy"
+                },
+                {
+                    "name": "PASSWORD",
+                    "label": "Password to acces web interface"
+                }
+            ]
+        },
+        {
+            "type": 3,
             "title": "Website HTML PHP",
             "description": "Simple HTML website under PHP 7.4",
             "note": "Website: <a href='https://github.com/LavoWeb/Docker' target='_blank' rel='noopener'>Github.com</a>",

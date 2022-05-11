@@ -29,7 +29,7 @@ https://github.com/PAPAMICA/docker-environment
  |
 | ✅ | filebrowser.yml | 10/05/2022
  |
-| 🚸 | gitlab.yml |  |
+| 🚸 | gitlab.yml | - |
 | ✅ | grafana.yml | 10/05/2022
  |
 | ✅ | hastebin.yml | 10/05/2022
@@ -40,33 +40,33 @@ https://github.com/PAPAMICA/docker-environment
  |
 | ✅ | matomo.yml | 10/05/2022
  |
-| 🚸 | nextcloud.yml |  |
-| 🚸 | openvpn.yml |  |
-| 🚸 | ouroboros.yml |  |
-| 🚸 | privatebin.yml |  |
-| 🚸 | projectsend.yml |  |
-| 🚸 | shorturl.yml |  |
-| 🚸 | sinusbot.yml |  |
-| 🚸 | taiga.yml |  |
-| 🚸 | teamspeak.yml |  |
-| 🚸 | traefik.yml |  |
-| 🚸 | ts3rank.yml |  |
-| 🚸 | ts3viewer.yml |  |
+| 🚸 | nextcloud.yml | - |
+| 🚸 | openvpn.yml | - |
+| 🚸 | ouroboros.yml | - |
+| 🚸 | privatebin.yml | - |
+| 🚸 | projectsend.yml | - |
+| 🚸 | shorturl.yml | - |
+| 🚸 | sinusbot.yml | - |
+| 🚸 | taiga.yml | - |
+| 🚸 | teamspeak.yml | - |
+| 🚸 | traefik.yml | - |
+| 🚸 | ts3rank.yml | - |
+| 🚸 | ts3viewer.yml | - |
 | ✅ | umami.yml | 10/05/2022
  |
-| 🚸 | vault.yml |  |
+| 🚸 | vault.yml | - |
 | ✅ | vaultwarden.yml | 10/05/2022
  |
-| 🚸 | vscode.yml |  |
+| 🚸 | vscode.yml | - |
 | ✅ | website-html.yml | 10/05/2022
  |
-| 🚸 | wikijs.yml |  |
-| 🚸 | wiznote.yml |  |
-| 🚸 | wordpress.yml |  |
-| 🚸 | yourls.yml |  |
-| 🚸 | zabbix-cachethq.yml |  |
-| 🚸 | zabbix-proxy.yml |  |
-| 🚸 | zabbix.yml |  |
+| 🚸 | wikijs.yml | - |
+| 🚸 | wiznote.yml | - |
+| 🚸 | wordpress.yml | - |
+| 🚸 | yourls.yml | - |
+| 🚸 | zabbix-cachethq.yml | - |
+| 🚸 | zabbix-proxy.yml | - |
+| 🚸 | zabbix.yml | - |
 
 
 # Utilisation

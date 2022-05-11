@@ -17,42 +17,56 @@ https://github.com/PAPAMICA/docker-environment
 ## List of services availables:
 | Status | Service | Update |
 |:--:|--|--|
-| ✅ | adminer.yml | 11-05-22 13:32:53 |
-| ✅ | bookstack.yml | 11-05-22 13:32:53 |
-| ✅ | cachethq.yml | 11-05-22 13:32:53 |
-| ✅ | etherpad.yml | 11-05-22 13:32:53 |
-| ✅ | filebot.yml | 11-05-22 13:32:53 |
-| ✅ | filebrowser.yml | 11-05-22 13:32:53 |
-| 🚸 | gitlab.yml | 11-05-22 13:32:53 |
-| ✅ | grafana.yml | 11-05-22 13:32:53 |
-| ✅ | hastebin.yml | 11-05-22 13:32:53 |
-| ✅ | jirafeau.yml | 11-05-22 13:32:53 |
-| ✅ | keycloak.yml | 11-05-22 13:32:53 |
-| ✅ | matomo.yml | 11-05-22 13:32:53 |
-| 🚸 | nextcloud.yml | 11-05-22 13:32:53 |
-| 🚸 | openvpn.yml | 11-05-22 13:32:53 |
-| 🚸 | ouroboros.yml | 11-05-22 13:32:53 |
-| 🚸 | privatebin.yml | 11-05-22 13:32:53 |
-| 🚸 | projectsend.yml | 11-05-22 13:32:53 |
-| 🚸 | shorturl.yml | 11-05-22 13:32:53 |
-| 🚸 | sinusbot.yml | 11-05-22 13:32:53 |
-| 🚸 | taiga.yml | 11-05-22 13:32:53 |
-| 🚸 | teamspeak.yml | 11-05-22 13:32:53 |
-| 🚸 | traefik.yml | 11-05-22 13:32:53 |
-| 🚸 | ts3rank.yml | 11-05-22 13:32:53 |
-| 🚸 | ts3viewer.yml | 11-05-22 13:32:53 |
-| ✅ | umami.yml | 11-05-22 13:32:53 |
-| 🚸 | vault.yml | 11-05-22 13:32:53 |
-| ✅ | vaultwarden.yml | 11-05-22 13:32:53 |
-| 🚸 | vscode.yml | 11-05-22 13:32:53 |
-| ✅ | website-html.yml | 11-05-22 13:32:53 |
-| 🚸 | wikijs.yml | 11-05-22 13:32:53 |
-| 🚸 | wiznote.yml | 11-05-22 13:32:53 |
-| 🚸 | wordpress.yml | 11-05-22 13:32:53 |
-| 🚸 | yourls.yml | 11-05-22 13:32:53 |
-| 🚸 | zabbix-cachethq.yml | 11-05-22 13:32:53 |
-| 🚸 | zabbix-proxy.yml | 11-05-22 13:32:53 |
-| 🚸 | zabbix.yml | 11-05-22 13:32:53 |
+| ✅ | adminer.yml | 10/05/2022
+ |
+| ✅ | bookstack.yml | 10/05/2022
+ |
+| ✅ | cachethq.yml | 10/05/2022
+ |
+| ✅ | etherpad.yml | 10/05/2022
+ |
+| ✅ | filebot.yml | 10/05/2022
+ |
+| ✅ | filebrowser.yml | 10/05/2022
+ |
+| 🚸 | gitlab.yml |  |
+| ✅ | grafana.yml | 10/05/2022
+ |
+| ✅ | hastebin.yml | 10/05/2022
+ |
+| ✅ | jirafeau.yml | 10/05/2022
+ |
+| ✅ | keycloak.yml | 10/05/2022
+ |
+| ✅ | matomo.yml | 10/05/2022
+ |
+| 🚸 | nextcloud.yml |  |
+| 🚸 | openvpn.yml |  |
+| 🚸 | ouroboros.yml |  |
+| 🚸 | privatebin.yml |  |
+| 🚸 | projectsend.yml |  |
+| 🚸 | shorturl.yml |  |
+| 🚸 | sinusbot.yml |  |
+| 🚸 | taiga.yml |  |
+| 🚸 | teamspeak.yml |  |
+| 🚸 | traefik.yml |  |
+| 🚸 | ts3rank.yml |  |
+| 🚸 | ts3viewer.yml |  |
+| ✅ | umami.yml | 10/05/2022
+ |
+| 🚸 | vault.yml |  |
+| ✅ | vaultwarden.yml | 10/05/2022
+ |
+| 🚸 | vscode.yml |  |
+| ✅ | website-html.yml | 10/05/2022
+ |
+| 🚸 | wikijs.yml |  |
+| 🚸 | wiznote.yml |  |
+| 🚸 | wordpress.yml |  |
+| 🚸 | yourls.yml |  |
+| 🚸 | zabbix-cachethq.yml |  |
+| 🚸 | zabbix-proxy.yml |  |
+| 🚸 | zabbix.yml |  |
 
 
 # Utilisation

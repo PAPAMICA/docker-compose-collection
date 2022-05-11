@@ -14,8 +14,8 @@
             "platform": "linux",
             "logo": "https://git.spip.net/repo-avatars/1417-1f8a32370f4028c9c0c216787ad4916c",
             "repository": {
-                "url": "https://github.com/PAPAMICA/docker-compose-collection",
-                "stackfile": "adminer.yml"
+                "url": "https://github.com/PAPAMICA/docker-compose-collection/composes-files",
+                "stackfile": "composes-files/adminer.yml"
             },
             "env": [
                 {
@@ -47,8 +47,8 @@
             "platform": "linux",
             "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/BookStack_logo.svg/1075px-BookStack_logo.svg.png",
             "repository": {
-                "url": "https://github.com/PAPAMICA/docker-compose-collection",
-                "stackfile": "bookstack.yml"
+                "url": "https://github.com/PAPAMICA/docker-compose-collection/composes-files",
+                "stackfile": "composes-files/bookstack.yml"
             },
             "env": [
                 {
@@ -103,8 +103,8 @@
             "platform": "linux",
             "logo": "http://cachethq.io/img/social/CachetFB-V.png",
             "repository": {
-                "url": "https://github.com/PAPAMICA/docker-compose-collection",
-                "stackfile": "cachethq.yml"
+                "url": "https://github.com/PAPAMICA/docker-compose-collection/composes-files",
+                "stackfile": "composes-files/cachethq.yml"
             },
             "env": [
                 {
@@ -154,8 +154,8 @@
             "platform": "linux",
             "logo": "https://n30.tech/images/etherpad.png",
             "repository": {
-                "url": "https://github.com/PAPAMICA/docker-compose-collection",
-                "stackfile": "etherpad.yml"
+                "url": "https://github.com/PAPAMICA/docker-compose-collection/composes-files",
+                "stackfile": "composes-files/etherpad.yml"
             },
             "env": [
                 {
@@ -204,8 +204,8 @@
             "platform": "linux",
             "logo": "https://www.filebot.net/images/filebot.logo.svg",
             "repository": {
-                "url": "https://github.com/PAPAMICA/docker-compose-collection",
-                "stackfile": "filebot.yml"
+                "url": "https://github.com/PAPAMICA/docker-compose-collection/composes-files",
+                "stackfile": "composes-files/filebot.yml"
             },
             "env": [
                 {
@@ -247,8 +247,8 @@
             "platform": "linux",
             "logo": "https://avatars.githubusercontent.com/u/35781395?s=200&v=4",
             "repository": {
-                "url": "https://github.com/PAPAMICA/docker-compose-collection",
-                "stackfile": "filebrowser.yml"
+                "url": "https://github.com/PAPAMICA/docker-compose-collection/composes-files",
+                "stackfile": "composes-files/filebrowser.yml"
             },
             "env": [
                 {
@@ -291,8 +291,8 @@
             "platform": "linux",
             "logo": "https://seeklogo.com/images/G/grafana-logo-15BA0AFA8A-seeklogo.com.png",
             "repository": {
-                "url": "https://github.com/PAPAMICA/docker-compose-collection",
-                "stackfile": "grafana.yml"
+                "url": "https://github.com/PAPAMICA/docker-compose-collection/composes-files",
+                "stackfile": "composes-files/grafana.yml"
             },
             "env": [
                 {
@@ -334,8 +334,8 @@
             "platform": "linux",
             "logo": "https://progsoft.net/images/hastebin-icon-b45e3f5695d3f577b2630648bd00584195822e3d.png",
             "repository": {
-                "url": "https://github.com/PAPAMICA/docker-compose-collection",
-                "stackfile": "hastebin.yml"
+                "url": "https://github.com/PAPAMICA/docker-compose-collection/composes-files",
+                "stackfile": "composes-files/hastebin.yml"
             },
             "env": [
                 {
@@ -372,8 +372,8 @@
             "platform": "linux",
             "logo": "https://api.cloudron.io/api/v1/apps/net.jirafeau.cloudronapp/versions/1.2.0/icon",
             "repository": {
-                "url": "https://github.com/PAPAMICA/docker-compose-collection",
-                "stackfile": "jirafeau.yml"
+                "url": "https://github.com/PAPAMICA/docker-compose-collection/composes-files",
+                "stackfile": "composes-files/jirafeau.yml"
             },
             "env": [
                 {
@@ -410,8 +410,8 @@
             "platform": "linux",
             "logo": "https://dyltqmyl993wv.cloudfront.net/assets/stacks/keycloak/img/keycloak-stack-220x234.png",
             "repository": {
-                "url": "https://github.com/PAPAMICA/docker-compose-collection",
-                "stackfile": "keycloak.yml"
+                "url": "https://github.com/PAPAMICA/docker-compose-collection/composes-files",
+                "stackfile": "composes-files/keycloak.yml"
             },
             "env": [
                 {
@@ -468,8 +468,8 @@
             "platform": "linux",
             "logo": "https://cdn1.oxatis.com/Files/112496/Img/16/matomo-new.png",
             "repository": {
-                "url": "https://github.com/PAPAMICA/docker-compose-collection",
-                "stackfile": "matomo.yml"
+                "url": "https://github.com/PAPAMICA/docker-compose-collection/composes-files",
+                "stackfile": "composes-files/matomo.yml"
             },
             "env": [
                 {
@@ -514,8 +514,8 @@
             "platform": "linux",
             "logo": "https://img.stackshare.io/service/20837/umami.png",
             "repository": {
-                "url": "https://github.com/PAPAMICA/docker-compose-collection",
-                "stackfile": "umami.yml"
+                "url": "https://github.com/PAPAMICA/docker-compose-collection/composes-files",
+                "stackfile": "composes-files/umami.yml"
             },
             "env": [
                 {
@@ -556,8 +556,8 @@
             "platform": "linux",
             "logo": "https://upload.wikimedia.org/wikipedia/commons/0/03/Bitwarden_Logo.png",
             "repository": {
-                "url": "https://github.com/PAPAMICA/docker-compose-collection",
-                "stackfile": "vaultwarden.yml"
+                "url": "https://github.com/PAPAMICA/docker-compose-collection/composes-files",
+                "stackfile": "composes-files/vaultwarden.yml"
             },
             "env": [
                 {
@@ -609,8 +609,8 @@
             "platform": "linux",
             "logo": "http://assets.stickpng.com/thumbs/5847f5bdcef1014c0b5e489c.png",
             "repository": {
-                "url": "https://github.com/PAPAMICA/docker-compose-collection",
-                "stackfile": "website-html.yml"
+                "url": "https://github.com/PAPAMICA/docker-compose-collection/composes-files",
+                "stackfile": "composes-files/website-html.yml"
             },
             "env": [
                 {

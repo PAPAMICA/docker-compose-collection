@@ -57,24 +57,24 @@ https://github.com/PAPAMICA/docker-environment
 | Status | Service | Update | Maintainer |
 | Status | Service | Update | Maintainer |
 |:--:|--|--|--|
-| ✅ | adminer. | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
-| ✅ | bookstack. | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
-| ✅ | cachethq. | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
-| ✅ | etherpad. | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
-| ✅ | filebot. | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
-| ✅ | filebrowser. | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
-| ✅ | grafana. | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
-| ✅ | hastebin. | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
-| ✅ | jirafeau. | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
-| ✅ | keycloak. | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
-| ✅ | matomo. | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
-| ✅ | nextcloud. | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
-| ✅ | umami. | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
-| ✅ | vaultwarden. | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
-| ✅ | vscode. | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
-| ✅ | website-html. | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
-| ✅ | wordpress. | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
-| ✅ | zabbix. | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
+| ✅ | adminer | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| ✅ | bookstack | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| ✅ | cachethq | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| ✅ | etherpad | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| ✅ | filebot | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| ✅ | filebrowser | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| ✅ | grafana | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| ✅ | hastebin | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| ✅ | jirafeau | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| ✅ | keycloak | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| ✅ | matomo | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| ✅ | nextcloud | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
+| ✅ | umami | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| ✅ | vaultwarden | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| ✅ | vscode | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
+| ✅ | website-html | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| ✅ | wordpress | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
+| ✅ | zabbix | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
 ##SERVICES##
 
 
@@ -84,108 +84,108 @@ https://github.com/PAPAMICA/docker-environment
 | Status | Service |
 ##SERVICES_TODO##
 |:--:|--|
-| 🚸 | adguard. |
-| 🚸 | airsonic. |
-| 🚸 | apprise-api. |
-| 🚸 | audacity. |
-| 🚸 | authelia. |
-| 🚸 | bazarr. |
-| 🚸 | calibre-web. |
-| 🚸 | chevereto. |
-| 🚸 | dashmachine. |
-| 🚸 | deemix. |
-| 🚸 | deluge. |
-| 🚸 | domotics. |
-| 🚸 | duplicaty. |
-| 🚸 | elasticsearch. |
-| 🚸 | emby. |
-| 🚸 | embystat. |
-| 🚸 | emulatorjs. |
-| 🚸 | freshrss. |
-| 🚸 | gitlab. |
-| 🚸 | grav. |
-| 🚸 | guacamole. |
-| 🚸 | heimdall. |
-| 🚸 | homeassistant. |
-| 🚸 | homer. |
-| 🚸 | httpd. |
-| 🚸 | jacket. |
-| 🚸 | jellyfin. |
-| 🚸 | jenkins. |
-| 🚸 | joomla. |
-| 🚸 | lidarr. |
-| 🚸 | lychee. |
-| 🚸 | magento. |
-| 🚸 | mariadb. |
-| 🚸 | mautic. |
-| 🚸 | mcmyadmin2. |
-| 🚸 | minetest. |
-| 🚸 | minio. |
-| 🚸 | murmur. |
-| 🚸 | n8m. |
-| 🚸 | nginx-proxy-manager. |
-| 🚸 | nginx. |
-| 🚸 | nzbget. |
-| 🚸 | ombi. |
-| 🚸 | openvpn-as. |
-| 🚸 | openvpn. |
-| 🚸 | organizr. |
-| 🚸 | owncoud. |
-| 🚸 | paperless-ng. |
-| 🚸 | papermerge. |
-| 🚸 | petio. |
-| 🚸 | phpmyadmin. |
-| 🚸 | pi-hole. |
-| 🚸 | piwigo. |
-| 🚸 | pixapop. |
-| 🚸 | plex. |
-| 🚸 | plone. |
-| 🚸 | postgresql. |
-| 🚸 | privatebin. |
-| 🚸 | projectsend. |
-| 🚸 | prowlarr. |
-| 🚸 | radarr. |
-| 🚸 | raneto. |
-| 🚸 | rdesktop. |
-| 🚸 | reactive-resume. |
-| 🚸 | redis. |
-| 🚸 | redmine. |
-| 🚸 | registry. |
-| 🚸 | requestrr. |
-| 🚸 | rutorrent. |
-| 🚸 | scality-s3. |
-| 🚸 | scrutiny. |
-| 🚸 | shiori. |
-| 🚸 | shorturl. |
-| 🚸 | sinusbot. |
-| 🚸 | snapdrop. |
-| 🚸 | snibox. |
-| 🚸 | snipe-it. |
-| 🚸 | sonarr. |
-| 🚸 | taiga. |
-| 🚸 | tautulli. |
-| 🚸 | teamspeak. |
-| 🚸 | thelounge. |
-| 🚸 | tiddlywiki. |
-| 🚸 | tiny-tiny-rss. |
-| 🚸 | traefik. |
-| 🚸 | transmission. |
-| 🚸 | ts3rank. |
-| 🚸 | ts3viewer. |
-| 🚸 | unify-controller. |
-| 🚸 | urbackup. |
-| 🚸 | vault. |
-| 🚸 | webtop. |
-| 🚸 | whoogle. |
-| 🚸 | wikijs. |
-| 🚸 | wireguard. |
-| 🚸 | wiznote. |
-| 🚸 | wowza. |
-| 🚸 | yatch. |
-| 🚸 | yourls. |
-| 🚸 | youtube-dl. |
-| 🚸 | zabbix-cachethq. |
-| 🚸 | zabbix-proxy. |
+| 🚸 | adguard |
+| 🚸 | airsonic |
+| 🚸 | apprise-api |
+| 🚸 | audacity |
+| 🚸 | authelia |
+| 🚸 | bazarr |
+| 🚸 | calibre-web |
+| 🚸 | chevereto |
+| 🚸 | dashmachine |
+| 🚸 | deemix |
+| 🚸 | deluge |
+| 🚸 | domotics |
+| 🚸 | duplicaty |
+| 🚸 | elasticsearch |
+| 🚸 | emby |
+| 🚸 | embystat |
+| 🚸 | emulatorjs |
+| 🚸 | freshrss |
+| 🚸 | gitlab |
+| 🚸 | grav |
+| 🚸 | guacamole |
+| 🚸 | heimdall |
+| 🚸 | homeassistant |
+| 🚸 | homer |
+| 🚸 | httpd |
+| 🚸 | jacket |
+| 🚸 | jellyfin |
+| 🚸 | jenkins |
+| 🚸 | joomla |
+| 🚸 | lidarr |
+| 🚸 | lychee |
+| 🚸 | magento |
+| 🚸 | mariadb |
+| 🚸 | mautic |
+| 🚸 | mcmyadmin2 |
+| 🚸 | minetest |
+| 🚸 | minio |
+| 🚸 | murmur |
+| 🚸 | n8m |
+| 🚸 | nginx-proxy-manager |
+| 🚸 | nginx |
+| 🚸 | nzbget |
+| 🚸 | ombi |
+| 🚸 | openvpn-as |
+| 🚸 | openvpn |
+| 🚸 | organizr |
+| 🚸 | owncoud |
+| 🚸 | paperless-ng |
+| 🚸 | papermerge |
+| 🚸 | petio |
+| 🚸 | phpmyadmin |
+| 🚸 | pi-hole |
+| 🚸 | piwigo |
+| 🚸 | pixapop |
+| 🚸 | plex |
+| 🚸 | plone |
+| 🚸 | postgresql |
+| 🚸 | privatebin |
+| 🚸 | projectsend |
+| 🚸 | prowlarr |
+| 🚸 | radarr |
+| 🚸 | raneto |
+| 🚸 | rdesktop |
+| 🚸 | reactive-resume |
+| 🚸 | redis |
+| 🚸 | redmine |
+| 🚸 | registry |
+| 🚸 | requestrr |
+| 🚸 | rutorrent |
+| 🚸 | scality-s3 |
+| 🚸 | scrutiny |
+| 🚸 | shiori |
+| 🚸 | shorturl |
+| 🚸 | sinusbot |
+| 🚸 | snapdrop |
+| 🚸 | snibox |
+| 🚸 | snipe-it |
+| 🚸 | sonarr |
+| 🚸 | taiga |
+| 🚸 | tautulli |
+| 🚸 | teamspeak |
+| 🚸 | thelounge |
+| 🚸 | tiddlywiki |
+| 🚸 | tiny-tiny-rss |
+| 🚸 | traefik |
+| 🚸 | transmission |
+| 🚸 | ts3rank |
+| 🚸 | ts3viewer |
+| 🚸 | unify-controller |
+| 🚸 | urbackup |
+| 🚸 | vault |
+| 🚸 | webtop |
+| 🚸 | whoogle |
+| 🚸 | wikijs |
+| 🚸 | wireguard |
+| 🚸 | wiznote |
+| 🚸 | wowza |
+| 🚸 | yatch |
+| 🚸 | yourls |
+| 🚸 | youtube-dl |
+| 🚸 | zabbix-cachethq |
+| 🚸 | zabbix-proxy |
 ---
 ---
 # Utilisation

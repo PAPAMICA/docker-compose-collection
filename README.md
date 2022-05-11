@@ -17,78 +17,42 @@ https://github.com/PAPAMICA/docker-environment
 ## List of services availables:
 | Status | Service | Update |
 |:--:|--|--|
-| ✅ | adminer.yml | 10/05/2022
- |
-| ✅ | bookstack.yml | 10/05/2022
- |
-| ✅ | cachethq.yml | 10/05/2022
- |
-| ✅ | etherpad.yml | 10/05/2022
- |
-| ✅ | filebot.yml | 10/05/2022
- |
-| ✅ | filebrowser.yml | 10/05/2022
- |
-| 🚸 | gitlab.yml | 10/05/2022
- |
-| ✅ | grafana.yml | 10/05/2022
- |
-| ✅ | hastebin.yml | 10/05/2022
- |
-| ✅ | jirafeau.yml | 10/05/2022
- |
-| ✅ | keycloak.yml | 10/05/2022
- |
-| ✅ | matomo.yml | 10/05/2022
- |
-| 🚸 | nextcloud.yml | 10/05/2022
- |
-| 🚸 | openvpn.yml | 10/05/2022
- |
-| 🚸 | ouroboros.yml | 10/05/2022
- |
-| 🚸 | privatebin.yml | 10/05/2022
- |
-| 🚸 | projectsend.yml | 10/05/2022
- |
-| 🚸 | shorturl.yml | 10/05/2022
- |
-| 🚸 | sinusbot.yml | 10/05/2022
- |
-| 🚸 | taiga.yml | 10/05/2022
- |
-| 🚸 | teamspeak.yml | 10/05/2022
- |
-| 🚸 | traefik.yml | 10/05/2022
- |
-| 🚸 | ts3rank.yml | 10/05/2022
- |
-| 🚸 | ts3viewer.yml | 10/05/2022
- |
-| ✅ | umami.yml | 10/05/2022
- |
-| 🚸 | vault.yml | 10/05/2022
- |
-| ✅ | vaultwarden.yml | 10/05/2022
- |
-| 🚸 | vscode.yml | 10/05/2022
- |
-| ✅ | website-html.yml | 10/05/2022
- |
-| 🚸 | wikijs.yml | 10/05/2022
- |
-| 🚸 | wiznote.yml | 10/05/2022
- |
-| 🚸 | wordpress.yml | 10/05/2022
- |
-| 🚸 | yourls.yml | 10/05/2022
- |
-| 🚸 | zabbix-cachethq.yml | 10/05/2022
- |
-| 🚸 | zabbix-proxy.yml | 10/05/2022
- |
-| 🚸 | zabbix.yml | 10/05/2022
- |
+| ✅ | adminer.yml | prout |
+| ✅ | bookstack.yml | prout |
+| ✅ | cachethq.yml | prout |
+| ✅ | etherpad.yml | prout |
+| ✅ | filebot.yml | prout |
+| ✅ | filebrowser.yml | prout |
+| 🚸 | gitlab.yml | prout |
+| ✅ | grafana.yml | prout |
+| ✅ | hastebin.yml | prout |
+| ✅ | jirafeau.yml | prout |
+| ✅ | keycloak.yml | prout |
+| ✅ | matomo.yml | prout |
+| 🚸 | nextcloud.yml | prout |
+| 🚸 | openvpn.yml | prout |
+| 🚸 | ouroboros.yml | prout |
+| 🚸 | privatebin.yml | prout |
+| 🚸 | projectsend.yml | prout |
+| 🚸 | shorturl.yml | prout |
+| 🚸 | sinusbot.yml | prout |
+| 🚸 | taiga.yml | prout |
+| 🚸 | teamspeak.yml | prout |
+| 🚸 | traefik.yml | prout |
+| 🚸 | ts3rank.yml | prout |
+| 🚸 | ts3viewer.yml | prout |
+| ✅ | umami.yml | prout |
+| 🚸 | vault.yml | prout |
+| ✅ | vaultwarden.yml | prout |
+| 🚸 | vscode.yml | prout |
+| ✅ | website-html.yml | prout |
+| 🚸 | wikijs.yml | prout |
+| 🚸 | wiznote.yml | prout |
+| 🚸 | wordpress.yml | prout |
+| 🚸 | yourls.yml | prout |
+| 🚸 | zabbix-cachethq.yml | prout |
+| 🚸 | zabbix-proxy.yml | prout |
+| 🚸 | zabbix.yml | prout |
 
 
 # Utilisation

@@ -780,6 +780,58 @@
                     "label": "Password for database root"
                 }
             ]
+        },
+        {
+            "type": 3,
+            "title": "Zabbix",
+            "description": "Best monitoring tools",
+            "note": "Website: <a href='https://www.zabbix.com/' target='_blank' rel='noopener'>Zabbix.com</a>",
+            "categories": [
+                "SelfHosted",
+                "Monitoring",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://juliebarbaroux.tech/wp-content/uploads/2020/11/zabbix.png",
+            "repository": {
+                "stackfile": "composes-files/zabbix.yml",
+                "url": "https://github.com/PAPAMICA/docker-compose-collection"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service",
+                    "description": "No spaces or points"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "data localization",
+                    "description": "Example: /apps/service"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service URL",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network",
+                    "description": "Example: proxy"
+                },
+                {
+                    "name": "DB_USER",
+                    "label": "Database user"
+                },
+                {
+                    "name": "DB_PASSWORD",
+                    "label": "Database user password"
+                },
+                {
+                    "name": "TIME_ZONE",
+                    "label": "Time zone",
+                    "description": "Example : Europe/Paris"
+                }
+            ]
         }
     ]
 }

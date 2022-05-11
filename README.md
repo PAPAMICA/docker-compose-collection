@@ -62,7 +62,7 @@ https://github.com/PAPAMICA/docker-environment
 | 🚸 | yourls.yml | - | - |
 | 🚸 | zabbix-cachethq.yml | - | - |
 | 🚸 | zabbix-proxy.yml | - | - |
-| 🚸 | zabbix.yml | - | - |
+| ✅ | zabbix.yml | 2022-10-05 |  Mickael "PAPAMICA" Asseline |
 
 ---
 # Utilisation

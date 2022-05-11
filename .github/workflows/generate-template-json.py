@@ -6,7 +6,7 @@ import json
 import datetime
 from textwrap import indent
 
-GITHUB_REPOSITORY_URL = 'https://github.com/PAPAMICA/docker-compose-collection/composes-files'
+GITHUB_REPOSITORY_URL = 'https://github.com/PAPAMICA/docker-compose-collection'
 SERVICES="|:--:|--|--|"
 try:
     os.remove("./templates-portainer.json") 

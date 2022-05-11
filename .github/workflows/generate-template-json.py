@@ -42,7 +42,7 @@ for filename in sorted(glob.glob("composes-files/*.y*ml")):
                 else:
                     dataset[data[0]] = data[1]
             if re.search('# Update:', line):
-                date=line[10:]
+                date=line[10:-1]
             if re.search('#%', line):
                 envtemp = {}
                 dataenv=line[3:-1].split(': ', 1)
@@ -65,7 +65,7 @@ for filename in sorted(glob.glob("composes-files/*.y*ml")):
             dataset["env"] = env
             templates.append(dataset)
             print (f" ✅ {filename} ")
-            SERVICES=SERVICES + f"\n| ✅ | {file_name} | {date}|"
+            SERVICES=SERVICES + f"\n| ✅ | {file_name} | {date} |"
             
         else:
             print (f" 🚸 {filename} not updated !")

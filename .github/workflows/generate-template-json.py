@@ -5,9 +5,9 @@ import re
 import json
 from textwrap import indent
 
-GITHUB_REPOSITORY_URL = 'https://github.com/PAPAMICA/docker-compose-collection'
+GITHUB_REPOSITORY_URL = 'https://github.com/PAPAMICA/docker-compose-collection/composes-files'
 try:
-    os.remove("./templates-portainer.json") 
+    os.remove("../../../templates-portainer.json") 
 except:
     print ("file don't exist")
 result = {}
@@ -65,7 +65,7 @@ for filename in sorted(glob.glob("*.y*ml")):
 try:
     result["templates"] = templates
     json_data = json.dumps(result, indent=4)
-    with open('templates-portainer.json', 'w') as outfile:
+    with open('../../../templates-portainer.json', 'w') as outfile:
         outfile.write(json_data)
     print ("\n ✅ File generated !")
 except:

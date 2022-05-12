@@ -13,7 +13,7 @@
     <br /><br />
     <a href="https://www.docker.com/"><img src="https://img.shields.io/badge/docker-%232496ED.svg?style=for-the-badge&logo=docker&logoColor=white"> </a>
     <a href="https://www.portainer.io/"><img src="https://img.shields.io/badge/portainer-%2313BEF9.svg?style=for-the-badge&logo=portainer&logoColor=white"> </a>
-    <a href="https://traefik.io/traefik/"><img src="https://img.shields.io/badge/traefik_proxy-%231F93B1.svg?style=for-the-badge&logo=traefik&logoColor=white"> </a>
+    <a href="https://traefik.io/traefik/"><img src="https://img.shields.io/badge/traefik_proxy-%231F93B1.svg?style=for-the-badge&logo=traefikmesh&logoColor=white"> </a>
     <br />
 </p>
 
@@ -29,7 +29,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 </p>
 
 
-
+<p align="center">
 ## List of services availables:
 | Status | Service | Update | Maintainer |
 ##SERVICES##
@@ -37,6 +37,8 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 ## List of services to do:
 | Status | Service |
 ##SERVICES_TODO##
+
+</p>
 ---
 # Utilisation
 ## Portainer

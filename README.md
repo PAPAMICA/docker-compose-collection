@@ -40,6 +40,7 @@ https://github.com/PAPAMICA/docker-environment
 | ✅ | keycloak | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | matomo | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | nextcloud | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
+| ✅ | teamspeak | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | umami | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | vaultwarden | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | vscode | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
@@ -130,7 +131,6 @@ https://github.com/PAPAMICA/docker-environment
 | 🚸 | sonarr |
 | 🚸 | taiga |
 | 🚸 | tautulli |
-| 🚸 | teamspeak |
 | 🚸 | thelounge |
 | 🚸 | tiddlywiki |
 | 🚸 | tiny-tiny-rss |

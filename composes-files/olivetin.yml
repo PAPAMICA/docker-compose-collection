@@ -12,8 +12,7 @@
 #% SERVICE: Name of the service (No spaces or points)
 #% DATA_LOCATION: Data localization (Example: /apps/service)
 #% URL: Service URL (Example: service.papamica.fr or service.com)
-#% NETWORK: Your Traefik network (Example: proxy, you need to create it before !)
-#% ADMIN_PASS: Admin user and password (Format: USER:{SHA}XXXXXXXXXXXXXXXX)
+#% NETWORK: Your Traefik network (Example: proxy)
 
 # Work with Portainer
 version: "3.3"

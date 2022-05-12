@@ -20,7 +20,10 @@
 </p>
 
 <div align="center">
-These docker-compose allow you to deploy multiple services easily and quickly. You can use them with Portainer directly or via docker-compose commands.
+These docker-compose allow you to deploy multiple services easily and quickly.
+
+You can use them with Portainer directly or via docker-compose commands.
+
 All docker-compose are commented and are configured using variables.
 
 They all include support for Traefik.

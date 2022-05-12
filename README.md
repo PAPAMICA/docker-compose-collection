@@ -52,7 +52,7 @@ https://github.com/PAPAMICA/docker-environment
 | ✅ | wordpress | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
 | ✅ | zabbix | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
 
-## List of services to do: (100)
+## List of services to do: (101)
 | Status | Service |
 |:--:|--|
 | 🚸 | adguard |
@@ -100,6 +100,7 @@ https://github.com/PAPAMICA/docker-environment
 | 🚸 | openvpn-as |
 | 🚸 | openvpn |
 | 🚸 | organizr |
+| 🚸 | outline |
 | 🚸 | owncoud |
 | 🚸 | paperless-ng |
 | 🚸 | papermerge |

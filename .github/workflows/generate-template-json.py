@@ -17,6 +17,8 @@ result = {}
 result["version"] = "2"
 result["templates"] = []
 templates = []
+nb_a = 0
+nb_td = 0
 
 for filename in sorted(glob.glob("composes-files/*.y*ml")):
     try:
@@ -70,10 +72,12 @@ for filename in sorted(glob.glob("composes-files/*.y*ml")):
             templates.append(dataset)
             print (f" ✅ {filename} ")
             SERVICES=SERVICES + f"\n| ✅ | {file_name} | {date} | {maintainer} |"
+            nb_a += 1
             
         else:
             print (f" 🚸 {filename} not updated !")
             SERVICES_TODO=SERVICES_TODO + f"\n| 🚸 | {file_name} |"
+            nb_td += 1
     except:
          print (f" ❌ {filename} error !")
 
@@ -91,7 +95,7 @@ try:
         readme_template = open(".github/workflows/Readme-template.md", "rt")
         readme_result = open("README.md", "wt")
         for line in readme_template:
-            readme_result.write(line.replace('##SERVICES##', SERVICES).replace('##SERVICES_TODO##', SERVICES_TODO))
+            readme_result.write(line.replace('##SERVICES##', SERVICES).replace('##SERVICES_TODO##', SERVICES_TODO).replace('##NB_A##', nb_a).replace('##NB_TD##', nb_td))
         readme_template.close()
         readme_result.close()
         print ("\n ✅ README.md generated !")

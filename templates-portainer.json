@@ -751,6 +751,56 @@
         },
         {
             "type": 3,
+            "title": "TSN Ranksystem",
+            "description": "Web interface with rank for TeamSpeak",
+            "note": "Website: <a href='https://ts-ranksystem.com/' target='_blank' rel='noopener'>TS-Ranksystem.com</a></br>You need to comment \"INSTALL_MODE=1\" after install.",
+            "categories": [
+                "SelfHosted",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://ts-n.net/graphics/tsn_logo.png",
+            "repository": {
+                "stackfile": "composes-files/ts3rank.yml",
+                "url": "https://github.com/PAPAMICA/docker-compose-collection"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service",
+                    "description": "No spaces or points"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "Data localization",
+                    "description": "Example: /apps/service"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service URL",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network",
+                    "description": "Example: proxy"
+                },
+                {
+                    "name": "DB_USER",
+                    "label": "Database user"
+                },
+                {
+                    "name": "DB_PASSWORD",
+                    "label": "Database user password"
+                },
+                {
+                    "name": "DB_ROOT",
+                    "label": "Database root password"
+                }
+            ]
+        },
+        {
+            "type": 3,
             "title": "umami",
             "description": "Light alternative to Google Analitycs",
             "note": "Website: <a href='https://umami.is/' target='_blank' rel='noopener'>Umami.is</a></br></br>Warning: RTFM ! You need to add one file and restart ! ",

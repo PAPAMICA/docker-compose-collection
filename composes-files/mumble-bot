@@ -1,0 +1,33 @@
+# Maintainer: Mickael "PAPAMICA" Asseline
+# Update: 2022-05-12
+
+#& type: 3
+#& title: Mumble Bot
+#& description: Bot for Mumble server
+#& note: Website: <a href=https://github.com/matthieugrieger/mumbledj' target='_blank' rel='noopener'>Github.com</a></br>You need to create a conf file "mumbledj.yaml"
+#& categories: SelfHosted, PAPAMICA
+#& platform: linux
+#& logo: https://blog.natenom.com/wp-content/uploads/2015/11/256px-Logo_mumble-ruby-pluginbot.svg_.png
+
+#% SERVICE: Name of the service (No spaces or points)
+#% DATA_LOCATION: Data localization (Example: /apps/service)
+#% NETWORK: Your Traefik network (Example: proxy)
+
+# Work with Portainer
+version: "2"
+services:
+  mumble-bot:
+    image: mattikus/mumbledj
+    restart: always
+    container_name: $SERVICE
+    volumes:
+      - $DATA_LOCATION/mumbledj.yaml:/etc/mumbledj.yaml
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+    networks:
+      - default
+
+networks:
+  default:
+    external:
+      name: $NETWORK

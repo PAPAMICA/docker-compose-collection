@@ -172,6 +172,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | 🚸 | zabbix-proxy |
 
 </div>
+
 ---
 # Utilisation
 ## Portainer

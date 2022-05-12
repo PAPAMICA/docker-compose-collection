@@ -35,7 +35,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 
 
 ## List of services availables:
-<img src="https://img.shields.io/badge/Avaibles:_27-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
+<img src="https://img.shields.io/badge/Avaibles:_28-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
 
 | Status | Service | Update | Maintainer |
 |:--:|--|--|--|
@@ -43,6 +43,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | ✅ | bookstack | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | cachethq | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | etherpad | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| ✅ | ferdi | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | filebot | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | filebrowser | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | grafana | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
@@ -68,7 +69,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | ✅ | zabbix | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
 
 ## List of services to do:
-<img src="https://img.shields.io/badge/To_do:_101-%23FF8800.svg?style=for-the-badge&logo=vlcmediaplayer&logoColor=white">
+<img src="https://img.shields.io/badge/To_do:_100-%23FF8800.svg?style=for-the-badge&logo=vlcmediaplayer&logoColor=white">
 
 | Status | Service |
 |:--:|--|
@@ -89,7 +90,6 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | 🚸 | emby |
 | 🚸 | embystat |
 | 🚸 | emulatorjs |
-| 🚸 | ferdi |
 | 🚸 | freshrss |
 | 🚸 | gitlab |
 | 🚸 | grav |

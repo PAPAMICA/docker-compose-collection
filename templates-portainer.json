@@ -194,6 +194,64 @@
         },
         {
             "type": 3,
+            "title": "Ferdi",
+            "description": "Centralize your apps in one app",
+            "note": "Website: <a href='https://getferdi.com/' target='_blank' rel='noopener'>GetFerdi.com</a>",
+            "categories": [
+                "SelfHosted",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://getferdi.com/wp-content/uploads/sites/4/2021/12/Ferdi.svg",
+            "repository": {
+                "stackfile": "composes-files/ferdi.yml",
+                "url": "https://github.com/PAPAMICA/docker-compose-collection"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service",
+                    "description": "No spaces or points"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "Data localization",
+                    "description": "Example: /apps/service"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service URL",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network",
+                    "description": "Example: proxy"
+                },
+                {
+                    "name": "IS_CREATION_ENABLED",
+                    "label": "Enable creation",
+                    "description": "True / False"
+                },
+                {
+                    "name": "IS_DASHBOARD_ENABLED",
+                    "label": "Enable dashboard",
+                    "description": "True / False"
+                },
+                {
+                    "name": "IS_REGISTRATION_ENABLED",
+                    "label": "Enable registration",
+                    "description": "True / False"
+                },
+                {
+                    "name": "CONNECT_WITH_FRANZ",
+                    "label": "Connect with Franz",
+                    "description": "True / False"
+                }
+            ]
+        },
+        {
+            "type": 3,
             "title": "Filebot",
             "description": "The ultimate TV and Movie Renamer",
             "note": "Website: <a href='https://www.filebot.net/' target='_blank' rel='noopener'>filebot.net</a>",

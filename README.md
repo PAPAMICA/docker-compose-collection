@@ -68,7 +68,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | ✅ | zabbix | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
 
 ## List of services to do:
-<img src="https://img.shields.io/badge/To_do:_99-%23FF8800.svg?style=for-the-badge&logo=vlcmediaplayer&logoColor=white">
+<img src="https://img.shields.io/badge/To_do:_101-%23FF8800.svg?style=for-the-badge&logo=vlcmediaplayer&logoColor=white">
 
 | Status | Service |
 |:--:|--|
@@ -89,6 +89,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | 🚸 | emby |
 | 🚸 | embystat |
 | 🚸 | emulatorjs |
+| 🚸 | ferdi |
 | 🚸 | freshrss |
 | 🚸 | gitlab |
 | 🚸 | grav |
@@ -101,6 +102,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | 🚸 | jellyfin |
 | 🚸 | jenkins |
 | 🚸 | joomla |
+| 🚸 | joplin |
 | 🚸 | lidarr |
 | 🚸 | lychee |
 | 🚸 | magento |

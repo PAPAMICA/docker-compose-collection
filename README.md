@@ -33,6 +33,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 
 ## List of services availables:
 <img src="https://img.shields.io/badge/Avaibles:_23-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
+
 | Status | Service | Update | Maintainer |
 |:--:|--|--|--|
 | ✅ | adminer | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
@@ -60,7 +61,8 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | ✅ | zabbix | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
 
 ## List of services to do:
-<img src="https://img.shields.io/badge/Avaibles:_102-%23FF8800.svg?style=for-the-badge&logo=vlc&logoColor=white">
+<img src="https://img.shields.io/badge/To_do:_102-%23FF8800.svg?style=for-the-badge&logo=vlcmediaplayer&logoColor=white">
+
 | Status | Service |
 |:--:|--|
 | 🚸 | adguard |

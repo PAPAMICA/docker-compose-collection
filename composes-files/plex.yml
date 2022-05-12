@@ -1,0 +1,67 @@
+# Maintainer: Mickael "PAPAMICA" Asseline
+# Update: 2022-05-12
+
+#& type: 3
+#& title: Plex
+#& description: Media server
+#& note: Website: <a href='https://www.plex.tv' target='_blank' rel='noopener'>Plex.tv</a><br\>Check ports to open in compose !
+#& categories: SelfHosted, Plex, PAPAMICA
+#& platform: linux
+#& logo: https://vic-team.fr/img/plex-logo-rounded.png
+
+#% SERVICE: Name of the service (No spaces or points)
+#% DATA_LOCATION: Data localization (Example: /apps/service)
+#% LIBRARY: Your folder with movies and series (Example: /data/multimedia)
+#% URL: Service URL (Example: service.papamica.fr or service.com)
+#% NETWORK: Your Traefik network (Example: proxy)
+#% PLEX_CLAIM: Plex claim code (Optionnel)
+#% TZ: Time zone (Exemple: Europe/Paris)
+
+# Work with Portainer
+version: "2"
+services:
+  plex:
+    image: linuxserver/plex:latest
+    container_name: $SERVICE
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - VERSION=docker
+      - UMASK_SET=022
+      - TZ=$TZ
+      - PLEX_CLAIM=$PLEX_CLAIM
+    ports:
+      - 32400:32400/tcp
+      - 3005:3005/tcp
+      - 8324:8324/tcp
+      - 32469:32469/tcp
+      - 1900:1900/udp
+      - 32410:32410/udp
+      - 32412:32412/udp
+      - 32413:32413/udp
+      - 32414:32414/udp
+    healthcheck:
+      test: curl --connect-timeout 15 --max-time 100 --silent --show-error --fail "http://localhost:32400/identity" > /dev/null
+      interval: 1m
+      timeout: 30s
+      retries: 3
+    volumes:
+      - $DATA_LOCATION/config:/config
+      - $LIBRARY:/library
+    restart: unless-stopped
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+      - "traefik.enable=true"
+      - "traefik.http.routers.$SERVICE.entrypoints=https"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
+      - "traefik.http.routers.$SERVICE.tls=true"
+      - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+      - "traefik.http.services.$SERVICE.loadbalancer.server.port=32400"
+      - "traefik.docker.network=$NETWORK"
+    networks:
+      - default
+      
+networks:
+  default:
+    external:
+      name: $NETWORK

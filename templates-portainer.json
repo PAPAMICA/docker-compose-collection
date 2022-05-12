@@ -202,7 +202,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://getferdi.com/wp-content/uploads/sites/4/2021/12/Ferdi.svg",
+            "logo": "https://github.com/getferdi/ferdi/raw/develop/build-helpers/images/icon.png",
             "repository": {
                 "stackfile": "composes-files/ferdi.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"

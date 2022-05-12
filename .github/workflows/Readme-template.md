@@ -10,7 +10,11 @@
     <a href="https://github.com/PAPAMICA/docker-compose-collection#list-of-services-availables">List of services</a> |
     <a href="https://github.com/PAPAMICA/docker-compose-collection#utilisation">How to use</a> |
     <a href="https://github.com/PAPAMICA/docker-compose-collection#add-new-docker-compose-file">Add a new service</a>
-    <br /><br />
+    <br />
+    <img src="https://img.shields.io/badge/docker_environment-%2300B8FC.svg?style=for-the-badge&logo=github&logoColor=white"> 
+    <img src="https://img.shields.io/badge/docker_environment-%2300B8FC.svg?style=for-the-badge&logo=github&logoColor=white"> 
+    <img src="https://img.shields.io/badge/docker_environment-%2300B8FC.svg?style=for-the-badge&logo=github&logoColor=white"> 
+    <br />
 </p>
 
 

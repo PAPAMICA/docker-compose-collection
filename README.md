@@ -7,13 +7,13 @@
   </a>
 </p>
 <p align="center">
-    <a href="https://github.com/PAPAMICA/docker-compose-collection#list-of-services-availables">List of services</a> |
-    <a href="https://github.com/PAPAMICA/docker-compose-collection#utilisation">How to use</a> |
-    <a href="https://github.com/PAPAMICA/docker-compose-collection#add-new-docker-compose-file">Add a new service</a>
-    <br />
-    <img src="https://img.shields.io/badge/docker_environment-%2300B8FC.svg?style=for-the-badge&logo=github&logoColor=white"> 
-    <img src="https://img.shields.io/badge/docker_environment-%2300B8FC.svg?style=for-the-badge&logo=github&logoColor=white"> 
-    <img src="https://img.shields.io/badge/docker_environment-%2300B8FC.svg?style=for-the-badge&logo=github&logoColor=white"> 
+    <a href="https://github.com/PAPAMICA/docker-compose-collection#list-of-services-availables"><img src="https://img.shields.io/badge/List_of_services-%2341454A.svg?style=for-the-badge&logo=target&logoColor=white"> </a>
+    <a href="https://github.com/PAPAMICA/docker-compose-collection#utilisation"><img src="https://img.shields.io/badge/How_to_use-%2341454A.svg?style=for-the-badge&logo=target&logoColor=white"> </a>
+    <a href="https://github.com/PAPAMICA/docker-compose-collection#add-new-docker-compose-file"><img src="https://img.shields.io/badge/Add_new_service-%2341454A.svg?style=for-the-badge&logo=target&logoColor=white"> </a>
+    <br /><br />
+    <a href="https://www.docker.com/"><img src="https://img.shields.io/badge/docker-%232496ED.svg?style=for-the-badge&logo=docker&logoColor=white"> </a>
+    <a href="https://www.portainer.io/"><img src="https://img.shields.io/badge/portainer-%2313BEF9.svg?style=for-the-badge&logo=portainer&logoColor=white"> </a>
+    <a href="https://traefik.io/traefik/"><img src="https://img.shields.io/badge/traefik_proxy-%231F93B1.svg?style=for-the-badge&logo=traefik&logoColor=white"> </a>
     <br />
 </p>
 

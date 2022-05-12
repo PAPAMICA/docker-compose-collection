@@ -17,7 +17,7 @@
     <br />
 </p>
 
-
+<div align="center">
 These docker-compose allow you to deploy multiple services easily and quickly. You can use them with Portainer directly or via docker-compose commands.
 All docker-compose are commented and are configured using variables.
 
@@ -29,13 +29,13 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 </p>
 
 
-<div align="center">
-
 ## List of services availables:
+##NB_A##
 | Status | Service | Update | Maintainer |
 ##SERVICES##
 
 ## List of services to do:
+##NB_TD##
 | Status | Service |
 ##SERVICES_TODO##
 

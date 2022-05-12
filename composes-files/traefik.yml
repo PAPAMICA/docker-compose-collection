@@ -1,13 +1,21 @@
-# Docker-compose mis à disposition par Mickael "PAPAMICA" Asseline
-# Date de mise à jour : 21/05/2022
+# Maintainer: Mickael "PAPAMICA" Asseline
+# Update: 2022-05-12
 
-# Variables d'environnement à déclarer :
-#     - SERVICE : nom du service (exemple : plex)
-#     - DATA_LOCATION : localisation des données (exemple /apps/"service")
-#     - URL : Site web du service (exemple : url.papamica.fr)
-#     - ADMIN : ADMIN_USER:ADMIN_PASSWORD
+#& type: 3
+#& title: Traefik
+#& description: Perfect proxy for Docker environment
+#& note: Website: <a href='https://teamspeak.com/en/' target='_blank' rel='noopener'>TeamSpeak.com</a></br>Ports to open: 80, 443</br>You need to create these file : traefik.yml, config.yml, acme.json</br>Check my repo <a href='https://github.com/PAPAMICA/docker-environment' target='_blank' rel='noopener'>PAPAMICA/docker-environment</a>
+#& categories: SelfHosted, PAPAMICA
+#& platform: linux
+#& logo: https://blog.alterway.fr/images/traefik.logo.png
 
-# Fonctionne avec Portainer
+#% SERVICE: Name of the service (No spaces or points)
+#% DATA_LOCATION: Data localization (Example: /apps/service)
+#% URL: Service URL (Example: service.papamica.fr or service.com)
+#% NETWORK: Your Traefik network (Example: proxy, you need to create it before !)
+#% ADMIN_PASS: Admin user and password (Format: USER:{SHA}XXXXXXXXXXXXXXXX)
+
+# Work with Portainer
 version: "3.3"
 services:
     traefik:
@@ -25,20 +33,21 @@ services:
         volumes:
             - /etc/localtime:/etc/localtime:ro
             - /var/run/docker.sock:/var/run/docker.sock:ro
-            - $DATA_LOCATION/traefik/config/traefik.yml:/traefik.yml:ro
-            - $DATA_LOCATION/traefik/config/config.yml:/config.yml:ro  
-            - $DATA_LOCATION/traefik/config/acme.json:/acme.json
+            - $DATA_LOCATION/config/traefik.yml:/traefik.yml:ro
+            - $DATA_LOCATION/config/config.yml:/config.yml:ro  
+            - $DATA_LOCATION/config/acme.json:/acme.json
         labels:
+          autoupdate: "monitor"
           traefik.enable: true
-          traefik.http.routers.api.entrypoints: https
-          traefik.http.routers.api.rule: Host(`$URL`)
-          traefik.http.routers.api.service: api@internal
-          traefik.http.routers.api.middlewares: auth
-          traefik.http.middlewares.auth.basicauth.users: $ADMIN
+          traefik.http.routers.$SERVICE.entrypoints: https
+          traefik.http.routers.$SERVICE.rule: Host("$URL")
+          traefik.http.routers.$SERVICE.service: api@internal
+          traefik.http.routers.$SERVICE.middlewares: auth
+          traefik.http.middlewares.auth.basicauth.users: $ADMIN_PASS
         networks:
-            - proxy
+            - default
 
 networks:
-    proxy:
+    default:
         external:
-            name: proxy
+            name: $NETWORK

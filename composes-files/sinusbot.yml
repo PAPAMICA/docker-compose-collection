@@ -1,13 +1,20 @@
-# Docker-compose mis à disposition par Mickael "PAPAMICA" Asseline
-# Date de mise à jour : 27/10/2020
+# Maintainer: Mickael "PAPAMICA" Asseline
+# Update: 2022-05-10
 
-# Variables d'environnement à déclarer :
-#     - SERVICE : nom du service (exemple : plex)
-#     - DATA_LOCATION : localisation des données (exemple /apps/"service")
-#     - URL_LOKI : lien du serveur loki (exemple : ndd/loki/api/v1/push)
-#     - NDD : lien du nom de domaine (exemple : papamica.fr)
+#& type: 3
+#& title: Sinusbot
+#& description: Bot for TeamSpeak and Discord
+#& note: Website: <a href=https://www.sinusbot.com/' target='_blank' rel='noopener'>Sinusbot.com</a>
+#& categories: SelfHosted, PAPAMICA
+#& platform: linux
+#& logo: https://avatars.githubusercontent.com/u/25282695?s=280&v=4
 
-# Fonctionne avec Portainer
+#% SERVICE: Name of the service (No spaces or points)
+#% DATA_LOCATION: Data localization (Example: /apps/service)
+#% URL: Service URL (Example: service.papamica.fr or service.com)
+#% NETWORK: Your Traefik network (Example: proxy)
+
+# Work with Portainer
 version: "2"
 services:
   sinusbot:
@@ -17,34 +24,21 @@ services:
     volumes:
       - $DATA_LOCATION/scripts:/opt/sinusbot/scripts
       - $DATA_LOCATION/data:/opt/sinusbot/data
-#      - $DATA_LOCATION/config:/jts3servermod
-#    ports:
-#      - 8087:8087
-
-    #Facultatif  
     networks:
-      - proxy
-    logging:
-      driver: loki
-      options:
-        loki-url: "$URL_LOKI"
-        loki-external-labels: service={{.Name}}
+      - default
     labels:
+      - "autoupdate=monitor"
       - "traefik.enable=true"
-      - "traefik.http.routers.$SERVICE.entrypoints=http"
-      - "traefik.http.routers.$SERVICE.rule=Host(`$SERVICE.$NDD`)"
-      - "traefik.http.middlewares.$SERVICE-https-redirect.redirectscheme.scheme=https"
-      - "traefik.http.routers.$SERVICE.middlewares=$SERVICE-https-redirect"
-      - "traefik.http.routers.$SERVICE-secure.entrypoints=https"
-      - "traefik.http.routers.$SERVICE-secure.rule=Host(`$SERVICE.$NDD`)"
-      - "traefik.http.routers.$SERVICE-secure.tls=true"
-      - "traefik.http.routers.$SERVICE-secure.tls.certresolver=http"
-      - "traefik.http.services.$SERVICE-secure.loadbalancer.server.port=8087"
-      - "traefik.docker.network=proxy"
+      - "traefik.http.routers.$SERVICE.entrypoints=https"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
+      - "traefik.http.routers.$SERVICE.tls=true"
+      - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+      - "traefik.http.services.$SERVICE.loadbalancer.server.port=8087"
+      - "traefik.docker.network=$NETWORK"
 
   
 networks:
-  proxy:
+  default:
     external:
-      name: proxy
+      name: $NETWORK
   

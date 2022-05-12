@@ -1,5 +1,5 @@
 # Maintainer: Mickael "PAPAMICA" Asseline
-# Update: 2022-05-10
+# Update: 2022-05-12
 
 #& type: 3
 #& title: Sinusbot
@@ -27,7 +27,7 @@ services:
     networks:
       - default
     labels:
-      - "autoupdate=monitor"
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
       - "traefik.enable=true"
       - "traefik.http.routers.$SERVICE.entrypoints=https"
       - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"

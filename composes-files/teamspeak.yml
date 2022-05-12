@@ -35,7 +35,7 @@ services:
       - TS3SERVER_LICENSE=accept
     command: serveradmin_password=$ADMIN_PASS
     labels:
-      - autoupdate=monitor
+      - autoupdate=monitor # https://github.com/PAPAMICA/container-updater
       - traefik.enable=true
       - traefik.http.routers.$SERVICE.rule=Host(`$URL`)
       - traefik.http.routers.$SERVICE.entryPoints=http

@@ -1,0 +1,44 @@
+# Maintainer: Mickael "PAPAMICA" Asseline
+# Update: 2022-05-12
+
+#& type: 3
+#& title: Mumble Web 
+#& description: Web client for Mumble
+#& note: Website: <a href=https://github.com/Rantanen/mumble-web' target='_blank' rel='noopener'>Github.com</a>
+#& categories: SelfHosted, PAPAMICA
+#& platform: linux
+#& logo: https://www.pngkey.com/png/full/319-3198756_rainbow-six-siege-mumble-logo-png.png
+
+#% SERVICE: Name of the service (No spaces or points)
+#% DATA_LOCATION: Data localization (Example: /apps/service)
+#% URL: Service URL (Example: service.papamica.fr or service.com)
+#% NETWORK: Your Traefik network (Example: proxy)
+#% MUMBLE_SERVER: Your mumble server
+
+# Work with Portainer
+version: "2"
+services:
+  murmur:
+    image: rankenstein/mumble-web
+    restart: always
+    container_name: $SERVICE
+    environment:
+      - MUMBLE_SERVER=$MUMBLE_SERVER
+      - UID=1000
+      - GID=1000
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+      - "traefik.enable=true"
+      - "traefik.http.routers.$SERVICE.entrypoints=https"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
+      - "traefik.http.routers.$SERVICE.tls=true"
+      - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+      - "traefik.docker.network=$NETWORK"
+    networks:
+      - default
+
+networks:
+  default:
+    external:
+      name: $NETWORK
+  

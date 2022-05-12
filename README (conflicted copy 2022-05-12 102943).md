@@ -25,7 +25,7 @@ https://github.com/PAPAMICA/docker-environment
 
 
 
-## List of services availables:
+## List of services availables: (21)
 | Status | Service | Update | Maintainer |
 |:--:|--|--|--|
 | ✅ | adminer | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
@@ -50,7 +50,7 @@ https://github.com/PAPAMICA/docker-environment
 | ✅ | wordpress | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
 | ✅ | zabbix | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
 
-## List of services to do:
+## List of services to do: (99)
 | Status | Service |
 |:--:|--|
 | 🚸 | adguard |

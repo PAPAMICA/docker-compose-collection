@@ -703,12 +703,7 @@
                 {
                     "name": "NETWORK",
                     "label": "Your Traefik network",
-                    "description": "Example: proxy, you need to create it before !"
-                },
-                {
-                    "name": "ADMIN_PASS",
-                    "label": "Admin user and password",
-                    "description": "Format: USER:{SHA}XXXXXXXXXXXXXXXX"
+                    "description": "Example: proxy"
                 }
             ]
         },

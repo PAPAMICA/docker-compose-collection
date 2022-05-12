@@ -93,7 +93,7 @@ try:
         except:
             print ("file don't exist")
         nb_a = f'<img src="https://img.shields.io/badge/Avaibles:_{nb_a}-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">'
-        nb_td = f'<img src="https://img.shields.io/badge/Avaibles:_{nb_td}-%23FF8800.svg?style=for-the-badge&logo=vlc&logoColor=white">'
+        nb_td = f'<img src="https://img.shields.io/badge/To_do:_{nb_td}-%23FF8800.svg?style=for-the-badge&logo=vlcmediaplayer&logoColor=white">'
         readme_template = open(".github/workflows/Readme-template.md", "rt")
         readme_result = open("README.md", "wt")
         for line in readme_template:

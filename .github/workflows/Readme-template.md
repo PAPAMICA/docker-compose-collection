@@ -33,11 +33,13 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 
 ## List of services availables:
 ##NB_A##
+
 | Status | Service | Update | Maintainer |
 ##SERVICES##
 
 ## List of services to do:
 ##NB_TD##
+
 | Status | Service |
 ##SERVICES_TODO##
 

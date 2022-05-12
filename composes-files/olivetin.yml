@@ -1,0 +1,50 @@
+# Maintainer: Mickael "PAPAMICA" Asseline
+# Update: 2022-05-12
+
+#& type: 3
+#& title: OliveTin
+#& description: Launch commands from web interface
+#& note: Website: <a href='https://www.olivetin.app/' target='_blank' rel='noopener'>OliveTin.app</a>
+#& categories: SelfHosted, PAPAMICA
+#& platform: linux
+#& logo: https://www.olivetin.app/resources/images/logo.png
+
+#% SERVICE: Name of the service (No spaces or points)
+#% DATA_LOCATION: Data localization (Example: /apps/service)
+#% URL: Service URL (Example: service.papamica.fr or service.com)
+#% NETWORK: Your Traefik network (Example: proxy, you need to create it before !)
+#% ADMIN_PASS: Admin user and password (Format: USER:{SHA}XXXXXXXXXXXXXXXX)
+
+# Work with Portainer
+version: "3.3"
+services:
+    olivetin:
+        image: jamesread/olivetin
+        container_name: $SERVICE
+        restart: always
+        privileged: true
+        user: root
+        healthcheck:
+            test: curl --fail http://localhost:1337 || exit 1
+            interval: 1m
+            timeout: 30s
+            retries: 3
+        volumes:
+            - $DATA_LOCATION/config:/config:ro
+            - /var/run/docker.sock:/var/run/docker.sock
+        labels:
+            - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+            - "traefik.enable=true"
+            - "traefik.http.routers.$SERVICE.entrypoints=https"
+            - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
+            - "traefik.http.routers.$SERVICE.tls=true"
+            - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+            - "traefik.http.services.$SERVICE.loadbalancer.server.port=1337"
+            - "traefik.docker.network=$NETWORK"
+        networks:
+            - default
+
+networks:
+    default:
+        external:
+            name: $NETWORK

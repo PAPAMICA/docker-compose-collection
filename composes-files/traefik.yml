@@ -4,7 +4,7 @@
 #& type: 3
 #& title: Traefik
 #& description: Perfect proxy for Docker environment
-#& note: Website: <a href='https://teamspeak.com/en/' target='_blank' rel='noopener'>TeamSpeak.com</a></br>Ports to open: 80, 443</br>You need to create these file : traefik.yml, config.yml, acme.json</br>Check my repo <a href='https://github.com/PAPAMICA/docker-environment' target='_blank' rel='noopener'>PAPAMICA/docker-environment</a>
+#& note: Website: <a href='https://teamspeak.com/en/' target='_blank' rel='noopener'>TeamSpeak.com</a></br>Ports to open: 80, 443</br>You need to create these files: traefik.yml, config.yml, acme.json</br>Check my repo <a href='https://github.com/PAPAMICA/docker-environment' target='_blank' rel='noopener'>PAPAMICA/docker-environment</a>
 #& categories: SelfHosted, PAPAMICA
 #& platform: linux
 #& logo: https://blog.alterway.fr/images/traefik.logo.png
@@ -12,7 +12,7 @@
 #% SERVICE: Name of the service (No spaces or points)
 #% DATA_LOCATION: Data localization (Example: /apps/service)
 #% URL: Service URL (Example: service.papamica.fr or service.com)
-#% NETWORK: Your Traefik network (Example: proxy, you need to create it before !)
+#% NETWORK: Your Traefik network (Example: proxy, you need to create it before)
 #% ADMIN_PASS: Admin user and password (Format: USER:{SHA}XXXXXXXXXXXXXXXX)
 
 # Work with Portainer
@@ -23,10 +23,10 @@ services:
         container_name: $SERVICE
         restart: always
         healthcheck:
-          test: grep -qr "traefik" /proc/*/status || exit 1
-          interval: 1m
-          timeout: 30s
-          retries: 3
+            test: grep -qr "traefik" /proc/*/status || exit 1
+            interval: 1m
+            timeout: 30s
+            retries: 3
         ports:
             - 80:80
             - 443:443
@@ -37,13 +37,13 @@ services:
             - $DATA_LOCATION/config/config.yml:/config.yml:ro  
             - $DATA_LOCATION/config/acme.json:/acme.json
         labels:
-          autoupdate: "monitor"
-          traefik.enable: true
-          traefik.http.routers.$SERVICE.entrypoints: https
-          traefik.http.routers.$SERVICE.rule: Host("$URL")
-          traefik.http.routers.$SERVICE.service: api@internal
-          traefik.http.routers.$SERVICE.middlewares: auth
-          traefik.http.middlewares.auth.basicauth.users: $ADMIN_PASS
+            autoupdate: "monitor"
+            traefik.enable: true
+            traefik.http.routers.$SERVICE.entrypoints: https
+            traefik.http.routers.$SERVICE.rule: Host("$URL")
+            traefik.http.routers.$SERVICE.service: api@internal
+            traefik.http.routers.$SERVICE.middlewares: auth
+            traefik.http.middlewares.auth.basicauth.users: $ADMIN_PASS
         networks:
             - default
 

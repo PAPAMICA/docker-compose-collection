@@ -39,8 +39,9 @@ https://github.com/PAPAMICA/docker-environment
 | ✅ | jirafeau | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | keycloak | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | matomo | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| ✅ | murmur | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | nextcloud | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
-| ✅ | sinusbot | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| ✅ | sinusbot | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | teamspeak | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | umami | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | vaultwarden | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
@@ -89,7 +90,6 @@ https://github.com/PAPAMICA/docker-environment
 | 🚸 | mcmyadmin2 |
 | 🚸 | minetest |
 | 🚸 | minio |
-| 🚸 | murmur |
 | 🚸 | n8m |
 | 🚸 | nginx-proxy-manager |
 | 🚸 | nginx |

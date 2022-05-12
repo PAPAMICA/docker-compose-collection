@@ -504,6 +504,44 @@
         },
         {
             "type": 3,
+            "title": "Murmur",
+            "description": "Vocal server (Mumble)",
+            "note": "Website: <a href=https://www.mumble.com/' target='_blank' rel='noopener'>Mumble.com</a></br>Port to open:64738",
+            "categories": [
+                "SelfHosted",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://www.pngkey.com/png/full/319-3198756_rainbow-six-siege-mumble-logo-png.png",
+            "repository": {
+                "stackfile": "composes-files/murmur.yml",
+                "url": "https://github.com/PAPAMICA/docker-compose-collection"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service",
+                    "description": "No spaces or points"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "Data localization",
+                    "description": "Example: /apps/service"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service URL",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network",
+                    "description": "Example: proxy"
+                }
+            ]
+        },
+        {
+            "type": 3,
             "title": "NextCloud",
             "description": "A personnal cloud, alternative to Google Drive, etc...",
             "note": "Website: <a href='https://nextcloud.com/' target='_blank' rel='noopener'>NextCloud.com</a>",

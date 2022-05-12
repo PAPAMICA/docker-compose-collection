@@ -29,7 +29,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 </p>
 
 
-<p align="center">
+<div align="center">
 
 ## List of services availables:
 | Status | Service | Update | Maintainer |
@@ -39,7 +39,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | Status | Service |
 ##SERVICES_TODO##
 
-</p>
+</div>
 ---
 # Utilisation
 ## Portainer

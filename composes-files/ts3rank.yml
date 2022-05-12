@@ -31,6 +31,10 @@ services:
       - MYSQL_DATABASE=RanksystemDatabase
       - MYSQL_USER=$DB_USER
       - MYSQL_PASSWORD=$DB_PASSWORD 
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
     networks:
       - default
     labels:
@@ -62,7 +66,7 @@ services:
       - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
       - "traefik.enable=true"
       - "traefik.http.routers.$SERVICE.entrypoints=https"
-      - "traefik.http.routers.$SERVICE.rule=Host(`$SERVICE.$NDD`)"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
       - "traefik.http.routers.$SERVICE.tls=true"
       - "traefik.http.routers.$SERVICE.tls.certresolver=http"
       - "traefik.docker.network=$NETWORK"

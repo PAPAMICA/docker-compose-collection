@@ -1,17 +1,23 @@
+# Maintainer: Mickael "PAPAMICA" Asseline
+# Update: 2022-05-12
 
-# Docker-compose mis à disposition par Mickael "PAPAMICA" Asseline
-# Date de mise à jour : 27/10/2020
+#& type: 3
+#& title: TS-Website
+#& description: Web interface for your TeamSpeak
+#& note: Website: <a href='https://github.com/Wruczek/ts-website' target='_blank' rel='noopener'>Github.com</a>
+#& categories: SelfHosted, PAPAMICA
+#& platform: linux
+#& logo: https://tsweb.papamica.com/img/icons/defaulticon-64.png
 
-# Variables d'environnement à déclarer :
-#     - SERVICE : nom du service (exemple : plex)
-#     - DATA_LOCATION : localisation des données (exemple /apps/"service")
-#     - URL_LOKI : lien du serveur loki (exemple : ndd/loki/api/v1/push)
-#     - NDD : lien du nom de domaine (exemple : papamica.fr)
-#     - DB_USER : nom d'utilisateur pour la base de données (exemple : papamica)
-#     - DB_PASSWORD : mot de passe pour la base de données
-#     - DB_ROOT : mot de passe ROOT pour la base de données
+#% SERVICE: Name of the service (No spaces or points)
+#% DATA_LOCATION: Data localization (Example: /apps/service)
+#% URL: Service URL (Example: service.papamica.fr or service.com)
+#% NETWORK: Your Traefik network (Example: proxy)
+#% DB_USER: Database user
+#% DB_PASSWORD: Database user password
+#% DB_ROOT: Database root password
 
-# Fonctionne avec Portainer
+# Work with Portainer
 version: "2"
 
 services:
@@ -21,49 +27,44 @@ services:
     volumes:
       - $DATA_LOCATION/config:/var/www/html
     restart: always
-     # Facultatif  
+    healthcheck:
+      test: curl --fail http://localhost:80 || exit 1
+      interval: 1m
+      timeout: 30s
+      retries: 3
     networks:
-      - proxy
-    logging:
-      driver: loki
-      options:
-        loki-url: "$URL_LOKI"
-        loki-external-labels: service={{.Name}}
+      - default
     labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
       - "traefik.enable=true"
-      - "traefik.http.routers.$SERVICE.entrypoints=http"
-      - "traefik.http.routers.$SERVICE.rule=Host(`$SERVICE.$NDD`)"
-      - "traefik.http.middlewares.$SERVICE-https-redirect.redirectscheme.scheme=https"
-      - "traefik.http.routers.$SERVICE.middlewares=$SERVICE-https-redirect"
-      - "traefik.http.routers.$SERVICE-secure.entrypoints=https"
-      - "traefik.http.routers.$SERVICE-secure.rule=Host(`$SERVICE.$NDD`)"
-      - "traefik.http.routers.$SERVICE-secure.tls=true"
-      - "traefik.http.routers.$SERVICE-secure.tls.certresolver=http"
-      - "traefik.docker.network=proxy"
+      - "traefik.http.routers.$SERVICE.entrypoints=https"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
+      - "traefik.http.routers.$SERVICE.tls=true"
+      - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+      - "traefik.docker.network=$NETWORK"
       
   
   tsweb-db:
     image: mariadb:10.4.12
-    container_name: $SERVICE-mariadb
+    container_name: $SERVICE-db
     restart: always
     volumes:
       - $DATA_LOCATION/db:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
     environment:
       - MYSQL_ROOT_PASSWORD=$DB_ROOT
       - MYSQL_DATABASE=tsweb
       - MYSQL_USER=$DB_USER
       - MYSQL_PASSWORD=$DB_PASSWORD
     networks:
-      - proxy
-    logging:
-      driver: loki
-      options:
-        loki-url: "$URL_LOKI"
-        loki-external-labels: service={{.Name}}
-
-
+      - default
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
 
 networks:
-  proxy:
+  default:
     external:
-      name: proxy
+      name: $NETWORK

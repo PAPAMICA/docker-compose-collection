@@ -25,7 +25,7 @@ services:
     volumes:
       - $DATA_LOCATION/cfg:/cfg
       - $DATA_LOCATION/data:/data
-      - $DATA_LOCATION/media:/jirafeau/media
+      #- $DATA_LOCATION/media:/jirafeau/media
     healthcheck:
       test: wget -nv -t1 --spider 'http://localhost:80'
       interval: 1m

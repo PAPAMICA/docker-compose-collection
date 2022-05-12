@@ -95,14 +95,12 @@ try:
         readme_template = open(".github/workflows/Readme-template.md", "rt")
         readme_result = open("README.md", "wt")
         for line in readme_template:
-            readme_result.write(line.replace('##SERVICES##', SERVICES).replace('##SERVICES_TODO##', SERVICES_TODO).replace('##NB_A##', nb_a).replace('##NB_TD##', nb_td))
+            readme_result.write(line.replace('##SERVICES##', SERVICES).replace('##SERVICES_TODO##', SERVICES_TODO).replace('## List of services availables:', f"## List of services availables: ({nb_a})").replace('## List of services to do:', f"## List of services to do: ({nb_td})"))
         readme_template.close()
         readme_result.close()
         print ("\n ✅ README.md generated !")
     except:
         print (" ❌ Error when generate README.md !")
 
-
-    print (SERVICES)
 except:
     print (" ❌ Error when generate templates-portainer.json !")

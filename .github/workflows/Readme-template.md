@@ -25,11 +25,11 @@ https://github.com/PAPAMICA/docker-environment
 
 
 
-## List of services availables: (##NB_A##)
+## List of services availables:
 | Status | Service | Update | Maintainer |
 ##SERVICES##
 
-## List of services to do: (##NB_TD##)
+## List of services to do:
 | Status | Service |
 ##SERVICES_TODO##
 ---

@@ -25,7 +25,7 @@ https://github.com/PAPAMICA/docker-environment
 
 
 
-## List of services availables:
+## List of services availables: (23)
 | Status | Service | Update | Maintainer |
 |:--:|--|--|--|
 | ✅ | adminer | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
@@ -39,6 +39,8 @@ https://github.com/PAPAMICA/docker-environment
 | ✅ | jirafeau | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | keycloak | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | matomo | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| ✅ | mumble-bot | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
+| ✅ | mumble-web | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | murmur | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | nextcloud | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
 | ✅ | sinusbot | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
@@ -50,7 +52,7 @@ https://github.com/PAPAMICA/docker-environment
 | ✅ | wordpress | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
 | ✅ | zabbix | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
 
-## List of services to do:
+## List of services to do: (100)
 | Status | Service |
 |:--:|--|
 | 🚸 | adguard |
@@ -138,6 +140,7 @@ https://github.com/PAPAMICA/docker-environment
 | 🚸 | transmission |
 | 🚸 | ts3rank |
 | 🚸 | ts3viewer |
+| 🚸 | turtl |
 | 🚸 | unify-controller |
 | 🚸 | urbackup |
 | 🚸 | vault |

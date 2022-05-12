@@ -504,6 +504,81 @@
         },
         {
             "type": 3,
+            "title": "Mumble Bot",
+            "description": "Bot for Mumble server",
+            "note": "Website: <a href=https://github.com/matthieugrieger/mumbledj' target='_blank' rel='noopener'>Github.com</a></br>You need to create a conf file \"mumbledj.yaml\"",
+            "categories": [
+                "SelfHosted",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://blog.natenom.com/wp-content/uploads/2015/11/256px-Logo_mumble-ruby-pluginbot.svg_.png",
+            "repository": {
+                "stackfile": "composes-files/mumble-bot.yml",
+                "url": "https://github.com/PAPAMICA/docker-compose-collection"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service",
+                    "description": "No spaces or points"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "Data localization",
+                    "description": "Example: /apps/service"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network",
+                    "description": "Example: proxy"
+                }
+            ]
+        },
+        {
+            "type": 3,
+            "title": "Mumble Web ",
+            "description": "Web client for Mumble",
+            "note": "Website: <a href=https://github.com/Rantanen/mumble-web' target='_blank' rel='noopener'>Github.com</a>",
+            "categories": [
+                "SelfHosted",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://www.pngkey.com/png/full/319-3198756_rainbow-six-siege-mumble-logo-png.png",
+            "repository": {
+                "stackfile": "composes-files/mumble-web.yml",
+                "url": "https://github.com/PAPAMICA/docker-compose-collection"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service",
+                    "description": "No spaces or points"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "Data localization",
+                    "description": "Example: /apps/service"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service URL",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network",
+                    "description": "Example: proxy"
+                },
+                {
+                    "name": "MUMBLE_SERVER",
+                    "label": "Your mumble server"
+                }
+            ]
+        },
+        {
+            "type": 3,
             "title": "Murmur",
             "description": "Vocal server (Mumble)",
             "note": "Website: <a href=https://www.mumble.com/' target='_blank' rel='noopener'>Mumble.com</a></br>Port to open:64738",

@@ -767,6 +767,60 @@
         },
         {
             "type": 3,
+            "title": "Plex",
+            "description": "Media server",
+            "note": "Website: <a href='https://www.plex.tv' target='_blank' rel='noopener'>Plex.tv</a><br\\>Check ports to open in compose !",
+            "categories": [
+                "SelfHosted",
+                "Plex",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://vic-team.fr/img/plex-logo-rounded.png",
+            "repository": {
+                "stackfile": "composes-files/plex.yml",
+                "url": "https://github.com/PAPAMICA/docker-compose-collection"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service",
+                    "description": "No spaces or points"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "Data localization",
+                    "description": "Example: /apps/service"
+                },
+                {
+                    "name": "LIBRARY",
+                    "label": "Your folder with movies and series",
+                    "description": "Example: /data/multimedia"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service URL",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network",
+                    "description": "Example: proxy"
+                },
+                {
+                    "name": "PLEX_CLAIM",
+                    "label": "Plex claim code",
+                    "description": "Optionnel"
+                },
+                {
+                    "name": "TZ",
+                    "label": "Time zone",
+                    "description": "Exemple: Europe/Paris"
+                }
+            ]
+        },
+        {
+            "type": 3,
             "title": "Sinusbot",
             "description": "Bot for TeamSpeak and Discord",
             "note": "Website: <a href=https://www.sinusbot.com/' target='_blank' rel='noopener'>Sinusbot.com</a>",

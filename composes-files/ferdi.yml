@@ -1,0 +1,72 @@
+# Maintainer: Mickael "PAPAMICA" Asseline
+# Update: 2022-05-12
+
+#& type: 3
+#& title: Ferdi
+#& description: Centralize your apps in one app
+#& note: Website: <a href='https://getferdi.com/' target='_blank' rel='noopener'>GetFerdi.com</a>
+#& categories: SelfHosted, PAPAMICA
+#& platform: linux
+#& logo: https://getferdi.com/wp-content/uploads/sites/4/2021/12/Ferdi.svg
+
+#% SERVICE: Name of the service (No spaces or points)
+#% DATA_LOCATION: Data localization (Example: /apps/service)
+#% URL: Service URL (Example: service.papamica.fr or service.com)
+#% NETWORK: Your Traefik network (Example: proxy)
+#% IS_CREATION_ENABLED: Enable creation (True / False)
+#% IS_DASHBOARD_ENABLED: Enable dashboard (True / False)
+#% IS_REGISTRATION_ENABLED: Enable registration (True / False)
+#% CONNECT_WITH_FRANZ: Connect with Franz (True / False)
+
+# Work with Portainer
+version: '2'
+
+services:
+  ferdi-server:
+    image: getferdi/ferdi-server
+    container_name: ferdi-server
+    environment:
+      - NODE_ENV=development
+      - EXTERNAL_DOMAIN=$URL 
+#      - DB_CONNECTION=mysql
+#      - DB_HOST=ferdi-db
+#      - DB_PORT=3306
+#      - DB_USER=root
+#      - DB_PASSWORD=supersecretpassword
+#      - DB_DATABASE=ferdi-db
+#      - MAIL_CONNECTION=<mailsender>
+#      - SMPT_HOST=<smtpmailserver>
+#      - SMTP_PORT=<smtpport>
+#      - SSL=true/false
+#      - MAIL_USERNAME=<yourmailusername>
+#      - MAIL_PASSWORD=<yourmailpassword>
+#      - MAIL_SENDER=<sendemailaddress>
+      - IS_CREATION_ENABLED=$IS_CREATION_ENABLED
+      - IS_DASHBOARD_ENABLED=$IS_DASHBOARD_ENABLED
+      - IS_REGISTRATION_ENABLED=$IS_REGISTRATION_ENABLED
+      - CONNECT_WITH_FRANZ=$CONNECT_WITH_FRANZ
+    volumes:
+      - $DATA_LOCATION/config:/config
+      - $DATA_LOCATION/db:/app/database
+      - $DATA_LOCATION/recipes:/app/recipes
+    healthcheck:
+      test: wget -nv -t1 --spider 'http://localhost:80'
+      interval: 1m
+      timeout: 30s
+      retries: 3
+    networks:
+      - default
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+      - "traefik.enable=true"
+      - "traefik.http.routers.$SERVICE.entrypoints=https"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
+      - "traefik.http.routers.$SERVICE.tls=true"
+      - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+      - "traefik.docker.network=$NETWORK"
+
+
+networks:
+  default:
+    external:
+      name: $NETWORK

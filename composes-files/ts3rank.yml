@@ -1,17 +1,23 @@
+# Maintainer: Mickael "PAPAMICA" Asseline
+# Update: 2022-05-12
 
-# Docker-compose mis à disposition par Mickael "PAPAMICA" Asseline
-# Date de mise à jour : 27/10/2020
+#& type: 3
+#& title: TSN Ranksystem
+#& description: Web interface with rank for TeamSpeak
+#& note: Website: <a href='https://ts-ranksystem.com/' target='_blank' rel='noopener'>TS-Ranksystem.com</a></br>You need to comment "INSTALL_MODE=1" after install.
+#& categories: SelfHosted, PAPAMICA
+#& platform: linux
+#& logo: https://ts-n.net/graphics/tsn_logo.png
 
-# Variables d'environnement à déclarer :
-#     - SERVICE : nom du service (exemple : plex)
-#     - DATA_LOCATION : localisation des données (exemple /apps/"service")
-#     - URL_LOKI : lien du serveur loki (exemple : ndd/loki/api/v1/push)
-#     - NDD : lien du nom de domaine (exemple : papamica.fr)
-#     - DB_USER : nom d'utilisateur pour la base de données (exemple : papamica)
-#     - DB_PASSWORD : mot de passe pour la base de données
-#     - DB_ROOT : mot de passe ROOT pour la base de données
+#% SERVICE: Name of the service (No spaces or points)
+#% DATA_LOCATION: Data localization (Example: /apps/service)
+#% URL: Service URL (Example: service.papamica.fr or service.com)
+#% NETWORK: Your Traefik network (Example: proxy)
+#% DB_USER: Database user
+#% DB_PASSWORD: Database user password
+#% DB_ROOT: Database root password
 
-# Fonctionne avec Portainer
+# Work with Portainer
 version: '2'
 services:
   mariadb:
@@ -26,42 +32,43 @@ services:
       - MYSQL_USER=$DB_USER
       - MYSQL_PASSWORD=$DB_PASSWORD 
     networks:
-      - proxy
-    logging:
-      driver: loki
-      options:
-        loki-url: "$URL_LOKI"
-        loki-external-labels: service={{.Name}}
+      - default
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
 
   ranksystem:
-    image: jusito/docker-teamspeak-ranksystem:develop
+    image: jvmerkle/ts3-ranksystem
     container_name: $SERVICE
+    stop_signal: SIGTERM
     restart: always
-    volumes:
-      -  $DATA_LOCATION/tsrank:/var/www/html
     depends_on:
       - mariadb
+    environment:
+      - INSTALL_MODE=1
+      - BASE_HREF=/
+      - DB_TYPE=mysql
+      - DB_HOST=$SERVICE-db
+      - DB_NAME=RanksystemDatabase
+      - DB_USERNAME=$DB_USER
+      - DB_PASSWORD=$DB_PASSWORD
+    healthcheck:
+      test: curl --fail http://localhost:80 || exit 1
+      interval: 1m
+      timeout: 30s
+      retries: 3
     networks:
-      - proxy
-    logging:
-      driver: loki
-      options:
-        loki-url: "$URL_LOKI"
-        loki-external-labels: service={{.Name}}
+      - default
     labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
       - "traefik.enable=true"
-      - "traefik.http.routers.$SERVICE.entrypoints=http"
+      - "traefik.http.routers.$SERVICE.entrypoints=https"
       - "traefik.http.routers.$SERVICE.rule=Host(`$SERVICE.$NDD`)"
-      - "traefik.http.middlewares.$SERVICE-https-redirect.redirectscheme.scheme=https"
-      - "traefik.http.routers.$SERVICE.middlewares=$SERVICE-https-redirect"
-      - "traefik.http.routers.$SERVICE-secure.entrypoints=https"
-      - "traefik.http.routers.$SERVICE-secure.rule=Host(`$SERVICE.$NDD`)"
-      - "traefik.http.routers.$SERVICE-secure.tls=true"
-      - "traefik.http.routers.$SERVICE-secure.tls.certresolver=http"
-      - "traefik.docker.network=proxy"
+      - "traefik.http.routers.$SERVICE.tls=true"
+      - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+      - "traefik.docker.network=$NETWORK"
 
     
 networks:
-  proxy:
+  default:
     external:
-      name: proxy
+      name: $NETWORK

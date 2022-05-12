@@ -1,11 +1,13 @@
-
-# Docker-compose by PAPAMICA
-
 <p align="center">
   <a href="https://papamica.com">
     <img src="https://zupimages.net/up/20/04/7vtd.png" width="140px" alt="PAPAMICA" />
   </a>
 </p>
+
+<p align="center">
+  <a href="#"><img src="https://readme-typing-svg.herokuapp.com?center=true&vCenter=true&lines=Docker+compose+collection;"></a>
+</p>
+
 <p align="center">
     <a href="https://github.com/PAPAMICA/docker-compose-collection#list-of-services-availables"><img src="https://img.shields.io/badge/List_of_services-%2341454A.svg?style=for-the-badge&logo=target&logoColor=white"> </a>
     <a href="https://github.com/PAPAMICA/docker-compose-collection#utilisation"><img src="https://img.shields.io/badge/How_to_use-%2341454A.svg?style=for-the-badge&logo=target&logoColor=white"> </a>

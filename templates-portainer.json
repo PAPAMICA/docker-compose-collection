@@ -558,9 +558,47 @@
         },
         {
             "type": 3,
+            "title": "Sinusbot",
+            "description": "Bot for TeamSpeak and Discord",
+            "note": "Website: <a href=https://www.sinusbot.com/' target='_blank' rel='noopener'>Sinusbot.com</a>",
+            "categories": [
+                "SelfHosted",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://avatars.githubusercontent.com/u/25282695?s=280&v=4",
+            "repository": {
+                "stackfile": "composes-files/sinusbot.yml",
+                "url": "https://github.com/PAPAMICA/docker-compose-collection"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service",
+                    "description": "No spaces or points"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "Data localization",
+                    "description": "Example: /apps/service"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service URL",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network",
+                    "description": "Example: proxy"
+                }
+            ]
+        },
+        {
+            "type": 3,
             "title": "TeamSpeak",
             "description": "Vocal server perfect for teamplay",
-            "note": "Website: <a href='https://teamspeak.com/en/' target='_blank' rel='noopener'>TeamSpeak.com</a></br>Port to open: 9987, 10011, 30033 & 10022",
+            "note": "Website: <a href='https://teamspeak.com/en/' target='_blank' rel='noopener'>TeamSpeak.com</a></br>Ports to open: 9987, 10011, 30033 & 10022",
             "categories": [
                 "SelfHosted",
                 "PAPAMICA"

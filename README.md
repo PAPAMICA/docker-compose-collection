@@ -40,6 +40,7 @@ https://github.com/PAPAMICA/docker-environment
 | ✅ | keycloak | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | matomo | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | nextcloud | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
+| ✅ | sinusbot | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | teamspeak | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | umami | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | vaultwarden | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
@@ -124,7 +125,6 @@ https://github.com/PAPAMICA/docker-environment
 | 🚸 | scrutiny |
 | 🚸 | shiori |
 | 🚸 | shorturl |
-| 🚸 | sinusbot |
 | 🚸 | snapdrop |
 | 🚸 | snibox |
 | 🚸 | snipe-it |

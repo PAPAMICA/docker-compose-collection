@@ -751,6 +751,49 @@
         },
         {
             "type": 3,
+            "title": "Traefik",
+            "description": "Perfect proxy for Docker environment",
+            "note": "Website: <a href='https://teamspeak.com/en/' target='_blank' rel='noopener'>TeamSpeak.com</a></br>Ports to open: 80, 443</br>You need to create these file : traefik.yml, config.yml, acme.json</br>Check my repo <a href='https://github.com/PAPAMICA/docker-environment' target='_blank' rel='noopener'>PAPAMICA/docker-environment</a>",
+            "categories": [
+                "SelfHosted",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://blog.alterway.fr/images/traefik.logo.png",
+            "repository": {
+                "stackfile": "composes-files/traefik.yml",
+                "url": "https://github.com/PAPAMICA/docker-compose-collection"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service",
+                    "description": "No spaces or points"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "Data localization",
+                    "description": "Example: /apps/service"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service URL",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network",
+                    "description": "Example: proxy, you need to create it before !"
+                },
+                {
+                    "name": "ADMIN_PASS",
+                    "label": "Admin user and password",
+                    "description": "Format: USER:{SHA}XXXXXXXXXXXXXXXX"
+                }
+            ]
+        },
+        {
+            "type": 3,
             "title": "TSN Ranksystem",
             "description": "Web interface with rank for TeamSpeak",
             "note": "Website: <a href='https://ts-ranksystem.com/' target='_blank' rel='noopener'>TS-Ranksystem.com</a></br>You need to comment \"INSTALL_MODE=1\" after install.",

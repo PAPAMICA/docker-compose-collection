@@ -13,11 +13,6 @@
 #% DATA_LOCATION: Data localization (Example: /apps/service)
 #% URL: Service URL (Example: service.papamica.fr or service.com)
 #% NETWORK: Your Traefik network (Example: proxy)
-#% DB_USER: Database user
-#% DB_PASSWORD: Database user password
-#% DB_ROOT: Database root password
-#% ADMIN_USER: Admin user for YourLS
-#% ADMIN_PASSWORD: Admin password for YourLS
 
 # Work with Portainer
 version: "2"

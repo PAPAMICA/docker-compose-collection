@@ -21,18 +21,20 @@
             "env": [
                 {
                     "name": "SERVICE",
-                    "label": "Name of the service",
-                    "description": "No spaces or points"
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "adminer"
                 },
                 {
                     "name": "URL",
                     "label": "Service URL",
-                    "description": "Example: service.papamica.fr or service.com"
+                    "description": "Example: service.papamica.fr or service.com)"
                 },
                 {
                     "name": "NETWORK",
-                    "label": "Your Traefik network",
-                    "description": "Example: proxy"
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
                 }
             ]
         },
@@ -55,13 +57,15 @@
             "env": [
                 {
                     "name": "SERVICE",
-                    "label": "Name of the service",
-                    "description": "No spaces or points"
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "apprise-api"
                 },
                 {
                     "name": "DATA_LOCATION",
-                    "label": "Data localization",
-                    "description": "Example: /apps/service"
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
                 },
                 {
                     "name": "URL",
@@ -70,8 +74,9 @@
                 },
                 {
                     "name": "NETWORK",
-                    "label": "Your Traefik network",
-                    "description": "Example: proxy"
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
                 }
             ]
         },
@@ -94,13 +99,15 @@
             "env": [
                 {
                     "name": "SERVICE",
-                    "label": "Name of the service",
-                    "description": "No spaces or points"
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "bookstack"
                 },
                 {
                     "name": "DATA_LOCATION",
-                    "label": "data localization",
-                    "description": "Example: /apps/service"
+                    "label": "data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
                 },
                 {
                     "name": "URL",
@@ -109,12 +116,15 @@
                 },
                 {
                     "name": "NETWORK",
-                    "label": "Your Traefik network",
-                    "description": "Example: proxy"
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
                 },
                 {
                     "name": "DB_USER",
-                    "label": "Database user"
+                    "label": "Database user ",
+                    "description": "No spaces or points",
+                    "default": "bookstack"
                 },
                 {
                     "name": "DB_PASSWORD",
@@ -126,8 +136,9 @@
                 },
                 {
                     "name": "TIME_ZONE",
-                    "label": "Time zone",
-                    "description": "Example : Europe/Paris"
+                    "label": "Time zone ",
+                    "description": "Example : Europe/Paris",
+                    "default": "Europe/Paris"
                 }
             ]
         },
@@ -151,13 +162,15 @@
             "env": [
                 {
                     "name": "SERVICE",
-                    "label": "Name of the service",
-                    "description": "No spaces or points"
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "cachethq"
                 },
                 {
                     "name": "DATA_LOCATION",
-                    "label": "data localization",
-                    "description": "Example: /apps/service"
+                    "label": "data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
                 },
                 {
                     "name": "URL",
@@ -166,12 +179,15 @@
                 },
                 {
                     "name": "NETWORK",
-                    "label": "Your Traefik network",
-                    "description": "Example: proxy"
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
                 },
                 {
                     "name": "DB_USER",
-                    "label": "Database user"
+                    "label": "Database user ",
+                    "description": "No spaces or points",
+                    "default": "cachethq"
                 },
                 {
                     "name": "DB_PASSWORD",
@@ -180,7 +196,7 @@
                 {
                     "name": "TIME_ZONE",
                     "label": "Time zone",
-                    "description": "Example : Europe/Paris"
+                    "description": "Example : Europe/Paris) Europe/Pari"
                 }
             ]
         },
@@ -245,13 +261,15 @@
             "env": [
                 {
                     "name": "SERVICE",
-                    "label": "Name of the service",
-                    "description": "No spaces or points"
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "etherpad"
                 },
                 {
                     "name": "DATA_LOCATION",
-                    "label": "data localization",
-                    "description": "Example: /apps/service"
+                    "label": "data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
                 },
                 {
                     "name": "URL",
@@ -260,12 +278,15 @@
                 },
                 {
                     "name": "NETWORK",
-                    "label": "Your Traefik network",
-                    "description": "Example: proxy"
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
                 },
                 {
                     "name": "DB_USER",
-                    "label": "Database user"
+                    "label": "Database user ",
+                    "description": "No spaces or points",
+                    "default": "etherpad"
                 },
                 {
                     "name": "DB_PASSWORD",
@@ -296,13 +317,15 @@
             "env": [
                 {
                     "name": "SERVICE",
-                    "label": "Name of the service",
-                    "description": "No spaces or points"
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "ferdi"
                 },
                 {
                     "name": "DATA_LOCATION",
-                    "label": "Data localization",
-                    "description": "Example: /apps/service"
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
                 },
                 {
                     "name": "URL",
@@ -311,28 +334,33 @@
                 },
                 {
                     "name": "NETWORK",
-                    "label": "Your Traefik network",
-                    "description": "Example: proxy"
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
                 },
                 {
                     "name": "IS_CREATION_ENABLED",
-                    "label": "Enable creation",
-                    "description": "True / False"
+                    "label": "Enable creation ",
+                    "description": "True / False",
+                    "default": "True"
                 },
                 {
                     "name": "IS_DASHBOARD_ENABLED",
-                    "label": "Enable dashboard",
-                    "description": "True / False"
+                    "label": "Enable dashboard ",
+                    "description": "True / False",
+                    "default": "True"
                 },
                 {
                     "name": "IS_REGISTRATION_ENABLED",
-                    "label": "Enable registration",
-                    "description": "True / False"
+                    "label": "Enable registration ",
+                    "description": "True / False",
+                    "default": "True"
                 },
                 {
                     "name": "CONNECT_WITH_FRANZ",
-                    "label": "Connect with Franz",
-                    "description": "True / False"
+                    "label": "Connect with Franz ",
+                    "description": "True / False",
+                    "default": "False"
                 }
             ]
         },
@@ -355,13 +383,15 @@
             "env": [
                 {
                     "name": "SERVICE",
-                    "label": "Name of the service",
-                    "description": "No spaces or points"
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "filebot"
                 },
                 {
                     "name": "DATA_LOCATION",
-                    "label": "Data localization",
-                    "description": "Example: /apps/service"
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
                 },
                 {
                     "name": "FOLDER",
@@ -375,8 +405,9 @@
                 },
                 {
                     "name": "NETWORK",
-                    "label": "Your Traefik network",
-                    "description": "Example: proxy"
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
                 }
             ]
         },
@@ -399,13 +430,15 @@
             "env": [
                 {
                     "name": "SERVICE",
-                    "label": "Name of the service",
-                    "description": "No spaces or points"
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "filebrowser"
                 },
                 {
                     "name": "DATA_LOCATION",
-                    "label": "Data localization",
-                    "description": "Example: /apps/service"
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
                 },
                 {
                     "name": "FOLDER",
@@ -419,8 +452,9 @@
                 },
                 {
                     "name": "NETWORK",
-                    "label": "Your Traefik network",
-                    "description": "Example: proxy"
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
                 }
             ]
         },
@@ -444,18 +478,21 @@
             "env": [
                 {
                     "name": "SERVICE",
-                    "label": "Name of the service",
-                    "description": "No spaces or points"
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "grafana"
                 },
                 {
                     "name": "DATA_LOCATION",
-                    "label": "Data localization",
-                    "description": "Example: /apps/service"
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
                 },
                 {
                     "name": "PLUGINS",
-                    "label": "Plugins to install",
-                    "description": "Example: alexanderzobnin-zabbix-app,grafana-singlestat-panel"
+                    "label": "Plugins to install ",
+                    "description": "Example: grafana-singlestat-panel",
+                    "default": "alexanderzobnin-zabbix-app,grafana-singlestat-panel"
                 },
                 {
                     "name": "URL",
@@ -464,8 +501,9 @@
                 },
                 {
                     "name": "NETWORK",
-                    "label": "Your Traefik network",
-                    "description": "Example: proxy"
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
                 }
             ]
         },
@@ -488,13 +526,15 @@
             "env": [
                 {
                     "name": "SERVICE",
-                    "label": "Name of the service",
-                    "description": "No spaces or points"
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "hastebin"
                 },
                 {
                     "name": "DATA_LOCATION",
-                    "label": "Data localization",
-                    "description": "Example: /apps/service"
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
                 },
                 {
                     "name": "URL",
@@ -503,8 +543,9 @@
                 },
                 {
                     "name": "NETWORK",
-                    "label": "Your Traefik network",
-                    "description": "Example: proxy"
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
                 }
             ]
         },
@@ -527,13 +568,15 @@
             "env": [
                 {
                     "name": "SERVICE",
-                    "label": "Name of the service",
-                    "description": "No spaces or points"
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "jirafeau"
                 },
                 {
                     "name": "DATA_LOCATION",
-                    "label": "Data localization",
-                    "description": "Example: /apps/service"
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
                 },
                 {
                     "name": "URL",
@@ -542,8 +585,9 @@
                 },
                 {
                     "name": "NETWORK",
-                    "label": "Your Traefik network",
-                    "description": "Example: proxy"
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
                 }
             ]
         },
@@ -566,13 +610,15 @@
             "env": [
                 {
                     "name": "SERVICE",
-                    "label": "Name of the service",
-                    "description": "No spaces or points"
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "keycloak"
                 },
                 {
                     "name": "DATA_LOCATION",
-                    "label": "Data localization",
-                    "description": "Example: /apps/service"
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
                 },
                 {
                     "name": "URL",
@@ -581,12 +627,15 @@
                 },
                 {
                     "name": "NETWORK",
-                    "label": "Your Traefik network",
-                    "description": "Example: proxy"
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
                 },
                 {
                     "name": "DB_USER",
-                    "label": "Database user"
+                    "label": "Database user ",
+                    "description": "No spaces or points",
+                    "default": "keycloak"
                 },
                 {
                     "name": "DB_PASSWORD",
@@ -598,7 +647,9 @@
                 },
                 {
                     "name": "KC_USER",
-                    "label": "User for Keycloak"
+                    "label": "User for Keycloak ",
+                    "description": "No spaces or points",
+                    "default": "admin"
                 },
                 {
                     "name": "KC_PASSWORD",
@@ -625,13 +676,15 @@
             "env": [
                 {
                     "name": "SERVICE",
-                    "label": "Name of the service",
-                    "description": "No spaces or points"
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "matomo"
                 },
                 {
                     "name": "DATA_LOCATION",
-                    "label": "Data localization",
-                    "description": "Example: /apps/service"
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
                 },
                 {
                     "name": "URL",
@@ -640,12 +693,15 @@
                 },
                 {
                     "name": "NETWORK",
-                    "label": "Your Traefik network",
-                    "description": "Example: proxy"
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
                 },
                 {
                     "name": "DB_USER",
-                    "label": "Database user"
+                    "label": "Database user ",
+                    "description": "No spaces or points",
+                    "default": "keycloak"
                 },
                 {
                     "name": "DB_PASSWORD",
@@ -672,13 +728,15 @@
             "env": [
                 {
                     "name": "SERVICE",
-                    "label": "Name of the service",
-                    "description": "No spaces or points"
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "mumble-bot"
                 },
                 {
                     "name": "DATA_LOCATION",
-                    "label": "Data localization",
-                    "description": "Example: /apps/service"
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
                 },
                 {
                     "name": "NETWORK",
@@ -706,13 +764,15 @@
             "env": [
                 {
                     "name": "SERVICE",
-                    "label": "Name of the service",
-                    "description": "No spaces or points"
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "mumble-web"
                 },
                 {
                     "name": "DATA_LOCATION",
-                    "label": "Data localization",
-                    "description": "Example: /apps/service"
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
                 },
                 {
                     "name": "URL",
@@ -721,8 +781,9 @@
                 },
                 {
                     "name": "NETWORK",
-                    "label": "Your Traefik network",
-                    "description": "Example: proxy"
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
                 },
                 {
                     "name": "MUMBLE_SERVER",
@@ -749,13 +810,15 @@
             "env": [
                 {
                     "name": "SERVICE",
-                    "label": "Name of the service",
-                    "description": "No spaces or points"
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "mumble-server"
                 },
                 {
                     "name": "DATA_LOCATION",
-                    "label": "Data localization",
-                    "description": "Example: /apps/service"
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
                 },
                 {
                     "name": "URL",
@@ -764,8 +827,9 @@
                 },
                 {
                     "name": "NETWORK",
-                    "label": "Your Traefik network",
-                    "description": "Example: proxy"
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
                 }
             ]
         },
@@ -788,13 +852,15 @@
             "env": [
                 {
                     "name": "SERVICE",
-                    "label": "Name of the service",
-                    "description": "No spaces or points"
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "nexcloud"
                 },
                 {
                     "name": "DATA_LOCATION",
-                    "label": "Data localization",
-                    "description": "Example: /apps/service"
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
                 },
                 {
                     "name": "URL",
@@ -803,12 +869,15 @@
                 },
                 {
                     "name": "NETWORK",
-                    "label": "Your Traefik network",
-                    "description": "Example: proxy"
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
                 },
                 {
                     "name": "DB_USER",
-                    "label": "Database user"
+                    "label": "Database user ",
+                    "description": "No spaces or points",
+                    "default": "nexcloud"
                 },
                 {
                     "name": "DB_PASSWORD",
@@ -843,13 +912,15 @@
             "env": [
                 {
                     "name": "SERVICE",
-                    "label": "Name of the service",
-                    "description": "No spaces or points"
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "olivetin"
                 },
                 {
                     "name": "DATA_LOCATION",
-                    "label": "Data localization",
-                    "description": "Example: /apps/service"
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
                 },
                 {
                     "name": "URL",
@@ -858,8 +929,9 @@
                 },
                 {
                     "name": "NETWORK",
-                    "label": "Your Traefik network",
-                    "description": "Example: proxy"
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
                 }
             ]
         },
@@ -883,13 +955,15 @@
             "env": [
                 {
                     "name": "SERVICE",
-                    "label": "Name of the service",
-                    "description": "No spaces or points"
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "plex"
                 },
                 {
                     "name": "DATA_LOCATION",
-                    "label": "Data localization",
-                    "description": "Example: /apps/service"
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
                 },
                 {
                     "name": "LIBRARY",
@@ -903,8 +977,9 @@
                 },
                 {
                     "name": "NETWORK",
-                    "label": "Your Traefik network",
-                    "description": "Example: proxy"
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
                 },
                 {
                     "name": "PLEX_CLAIM",
@@ -913,8 +988,9 @@
                 },
                 {
                     "name": "TZ",
-                    "label": "Time zone",
-                    "description": "Exemple: Europe/Paris"
+                    "label": "Time zone ",
+                    "description": "Exemple: Europe/Paris",
+                    "default": "Europe/Paris"
                 }
             ]
         },
@@ -937,13 +1013,15 @@
             "env": [
                 {
                     "name": "SERVICE",
-                    "label": "Name of the service",
-                    "description": "No spaces or points"
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "sinusbot"
                 },
                 {
                     "name": "DATA_LOCATION",
-                    "label": "Data localization",
-                    "description": "Example: /apps/service"
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
                 },
                 {
                     "name": "URL",
@@ -952,8 +1030,9 @@
                 },
                 {
                     "name": "NETWORK",
-                    "label": "Your Traefik network",
-                    "description": "Example: proxy"
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
                 }
             ]
         },
@@ -976,13 +1055,15 @@
             "env": [
                 {
                     "name": "SERVICE",
-                    "label": "Name of the service",
-                    "description": "No spaces or points"
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "teamspeak"
                 },
                 {
                     "name": "DATA_LOCATION",
-                    "label": "Data localization",
-                    "description": "Example: /apps/service"
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
                 },
                 {
                     "name": "URL",
@@ -991,8 +1072,9 @@
                 },
                 {
                     "name": "NETWORK",
-                    "label": "Your Traefik network",
-                    "description": "Example: proxy"
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
                 },
                 {
                     "name": "ADMIN_PASS",
@@ -1019,13 +1101,15 @@
             "env": [
                 {
                     "name": "SERVICE",
-                    "label": "Name of the service",
-                    "description": "No spaces or points"
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "traefik"
                 },
                 {
                     "name": "DATA_LOCATION",
-                    "label": "Data localization",
-                    "description": "Example: /apps/service"
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
                 },
                 {
                     "name": "URL",
@@ -1034,8 +1118,9 @@
                 },
                 {
                     "name": "NETWORK",
-                    "label": "Your Traefik network",
-                    "description": "Example: proxy, you need to create it before"
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy, you need to create it before",
+                    "default": "proxy"
                 },
                 {
                     "name": "ADMIN_PASS",
@@ -1063,13 +1148,15 @@
             "env": [
                 {
                     "name": "SERVICE",
-                    "label": "Name of the service",
-                    "description": "No spaces or points"
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "ts3rank"
                 },
                 {
                     "name": "DATA_LOCATION",
-                    "label": "Data localization",
-                    "description": "Example: /apps/service"
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
                 },
                 {
                     "name": "URL",
@@ -1078,12 +1165,15 @@
                 },
                 {
                     "name": "NETWORK",
-                    "label": "Your Traefik network",
-                    "description": "Example: proxy"
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
                 },
                 {
                     "name": "DB_USER",
-                    "label": "Database user"
+                    "label": "Database user ",
+                    "description": "No spaces or points",
+                    "default": "ts3rank"
                 },
                 {
                     "name": "DB_PASSWORD",
@@ -1114,13 +1204,15 @@
             "env": [
                 {
                     "name": "SERVICE",
-                    "label": "Name of the service",
-                    "description": "No spaces or points"
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "ts3viewer"
                 },
                 {
                     "name": "DATA_LOCATION",
-                    "label": "Data localization",
-                    "description": "Example: /apps/service"
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
                 },
                 {
                     "name": "URL",
@@ -1129,12 +1221,15 @@
                 },
                 {
                     "name": "NETWORK",
-                    "label": "Your Traefik network",
-                    "description": "Example: proxy"
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
                 },
                 {
                     "name": "DB_USER",
-                    "label": "Database user"
+                    "label": "Database user ",
+                    "description": "No spaces or points",
+                    "default": "ts3viewer"
                 },
                 {
                     "name": "DB_PASSWORD",
@@ -1165,13 +1260,15 @@
             "env": [
                 {
                     "name": "SERVICE",
-                    "label": "Name of the service",
-                    "description": "No spaces or points"
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "umami"
                 },
                 {
                     "name": "DATA_LOCATION",
-                    "label": "Data localization",
-                    "description": "Example: /apps/service"
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
                 },
                 {
                     "name": "URL",
@@ -1180,8 +1277,9 @@
                 },
                 {
                     "name": "NETWORK",
-                    "label": "Your Traefik network",
-                    "description": "Example: proxy"
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
                 },
                 {
                     "name": "HASH_SALT",
@@ -1208,13 +1306,15 @@
             "env": [
                 {
                     "name": "SERVICE",
-                    "label": "Name of the service",
-                    "description": "No spaces or points"
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "vaultwarden"
                 },
                 {
                     "name": "DATA_LOCATION",
-                    "label": "Data localization",
-                    "description": "Example: /apps/service"
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
                 },
                 {
                     "name": "URL",
@@ -1223,18 +1323,21 @@
                 },
                 {
                     "name": "NETWORK",
-                    "label": "Your Traefik network",
-                    "description": "Example: proxy"
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
                 },
                 {
                     "name": "SIGNUPS_ALLOWED",
-                    "label": "Autorize signup ?",
-                    "description": "True or False"
+                    "label": "Autorize signup ? ",
+                    "description": "True or False",
+                    "default": "True"
                 },
                 {
                     "name": "TIME_ZONE",
-                    "label": "Time zone",
-                    "description": "Example : Europe/Paris"
+                    "label": "Time zone ",
+                    "description": "Example : Europe/Paris",
+                    "default": "Europe/Paris"
                 },
                 {
                     "name": "ADMIN_TOKEN",
@@ -1262,13 +1365,15 @@
             "env": [
                 {
                     "name": "SERVICE",
-                    "label": "name of the service",
-                    "description": "No spaces or points"
+                    "label": "name of the service ",
+                    "description": "No spaces or points",
+                    "default": "vscode"
                 },
                 {
                     "name": "DATA_LOCATION",
-                    "label": "data localization",
-                    "description": "Example: /apps/service"
+                    "label": "data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
                 },
                 {
                     "name": "URL",
@@ -1277,8 +1382,9 @@
                 },
                 {
                     "name": "NETWORK",
-                    "label": "your Traefik network",
-                    "description": "Example: proxy"
+                    "label": "your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
                 },
                 {
                     "name": "PASSWORD",
@@ -1305,13 +1411,15 @@
             "env": [
                 {
                     "name": "SERVICE",
-                    "label": "name of the service",
-                    "description": "No spaces or points"
+                    "label": "name of the service ",
+                    "description": "No spaces or points",
+                    "default": "website"
                 },
                 {
                     "name": "DATA_LOCATION",
-                    "label": "data localization",
-                    "description": "Example: /apps/service"
+                    "label": "data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
                 },
                 {
                     "name": "URL",
@@ -1320,8 +1428,9 @@
                 },
                 {
                     "name": "NETWORK",
-                    "label": "your Traefik network",
-                    "description": "Example: proxy"
+                    "label": "your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
                 }
             ]
         },
@@ -1344,13 +1453,15 @@
             "env": [
                 {
                     "name": "SERVICE",
-                    "label": "Name of the service",
-                    "description": "No spaces or points"
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "wordpress"
                 },
                 {
                     "name": "DATA_LOCATION",
-                    "label": "Data localization",
-                    "description": "Example: /apps/service"
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
                 },
                 {
                     "name": "URL",
@@ -1359,12 +1470,15 @@
                 },
                 {
                     "name": "NETWORK",
-                    "label": "Your Traefik network",
-                    "description": "Example: proxy"
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
                 },
                 {
                     "name": "DB_USER",
-                    "label": "Database user"
+                    "label": "Database user ",
+                    "description": "No spaces or points",
+                    "default": "wordpress"
                 },
                 {
                     "name": "DB_PASSWORD",
@@ -1395,13 +1509,15 @@
             "env": [
                 {
                     "name": "SERVICE",
-                    "label": "Name of the service",
-                    "description": "No spaces or points"
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "yourls"
                 },
                 {
                     "name": "DATA_LOCATION",
-                    "label": "Data localization",
-                    "description": "Example: /apps/service"
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
                 },
                 {
                     "name": "URL",
@@ -1410,12 +1526,15 @@
                 },
                 {
                     "name": "NETWORK",
-                    "label": "Your Traefik network",
-                    "description": "Example: proxy"
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
                 },
                 {
                     "name": "DB_USER",
-                    "label": "Database user"
+                    "label": "Database user ",
+                    "description": "No spaces or points",
+                    "default": "yourls"
                 },
                 {
                     "name": "DB_PASSWORD",
@@ -1427,7 +1546,9 @@
                 },
                 {
                     "name": "ADMIN_USER",
-                    "label": "Admin user for YourLS"
+                    "label": "Admin user for YourLS ",
+                    "description": "No spaces or points",
+                    "default": "admin"
                 },
                 {
                     "name": "ADMIN_PASSWORD",
@@ -1455,13 +1576,15 @@
             "env": [
                 {
                     "name": "SERVICE",
-                    "label": "Name of the service",
-                    "description": "No spaces or points"
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "zabbix"
                 },
                 {
                     "name": "DATA_LOCATION",
-                    "label": "data localization",
-                    "description": "Example: /apps/service"
+                    "label": "data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
                 },
                 {
                     "name": "URL",
@@ -1470,12 +1593,15 @@
                 },
                 {
                     "name": "NETWORK",
-                    "label": "Your Traefik network",
-                    "description": "Example: proxy"
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
                 },
                 {
                     "name": "DB_USER",
-                    "label": "Database user"
+                    "label": "Database user ",
+                    "description": "No spaces or points",
+                    "default": "zabbix"
                 },
                 {
                     "name": "DB_PASSWORD",
@@ -1483,8 +1609,9 @@
                 },
                 {
                     "name": "TIME_ZONE",
-                    "label": "Time zone",
-                    "description": "Example : Europe/Paris"
+                    "label": "Time zone ",
+                    "description": "Example : Europe/Paris",
+                    "default": "Europe/Paris"
                 }
             ]
         }

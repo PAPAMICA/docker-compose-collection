@@ -4,6 +4,7 @@
         {
             "type": 3,
             "title": "Adminer",
+            "name": "Adminer",
             "description": "Managment of MySQL",
             "note": "Website: <a href='https://www.adminer.org/' target='_blank' rel='noopener'>Adminer.org</a>",
             "categories": [
@@ -38,6 +39,7 @@
         {
             "type": 3,
             "title": "Apprise API",
+            "name": "Apprise API",
             "description": "Send notifications to more then 70+ services.",
             "note": "Website: <a href='https://github.com/caronc/apprise-api' target='_blank' rel='noopener'>Github.com</a>",
             "categories": [
@@ -76,6 +78,7 @@
         {
             "type": 3,
             "title": "Bookstack",
+            "name": "Bookstack",
             "description": "Wiki selfhosted",
             "note": "Website: <a href='https://www.bookstackapp.com/' target='_blank' rel='noopener'>Bookstackapp.com</a>",
             "categories": [
@@ -131,6 +134,7 @@
         {
             "type": 3,
             "title": "CachetHQ",
+            "name": "CachetHQ",
             "description": "Uptime monitor alternative",
             "note": "Website: <a href='https://cachethq.io/' target='_blank' rel='noopener'>CachetHQ.io</a></br></br>Warning: Check log at the first run!",
             "categories": [
@@ -183,6 +187,7 @@
         {
             "type": 3,
             "title": "Dillinger",
+            "name": "Dillinger",
             "description": "Write your markdown with HTML live edit",
             "note": "Website: <a href='https://github.com/joemccann/dillinger' target='_blank' rel='noopener'>Github.com</a>",
             "categories": [
@@ -224,6 +229,7 @@
         {
             "type": 3,
             "title": "Etherpad",
+            "name": "Etherpad",
             "description": "Online editor providing collaborative editing in really real-time",
             "note": "Website: <a href='https://etherpad.org/' target='_blank' rel='noopener'>etherpad.org</a>",
             "categories": [
@@ -274,6 +280,7 @@
         {
             "type": 3,
             "title": "Ferdi",
+            "name": "Ferdi",
             "description": "Centralize your apps in one app",
             "note": "Website: <a href='https://getferdi.com/' target='_blank' rel='noopener'>GetFerdi.com</a>",
             "categories": [
@@ -332,6 +339,7 @@
         {
             "type": 3,
             "title": "Filebot",
+            "name": "Filebot",
             "description": "The ultimate TV and Movie Renamer",
             "note": "Website: <a href='https://www.filebot.net/' target='_blank' rel='noopener'>filebot.net</a>",
             "categories": [
@@ -375,6 +383,7 @@
         {
             "type": 3,
             "title": "FileBrowser",
+            "name": "FileBrowser",
             "description": "File manager with web interface",
             "note": "Website: <a href='https://github.com/filebrowser/filebrowser' target='_blank' rel='noopener'>Github.com</a>",
             "categories": [
@@ -418,6 +427,7 @@
         {
             "type": 3,
             "title": "Grafana",
+            "name": "Grafana",
             "description": "From heatmaps to histograms, graphs to geomaps: fast and furious visualizations any way you want.",
             "note": "Website: <a href='https://grafana.com/grafana/dashboards/' target='_blank' rel='noopener'>Grafana.com</a>",
             "categories": [
@@ -462,6 +472,7 @@
         {
             "type": 3,
             "title": "Hastebin",
+            "name": "Hastebin",
             "description": "Share your code easily",
             "note": "Website: <a href='https://hastebin.com/about.md' target='_blank' rel='noopener'>Hastebin.com</a>",
             "categories": [
@@ -500,6 +511,7 @@
         {
             "type": 3,
             "title": "Jirafeau",
+            "name": "Jirafeau",
             "description": "Jirafeau is a \"one-click-filesharing\": Select your file, upload, share a link. That's it.",
             "note": "Website: <a href='https://gitlab.com/mojo42/Jirafeau' target='_blank' rel='noopener'>Gitlab.com</a>",
             "categories": [
@@ -538,6 +550,7 @@
         {
             "type": 3,
             "title": "Keycloak",
+            "name": "Keycloak",
             "description": " Add authentication to applications and secure services with minimum effort.",
             "note": "Website: <a href='https://www.keycloak.org/' target='_blank' rel='noopener'>Keycloak.org</a>",
             "categories": [
@@ -596,6 +609,7 @@
         {
             "type": 3,
             "title": "Matomo",
+            "name": "Matomo",
             "description": "Google Analitycs alternative !",
             "note": "Website: <a href='https://fr.matomo.org' target='_blank' rel='noopener'>Matomo.org</a>",
             "categories": [
@@ -642,6 +656,7 @@
         {
             "type": 3,
             "title": "Mumble Bot",
+            "name": "Mumble Bot",
             "description": "Bot for Mumble server",
             "note": "Website: <a href=https://github.com/matthieugrieger/mumbledj' target='_blank' rel='noopener'>Github.com</a></br>You need to create a conf file \"mumbledj.yaml\"",
             "categories": [
@@ -675,6 +690,7 @@
         {
             "type": 3,
             "title": "Mumble Web ",
+            "name": "Mumble Web ",
             "description": "Web client for Mumble",
             "note": "Website: <a href=https://github.com/Rantanen/mumble-web' target='_blank' rel='noopener'>Github.com</a>",
             "categories": [
@@ -717,6 +733,7 @@
         {
             "type": 3,
             "title": "Murmur",
+            "name": "Murmur",
             "description": "Vocal server (Mumble)",
             "note": "Website: <a href=https://www.mumble.com/' target='_blank' rel='noopener'>Mumble.com</a></br>Port to open:64738",
             "categories": [
@@ -755,6 +772,7 @@
         {
             "type": 3,
             "title": "NextCloud",
+            "name": "NextCloud",
             "description": "A personnal cloud, alternative to Google Drive, etc...",
             "note": "Website: <a href='https://nextcloud.com/' target='_blank' rel='noopener'>NextCloud.com</a>",
             "categories": [
@@ -809,6 +827,7 @@
         {
             "type": 3,
             "title": "OliveTin",
+            "name": "OliveTin",
             "description": "Launch commands from web interface",
             "note": "Website: <a href='https://www.olivetin.app/' target='_blank' rel='noopener'>OliveTin.app</a>",
             "categories": [
@@ -847,6 +866,7 @@
         {
             "type": 3,
             "title": "Plex",
+            "name": "Plex",
             "description": "Media server",
             "note": "Website: <a href='https://www.plex.tv' target='_blank' rel='noopener'>Plex.tv</a><br\\>Check ports to open in compose !",
             "categories": [
@@ -901,6 +921,7 @@
         {
             "type": 3,
             "title": "Sinusbot",
+            "name": "Sinusbot",
             "description": "Bot for TeamSpeak and Discord",
             "note": "Website: <a href=https://www.sinusbot.com/' target='_blank' rel='noopener'>Sinusbot.com</a>",
             "categories": [
@@ -939,6 +960,7 @@
         {
             "type": 3,
             "title": "TeamSpeak",
+            "name": "TeamSpeak",
             "description": "Vocal server perfect for teamplay",
             "note": "Website: <a href='https://teamspeak.com/en/' target='_blank' rel='noopener'>TeamSpeak.com</a></br>Ports to open: 9987, 10011, 30033 & 10022",
             "categories": [
@@ -981,6 +1003,7 @@
         {
             "type": 3,
             "title": "Traefik",
+            "name": "Traefik",
             "description": "Perfect proxy for Docker environment",
             "note": "Website: <a href='https://teamspeak.com/en/' target='_blank' rel='noopener'>TeamSpeak.com</a></br>Ports to open: 80, 443</br>You need to create these files: traefik.yml, config.yml, acme.json</br>Check my repo <a href='https://github.com/PAPAMICA/docker-environment' target='_blank' rel='noopener'>PAPAMICA/docker-environment</a>",
             "categories": [
@@ -1024,6 +1047,7 @@
         {
             "type": 3,
             "title": "TSN Ranksystem",
+            "name": "TSN Ranksystem",
             "description": "Web interface with rank for TeamSpeak",
             "note": "Website: <a href='https://ts-ranksystem.com/' target='_blank' rel='noopener'>TS-Ranksystem.com</a></br>You need to comment \"INSTALL_MODE=1\" after install.",
             "categories": [
@@ -1074,6 +1098,7 @@
         {
             "type": 3,
             "title": "TS-Website",
+            "name": "TS-Website",
             "description": "Web interface for your TeamSpeak",
             "note": "Website: <a href='https://github.com/Wruczek/ts-website' target='_blank' rel='noopener'>Github.com</a>",
             "categories": [
@@ -1124,6 +1149,7 @@
         {
             "type": 3,
             "title": "umami",
+            "name": "umami",
             "description": "Light alternative to Google Analitycs",
             "note": "Website: <a href='https://umami.is/' target='_blank' rel='noopener'>Umami.is</a></br></br>Warning: RTFM ! You need to add one file and restart ! ",
             "categories": [
@@ -1166,6 +1192,7 @@
         {
             "type": 3,
             "title": "Vaultwarden",
+            "name": "Vaultwarden",
             "description": "Password manager",
             "note": "Website: <a href='https://github.com/dani-garcia/vaultwarden' target='_blank' rel='noopener'>Github.com</a>",
             "categories": [
@@ -1219,6 +1246,7 @@
         {
             "type": 3,
             "title": "VSCode Online",
+            "name": "VSCode Online",
             "description": "Web interface for VSCode",
             "note": "Website: <a href='https://github.com/coder/code-server' target='_blank' rel='noopener'>Github.com</a>",
             "categories": [
@@ -1261,6 +1289,7 @@
         {
             "type": 3,
             "title": "Website HTML PHP",
+            "name": "Website HTML PHP",
             "description": "Simple HTML website under PHP 7.4",
             "note": "Website: <a href='https://github.com/LavoWeb/Docker' target='_blank' rel='noopener'>Github.com</a>",
             "categories": [
@@ -1299,6 +1328,7 @@
         {
             "type": 3,
             "title": "WordPress",
+            "name": "WordPress",
             "description": "WordPress is open source software you can use to create a beautiful website, blog, or app.",
             "note": "Website: <a href='https://wordpress.org/' target='_blank' rel='noopener'>WordPress.org</a>",
             "categories": [
@@ -1349,6 +1379,7 @@
         {
             "type": 3,
             "title": "YourLS",
+            "name": "YourLS",
             "description": "Link shorter",
             "note": "Website: <a href='https://yourls.org/' target='_blank' rel='noopener'>YourLS.org</a>",
             "categories": [
@@ -1407,6 +1438,7 @@
         {
             "type": 3,
             "title": "Zabbix",
+            "name": "Zabbix",
             "description": "Best monitoring tools",
             "note": "Website: <a href='https://www.zabbix.com/' target='_blank' rel='noopener'>Zabbix.com</a>",
             "categories": [

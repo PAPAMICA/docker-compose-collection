@@ -199,12 +199,12 @@
                 {
                     "name": "SERVICE",
                     "label": "Name of the service",
-                    "description": "No spaces or points"
+                    "description": "No spaces or points) [dillinger"
                 },
                 {
                     "name": "DATA_LOCATION",
                     "label": "Data localization",
-                    "description": "Example: /apps/service"
+                    "description": "Example: /apps/service) [/_data/apps"
                 },
                 {
                     "name": "URL",
@@ -214,7 +214,7 @@
                 {
                     "name": "NETWORK",
                     "label": "Your Traefik network",
-                    "description": "Example: proxy"
+                    "description": "Example: proxy) [proxy"
                 }
             ]
         },

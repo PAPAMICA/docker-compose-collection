@@ -28,7 +28,7 @@ services:
       test: wget -s 'http://localhost:9000'
       interval: 1m
       timeout: 30s
-      retries: 3 
+      retries: 3
     networks:
       - default
     labels:

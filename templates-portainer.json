@@ -182,6 +182,44 @@
         },
         {
             "type": 3,
+            "title": "Dillinger",
+            "description": "Write your markdown with HTML live edit",
+            "note": "Website: <a href='https://github.com/joemccann/dillinger' target='_blank' rel='noopener'>Github.com</a>",
+            "categories": [
+                "SelfHosted",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://d33wubrfki0l68.cloudfront.net/62334572e03c001939ed509a2a1f1009dd9bdde3/a7ee8/assets/images/tool-icons/dillinger.png",
+            "repository": {
+                "stackfile": "composes-files/dillinger.yml",
+                "url": "https://github.com/PAPAMICA/docker-compose-collection"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service",
+                    "description": "No spaces or points"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "Data localization",
+                    "description": "Example: /apps/service"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service URL",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network",
+                    "description": "Example: proxy"
+                }
+            ]
+        },
+        {
+            "type": 3,
             "title": "Etherpad",
             "description": "Online editor providing collaborative editing in really real-time",
             "note": "Website: <a href='https://etherpad.org/' target='_blank' rel='noopener'>etherpad.org</a>",

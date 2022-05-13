@@ -198,13 +198,15 @@
             "env": [
                 {
                     "name": "SERVICE",
-                    "label": "Name of the service",
-                    "description": "No spaces or points) [dillinger"
+                    "label": "Name of the service ",
+                    "description": "No spaces or points)",
+                    "default": "dillinger"
                 },
                 {
                     "name": "DATA_LOCATION",
-                    "label": "Data localization",
-                    "description": "Example: /apps/service) [/_data/apps"
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service)",
+                    "default": "/_data/apps"
                 },
                 {
                     "name": "URL",
@@ -213,8 +215,9 @@
                 },
                 {
                     "name": "NETWORK",
-                    "label": "Your Traefik network",
-                    "description": "Example: proxy) [proxy"
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy)",
+                    "default": "proxy"
                 }
             ]
         },

@@ -1,19 +1,26 @@
-# Docker-compose mis à disposition par Mickael "PAPAMICA" Asseline
-# Date de mise à jour : 18/02/2021
+# Maintainer: Mickael "PAPAMICA" Asseline
+# Update: 2022-05-13
 
-# Variables d'environnement à déclarer :
-#     - SERVICE : nom du service (exemple : plex)
-#     - DATA_LOCATION : localisation des données (exemple /apps/"service")
-#     - URL_LOKI : lien du serveur loki (exemple : ndd/loki/api/v1/push)
-#     - DB_USER : nom d'utilisateur pour la base de données (exemple : papamica)
-#     - DB_PASSWORD : mot de passe pour la base de données
-#     - WEBSITE : Site web du service (exemple : url.papamica.fr)
-#     - ADMIN_USER : Utilisateur administrateur
-#     - ADMIN_PASSWORD : Mot de passe de l'administrateur
+#& type: 3
+#& title: YourLS
+#& description: Link shorter
+#& note: Website: <a href='https://yourls.org/' target='_blank' rel='noopener'>YourLS.org</a>
+#& categories: SelfHosted, PAPAMICA
+#& platform: linux
+#& logo: https://images.opencollective.com/yourls/a488226/logo/256.png
 
-# Fonctionne avec Portainer
+#% SERVICE: Name of the service (No spaces or points)
+#% DATA_LOCATION: Data localization (Example: /apps/service)
+#% URL: Service URL (Example: service.papamica.fr or service.com)
+#% NETWORK: Your Traefik network (Example: proxy)
+#% DB_USER: Database user
+#% DB_PASSWORD: Database user password
+#% DB_ROOT: Database root password
+#% ADMIN_USER: Admin user for YourLS
+#% ADMIN_PASSWORD: Admin password for YourLS
+
+# Work with Portainer
 version: "2"
-
 services:
   yourls:
     image: yourls:apache
@@ -25,34 +32,31 @@ services:
       YOURLS_DB_PASS: $DB_PASSWORD
       YOURLS_DB_HOST: $SERVICE-db
       YOURLS_DB_NAME: yourls
-      YOURLS_SITE: https://$WEBSITE
+      YOURLS_SITE: https://$URL
       YOURLS_PASS: $ADMIN_PASSWORD
       YOURLS_USER: $ADMIN_USER
     depends_on:
       - $SERVICE-db
+    healthcheck:
+      test: wget -nv -t1 --spider 'http://localhost:80'
+      interval: 1m
+      timeout: 30s
+      retries: 3
     networks:
-      - proxy
-    logging:
-      driver: loki
-      options:
-        loki-url: "$URL_LOKI"
-        loki-external-labels: service={{.Name}}
+      - default
     labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
       - "traefik.enable=true"
-      - "traefik.http.routers.$SERVICE.entrypoints=http"
-      - "traefik.http.routers.$SERVICE.rule=Host(`$WEBSITE`)"
-      - "traefik.http.middlewares.$SERVICE-https-redirect.redirectscheme.scheme=https"
-      - "traefik.http.routers.$SERVICE.middlewares=$SERVICE-https-redirect"
-      - "traefik.http.routers.$SERVICE-secure.entrypoints=https"
-      - "traefik.http.routers.$SERVICE-secure.rule=Host(`$WEBSITE`)"
-      - "traefik.http.routers.$SERVICE-secure.tls=true"
-      - "traefik.http.routers.$SERVICE-secure.tls.certresolver=http"
-      - "traefik.docker.network=proxy"
+      - "traefik.http.routers.$SERVICE.entrypoints=https"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
+      - "traefik.http.routers.$SERVICE.tls=true"
+      - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+      - "traefik.docker.network=$NETWORK"
 
 
   yourls-db:
     image: mysql:5.7
-    container_name: yourls-db
+    container_name: $SERVICE-db
     restart: always
     environment:
       - MYSQL_ROOT_PASSWORD=$DB_PASSWORD
@@ -60,17 +64,18 @@ services:
       - MYSQL_USER=$DB_USER
       - MYSQL_PASSWORD=$DB_PASSWORD
     volumes:
-      - $DATA_LOCATION/data:/var/lib/mysql
+      - $DATA_LOCATION/db:/var/lib/mysql
+    healthcheck:
+        test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+        timeout: 20s
+        retries: 10
     networks:
-      - proxy
-    logging:
-      driver: loki
-      options:
-        loki-url: "$URL_LOKI"
-        loki-external-labels: service={{.Name}}
+      - default
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
           
   
 networks:
-  proxy:
+  default:
     external:
-      name: proxy
+      name: $NETWORK

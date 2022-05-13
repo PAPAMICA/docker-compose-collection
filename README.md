@@ -37,11 +37,12 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 
 
 ## List of services availables:
-<img src="https://img.shields.io/badge/Avaibles:_30-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
+<img src="https://img.shields.io/badge/Avaibles:_31-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
 
 | Status | Service | Update | Maintainer |
 |:--:|--|--|--|
 | ✅ | adminer | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| ✅ | apprise-api | 2022-05-13 |  Mickael "PAPAMICA" Asseline |
 | ✅ | bookstack | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | cachethq | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | etherpad | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
@@ -73,13 +74,12 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | ✅ | zabbix | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
 
 ## List of services to do:
-<img src="https://img.shields.io/badge/To_do:_99-%23FF8800.svg?style=for-the-badge&logo=vlcmediaplayer&logoColor=white">
+<img src="https://img.shields.io/badge/To_do:_98-%23FF8800.svg?style=for-the-badge&logo=vlcmediaplayer&logoColor=white">
 
 | Status | Service |
 |:--:|--|
 | 🚸 | adguard |
 | 🚸 | airsonic |
-| 🚸 | apprise-api |
 | 🚸 | audacity |
 | 🚸 | authelia |
 | 🚸 | bazarr |

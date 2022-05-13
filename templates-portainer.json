@@ -37,6 +37,64 @@
         },
         {
             "type": 3,
+            "title": "Apprise API",
+            "description": "Send notifications to more then 70+ services.",
+            "note": "Website: <a href='https://github.com/caronc/apprise-api' target='_blank' rel='noopener'>Github.com</a>",
+            "categories": [
+                "SelfHosted",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://warehouse-camo.ingress.cmh1.psfhosted.org/a22d9206f80dfbb10748b6764fee932ff0ae1a8f/687474703a2f2f7265706f2e6e75787265662e636f6d2f7075622f696d672f6c6f676f2d617070726973652e706e67",
+            "repository": {
+                "stackfile": "composes-files/apprise-api.yml",
+                "url": "https://github.com/PAPAMICA/docker-compose-collection"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service",
+                    "description": "No spaces or points"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "Data localization",
+                    "description": "Example: /apps/service"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service URL",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network",
+                    "description": "Example: proxy"
+                },
+                {
+                    "name": "DB_USER",
+                    "label": "Database user"
+                },
+                {
+                    "name": "DB_PASSWORD",
+                    "label": "Database user password"
+                },
+                {
+                    "name": "DB_ROOT",
+                    "label": "Database root password"
+                },
+                {
+                    "name": "ADMIN_USER",
+                    "label": "Admin user for YourLS"
+                },
+                {
+                    "name": "ADMIN_PASSWORD",
+                    "label": "Admin password for YourLS"
+                }
+            ]
+        },
+        {
+            "type": 3,
             "title": "Bookstack",
             "description": "Wiki selfhosted",
             "note": "Website: <a href='https://www.bookstackapp.com/' target='_blank' rel='noopener'>Bookstackapp.com</a>",

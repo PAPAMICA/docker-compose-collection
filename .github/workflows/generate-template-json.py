@@ -58,7 +58,7 @@ for filename in sorted(glob.glob("composes-files/*.y*ml")):
                     envdesc = envdesctotal[1]
                     envhold = envdesctotal[2]
                     envtemp["label"] = envdesctotal[0]
-                    envtemp["description"] = envdesc[:-1]
+                    envtemp["description"] = envdesc[:-2]
                     envtemp["default"] = envhold[:-1]
                 except:
                     try:

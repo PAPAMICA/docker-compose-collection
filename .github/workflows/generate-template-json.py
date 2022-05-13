@@ -54,12 +54,20 @@ for filename in sorted(glob.glob("composes-files/*.y*ml")):
                 dataenv=line[3:-1].split(': ', 1)
                 envtemp["name"] = dataenv[0]
                 try:
-                    envdesctotal = dataenv[1].split(' (')
+                    envdesctotal = re.split('( [', dataenv[1])
                     envdesc = envdesctotal[1]
+                    envhold = envdesctotal[2]
                     envtemp["label"] = envdesctotal[0]
                     envtemp["description"] = envdesc[:-1]
+                    envtemp["default"] = envhold[:-1]
                 except:
-                    envtemp["label"] = dataenv[1]
+                    try:
+                        envdesctotal = dataenv[1].split(' (')
+                        envdesc = envdesctotal[1]
+                        envtemp["label"] = envdesctotal[0]
+                        envtemp["description"] = envdesc[:-1]
+                    except:
+                        envtemp["label"] = dataenv[1]
                 env.append(envtemp)
         if data:
             repository = {

@@ -2,12 +2,12 @@
 # Update: 2022-05-13
 
 #& type: 3
-#& title: Apprise API
-#& description: Send notifications to more then 70+ services.
-#& note: Website: <a href='https://github.com/caronc/apprise-api' target='_blank' rel='noopener'>Github.com</a>
+#& title: Dillinger
+#& description: Write your markdown with HTML live edit
+#& note: Website: <a href='https://github.com/joemccann/dillinger' target='_blank' rel='noopener'>Github.com</a>
 #& categories: SelfHosted, PAPAMICA
 #& platform: linux
-#& logo: https://warehouse-camo.ingress.cmh1.psfhosted.org/a22d9206f80dfbb10748b6764fee932ff0ae1a8f/687474703a2f2f7265706f2e6e75787265662e636f6d2f7075622f696d672f6c6f676f2d617070726973652e706e67
+#& logo: https://d33wubrfki0l68.cloudfront.net/62334572e03c001939ed509a2a1f1009dd9bdde3/a7ee8/assets/images/tool-icons/dillinger.png
 
 #% SERVICE: Name of the service (No spaces or points)
 #% DATA_LOCATION: Data localization (Example: /apps/service)
@@ -17,17 +17,18 @@
 # Work with Portainer
 version: "2"
 services:
-  apprise-api:
-    image: caronc/apprise:latest
+  dillinger:
+    image: joemccann/dillinger
     container_name: $SERVICE
-    volumes:
-      - $DATA_LOCATION/config:/config
+    restart: always
+    environment:
+      - "BIND_ADDRESS=0.0.0.0"
+      - "PORT=9000"
     healthcheck:
-      test: ["CMD", "bash", "-c", "exec 5<>/dev/tcp/127.0.0.1/8000 && echo -e 'GET /healthz HTTP/1.1\n\n' >&5 && cat <&5 | head -n 1 | grep 200"]
+      test: wget -s 'http://localhost:9000'
       interval: 1m
       timeout: 30s
-      retries: 3
-    restart: unless-stopped
+      retries: 3 
     networks:
       - default
     labels:
@@ -37,7 +38,7 @@ services:
       - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
       - "traefik.http.routers.$SERVICE.tls=true"
       - "traefik.http.routers.$SERVICE.tls.certresolver=http"
-      - "traefik.http.services.$SERVICE.loadbalancer.server.port=8000"
+      - "traefik.http.services.$SERVICE.loadbalancer.server.port=9000"
       - "traefik.docker.network=$NETWORK"
       
 networks:

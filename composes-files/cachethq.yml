@@ -9,13 +9,13 @@
 #& platform: linux
 #& logo: http://cachethq.io/img/social/CachetFB-V.png
 
-#% SERVICE: Name of the service (No spaces or points)
-#% DATA_LOCATION: data localization (Example: /apps/service)
+#% SERVICE: Name of the service (No spaces or points) [cachethq]
+#% DATA_LOCATION: data localization (Example: /apps/service) [/_data/apps]
 #% URL: Service URL (Example: service.papamica.fr or service.com)
-#% NETWORK: Your Traefik network (Example: proxy)
-#% DB_USER: Database user
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
+#% DB_USER: Database user (No spaces or points) [cachethq]
 #% DB_PASSWORD: Database user password
-#% TIME_ZONE: Time zone (Example : Europe/Paris)
+#% TIME_ZONE: Time zone (Example : Europe/Paris) Europe/Paris
 
 # Work with Portainer
 version: "2"
@@ -25,7 +25,7 @@ services:
     container_name: $SERVICE-db
     image: postgres:14
     volumes:
-      - $DATA_LOCATION/db:/var/lib/postgresql/data
+      - $DATA_LOCATION/$SERVICE/db:/var/lib/postgresql/data
     environment:
       - POSTGRES_USER=$DB_USER
       - POSTGRES_PASSWORD=$DB_PASSWORD

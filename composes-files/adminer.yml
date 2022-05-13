@@ -10,9 +10,9 @@
 #& platform: linux
 #& logo: https://git.spip.net/repo-avatars/1417-1f8a32370f4028c9c0c216787ad4916c
 
-#% SERVICE: Name of the service (No spaces or points)
-#% URL: Service URL (Example: service.papamica.fr or service.com)
-#% NETWORK: Your Traefik network (Example: proxy)
+#% SERVICE: Name of the service (No spaces or points) [adminer]
+#% URL: Service URL (Example: service.papamica.fr or service.com) 
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
 
 # Work with Portainer
 version: "2"

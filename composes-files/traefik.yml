@@ -9,10 +9,10 @@
 #& platform: linux
 #& logo: https://blog.alterway.fr/images/traefik.logo.png
 
-#% SERVICE: Name of the service (No spaces or points)
-#% DATA_LOCATION: Data localization (Example: /apps/service)
+#% SERVICE: Name of the service (No spaces or points) [traefik]
+#% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
 #% URL: Service URL (Example: service.papamica.fr or service.com)
-#% NETWORK: Your Traefik network (Example: proxy, you need to create it before)
+#% NETWORK: Your Traefik network (Example: proxy, you need to create it before) [proxy]
 #% ADMIN_PASS: Admin user and password (Format: USER:{SHA}XXXXXXXXXXXXXXXX)
 
 # Work with Portainer
@@ -33,9 +33,9 @@ services:
         volumes:
             - /etc/localtime:/etc/localtime:ro
             - /var/run/docker.sock:/var/run/docker.sock:ro
-            - $DATA_LOCATION/config/traefik.yml:/traefik.yml:ro
-            - $DATA_LOCATION/config/config.yml:/config.yml:ro  
-            - $DATA_LOCATION/config/acme.json:/acme.json
+            - $DATA_LOCATION/$SERVICE/config/traefik.yml:/traefik.yml:ro
+            - $DATA_LOCATION/$SERVICE/config/config.yml:/config.yml:ro  
+            - $DATA_LOCATION/$SERVICE/config/acme.json:/acme.json
         labels:
             autoupdate: "monitor"
             traefik.enable: true

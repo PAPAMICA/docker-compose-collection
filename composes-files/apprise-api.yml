@@ -9,10 +9,10 @@
 #& platform: linux
 #& logo: https://warehouse-camo.ingress.cmh1.psfhosted.org/a22d9206f80dfbb10748b6764fee932ff0ae1a8f/687474703a2f2f7265706f2e6e75787265662e636f6d2f7075622f696d672f6c6f676f2d617070726973652e706e67
 
-#% SERVICE: Name of the service (No spaces or points)
-#% DATA_LOCATION: Data localization (Example: /apps/service)
+#% SERVICE: Name of the service (No spaces or points) [apprise-api]
+#% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
 #% URL: Service URL (Example: service.papamica.fr or service.com)
-#% NETWORK: Your Traefik network (Example: proxy)
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
 
 # Work with Portainer
 version: "2"
@@ -21,7 +21,7 @@ services:
     image: caronc/apprise:latest
     container_name: $SERVICE
     volumes:
-      - $DATA_LOCATION/config:/config
+      - $DATA_LOCATION/$SERVICE/config:/config
     healthcheck:
       test: ["CMD", "bash", "-c", "exec 5<>/dev/tcp/127.0.0.1/8000 && echo -e 'GET /healthz HTTP/1.1\n\n' >&5 && cat <&5 | head -n 1 | grep 200"]
       interval: 1m

@@ -9,11 +9,11 @@
 #& platform: linux
 #& logo: https://tsweb.papamica.com/img/icons/defaulticon-64.png
 
-#% SERVICE: Name of the service (No spaces or points)
-#% DATA_LOCATION: Data localization (Example: /apps/service)
+#% SERVICE: Name of the service (No spaces or points) [ts3viewer]
+#% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
 #% URL: Service URL (Example: service.papamica.fr or service.com)
-#% NETWORK: Your Traefik network (Example: proxy)
-#% DB_USER: Database user
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
+#% DB_USER: Database user (No spaces or points) [ts3viewer]
 #% DB_PASSWORD: Database user password
 #% DB_ROOT: Database root password
 
@@ -25,7 +25,7 @@ services:
     image: yeahnice1/ts-website:latest
     container_name: $SERVICE
     volumes:
-      - $DATA_LOCATION/config:/var/www/html
+      - $DATA_LOCATION/$SERVICE/config:/var/www/html
     restart: always
     healthcheck:
       test: curl --fail http://localhost:80 || exit 1
@@ -49,7 +49,7 @@ services:
     container_name: $SERVICE-db
     restart: always
     volumes:
-      - $DATA_LOCATION/db:/var/lib/mysql
+      - $DATA_LOCATION/$SERVICE/db:/var/lib/mysql
     healthcheck:
       test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
       timeout: 20s

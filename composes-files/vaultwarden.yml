@@ -9,12 +9,12 @@
 #& platform: linux
 #& logo: https://upload.wikimedia.org/wikipedia/commons/0/03/Bitwarden_Logo.png
 
-#% SERVICE: Name of the service (No spaces or points)
-#% DATA_LOCATION: Data localization (Example: /apps/service)
+#% SERVICE: Name of the service (No spaces or points) [vaultwarden]
+#% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
 #% URL: Service link (Example: service.papamica.fr or service.com)
-#% NETWORK: Your Traefik network (Example: proxy)
-#% SIGNUPS_ALLOWED: Autorize signup ? (True or False)
-#% TIME_ZONE: Time zone (Example : Europe/Paris)
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
+#% SIGNUPS_ALLOWED: Autorize signup ? (True or False) [True]
+#% TIME_ZONE: Time zone (Example : Europe/Paris) [Europe/Paris]
 #% ADMIN_TOKEN: Admin token (For manage with url/admin)
 
 # Work with Portainer
@@ -26,7 +26,7 @@ services:
     container_name: $SERVICE
     restart: always
     volumes:
-      - $DATA_LOCATION/bw-data:/data
+      - $DATA_LOCATION/$SERVICE/bw-data:/data
     environment:
       WEBSOCKET_ENABLED: 'true' # Required to use websockets
       SIGNUPS_ALLOWED: '$SIGNUPS_ALLOWED'   # set to false to disable signups

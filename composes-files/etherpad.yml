@@ -9,11 +9,11 @@
 #& platform: linux
 #& logo: https://n30.tech/images/etherpad.png
 
-#% SERVICE: Name of the service (No spaces or points)
-#% DATA_LOCATION: data localization (Example: /apps/service)
+#% SERVICE: Name of the service (No spaces or points) [etherpad]
+#% DATA_LOCATION: data localization (Example: /apps/service) [/_data/apps]
 #% URL: Service URL (Example: service.papamica.fr or service.com)
-#% NETWORK: Your Traefik network (Example: proxy)
-#% DB_USER: Database user
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
+#% DB_USER: Database user (No spaces or points) [etherpad]
 #% DB_PASSWORD: Database user password
 #% ADMIN_PASSWORD: Administration password
 
@@ -36,7 +36,7 @@ services:
       - POSTGRES_USER=$DB_USER
       - POSTGRES_PASSWORD=$DB_PASSWORD
     volumes:
-      - $DATA_LOCATION/db:/var/lib/postgresql/data
+      - $DATA_LOCATION/$SERVICE/db:/var/lib/postgresql/data
     networks:
       - default
 

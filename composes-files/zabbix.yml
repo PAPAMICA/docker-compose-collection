@@ -9,13 +9,13 @@
 #& platform: linux
 #& logo: https://juliebarbaroux.tech/wp-content/uploads/2020/11/zabbix.png
 
-#% SERVICE: Name of the service (No spaces or points)
-#% DATA_LOCATION: data localization (Example: /apps/service)
+#% SERVICE: Name of the service (No spaces or points) [zabbix]
+#% DATA_LOCATION: data localization (Example: /apps/service) [/_data/apps]
 #% URL: Service URL (Example: service.papamica.fr or service.com)
-#% NETWORK: Your Traefik network (Example: proxy)
-#% DB_USER: Database user
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
+#% DB_USER: Database user (No spaces or points) [zabbix]
 #% DB_PASSWORD: Database user password
-#% TIME_ZONE: Time zone (Example : Europe/Paris)
+#% TIME_ZONE: Time zone (Example : Europe/Paris) [Europe/Paris]
 
 # Work with Portainer
 version: '2'
@@ -35,7 +35,7 @@ services:
       timeout: 5s
       retries: 5
     volumes:
-      - $DATA_LOCATION/db:/var/lib/postgresql/data
+      - $DATA_LOCATION/$SERVICE/$SERVICE/db:/var/lib/postgresql/data
     labels:
       - "autoupdate=monitor"
     networks:
@@ -71,7 +71,7 @@ services:
     ports:
       - 10051:10051
     volumes:
-      - $DATA_LOCATION/alertscripts:/usr/lib/zabbix/alertscripts
+      - $DATA_LOCATION/$SERVICE/$SERVICE/alertscripts:/usr/lib/zabbix/alertscripts
     networks:
       - default
       

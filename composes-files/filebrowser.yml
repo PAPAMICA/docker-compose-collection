@@ -9,11 +9,11 @@
 #& platform: linux
 #& logo: https://avatars.githubusercontent.com/u/35781395?s=200&v=4
 
-#% SERVICE: Name of the service (No spaces or points)
-#% DATA_LOCATION: Data localization (Example: /apps/service)
+#% SERVICE: Name of the service (No spaces or points) [filebrowser]
+#% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
 #% FOLDER: Folder of yours files (Example: /data/movies)
 #% URL: Service URL (Example: service.papamica.fr or service.com)
-#% NETWORK: Your Traefik network (Example: proxy)
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
 
 # Work with Portainer
 version: "2"
@@ -26,8 +26,8 @@ services:
     restart: always
     volumes:
       - $FOLDER:/srv
-      - $DATA_LOCATION/config.json:/config.json
-      - $DATA_LOCATION/database.db:/database.db
+      - $DATA_LOCATION/$SERVICE/config.json:/config.json
+      - $DATA_LOCATION/$SERVICE/database.db:/database.db
     healthcheck:
       test: wget -nv -t1 --spider 'http://localhost:80'
       interval: 1m

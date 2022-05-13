@@ -9,11 +9,11 @@
 #& platform: linux
 #& logo: https://refonteblog.mystagingwebsite.com/wp-content/uploads/2021/12/logo-wordpress.png
 
-#% SERVICE: Name of the service (No spaces or points)
-#% DATA_LOCATION: Data localization (Example: /apps/service)
+#% SERVICE: Name of the service (No spaces or points) [wordpress]
+#% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
 #% URL: Service link (Example: service.papamica.fr or service.com)
-#% NETWORK: Your Traefik network (Example: proxy)
-#% DB_USER: Database user
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
+#% DB_USER: Database user (No spaces or points) [wordpress]
 #% DB_PASSWORD: Password for database user
 #% DB_ROOT: Password for database root
 
@@ -26,7 +26,7 @@ services:
     container_name: $SERVICE-db
     image: mysql:5.7
     volumes:
-      - $DATA_LOCATION/db:/var/lib/mysql
+      - $DATA_LOCATION/$SERVICE/db:/var/lib/mysql
     restart: always
     healthcheck:
       test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
@@ -49,8 +49,8 @@ services:
     image: wordpress:latest
     restart: always
     volumes:
-      - $DATA_LOCATION/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
-      - $DATA_LOCATION/html:/var/www/html
+      - $DATA_LOCATION/$SERVICE/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+      - $DATA_LOCATION/$SERVICE/html:/var/www/html
     environment:
       WORDPRESS_DB_HOST: $SERVICE-db:3306
       WORDPRESS_DB_USER: $DB_USER

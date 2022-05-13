@@ -9,13 +9,13 @@
 #& platform: linux
 #& logo: https://vic-team.fr/img/plex-logo-rounded.png
 
-#% SERVICE: Name of the service (No spaces or points)
-#% DATA_LOCATION: Data localization (Example: /apps/service)
+#% SERVICE: Name of the service (No spaces or points) [plex]
+#% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
 #% LIBRARY: Your folder with movies and series (Example: /data/multimedia)
 #% URL: Service URL (Example: service.papamica.fr or service.com)
-#% NETWORK: Your Traefik network (Example: proxy)
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
 #% PLEX_CLAIM: Plex claim code (Optionnel)
-#% TZ: Time zone (Exemple: Europe/Paris)
+#% TZ: Time zone (Exemple: Europe/Paris) [Europe/Paris]
 
 # Work with Portainer
 version: "2"
@@ -46,7 +46,7 @@ services:
       timeout: 30s
       retries: 3
     volumes:
-      - $DATA_LOCATION/config:/config
+      - $DATA_LOCATION/$SERVICE/config:/config
       - $LIBRARY:/library
     restart: unless-stopped
     labels:

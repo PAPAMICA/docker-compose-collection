@@ -9,10 +9,10 @@
 #& platform: linux
 #& logo: https://avatars.githubusercontent.com/u/25282695?s=280&v=4
 
-#% SERVICE: Name of the service (No spaces or points)
-#% DATA_LOCATION: Data localization (Example: /apps/service)
+#% SERVICE: Name of the service (No spaces or points) [sinusbot]
+#% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
 #% URL: Service URL (Example: service.papamica.fr or service.com)
-#% NETWORK: Your Traefik network (Example: proxy)
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
 
 # Work with Portainer
 version: "2"
@@ -22,8 +22,8 @@ services:
     container_name: $SERVICE
     restart: always
     volumes:
-      - $DATA_LOCATION/scripts:/opt/sinusbot/scripts
-      - $DATA_LOCATION/data:/opt/sinusbot/data
+      - $DATA_LOCATION/$SERVICE/scripts:/opt/sinusbot/scripts
+      - $DATA_LOCATION/$SERVICE/data:/opt/sinusbot/data
     networks:
       - default
     labels:

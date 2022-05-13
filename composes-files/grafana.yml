@@ -9,11 +9,11 @@
 #& platform: linux
 #& logo: https://seeklogo.com/images/G/grafana-logo-15BA0AFA8A-seeklogo.com.png
 
-#% SERVICE: Name of the service (No spaces or points)
-#% DATA_LOCATION: Data localization (Example: /apps/service)
-#% PLUGINS: Plugins to install (Example: alexanderzobnin-zabbix-app,grafana-singlestat-panel)
+#% SERVICE: Name of the service (No spaces or points) [grafana]
+#% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
+#% PLUGINS: Plugins to install (Example: grafana-singlestat-panel) [alexanderzobnin-zabbix-app,grafana-singlestat-panel]
 #% URL: Service URL (Example: service.papamica.fr or service.com)
-#% NETWORK: Your Traefik network (Example: proxy)
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
 
 # Work with Portainer
 version: "2"
@@ -23,8 +23,8 @@ services:
     restart: always
     container_name: $SERVICE
     volumes: 
-      - $DATA_LOCATION/config:/etc/grafana
-      - $DATA_LOCATION/data:/var/lib/grafana
+      - $DATA_LOCATION/$SERVICE/config:/etc/grafana
+      - $DATA_LOCATION/$SERVICE/data:/var/lib/grafana
     environment:
       - GF_PANELS_DISABLE_SANITIZE_HTML=true
       - GF_SERVER_DOMAIN=$URL

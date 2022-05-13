@@ -9,11 +9,11 @@
 #& platform: linux
 #& logo: https://ts-n.net/graphics/tsn_logo.png
 
-#% SERVICE: Name of the service (No spaces or points)
-#% DATA_LOCATION: Data localization (Example: /apps/service)
+#% SERVICE: Name of the service (No spaces or points) [ts3rank]
+#% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
 #% URL: Service URL (Example: service.papamica.fr or service.com)
-#% NETWORK: Your Traefik network (Example: proxy)
-#% DB_USER: Database user
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
+#% DB_USER: Database user (No spaces or points) [ts3rank]
 #% DB_PASSWORD: Database user password
 #% DB_ROOT: Database root password
 
@@ -25,7 +25,7 @@ services:
     container_name: $SERVICE-db
     restart: always
     volumes:
-      - $DATA_LOCATION/db:/var/lib/mysql
+      - $DATA_LOCATION/$SERVICE/db:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=$DB_ROOT
       - MYSQL_DATABASE=RanksystemDatabase

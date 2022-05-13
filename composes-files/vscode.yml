@@ -9,10 +9,10 @@
 #& platform: linux
 #& logo: https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/2048px-Visual_Studio_Code_1.35_icon.svg.png
 
-#% SERVICE: name of the service (No spaces or points)
-#% DATA_LOCATION: data localization (Example: /apps/service)
+#% SERVICE: name of the service (No spaces or points) [vscode]
+#% DATA_LOCATION: data localization (Example: /apps/service) [/_data/apps]
 #% URL: service URL (Example: service.papamica.fr or service.com)
-#% NETWORK: your Traefik network (Example: proxy)
+#% NETWORK: your Traefik network (Example: proxy) [proxy]
 #% PASSWORD: Password to acces web interface
 
 # Work with Portainer
@@ -23,7 +23,7 @@ services:
     container_name: $SERVICE
     image: codercom/code-server:latest
     volumes:
-      - $DATA_LOCATION/project:/home/coder/project
+      - $DATA_LOCATION/$SERVICE/project:/home/coder/project
     restart: always
     environment:
       - PASSWORD=$PASSWORD

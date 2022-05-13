@@ -9,14 +9,14 @@
 #& platform: linux
 #& logo: https://github.com/getferdi/ferdi/raw/develop/build-helpers/images/icon.png
 
-#% SERVICE: Name of the service (No spaces or points)
-#% DATA_LOCATION: Data localization (Example: /apps/service)
+#% SERVICE: Name of the service (No spaces or points) [ferdi]
+#% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
 #% URL: Service URL (Example: service.papamica.fr or service.com)
-#% NETWORK: Your Traefik network (Example: proxy)
-#% IS_CREATION_ENABLED: Enable creation (True / False)
-#% IS_DASHBOARD_ENABLED: Enable dashboard (True / False)
-#% IS_REGISTRATION_ENABLED: Enable registration (True / False)
-#% CONNECT_WITH_FRANZ: Connect with Franz (True / False)
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
+#% IS_CREATION_ENABLED: Enable creation (True / False) [True]
+#% IS_DASHBOARD_ENABLED: Enable dashboard (True / False) [True]
+#% IS_REGISTRATION_ENABLED: Enable registration (True / False) [True]
+#% CONNECT_WITH_FRANZ: Connect with Franz (True / False) [False]
 
 # Work with Portainer
 version: '2'
@@ -46,9 +46,9 @@ services:
       - IS_REGISTRATION_ENABLED=$IS_REGISTRATION_ENABLED
       - CONNECT_WITH_FRANZ=$CONNECT_WITH_FRANZ
     volumes:
-      - $DATA_LOCATION/config:/config
-      - $DATA_LOCATION/db:/app/database
-      - $DATA_LOCATION/recipes:/app/recipes
+      - $DATA_LOCATION/$SERVICE/config:/config
+      - $DATA_LOCATION/$SERVICE/db:/app/database
+      - $DATA_LOCATION/$SERVICE/recipes:/app/recipes
     healthcheck:
       test: wget -nv -t1 --spider 'http://localhost:80'
       interval: 1m

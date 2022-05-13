@@ -9,14 +9,14 @@
 #& platform: linux
 #& logo: https://images.opencollective.com/yourls/a488226/logo/256.png
 
-#% SERVICE: Name of the service (No spaces or points)
-#% DATA_LOCATION: Data localization (Example: /apps/service)
+#% SERVICE: Name of the service (No spaces or points) [yourls]
+#% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
 #% URL: Service URL (Example: service.papamica.fr or service.com)
-#% NETWORK: Your Traefik network (Example: proxy)
-#% DB_USER: Database user
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
+#% DB_USER: Database user (No spaces or points) [yourls]
 #% DB_PASSWORD: Database user password
 #% DB_ROOT: Database root password
-#% ADMIN_USER: Admin user for YourLS
+#% ADMIN_USER: Admin user for YourLS (No spaces or points) [admin]
 #% ADMIN_PASSWORD: Admin password for YourLS
 
 # Work with Portainer
@@ -26,7 +26,7 @@ services:
     image: yourls:apache
     container_name: $SERVICE
     volumes:
-      - $DATA_LOCATION/config:/var/www/html
+      - $DATA_LOCATION/$SERVICE/config:/var/www/html
     environment:
       YOURLS_DB_USER: $DB_USER
       YOURLS_DB_PASS: $DB_PASSWORD
@@ -64,7 +64,7 @@ services:
       - MYSQL_USER=$DB_USER
       - MYSQL_PASSWORD=$DB_PASSWORD
     volumes:
-      - $DATA_LOCATION/db:/var/lib/mysql
+      - $DATA_LOCATION/$SERVICE/db:/var/lib/mysql
     healthcheck:
         test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
         timeout: 20s

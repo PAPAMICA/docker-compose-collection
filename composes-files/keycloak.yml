@@ -9,14 +9,14 @@
 #& platform: linux
 #& logo: https://dyltqmyl993wv.cloudfront.net/assets/stacks/keycloak/img/keycloak-stack-220x234.png
 
-#% SERVICE: Name of the service (No spaces or points)
-#% DATA_LOCATION: Data localization (Example: /apps/service)
+#% SERVICE: Name of the service (No spaces or points) [keycloak]
+#% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
 #% URL: Service URL (Example: service.papamica.fr or service.com)
-#% NETWORK: Your Traefik network (Example: proxy)
-#% DB_USER: Database user
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
+#% DB_USER: Database user (No spaces or points) [keycloak]
 #% DB_PASSWORD: Database user password
 #% DB_ROOT_PASSWORD: Database root password
-#% KC_USER: User for Keycloak
+#% KC_USER: User for Keycloak (No spaces or points) [admin]
 #% KC_PASSWORD: Password for Keycloak user
 
 
@@ -33,7 +33,7 @@ services:
         timeout: 20s
         retries: 10
     volumes:
-      - $DATA_LOCATION/db:/var/lib/mysql
+      - $DATA_LOCATION/$SERVICE/db:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=$DB_ROOT_PASSWORD
       - MYSQL_DATABASE=keycloak

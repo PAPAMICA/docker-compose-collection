@@ -9,14 +9,14 @@
 #& platform: linux
 #& logo: https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/BookStack_logo.svg/1075px-BookStack_logo.svg.png
 
-#% SERVICE: Name of the service (No spaces or points)
-#% DATA_LOCATION: data localization (Example: /apps/service)
+#% SERVICE: Name of the service (No spaces or points) [bookstack]
+#% DATA_LOCATION: data localization (Example: /apps/service) [/_data/apps]
 #% URL: Service URL (Example: service.papamica.fr or service.com)
-#% NETWORK: Your Traefik network (Example: proxy)
-#% DB_USER: Database user
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
+#% DB_USER: Database user (No spaces or points) [bookstack]
 #% DB_PASSWORD: Database user password
 #% DB_ROOT: Database root password
-#% TIME_ZONE: Time zone (Example : Europe/Paris)
+#% TIME_ZONE: Time zone (Example : Europe/Paris) [Europe/Paris]
 
 # Work with Portainer
 version: "2"
@@ -34,7 +34,7 @@ services:
       - DB_DATABASE=bookstackapp
       - APP_URL=https://$URL
     volumes:
-      - $DATA_LOCATION/config:/config
+      - $DATA_LOCATION/$SERVICE/config:/config
     healthcheck:
       test: curl --fail http://localhost:80 || exit 1
       interval: 1m
@@ -70,7 +70,7 @@ services:
         timeout: 20s
         retries: 10
     volumes:
-      - $DATA_LOCATION/db:/config
+      - $DATA_LOCATION/$SERVICE/db:/config
     restart: unless-stopped
     networks:
       - default

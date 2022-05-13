@@ -9,10 +9,10 @@
 #& platform: linux
 #& logo: https://www.olivetin.app/resources/images/logo.png
 
-#% SERVICE: Name of the service (No spaces or points)
-#% DATA_LOCATION: Data localization (Example: /apps/service)
+#% SERVICE: Name of the service (No spaces or points) [olivetin]
+#% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
 #% URL: Service URL (Example: service.papamica.fr or service.com)
-#% NETWORK: Your Traefik network (Example: proxy)
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
 
 # Work with Portainer
 version: "3.3"
@@ -29,7 +29,7 @@ services:
             timeout: 30s
             retries: 3
         volumes:
-            - $DATA_LOCATION/config:/config:ro
+            - $DATA_LOCATION/$SERVICE/config:/config:ro
             - /var/run/docker.sock:/var/run/docker.sock
         labels:
             - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater

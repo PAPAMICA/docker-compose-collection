@@ -9,11 +9,11 @@
 #& platform: linux
 #& logo: https://cdn1.oxatis.com/Files/112496/Img/16/matomo-new.png
 
-#% SERVICE: Name of the service (No spaces or points)
-#% DATA_LOCATION: Data localization (Example: /apps/service)
+#% SERVICE: Name of the service (No spaces or points) [matomo]
+#% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
 #% URL: Service URL (Example: service.papamica.fr or service.com)
-#% NETWORK: Your Traefik network (Example: proxy)
-#% DB_USER: Database user
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
+#% DB_USER: Database user (No spaces or points) [keycloak]
 #% DB_PASSWORD: Database user password
 version: "2"
 services:
@@ -33,7 +33,7 @@ services:
       timeout: 30s
       retries: 3
     volumes:
-      - $DATA_LOCATION/data:/var/www/html matomo
+      - $DATA_LOCATION/$SERVICE/data:/var/www/html matomo
     depends_on:
       - $SERVICE-db
     networks:
@@ -60,7 +60,7 @@ services:
       - MYSQL_PASSWORD=$DB_PASSWORD
       - MARIADB_EXTRA_FLAGS=--max_allowed_packet=64MB
     volumes:
-      - $DATA_LOCATION/db:/config
+      - $DATA_LOCATION/$SERVICE/db:/config
     networks:
       - default
     labels:

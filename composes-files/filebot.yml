@@ -9,11 +9,11 @@
 #& platform: linux
 #& logo: https://www.filebot.net/images/filebot.logo.svg
 
-#% SERVICE: Name of the service (No spaces or points)
-#% DATA_LOCATION: Data localization (Example: /apps/service)
+#% SERVICE: Name of the service (No spaces or points) [filebot]
+#% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
 #% FOLDER: Folder of yours files (Example: /data/movies)
 #% URL: Service URL (Example: service.papamica.fr or service.com)
-#% NETWORK: Your Traefik network (Example: proxy)
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
 
 # Work with Portainer
 version: "2"
@@ -24,7 +24,7 @@ services:
     image: jlesage/filebot:latest
     container_name: $SERVICE
     volumes:
-      - $DATA_LOCATION/config:/config:rw
+      - $DATA_LOCATION/$SERVICE/config:/config:rw
       - $FOLDER:/storage:rw
     restart: always
     healthcheck:

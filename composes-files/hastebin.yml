@@ -9,10 +9,10 @@
 #& platform: linux
 #& logo: https://progsoft.net/images/hastebin-icon-b45e3f5695d3f577b2630648bd00584195822e3d.png
 
-#% SERVICE: Name of the service (No spaces or points)
-#% DATA_LOCATION: Data localization (Example: /apps/service)
+#% SERVICE: Name of the service (No spaces or points) [hastebin]
+#% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
 #% URL: Service URL (Example: service.papamica.fr or service.com)
-#% NETWORK: Your Traefik network (Example: proxy)
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
 
 # Work with Portainer
 version: "2"
@@ -25,7 +25,7 @@ services:
     environment:
       STORAGE_TYPE: file
     volumes:
-      - $DATA_LOCATION/data:/data
+      - $DATA_LOCATION/$SERVICE/data:/data
     healthcheck:
       test: wget -s 'http://localhost:7777'
       interval: 1m

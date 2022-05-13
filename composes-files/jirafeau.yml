@@ -9,10 +9,10 @@
 #& platform: linux
 #& logo: https://api.cloudron.io/api/v1/apps/net.jirafeau.cloudronapp/versions/1.2.0/icon
 
-#% SERVICE: Name of the service (No spaces or points)
-#% DATA_LOCATION: Data localization (Example: /apps/service)
+#% SERVICE: Name of the service (No spaces or points) [jirafeau]
+#% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
 #% URL: Service URL (Example: service.papamica.fr or service.com)
-#% NETWORK: Your Traefik network (Example: proxy)
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
 
 # Work with Portainer
 version: '2'
@@ -23,9 +23,9 @@ services:
     container_name: $SERVICE
     restart: unless-stopped
     volumes:
-      - $DATA_LOCATION/cfg:/cfg
-      - $DATA_LOCATION/data:/data
-      #- $DATA_LOCATION/media:/jirafeau/media
+      - $DATA_LOCATION/$SERVICE/cfg:/cfg
+      - $DATA_LOCATION/$SERVICE/data:/data
+      #- $DATA_LOCATION/$SERVICE/media:/jirafeau/media
     healthcheck:
       test: wget -nv -t1 --spider 'http://localhost:80'
       interval: 1m

@@ -37,7 +37,7 @@ services:
       - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
       - "traefik.http.routers.$SERVICE.tls=true"
       - "traefik.http.routers.$SERVICE.tls.certresolver=http"
-      - "traefik.http.services.$SERVICE.loadbalancer.server.port=8000"
+      - "traefik.http.services.$SERVICE.loadbalancer.server.port=8080"
       - "traefik.docker.network=$NETWORK"
       
 networks:

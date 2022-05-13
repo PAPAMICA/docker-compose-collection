@@ -1269,6 +1269,64 @@
         },
         {
             "type": 3,
+            "title": "YourLS",
+            "description": "Link shorter",
+            "note": "Website: <a href='https://yourls.org/' target='_blank' rel='noopener'>YourLS.org</a>",
+            "categories": [
+                "SelfHosted",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://images.opencollective.com/yourls/a488226/logo/256.png",
+            "repository": {
+                "stackfile": "composes-files/yourls.yml",
+                "url": "https://github.com/PAPAMICA/docker-compose-collection"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service",
+                    "description": "No spaces or points"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "Data localization",
+                    "description": "Example: /apps/service"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service URL",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network",
+                    "description": "Example: proxy"
+                },
+                {
+                    "name": "DB_USER",
+                    "label": "Database user"
+                },
+                {
+                    "name": "DB_PASSWORD",
+                    "label": "Database user password"
+                },
+                {
+                    "name": "DB_ROOT",
+                    "label": "Database root password"
+                },
+                {
+                    "name": "ADMIN_USER",
+                    "label": "Admin user for YourLS"
+                },
+                {
+                    "name": "ADMIN_PASSWORD",
+                    "label": "Admin password for YourLS"
+                }
+            ]
+        },
+        {
+            "type": 3,
             "title": "Zabbix",
             "description": "Best monitoring tools",
             "note": "Website: <a href='https://www.zabbix.com/' target='_blank' rel='noopener'>Zabbix.com</a>",

@@ -37,7 +37,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 
 
 ## List of services availables:
-<img src="https://img.shields.io/badge/Avaibles:_29-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
+<img src="https://img.shields.io/badge/Avaibles:_30-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
 
 | Status | Service | Update | Maintainer |
 |:--:|--|--|--|
@@ -69,6 +69,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | ✅ | vscode | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
 | ✅ | website-html | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | wordpress | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
+| ✅ | yourls | 2022-05-13 |  Mickael "PAPAMICA" Asseline |
 | ✅ | zabbix | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
 
 ## List of services to do:
@@ -149,6 +150,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | 🚸 | scality-s3 |
 | 🚸 | scrutiny |
 | 🚸 | shiori |
+| 🚸 | shlink |
 | 🚸 | shorturl |
 | 🚸 | snapdrop |
 | 🚸 | snibox |
@@ -171,7 +173,6 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | 🚸 | wiznote |
 | 🚸 | wowza |
 | 🚸 | yatch |
-| 🚸 | yourls |
 | 🚸 | youtube-dl |
 | 🚸 | zabbix-cachethq |
 | 🚸 | zabbix-proxy |

@@ -1,0 +1,64 @@
+# Maintainer: Mickael "PAPAMICA" Asseline
+# Update: 2022-05-17
+
+#& type: 3
+#& title: Zabbix Proxy
+#& description: Proxy server for Zabbix
+#& note: Website: <a href='https://www.zabbix.com/' target='_blank' rel='noopener'>Zabbix.com</a></br>Port to open: 10051
+#& categories: SelfHosted, Monitoring, PAPAMICA
+#& platform: linux
+#& logo: https://juliebarbaroux.tech/wp-content/uploads/2020/11/zabbix.png
+
+#% SERVICE: Name of the service (No spaces or points) [zabbix-proxy]
+#% DATA_LOCATION: data localization (Example: /apps/service) [/_data/apps]
+#% URL: Service URL (Example: service.papamica.fr or service.com)
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
+#% PROXY_HOSTNAME: name of zabbix proxy (Example: zabbix-proxy)
+#% ZABBIX_SERVER: FQDN of zabbix server (Example: zabbic.domain.tld)
+# TLSPSKIDENTITY: ID of psk in zabbix server (Example: PSK001)
+# TLSPSKFILE: PSK file  (Example: zabbix_agentd.psk)
+
+
+# Work with Portainer
+version: '2'
+services:
+  zabbix-proxy:  
+    image: zabbix/zabbix-proxy-sqlite3:ubuntu-6.0-ubuntu-latest
+    restart: unless-stopped
+    container_name: $SERVICE
+    environment:
+      ZBX_PROXYMODE: 0
+      ZBX_HOSTNAME: $PROXY_HOSTNAME
+      ZBX_SERVER_HOST: $ZABBIX_SERVER
+      ZBX_ENABLEREMOTECOMMANDS: 1
+      ZBX_STARTPOLLERS: 5
+      ZBX_IPMIPOLLERS: 1
+      ZBX_STARTPOLLERSUNREACHABLE: 1
+      ZBX_STARTTRAPPERS: 5
+      ZBX_STARTPINGERS: 1
+      ZBX_STARTDISCOVERERS: 1
+      ZBX_STARTHTTPPOLLERS: 1
+      ZBX_STARTVMWARECOLLECTORS: 10
+      #ZBX_TLSCONNECT: psk
+      #ZBX_TLSACCEPT: psk
+      #ZBX_TLSPSKIDENTITY: $TLSPSKIDENTITY
+      #ZBX_TLSPSKFILE: $TLSPSKFILE
+      ZBX_VMWAREFREQUENCY: 60
+      ZBX_VMWAREPERFFREQUENCY: 60
+      ZBX_VMWARECACHESIZE: 8M
+      ZBX_VMWARETIMEOUT: 10
+    healthcheck:
+      test: grep -qr "zabbix_proxy" /proc/*/status || exit 1
+      interval: 1m
+      timeout: 30s
+      retries: 3
+    volumes:
+      - $DATA_LOCATION/$SERVICE/enc:/var/lib/zabbix/enc
+    ports:
+      - 10051:10051
+    networks: 
+      - default
+networks:
+  default:
+    external:
+      name: $NETWORK

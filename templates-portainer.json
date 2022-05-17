@@ -928,6 +928,55 @@
         },
         {
             "type": 3,
+            "title": "Overseerr",
+            "name": "Overseerr",
+            "description": "Overseerr is a request management and media discovery tool built to work with your existing Plex ecosystem.",
+            "note": "Website: <a href='https://overseerr.dev/' target='_blank' rel='noopener'>Overseerr.dev</a>",
+            "categories": [
+                "SelfHosted",
+                "Mediacenter",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://overseerr.dev/_next/image?url=%2Fos_logo_filled.svg&w=48&q=75",
+            "repository": {
+                "stackfile": "composes-files/overseerr.yml",
+                "url": "https://github.com/PAPAMICA/docker-compose-collection"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "overseerr"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service URL",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
+                },
+                {
+                    "name": "TZ",
+                    "label": "Time zone ",
+                    "description": "Exemple: Europe/Paris",
+                    "default": "Europe/Paris"
+                }
+            ]
+        },
+        {
+            "type": 3,
             "title": "Plex",
             "name": "Plex",
             "description": "Media server",

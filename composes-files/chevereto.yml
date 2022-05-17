@@ -1,0 +1,79 @@
+# Maintainer: Mickael "PAPAMICA" Asseline
+# Update: 2022-05-17
+
+#& type: 3
+#& title: Chevereto
+#& description: Chevereto is an image hosting software that allows you to create a beautiful and full-featured image hosting website on your own server.
+#& note: Website: <a href='https://github.com/rodber/chevereto-free' target='_blank' rel='noopener'>Github.com</a>
+#& categories: SelfHosted, Mediacenter, PAPAMICA
+#& platform: linux
+#& logo: https://avatars2.githubusercontent.com/u/6733935?v=3&s=200
+
+#% SERVICE: Name of the service (No spaces or points) [chevereto]
+#% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
+#% URL: Service URL (Example: service.papamica.fr or service.com)
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
+#% TZ: Time zone (Exemple: Europe/Paris) [Europe/Paris]
+#% FOLDER_DATA: Your data folder (Exemple: /data/pictures)
+#% DB_USER: Database user (No spaces or points) [chevereto]
+#% DB_PASSWORD: Database user password
+#% DB_ROOT: Database root password
+
+
+# Work with Portainer
+services:
+  chevereto:
+    image: linuxserver/chevereto:latest
+    container_name: $SERVICE
+    restart: always
+    volumes:
+      - $DATA_LOCATION/$SERVICE/config:/config
+      - $FOLDER_DATA:/data
+    environment:
+      - TZ=$TZ
+      - PUID=1000
+      - PGID=1000
+    depends_on:
+      - chevereto-db
+    healthcheck:
+      test: curl --connect-timeout 15 --max-time 100 --silent --show-error --fail "http://localhost:80" > /dev/null
+      interval: 1m
+      timeout: 30s
+      retries: 3
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+      - "traefik.enable=true"
+      - "traefik.http.routers.$SERVICE.entrypoints=https"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
+      - "traefik.http.routers.$SERVICE.tls=true"
+      - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+      - "traefik.docker.network=$NETWORK"
+    networks:
+      - default
+
+  chevereto-db:
+    image: lscr.io/linuxserver/mariadb
+    container_name: $SERVICE-db
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=$TZ
+      - MYSQL_ROOT_PASSWORD=$DB_ROOT
+      - MYSQL_DATABASE=chevereto
+      - MYSQL_USER=$DB_USER
+      - MYSQL_PASSWORD=$DB_PASSWORD
+    volumes:
+      - $DATA_LOCATION/$SERVICE/db:/config
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
+    restart: unless-stopped
+    networks:
+      - default
+networks:
+  default:
+    external:
+      name: $NETWORK

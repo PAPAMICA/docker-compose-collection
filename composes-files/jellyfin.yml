@@ -32,8 +32,6 @@ services:
       - TZ=$TZ
       - PUID=1000
       - PGID=1000
-    ports:
-      - 6881:6881
     healthcheck:
       test: curl --connect-timeout 15 --max-time 100 --silent --show-error --fail "http://localhost:8096" > /dev/null
       interval: 1m

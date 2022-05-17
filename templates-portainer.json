@@ -996,6 +996,58 @@
         },
         {
             "type": 3,
+            "title": "RunDeck",
+            "name": "RunDeck",
+            "description": "Rundeck is a free software that allows the automation of server administration via the creation of jobs or tasks.",
+            "note": "Website: <a href='https://www.rundeck.com/open-source' target='_blank' rel='noopener'>RunDeck.com</a>",
+            "categories": [
+                "SelfHosted",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://projects.task.gda.pl/uploads/-/system/project/avatar/135/rundeck_logo_white.png",
+            "repository": {
+                "stackfile": "composes-files/rundeck.yml",
+                "url": "https://github.com/PAPAMICA/docker-compose-collection"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "rundeck"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service URL",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
+                },
+                {
+                    "name": "DB_USER",
+                    "label": "Database user ",
+                    "description": "No spaces or points",
+                    "default": "rundeck"
+                },
+                {
+                    "name": "DB_PASSWORD",
+                    "label": "Database user password"
+                }
+            ]
+        },
+        {
+            "type": 3,
             "title": "Sinusbot",
             "name": "Sinusbot",
             "description": "Bot for TeamSpeak and Discord",

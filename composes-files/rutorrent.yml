@@ -23,7 +23,7 @@
 services:
   sonarr:
     image: romancin/rutorrent-flood:latest
-    container_name: sonarr
+    container_name: $SERVICE
     restart: always
     volumes:
       - $DATA_LOCATION/$SERVICE/config:/config

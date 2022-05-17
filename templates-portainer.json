@@ -1193,6 +1193,55 @@
         },
         {
             "type": 3,
+            "title": "Requestrr",
+            "name": "Requestrr",
+            "description": "Ombi is a request management and media discovery tool built to work with your existing Plex ecosystem.",
+            "note": "Website: <a href='https://github.com/darkalfx/requestrr' target='_blank' rel='noopener'>Github.com</a>",
+            "categories": [
+                "SelfHosted",
+                "Mediacenter",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://camo.githubusercontent.com/2d3352b543a7ecb88e91a0cfd88a32b958eeba8740ee3e4e22d1288daaf6c2a7/68747470733a2f2f692e696d6775722e636f6d2f30557a4c5976772e706e67",
+            "repository": {
+                "stackfile": "composes-files/requestrr.yml",
+                "url": "https://github.com/PAPAMICA/docker-compose-collection"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "requestrr"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service URL",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
+                },
+                {
+                    "name": "TZ",
+                    "label": "Time zone ",
+                    "description": "Exemple: Europe/Paris",
+                    "default": "Europe/Paris"
+                }
+            ]
+        },
+        {
+            "type": 3,
             "title": "RunDeck",
             "name": "RunDeck",
             "description": "Rundeck is a free software that allows the automation of server administration via the creation of jobs or tasks.",

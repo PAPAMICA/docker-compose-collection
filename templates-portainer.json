@@ -473,6 +473,63 @@
         },
         {
             "type": 3,
+            "title": "Duplicati",
+            "name": "Duplicati",
+            "description": "Duplicati works with standard protocols like FTP, SSH, WebDAV as well as popular services like Microsoft OneDrive, Amazon Cloud Drive & S3, Google Drive, box.com, Mega, hubiC and many others.",
+            "note": "Website: <a href='https://www.duplicati.com/' target='_blank' rel='noopener'>Duplicati.com</a>",
+            "categories": [
+                "SelfHosted",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://github.com/linuxserver/docker-templates/raw/master/linuxserver.io/img/duplicati-icon.png",
+            "repository": {
+                "stackfile": "composes-files/duplicati.yml",
+                "url": "https://github.com/PAPAMICA/docker-compose-collection"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "duplicati"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service URL",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
+                },
+                {
+                    "name": "TZ",
+                    "label": "Time zone ",
+                    "description": "Exemple: Europe/Paris",
+                    "default": "Europe/Paris"
+                },
+                {
+                    "name": "BACKUPS_LOCATION",
+                    "label": "Destination of your backups",
+                    "description": "Example: /apps/backups"
+                },
+                {
+                    "name": "SOURCE_LOCATION",
+                    "label": "Folder to backup"
+                }
+            ]
+        },
+        {
+            "type": 3,
             "title": "Emby",
             "name": "Emby",
             "description": "Media player like Plex.",

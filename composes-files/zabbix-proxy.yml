@@ -22,7 +22,7 @@
 # Work with Portainer
 version: '2'
 services:
-  zabbix-proxy:  
+  zabbix-proxy:
     image: zabbix/zabbix-proxy-sqlite3:ubuntu-6.0-ubuntu-latest
     restart: unless-stopped
     container_name: $SERVICE

@@ -928,6 +928,55 @@
         },
         {
             "type": 3,
+            "title": "Ombi",
+            "name": "Ombi",
+            "description": "Ombi is a request management and media discovery tool built to work with your existing Plex ecosystem.",
+            "note": "Website: <a href='https://ombi.io/' target='_blank' rel='noopener'>Ombi.io</a>",
+            "categories": [
+                "SelfHosted",
+                "Mediacenter",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/ombi.png",
+            "repository": {
+                "stackfile": "composes-files/ombi.yml",
+                "url": "https://github.com/PAPAMICA/docker-compose-collection"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "ombi"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service URL",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
+                },
+                {
+                    "name": "TZ",
+                    "label": "Time zone ",
+                    "description": "Exemple: Europe/Paris",
+                    "default": "Europe/Paris"
+                }
+            ]
+        },
+        {
+            "type": 3,
             "title": "Overseerr",
             "name": "Overseerr",
             "description": "Overseerr is a request management and media discovery tool built to work with your existing Plex ecosystem.",

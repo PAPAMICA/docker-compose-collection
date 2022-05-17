@@ -56,7 +56,7 @@ services:
       - $DATA_LOCATION/$SERVICE/enc:/var/lib/zabbix/enc
     ports:
       - 10051:10051
-    networks: 
+    networks:
       - default
 networks:
   default:

@@ -41,7 +41,10 @@ for filename in sorted(glob.glob("composes-files/*.y*ml")):
                     categories = data[1].split(', ')
                     dataset[data[0]] = categories
                 elif data[0] == "note":
-                    link = re.search("(?<=href=')[^']+(?=')", data[1]).group()
+                    try:
+                        link = re.search("(?<=href=')[^']+(?=')", data[1]).group()
+                    except:
+                        link=""
                     dataset[data[0]] = data[1]
                     print(link)
                 elif data[0] == "title":

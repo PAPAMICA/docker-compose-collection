@@ -4,7 +4,7 @@ on:
     branches: [ master ]
   workflow_dispatch:
 jobs:
-  test:
+  check-yaml:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -16,7 +16,8 @@ jobs:
         run: pip install yamllint
       - name: Lint YAML files
         run: yamllint --format github -d .github/workflows/conf_yaml ./composes-files/*
-  build:
+  generate-files:
+    needs: check-yaml
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3

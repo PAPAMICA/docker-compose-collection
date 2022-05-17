@@ -1552,6 +1552,59 @@
         },
         {
             "type": 3,
+            "title": "Zabbix Proxy",
+            "name": "Zabbix Proxy",
+            "description": "Proxy server for Zabbix",
+            "note": "Website: <a href='https://www.zabbix.com/' target='_blank' rel='noopener'>Zabbix.com</a></br>Port to open: 10051",
+            "categories": [
+                "SelfHosted",
+                "Monitoring",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://juliebarbaroux.tech/wp-content/uploads/2020/11/zabbix.png",
+            "repository": {
+                "stackfile": "composes-files/zabbix-proxy.yml",
+                "url": "https://github.com/PAPAMICA/docker-compose-collection"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "zabbix-proxy"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service URL",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
+                },
+                {
+                    "name": "PROXY_HOSTNAME",
+                    "label": "name of zabbix proxy",
+                    "description": "Example: zabbix-proxy"
+                },
+                {
+                    "name": "ZABBIX_SERVER",
+                    "label": "FQDN of zabbix server",
+                    "description": "Example: zabbic.domain.tld"
+                }
+            ]
+        },
+        {
+            "type": 3,
             "title": "Zabbix",
             "name": "Zabbix",
             "description": "Best monitoring tools",

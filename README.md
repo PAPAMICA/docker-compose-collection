@@ -37,7 +37,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 
 
 ## List of services availables:
-<img src="https://img.shields.io/badge/Avaibles:_29-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
+<img src="https://img.shields.io/badge/Avaibles:_33-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
 
 | Status | Service | Update | Maintainer |
 |:--:|--|--|--|
@@ -54,10 +54,14 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | ✅ | jirafeau | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | keycloak | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | matomo | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| ✅ | mumble-bot | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
+| ✅ | mumble-web | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
+| ✅ | murmur | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | nextcloud | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
 | ✅ | olivetin | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | plex | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | rundeck | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
+| ✅ | sinusbot | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | teamspeak | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | traefik | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | ts3rank | 2022-05-12 |  Mickael "PAPAMICA" Asseline |

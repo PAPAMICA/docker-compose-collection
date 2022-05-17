@@ -2058,6 +2058,70 @@
         },
         {
             "type": 3,
+            "title": "Transmission",
+            "name": "Transmission",
+            "description": "Webinterface for download torrents.",
+            "note": "Website: <a href='https://transmissionbt.com/' target='_blank' rel='noopener'>Transmissionbt.com</a></br></br>Port to open: <code>51413</code>",
+            "categories": [
+                "SelfHosted",
+                "Mediacenter",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Transmission_Icon.svg/1200px-Transmission_Icon.svg.png",
+            "repository": {
+                "stackfile": "composes-files/transmission.yml",
+                "url": "https://github.com/PAPAMICA/docker-compose-collection"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "transmission"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service URL",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
+                },
+                {
+                    "name": "TZ",
+                    "label": "Time zone ",
+                    "description": "Exemple: Europe/Paris",
+                    "default": "Europe/Paris"
+                },
+                {
+                    "name": "FOLDER_DOWNLOAD",
+                    "label": "Your download folder",
+                    "description": "Exemple: /data/download"
+                },
+                {
+                    "name": "FOLDER_SERIES",
+                    "label": "Your series folder",
+                    "description": "Exemple: /data/series"
+                },
+                {
+                    "name": "FOLDER_MOVIES",
+                    "label": "Your movies folder",
+                    "description": "Exemple: /data/movies"
+                }
+            ]
+        },
+        {
+            "type": 3,
             "title": "TSN Ranksystem",
             "name": "TSN Ranksystem",
             "description": "Web interface with rank for TeamSpeak",

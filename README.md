@@ -41,39 +41,39 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 
 | Status | Service | Update | Maintainer |
 |:--:|--|--|--|
-| ✅ | adminer | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
-| ✅ | apprise-api | 2022-05-13 |  Mickael "PAPAMICA" Asseline |
-| ✅ | bookstack | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
-| ✅ | dillinger | 2022-05-13 |  Mickael "PAPAMICA" Asseline |
-| ✅ | etherpad | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
-| ✅ | ferdi | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
-| ✅ | filebot | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
-| ✅ | filebrowser | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
-| ✅ | grafana | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
-| ✅ | hastebin | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
-| ✅ | jirafeau | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
-| ✅ | keycloak | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
-| ✅ | matomo | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
-| ✅ | mumble-bot | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
-| ✅ | mumble-web | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
-| ✅ | murmur | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
-| ✅ | nextcloud | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
-| ✅ | olivetin | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
-| ✅ | plex | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
-| ✅ | rundeck | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
-| ✅ | sinusbot | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
-| ✅ | teamspeak | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
-| ✅ | traefik | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
-| ✅ | ts3rank | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
-| ✅ | ts3viewer | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
-| ✅ | umami | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
-| ✅ | vaultwarden | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
-| ✅ | vscode | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
-| ✅ | website-html | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
-| ✅ | wordpress | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
-| ✅ | yourls | 2022-05-13 |  Mickael "PAPAMICA" Asseline |
-| ✅ | zabbix-proxy | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
-| ✅ | zabbix | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
+| ✅ | [adminer](https://www.adminer.org/) | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| ✅ | [apprise-api](https://github.com/caronc/apprise-api) | 2022-05-13 |  Mickael "PAPAMICA" Asseline |
+| ✅ | [bookstack](https://www.bookstackapp.com/) | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| ✅ | [dillinger](https://github.com/joemccann/dillinger) | 2022-05-13 |  Mickael "PAPAMICA" Asseline |
+| ✅ | [etherpad](https://etherpad.org/) | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| ✅ | [ferdi](https://getferdi.com/) | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
+| ✅ | [filebot](https://www.filebot.net/) | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| ✅ | [filebrowser](https://github.com/filebrowser/filebrowser) | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| ✅ | [grafana](https://grafana.com/grafana/dashboards/) | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| ✅ | [hastebin](https://hastebin.com/about.md) | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| ✅ | [jirafeau](https://gitlab.com/mojo42/Jirafeau) | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| ✅ | [keycloak](https://www.keycloak.org/) | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| ✅ | [matomo](https://fr.matomo.org) | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| ✅ | [mumble-bot](https://github.com/matthieugrieger/mumbledj) | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
+| ✅ | [mumble-web](https://github.com/Rantanen/mumble-web) | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
+| ✅ | [murmur](https://www.mumble.com/) | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
+| ✅ | [nextcloud](https://nextcloud.com/) | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
+| ✅ | [olivetin](https://www.olivetin.app/) | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
+| ✅ | [plex](https://www.plex.tv) | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
+| ✅ | [rundeck](https://www.rundeck.com/open-source) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
+| ✅ | [sinusbot](https://www.sinusbot.com/) | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
+| ✅ | [teamspeak](https://teamspeak.com/en/) | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
+| ✅ | [traefik](https://teamspeak.com/en/) | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
+| ✅ | [ts3rank](https://ts-ranksystem.com/) | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
+| ✅ | [ts3viewer](https://github.com/Wruczek/ts-website) | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
+| ✅ | [umami](https://umami.is/) | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| ✅ | [vaultwarden](https://github.com/dani-garcia/vaultwarden) | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| ✅ | [vscode](https://github.com/coder/code-server) | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
+| ✅ | [website-html](https://github.com/LavoWeb/Docker) | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| ✅ | [wordpress](https://wordpress.org/) | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
+| ✅ | [yourls](https://yourls.org/) | 2022-05-13 |  Mickael "PAPAMICA" Asseline |
+| ✅ | [zabbix-proxy](https://www.zabbix.com/) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
+| ✅ | [zabbix](https://www.zabbix.com/) | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
 
 ## List of services to do:
 <img src="https://img.shields.io/badge/To_do:_145-%23FF8800.svg?style=for-the-badge&logo=vlcmediaplayer&logoColor=white">

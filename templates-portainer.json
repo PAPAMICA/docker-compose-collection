@@ -656,7 +656,7 @@
             "title": "Mumble Bot",
             "name": "Mumble Bot",
             "description": "Bot for Mumble server",
-            "note": "Website: <a href=https://github.com/matthieugrieger/mumbledj' target='_blank' rel='noopener'>Github.com</a></br>You need to create a conf file \"mumbledj.yaml\"",
+            "note": "Website: <a href='https://github.com/matthieugrieger/mumbledj' target='_blank' rel='noopener'>Github.com</a></br>You need to create a conf file \"mumbledj.yaml\"",
             "categories": [
                 "SelfHosted",
                 "PAPAMICA"
@@ -692,7 +692,7 @@
             "title": "Mumble Web",
             "name": "Mumble Web",
             "description": "Web client for Mumble",
-            "note": "Website: <a href=https://github.com/Rantanen/mumble-web' target='_blank' rel='noopener'>Github.com</a>",
+            "note": "Website: <a href='https://github.com/Rantanen/mumble-web' target='_blank' rel='noopener'>Github.com</a>",
             "categories": [
                 "SelfHosted",
                 "PAPAMICA"
@@ -738,7 +738,7 @@
             "title": "Murmur",
             "name": "Murmur",
             "description": "Vocal server (Mumble)",
-            "note": "Website: <a href=https://www.mumble.com/' target='_blank' rel='noopener'>Mumble.com</a></br>Port to open:64738",
+            "note": "Website: <a href='https://www.mumble.com/' target='_blank' rel='noopener'>Mumble.com</a></br>Port to open:64738",
             "categories": [
                 "SelfHosted",
                 "PAPAMICA"
@@ -993,7 +993,7 @@
             "title": "Sinusbot",
             "name": "Sinusbot",
             "description": "Bot for TeamSpeak and Discord",
-            "note": "Website: <a href=https://www.sinusbot.com/' target='_blank' rel='noopener'>Sinusbot.com</a>",
+            "note": "Website: <a href='https://www.sinusbot.com/' target='_blank' rel='noopener'>Sinusbot.com</a>",
             "categories": [
                 "SelfHosted",
                 "PAPAMICA"

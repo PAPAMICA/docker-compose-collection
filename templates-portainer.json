@@ -305,11 +305,10 @@
             "note": "Website: <a href='https://github.com/rodber/chevereto-free' target='_blank' rel='noopener'>Github.com</a>",
             "categories": [
                 "SelfHosted",
-                "Mediacenter",
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://avatars2.githubusercontent.com/u/6733935?v=3&s=200",
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Cometohere_blue.svg/640px-Cometohere_blue.svg.png",
             "repository": {
                 "stackfile": "composes-files/chevereto.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"

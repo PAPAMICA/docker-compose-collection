@@ -1,0 +1,54 @@
+# Maintainer: Mickael "PAPAMICA" Asseline
+# Update: 2022-05-17
+
+#& type: 3
+#& title: Bazarr
+#& description: Bazarr is a companion application to Sonarr and Radarr that manages and downloads subtitles based on your requirements.
+#& note: Website: <a href='https://www.bazarr.media/' target='_blank' rel='noopener'>Bazarr.media</a>
+#& categories: SelfHosted, Mediacenter, PAPAMICA
+#& platform: linux
+#& logo: https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/bazarr.png
+
+#% SERVICE: Name of the service (No spaces or points) [bazarr]
+#% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
+#% URL: Service URL (Example: service.papamica.fr or service.com)
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
+#% TZ: Time zone (Exemple: Europe/Paris) [Europe/Paris]
+#% FOLDER_MOVIES: Your movies folder (Exemple: /data/movies)
+#% FOLDER_SERIES: Your series folder (Exemple: /data/series)
+
+
+# Work with Portainer
+services:
+  bazarr:
+    image: linuxserver/bazarr:latest
+    container_name: $SERVICE
+    restart: always
+    volumes:
+      - $DATA_LOCATION/$SERVICE/config:/config
+      - $FOLDER_MOVIES:/movies
+      - $FOLDER_SERIES:/series
+    environment:
+      - TZ=$TZ
+      - PUID=1000
+      - PGID=1000
+    healthcheck:
+      test: curl --connect-timeout 15 --max-time 100 --silent --show-error --fail "http://localhost:6767" > /dev/null
+      interval: 1m
+      timeout: 30s
+      retries: 3
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+      - "traefik.enable=true"
+      - "traefik.http.routers.$SERVICE.entrypoints=https"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
+      - "traefik.http.routers.$SERVICE.tls=true"
+      - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+      - "traefik.http.services.$SERVICE.loadbalancer.server.port=6767"
+      - "traefik.docker.network=$NETWORK"
+    networks:
+      - default
+networks:
+  default:
+    external:
+      name: $NETWORK

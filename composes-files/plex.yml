@@ -4,7 +4,7 @@
 #& type: 3
 #& title: Plex
 #& description: Media server
-#& note: Website: <a href='https://www.plex.tv' target='_blank' rel='noopener'>Plex.tv</a><br\>Check ports to open in compose !
+#& note: Website: <a href='https://www.plex.tv' target='_blank' rel='noopener'>Plex.tv</a></br>Check ports to open in compose !
 #& categories: SelfHosted, Plex, PAPAMICA
 #& platform: linux
 #& logo: https://vic-team.fr/img/plex-logo-rounded.png

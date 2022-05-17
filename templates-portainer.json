@@ -938,6 +938,65 @@
         },
         {
             "type": 3,
+            "title": "Radarr",
+            "name": "Radarr",
+            "description": "Monitor multiple RSS feeds for new movies and will grab, sort and rename them.",
+            "note": "Website: <a href='https://radarr.video/' target='_blank' rel='noopener'>Radarr.video</a>",
+            "categories": [
+                "SelfHosted",
+                "Mediacenter",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://developer.asustor.com/uploadIcons/0020_999_1573625786_Radarr_256.png",
+            "repository": {
+                "stackfile": "composes-files/radarr.yml",
+                "url": "https://github.com/PAPAMICA/docker-compose-collection"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "radarr"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service URL",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
+                },
+                {
+                    "name": "TZ",
+                    "label": "Time zone ",
+                    "description": "Exemple: Europe/Paris",
+                    "default": "Europe/Paris"
+                },
+                {
+                    "name": "FOLDER_DOWNLOAD",
+                    "label": "Your download folder",
+                    "description": "Exemple: /data/download"
+                },
+                {
+                    "name": "FOLDER_MOVIES",
+                    "label": "Your movies folder",
+                    "description": "Exemple: /data/movies"
+                }
+            ]
+        },
+        {
+            "type": 3,
             "title": "RunDeck",
             "name": "RunDeck",
             "description": "Rundeck is a free software that allows the automation of server administration via the creation of jobs or tasks.",

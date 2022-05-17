@@ -88,8 +88,8 @@ I automated the creation of the json template file for Portainer and the update 
 
 If you want to add a new docker-compose, you must use the following template:
 ```yaml
-# Docker-compose provided by Mickael "PAPAMICA" Asseline
-# Update: 2022-10-05
+# Maintainer: Mickael "PAPAMICA" Asseline
+# Update: 2022-05-10
 
 #& type: 3
 #& title: Hastebin
@@ -99,10 +99,10 @@ If you want to add a new docker-compose, you must use the following template:
 #& platform: linux
 #& logo: https://progsoft.net/images/hastebin-icon-b45e3f5695d3f577b2630648bd00584195822e3d.png
 
-#% SERVICE: Name of the service (No spaces or points)
-#% DATA_LOCATION: Data localization (Example: /apps/service)
+#% SERVICE: Name of the service (No spaces or points) [hastebin]
+#% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
 #% URL: Service URL (Example: service.papamica.fr or service.com)
-#% NETWORK: Your Traefik network (Example: proxy)
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
 
 # Work with Portainer
 version: "2"
@@ -115,12 +115,12 @@ services:
     environment:
       STORAGE_TYPE: file
     volumes:
-      - $DATA_LOCATION/data:/data
+      - $DATA_LOCATION/$SERVICE/data:/data
     healthcheck:
       test: wget -s 'http://localhost:7777'
       interval: 1m
       timeout: 30s
-      retries: 3 
+      retries: 3
     networks:
       - default
     labels:
@@ -131,7 +131,7 @@ services:
       - "traefik.http.routers.$SERVICE.tls=true"
       - "traefik.http.routers.$SERVICE.tls.certresolver=http"
       - "traefik.docker.network=$NETWORK"
-      
+
 networks:
   default:
     external:

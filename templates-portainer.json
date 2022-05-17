@@ -889,7 +889,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://vic-team.fr/img/plex-logo-rounded.png",
+            "logo": "https://www.plex.tv/wp-content/uploads/2018/01/pmp-icon-1.png",
             "repository": {
                 "stackfile": "composes-files/plex.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"

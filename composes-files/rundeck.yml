@@ -1,0 +1,79 @@
+# Maintainer: Mickael "PAPAMICA" Asseline
+# Update: 2022-05-17
+
+#& type: 3
+#& title: RunDeck
+#& description: Rundeck is a free software that allows the automation of server administration via the creation of jobs or tasks.
+#& note: Website: <a href='https://www.rundeck.com/open-source' target='_blank' rel='noopener'>RunDeck.com</a>
+#& categories: SelfHosted, PAPAMICA
+#& platform: linux
+#& logo: https://projects.task.gda.pl/uploads/-/system/project/avatar/135/rundeck_logo_white.png
+
+#% SERVICE: Name of the service (No spaces or points) [rundeck]
+#% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
+#% URL: Service URL (Example: service.papamica.fr or service.com)
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
+#% DB_USER: Database user (No spaces or points) [rundeck]
+#% DB_PASSWORD: Database user password
+
+# Work with Portainer
+version: "2"
+services:
+  rundeck:
+    image: rundeck/rundeck:3.4.6
+    restart: always
+    container_name: $SERVICE
+    depends_on:
+      - rundeck-db
+    environment:
+      - UID=1000
+      - GID=1000
+      - RUNDECK_GRAILS_URL=https://$URL
+      - RUNDECK_SERVER_FORWARDED=true #True if traefik
+      - RUNDECK_DATABASE_DRIVER=org.postgresql.Driver
+      - RUNDECK_DATABASE_USERNAME=$DB_USER
+      - RUNDECK_DATABASE_PASSWORD=$DB_PASSWORD
+      - RUNDECK_DATABASE_URL=jdbc:postgresql://$SERVICE-db/$DB_USER
+    volumes:
+      - $DATA_LOCATION/$SERVICE/config:/home/rundeck
+      - $DATA_LOCATION/$SERVICE/server/data:/home/rundeck/server/data
+    networks:
+      - default
+    healthcheck:
+      test: curl --fail http://localhost:4440 || exit 1
+      interval: 1m
+      timeout: 30s
+      retries: 3
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+      - "traefik.enable=true"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
+      - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+      - "traefik.http.services.$SERVICE.loadbalancer.server.port=4440"
+      - "traefik.docker.network=$NETWORK"
+ 
+
+  rundeck-db:
+    image: postgres:9.6
+    container_name: $SERVICE-db
+    volumes:
+      - $DATA_LOCATION/$SERVICE/db:/var/lib/postgresql
+    environment:
+      POSTGRES_USER: $DB_USER
+      POSTGRES_PASSWORD: $DB_PASSWORD
+      POSTGRES_DB: rundeck
+    restart: always
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $DB_USER"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+    networks:
+      - default
+
+networks:
+  default:
+    external:
+      name: $NETWORK

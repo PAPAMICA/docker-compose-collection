@@ -27,7 +27,7 @@ services:
     container_name: ferdi-server
     environment:
       - NODE_ENV=development
-      - EXTERNAL_DOMAIN=$URL 
+      - EXTERNAL_DOMAIN=$URL
 #      - DB_CONNECTION=mysql
 #      - DB_HOST=ferdi-db
 #      - DB_PORT=3306
@@ -64,7 +64,6 @@ services:
       - "traefik.http.routers.$SERVICE.tls=true"
       - "traefik.http.routers.$SERVICE.tls.certresolver=http"
       - "traefik.docker.network=$NETWORK"
-
 
 networks:
   default:

@@ -30,7 +30,7 @@ services:
       - MYSQL_ROOT_PASSWORD=$DB_ROOT
       - MYSQL_DATABASE=RanksystemDatabase
       - MYSQL_USER=$DB_USER
-      - MYSQL_PASSWORD=$DB_PASSWORD 
+      - MYSQL_PASSWORD=$DB_PASSWORD
     healthcheck:
       test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
       timeout: 20s
@@ -71,7 +71,6 @@ services:
       - "traefik.http.routers.$SERVICE.tls.certresolver=http"
       - "traefik.docker.network=$NETWORK"
 
-    
 networks:
   default:
     external:

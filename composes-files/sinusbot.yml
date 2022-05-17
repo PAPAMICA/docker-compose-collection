@@ -36,9 +36,7 @@ services:
       - "traefik.http.services.$SERVICE.loadbalancer.server.port=8087"
       - "traefik.docker.network=$NETWORK"
 
-  
 networks:
   default:
     external:
       name: $NETWORK
-  

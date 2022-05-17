@@ -29,16 +29,16 @@ services:
     container_name: $SERVICE-db
     restart: always
     healthcheck:
-        test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
-        timeout: 20s
-        retries: 10
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
     volumes:
       - $DATA_LOCATION/$SERVICE/db:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=$DB_ROOT_PASSWORD
       - MYSQL_DATABASE=keycloak
       - MYSQL_USER=$DB_USER
-      - MYSQL_PASSWORD=$DB_PASSWORD 
+      - MYSQL_PASSWORD=$DB_PASSWORD
     labels:
       - "autoupdate=monitor"
     networks:

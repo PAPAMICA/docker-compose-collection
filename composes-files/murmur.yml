@@ -44,4 +44,3 @@ networks:
   default:
     external:
       name: $NETWORK
-  

@@ -42,8 +42,7 @@ services:
       - "traefik.http.routers.$SERVICE.tls=true"
       - "traefik.http.routers.$SERVICE.tls.certresolver=http"
       - "traefik.docker.network=$NETWORK"
-      
-  
+
   tsweb-db:
     image: mariadb:10.4.12
     container_name: $SERVICE-db

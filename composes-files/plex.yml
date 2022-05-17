@@ -60,7 +60,7 @@ services:
       - "traefik.docker.network=$NETWORK"
     networks:
       - default
-      
+
 networks:
   default:
     external:

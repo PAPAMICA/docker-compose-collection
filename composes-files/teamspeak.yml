@@ -48,7 +48,7 @@ services:
       default:
         aliases:
           - $SERVICE.docker.local
-    
+
 networks:
   default:
     external:

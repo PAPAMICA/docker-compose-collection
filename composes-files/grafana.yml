@@ -22,7 +22,7 @@ services:
     image: grafana/grafana:latest
     restart: always
     container_name: $SERVICE
-    volumes: 
+    volumes:
       - $DATA_LOCATION/$SERVICE/config:/etc/grafana
       - $DATA_LOCATION/$SERVICE/data:/var/lib/grafana
     environment:
@@ -47,7 +47,7 @@ services:
       - "traefik.http.routers.$SERVICE.tls.certresolver=http"
       - "traefik.http.services.$SERVICE.loadbalancer.server.port=3000"
       - "traefik.docker.network=$NETWORK"
-      
+
 networks:
   default:
     external:

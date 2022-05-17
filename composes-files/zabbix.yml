@@ -74,7 +74,7 @@ services:
       - $DATA_LOCATION/$SERVICE/$SERVICE/alertscripts:/usr/lib/zabbix/alertscripts
     networks:
       - default
-      
+
   zabbix-web:
     image: zabbix/zabbix-web-nginx-pgsql:6.0.2-ubuntu
     restart: always

@@ -66,15 +66,14 @@ services:
     volumes:
       - $DATA_LOCATION/$SERVICE/db:/var/lib/mysql
     healthcheck:
-        test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
-        timeout: 20s
-        retries: 10
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
     networks:
       - default
     labels:
       - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
-          
-  
+
 networks:
   default:
     external:

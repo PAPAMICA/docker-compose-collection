@@ -40,7 +40,6 @@ services:
     networks:
       - default
 
-  # Etherpad : https://etherpad.org     
   etherpad:
     image: etherpad/etherpad:latest
     container_name: $SERVICE

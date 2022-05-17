@@ -53,7 +53,7 @@ services:
       - "traefik.http.routers.$SERVICE.tls=true"
       - "traefik.http.routers.$SERVICE.tls.certresolver=http"
       - "traefik.docker.network=$NETWORK"
-  
+
   bookstack_db:
     image: linuxserver/mariadb:version-10.5.12-r0
     container_name: bookstack_db
@@ -66,15 +66,15 @@ services:
       - MYSQL_USER=$DB_USER
       - MYSQL_PASSWORD=$DB_PASSWORD
     healthcheck:
-        test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
-        timeout: 20s
-        retries: 10
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
     volumes:
       - $DATA_LOCATION/$SERVICE/db:/config
     restart: unless-stopped
     networks:
       - default
-      
+
 networks:
   default:
     external:

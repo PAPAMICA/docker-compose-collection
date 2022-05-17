@@ -940,7 +940,7 @@
             "title": "Plex",
             "name": "Plex",
             "description": "Media server",
-            "note": "Website: <a href='https://www.plex.tv' target='_blank' rel='noopener'>Plex.tv</a><br\\>Check ports to open in compose !",
+            "note": "Website: <a href='https://www.plex.tv' target='_blank' rel='noopener'>Plex.tv</a></br>Check ports to open in compose !",
             "categories": [
                 "SelfHosted",
                 "Plex",
@@ -999,7 +999,7 @@
             "title": "RunDeck",
             "name": "RunDeck",
             "description": "Rundeck is a free software that allows the automation of server administration via the creation of jobs or tasks.",
-            "note": "Website: <a href='https://www.rundeck.com/open-source' target='_blank' rel='noopener'>RunDeck.com</a><br>Don't forget to copy the data from <code>/home/rundeck</code> outside the container with <code>docker cp</code> and to uncomment the volume lines.<br>The default credentials are: <code>admin</code> / <code>admin</code>",
+            "note": "Website: <a href='https://www.rundeck.com/open-source' target='_blank' rel='noopener'>RunDeck.com</a></br>Don't forget to copy the data from <code>/home/rundeck</code> outside the container with <code>docker cp</code> and to uncomment the volume lines.</br>The default credentials are: <code>admin</code> / <code>admin</code>",
             "categories": [
                 "SelfHosted",
                 "PAPAMICA"

@@ -1,0 +1,59 @@
+# Maintainer: Mickael "PAPAMICA" Asseline
+# Update: 2022-05-17
+
+#& type: 3
+#& title: Rutorrent-Flood
+#& description: Webclient for download your torrents.
+#& note: Website: <a href='https://github.com/Novik/ruTorrent' target='_blank' rel='noopener'>Github.com</a></br></br>Ports to open: <code>51415</code> & <code>6881</code>
+#& categories: SelfHosted, Mediacenter, PAPAMICA
+#& platform: linux
+#& logo: https://flood.js.org/assets/img/logo.png
+
+#% SERVICE: Name of the service (No spaces or points) [rutorrent]
+#% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
+#% URL: Service URL (Example: service.papamica.fr or service.com)
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
+#% TZ: Time zone (Exemple: Europe/Paris) [Europe/Paris]
+#% FOLDER_DOWNLOAD: Your download folder (Exemple: /data/download)
+#% FOLDER_SERIES: Your series folder (Exemple: /data/series)
+#% FOLDER_MOVIES: Your movies folder (Exemple: /data/movies)
+
+
+# Work with Portainer
+services:
+  sonarr:
+    image: romancin/rutorrent-flood:latest
+    container_name: sonarr
+    restart: always
+    volumes:
+      - $DATA_LOCATION/$SERVICE/config:/config
+      - $FOLDER_DOWNLOAD:/downloads
+      - $FOLDER_SERIES:/series
+      - $FOLDER_MOVIES:/movies
+    ports:
+      - 51415:51415
+      - 6881:6881/udp
+    environment:
+      - PGID=0
+      - PUID=0
+      - TZ=$TZ
+    healthcheck:
+      test: curl --connect-timeout 15 --max-time 100 --silent --show-error --fail "http://localhost:3000" > /dev/null
+      interval: 1m
+      timeout: 30s
+      retries: 3
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+      - "traefik.enable=true"
+      - "traefik.http.routers.$SERVICE.entrypoints=https"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
+      - "traefik.http.routers.$SERVICE.tls=true"
+      - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+      - "traefik.http.services.$SERVICE.loadbalancer.server.port=3000"
+      - "traefik.docker.network=$NETWORK"
+    networks:
+      - default
+networks:
+  default:
+    external:
+      name: $NETWORK

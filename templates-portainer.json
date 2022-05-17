@@ -1268,6 +1268,73 @@
         },
         {
             "type": 3,
+            "title": "MariaDB",
+            "name": "MariaDB",
+            "description": "Mariadb is one of the most popular database servers. Made by the original developers of MySQL.",
+            "note": "Website: <a href='https://mariadb.org/' target='_blank' rel='noopener'>mariadb.org</a>",
+            "categories": [
+                "SelfHosted",
+                "Database",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://silicondales.com/wp-content/uploads/2021/05/mariadb-square.png",
+            "repository": {
+                "stackfile": "composes-files/mariadb.yml",
+                "url": "https://github.com/PAPAMICA/docker-compose-collection"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "mariadb"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service URL",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
+                },
+                {
+                    "name": "TZ",
+                    "label": "Time zone ",
+                    "description": "Exemple: Europe/Paris",
+                    "default": "Europe/Paris"
+                },
+                {
+                    "name": "DB_USER",
+                    "label": "Database user ",
+                    "description": "No spaces or points",
+                    "default": "chevereto"
+                },
+                {
+                    "name": "DB_PASSWORD",
+                    "label": "Database user password"
+                },
+                {
+                    "name": "DB_ROOT",
+                    "label": "Database root password"
+                },
+                {
+                    "name": "DB_NAME",
+                    "label": "Database name"
+                }
+            ]
+        },
+        {
+            "type": 3,
             "title": "Matomo",
             "name": "Matomo",
             "description": "Google Analitycs alternative !",

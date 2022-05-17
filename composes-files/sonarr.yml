@@ -3,7 +3,7 @@
 
 #& type: 3
 #& title: Sonarr
-#& description: Monitor multiple RSS feeds for new episodes of your favorite shows and will grab, sort and rename them. 
+#& description: Monitor multiple RSS feeds for new episodes of your favorite shows and will grab, sort and rename them.
 #& note: Website: <a href='https://sonarr.tv/' target='_blank' rel='noopener'>Sonarr.tv</a>
 #& categories: SelfHosted, Mediacenter, PAPAMICA
 #& platform: linux
@@ -25,11 +25,16 @@ services:
     container_name: sonarr
     restart: always
     volumes:
-        - $DATA_LOCATION/$SERVICE/config:/config
-        - $FOLDER_DOWNLOAD/sonarr:/downloads
-        - $FOLDER_SERIES:/series
+      - $DATA_LOCATION/$SERVICE/config:/config
+      - $FOLDER_DOWNLOAD/sonarr:/downloads
+      - $FOLDER_SERIES:/series
     environment:
-        - TZ=$TZ
+      - TZ=$TZ
+    healthcheck:
+      test: curl --connect-timeout 15 --max-time 100 --silent --show-error --fail "http://localhost:8989" > /dev/null
+      interval: 1m
+      timeout: 30s
+      retries: 3
     labels:
       - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
       - "traefik.enable=true"

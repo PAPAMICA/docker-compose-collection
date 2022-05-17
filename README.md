@@ -37,7 +37,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 
 
 ## List of services availables:
-<img src="https://img.shields.io/badge/Avaibles:_41-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
+<img src="https://img.shields.io/badge/Avaibles:_33-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
 
 | Status | Service | Update | Maintainer |
 |:--:|--|--|--|
@@ -45,31 +45,23 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | ✅ | apprise-api | 2022-05-13 |  Mickael "PAPAMICA" Asseline |
 | ✅ | bookstack | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | dillinger | 2022-05-13 |  Mickael "PAPAMICA" Asseline |
-| ✅ | elk | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
-| ✅ | ethercalc | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | etherpad | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | ferdi | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | filebot | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | filebrowser | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
-| ✅ | ghost | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | grafana | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | hastebin | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
-| ✅ | inventario | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | jirafeau | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | keycloak | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | matomo | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
-| ✅ | miniflux | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | mumble-bot | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | mumble-web | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | murmur | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | nextcloud | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
 | ✅ | olivetin | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | plex | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
-| ✅ | rsshub | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | rundeck | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
 | ✅ | sinusbot | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
-| ✅ | sui | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
-| ✅ | synchthing | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
 | ✅ | teamspeak | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | traefik | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | ts3rank | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
@@ -84,7 +76,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | ✅ | zabbix | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
 
 ## List of services to do:
-<img src="https://img.shields.io/badge/To_do:_137-%23FF8800.svg?style=for-the-badge&logo=vlcmediaplayer&logoColor=white">
+<img src="https://img.shields.io/badge/To_do:_145-%23FF8800.svg?style=for-the-badge&logo=vlcmediaplayer&logoColor=white">
 
 | Status | Service |
 |:--:|--|
@@ -106,12 +98,15 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | 🚸 | drone |
 | 🚸 | duplicaty |
 | 🚸 | elasticsearch |
+| 🚸 | elk |
 | 🚸 | emby |
 | 🚸 | embystat |
 | 🚸 | emulatorjs |
 | 🚸 | erpnext |
+| 🚸 | ethercalc |
 | 🚸 | firefly3 |
 | 🚸 | freshrss |
+| 🚸 | ghost |
 | 🚸 | gitea |
 | 🚸 | gitlab |
 | 🚸 | gotify |
@@ -126,6 +121,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | 🚸 | homedash |
 | 🚸 | homer |
 | 🚸 | httpd |
+| 🚸 | inventario |
 | 🚸 | invoiceninja |
 | 🚸 | jacket |
 | 🚸 | jellyfin |
@@ -145,6 +141,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | 🚸 | mcmyadmin2 |
 | 🚸 | mealie |
 | 🚸 | minetest |
+| 🚸 | miniflux |
 | 🚸 | minio |
 | 🚸 | monica |
 | 🚸 | n8m |
@@ -184,6 +181,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | 🚸 | redmine |
 | 🚸 | registry |
 | 🚸 | requestrr |
+| 🚸 | rsshub |
 | 🚸 | rutorrent |
 | 🚸 | scality-s3 |
 | 🚸 | scrutiny |
@@ -197,6 +195,8 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | 🚸 | snibox |
 | 🚸 | snipe-it |
 | 🚸 | sonarr |
+| 🚸 | sui |
+| 🚸 | synchthing |
 | 🚸 | taiga |
 | 🚸 | tautulli |
 | 🚸 | teedy |

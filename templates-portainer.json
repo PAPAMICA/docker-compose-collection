@@ -186,90 +186,6 @@
         },
         {
             "type": 3,
-            "title": "Murmur",
-            "name": "Murmur",
-            "description": "Vocal server (Mumble)",
-            "note": "Website: <a href=https://www.mumble.com/' target='_blank' rel='noopener'>Mumble.com</a></br>Port to open:64738",
-            "categories": [
-                "SelfHosted",
-                "PAPAMICA"
-            ],
-            "platform": "linux",
-            "logo": "https://www.pngkey.com/png/full/319-3198756_rainbow-six-siege-mumble-logo-png.png",
-            "repository": {
-                "stackfile": "composes-files/elk.yml",
-                "url": "https://github.com/PAPAMICA/docker-compose-collection"
-            },
-            "env": [
-                {
-                    "name": "SERVICE",
-                    "label": "Name of the service ",
-                    "description": "No spaces or points",
-                    "default": "mumble-server"
-                },
-                {
-                    "name": "DATA_LOCATION",
-                    "label": "Data localization ",
-                    "description": "Example: /apps/service",
-                    "default": "/_data/apps"
-                },
-                {
-                    "name": "URL",
-                    "label": "Service URL",
-                    "description": "Example: service.papamica.fr or service.com"
-                },
-                {
-                    "name": "NETWORK",
-                    "label": "Your Traefik network ",
-                    "description": "Example: proxy",
-                    "default": "proxy"
-                }
-            ]
-        },
-        {
-            "type": 3,
-            "title": "Murmur",
-            "name": "Murmur",
-            "description": "Vocal server (Mumble)",
-            "note": "Website: <a href=https://www.mumble.com/' target='_blank' rel='noopener'>Mumble.com</a></br>Port to open:64738",
-            "categories": [
-                "SelfHosted",
-                "PAPAMICA"
-            ],
-            "platform": "linux",
-            "logo": "https://www.pngkey.com/png/full/319-3198756_rainbow-six-siege-mumble-logo-png.png",
-            "repository": {
-                "stackfile": "composes-files/ethercalc.yml",
-                "url": "https://github.com/PAPAMICA/docker-compose-collection"
-            },
-            "env": [
-                {
-                    "name": "SERVICE",
-                    "label": "Name of the service ",
-                    "description": "No spaces or points",
-                    "default": "mumble-server"
-                },
-                {
-                    "name": "DATA_LOCATION",
-                    "label": "Data localization ",
-                    "description": "Example: /apps/service",
-                    "default": "/_data/apps"
-                },
-                {
-                    "name": "URL",
-                    "label": "Service URL",
-                    "description": "Example: service.papamica.fr or service.com"
-                },
-                {
-                    "name": "NETWORK",
-                    "label": "Your Traefik network ",
-                    "description": "Example: proxy",
-                    "default": "proxy"
-                }
-            ]
-        },
-        {
-            "type": 3,
             "title": "Etherpad",
             "name": "Etherpad",
             "description": "Online editor providing collaborative editing in really real-time",
@@ -498,55 +414,6 @@
             "platform": "linux",
             "logo": "https://seeklogo.com/images/G/grafana-logo-15BA0AFA8A-seeklogo.com.png",
             "repository": {
-                "stackfile": "composes-files/ghost.yml",
-                "url": "https://github.com/PAPAMICA/docker-compose-collection"
-            },
-            "env": [
-                {
-                    "name": "SERVICE",
-                    "label": "Name of the service ",
-                    "description": "No spaces or points",
-                    "default": "grafana"
-                },
-                {
-                    "name": "DATA_LOCATION",
-                    "label": "Data localization ",
-                    "description": "Example: /apps/service",
-                    "default": "/_data/apps"
-                },
-                {
-                    "name": "PLUGINS",
-                    "label": "Plugins to install ",
-                    "description": "Example: grafana-singlestat-panel",
-                    "default": "alexanderzobnin-zabbix-app,grafana-singlestat-panel"
-                },
-                {
-                    "name": "URL",
-                    "label": "Service URL",
-                    "description": "Example: service.papamica.fr or service.com"
-                },
-                {
-                    "name": "NETWORK",
-                    "label": "Your Traefik network ",
-                    "description": "Example: proxy",
-                    "default": "proxy"
-                }
-            ]
-        },
-        {
-            "type": 3,
-            "title": "Grafana",
-            "name": "Grafana",
-            "description": "From heatmaps to histograms, graphs to geomaps: fast and furious visualizations any way you want.",
-            "note": "Website: <a href='https://grafana.com/grafana/dashboards/' target='_blank' rel='noopener'>Grafana.com</a>",
-            "categories": [
-                "SelfHosted",
-                "Monitoring",
-                "PAPAMICA"
-            ],
-            "platform": "linux",
-            "logo": "https://seeklogo.com/images/G/grafana-logo-15BA0AFA8A-seeklogo.com.png",
-            "repository": {
                 "stackfile": "composes-files/grafana.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
             },
@@ -621,42 +488,6 @@
                     "label": "Your Traefik network ",
                     "description": "Example: proxy",
                     "default": "proxy"
-                }
-            ]
-        },
-        {
-            "type": 3,
-            "title": "Mumble Bot",
-            "name": "Mumble Bot",
-            "description": "Bot for Mumble server",
-            "note": "Website: <a href=https://github.com/matthieugrieger/mumbledj' target='_blank' rel='noopener'>Github.com</a></br>You need to create a conf file \"mumbledj.yaml\"",
-            "categories": [
-                "SelfHosted",
-                "PAPAMICA"
-            ],
-            "platform": "linux",
-            "logo": "https://blog.natenom.com/wp-content/uploads/2015/11/256px-Logo_mumble-ruby-pluginbot.svg_.png",
-            "repository": {
-                "stackfile": "composes-files/inventario.yml",
-                "url": "https://github.com/PAPAMICA/docker-compose-collection"
-            },
-            "env": [
-                {
-                    "name": "SERVICE",
-                    "label": "Name of the service ",
-                    "description": "No spaces or points",
-                    "default": "mumble-bot"
-                },
-                {
-                    "name": "DATA_LOCATION",
-                    "label": "Data localization ",
-                    "description": "Example: /apps/service",
-                    "default": "/_data/apps"
-                },
-                {
-                    "name": "NETWORK",
-                    "label": "Your Traefik network",
-                    "description": "Example: proxy"
                 }
             ]
         },
@@ -817,48 +648,6 @@
                 {
                     "name": "DB_PASSWORD",
                     "label": "Database user password"
-                }
-            ]
-        },
-        {
-            "type": 3,
-            "title": "Murmur",
-            "name": "Murmur",
-            "description": "Vocal server (Mumble)",
-            "note": "Website: <a href=https://www.mumble.com/' target='_blank' rel='noopener'>Mumble.com</a></br>Port to open:64738",
-            "categories": [
-                "SelfHosted",
-                "PAPAMICA"
-            ],
-            "platform": "linux",
-            "logo": "https://www.pngkey.com/png/full/319-3198756_rainbow-six-siege-mumble-logo-png.png",
-            "repository": {
-                "stackfile": "composes-files/miniflux.yml",
-                "url": "https://github.com/PAPAMICA/docker-compose-collection"
-            },
-            "env": [
-                {
-                    "name": "SERVICE",
-                    "label": "Name of the service ",
-                    "description": "No spaces or points",
-                    "default": "mumble-server"
-                },
-                {
-                    "name": "DATA_LOCATION",
-                    "label": "Data localization ",
-                    "description": "Example: /apps/service",
-                    "default": "/_data/apps"
-                },
-                {
-                    "name": "URL",
-                    "label": "Service URL",
-                    "description": "Example: service.papamica.fr or service.com"
-                },
-                {
-                    "name": "NETWORK",
-                    "label": "Your Traefik network ",
-                    "description": "Example: proxy",
-                    "default": "proxy"
                 }
             ]
         },
@@ -1149,48 +938,6 @@
         },
         {
             "type": 3,
-            "title": "Murmur",
-            "name": "Murmur",
-            "description": "Vocal server (Mumble)",
-            "note": "Website: <a href=https://www.mumble.com/' target='_blank' rel='noopener'>Mumble.com</a></br>Port to open:64738",
-            "categories": [
-                "SelfHosted",
-                "PAPAMICA"
-            ],
-            "platform": "linux",
-            "logo": "https://www.pngkey.com/png/full/319-3198756_rainbow-six-siege-mumble-logo-png.png",
-            "repository": {
-                "stackfile": "composes-files/rsshub.yml",
-                "url": "https://github.com/PAPAMICA/docker-compose-collection"
-            },
-            "env": [
-                {
-                    "name": "SERVICE",
-                    "label": "Name of the service ",
-                    "description": "No spaces or points",
-                    "default": "mumble-server"
-                },
-                {
-                    "name": "DATA_LOCATION",
-                    "label": "Data localization ",
-                    "description": "Example: /apps/service",
-                    "default": "/_data/apps"
-                },
-                {
-                    "name": "URL",
-                    "label": "Service URL",
-                    "description": "Example: service.papamica.fr or service.com"
-                },
-                {
-                    "name": "NETWORK",
-                    "label": "Your Traefik network ",
-                    "description": "Example: proxy",
-                    "default": "proxy"
-                }
-            ]
-        },
-        {
-            "type": 3,
             "title": "RunDeck",
             "name": "RunDeck",
             "description": "Rundeck is a free software that allows the automation of server administration via the creation of jobs or tasks.",
@@ -1280,108 +1027,6 @@
                     "label": "Your Traefik network ",
                     "description": "Example: proxy",
                     "default": "proxy"
-                }
-            ]
-        },
-        {
-            "type": 3,
-            "title": "Sinusbot",
-            "name": "Sinusbot",
-            "description": "Bot for TeamSpeak and Discord",
-            "note": "Website: <a href=https://www.sinusbot.com/' target='_blank' rel='noopener'>Sinusbot.com</a>",
-            "categories": [
-                "SelfHosted",
-                "PAPAMICA"
-            ],
-            "platform": "linux",
-            "logo": "https://avatars.githubusercontent.com/u/25282695?s=280&v=4",
-            "repository": {
-                "stackfile": "composes-files/sui.yml",
-                "url": "https://github.com/PAPAMICA/docker-compose-collection"
-            },
-            "env": [
-                {
-                    "name": "SERVICE",
-                    "label": "Name of the service ",
-                    "description": "No spaces or points",
-                    "default": "sinusbot"
-                },
-                {
-                    "name": "DATA_LOCATION",
-                    "label": "Data localization ",
-                    "description": "Example: /apps/service",
-                    "default": "/_data/apps"
-                },
-                {
-                    "name": "URL",
-                    "label": "Service URL",
-                    "description": "Example: service.papamica.fr or service.com"
-                },
-                {
-                    "name": "NETWORK",
-                    "label": "Your Traefik network ",
-                    "description": "Example: proxy",
-                    "default": "proxy"
-                }
-            ]
-        },
-        {
-            "type": 3,
-            "title": "NextCloud",
-            "name": "NextCloud",
-            "description": "A personnal cloud, alternative to Google Drive, etc...",
-            "note": "Website: <a href='https://nextcloud.com/' target='_blank' rel='noopener'>NextCloud.com</a>",
-            "categories": [
-                "SelfHosted",
-                "PAPAMICA"
-            ],
-            "platform": "linux",
-            "logo": "https://alternative.me/media/1280/nextcloud-screenshot-h7bxcd9k35twayd9.png",
-            "repository": {
-                "stackfile": "composes-files/synchthing.yml",
-                "url": "https://github.com/PAPAMICA/docker-compose-collection"
-            },
-            "env": [
-                {
-                    "name": "SERVICE",
-                    "label": "Name of the service ",
-                    "description": "No spaces or points",
-                    "default": "nexcloud"
-                },
-                {
-                    "name": "DATA_LOCATION",
-                    "label": "Data localization ",
-                    "description": "Example: /apps/service",
-                    "default": "/_data/apps"
-                },
-                {
-                    "name": "URL",
-                    "label": "Service link",
-                    "description": "Example: service.papamica.fr or service.com"
-                },
-                {
-                    "name": "NETWORK",
-                    "label": "Your Traefik network ",
-                    "description": "Example: proxy",
-                    "default": "proxy"
-                },
-                {
-                    "name": "DB_USER",
-                    "label": "Database user ",
-                    "description": "No spaces or points",
-                    "default": "nexcloud"
-                },
-                {
-                    "name": "DB_PASSWORD",
-                    "label": "Password for database user"
-                },
-                {
-                    "name": "DB_ROOT",
-                    "label": "Password for database root"
-                },
-                {
-                    "name": "DATA",
-                    "label": "Folder of your data"
                 }
             ]
         },

@@ -1,0 +1,47 @@
+# Maintainer: Mickael "PAPAMICA" Asseline
+# Update: 2022-05-17
+
+#& type: 3
+#& title: Sonarr
+#& description: Monitor multiple RSS feeds for new episodes of your favorite shows and will grab, sort and rename them. 
+#& note: Website: <a href='https://sonarr.tv/' target='_blank' rel='noopener'>Sonarr.tv</a>
+#& categories: SelfHosted, Mediacenter, PAPAMICA
+#& platform: linux
+#& logo: https://forums-sonarr-tv.s3.dualstack.us-east-1.amazonaws.com/original/2X/e/ef4553fe96f04a298ec502279731579698e96a9b.png
+
+#% SERVICE: Name of the service (No spaces or points) [sonarr]
+#% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
+#% URL: Service URL (Example: service.papamica.fr or service.com)
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
+#% TZ: Time zone (Exemple: Europe/Paris) [Europe/Paris]
+#% FOLDER_DOWNLOAD: Your download folder (Exemple: /data/download)
+#% FOLDER_SERIES: Your series folder (Exemple: /data/series)
+
+
+# Work with Portainer
+services:
+  sonarr:
+    image: linuxserver/sonarr:latest
+    container_name: sonarr
+    restart: always
+    volumes:
+        - $DATA_LOCATION/$SERVICE/config:/config
+        - $FOLDER_DOWNLOAD/sonarr:/downloads
+        - $FOLDER_SERIES:/series
+    environment:
+        - TZ=$TZ
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+      - "traefik.enable=true"
+      - "traefik.http.routers.$SERVICE.entrypoints=https"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
+      - "traefik.http.routers.$SERVICE.tls=true"
+      - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+      - "traefik.http.services.$SERVICE.loadbalancer.server.port=8989"
+      - "traefik.docker.network=$NETWORK"
+    networks:
+      - default
+networks:
+  default:
+    external:
+      name: $NETWORK

@@ -5,7 +5,7 @@
 #& title: Plex
 #& description: Media server
 #& note: Website: <a href='https://www.plex.tv' target='_blank' rel='noopener'>Plex.tv</a></br>Check ports to open in compose !
-#& categories: SelfHosted, Plex, PAPAMICA
+#& categories: SelfHosted, Mediacenter, PAPAMICA
 #& platform: linux
 #& logo: https://www.plex.tv/wp-content/uploads/2018/01/pmp-icon-1.png
 

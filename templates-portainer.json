@@ -854,6 +854,54 @@
         },
         {
             "type": 3,
+            "title": "FreshRSS",
+            "name": "FreshRSS",
+            "description": "Freshrss is a free, self-hostable aggregator for rss feeds.",
+            "note": "Website: <a href='https://freshrss.org/' target='_blank' rel='noopener'>FreshRSS.org</a>",
+            "categories": [
+                "SelfHosted",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://framalibre.org/sites/default/files/leslogos/Logo%20FreshRSS.png",
+            "repository": {
+                "stackfile": "composes-files/freshrss.yml",
+                "url": "https://github.com/PAPAMICA/docker-compose-collection"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "freshrss"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service URL",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
+                },
+                {
+                    "name": "TZ",
+                    "label": "Time zone ",
+                    "description": "Exemple: Europe/Paris",
+                    "default": "Europe/Paris"
+                }
+            ]
+        },
+        {
+            "type": 3,
             "title": "Grafana",
             "name": "Grafana",
             "description": "From heatmaps to histograms, graphs to geomaps: fast and furious visualizations any way you want.",

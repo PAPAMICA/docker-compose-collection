@@ -885,7 +885,7 @@
             "note": "Website: <a href='https://www.plex.tv' target='_blank' rel='noopener'>Plex.tv</a></br>Check ports to open in compose !",
             "categories": [
                 "SelfHosted",
-                "Plex",
+                "Mediacenter",
                 "PAPAMICA"
             ],
             "platform": "linux",
@@ -1027,6 +1027,65 @@
                     "label": "Your Traefik network ",
                     "description": "Example: proxy",
                     "default": "proxy"
+                }
+            ]
+        },
+        {
+            "type": 3,
+            "title": "Sonarr",
+            "name": "Sonarr",
+            "description": "Monitor multiple RSS feeds for new episodes of your favorite shows and will grab, sort and rename them.",
+            "note": "Website: <a href='https://sonarr.tv/' target='_blank' rel='noopener'>Sonarr.tv</a>",
+            "categories": [
+                "SelfHosted",
+                "Mediacenter",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://forums-sonarr-tv.s3.dualstack.us-east-1.amazonaws.com/original/2X/e/ef4553fe96f04a298ec502279731579698e96a9b.png",
+            "repository": {
+                "stackfile": "composes-files/sonarr.yml",
+                "url": "https://github.com/PAPAMICA/docker-compose-collection"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "sonarr"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service URL",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
+                },
+                {
+                    "name": "TZ",
+                    "label": "Time zone ",
+                    "description": "Exemple: Europe/Paris",
+                    "default": "Europe/Paris"
+                },
+                {
+                    "name": "FOLDER_DOWNLOAD",
+                    "label": "Your download folder",
+                    "description": "Exemple: /data/download"
+                },
+                {
+                    "name": "FOLDER_SERIES",
+                    "label": "Your series folder",
+                    "description": "Exemple: /data/series"
                 }
             ]
         },

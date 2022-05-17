@@ -1,0 +1,54 @@
+# Maintainer: Mickael "PAPAMICA" Asseline
+# Update: 2022-05-17
+
+#& type: 3
+#& title: Readarr
+#& description: Monitor multiple RSS feeds for new ebooks and audiobook and will grab, sort and rename them.
+#& note: Website: <a href='https://github.com/Readarr/Readarr' target='_blank' rel='noopener'>Github.com</a>
+#& categories: SelfHosted, Mediacenter, PAPAMICA
+#& platform: linux
+#& logo: https://avatars.githubusercontent.com/u/57576474?s=280&v=4
+
+#% SERVICE: Name of the service (No spaces or points) [readarr]
+#% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
+#% URL: Service URL (Example: service.papamica.fr or service.com)
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
+#% TZ: Time zone (Exemple: Europe/Paris) [Europe/Paris]
+#% FOLDER_DOWNLOAD: Your download folder (Exemple: /data/download)
+#% FOLDER_BOOKS: Your movies folder (Exemple: /data/books)
+
+
+# Work with Portainer
+services:
+  readarr:
+    image: linuxserver/readarr:develop
+    container_name: $SERVICE
+    restart: always
+    volumes:
+      - $DATA_LOCATION/$SERVICE/config:/config
+      - $FOLDER_DOWNLOAD/sonarr:/downloads
+      - $FOLDER_BOOKS:/books
+    environment:
+      - TZ=$TZ
+      - PUID=0
+      - PGID=0
+    healthcheck:
+      test: curl --connect-timeout 15 --max-time 100 --silent --show-error --fail "http://localhost:8787" > /dev/null
+      interval: 1m
+      timeout: 30s
+      retries: 3
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+      - "traefik.enable=true"
+      - "traefik.http.routers.$SERVICE.entrypoints=https"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
+      - "traefik.http.routers.$SERVICE.tls=true"
+      - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+      - "traefik.http.services.$SERVICE.loadbalancer.server.port=8787"
+      - "traefik.docker.network=$NETWORK"
+    networks:
+      - default
+networks:
+  default:
+    external:
+      name: $NETWORK

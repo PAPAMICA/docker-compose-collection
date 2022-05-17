@@ -773,6 +773,65 @@
         },
         {
             "type": 3,
+            "title": "Jellyfin",
+            "name": "Jellyfin",
+            "description": "Media player like Plex.",
+            "note": "Website: <a href='https://jellyfin.org/' target='_blank' rel='noopener'>Jellyfin.org</a>",
+            "categories": [
+                "SelfHosted",
+                "Mediacenter",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://developer.asustor.com/uploadIcons/0020_999_1568614440_Jellyfin_256.png",
+            "repository": {
+                "stackfile": "composes-files/jellyfin.yml",
+                "url": "https://github.com/PAPAMICA/docker-compose-collection"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "jellyfin"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service URL",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
+                },
+                {
+                    "name": "TZ",
+                    "label": "Time zone ",
+                    "description": "Exemple: Europe/Paris",
+                    "default": "Europe/Paris"
+                },
+                {
+                    "name": "FOLDER_SERIES",
+                    "label": "Your series folder",
+                    "description": "Exemple: /data/series"
+                },
+                {
+                    "name": "FOLDER_MOVIES",
+                    "label": "Your movies folder",
+                    "description": "Exemple: /data/movies"
+                }
+            ]
+        },
+        {
+            "type": 3,
             "title": "Jirafeau",
             "name": "Jirafeau",
             "description": "Jirafeau is a \"one-click-filesharing\": Select your file, upload, share a link. That's it.",

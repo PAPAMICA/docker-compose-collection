@@ -1,0 +1,50 @@
+# Maintainer: Mickael "PAPAMICA" Asseline
+# Update: 2022-05-17
+
+#& type: 3
+#& title: Requestrr
+#& description: Ombi is a request management and media discovery tool built to work with your existing Plex ecosystem.
+#& note: Website: <a href='https://github.com/darkalfx/requestrr' target='_blank' rel='noopener'>Github.com</a>
+#& categories: SelfHosted, Mediacenter, PAPAMICA
+#& platform: linux
+#& logo: https://camo.githubusercontent.com/2d3352b543a7ecb88e91a0cfd88a32b958eeba8740ee3e4e22d1288daaf6c2a7/68747470733a2f2f692e696d6775722e636f6d2f30557a4c5976772e706e67
+
+#% SERVICE: Name of the service (No spaces or points) [requestrr]
+#% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
+#% URL: Service URL (Example: service.papamica.fr or service.com)
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
+#% TZ: Time zone (Exemple: Europe/Paris) [Europe/Paris]
+
+
+# Work with Portainer
+services:
+  requestrr:
+    image: linuxserver/requestrr:latest
+    container_name: $SERVICE
+    restart: always
+    volumes:
+      - $DATA_LOCATION/$SERVICE/config:/config
+    environment:
+      - TZ=$TZ
+      - PUID=1000
+      - PGID=1000
+    healthcheck:
+      test: curl --connect-timeout 15 --max-time 100 --silent --show-error --fail "http://localhost:4545" > /dev/null
+      interval: 1m
+      timeout: 30s
+      retries: 3
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+      - "traefik.enable=true"
+      - "traefik.http.routers.$SERVICE.entrypoints=https"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
+      - "traefik.http.routers.$SERVICE.tls=true"
+      - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+      - "traefik.http.services.$SERVICE.loadbalancer.server.port=4545"
+      - "traefik.docker.network=$NETWORK"
+    networks:
+      - default
+networks:
+  default:
+    external:
+      name: $NETWORK

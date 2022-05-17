@@ -37,7 +37,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 
 
 ## List of services availables:
-<img src="https://img.shields.io/badge/Avaibles:_45-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
+<img src="https://img.shields.io/badge/Avaibles:_46-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
 
 | Status | Service | Update | Maintainer |
 |:--:|--|--|--|
@@ -47,6 +47,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | ✅ | [bookstack](https://www.bookstackapp.com/) | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | [deluge](https://deluge-torrent.org/ ) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
 | ✅ | [dillinger](https://github.com/joemccann/dillinger) | 2022-05-13 |  Mickael "PAPAMICA" Asseline |
+| ✅ | [emby](https://emby.media/) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
 | ✅ | [etherpad](https://etherpad.org/) | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | [ferdi](https://getferdi.com/) | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | [filebot](https://www.filebot.net/) | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
@@ -88,7 +89,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | ✅ | [zabbix](https://www.zabbix.com/) | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
 
 ## List of services to do:
-<img src="https://img.shields.io/badge/To_do:_133-%23FF8800.svg?style=for-the-badge&logo=vlcmediaplayer&logoColor=white">
+<img src="https://img.shields.io/badge/To_do:_132-%23FF8800.svg?style=for-the-badge&logo=vlcmediaplayer&logoColor=white">
 
 | Status | Service |
 |:--:|--|
@@ -109,7 +110,6 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | 🚸 | duplicaty |
 | 🚸 | elasticsearch |
 | 🚸 | elk |
-| 🚸 | emby |
 | 🚸 | embystat |
 | 🚸 | emulatorjs |
 | 🚸 | erpnext |

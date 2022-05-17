@@ -37,7 +37,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 
 
 ## List of services availables:
-<img src="https://img.shields.io/badge/Avaibles:_41-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
+<img src="https://img.shields.io/badge/Avaibles:_42-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
 
 | Status | Service | Update | Maintainer |
 |:--:|--|--|--|
@@ -54,6 +54,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | ✅ | [jackett](https://github.com/Jackett/Jackett) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
 | ✅ | [jirafeau](https://gitlab.com/mojo42/Jirafeau) | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | [keycloak](https://www.keycloak.org/) | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| ✅ | [lidarr](https://lidarr.audio/) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
 | ✅ | [matomo](https://fr.matomo.org) | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | [mumble-bot](https://github.com/matthieugrieger/mumbledj) | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | [mumble-web](https://github.com/Rantanen/mumble-web) | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
@@ -84,7 +85,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | ✅ | [zabbix](https://www.zabbix.com/) | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
 
 ## List of services to do:
-<img src="https://img.shields.io/badge/To_do:_137-%23FF8800.svg?style=for-the-badge&logo=vlcmediaplayer&logoColor=white">
+<img src="https://img.shields.io/badge/To_do:_136-%23FF8800.svg?style=for-the-badge&logo=vlcmediaplayer&logoColor=white">
 
 | Status | Service |
 |:--:|--|
@@ -136,7 +137,6 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | 🚸 | joomla |
 | 🚸 | joplin |
 | 🚸 | kanboard |
-| 🚸 | lidarr |
 | 🚸 | lychee |
 | 🚸 | magento |
 | 🚸 | mailu |

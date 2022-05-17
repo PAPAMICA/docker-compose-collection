@@ -650,6 +650,65 @@
         },
         {
             "type": 3,
+            "title": "Lidarr",
+            "name": "Lidarr",
+            "description": "Lidarr is a music collection manager for Usenet and BitTorrent users.",
+            "note": "Website: <a href='https://lidarr.audio/' target='_blank' rel='noopener'>Lidarr.audio</a>",
+            "categories": [
+                "SelfHosted",
+                "Mediacenter",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://github.com/lidarr/Lidarr/raw/develop/Logo/400.png",
+            "repository": {
+                "stackfile": "composes-files/lidarr.yml",
+                "url": "https://github.com/PAPAMICA/docker-compose-collection"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "lidarr"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service URL",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
+                },
+                {
+                    "name": "TZ",
+                    "label": "Time zone ",
+                    "description": "Exemple: Europe/Paris",
+                    "default": "Europe/Paris"
+                },
+                {
+                    "name": "FOLDER_DOWNLOAD",
+                    "label": "Your download folder",
+                    "description": "Exemple: /data/download"
+                },
+                {
+                    "name": "FOLDER_MUSIC",
+                    "label": "Your musics folder",
+                    "description": "Exemple: /data/musics"
+                }
+            ]
+        },
+        {
+            "type": 3,
             "title": "Matomo",
             "name": "Matomo",
             "description": "Google Analitycs alternative !",

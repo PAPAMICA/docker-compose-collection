@@ -37,7 +37,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 
 
 ## List of services availables:
-<img src="https://img.shields.io/badge/Avaibles:_48-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
+<img src="https://img.shields.io/badge/Avaibles:_49-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
 
 | Status | Service | Update | Maintainer |
 |:--:|--|--|--|
@@ -67,6 +67,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | ✅ | [nextcloud](https://nextcloud.com/) | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
 | ✅ | [olivetin](https://www.olivetin.app/) | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | [ombi](https://ombi.io/) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
+| ✅ | [organizr](https://organizr.app/) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
 | ✅ | [overseerr](https://overseerr.dev/) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
 | ✅ | [plex](https://www.plex.tv) | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | [prowlarr](https://github.com/Prowlarr/Prowlarr) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
@@ -91,7 +92,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | ✅ | [zabbix](https://www.zabbix.com/) | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
 
 ## List of services to do:
-<img src="https://img.shields.io/badge/To_do:_130-%23FF8800.svg?style=for-the-badge&logo=vlcmediaplayer&logoColor=white">
+<img src="https://img.shields.io/badge/To_do:_129-%23FF8800.svg?style=for-the-badge&logo=vlcmediaplayer&logoColor=white">
 
 | Status | Service |
 |:--:|--|
@@ -160,7 +161,6 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | 🚸 | octoprint |
 | 🚸 | openvpn-as |
 | 🚸 | openvpn |
-| 🚸 | organizr |
 | 🚸 | outline |
 | 🚸 | owncoud |
 | 🚸 | paperless-ng |

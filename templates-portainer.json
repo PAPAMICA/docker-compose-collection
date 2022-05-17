@@ -1591,6 +1591,65 @@
         },
         {
             "type": 3,
+            "title": "Readarr",
+            "name": "Readarr",
+            "description": "Monitor multiple RSS feeds for new ebooks and audiobook and will grab, sort and rename them.",
+            "note": "Website: <a href='https://github.com/Readarr/Readarr' target='_blank' rel='noopener'>Github.com</a>",
+            "categories": [
+                "SelfHosted",
+                "Mediacenter",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://avatars.githubusercontent.com/u/57576474?s=280&v=4",
+            "repository": {
+                "stackfile": "composes-files/readarr.yml",
+                "url": "https://github.com/PAPAMICA/docker-compose-collection"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "readarr"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service URL",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
+                },
+                {
+                    "name": "TZ",
+                    "label": "Time zone ",
+                    "description": "Exemple: Europe/Paris",
+                    "default": "Europe/Paris"
+                },
+                {
+                    "name": "FOLDER_DOWNLOAD",
+                    "label": "Your download folder",
+                    "description": "Exemple: /data/download"
+                },
+                {
+                    "name": "FOLDER_BOOKS",
+                    "label": "Your movies folder",
+                    "description": "Exemple: /data/books"
+                }
+            ]
+        },
+        {
+            "type": 3,
             "title": "Requestrr",
             "name": "Requestrr",
             "description": "Ombi is a request management and media discovery tool built to work with your existing Plex ecosystem.",

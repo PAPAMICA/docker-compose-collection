@@ -1,0 +1,46 @@
+# Maintainer: Mickael "PAPAMICA" Asseline
+# Update: 2022-05-12
+
+#& type: 3
+#& title: Murmur
+#& description: Vocal server (Mumble)
+#& note: Website: <a href=https://www.mumble.com/' target='_blank' rel='noopener'>Mumble.com</a></br>Port to open:64738
+#& categories: SelfHosted, PAPAMICA
+#& platform: linux
+#& logo: https://www.pngkey.com/png/full/319-3198756_rainbow-six-siege-mumble-logo-png.png
+
+#% SERVICE: Name of the service (No spaces or points) [mumble-server]
+#% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
+#% URL: Service URL (Example: service.papamica.fr or service.com)
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
+
+# Work with Portainer
+version: "2"
+services:
+  murmur:
+    image: vimagick/murmur
+    restart: always
+    container_name: $SERVICE
+    volumes:
+      - $DATA_LOCATION:/etc/murmur
+    ports:
+      - "64738:64738/tcp"
+      - "64738:64738/udp"
+    environment:
+      - UID=1000
+      - GID=1000
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+      - traefik.enable=true
+      - traefik.http.routers.$SERVICE.rule=Host(`$URL`)
+      - traefik.http.routers.$SERVICE.entryPoints=http
+      - traefik.$SERVICE.port=64738
+      - traefik.$SERVICE.port=64738
+      - "traefik.docker.network=$NETWORK"
+    networks:
+      - default
+
+networks:
+  default:
+    external:
+      name: $NETWORK

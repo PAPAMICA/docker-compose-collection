@@ -40,6 +40,10 @@ for filename in sorted(glob.glob("composes-files/*.y*ml")):
                 elif data[0] == "categories":
                     categories = data[1].split(', ')
                     dataset[data[0]] = categories
+                elif data[0] == "note":
+                    link = re.search('\bhref=\'([^\']*)\'', data[1]).group(1)
+                    dataset[data[0]] = data[1]
+                    print(link)
                 elif data[0] == "title":
                     title = data[1]
                     dataset[data[0]] = title

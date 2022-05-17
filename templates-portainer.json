@@ -28,7 +28,7 @@
                 {
                     "name": "URL",
                     "label": "Service URL",
-                    "description": "Example: service.papamica.fr or service.com)"
+                    "description": "Example: service.papamica.fr or service.com"
                 },
                 {
                     "name": "NETWORK",
@@ -139,64 +139,6 @@
                     "label": "Time zone ",
                     "description": "Example : Europe/Paris",
                     "default": "Europe/Paris"
-                }
-            ]
-        },
-        {
-            "type": 3,
-            "title": "CachetHQ",
-            "name": "CachetHQ",
-            "description": "Uptime monitor alternative",
-            "note": "Website: <a href='https://cachethq.io/' target='_blank' rel='noopener'>CachetHQ.io</a></br></br>Warning: Check log at the first run!",
-            "categories": [
-                "SelfHosted",
-                "Monitoring",
-                "PAPAMICA"
-            ],
-            "platform": "linux",
-            "logo": "http://cachethq.io/img/social/CachetFB-V.png",
-            "repository": {
-                "stackfile": "composes-files/cachethq.yml",
-                "url": "https://github.com/PAPAMICA/docker-compose-collection"
-            },
-            "env": [
-                {
-                    "name": "SERVICE",
-                    "label": "Name of the service ",
-                    "description": "No spaces or points",
-                    "default": "cachethq"
-                },
-                {
-                    "name": "DATA_LOCATION",
-                    "label": "data localization ",
-                    "description": "Example: /apps/service",
-                    "default": "/_data/apps"
-                },
-                {
-                    "name": "URL",
-                    "label": "Service URL",
-                    "description": "Example: service.papamica.fr or service.com"
-                },
-                {
-                    "name": "NETWORK",
-                    "label": "Your Traefik network ",
-                    "description": "Example: proxy",
-                    "default": "proxy"
-                },
-                {
-                    "name": "DB_USER",
-                    "label": "Database user ",
-                    "description": "No spaces or points",
-                    "default": "cachethq"
-                },
-                {
-                    "name": "DB_PASSWORD",
-                    "label": "Database user password"
-                },
-                {
-                    "name": "TIME_ZONE",
-                    "label": "Time zone",
-                    "description": "Example : Europe/Paris) Europe/Pari"
                 }
             ]
         },
@@ -747,8 +689,8 @@
         },
         {
             "type": 3,
-            "title": "Mumble Web ",
-            "name": "Mumble Web ",
+            "title": "Mumble Web",
+            "name": "Mumble Web",
             "description": "Web client for Mumble",
             "note": "Website: <a href=https://github.com/Rantanen/mumble-web' target='_blank' rel='noopener'>Github.com</a>",
             "categories": [
@@ -1298,7 +1240,7 @@
             "title": "umami",
             "name": "umami",
             "description": "Light alternative to Google Analitycs",
-            "note": "Website: <a href='https://umami.is/' target='_blank' rel='noopener'>Umami.is</a></br></br>Warning: RTFM ! You need to add one file and restart ! ",
+            "note": "Website: <a href='https://umami.is/' target='_blank' rel='noopener'>Umami.is</a></br></br>Warning: RTFM ! You need to add one file and restart !",
             "categories": [
                 "SelfHosted",
                 "PAPAMICA"

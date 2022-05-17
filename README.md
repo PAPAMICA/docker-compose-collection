@@ -37,7 +37,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 
 
 ## List of services availables:
-<img src="https://img.shields.io/badge/Avaibles:_33-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
+<img src="https://img.shields.io/badge/Avaibles:_41-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
 
 | Status | Service | Update | Maintainer |
 |:--:|--|--|--|
@@ -45,23 +45,31 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | ✅ | apprise-api | 2022-05-13 |  Mickael "PAPAMICA" Asseline |
 | ✅ | bookstack | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | dillinger | 2022-05-13 |  Mickael "PAPAMICA" Asseline |
+| ✅ | elk | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
+| ✅ | ethercalc | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | etherpad | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | ferdi | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | filebot | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | filebrowser | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| ✅ | ghost | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | grafana | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | hastebin | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| ✅ | inventario | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | jirafeau | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | keycloak | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | matomo | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| ✅ | miniflux | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | mumble-bot | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | mumble-web | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | murmur | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | nextcloud | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
 | ✅ | olivetin | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | plex | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
+| ✅ | rsshub | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | rundeck | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
 | ✅ | sinusbot | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
+| ✅ | sui | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
+| ✅ | synchthing | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
 | ✅ | teamspeak | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | traefik | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | ts3rank | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
@@ -76,10 +84,11 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | ✅ | zabbix | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
 
 ## List of services to do:
-<img src="https://img.shields.io/badge/To_do:_101-%23FF8800.svg?style=for-the-badge&logo=vlcmediaplayer&logoColor=white">
+<img src="https://img.shields.io/badge/To_do:_137-%23FF8800.svg?style=for-the-badge&logo=vlcmediaplayer&logoColor=white">
 
 | Status | Service |
 |:--:|--|
+| 🚸 | Invidious |
 | 🚸 | adguard |
 | 🚸 | airsonic |
 | 🚸 | audacity |
@@ -89,23 +98,35 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | 🚸 | calibre-web |
 | 🚸 | chevereto |
 | 🚸 | cyberchef |
+| 🚸 | darksky |
 | 🚸 | dashmachine |
 | 🚸 | deemix |
 | 🚸 | deluge |
 | 🚸 | domotics |
+| 🚸 | drone |
 | 🚸 | duplicaty |
 | 🚸 | elasticsearch |
 | 🚸 | emby |
 | 🚸 | embystat |
 | 🚸 | emulatorjs |
+| 🚸 | erpnext |
+| 🚸 | firefly3 |
 | 🚸 | freshrss |
+| 🚸 | gitea |
 | 🚸 | gitlab |
+| 🚸 | gotify |
 | 🚸 | grav |
+| 🚸 | grocy |
 | 🚸 | guacamole |
+| 🚸 | heathchecks |
+| 🚸 | hedgedoc |
 | 🚸 | heimdall |
 | 🚸 | homeassistant |
+| 🚸 | homebridge |
+| 🚸 | homedash |
 | 🚸 | homer |
 | 🚸 | httpd |
+| 🚸 | invoiceninja |
 | 🚸 | jacket |
 | 🚸 | jellyfin |
 | 🚸 | jenkins |
@@ -115,15 +136,24 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | 🚸 | lidarr |
 | 🚸 | lychee |
 | 🚸 | magento |
+| 🚸 | mailu |
 | 🚸 | mariadb |
+| 🚸 | mashio |
+| 🚸 | matterbridge |
 | 🚸 | mautic |
+| 🚸 | mayan-edms |
 | 🚸 | mcmyadmin2 |
+| 🚸 | mealie |
 | 🚸 | minetest |
 | 🚸 | minio |
+| 🚸 | monica |
 | 🚸 | n8m |
+| 🚸 | nginx-proxy-manager copy |
 | 🚸 | nginx-proxy-manager |
 | 🚸 | nginx |
+| 🚸 | nodered |
 | 🚸 | nzbget |
+| 🚸 | octoprint |
 | 🚸 | ombi |
 | 🚸 | openvpn-as |
 | 🚸 | openvpn |
@@ -133,11 +163,14 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | 🚸 | paperless-ng |
 | 🚸 | papermerge |
 | 🚸 | petio |
+| 🚸 | photoprism |
 | 🚸 | phpmyadmin |
 | 🚸 | pi-hole |
 | 🚸 | piwigo |
 | 🚸 | pixapop |
+| 🚸 | pleroma |
 | 🚸 | plone |
+| 🚸 | poli |
 | 🚸 | postgresql |
 | 🚸 | privatebin |
 | 🚸 | projectsend |
@@ -155,6 +188,8 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | 🚸 | scality-s3 |
 | 🚸 | scrutiny |
 | 🚸 | searx |
+| 🚸 | shaarli |
+| 🚸 | shinobi |
 | 🚸 | shiori |
 | 🚸 | shlink |
 | 🚸 | shorturl |
@@ -164,15 +199,22 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | 🚸 | sonarr |
 | 🚸 | taiga |
 | 🚸 | tautulli |
+| 🚸 | teedy |
 | 🚸 | thelounge |
 | 🚸 | tiddlywiki |
 | 🚸 | tiny-tiny-rss |
 | 🚸 | transmission |
+| 🚸 | trilium |
 | 🚸 | turtl |
+| 🚸 | ubooquity |
 | 🚸 | unify-controller |
 | 🚸 | urbackup |
 | 🚸 | vault |
+| 🚸 | wallabag |
+| 🚸 | webdav |
 | 🚸 | webtop |
+| 🚸 | webtrees |
+| 🚸 | wekan |
 | 🚸 | whoogle |
 | 🚸 | wikijs |
 | 🚸 | wireguard |
@@ -181,6 +223,8 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | 🚸 | yatch |
 | 🚸 | youtube-dl |
 | 🚸 | zabbix-cachethq |
+| 🚸 | zammad |
+| 🚸 | zulip |
 
 </div>
 

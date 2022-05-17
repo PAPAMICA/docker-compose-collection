@@ -4,7 +4,7 @@
 #& type: 3
 #& title: RunDeck
 #& description: Rundeck is a free software that allows the automation of server administration via the creation of jobs or tasks.
-#& note: Website: <a href='https://www.rundeck.com/open-source' target='_blank' rel='noopener'>RunDeck.com</a>
+#& note: Website: <a href='https://www.rundeck.com/open-source' target='_blank' rel='noopener'>RunDeck.com</a><br\>Don't forget to copy the data from <code>/home/rundeck</code> outside the container with <code>docker cp</code> and to uncomment the volume lines.<br\>The default credentials are: <code>admin</code> / <code>admin</code>
 #& categories: SelfHosted, PAPAMICA
 #& platform: linux
 #& logo: https://projects.task.gda.pl/uploads/-/system/project/avatar/135/rundeck_logo_white.png
@@ -34,9 +34,9 @@ services:
       - RUNDECK_DATABASE_USERNAME=$DB_USER
       - RUNDECK_DATABASE_PASSWORD=$DB_PASSWORD
       - RUNDECK_DATABASE_URL=jdbc:postgresql://$SERVICE-db/$DB_USER
-    volumes:
-      - $DATA_LOCATION/$SERVICE/config:/home/rundeck
-      - $DATA_LOCATION/$SERVICE/server/data:/home/rundeck/server/data
+    #volumes:
+      #- $DATA_LOCATION/$SERVICE/config:/home/rundeck
+      #- $DATA_LOCATION/$SERVICE/server/data:/home/rundeck/server/data
     networks:
       - default
     healthcheck:

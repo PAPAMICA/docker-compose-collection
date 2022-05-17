@@ -1,0 +1,58 @@
+# Maintainer: Mickael "PAPAMICA" Asseline
+# Update: 2022-05-17
+
+#& type: 3
+#& title: Transmission
+#& description: Webinterface for download torrents.
+#& note: Website: <a href='https://transmissionbt.com/' target='_blank' rel='noopener'>Transmissionbt.com</a></br></br>Port to open: <code>51413</code>
+#& categories: SelfHosted, Mediacenter, PAPAMICA
+#& platform: linux
+#& logo: https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Transmission_Icon.svg/1200px-Transmission_Icon.svg.png
+
+#% SERVICE: Name of the service (No spaces or points) [transmission]
+#% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
+#% URL: Service URL (Example: service.papamica.fr or service.com)
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
+#% TZ: Time zone (Exemple: Europe/Paris) [Europe/Paris]
+#% FOLDER_DOWNLOAD: Your download folder (Exemple: /data/download)
+#% FOLDER_SERIES: Your series folder (Exemple: /data/series)
+#% FOLDER_MOVIES: Your movies folder (Exemple: /data/movies)
+
+
+# Work with Portainer
+services:
+  transmission:
+    image: linuxserver/transmission:latest
+    container_name: $SERVICE
+    restart: always
+    volumes:
+      - $DATA_LOCATION/$SERVICE/config:/config
+      - $FOLDER_DOWNLOAD:/downloads
+      - $FOLDER_SERIES:/series
+      - $FOLDER_MOVIES:/movies
+    environment:
+      - TZ=$TZ
+      - PUID=1000
+      - PGID=1000
+    ports:
+      - 6881:6881
+    healthcheck:
+      test: curl --connect-timeout 15 --max-time 100 --silent --show-error --fail "http://localhost:9091" > /dev/null
+      interval: 1m
+      timeout: 30s
+      retries: 3
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+      - "traefik.enable=true"
+      - "traefik.http.routers.$SERVICE.entrypoints=https"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
+      - "traefik.http.routers.$SERVICE.tls=true"
+      - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+      - "traefik.http.services.$SERVICE.loadbalancer.server.port=9091"
+      - "traefik.docker.network=$NETWORK"
+    networks:
+      - default
+networks:
+  default:
+    external:
+      name: $NETWORK

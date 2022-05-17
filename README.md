@@ -76,7 +76,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | ✅ | [zabbix](https://www.zabbix.com/) | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
 
 ## List of services to do:
-<img src="https://img.shields.io/badge/To_do:_145-%23FF8800.svg?style=for-the-badge&logo=vlcmediaplayer&logoColor=white">
+<img src="https://img.shields.io/badge/To_do:_144-%23FF8800.svg?style=for-the-badge&logo=vlcmediaplayer&logoColor=white">
 
 | Status | Service |
 |:--:|--|
@@ -145,7 +145,6 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | 🚸 | minio |
 | 🚸 | monica |
 | 🚸 | n8m |
-| 🚸 | nginx-proxy-manager copy |
 | 🚸 | nginx-proxy-manager |
 | 🚸 | nginx |
 | 🚸 | nodered |

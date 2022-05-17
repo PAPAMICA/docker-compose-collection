@@ -18,7 +18,7 @@
 
 # Work with Portainer
 services:
-  sonarr:
+  prowlarr:
     image: linuxserver/prowlarr:develop
     container_name: $SERVICE
     restart: always

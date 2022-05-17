@@ -4,7 +4,7 @@
 #& type: 3
 #& title: Mumble Bot
 #& description: Bot for Mumble server
-#& note: Website: <a href=https://github.com/matthieugrieger/mumbledj' target='_blank' rel='noopener'>Github.com</a></br>You need to create a conf file "mumbledj.yaml"
+#& note: Website: <a href='https://github.com/matthieugrieger/mumbledj' target='_blank' rel='noopener'>Github.com</a></br>You need to create a conf file "mumbledj.yaml"
 #& categories: SelfHosted, PAPAMICA
 #& platform: linux
 #& logo: https://blog.natenom.com/wp-content/uploads/2015/11/256px-Logo_mumble-ruby-pluginbot.svg_.png

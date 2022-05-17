@@ -4,7 +4,7 @@
 #& type: 3
 #& title: Sinusbot
 #& description: Bot for TeamSpeak and Discord
-#& note: Website: <a href=https://www.sinusbot.com/' target='_blank' rel='noopener'>Sinusbot.com</a>
+#& note: Website: <a href='https://www.sinusbot.com/' target='_blank' rel='noopener'>Sinusbot.com</a>
 #& categories: SelfHosted, PAPAMICA
 #& platform: linux
 #& logo: https://avatars.githubusercontent.com/u/25282695?s=280&v=4

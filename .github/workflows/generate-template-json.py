@@ -87,7 +87,7 @@ for filename in sorted(glob.glob("composes-files/*.y*ml")):
             dataset["env"] = env
             templates.append(dataset)
             print (f" ✅ {filename} ")
-            SERVICES=SERVICES + f"\n| ✅ | {file_name} | {date} | {maintainer} |"
+            SERVICES=SERVICES + f"\n| ✅ | [{file_name}]({link}) | {date} | {maintainer} |"
             nb_a += 1
             
         else:

@@ -1,0 +1,52 @@
+# Maintainer: Mickael "PAPAMICA" Asseline
+# Update: 2022-05-17
+
+#& type: 3
+#& title: EmbyStat
+#& description: Get all statistics of your Emby server
+#& note: Website: <a href='https://emby.media/' target='_blank' rel='noopener'>Emby.media</a>
+#& categories: SelfHosted, Mediacenter, PAPAMICA
+#& platform: linux
+#& logo: https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/embystat-logo.png
+
+#% SERVICE: Name of the service (No spaces or points) [embystat]
+#% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
+#% URL: Service URL (Example: service.papamica.fr or service.com)
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
+#% TZ: Time zone (Exemple: Europe/Paris) [Europe/Paris]
+
+
+# Work with Portainer
+services:
+  embystat:
+    image: linuxserver/embystat:latest
+    container_name: $SERVICE
+    restart: always
+    volumes:
+      - $DATA_LOCATION/$SERVICE/config:/config
+    environment:
+      - TZ=$TZ
+      - PUID=1000
+      - PGID=1000
+    ports:
+      - 6881:6881
+    healthcheck:
+      test: curl --connect-timeout 15 --max-time 100 --silent --show-error --fail "http://localhost:6555" > /dev/null
+      interval: 1m
+      timeout: 30s
+      retries: 3
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+      - "traefik.enable=true"
+      - "traefik.http.routers.$SERVICE.entrypoints=https"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
+      - "traefik.http.routers.$SERVICE.tls=true"
+      - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+      - "traefik.http.services.$SERVICE.loadbalancer.server.port=6555"
+      - "traefik.docker.network=$NETWORK"
+    networks:
+      - default
+networks:
+  default:
+    external:
+      name: $NETWORK

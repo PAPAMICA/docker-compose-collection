@@ -37,7 +37,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 
 
 ## List of services availables:
-<img src="https://img.shields.io/badge/Avaibles:_56-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
+<img src="https://img.shields.io/badge/Avaibles:_57-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
 
 | Status | Service | Update | Maintainer |
 |:--:|--|--|--|
@@ -50,7 +50,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | ✅ | [chevereto](https://github.com/rodber/chevereto-free) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
 | ✅ | [deluge](https://deluge-torrent.org/ ) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
 | ✅ | [dillinger](https://github.com/joemccann/dillinger) | 2022-05-13 |  Mickael "PAPAMICA" Asseline |
-| ✅ | [duplicati](https://www.duplicati.com/) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
+| ✅ | [duplicaty](https://www.duplicati.com/) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
 | ✅ | [emby](https://emby.media/) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
 | ✅ | [embystat](https://emby.media/) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
 | ✅ | [etherpad](https://etherpad.org/) | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
@@ -70,6 +70,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | ✅ | [mumble-web](https://github.com/Rantanen/mumble-web) | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | [murmur](https://www.mumble.com/) | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | [nextcloud](https://nextcloud.com/) | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
+| ✅ | [nzbget](http://nzbget.net/) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
 | ✅ | [olivetin](https://www.olivetin.app/) | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | [ombi](https://ombi.io/) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
 | ✅ | [organizr](https://organizr.app/) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
@@ -99,7 +100,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | ✅ | [zabbix](https://www.zabbix.com/) | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
 
 ## List of services to do:
-<img src="https://img.shields.io/badge/To_do:_122-%23FF8800.svg?style=for-the-badge&logo=vlcmediaplayer&logoColor=white">
+<img src="https://img.shields.io/badge/To_do:_121-%23FF8800.svg?style=for-the-badge&logo=vlcmediaplayer&logoColor=white">
 
 | Status | Service |
 |:--:|--|
@@ -158,7 +159,6 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | 🚸 | nginx-proxy-manager |
 | 🚸 | nginx |
 | 🚸 | nodered |
-| 🚸 | nzbget |
 | 🚸 | octoprint |
 | 🚸 | openvpn-as |
 | 🚸 | openvpn |

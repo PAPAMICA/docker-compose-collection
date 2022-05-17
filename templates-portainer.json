@@ -484,7 +484,7 @@
             "platform": "linux",
             "logo": "https://github.com/linuxserver/docker-templates/raw/master/linuxserver.io/img/duplicati-icon.png",
             "repository": {
-                "stackfile": "composes-files/duplicati.yml",
+                "stackfile": "composes-files/duplicaty.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
             },
             "env": [
@@ -1499,6 +1499,70 @@
                 {
                     "name": "DATA",
                     "label": "Folder of your data"
+                }
+            ]
+        },
+        {
+            "type": 3,
+            "title": "Nzbget",
+            "name": "Nzbget",
+            "description": "Nzbget is a usenet downloader, written in C++ and designed with performance in mind to achieve maximum download speed by using very little system resources.",
+            "note": "Website: <a href='http://nzbget.net/' target='_blank' rel='noopener'>Nzbget.net</a>",
+            "categories": [
+                "SelfHosted",
+                "Mediacenter",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://avatars.githubusercontent.com/u/3368377?s=280&v=4",
+            "repository": {
+                "stackfile": "composes-files/nzbget.yml",
+                "url": "https://github.com/PAPAMICA/docker-compose-collection"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "nzbget"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service URL",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
+                },
+                {
+                    "name": "TZ",
+                    "label": "Time zone ",
+                    "description": "Exemple: Europe/Paris",
+                    "default": "Europe/Paris"
+                },
+                {
+                    "name": "NZBGET_USER",
+                    "label": "User for application ",
+                    "description": "Exemple: PAPAMICA",
+                    "default": "PAPAMICA"
+                },
+                {
+                    "name": "NZBGET_PASS",
+                    "label": "Password for application"
+                },
+                {
+                    "name": "FOLDER_DOWNLOAD",
+                    "label": "Your download folder",
+                    "description": "Exemple: /data/download"
                 }
             ]
         },

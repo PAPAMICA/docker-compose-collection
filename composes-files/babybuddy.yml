@@ -2,14 +2,14 @@
 # Update: 2022-05-17
 
 #& type: 3
-#& title: Audacity
-#& description: Audacity is an easy-to-use, multi-track audio editor and recorder. Developed by a group of volunteers as open source.
-#& note: Website: <a href='https://www.audacityteam.org/ ' target='_blank' rel='noopener'>audacityTeam.org</a></br></br>Default user/pass: <code>abc</code> / <code>abc</code>
+#& title: Babybuddy 
+#& description: Babybuddy is a buddy for babies! Helps caregivers track sleep, feedings, diaper changes, tummy time and more to learn about and predict baby's needs without (as much) guess work.
+#& note: Website: <a href='https://github.com/babybuddy/babybuddy' target='_blank' rel='noopener'>Github.com</a></br></br>Default user/pass: <code>admin</code> / <code>admin</code>
 #& categories: SelfHosted, PAPAMICA
 #& platform: linux
-#& logo: https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/audacity-logo.png
+#& logo: https://github.com/linuxserver/docker-templates/raw/master/linuxserver.io/img/babybuddy-logo.png
 
-#% SERVICE: Name of the service (No spaces or points) [audacity]
+#% SERVICE: Name of the service (No spaces or points) [babybuddy]
 #% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
 #% URL: Service URL (Example: service.papamica.fr or service.com)
 #% NETWORK: Your Traefik network (Example: proxy) [proxy]
@@ -18,8 +18,8 @@
 
 # Work with Portainer
 services:
-  audacity:
-    image: linuxserver/audacity:latest
+  babybuddy:
+    image: linuxserver/babybuddy:latest
     container_name: $SERVICE
     restart: always
     volumes:
@@ -28,10 +28,11 @@ services:
       - TZ=$TZ
       - PUID=1000
       - PGID=1000
+      - CSRF_TRUSTED_ORIGINS=http://127.0.0.1:8000,https://$URL
     ports:
       - 6881:6881
     healthcheck:
-      test: curl --connect-timeout 15 --max-time 100 --silent --show-error --fail "http://localhost:3000" > /dev/null
+      test: curl --connect-timeout 15 --max-time 100 --silent --show-error --fail "http://localhost:8000" > /dev/null
       interval: 1m
       timeout: 30s
       retries: 3
@@ -42,7 +43,7 @@ services:
       - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
       - "traefik.http.routers.$SERVICE.tls=true"
       - "traefik.http.routers.$SERVICE.tls.certresolver=http"
-      - "traefik.http.services.$SERVICE.loadbalancer.server.port=3000"
+      - "traefik.http.services.$SERVICE.loadbalancer.server.port=8000"
       - "traefik.docker.network=$NETWORK"
     networks:
       - default

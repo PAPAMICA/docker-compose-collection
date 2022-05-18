@@ -41,7 +41,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 
 | Status | Service | Update | Maintainer |
 |:--:|--|--|--|
-| ✅ | <img src="https://git.spip.net/repo-avatars/1417-1f8a32370f4028c9c0c216787ad4916c" alt="adminer" width="20"/> [adminer](https://www.adminer.org/) | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| ✅ | [adminer](https://www.adminer.org/) | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | [apprise-api](https://github.com/caronc/apprise-api) | 2022-05-13 |  Mickael "PAPAMICA" Asseline |
 | ✅ | [audacity](https://www.audacityteam.org/ ) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
 | ✅ | [babybuddy](https://github.com/babybuddy/babybuddy) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |

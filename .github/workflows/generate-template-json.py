@@ -51,6 +51,9 @@ for filename in sorted(glob.glob("composes-files/*.y*ml")):
                     title = data[1]
                     dataset[data[0]] = title
                     dataset["name"] = title
+                elif data[0] == "logo":
+                    logo = data[1]
+                    dataset[data[0]] = logo
                 else:
                     dataset[data[0]] = data[1]
             if re.search('# Update:', line):
@@ -87,7 +90,7 @@ for filename in sorted(glob.glob("composes-files/*.y*ml")):
             dataset["env"] = env
             templates.append(dataset)
             print (f" ✅ {filename} ")
-            SERVICES=SERVICES + f"\n| ✅ | [{file_name}]({link}) | {date} | {maintainer} |"
+            SERVICES=SERVICES + f'\n| ✅ | <img src="{logo}" alt="{file_name}" width="20"/> [{file_name}]({link}) | {date} | {maintainer} |'
             nb_a += 1
             
         else:

@@ -38,7 +38,7 @@ services:
     depends_on:
       - $SERVICE-db
     healthcheck:
-      test: wget -nv -t1 --spider 'http://localhost:80'
+      test: curl --fail http://localhost:80 || exit 1
       interval: 1m
       timeout: 30s
       retries: 3

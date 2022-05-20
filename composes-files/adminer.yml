@@ -24,7 +24,7 @@ services:
     environment:
       - ADMINER_DESIGN='hydra'
     healthcheck:
-      test: curl --fail http://localhost:80 || exit 1
+      test: curl --fail http://localhost:8080 || exit 1
       interval: 1m
       timeout: 30s
       retries: 3
@@ -35,7 +35,7 @@ services:
       - "traefik.enable=true"
       - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
       - "traefik.http.routers.$SERVICE.tls.certresolver=http"
-      - "traefik.http.services.$SERVICE.loadbalancer.server.port=80"
+      - "traefik.http.services.$SERVICE.loadbalancer.server.port=8080"
       - "traefik.docker.network=$NETWORK"
 networks:
   default:

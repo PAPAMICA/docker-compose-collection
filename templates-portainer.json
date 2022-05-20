@@ -2679,6 +2679,49 @@
         },
         {
             "type": 3,
+            "title": "Uptime Kuma",
+            "name": "Uptime Kuma",
+            "description": "Alternative to Uptime Robot",
+            "note": "Website: <a href='https://github.com/louislam/uptime-kuma' target='_blank' rel='noopener'>Github.com</a>",
+            "categories": [
+                "SelfHosted",
+                "Monitoring",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://github.com/louislam/uptime-kuma/raw/master/public/icon.svg",
+            "repository": {
+                "stackfile": "composes-files/uptime-kuma.yml",
+                "url": "https://github.com/PAPAMICA/docker-compose-collection"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "uptime"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service URL",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
+                }
+            ]
+        },
+        {
+            "type": 3,
             "title": "Vaultwarden",
             "name": "Vaultwarden",
             "description": "Password manager",

@@ -37,7 +37,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 
 
 ## List of services availables:
-<img src="https://img.shields.io/badge/Avaibles:_58-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
+<img src="https://img.shields.io/badge/Avaibles:_59-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
 
 | Status | Service | Update | Maintainer |
 |:--:|--|--|--|
@@ -92,6 +92,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | ✅ | <img src="https://ts-n.net/graphics/tsn_logo.png" alt="ts3rank" width="20"/> [ts3rank](https://ts-ranksystem.com/) | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://tsweb.papamica.com/img/icons/defaulticon-64.png" alt="ts3viewer" width="20"/> [ts3viewer](https://github.com/Wruczek/ts-website) | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://img.stackshare.io/service/20837/umami.png" alt="umami" width="20"/> [umami](https://umami.is/) | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| ✅ | <img src="https://github.com/louislam/uptime-kuma/raw/master/public/icon.svg" alt="uptime-kuma" width="20"/> [uptime-kuma](https://github.com/louislam/uptime-kuma) | 2022-05-21 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://upload.wikimedia.org/wikipedia/commons/0/03/Bitwarden_Logo.png" alt="vaultwarden" width="20"/> [vaultwarden](https://github.com/dani-garcia/vaultwarden) | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/2048px-Visual_Studio_Code_1.35_icon.svg.png" alt="vscode" width="20"/> [vscode](https://github.com/coder/code-server) | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="http://assets.stickpng.com/thumbs/5847f5bdcef1014c0b5e489c.png" alt="website-html" width="20"/> [website-html](https://github.com/LavoWeb/Docker) | 2022-05-10 |  Mickael "PAPAMICA" Asseline |

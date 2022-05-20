@@ -1745,7 +1745,7 @@
                     "name": "SERVICE",
                     "label": "Name of the service ",
                     "description": "No spaces or points",
-                    "default": "jellyfin"
+                    "default": "organizr"
                 },
                 {
                     "name": "DATA_LOCATION",

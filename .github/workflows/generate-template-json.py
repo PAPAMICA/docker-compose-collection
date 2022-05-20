@@ -11,6 +11,7 @@ SERVICES="|:--:|--|--|--|"
 SERVICES_TODO="|:--:|--|"
 try:
     os.remove("./templates-portainer.json") 
+    os.remove("./README.md") 
 except:
     print ("file don't exist")
 result = {}

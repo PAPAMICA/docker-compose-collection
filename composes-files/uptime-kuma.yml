@@ -1,0 +1,43 @@
+# Maintainer: Mickael "PAPAMICA" Asseline
+# Update: 2022-05-21
+
+#& type: 3
+#& title: Uptime Kuma
+#& description: Alternative to Uptime Robot
+#& note: Website: <a href='https://github.com/louislam/uptime-kuma' target='_blank' rel='noopener'>Github.com</a>
+#& categories: SelfHosted, Monitoring, PAPAMICA
+#& platform: linux
+#& logo: https://github.com/louislam/uptime-kuma/raw/master/public/icon.svg
+
+#% SERVICE: Name of the service (No spaces or points) [uptime]
+#% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
+#% URL: Service URL (Example: service.papamica.fr or service.com)
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
+
+
+# Work with Portainer
+services:
+  uptime:
+    image: louislam/uptime-kuma:latest
+    container_name: uptime
+    restart: always
+    volumes:
+      - /$DATA_LOCATION/$SERVICE/:/app/data
+    environment:
+      - PUID=1000
+      - PGID=1000
+    networks:
+      - default
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+      - "traefik.enable=true"
+      - "traefik.http.routers.uptime.rule=Host(`$URL`)"
+      - "traefik.http.routers.uptime.tls.certresolver=http"
+      - "traefik.http.services.uptime.loadbalancer.server.port=3001"
+      - "traefik.docker.network=$NETWORK"
+
+
+networks:
+  default:
+    external:
+      name: $NETWORK

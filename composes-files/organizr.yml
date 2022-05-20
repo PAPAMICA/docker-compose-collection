@@ -9,7 +9,7 @@
 #& platform: linux
 #& logo: https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/organizr-icon.png
 
-#% SERVICE: Name of the service (No spaces or points) [jellyfin]
+#% SERVICE: Name of the service (No spaces or points) [organizr]
 #% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
 #% URL: Service URL (Example: service.papamica.fr or service.com)
 #% NETWORK: Your Traefik network (Example: proxy) [proxy]
@@ -18,8 +18,8 @@
 
 # Work with Portainer
 services:
-  jellyfin:
-    image: linuxserver/jellyfin:latest
+  organizr:
+    image: linuxserver/organizr:latest
     container_name: $SERVICE
     restart: always
     volumes:

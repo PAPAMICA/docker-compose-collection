@@ -37,7 +37,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 
 
 ## List of services availables:
-<img src="https://img.shields.io/badge/Avaibles:_60-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
+<img src="https://img.shields.io/badge/Avaibles:_61-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
 
 | Status | Service | Update | Maintainer |
 |:--:|--|--|--|
@@ -76,6 +76,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | ✅ | <img src="https://www.olivetin.app/resources/images/logo.png" alt="olivetin" width="20"/> [olivetin](https://www.olivetin.app/) | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/ombi.png" alt="ombi" width="20"/> [ombi](https://ombi.io/) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/organizr-icon.png" alt="organizr" width="20"/> [organizr](https://organizr.app/) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
+| ✅ | <img src="https://www.saashub.com/images/app/service_logos/157/gc1s8radswwz/large.png?1600268255" alt="outline" width="20"/> [outline](https://www.getoutline.com/) | 2022-05-23 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://overseerr.dev/_next/image?url=%2Fos_logo_filled.svg&w=48&q=75" alt="overseerr" width="20"/> [overseerr](https://overseerr.dev/) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://www.plex.tv/wp-content/uploads/2018/01/pmp-icon-1.png" alt="plex" width="20"/> [plex](https://www.plex.tv) | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://prowlarr.com/logo/256.png" alt="prowlarr" width="20"/> [prowlarr](https://github.com/Prowlarr/Prowlarr) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
@@ -103,7 +104,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | ✅ | <img src="https://juliebarbaroux.tech/wp-content/uploads/2020/11/zabbix.png" alt="zabbix" width="20"/> [zabbix](https://www.zabbix.com/) | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
 
 ## List of services to do:
-<img src="https://img.shields.io/badge/To_do:_120-%23FF8800.svg?style=for-the-badge&logo=vlcmediaplayer&logoColor=white">
+<img src="https://img.shields.io/badge/To_do:_119-%23FF8800.svg?style=for-the-badge&logo=vlcmediaplayer&logoColor=white">
 
 | Status | Service |
 |:--:|--|
@@ -164,7 +165,6 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | 🚸 | octoprint |
 | 🚸 | openvpn-as |
 | 🚸 | openvpn |
-| 🚸 | outline |
 | 🚸 | owncoud |
 | 🚸 | paperless-ng |
 | 🚸 | papermerge |

@@ -372,7 +372,6 @@
             "note": "Website: <a href='https://dashy.to/' target='_blank' rel='noopener'>Dashy.to</a>",
             "categories": [
                 "SelfHosted",
-                "Database",
                 "PAPAMICA"
             ],
             "platform": "linux",
@@ -1812,6 +1811,74 @@
                     "label": "Time zone ",
                     "description": "Exemple: Europe/Paris",
                     "default": "Europe/Paris"
+                }
+            ]
+        },
+        {
+            "type": 3,
+            "title": "Outline",
+            "name": "Outline",
+            "description": "A fast, collaborative, knowledge base for your team built using React and Node.js. (Like Notion)",
+            "note": "Website: <a href='https://www.getoutline.com/' target='_blank' rel='noopener'>GetOutline.com</a>",
+            "categories": [
+                "SelfHosted",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://www.saashub.com/images/app/service_logos/157/gc1s8radswwz/large.png?1600268255",
+            "repository": {
+                "stackfile": "composes-files/outline.yml",
+                "url": "https://github.com/PAPAMICA/docker-compose-collection"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "outline"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service URL",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
+                },
+                {
+                    "name": "DB_USER",
+                    "label": "Database user ",
+                    "description": "No spaces or points",
+                    "default": "outline"
+                },
+                {
+                    "name": "DB_PASSWORD",
+                    "label": "Database user password"
+                },
+                {
+                    "name": "SECRET_KEY",
+                    "label": "Secret Key",
+                    "description": "Use `openssl rand -hex 32`"
+                },
+                {
+                    "name": "UTILS_SECRET",
+                    "label": "Utils secret",
+                    "description": "Use `openssl rand -hex 32`"
+                },
+                {
+                    "name": "DEFAULT_LANGUAGE",
+                    "label": "Default language ",
+                    "description": "Example: fr_FR",
+                    "default": "fr_FR"
                 }
             ]
         },

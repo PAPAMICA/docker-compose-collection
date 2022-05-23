@@ -366,6 +366,49 @@
         },
         {
             "type": 3,
+            "title": "Dashy",
+            "name": "Dashy",
+            "description": "Personnal dashboard",
+            "note": "Website: <a href='https://dashy.to/' target='_blank' rel='noopener'>Dashy.to</a>",
+            "categories": [
+                "SelfHosted",
+                "Database",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://camo.githubusercontent.com/6c0964f4604a6807c263c83fff293258a908bdff7587910976d11c4e67a589bb/68747470733a2f2f692e6962622e636f2f796862743643592f64617368792e706e67",
+            "repository": {
+                "stackfile": "composes-files/dashy.yml",
+                "url": "https://github.com/PAPAMICA/docker-compose-collection"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "dashy"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service URL",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
+                }
+            ]
+        },
+        {
+            "type": 3,
             "title": "Deluge",
             "name": "Deluge",
             "description": "Webinterface for download torrents.",

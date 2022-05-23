@@ -6,7 +6,7 @@
 #& title: Dashy
 #& description: Personnal dashboard
 #& note: Website: <a href='https://dashy.to/' target='_blank' rel='noopener'>Dashy.to</a>
-#& categories: SelfHosted, Database, PAPAMICA
+#& categories: SelfHosted, PAPAMICA
 #& platform: linux
 #& logo: https://camo.githubusercontent.com/6c0964f4604a6807c263c83fff293258a908bdff7587910976d11c4e67a589bb/68747470733a2f2f692e6962622e636f2f796862743643592f64617368792e706e67
 
@@ -20,7 +20,7 @@ version: "3.8"
 services:
   dashy:
     image: lissy93/dashy:latest
-    container_name: dashboard
+    container_name: $SERVICE
     volumes:
       - $DATA_LOCATION/$SERVICE/conf.yml:/app/public/conf.yml
     environment:

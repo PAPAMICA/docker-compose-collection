@@ -1,0 +1,145 @@
+# Maintainer: Mickael "PAPAMICA" Asseline
+# Update: 2022-05-23
+
+
+#& type: 3
+#& title: Outline
+#& description: A fast, collaborative, knowledge base for your team built using React and Node.js. (Like Notion)
+#& note: Website: <a href='https://www.getoutline.com/' target='_blank' rel='noopener'>GetOutline.com</a>
+#& categories: SelfHosted, PAPAMICA
+#& platform: linux
+#& logo: https://www.saashub.com/images/app/service_logos/157/gc1s8radswwz/large.png?1600268255
+
+#% SERVICE: Name of the service (No spaces or points) [outline]
+#% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
+#% URL: Service URL (Example: service.papamica.fr or service.com)
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
+#% DB_USER: Database user (No spaces or points) [outline]
+#% DB_PASSWORD: Database user password
+#% SECRET_KEY: Secret Key (Use `openssl rand -hex 32`)
+#% UTILS_SECRET: Utils secret (Use `openssl rand -hex 32`)
+#% DEFAULT_LANGUAGE: Default language (Example: fr_FR) [fr_FR]
+
+# Work with Portainer
+version: "3"
+services:
+  redis:
+    image: redis
+    restart: always
+    container_name: $SERVICE-redis
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+    networks:
+      - default
+    healthcheck:
+      test: ["CMD", "redis-cli","ping"]
+
+  postgres:
+    container_name: $SERVICE-db
+    image: postgres
+    environment:
+      POSTGRES_USER: $DB_USER
+      POSTGRES_PASSWORD: $DB_PASSWORD
+      POSTGRES_DB: $SERVICE
+    restart: always
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $DB_USER"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+    networks:
+      - default
+
+  s3:
+    image: lphoward/fake-s3
+    restart: always
+    container_name: $SERVICE-s3
+    volumes:
+      - $DATA_LOCATION/$SERVICE/data:/fakes3_root
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+    networks:
+      - default
+
+  outline:
+    image: outlinewiki/outline
+    restart: always
+    container_name: $SERVICE
+    environment:
+    # -- General configuration -- #
+      - SECRET_KEY=$SECRET_KEY
+      - UTILS_SECRET=$UTILS_SECRET
+      - DATABASE_URL=postgres://$DB_USER:$DB_PASSWORD@$SERVICE-db:5432/$SERVICE
+      - REDIS_URL=redis://$SERVICE-redis:6479
+      - DEFAULT_LANGUAGE=$DEFAULT_LANGUAGE
+      #- COLLABORATION_URL=
+      - FORCE_HTTPS=true
+      - ENABLE_UPDATES=true
+      #- TEAM_LOGO=https://example.com/images/logo.png
+
+    # -- AWS configuration -- #
+      #- AWS_ACCESS_KEY_ID=get_a_key_from_aws
+      #- AWS_SECRET_ACCESS_KEY=get_the_secret_of_above_key
+      #- AWS_REGION=xx-xxxx-x
+      #- AWS_S3_ACCELERATE_URL=
+      - AWS_S3_UPLOAD_BUCKET_URL=http://$SERVICE-s3:4569
+      - AWS_S3_UPLOAD_BUCKET_NAME=$SERVICE
+      - AWS_S3_UPLOAD_MAX_SIZE=26214400
+      - AWS_S3_FORCE_PATH_STYLE=true
+      - AWS_S3_ACL=private
+
+    # -- Slack configuration -- #
+      #- SLACK_CLIENT_ID=get_a_key_from_slack
+      #- SLACK_CLIENT_SECRET=get_the_secret_of_above_key
+      #- SLACK_APP_ID=A0XXXXXXX
+      #- SLACK_MESSAGE_ACTIONS=true
+
+    # -- Google configuration -- #
+      #- GOOGLE_CLIENT_ID=
+      #- GOOGLE_CLIENT_SECRET=
+
+    # -- Azure configuration -- #
+      #- AZURE_CLIENT_ID=
+      #- AZURE_CLIENT_SECRET=
+      #- AZURE_RESOURCE_APP_ID=
+
+    # -- OIDC configuration -- #
+      #- OIDC_CLIENT_ID=
+      #- OIDC_CLIENT_SECRET=
+      #- OIDC_AUTH_URI=
+      #- OIDC_TOKEN_URI=
+      #- OIDC_USERINFO_URI=
+      #- OIDC_USERNAME_CLAIM=preferred_username``
+      #- OIDC_DISPLAY_NAME=OpenID
+      #- OIDC_SCOPES=openid profile email
+
+    # -- SMTP configuration -- #
+      #- SMTP_HOST=
+      #- SMTP_PORT=
+      #- SMTP_USERNAME=
+      #- SMTP_PASSWORD=
+      #- SMTP_FROM_EMAIL=
+      #- SMTP_REPLY_EMAIL=
+      #- SMTP_TLS_CIPHERS=
+      #- SMTP_SECURE=true
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+      - "traefik.enable=true"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
+      - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+      - "traefik.http.services.$SERVICE.loadbalancer.server.port=3000"
+      - "traefik.docker.network=$NETWORK"
+    networks:
+      - default
+    healthcheck:
+      test: curl --connect-timeout 15 --max-time 100 --silent --show-error --fail "http://localhost:3000" > /dev/null
+      interval: 1m
+      timeout: 30s
+      retries: 3
+
+networks:
+  default:
+    external:
+      name: $NETWORK

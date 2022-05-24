@@ -5,7 +5,7 @@
 #& type: 3
 #& title: Outline
 #& description: A fast, collaborative, knowledge base for your team built using React and Node.js. (Like Notion)
-#& note: Website: <a href='https://www.getoutline.com/' target='_blank' rel='noopener'>GetOutline.com</a></br></br>After first run, comment line <code>175</code> and configure your authentification.
+#& note: Website: <a href='https://www.getoutline.com/' target='_blank' rel='noopener'>GetOutline.com</a></br></br>After first run, comment line <code>188</code> and configure your authentification.
 #& categories: SelfHosted, PAPAMICA
 #& platform: linux
 #& logo: https://www.saashub.com/images/app/service_logos/157/gc1s8radswwz/large.png?1600268255
@@ -89,8 +89,8 @@ services:
       - "traefik.http.routers.$SERVICE-bucket.tls.certresolver=http"
       - "traefik.http.services.$SERVICE-bucket.loadbalancer.server.port=9000"
       - "traefik.http.services.$SERVICE-bucket.loadbalancer.passhostheader=true"
-      - "traefik.docker.network=$NETWORK"      
-  
+      - "traefik.docker.network=$NETWORK"     
+
   createbuckets:
     image: minio/mc
     container_name: $SERVICE-createbuckets

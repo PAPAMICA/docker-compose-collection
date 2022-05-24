@@ -1,11 +1,11 @@
 # Maintainer: Mickael "PAPAMICA" Asseline
-# Update: 2022-05-23
+# Update: 2022-05-24
 
 
 #& type: 3
 #& title: Outline
 #& description: A fast, collaborative, knowledge base for your team built using React and Node.js. (Like Notion)
-#& note: Website: <a href='https://www.getoutline.com/' target='_blank' rel='noopener'>GetOutline.com</a>
+#& note: Website: <a href='https://www.getoutline.com/' target='_blank' rel='noopener'>GetOutline.com</a></br></br>After first run, comment line <code>175</code> and configure your authentification.
 #& categories: SelfHosted, PAPAMICA
 #& platform: linux
 #& logo: https://www.saashub.com/images/app/service_logos/157/gc1s8radswwz/large.png?1600268255
@@ -16,9 +16,12 @@
 #% NETWORK: Your Traefik network (Example: proxy) [proxy]
 #% DB_USER: Database user (No spaces or points) [outline]
 #% DB_PASSWORD: Database user password
-#% SECRET_KEY: Secret Key (Use `openssl rand -hex 32`)
-#% UTILS_SECRET: Utils secret (Use `openssl rand -hex 32`)
+#% SECRET_KEY: Outline secret Key (Use: openssl rand -hex 32)
+#% UTILS_SECRET: Outline utils secret (Use: openssl rand -hex 32)
 #% DEFAULT_LANGUAGE: Default language (Example: fr_FR) [fr_FR]
+#% URL_MINIO: URL for your S2 storage API (Example: s3.papamica.com)
+#% MINIO_ACCESS_KEY: Minio access key (Use: openssl rand -hex 8)
+#% MINIO_SECRET_KEY: Minio secret key (Use: openssl rand -hex 32)
 
 # Work with Portainer
 version: "3"
@@ -49,19 +52,45 @@ services:
       retries: 5
     labels:
       - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+    volumes:
+      - $DATA_LOCATION/$SERVICE/db:/var/lib/postgresql/data
     networks:
       - default
 
-  s3:
-    image: lphoward/fake-s3
-    restart: always
-    container_name: $SERVICE-s3
+  storage:
+    image: minio/minio
+    container_name: $SERVICE-minio
+    entrypoint: sh
+    command: -c 'minio server /data --console-address ":43579"'
+    deploy:
+      restart_policy:
+        condition: on-failure
     volumes:
-      - $DATA_LOCATION/$SERVICE/data:/fakes3_root
-    labels:
-      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+      - $DATA_LOCATION/$SERVICE/data:/data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
     networks:
       - default
+    environment:
+      - MINIO_ACCESS_KEY=a8af1e4c45b8f9c9
+      - MINIO_SECRET_KEY=233809b4bc82e9e7fdd39bd4709a73b26f8850e87ec4f046b53fa5078ccbd55f
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+      - "traefik.enable=true"
+      # Console
+      #- "traefik.http.routers.$SERVICE-minio.rule=Host(`test.papamica.com`)"
+      #- "traefik.http.routers.$SERVICE-minio.tls.certresolver=http"
+      #- "traefik.http.services.$SERVICE-minio.loadbalancer.server.port=43579"
+      # API
+      - "traefik.http.routers.$SERVICE-bucket.rule=Host(`$URL_MINIO`)"
+      - "traefik.http.routers.$SERVICE-bucket.tls.certresolver=http"
+      - "traefik.http.services.$SERVICE-bucket.loadbalancer.server.port=9000"
+      - "traefik.http.services.$SERVICE-bucket.loadbalancer.passhostheader=true"
+      
+      - "traefik.docker.network=$NETWORK"
 
   outline:
     image: outlinewiki/outline
@@ -69,32 +98,35 @@ services:
     container_name: $SERVICE
     environment:
     # -- General configuration -- #
+      - URL=https://$URL
       - SECRET_KEY=$SECRET_KEY
       - UTILS_SECRET=$UTILS_SECRET
-      - DATABASE_URL=postgres://$DB_USER:$DB_PASSWORD@$SERVICE-db:5432/$SERVICE
-      - REDIS_URL=redis://$SERVICE-redis:6479
+      - DATABASE_URL=postgres://$DB_USER:$DB_PASSWORD@$SERVICE-db/$SERVICE
+      - PGSSLMODE=disable
+      - REDIS_URL=redis://$SERVICE-redis
       - DEFAULT_LANGUAGE=$DEFAULT_LANGUAGE
       #- COLLABORATION_URL=
-      - FORCE_HTTPS=true
-      - ENABLE_UPDATES=true
+      - FORCE_HTTPS=false
+      #- ENABLE_UPDATES=true
       #- TEAM_LOGO=https://example.com/images/logo.png
 
     # -- AWS configuration -- #
-      #- AWS_ACCESS_KEY_ID=get_a_key_from_aws
-      #- AWS_SECRET_ACCESS_KEY=get_the_secret_of_above_key
-      #- AWS_REGION=xx-xxxx-x
+      - AWS_ACCESS_KEY_ID=$MINIO_ACCESS_KEY
+      - AWS_SECRET_ACCESS_KEY=$MINIO_SECRET_KEY
+      - AWS_REGION=xx-xxxxx-x
       #- AWS_S3_ACCELERATE_URL=
-      - AWS_S3_UPLOAD_BUCKET_URL=http://$SERVICE-s3:4569
-      - AWS_S3_UPLOAD_BUCKET_NAME=$SERVICE
+      - AWS_S3_UPLOAD_BUCKET_URL=$URL_MINIO
+      - AWS_S3_UPLOAD_BUCKET_NAME=outline
       - AWS_S3_UPLOAD_MAX_SIZE=26214400
       - AWS_S3_FORCE_PATH_STYLE=true
       - AWS_S3_ACL=private
 
     # -- Slack configuration -- #
-      #- SLACK_CLIENT_ID=get_a_key_from_slack
-      #- SLACK_CLIENT_SECRET=get_the_secret_of_above_key
-      #- SLACK_APP_ID=A0XXXXXXX
+      #- SLACK_CLIENT_ID=
+      #- SLACK_CLIENT_SECRET=
+      #- SLACK_APP_ID=
       #- SLACK_MESSAGE_ACTIONS=true
+      #- SLACK_VERIFICATION_TOKEN=
 
     # -- Google configuration -- #
       #- GOOGLE_CLIENT_ID=
@@ -131,13 +163,16 @@ services:
       - "traefik.http.routers.$SERVICE.tls.certresolver=http"
       - "traefik.http.services.$SERVICE.loadbalancer.server.port=3000"
       - "traefik.docker.network=$NETWORK"
+    depends_on:
+      storage:
+        condition: service_started
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
     networks:
       - default
-    healthcheck:
-      test: curl --connect-timeout 15 --max-time 100 --silent --show-error --fail "http://localhost:3000" > /dev/null
-      interval: 1m
-      timeout: 30s
-      retries: 3
+    command: sh -c "yarn sequelize db:migrate --env=production-ssl-disabled"
 
 networks:
   default:

@@ -89,7 +89,21 @@ services:
       - "traefik.http.routers.$SERVICE-bucket.tls.certresolver=http"
       - "traefik.http.services.$SERVICE-bucket.loadbalancer.server.port=9000"
       - "traefik.http.services.$SERVICE-bucket.loadbalancer.passhostheader=true"
-      - "traefik.docker.network=$NETWORK"
+      - "traefik.docker.network=$NETWORK"      
+  
+  createbuckets:
+    image: minio/mc
+    container_name: $SERVICE-createbuckets
+    depends_on:
+      - storage
+    entrypoint: >
+      /bin/sh -c "
+      /usr/bin/mc config host add myminio https://$URL_MINIO $MINIO_ACCESS_KEY $MINIO_SECRET_KEY;
+      /usr/bin/mc mb myminio/outline-data;
+      /usr/bin/mc policy readwrite myminio/outline-data;
+      exit 0;"
+    networks:
+      - default
 
   outline:
     image: outlinewiki/outline
@@ -115,7 +129,7 @@ services:
       - AWS_REGION=xx-xxxxx-x
       #- AWS_S3_ACCELERATE_URL=
       - AWS_S3_UPLOAD_BUCKET_URL=$URL_MINIO
-      - AWS_S3_UPLOAD_BUCKET_NAME=outline
+      - AWS_S3_UPLOAD_BUCKET_NAME=outline-data
       - AWS_S3_UPLOAD_MAX_SIZE=26214400
       - AWS_S3_FORCE_PATH_STYLE=true
       - AWS_S3_ACL=private

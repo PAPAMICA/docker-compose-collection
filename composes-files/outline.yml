@@ -89,7 +89,7 @@ services:
       - "traefik.http.routers.$SERVICE-bucket.tls.certresolver=http"
       - "traefik.http.services.$SERVICE-bucket.loadbalancer.server.port=9000"
       - "traefik.http.services.$SERVICE-bucket.loadbalancer.passhostheader=true"
-      - "traefik.docker.network=$NETWORK"     
+      - "traefik.docker.network=$NETWORK"
 
   createbuckets:
     image: minio/mc

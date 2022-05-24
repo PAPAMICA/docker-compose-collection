@@ -75,8 +75,8 @@ services:
     networks:
       - default
     environment:
-      - MINIO_ACCESS_KEY=a8af1e4c45b8f9c9
-      - MINIO_SECRET_KEY=233809b4bc82e9e7fdd39bd4709a73b26f8850e87ec4f046b53fa5078ccbd55f
+      - MINIO_ACCESS_KEY=$MINIO_ACCESS_KEY
+      - MINIO_SECRET_KEY=$MINIO_SECRET_KEY
     labels:
       - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
       - "traefik.enable=true"

@@ -39,9 +39,9 @@ services:
     labels:
       - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
       - "traefik.enable=true"
-      - "traefik.http.routers.dashboard-secure.rule=Host(`$URL`)"
-      - "traefik.http.routers.dashboard-secure.tls=true"
-      - "traefik.http.routers.dashboard-secure.tls.certresolver=http"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
+      - "traefik.http.routers.$SERVICE.tls=true"
+      - "traefik.http.routers.$SERVICE.tls.certresolver=http"
       - "traefik.docker.network=$NETWORK"
 
 networks:

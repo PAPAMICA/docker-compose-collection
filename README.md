@@ -37,12 +37,13 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 
 
 ## List of services availables:
-<img src="https://img.shields.io/badge/Avaibles:_61-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
+<img src="https://img.shields.io/badge/Avaibles:_62-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
 
 | Status | Service | Update | Maintainer |
 |:--:|--|--|--|
 | ✅ | <img src="https://git.spip.net/repo-avatars/1417-1f8a32370f4028c9c0c216787ad4916c" alt="adminer" width="20"/> [adminer](https://www.adminer.org/) | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://warehouse-camo.ingress.cmh1.psfhosted.org/a22d9206f80dfbb10748b6764fee932ff0ae1a8f/687474703a2f2f7265706f2e6e75787265662e636f6d2f7075622f696d672f6c6f676f2d617070726973652e706e67" alt="apprise-api" width="20"/> [apprise-api](https://github.com/caronc/apprise-api) | 2022-05-13 |  Mickael "PAPAMICA" Asseline |
+| ✅ | <img src="https://cdn-icons-png.flaticon.com/512/4773/4773193.png" alt="audacity copy" width="20"/> [audacity copy](https://github.com/willfarrell/docker-autoheal) | 2022-05-28 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/audacity-logo.png" alt="audacity" width="20"/> [audacity](https://www.audacityteam.org/ ) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://github.com/linuxserver/docker-templates/raw/master/linuxserver.io/img/babybuddy-logo.png" alt="babybuddy" width="20"/> [babybuddy](https://github.com/babybuddy/babybuddy) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/bazarr.png" alt="bazarr" width="20"/> [bazarr](https://www.bazarr.media/) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
@@ -104,12 +105,13 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | ✅ | <img src="https://juliebarbaroux.tech/wp-content/uploads/2020/11/zabbix.png" alt="zabbix" width="20"/> [zabbix](https://www.zabbix.com/) | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
 
 ## List of services to do:
-<img src="https://img.shields.io/badge/To_do:_119-%23FF8800.svg?style=for-the-badge&logo=vlcmediaplayer&logoColor=white">
+<img src="https://img.shields.io/badge/To_do:_120-%23FF8800.svg?style=for-the-badge&logo=vlcmediaplayer&logoColor=white">
 
 | Status | Service |
 |:--:|--|
 | 🚸 | Invidious |
 | 🚸 | authelia |
+| 🚸 | autoheal |
 | 🚸 | cachethq |
 | 🚸 | calibre-web |
 | 🚸 | cyberchef |

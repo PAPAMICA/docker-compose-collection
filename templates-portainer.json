@@ -82,6 +82,38 @@
         },
         {
             "type": 3,
+            "title": "Autoheal",
+            "name": "Autoheal",
+            "description": "Restart your container when unhealthy",
+            "note": "Website: <a href='https://github.com/willfarrell/docker-autoheal' target='_blank' rel='noopener'>Github.com</a>",
+            "categories": [
+                "SelfHosted",
+                "Docker",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://cdn-icons-png.flaticon.com/512/4773/4773193.png",
+            "repository": {
+                "stackfile": "composes-files/audacity copy.yml",
+                "url": "https://github.com/PAPAMICA/docker-compose-collection"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "autoheal"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
+                }
+            ]
+        },
+        {
+            "type": 3,
             "title": "Audacity",
             "name": "Audacity",
             "description": "Audacity is an easy-to-use, multi-track audio editor and recorder. Developed by a group of volunteers as open source.",

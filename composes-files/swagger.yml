@@ -24,8 +24,8 @@ services:
     restart: always
     volumes:
       - $DATA_LOCATION/$SERVICE/doc:/usr/share/nginx/html/doc
-   environment:
-      API_URL: $API_URL
+    environment:
+      - "API_URL=$API_URL"
     networks:
       - default
     healthcheck:

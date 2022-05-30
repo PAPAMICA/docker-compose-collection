@@ -35,7 +35,7 @@ services:
     depends_on:
       - lime-db
     healthcheck:
-      test: curl --connect-timeout 15 --max-time 100 --silent --show-error --fail "http://localhost:80" > /dev/null
+      test: curl --connect-timeout 15 --max-time 100 --silent --show-error --fail "http://localhost:8080" > /dev/null
       interval: 1m
       timeout: 30s
       retries: 3
@@ -46,6 +46,7 @@ services:
       - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
       - "traefik.http.routers.$SERVICE.tls=true"
       - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+      - "traefik.http.services.$SERVICE.loadbalancer.server.port=8080"
       - "traefik.docker.network=$NETWORK"
     networks:
       - default

@@ -15,6 +15,18 @@
 #% NETWORK: Your Traefik network (Example: proxy) [proxy]
 #% TYPE: Type of server (VANILLA/FORGE/FABRIC/QUILT/SPIGOT/etc...) [VANILLA]
 #% VERSION: Version of server (LATEST/SNAPSHOT/1.7.8/x.x.x) [LATEST]
+#% PORT: Port of server (Default: 25565) [25565]
+#% MOTD: MOTD (Description) [Minecraft server powered by §l§cPAPAMICA§r]
+#% MODE: Game mode (creative/survival/adventure/spectator) [survival]
+#% DIFFICULTY: Difficulty (peaceful/easy/normal/hard) [normal]
+#% OPS: Admin users (OP) [PAPAMICA]
+#% MAX_PLAYERS: Max players (Number) [20]
+#% ALLOW_NETHER: Allow Nether (True/False) [True]
+#% ENABLE_COMMAND_BLOCK: Enable command blok (True/False) [True]
+#% HARDCORE: Enable hardcore (True/False) [False]
+#% PVP: Enable PVP (True/False) [True]
+#% ONLINE_MODE: Enable Online mode (True/False) [True]
+
 
 # Work with Portainer
 version: "2"
@@ -29,17 +41,24 @@ services:
       - "TYPE=$TYPE"
       - "VERSION=$VERSION"
       - "EULA=TRUE"
+      - "OVERRIDE_SERVER_PROPERTIES=true"
+      - MOTD="$MOTD"
+      - DIFFICULTY=$DIFFICULTY
+      - OPS=$OPS
+      - MAX_PLAYERS=$MAX_PLAYERS
+      - ALLOW_NETHER=$ALLOW_NETHER
+      - ENABLE_COMMAND_BLOCK=$ENABLE_COMMAND_BLOCK
+      - HARDCORE=$HARDCORE
+      - MODE=$MODE
+      - PVP=$PVP
+      - ONLINE_MODE=$ONLINE_MODE
+      - PORT=$PORT
     networks:
       - default
+    ports:
+      - $PORT:$PORT
     labels:
       - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
-      - "traefik.enable=true"
-      - "traefik.http.routers.$SERVICE.entrypoints=https"
-      - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
-      - "traefik.http.routers.$SERVICE.tls=true"
-      - "traefik.http.routers.$SERVICE.tls.certresolver=http"
-      - "traefik.http.services.$SERVICE.loadbalancer.server.port=25565"
-      - "traefik.docker.network=$NETWORK"
 
 networks:
   default:

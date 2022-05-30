@@ -1520,6 +1520,61 @@
         },
         {
             "type": 3,
+            "title": "Minecraft Java server",
+            "name": "Minecraft Java server",
+            "description": "Minecraft server for Java edition.",
+            "note": "Website: <a href='https://github.com/itzg/docker-minecraft-server' target='_blank' rel='noopener'>Github.com</a>",
+            "categories": [
+                "SelfHosted",
+                "Game",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://i.pinimg.com/originals/9c/b1/d1/9cb1d1a9eb6575147d6990e2700fb75c.png",
+            "repository": {
+                "stackfile": "composes-files/minecraft-java-server.yml",
+                "url": "https://github.com/PAPAMICA/docker-compose-collection"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "minecraft-server"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service URL",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
+                },
+                {
+                    "name": "TYPE",
+                    "label": "Type of server ",
+                    "description": "VANILLA/FORGE/FABRIC/QUILT/SPIGOT/etc...",
+                    "default": "VANILLA"
+                },
+                {
+                    "name": "VERSION",
+                    "label": "Version of server ",
+                    "description": "LATEST/SNAPSHOT/1.7.8/x.x.x",
+                    "default": "LATEST"
+                }
+            ]
+        },
+        {
+            "type": 3,
             "title": "Mumble Bot",
             "name": "Mumble Bot",
             "description": "Bot for Mumble server",

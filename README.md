@@ -37,7 +37,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 
 
 ## List of services availables:
-<img src="https://img.shields.io/badge/Avaibles:_64-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
+<img src="https://img.shields.io/badge/Avaibles:_65-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
 
 | Status | Service | Update | Maintainer |
 |:--:|--|--|--|
@@ -70,6 +70,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | ✅ | <img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Limesurvey_logo.png" alt="limesurvey" width="20"/> [limesurvey](https://github.com/LimeSurvey/LimeSurvey) | 2022-05-30 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://silicondales.com/wp-content/uploads/2021/05/mariadb-square.png" alt="mariadb" width="20"/> [mariadb](https://mariadb.org/) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://cdn1.oxatis.com/Files/112496/Img/16/matomo-new.png" alt="matomo" width="20"/> [matomo](https://fr.matomo.org) | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| ✅ | <img src="https://i.pinimg.com/originals/9c/b1/d1/9cb1d1a9eb6575147d6990e2700fb75c.png" alt="minecraft-java-server" width="20"/> [minecraft-java-server](https://github.com/itzg/docker-minecraft-server) | 2022-05-30 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://blog.natenom.com/wp-content/uploads/2015/11/256px-Logo_mumble-ruby-pluginbot.svg_.png" alt="mumble-bot" width="20"/> [mumble-bot](https://github.com/matthieugrieger/mumbledj) | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://www.pngkey.com/png/full/319-3198756_rainbow-six-siege-mumble-logo-png.png" alt="mumble-web" width="20"/> [mumble-web](https://github.com/Rantanen/mumble-web) | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://www.pngkey.com/png/full/319-3198756_rainbow-six-siege-mumble-logo-png.png" alt="murmur" width="20"/> [murmur](https://www.mumble.com/) | 2022-05-12 |  Mickael "PAPAMICA" Asseline |

@@ -39,7 +39,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 ## List of services availables:
 ##NB_A##
 
-| Status | Service | Update | Maintainer |
+| Status | Service | Website | Update | Maintainer |
 ##SERVICES##
 
 ## List of services to do:

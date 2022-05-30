@@ -26,6 +26,7 @@
 #% HARDCORE: Enable hardcore (True/False) [False]
 #% PVP: Enable PVP (True/False) [True]
 #% ONLINE_MODE: Enable Online mode (True/False) [True]
+#% ENABLE_AUTOPAUSE: Enable autopause (True/False) [True]
 
 
 # Work with Portainer
@@ -53,6 +54,7 @@ services:
       - PVP=$PVP
       - ONLINE_MODE=$ONLINE_MODE
       - PORT=$PORT
+      - ENABLE_AUTOPAUSE=$ENABLE_AUTOPAUSE
     networks:
       - default
     ports:

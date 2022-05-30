@@ -1,0 +1,49 @@
+# Maintainer: Mickael "PAPAMICA" Asseline
+# Update: 2022-05-30
+
+#& type: 3
+#& title: Swagger
+#& description: Simplify API development for users, teams, and enterprises with our open source and professional toolset.
+#& note: Website: <a href='https://swagger.io/' target='_blank' rel='noopener'>Swagger.io</a>
+#& categories: SelfHosted, PAPAMICA
+#& platform: linux
+#& logo: https://upload.wikimedia.org/wikipedia/commons/a/ab/Swagger-logo.png
+
+#% SERVICE: Name of the service (No spaces or points) [swagger]
+#% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
+#% URL: Service URL (Example: service.papamica.fr or service.com)
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
+#% API_URL: Link to your API (openapi.yaml)
+
+# Work with Portainer
+version: "2"
+services:
+  swagger:
+    image: swaggerapi/swagger-ui
+    container_name: $SERVICE
+    restart: always
+    volumes:
+      - $DATA_LOCATION/$SERVICE/doc:/usr/share/nginx/html/doc
+   environment:
+      API_URL: $API_URL
+    networks:
+      - default
+    healthcheck:
+      test: curl --connect-timeout 15 --max-time 100 --silent --show-error --fail "http://localhost:8080" > /dev/null
+      interval: 1m
+      timeout: 30s
+      retries: 3
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+      - "traefik.enable=true"
+      - "traefik.http.routers.$SERVICE.entrypoints=https"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
+      - "traefik.http.routers.$SERVICE.tls=true"
+      - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+      - "traefik.http.services.$SERVICE.loadbalancer.server.port=8080"
+      - "traefik.docker.network=$NETWORK"
+
+networks:
+  default:
+    external:
+      name: $NETWORK

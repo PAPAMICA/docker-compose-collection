@@ -53,7 +53,12 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 ---
 # Utilisation
 ## Portainer
-Add the URL of my repo directly in Portainer:
+Add this URL in Portainer:
+
+```
+https://raw.githubusercontent.com/PAPAMICA/docker-compose-collection/master/templates-portainer.json
+```
+
 ![PORTAINER](https://i.imgur.com/M49ssCN.png)
 
 ## Debian

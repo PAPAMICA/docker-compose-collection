@@ -2532,6 +2532,53 @@
         },
         {
             "type": 3,
+            "title": "Swagger",
+            "name": "Swagger",
+            "description": "Simplify API development for users, teams, and enterprises with our open source and professional toolset.",
+            "note": "Website: <a href='https://swagger.io/' target='_blank' rel='noopener'>Swagger.io</a>",
+            "categories": [
+                "SelfHosted",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Swagger-logo.png",
+            "repository": {
+                "stackfile": "composes-files/swagger.yml",
+                "url": "https://github.com/PAPAMICA/docker-compose-collection"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "swagger"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service URL",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
+                },
+                {
+                    "name": "API_URL",
+                    "label": "Link to your API",
+                    "description": "openapi.yaml"
+                }
+            ]
+        },
+        {
+            "type": 3,
             "title": "Tautulli",
             "name": "Tautulli",
             "description": "Tautulli is a 3rd party application that you can run alongside your Plex Media Server to monitor activity and track various statistics.",

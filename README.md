@@ -37,7 +37,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 
 
 ## List of services availables:
-<img src="https://img.shields.io/badge/Avaibles:_63-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
+<img src="https://img.shields.io/badge/Avaibles:_64-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
 
 | Status | Service | Update | Maintainer |
 |:--:|--|--|--|
@@ -89,6 +89,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | ✅ | <img src="https://flood.js.org/assets/img/logo.png" alt="rutorrent" width="20"/> [rutorrent](https://github.com/Novik/ruTorrent) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://avatars.githubusercontent.com/u/25282695?s=280&v=4" alt="sinusbot" width="20"/> [sinusbot](https://www.sinusbot.com/) | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://forums-sonarr-tv.s3.dualstack.us-east-1.amazonaws.com/original/2X/e/ef4553fe96f04a298ec502279731579698e96a9b.png" alt="sonarr" width="20"/> [sonarr](https://sonarr.tv/) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
+| ✅ | <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Swagger-logo.png" alt="swagger" width="20"/> [swagger](https://swagger.io/) | 2022-05-30 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/tautulli-icon.png" alt="tautulli" width="20"/> [tautulli](https://tautulli.com/) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://upload.wikimedia.org/wikipedia/commons/e/ec/TeamSpeak_logo_renovado.png" alt="teamspeak" width="20"/> [teamspeak](https://teamspeak.com/en/) | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://blog.alterway.fr/images/traefik.logo.png" alt="traefik" width="20"/> [traefik](https://teamspeak.com/en/) | 2022-05-12 |  Mickael "PAPAMICA" Asseline |

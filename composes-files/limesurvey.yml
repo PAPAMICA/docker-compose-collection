@@ -1,0 +1,75 @@
+# Maintainer: Mickael "PAPAMICA" Asseline
+# Update: 2022-05-30
+
+#& type: 3
+#& title: Limesurvey
+#& description: Limesurvey is the number one open-source survey software.
+#& note: Website: <a href='https://github.com/LimeSurvey/LimeSurvey' target='_blank' rel='noopener'>Github.com</a>
+#& categories: SelfHosted, PAPAMICA
+#& platform: linux
+#& logo: https://upload.wikimedia.org/wikipedia/commons/d/d4/Limesurvey_logo.png
+
+#% SERVICE: Name of the service (No spaces or points) [limesurvey]
+#% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
+#% URL: Service URL (Example: service.papamica.fr or service.com)
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
+#% DB_USER: Database user (No spaces or points) [limesurvey]
+#% DB_PASSWORD: Database user password
+#% DB_ROOT_ASSWORD: Database root password
+#% ADMIN_PASSWORD: Admin password
+
+
+# Work with Portainer
+services:
+  limesurvey:
+    image: martialblog/limesurvey
+    container_name: $SERVICE
+    restart: always
+    volumes:
+      - $DATA_LOCATION/$SERVICE/surveys:/var/www/html/upload/surveys
+    environment:
+      - "DB_HOST=$SERVICE-db"
+      - "DB_USER=$DB_USER"
+      - "DB_PASSWORD=$DB_PASSWORD"
+      - "ADMIN_PASSWORD=$ADMIN_PASSWORD"
+    depends_on:
+      - lime-db
+    healthcheck:
+      test: curl --connect-timeout 15 --max-time 100 --silent --show-error --fail "http://localhost:80" > /dev/null
+      interval: 1m
+      timeout: 30s
+      retries: 3
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+      - "traefik.enable=true"
+      - "traefik.http.routers.$SERVICE.entrypoints=https"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
+      - "traefik.http.routers.$SERVICE.tls=true"
+      - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+      - "traefik.docker.network=$NETWORK"
+    networks:
+      - default
+
+  lime-db:
+    image: mysql:5.7
+    container_name: $SERVICE-db
+    restart: always
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
+    environment:
+      - "MYSQL_USER=$DB_USER"
+      - "MYSQL_DATABASE=limesurvey"
+      - "MYSQL_PASSWORD=$DB_PASSWORD"
+      - "MYSQL_ROOT_PASSWORD=$DB_ROOT_ASSWORD"
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+    volumes:
+      - $DATA_LOCATION/$SERVICE/data:/var/lib/mysql
+    networks:
+      - default
+networks:
+  default:
+    external:
+      name: $NETWORK

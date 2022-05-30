@@ -13,7 +13,7 @@
 #% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
 #% URL: Service URL (Example: service.papamica.fr or service.com)
 #% NETWORK: Your Traefik network (Example: proxy) [proxy]
-#% DB_USER: Database user (No spaces or points) [keycloak]
+#% DB_USER: Database user (No spaces or points) [matomo]
 #% DB_PASSWORD: Database user password
 version: "2"
 services:

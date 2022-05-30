@@ -1636,6 +1636,12 @@
                     "label": "Enable Online mode ",
                     "description": "True/False",
                     "default": "True"
+                },
+                {
+                    "name": "ENABLE_AUTOPAUSE",
+                    "label": "Enable autopause ",
+                    "description": "True/False",
+                    "default": "True"
                 }
             ]
         },

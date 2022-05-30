@@ -1,0 +1,47 @@
+# Maintainer: Mickael "PAPAMICA" Asseline
+# Update: 2022-05-30
+
+#& type: 3
+#& title: Minecraft Java server
+#& description: Minecraft server for Java edition.
+#& note: Website: <a href='https://github.com/itzg/docker-minecraft-server' target='_blank' rel='noopener'>Github.com</a>
+#& categories: SelfHosted, Game, PAPAMICA
+#& platform: linux
+#& logo: https://i.pinimg.com/originals/9c/b1/d1/9cb1d1a9eb6575147d6990e2700fb75c.png
+
+#% SERVICE: Name of the service (No spaces or points) [minecraft-server]
+#% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
+#% URL: Service URL (Example: service.papamica.fr or service.com)
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
+#% TYPE: Type of server (VANILLA/FORGE/FABRIC/QUILT/SPIGOT/etc...) [VANILLA]
+#% VERSION: Version of server (LATEST/SNAPSHOT/1.7.8/x.x.x) [LATEST]
+
+# Work with Portainer
+version: "2"
+services:
+  minecraft-server:
+    image: itzg/minecraft-server
+    container_name: $SERVICE
+    restart: always
+    volumes:
+      - $DATA_LOCATION/$SERVICE/data:/data
+    environment:
+      - "TYPE=$TYPE"
+      - "VERSION=$VERSION"
+      - "EULA=TRUE"
+    networks:
+      - default
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+      - "traefik.enable=true"
+      - "traefik.http.routers.$SERVICE.entrypoints=https"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
+      - "traefik.http.routers.$SERVICE.tls=true"
+      - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+      - "traefik.http.services.$SERVICE.loadbalancer.server.port=25565"
+      - "traefik.docker.network=$NETWORK"
+
+networks:
+  default:
+    external:
+      name: $NETWORK

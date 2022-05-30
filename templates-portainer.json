@@ -1570,6 +1570,72 @@
                     "label": "Version of server ",
                     "description": "LATEST/SNAPSHOT/1.7.8/x.x.x",
                     "default": "LATEST"
+                },
+                {
+                    "name": "PORT",
+                    "label": "Port of server ",
+                    "description": "Default: 25565",
+                    "default": "25565"
+                },
+                {
+                    "name": "MOTD",
+                    "label": "MOTD ",
+                    "description": "Description",
+                    "default": "Minecraft server powered by \u00a7l\u00a7cPAPAMICA\u00a7r"
+                },
+                {
+                    "name": "MODE",
+                    "label": "Game mode ",
+                    "description": "creative/survival/adventure/spectator",
+                    "default": "survival"
+                },
+                {
+                    "name": "DIFFICULTY",
+                    "label": "Difficulty ",
+                    "description": "peaceful/easy/normal/hard",
+                    "default": "normal"
+                },
+                {
+                    "name": "OPS",
+                    "label": "Admin users ",
+                    "description": "OP",
+                    "default": "PAPAMICA"
+                },
+                {
+                    "name": "MAX_PLAYERS",
+                    "label": "Max players ",
+                    "description": "Number",
+                    "default": "20"
+                },
+                {
+                    "name": "ALLOW_NETHER",
+                    "label": "Allow Nether ",
+                    "description": "True/False",
+                    "default": "True"
+                },
+                {
+                    "name": "ENABLE_COMMAND_BLOCK",
+                    "label": "Enable command blok ",
+                    "description": "True/False",
+                    "default": "True"
+                },
+                {
+                    "name": "HARDCORE",
+                    "label": "Enable hardcore ",
+                    "description": "True/False",
+                    "default": "False"
+                },
+                {
+                    "name": "PVP",
+                    "label": "Enable PVP ",
+                    "description": "True/False",
+                    "default": "True"
+                },
+                {
+                    "name": "ONLINE_MODE",
+                    "label": "Enable Online mode ",
+                    "description": "True/False",
+                    "default": "True"
                 }
             ]
         },

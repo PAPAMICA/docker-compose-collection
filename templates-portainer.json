@@ -1341,6 +1341,66 @@
         },
         {
             "type": 3,
+            "title": "Limesurvey",
+            "name": "Limesurvey",
+            "description": "Limesurvey is the number one open-source survey software.",
+            "note": "Website: <a href='https://github.com/LimeSurvey/LimeSurvey' target='_blank' rel='noopener'>Github.com</a>",
+            "categories": [
+                "SelfHosted",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Limesurvey_logo.png",
+            "repository": {
+                "stackfile": "composes-files/limesurvey.yml",
+                "url": "https://github.com/PAPAMICA/docker-compose-collection"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "limesurvey"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service URL",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
+                },
+                {
+                    "name": "DB_USER",
+                    "label": "Database user ",
+                    "description": "No spaces or points",
+                    "default": "limesurvey"
+                },
+                {
+                    "name": "DB_PASSWORD",
+                    "label": "Database user password"
+                },
+                {
+                    "name": "DB_ROOT_ASSWORD",
+                    "label": "Database root password"
+                },
+                {
+                    "name": "ADMIN_PASSWORD",
+                    "label": "Admin password"
+                }
+            ]
+        },
+        {
+            "type": 3,
             "title": "MariaDB",
             "name": "MariaDB",
             "description": "Mariadb is one of the most popular database servers. Made by the original developers of MySQL.",
@@ -1450,7 +1510,7 @@
                     "name": "DB_USER",
                     "label": "Database user ",
                     "description": "No spaces or points",
-                    "default": "keycloak"
+                    "default": "matomo"
                 },
                 {
                     "name": "DB_PASSWORD",

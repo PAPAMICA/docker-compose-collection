@@ -37,7 +37,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 
 
 ## List of services availables:
-<img src="https://img.shields.io/badge/Avaibles:_62-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
+<img src="https://img.shields.io/badge/Avaibles:_63-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
 
 | Status | Service | Update | Maintainer |
 |:--:|--|--|--|
@@ -67,6 +67,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | ✅ | <img src="https://api.cloudron.io/api/v1/apps/net.jirafeau.cloudronapp/versions/1.2.0/icon" alt="jirafeau" width="20"/> [jirafeau](https://gitlab.com/mojo42/Jirafeau) | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://dyltqmyl993wv.cloudfront.net/assets/stacks/keycloak/img/keycloak-stack-220x234.png" alt="keycloak" width="20"/> [keycloak](https://www.keycloak.org/) | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://github.com/lidarr/Lidarr/raw/develop/Logo/400.png" alt="lidarr" width="20"/> [lidarr](https://lidarr.audio/) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
+| ✅ | <img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Limesurvey_logo.png" alt="limesurvey" width="20"/> [limesurvey](https://github.com/LimeSurvey/LimeSurvey) | 2022-05-30 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://silicondales.com/wp-content/uploads/2021/05/mariadb-square.png" alt="mariadb" width="20"/> [mariadb](https://mariadb.org/) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://cdn1.oxatis.com/Files/112496/Img/16/matomo-new.png" alt="matomo" width="20"/> [matomo](https://fr.matomo.org) | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://blog.natenom.com/wp-content/uploads/2015/11/256px-Logo_mumble-ruby-pluginbot.svg_.png" alt="mumble-bot" width="20"/> [mumble-bot](https://github.com/matthieugrieger/mumbledj) | 2022-05-12 |  Mickael "PAPAMICA" Asseline |

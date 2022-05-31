@@ -4,7 +4,7 @@
 #& type: 3
 #& title: Traefik
 #& description: Perfect proxy for Docker environment
-#& note: Website: <a href='https://teamspeak.com/en/' target='_blank' rel='noopener'>TeamSpeak.com</a></br>Ports to open: 80, 443</br>You need to create these files: traefik.yml, config.yml, acme.json</br>Check my repo <a href='https://github.com/PAPAMICA/docker-environment' target='_blank' rel='noopener'>PAPAMICA/docker-environment</a>
+#& note: Website: <a href='https://traefik.io/traefik/' target='_blank' rel='noopener'>Traefik.io</a></br>Ports to open: 80, 443</br>You need to create these files: traefik.yml, config.yml, acme.json</br>Check my repo <a href='https://github.com/PAPAMICA/docker-environment' target='_blank' rel='noopener'>PAPAMICA/docker-environment</a>
 #& categories: SelfHosted, PAPAMICA
 #& platform: linux
 #& logo: https://blog.alterway.fr/images/traefik.logo.png

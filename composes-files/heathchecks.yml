@@ -1,0 +1,72 @@
+# Maintainer: Mickael "PAPAMICA" Asseline
+# Update: 2022-06-01
+
+#& type: 3
+#& title: Healthchecks
+#& description: Healthchecks is a watchdog for your cron jobs. It's a web server that listens for pings from your cron jobs, plus a web interface.
+#& note: Website: <a href='https://github.com/healthchecks/healthchecks' target='_blank' rel='noopener'>Github.com</a>
+#& categories: SelfHosted, Monitoring, PAPAMICA
+#& platform: linux
+#& logo: https://pbs.twimg.com/profile_images/1055543716201615365/geMDWaHV_400x400.jpg
+
+#% SERVICE: Name of the service (No spaces or points) [healthchecks]
+#% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
+#% URL: Service URL (Example: service.papamica.fr or service.com)
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
+#% DEFAULT_FROM_EMAIL: From email for alerts (Example: notification@papamica.com)
+#% EMAIL_HOST: SMTP host (Example: mail.infomaniak.com)
+#% EMAIL_PORT: SMTP port (Example: 25)
+#% EMAIL_HOST_USER: SMTP user (Example: notification@papamica.com)
+#% EMAIL_HOST_PASSWORD: SMTP user password
+#% EMAIL_USE_TLS: Use TLS for SMTP (True/False)
+#% SUPERUSER_EMAIL: Admin user (Example: admin)
+#% SUPERUSER_PASSWORD: Admin password
+#% APPRISE_ENABLED: Use Apprise notification (True/False)
+
+# Work with Portainer
+version: "2.1"
+services:
+  healthchecks:
+    image: lscr.io/linuxserver/healthchecks:latest
+    container_name: $SERVICE
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - SITE_ROOT=https://$URL
+      - SITE_NAME=$SERVICE
+      - DEFAULT_FROM_EMAIL=$DEFAULT_FROM_EMAIL
+      - EMAIL_HOST=$EMAIL_HOST
+      - EMAIL_PORT=$EMAIL_PORT
+      - EMAIL_HOST_USER=$EMAIL_HOST_USER
+      - EMAIL_HOST_PASSWORD=$EMAIL_HOST_PASSWORD
+      - EMAIL_USE_TLS=$EMAIL_USE_TLS
+      - SUPERUSER_EMAIL=$SUPERUSER_EMAIL
+      - SUPERUSER_PASSWORD=$SUPERUSER_PASSWORD
+      #- REGENERATE_SETTINGS=True/False #optional
+      #- SITE_LOGO_URL=$SITE_LOGO_URL #optional
+      #- ALLOWED_HOSTS=$ALLOWED_HOSTS #optional
+      #- SECRET_KEY=$SECRET_KEY #optional
+      - APPRISE_ENABLED=$APPRISE_ENABLED #optional
+    volumes:
+      -  $DATA_LOCATION/$SERVICE/data:/config
+    restart: unless-stopped
+    healthcheck:
+      test: curl --connect-timeout 15 --max-time 100 --silent --show-error --fail "http://localhost:8000"  /dev/null
+      interval: 1m
+      timeout: 30s
+      retries: 3
+    networks:
+      - default
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+      - "traefik.enable=true"
+      - "traefik.http.routers.$SERVICE.entrypoints=https"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
+      - "traefik.http.routers.$SERVICE.tls=true"
+      - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+      - "traefik.http.services.$SERVICE.loadbalancer.server.port=8000"
+      - "traefik.docker.network=$NETWORK"
+networks:
+  default:
+    external:
+      name: $NETWORK

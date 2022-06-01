@@ -51,7 +51,7 @@ services:
       -  $DATA_LOCATION/$SERVICE/data:/config
     restart: unless-stopped
     healthcheck:
-      test: curl --connect-timeout 15 --max-time 100 --silent --show-error --fail "http://localhost:8000"  /dev/null
+      test:  wget -nv -t1 --spider 'http://localhost:8000'
       interval: 1m
       timeout: 30s
       retries: 3

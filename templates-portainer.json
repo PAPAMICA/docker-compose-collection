@@ -1066,6 +1066,92 @@
         },
         {
             "type": 3,
+            "title": "Healthchecks",
+            "name": "Healthchecks",
+            "description": "Healthchecks is a watchdog for your cron jobs. It's a web server that listens for pings from your cron jobs, plus a web interface.",
+            "note": "Website: <a href='https://github.com/healthchecks/healthchecks' target='_blank' rel='noopener'>Github.com</a>",
+            "categories": [
+                "SelfHosted",
+                "Monitoring",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://pbs.twimg.com/profile_images/1055543716201615365/geMDWaHV_400x400.jpg",
+            "repository": {
+                "stackfile": "composes-files/heathchecks.yml",
+                "url": "https://github.com/PAPAMICA/docker-compose-collection"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "healthchecks"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service URL",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
+                },
+                {
+                    "name": "DEFAULT_FROM_EMAIL",
+                    "label": "From email for alerts",
+                    "description": "Example: notification@papamica.com"
+                },
+                {
+                    "name": "EMAIL_HOST",
+                    "label": "SMTP host",
+                    "description": "Example: mail.infomaniak.com"
+                },
+                {
+                    "name": "EMAIL_PORT",
+                    "label": "SMTP port",
+                    "description": "Example: 25"
+                },
+                {
+                    "name": "EMAIL_HOST_USER",
+                    "label": "SMTP user",
+                    "description": "Example: notification@papamica.com"
+                },
+                {
+                    "name": "EMAIL_HOST_PASSWORD",
+                    "label": "SMTP user password"
+                },
+                {
+                    "name": "EMAIL_USE_TLS",
+                    "label": "Use TLS for SMTP",
+                    "description": "True/False"
+                },
+                {
+                    "name": "SUPERUSER_EMAIL",
+                    "label": "Admin user",
+                    "description": "Example: admin"
+                },
+                {
+                    "name": "SUPERUSER_PASSWORD",
+                    "label": "Admin password"
+                },
+                {
+                    "name": "APPRISE_ENABLED",
+                    "label": "Use Apprise notification",
+                    "description": "True/False"
+                }
+            ]
+        },
+        {
+            "type": 3,
             "title": "Jackett",
             "name": "Jackett",
             "description": "Indexer for torrents and usenets.",

@@ -1136,8 +1136,8 @@
                 },
                 {
                     "name": "SUPERUSER_EMAIL",
-                    "label": "Admin user",
-                    "description": "Example: admin"
+                    "label": "Admin user email",
+                    "description": "Example: admin@papamica.com"
                 },
                 {
                     "name": "SUPERUSER_PASSWORD",

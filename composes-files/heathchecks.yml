@@ -19,7 +19,7 @@
 #% EMAIL_HOST_USER: SMTP user (Example: notification@papamica.com)
 #% EMAIL_HOST_PASSWORD: SMTP user password
 #% EMAIL_USE_TLS: Use TLS for SMTP (True/False)
-#% SUPERUSER_EMAIL: Admin user (Example: admin)
+#% SUPERUSER_EMAIL: Admin user email (Example: admin@papamica.com)
 #% SUPERUSER_PASSWORD: Admin password
 #% APPRISE_ENABLED: Use Apprise notification (True/False)
 

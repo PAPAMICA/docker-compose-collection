@@ -29,7 +29,7 @@ services:
       - PUID=1000
       - PGID=1000
     healthcheck:
-      test: curl --connect-timeout 15 --max-time 100 --silent --show-error --fail "http://localhost:5055" > /dev/null
+      test: wget -nv -t1 --spider "http://localhost:5055"
       interval: 1m
       timeout: 30s
       retries: 3

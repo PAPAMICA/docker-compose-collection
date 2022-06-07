@@ -26,7 +26,7 @@ services:
     restart: always
     volumes:
       - $DATA_LOCATION/$SERVICE/config:/config
-      - $FOLDER_DOWNLOAD/sonarr:/downloads
+      - $FOLDER_DOWNLOAD:/downloads
       - $FOLDER_MOVIES:/movies
     environment:
       - TZ=$TZ

@@ -39,6 +39,8 @@ services:
     depends_on:
       - hbbr
     restart: unless-stopped
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
 
   hbbr:
     container_name: $SERVICE-hbbr
@@ -53,10 +55,12 @@ services:
       timeout: 30s
       retries: 3
     volumes:
-      - $DATA_LOCATION/hbbr:/root
+      - $DATA_LOCATION/$SERVICE:/root
     networks:
       - default
     restart: unless-stopped
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
 
 networks:
   default:

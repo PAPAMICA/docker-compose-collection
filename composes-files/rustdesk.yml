@@ -1,0 +1,64 @@
+# Maintainer: Kevin Allioli @linitio
+# Update: 2022-06-15
+
+#& type: 3
+#& title: RustDesk
+#& description: A remote desktop software, the open source TeamViewer alternative, works out of the box, no configuration required.
+#& note: Website: <a href='https://rustdesk.com/' target='_blank' rel='noopener'>rustdesk.com</a>
+#& categories: SelfHosted
+#& platform: linux
+#& logo: https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Cometohere_blue.svg/640px-Cometohere_blue.svg.png
+
+#% SERVICE: Name of the service (No spaces or points) [rustdesk]
+#% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
+#% URL: Service URL (Example: service.domain.tld or service.com)
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
+
+# Work with Portainer
+
+version: '3.3'
+services:
+  hbbs:
+    container_name: $SERVICE-hbbs
+    ports:
+      - 21115:21115
+      - 21116:21116
+      - 21116:21116/udp
+      - 21118:21118
+    image: rustdesk/rustdesk-server:latest
+    command: hbbs -r $URL:21117
+    healthcheck:
+      test: grep -qr "hbbs" /proc/*/status || exit 1
+      interval: 1m
+      timeout: 30s
+      retries: 3
+    volumes:
+      - $DATA_LOCATION/hbbs:/root
+    networks:
+      - default
+    depends_on:
+      - hbbr
+    restart: unless-stopped
+
+  hbbr:
+    container_name: $SERVICE-hbbr
+    ports:
+      - 21117:21117
+      - 21119:21119
+    image: rustdesk/rustdesk-server:latest
+    command: hbbr
+    healthcheck:
+      test: grep -qr "hbbr" /proc/*/status || exit 1
+      interval: 1m
+      timeout: 30s
+      retries: 3
+    volumes:
+      - $DATA_LOCATION/hbbr:/root
+    networks:
+      - default
+    restart: unless-stopped
+
+networks:
+  default:
+    external:
+      name: ${NETWORK}

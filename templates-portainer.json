@@ -2580,6 +2580,47 @@
         },
         {
             "type": 3,
+            "title": "RustDesk",
+            "name": "RustDesk",
+            "description": "A remote desktop software, the open source TeamViewer alternative, works out of the box, no configuration required.",
+            "note": "Website: <a href='https://rustdesk.com/' target='_blank' rel='noopener'>rustdesk.com</a>",
+            "categories": [
+                "SelfHosted"
+            ],
+            "platform": "linux",
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Cometohere_blue.svg/640px-Cometohere_blue.svg.png",
+            "repository": {
+                "stackfile": "composes-files/rustdesk.yml",
+                "url": "https://github.com/PAPAMICA/docker-compose-collection"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "rustdesk"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service URL",
+                    "description": "Example: service.domain.tld or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
+                }
+            ]
+        },
+        {
+            "type": 3,
             "title": "Rutorrent-Flood",
             "name": "Rutorrent-Flood",
             "description": "Webclient for download your torrents.",

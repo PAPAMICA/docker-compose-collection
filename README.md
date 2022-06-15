@@ -37,7 +37,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 
 
 ## List of services availables:
-<img src="https://img.shields.io/badge/Avaibles:_66-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
+<img src="https://img.shields.io/badge/Avaibles:_67-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
 
 | Status | Service | Website | Update | Maintainer |
 |:--:|--|--|--|--|
@@ -88,6 +88,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | ✅ | <img src="https://avatars.githubusercontent.com/u/57576474?s=280&v=4" alt="readarr" width="20"/> [readarr](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/readarr.yml) | [Github.com](https://github.com/Readarr/Readarr) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://camo.githubusercontent.com/2d3352b543a7ecb88e91a0cfd88a32b958eeba8740ee3e4e22d1288daaf6c2a7/68747470733a2f2f692e696d6775722e636f6d2f30557a4c5976772e706e67" alt="requestrr" width="20"/> [requestrr](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/requestrr.yml) | [Github.com](https://github.com/darkalfx/requestrr) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://projects.task.gda.pl/uploads/-/system/project/avatar/135/rundeck_logo_white.png" alt="rundeck" width="20"/> [rundeck](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/rundeck.yml) | [RunDeck.com](https://www.rundeck.com/open-source) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
+| ✅ | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Cometohere_blue.svg/640px-Cometohere_blue.svg.png" alt="rustdesk" width="20"/> [rustdesk](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/rustdesk.yml) | [rustdesk.com](https://rustdesk.com/) | 2022-06-15 |  Kevin Allioli @linitio |
 | ✅ | <img src="https://flood.js.org/assets/img/logo.png" alt="rutorrent" width="20"/> [rutorrent](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/rutorrent.yml) | [Github.com](https://github.com/Novik/ruTorrent) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://avatars.githubusercontent.com/u/25282695?s=280&v=4" alt="sinusbot" width="20"/> [sinusbot](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/sinusbot.yml) | [Sinusbot.com](https://www.sinusbot.com/) | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://forums-sonarr-tv.s3.dualstack.us-east-1.amazonaws.com/original/2X/e/ef4553fe96f04a298ec502279731579698e96a9b.png" alt="sonarr" width="20"/> [sonarr](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/sonarr.yml) | [Sonarr.tv](https://sonarr.tv/) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |

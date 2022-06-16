@@ -1155,7 +1155,7 @@
             "title": "Home Assistant",
             "name": "Home Assistant",
             "description": "Open source home automation that puts local control and privacy first.",
-            "note": "Website: <a href='https://www.home-assistant.io/' target='_blank' rel='noopener'>Home-Assistant.io</a><\\br><\\br>Warning: network mode host used ! <\\br>Accessible with port: <code>8123</code>",
+            "note": "Website: <a href='https://www.home-assistant.io/' target='_blank' rel='noopener'>Home-Assistant.io</a></br></br>Warning: network mode host used ! </br>Accessible with port: <code>8123</code>",
             "categories": [
                 "SelfHosted",
                 "Domotic",

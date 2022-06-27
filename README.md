@@ -37,7 +37,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 
 
 ## List of services availables:
-<img src="https://img.shields.io/badge/Avaibles:_68-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
+<img src="https://img.shields.io/badge/Avaibles:_69-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
 
 | Status | Service | Website | Update | Maintainer |
 |:--:|--|--|--|--|
@@ -103,6 +103,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | ✅ | <img src="https://img.stackshare.io/service/20837/umami.png" alt="umami" width="20"/> [umami](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/umami.yml) | [Umami.is](https://umami.is/) | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://github.com/louislam/uptime-kuma/raw/master/public/icon.svg" alt="uptime-kuma" width="20"/> [uptime-kuma](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/uptime-kuma.yml) | [Github.com](https://github.com/louislam/uptime-kuma) | 2022-05-21 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://upload.wikimedia.org/wikipedia/commons/0/03/Bitwarden_Logo.png" alt="vaultwarden" width="20"/> [vaultwarden](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/vaultwarden.yml) | [Github.com](https://github.com/dani-garcia/vaultwarden) | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| ✅ | <img src="https://avatars.githubusercontent.com/u/41270016?s=200&v=4" alt="vikunja" width="20"/> [vikunja](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/vikunja.yml) | [Vikunja.io](https://vikunja.io/) | 2022-06-27 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/2048px-Visual_Studio_Code_1.35_icon.svg.png" alt="vscode" width="20"/> [vscode](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/vscode.yml) | [Github.com](https://github.com/coder/code-server) | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="http://assets.stickpng.com/thumbs/5847f5bdcef1014c0b5e489c.png" alt="website-html" width="20"/> [website-html](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/website-html.yml) | [Github.com](https://github.com/LavoWeb/Docker) | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://refonteblog.mystagingwebsite.com/wp-content/uploads/2021/12/logo-wordpress.png" alt="wordpress" width="20"/> [wordpress](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/wordpress.yml) | [WordPress.org](https://wordpress.org/) | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
@@ -111,7 +112,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | ✅ | <img src="https://juliebarbaroux.tech/wp-content/uploads/2020/11/zabbix.png" alt="zabbix" width="20"/> [zabbix](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/zabbix.yml) | [Zabbix.com](https://www.zabbix.com/) | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
 
 ## List of services to do:
-<img src="https://img.shields.io/badge/To_do:_190-%23FF8800.svg?style=for-the-badge&logo=vlcmediaplayer&logoColor=white">
+<img src="https://img.shields.io/badge/To_do:_189-%23FF8800.svg?style=for-the-badge&logo=vlcmediaplayer&logoColor=white">
 
 | Status | Service |
 |:--:|--|
@@ -287,7 +288,6 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | 🚸 | urbackup |
 | 🚸 | vault |
 | 🚸 | verdaccio |
-| 🚸 | vikunja |
 | 🚸 | wallabag |
 | 🚸 | wbo |
 | 🚸 | webdav |

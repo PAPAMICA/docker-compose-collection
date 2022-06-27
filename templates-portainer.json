@@ -3331,6 +3331,62 @@
         },
         {
             "type": 3,
+            "title": "Vikunja",
+            "name": "Vikunja",
+            "description": "The to-do app to organize your life.",
+            "note": "Website: <a href='https://vikunja.io/' target='_blank' rel='noopener'>Vikunja.io</a>",
+            "categories": [
+                "SelfHosted",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://avatars.githubusercontent.com/u/41270016?s=200&v=4",
+            "repository": {
+                "stackfile": "composes-files/vikunja.yml",
+                "url": "https://github.com/PAPAMICA/docker-compose-collection"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "vikunja"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service URL",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
+                },
+                {
+                    "name": "DB_USER",
+                    "label": "Database user ",
+                    "description": "No spaces or points",
+                    "default": "vikunja"
+                },
+                {
+                    "name": "DB_PASSWORD",
+                    "label": "Database user password"
+                },
+                {
+                    "name": "DB_ROOT",
+                    "label": "Database root password"
+                }
+            ]
+        },
+        {
+            "type": 3,
             "title": "VSCode Online",
             "name": "VSCode Online",
             "description": "Web interface for VSCode",

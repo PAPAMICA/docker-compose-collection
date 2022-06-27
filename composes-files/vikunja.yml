@@ -3,7 +3,7 @@
 
 #& type: 3
 #& title: Vikunja
-#& description: The to-do app to organize your life. 
+#& description: The to-do app to organize your life.
 #& note: Website: <a href='https://vikunja.io/' target='_blank' rel='noopener'>Vikunja.io</a>
 #& categories: SelfHosted, PAPAMICA
 #& platform: linux
@@ -30,7 +30,7 @@ services:
       VIKUNJA_DATABASE_TYPE: mysql
       VIKUNJA_DATABASE_USER: $DB_USER
       VIKUNJA_DATABASE_DATABASE: $SERVICE
-    volumes: 
+    volumes:
       - $DATA_LOCATION/$SERVICE/data:/app/vikunja/files
     networks:
       - default
@@ -69,16 +69,15 @@ services:
   db:
     image: mariadb:10
     container_name: $SERVICE-db
-    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --max-connections=1000
     environment:
-      MYSQL_ROOT_PASSWORD: $DB_ROOT 
+      MYSQL_ROOT_PASSWORD: $DB_ROOT
       MYSQL_USER: $DB_USER
       MYSQL_PASSWORD: $DB_PASSWORD
       MYSQL_DATABASE: $SERVICE
     volumes:
       - $DATA_LOCATION/$SERVICE/db:/var/lib/mysql
     restart: unless-stopped
-    command: --max-connections=1000
     labels:
       - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
     healthcheck:

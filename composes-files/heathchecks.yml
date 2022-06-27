@@ -48,10 +48,10 @@ services:
       #- SECRET_KEY=$SECRET_KEY #optional
       - APPRISE_ENABLED=$APPRISE_ENABLED #optional
     volumes:
-      -  $DATA_LOCATION/$SERVICE/data:/config
+      - $DATA_LOCATION/$SERVICE/data:/config
     restart: unless-stopped
     healthcheck:
-      test:  wget -nv -t1 --spider 'http://localhost:8000'
+      test: wget -nv -t1 --spider 'http://localhost:8000'
       interval: 1m
       timeout: 30s
       retries: 3

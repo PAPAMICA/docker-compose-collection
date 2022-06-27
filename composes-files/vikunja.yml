@@ -1,0 +1,94 @@
+# Maintainer: Mickael "PAPAMICA" Asseline
+# Update: 2022-06-27
+
+#& type: 3
+#& title: Vikunja
+#& description: The to-do app to organize your life. 
+#& note: Website: <a href='https://vikunja.io/' target='_blank' rel='noopener'>Vikunja.io</a>
+#& categories: SelfHosted, PAPAMICA
+#& platform: linux
+#& logo: https://avatars.githubusercontent.com/u/41270016?s=200&v=4
+
+#% SERVICE: Name of the service (No spaces or points) [vikunja]
+#% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
+#% URL: Service URL (Example: service.papamica.fr or service.com)
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
+#% DB_USER: Database user (No spaces or points) [vikunja]
+#% DB_PASSWORD: Database user password
+#% DB_ROOT: Database root password
+
+# Work with Portainer
+version: '3'
+
+services:
+  api:
+    image: vikunja/api
+    container_name: $SERVICE-api
+    environment:
+      VIKUNJA_DATABASE_HOST: $SERVICE-db
+      VIKUNJA_DATABASE_PASSWORD: $DB_PASSWORD
+      VIKUNJA_DATABASE_TYPE: mysql
+      VIKUNJA_DATABASE_USER: $DB_USER
+      VIKUNJA_DATABASE_DATABASE: $SERVICE
+    volumes: 
+      - $DATA_LOCATION/$SERVICE/data:/app/vikunja/files
+    networks:
+      - default
+    depends_on:
+      - db
+    restart: unless-stopped
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+      - "traefik.enable=true"
+      - "traefik.http.routers.$SERVICE.entrypoints=https"
+      - "traefik.http.routers.vikunja-api.rule=Host(`$URL`) && PathPrefix(`/api/v1`, `/dav/`, `/.well-known/`)"
+      - "traefik.http.routers.$SERVICE.tls=true"
+      - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+      - "traefik.docker.network=$NETWORK"
+
+  frontend:
+    image: vikunja/frontend
+    container_name: $SERVICE
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+      - "traefik.enable=true"
+      - "traefik.http.routers.$SERVICE.entrypoints=https"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
+      - "traefik.http.routers.$SERVICE.tls=true"
+      - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+      - "traefik.docker.network=$NETWORK"
+    networks:
+      - default
+    restart: unless-stopped
+    healthcheck:
+      test: wget -nv -t1 --spider 'http://localhost:80'
+      interval: 1m
+      timeout: 30s
+      retries: 3
+
+  db:
+    image: mariadb:10
+    container_name: $SERVICE-db
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    environment:
+      MYSQL_ROOT_PASSWORD: $DB_ROOT 
+      MYSQL_USER: $DB_USER
+      MYSQL_PASSWORD: $DB_PASSWORD
+      MYSQL_DATABASE: $SERVICE
+    volumes:
+      - $DATA_LOCATION/$SERVICE/db:/var/lib/mysql
+    restart: unless-stopped
+    command: --max-connections=1000
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
+    networks:
+      - default
+
+networks:
+  default:
+    external:
+      name: $NETWORK

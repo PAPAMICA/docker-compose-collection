@@ -37,13 +37,18 @@ services:
     depends_on:
       - db
     restart: unless-stopped
+    healthcheck:
+      test: netstat -tln | grep 3456
+      interval: 1m
+      timeout: 30s
+      retries: 3
     labels:
       - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
       - "traefik.enable=true"
-      - "traefik.http.routers.$SERVICE.entrypoints=https"
-      - "traefik.http.routers.vikunja-api.rule=Host(`$URL`) && PathPrefix(`/api/v1`, `/dav/`, `/.well-known/`)"
-      - "traefik.http.routers.$SERVICE.tls=true"
-      - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+      - "traefik.http.routers.$SERVICE-api.entrypoints=https"
+      - "traefik.http.routers.$SERVICE-api.rule=Host(`$URL`) && PathPrefix(`/api/v1`, `/dav/`, `/.well-known/`)"
+      - "traefik.http.routers.$SERVICE-api.tls=true"
+      - "traefik.http.routers.$SERVICE-api.tls.certresolver=http"
       - "traefik.docker.network=$NETWORK"
 
   frontend:
@@ -61,7 +66,7 @@ services:
       - default
     restart: unless-stopped
     healthcheck:
-      test: wget -nv -t1 --spider 'http://localhost:80'
+      test: curl --fail http://localhost:80 || exit 1
       interval: 1m
       timeout: 30s
       retries: 3

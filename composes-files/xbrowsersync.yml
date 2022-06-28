@@ -34,7 +34,7 @@ services:
     volumes:
       - $DATA_LOCATION/$SERVICE/data:/data/db
       - $DATA_LOCATION/$SERVICE/backups:/data/backups
-      - $DATA_LOCATION/$SERVICE//mongoconfig.js:/docker-entrypoint-initdb.d/mongoconfig.js
+      - $DATA_LOCATION/$SERVICE/mongoconfig.js:/docker-entrypoint-initdb.d/mongoconfig.js
     labels:
       - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
     networks:

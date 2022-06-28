@@ -1,0 +1,99 @@
+# Maintainer: Mickael "PAPAMICA" Asseline
+# Update: 2022-06-28
+
+#& type: 3
+#& title: xBrowserSync
+#& description: xBrowserSync is a free and open-source alternative to browser syncing tools.
+#& note: Website: <a href='https://www.xbrowsersync.org/' target='_blank' rel='noopener'>xbrowsersync.org</a></br></br>Warning! You need to clone this repo before: <a href='https://github.com/xbrowsersync/api-docker/' target='_blank' rel='noopener'>Github.com</a>
+#& categories: SelfHosted, PAPAMICA
+#& platform: linux
+#& logo: https://avatars.githubusercontent.com/u/19213777?s=200&v=4
+
+#% SERVICE: Name of the service (No spaces or points) [paperless]
+#% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
+#% URL: Service URL (Example: service.papamica.fr or service.com)
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
+#% TZ: Timezone (Example: Europe/Paris) [Europe/Paris]
+#% SECRET_KEY: Secret key (random)
+#% LANG_OCR: Principal language for OCR (Exemple: fr) [fr]
+
+# Work with Portainer
+version: "3.4"
+services:
+  broker:
+    image: redis:6.0
+    container_name: $SERVICE-redis
+    restart: unless-stopped
+    volumes:
+      - $DATA_LOCATION/$SERVICE/redis:/data
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+    networks:
+      - default
+    healthcheck:
+      test: [ "CMD", "redis-cli", "--raw", "incr", "ping" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  db:
+    image: postgres:13
+    restart: unless-stopped
+    container_name: $SERVICE-db
+    volumes:
+      - $DATA_LOCATION/$SERVICE/db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: paperless
+      POSTGRES_USER: paperless
+      POSTGRES_PASSWORD: paperless
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+    networks:
+      - default
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  webserver:
+    image: ghcr.io/paperless-ngx/paperless-ngx:latest
+    restart: unless-stopped
+    container_name: $SERVICE
+    depends_on:
+      - db
+      - broker
+    healthcheck:
+      test: ["CMD", "curl", "-fs", "-S", "--max-time", "2", "http://localhost:8000"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    volumes:
+      - $DATA_LOCATION/$SERVICE/data:/usr/src/paperless/data
+      - $DATA_LOCATION/$SERVICE/media:/usr/src/paperless/media
+     # - ./export:/usr/src/paperless/export
+     # - ./consume:/usr/src/paperless/consume
+    environment:
+      PAPERLESS_REDIS: redis://$SERVICE-redis:6379
+      PAPERLESS_DBHOST: $SERVICE-db
+      #USERMAP_UID: 1000
+      #USERMAP_GID: 100
+      PAPERLESS_SECRET_KEY: $SECRET_KEY
+      PAPERLESS_TIME_ZONE: $TZ
+      PAPERLESS_OCR_LANGUAGE: $LANG_OCR
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+      - "traefik.enable=true"
+      - "traefik.http.routers.$SERVICE.entrypoints=https"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
+      - "traefik.http.routers.$SERVICE.tls=true"
+      - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+      - "traefik.http.services.$SERVICE.loadbalancer.server.port=8000"
+      - "traefik.docker.network=$NETWORK"
+    networks:
+      - default
+
+networks:
+  default:
+    external:
+      name: $NETWORK

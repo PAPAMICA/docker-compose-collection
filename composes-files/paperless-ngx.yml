@@ -41,7 +41,10 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=$TZ
-      - REDIS_URL=$SERVICE-redis
+      - REDIS_URL=redis://$SERVICE-redis
+      - PAPERLESS_URL=https://$URL
+      - PAPERLESS_ALLOWED_HOSTS=$URL,localhost
+      - PAPERLESS_CSRF_TRUSTED_ORIGINS=https://$URL
     volumes:
       - $DATA_LOCATION/$SERVICE/config:/config
       - $DATA_LOCATION/$SERVICE/data:/data

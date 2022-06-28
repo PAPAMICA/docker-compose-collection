@@ -3531,6 +3531,58 @@
         },
         {
             "type": 3,
+            "title": "xBrowserSync",
+            "name": "xBrowserSync",
+            "description": "xBrowserSync is a free and open-source alternative to browser syncing tools.",
+            "note": "Website: <a href='https://www.xbrowsersync.org/' target='_blank' rel='noopener'>xbrowsersync.org</a></br></br>Warning! You need to clone this repo before: <a href='https://github.com/xbrowsersync/api-docker/' target='_blank' rel='noopener'>Github.com</a>",
+            "categories": [
+                "SelfHosted",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://avatars.githubusercontent.com/u/19213777?s=200&v=4",
+            "repository": {
+                "stackfile": "composes-files/xbrowsersync.yml",
+                "url": "https://github.com/PAPAMICA/docker-compose-collection"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "xBrowserSync"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service URL",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
+                },
+                {
+                    "name": "DB_USER",
+                    "label": "Database user ",
+                    "description": "No spaces or points",
+                    "default": "xBrowserSync"
+                },
+                {
+                    "name": "DB_PASSWORD",
+                    "label": "Database user password"
+                }
+            ]
+        },
+        {
+            "type": 3,
             "title": "YourLS",
             "name": "YourLS",
             "description": "Link shorter",

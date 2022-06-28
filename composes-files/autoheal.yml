@@ -25,6 +25,8 @@ services:
       - AUTOHEAL_CONTAINER_LABEL=all
     networks:
       - default
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
 networks:
   default:
     external:

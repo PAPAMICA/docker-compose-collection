@@ -2285,6 +2285,65 @@
         },
         {
             "type": 3,
+            "title": "xBrowserSync",
+            "name": "xBrowserSync",
+            "description": "xBrowserSync is a free and open-source alternative to browser syncing tools.",
+            "note": "Website: <a href='https://www.xbrowsersync.org/' target='_blank' rel='noopener'>xbrowsersync.org</a></br></br>Warning! You need to clone this repo before: <a href='https://github.com/xbrowsersync/api-docker/' target='_blank' rel='noopener'>Github.com</a>",
+            "categories": [
+                "SelfHosted",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://avatars.githubusercontent.com/u/19213777?s=200&v=4",
+            "repository": {
+                "stackfile": "composes-files/paperless-ngx.yml",
+                "url": "https://github.com/PAPAMICA/docker-compose-collection"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "paperless"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service URL",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
+                },
+                {
+                    "name": "TZ",
+                    "label": "Timezone ",
+                    "description": "Example: Europe/Paris",
+                    "default": "Europe/Paris"
+                },
+                {
+                    "name": "SECRET_KEY",
+                    "label": "Secret key",
+                    "description": "random"
+                },
+                {
+                    "name": "LANG_OCR",
+                    "label": "Principal language for OCR ",
+                    "description": "Exemple: fr",
+                    "default": "fr"
+                }
+            ]
+        },
+        {
+            "type": 3,
             "title": "Plex",
             "name": "Plex",
             "description": "Media server",

@@ -46,6 +46,13 @@ services:
       - $DATA_LOCATION/$SERVICE/config:/config
       - $DATA_LOCATION/$SERVICE/data:/data
     restart: unless-stopped
+    depends_on:
+      - broker
+    healthcheck:
+      test: ["CMD", "curl", "-fs", "-S", "--max-time", "2", "http://localhost:8000"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
     labels:
       - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
       - "traefik.enable=true"

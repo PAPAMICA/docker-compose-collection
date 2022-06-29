@@ -37,7 +37,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 
 
 ## List of services availables:
-<img src="https://img.shields.io/badge/Avaibles:_71-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
+<img src="https://img.shields.io/badge/Avaibles:_72-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
 
 | Status | Service | Website | Update | Maintainer |
 |:--:|--|--|--|--|
@@ -70,6 +70,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | ✅ | <img src="https://dyltqmyl993wv.cloudfront.net/assets/stacks/keycloak/img/keycloak-stack-220x234.png" alt="keycloak" width="20"/> [keycloak](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/keycloak.yml) | [Keycloak.org](https://www.keycloak.org/) | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://github.com/lidarr/Lidarr/raw/develop/Logo/400.png" alt="lidarr" width="20"/> [lidarr](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/lidarr.yml) | [Lidarr.audio](https://lidarr.audio/) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Limesurvey_logo.png" alt="limesurvey" width="20"/> [limesurvey](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/limesurvey.yml) | [Github.com](https://github.com/LimeSurvey/LimeSurvey) | 2022-05-30 |  Mickael "PAPAMICA" Asseline |
+| ✅ | <img src="https://bonnenouvelle.fr/IMG/arton1259.png?1449679625" alt="mail2pdf" width="20"/> [mail2pdf](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/mail2pdf.yml) | [Github.com](https://github.com/rob-luke/emails-html-to-pdf) | 2022-06-28 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://silicondales.com/wp-content/uploads/2021/05/mariadb-square.png" alt="mariadb" width="20"/> [mariadb](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/mariadb.yml) | [mariadb.org](https://mariadb.org/) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://cdn1.oxatis.com/Files/112496/Img/16/matomo-new.png" alt="matomo" width="20"/> [matomo](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/matomo.yml) | [Matomo.org](https://fr.matomo.org) | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://i.pinimg.com/originals/9c/b1/d1/9cb1d1a9eb6575147d6990e2700fb75c.png" alt="minecraft-java-server" width="20"/> [minecraft-java-server](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/minecraft-java-server.yml) | [Github.com](https://github.com/itzg/docker-minecraft-server) | 2022-05-30 |  Mickael "PAPAMICA" Asseline |

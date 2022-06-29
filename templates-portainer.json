@@ -603,6 +603,89 @@
         },
         {
             "type": 3,
+            "title": "email2pdf",
+            "name": "email2pdf",
+            "description": "Any unread email that does not have an attachment will be converted to a pdf and then emailed to the address you specify.",
+            "note": "Website: <a href='https://github.com/rob-luke/emails-html-to-pdf' target='_blank' rel='noopener'>Github.com</a>",
+            "categories": [
+                "SelfHosted",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://bonnenouvelle.fr/IMG/arton1259.png?1449679625",
+            "repository": {
+                "stackfile": "composes-files/email2pdf.yml",
+                "url": "https://github.com/PAPAMICA/docker-compose-collection"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "email2pdf"
+                },
+                {
+                    "name": "IMAP_SERVER",
+                    "label": "IMAP server ",
+                    "description": "Exemple: mail.infomaniak.com",
+                    "default": "mail.infomaniak.com"
+                },
+                {
+                    "name": "IMAP_USERNAME",
+                    "label": "IMAP Username"
+                },
+                {
+                    "name": "IMAP_PASSWORD",
+                    "label": "IMAP Password"
+                },
+                {
+                    "name": "IMAP_FOLDER",
+                    "label": "Mail folder to inspect ",
+                    "description": "Exemple: PAPERLESS",
+                    "default": "PAPERLESS"
+                },
+                {
+                    "name": "SMTP_SERVER",
+                    "label": "SMTP server ",
+                    "description": "Exemple: mail.infomaniak.com",
+                    "default": "mail.infomaniak.com"
+                },
+                {
+                    "name": "SMTP_PORT",
+                    "label": "SMTP port ",
+                    "description": "Exemple: 587",
+                    "default": "587"
+                },
+                {
+                    "name": "SMTP_TLS",
+                    "label": "SMTP TLS ",
+                    "description": "True/False",
+                    "default": "True"
+                },
+                {
+                    "name": "MAIL_SENDER",
+                    "label": "Mail sender"
+                },
+                {
+                    "name": "MAIL_DESTINATION",
+                    "label": "Mail destination"
+                },
+                {
+                    "name": "INTER_RUN_INTERVAL",
+                    "label": "Run interval ",
+                    "description": "in seconde",
+                    "default": "300"
+                },
+                {
+                    "name": "HOSTS",
+                    "label": "List of hosts added to /etc/hosts ",
+                    "description": "Semicolon separated",
+                    "default": "127.0.0.1 tracking.paypal.com"
+                }
+            ]
+        },
+        {
+            "type": 3,
             "title": "Emby",
             "name": "Emby",
             "description": "Media player like Plex.",
@@ -1514,81 +1597,6 @@
                 {
                     "name": "ADMIN_PASSWORD",
                     "label": "Admin password"
-                }
-            ]
-        },
-        {
-            "type": 3,
-            "title": "email2pdf",
-            "name": "email2pdf",
-            "description": "Any unread email that does not have an attachment will be converted to a pdf and then emailed to the address you specify.",
-            "note": "Website: <a href='https://github.com/rob-luke/emails-html-to-pdf' target='_blank' rel='noopener'>Github.com</a>",
-            "categories": [
-                "SelfHosted",
-                "PAPAMICA"
-            ],
-            "platform": "linux",
-            "logo": "https://bonnenouvelle.fr/IMG/arton1259.png?1449679625",
-            "repository": {
-                "stackfile": "composes-files/mail2pdf.yml",
-                "url": "https://github.com/PAPAMICA/docker-compose-collection"
-            },
-            "env": [
-                {
-                    "name": "SERVICE",
-                    "label": "Name of the service ",
-                    "description": "No spaces or points",
-                    "default": "email2pdf"
-                },
-                {
-                    "name": "IMAP_SERVER",
-                    "label": "IMAP server [mail.infomaniak.com]"
-                },
-                {
-                    "name": "IMAP_USERNAME",
-                    "label": "IMAP Username"
-                },
-                {
-                    "name": "IMAP_PASSWORD",
-                    "label": "IMAP Password"
-                },
-                {
-                    "name": "IMAP_FOLDER",
-                    "label": "Mail folder to inspect [PAPERLESS]"
-                },
-                {
-                    "name": "SMTP_SERVER",
-                    "label": "SMTP server [mail.infomaniak.com]"
-                },
-                {
-                    "name": "SMTP_PORT",
-                    "label": "SMTP port [587]"
-                },
-                {
-                    "name": "SMTP_TLS",
-                    "label": "SMTP TLS ",
-                    "description": "True/False",
-                    "default": "True"
-                },
-                {
-                    "name": "MAIL_SENDER",
-                    "label": "Mail sender"
-                },
-                {
-                    "name": "MAIL_DESTINATION",
-                    "label": "Mail destination"
-                },
-                {
-                    "name": "INTER_RUN_INTERVAL",
-                    "label": "Run interval ",
-                    "description": "in seconde",
-                    "default": "300"
-                },
-                {
-                    "name": "HOSTS",
-                    "label": "List of hosts added to /etc/hosts ",
-                    "description": "Semicolon separated",
-                    "default": "127.0.0.1 tracking.paypal.com"
                 }
             ]
         },

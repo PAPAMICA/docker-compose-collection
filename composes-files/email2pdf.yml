@@ -10,12 +10,12 @@
 #& logo: https://bonnenouvelle.fr/IMG/arton1259.png?1449679625
 
 #% SERVICE: Name of the service (No spaces or points) [email2pdf]
-#% IMAP_SERVER: IMAP server [mail.infomaniak.com]
+#% IMAP_SERVER: IMAP server (Exemple: mail.infomaniak.com) [mail.infomaniak.com]
 #% IMAP_USERNAME: IMAP Username
 #% IMAP_PASSWORD: IMAP Password
-#% IMAP_FOLDER: Mail folder to inspect [PAPERLESS]
-#% SMTP_SERVER: SMTP server [mail.infomaniak.com]
-#% SMTP_PORT: SMTP port [587]
+#% IMAP_FOLDER: Mail folder to inspect (Exemple: PAPERLESS) [PAPERLESS]
+#% SMTP_SERVER: SMTP server (Exemple: mail.infomaniak.com) [mail.infomaniak.com]
+#% SMTP_PORT: SMTP port (Exemple: 587) [587]
 #% SMTP_TLS: SMTP TLS (True/False) [True]
 #% MAIL_SENDER: Mail sender
 #% MAIL_DESTINATION: Mail destination

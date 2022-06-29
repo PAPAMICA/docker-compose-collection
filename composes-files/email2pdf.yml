@@ -46,10 +46,3 @@ services:
     restart: unless-stopped
     labels:
       - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
-    networks:
-      - default
-
-networks:
-  default:
-    external:
-      name: $NETWORK

@@ -1,0 +1,55 @@
+# Maintainer: Mickael "PAPAMICA" Asseline
+# Update: 2022-06-28
+
+#& type: 3
+#& title: email2pdf
+#& description: Any unread email that does not have an attachment will be converted to a pdf and then emailed to the address you specify.
+#& note: Website: <a href='https://github.com/rob-luke/emails-html-to-pdf' target='_blank' rel='noopener'>Github.com</a>
+#& categories: SelfHosted, PAPAMICA
+#& platform: linux
+#& logo: https://bonnenouvelle.fr/IMG/arton1259.png?1449679625
+
+#% SERVICE: Name of the service (No spaces or points) [email2pdf]
+#% IMAP_SERVER: IMAP server [mail.infomaniak.com]
+#% IMAP_USERNAME: IMAP Username
+#% IMAP_PASSWORD: IMAP Password
+#% IMAP_FOLDER: Mail folder to inspect [PAPERLESS]
+#% SMTP_SERVER: SMTP server [mail.infomaniak.com]
+#% SMTP_PORT: SMTP port [587]
+#% SMTP_TLS: SMTP TLS (True/False) [True]
+#% MAIL_SENDER: Mail sender
+#% MAIL_DESTINATION: Mail destination
+#% INTER_RUN_INTERVAL: Run interval (in seconde) [300]
+#% HOSTS: List of hosts added to /etc/hosts (Semicolon separated) [127.0.0.1 tracking.paypal.com]
+
+# Work with Portainer
+version: "3.8"
+
+services:
+
+  email2pdf:
+    image: ghcr.io/rob-luke/emails-html-to-pdf:latest
+    container_name: $SERVICE
+    environment:
+      - IMAP_URL=$IMAP_SERVER
+      - IMAP_USERNAME=$IMAP_USERNAME
+      - IMAP_PASSWORD=$IMAP_PASSWORD
+      - IMAP_FOLDER=$IMAP_FOLDER
+      - SMTP_URL=$SMTP_SERVER
+      - MAIL_SENDER=$MAIL_SENDER
+      - MAIL_DESTINATION=$MAIL_DESTINATION
+      - INTER_RUN_INTERVAL=$INTER_RUN_INTERVAL
+      - SMTP_PORT=$SMTP_PORT
+      - SMTP_TLS=$SMTP_TLS
+      - HOSTS=$HOSTS
+      - WKHTMLTOPDF_OPTIONS={"load-media-error-handling":"ignore"}
+    restart: unless-stopped
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+    networks:
+      - default
+
+networks:
+  default:
+    external:
+      name: $NETWORK

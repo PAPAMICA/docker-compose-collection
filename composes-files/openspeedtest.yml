@@ -1,0 +1,43 @@
+# Maintainer: Drack0rr
+# Update: 2022-07-26
+
+
+#& type: 3
+#& title: Openspeedtest
+#& description: Speedtest for Home/Office LAN
+#& note: Website: <a href='https://openspeedtest.com/' target='_blank' rel='noopener'>Openspeedtest.com</a>
+#& categories: SelfHosted, Drackorr
+#& platform: linux
+#& logo: https://image.pngaaa.com/812/7475812-middle.png
+
+#% SERVICE: Name of the service (No spaces or points) [dashy]
+#% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
+#% URL: Service URL (Example: service.drackorr.fr or service.com)
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
+
+# Work with Portainer
+version: "3.8"
+services:
+  openspeedtest:
+    image: openspeedtest/latest:latest
+    container_name: $SERVICE
+    restart: unless-stopped
+    healthcheck:
+      test: curl --fail http://localhost:3000 || exit 1
+      interval: 1m
+      timeout: 30s
+      retries: 3
+    networks:
+      - default
+    labels:
+      - "autoupdate=monitor" # https://github.com/Drack0rr/container-updater
+      - "traefik.enable=true"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
+      - "traefik.http.routers.$SERVICE.tls=true"
+      - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+      - "traefik.docker.network=$NETWORK"
+
+networks:
+  default:
+    external:
+      name: $NETWORK

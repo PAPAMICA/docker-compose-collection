@@ -30,7 +30,7 @@ services:
     networks:
       - default
     labels:
-      - "autoupdate=monitor" # https://github.com/Drack0rr/container-updater
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
       - "traefik.enable=true"
       - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
       - "traefik.http.routers.$SERVICE.tls=true"

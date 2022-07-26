@@ -2187,6 +2187,48 @@
         },
         {
             "type": 3,
+            "title": "Openspeedtest",
+            "name": "Openspeedtest",
+            "description": "Speedtest for Home/Office LAN",
+            "note": "Website: <a href='https://openspeedtest.com/' target='_blank' rel='noopener'>Openspeedtest.com</a>",
+            "categories": [
+                "SelfHosted",
+                "Drackorr"
+            ],
+            "platform": "linux",
+            "logo": "https://image.pngaaa.com/812/7475812-middle.png",
+            "repository": {
+                "stackfile": "composes-files/openspeedtest.yml",
+                "url": "https://github.com/PAPAMICA/docker-compose-collection"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "Openspeedtest"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service URL",
+                    "description": "Example: service.drackorr.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
+                }
+            ]
+        },
+        {
+            "type": 3,
             "title": "Organizr",
             "name": "Organizr",
             "description": "Dashboard for your media server.",

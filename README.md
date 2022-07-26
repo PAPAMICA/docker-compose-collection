@@ -37,7 +37,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 
 
 ## List of services availables:
-<img src="https://img.shields.io/badge/Avaibles:_72-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
+<img src="https://img.shields.io/badge/Avaibles:_73-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
 
 | Status | Service | Website | Update | Maintainer |
 |:--:|--|--|--|--|
@@ -81,6 +81,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | ✅ | <img src="https://avatars.githubusercontent.com/u/3368377?s=280&v=4" alt="nzbget" width="20"/> [nzbget](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/nzbget.yml) | [Nzbget.net](http://nzbget.net/) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://www.olivetin.app/resources/images/logo.png" alt="olivetin" width="20"/> [olivetin](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/olivetin.yml) | [OliveTin.app](https://www.olivetin.app/) | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/ombi.png" alt="ombi" width="20"/> [ombi](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/ombi.yml) | [Ombi.io](https://ombi.io/) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
+| ✅ | <img src="https://image.pngaaa.com/812/7475812-middle.png" alt="openspeedtest" width="20"/> [openspeedtest](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/openspeedtest.yml) | [Openspeedtest.com](https://openspeedtest.com/) | 2022-07-26 |  Drack0rr |
 | ✅ | <img src="https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/organizr-icon.png" alt="organizr" width="20"/> [organizr](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/organizr.yml) | [organizr.app](https://organizr.app/) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://www.saashub.com/images/app/service_logos/157/gc1s8radswwz/large.png?1600268255" alt="outline" width="20"/> [outline](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/outline.yml) | [GetOutline.com](https://www.getoutline.com/) | 2022-05-24 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://overseerr.dev/_next/image?url=%2Fos_logo_filled.svg&w=48&q=75" alt="overseerr" width="20"/> [overseerr](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/overseerr.yml) | [Overseerr.dev](https://overseerr.dev/) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |

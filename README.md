@@ -37,7 +37,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 
 
 ## List of services availables:
-<img src="https://img.shields.io/badge/Avaibles:_73-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
+<img src="https://img.shields.io/badge/Avaibles:_74-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
 
 | Status | Service | Website | Update | Maintainer |
 |:--:|--|--|--|--|
@@ -94,6 +94,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | ✅ | <img src="https://projects.task.gda.pl/uploads/-/system/project/avatar/135/rundeck_logo_white.png" alt="rundeck" width="20"/> [rundeck](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/rundeck.yml) | [RunDeck.com](https://www.rundeck.com/open-source) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Cometohere_blue.svg/640px-Cometohere_blue.svg.png" alt="rustdesk" width="20"/> [rustdesk](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/rustdesk.yml) | [rustdesk.com](https://rustdesk.com/) | 2022-06-15 |  Kevin Allioli @linitio |
 | ✅ | <img src="https://flood.js.org/assets/img/logo.png" alt="rutorrent" width="20"/> [rutorrent](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/rutorrent.yml) | [Github.com](https://github.com/Novik/ruTorrent) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
+| ✅ | <img src="https://www.scrypted.app/images/web_hi_res_512.png" alt="scrypted" width="20"/> [scrypted](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/scrypted.yml) | [Scrypted.app](https://www.scrypted.app) | 2022-08-29 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://avatars.githubusercontent.com/u/25282695?s=280&v=4" alt="sinusbot" width="20"/> [sinusbot](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/sinusbot.yml) | [Sinusbot.com](https://www.sinusbot.com/) | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://forums-sonarr-tv.s3.dualstack.us-east-1.amazonaws.com/original/2X/e/ef4553fe96f04a298ec502279731579698e96a9b.png" alt="sonarr" width="20"/> [sonarr](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/sonarr.yml) | [Sonarr.tv](https://sonarr.tv/) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Swagger-logo.png" alt="swagger" width="20"/> [swagger](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/swagger.yml) | [Swagger.io](https://swagger.io/) | 2022-05-30 |  Mickael "PAPAMICA" Asseline |

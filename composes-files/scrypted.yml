@@ -1,0 +1,25 @@
+# Maintainer: Mickael "PAPAMICA" Asseline
+# Update: 2022-08-29
+
+#& type: 3
+#& title: Scrypted
+#& description: Open source home automation for cameras
+#& note: Website: <a href='https://www.scrypted.app' target='_blank' rel='noopener'>Scrypted.app</a></br></br>Warning: network mode host used ! </br>Accessible with port: <code>10443</code>
+#& categories: SelfHosted, Domotic, PAPAMICA
+#& platform: linux
+#& logo: https://www.scrypted.app/images/web_hi_res_512.png
+
+#% SERVICE: Name of the service (No spaces or points) [scrypted]
+#% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
+
+# Work with Portainer
+version: "3.5"
+
+services:
+    scrypted:
+        image: koush/scrypted
+        container_name: $SERVICE
+        restart: unless-stopped
+        network_mode: host
+        volumes:
+            - $DATA_LOCATION/$SERVICE:/server/volume

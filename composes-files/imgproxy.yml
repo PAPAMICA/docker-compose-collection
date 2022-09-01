@@ -9,14 +9,10 @@
 #& platform: linux
 #& logo: https://avatars.githubusercontent.com/u/48099924?s=200&v=4
 
-#% SERVICE: Name of the service (No spaces or points) [bookstack]
+#% SERVICE: Name of the service (No spaces or points) [imgproxy]
 #% DATA_LOCATION: data localization (Example: /apps/service) [/_data/apps]
 #% URL: Service URL (Example: service.papamica.fr or service.com)
 #% NETWORK: Your Traefik network (Example: proxy) [proxy]
-#% DB_USER: Database user (No spaces or points) [bookstack]
-#% DB_PASSWORD: Database user password
-#% DB_ROOT: Database root password
-#% TIME_ZONE: Time zone (Example : Europe/Paris) [Europe/Paris]
 
 # Work with Portainer
 version: "2"

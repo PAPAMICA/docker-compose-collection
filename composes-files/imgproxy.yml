@@ -1,0 +1,116 @@
+# Maintainer: Mickael "PAPAMICA" Asseline
+# Update: 2022-09-1
+
+#& type: 3
+#& title: ImgProxy
+#& description: Proxy for images with processing.
+#& note: Website: <a href='https://imgproxy.net/' target='_blank' rel='noopener'>ImgProxy.net</a>
+#& categories: SelfHosted, PAPAMICA
+#& platform: linux
+#& logo: https://avatars.githubusercontent.com/u/48099924?s=200&v=4
+
+#% SERVICE: Name of the service (No spaces or points) [bookstack]
+#% DATA_LOCATION: data localization (Example: /apps/service) [/_data/apps]
+#% URL: Service URL (Example: service.papamica.fr or service.com)
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
+#% DB_USER: Database user (No spaces or points) [bookstack]
+#% DB_PASSWORD: Database user password
+#% DB_ROOT: Database root password
+#% TIME_ZONE: Time zone (Example : Europe/Paris) [Europe/Paris]
+
+# Work with Portainer
+version: "2"
+services:
+  imgproxy:
+    image: darthsim/imgproxy:latest
+    container_name: $SERVICE
+    environment:
+      ### https://docs.imgproxy.net/configuration
+      ### log and debug
+      IMGPROXY_LOG_LEVEL: "warn"
+      IMGPROXY_ENABLE_DEBUG_HEADERS: "false"
+      IMGPROXY_DEVELOPMENT_ERRORS_MODE: "false"
+      IMGPROXY_REPORT_DOWNLOADING_ERRORS: "false"
+      ### timeouts
+      IMGPROXY_READ_TIMEOUT: 10
+      IMGPROXY_WRITE_TIMEOUT: 10
+      IMGPROXY_DOWNLOAD_TIMEOUT: 10
+      IMGPROXY_KEEP_ALIVE_TIMEOUT: 300
+      IMGPROXY_MAX_SRC_FILE_SIZE: 20971520 # 20MB
+      ### image source
+      IMGPROXY_TTL: 2592000 # client-side cache time is 30 days
+      IMGPROXY_USE_ETAG: "false"
+      IMGPROXY_SO_REUSEPORT: "true"
+      IMGPROXY_IGNORE_SSL_VERIFICATION: "true"
+      IMGPROXY_LOCAL_FILESYSTEM_ROOT: /home
+      IMGPROXY_SKIP_PROCESSING_FORMATS: "svg,webp,avif"
+      ### presets
+      IMGPROXY_AUTO_ROTATE: "true"
+      IMGPROXY_WATERMARK_PATH: /home/watermark.png
+      IMGPROXY_PRESETS: default=resizing_type:fit/gravity:sm,logo=watermark:0.5:soea:10:10:0.15,center_logo=watermark:0.3:ce:0:0:0.3
+      ### compression
+      IMGPROXY_STRIP_METADATA: "true"
+      IMGPROXY_STRIP_COLOR_PROFILE: "true"
+      IMGPROXY_FORMAT_QUALITY: jpeg=80,webp=70,avif=50
+      IMGPROXY_JPEG_PROGRESSIVE: "false"
+      IMGPROXY_PNG_INTERLACED: "false"
+      IMGPROXY_PNG_QUANTIZATION_COLORS: 128
+      IMGPROXY_PNG_QUANTIZE: "false"
+      IMGPROXY_MAX_ANIMATION_FRAMES: 64
+      IMGPROXY_GZIP_COMPRESSION: 0
+      IMGPROXY_AVIF_SPEED: 8
+      ### For URL signature
+      # IMGPROXY_KEY: "<your key>"
+      # IMGPROXY_SALT: "<your salt>"
+      # IMGPROXY_SIGNATURE_SIZE: 32
+      ### External source (Swift)
+      ### See: https://docs.imgproxy.net/serving_files_from_openstack_swift
+      # IMGPROXY_USE_SWIFT: "true"
+      # IMGPROXY_SWIFT_USERNAME:
+      # IMGPROXY_SWIFT_API_KEY:
+      # IMGPROXY_SWIFT_AUTH_URL:
+      # IMGPROXY_SWIFT_AUTH_VERSION:
+      # IMGPROXY_SWIFT_TENANT:
+      # IMGPROXY_SWIFT_DOMAIN:
+      ### External source (S3)
+      ### See: https://docs.imgproxy.net/serving_files_from_s3
+      # IMGPROXY_USE_S3: "true"
+      # IMGPROXY_S3_REGION: "us-west-1"
+      # IMGPROXY_S3_ENDPOINT: "<your endpoint>"
+      # AWS_ACCESS_KEY_ID: "<your id>"
+      # AWS_SECRET_ACCESS_KEY: "<your key>"
+      ### External source (Google Cloud)
+      ### See: https://docs.imgproxy.net/serving_files_from_google_cloud_storage
+      # IMGPROXY_USE_GCS: "true"
+      # IMGPROXY_GCS_KEY: "<your key>"
+      ### External source (Azure Blob)
+      ### See: https://docs.imgproxy.net/serving_files_from_azure_blob_storage
+      # IMGPROXY_USE_ABS: "true"
+      # IMGPROXY_ABS_NAME: "<your name>"
+      # IMGPROXY_ABS_KEY: "<your key>"
+      # IMGPROXY_ABS_ENDPOINT: "<your endpoint>"
+    volumes:
+      - $DATA_LOCATION/$SERVICE/cache:cached
+      - $DATA_LOCATION/$SERVICE/data:/home
+    healthcheck:
+      test: ["CMD", "imgproxy", "health"]
+      interval: 1m
+      timeout: 30s
+      retries: 3
+    restart: unless-stopped
+    networks:
+      - default
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+      - "traefik.enable=true"
+      - "traefik.http.routers.$SERVICE.entrypoints=https"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
+      - "traefik.http.routers.$SERVICE.tls=true"
+      - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+      - "traefik.http.services.$SERVICE.loadbalancer.server.port=8080"
+      - "traefik.docker.network=$NETWORK"
+
+networks:
+  default:
+    external:
+      name: $NETWORK

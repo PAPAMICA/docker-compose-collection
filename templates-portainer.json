@@ -1286,7 +1286,7 @@
                     "name": "SERVICE",
                     "label": "Name of the service ",
                     "description": "No spaces or points",
-                    "default": "bookstack"
+                    "default": "imgproxy"
                 },
                 {
                     "name": "DATA_LOCATION",
@@ -1304,26 +1304,6 @@
                     "label": "Your Traefik network ",
                     "description": "Example: proxy",
                     "default": "proxy"
-                },
-                {
-                    "name": "DB_USER",
-                    "label": "Database user ",
-                    "description": "No spaces or points",
-                    "default": "bookstack"
-                },
-                {
-                    "name": "DB_PASSWORD",
-                    "label": "Database user password"
-                },
-                {
-                    "name": "DB_ROOT",
-                    "label": "Database root password"
-                },
-                {
-                    "name": "TIME_ZONE",
-                    "label": "Time zone ",
-                    "description": "Example : Europe/Paris",
-                    "default": "Europe/Paris"
                 }
             ]
         },

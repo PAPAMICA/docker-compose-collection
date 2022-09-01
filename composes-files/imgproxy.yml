@@ -86,7 +86,7 @@ services:
       # IMGPROXY_ABS_KEY: "<your key>"
       # IMGPROXY_ABS_ENDPOINT: "<your endpoint>"
     volumes:
-      - $DATA_LOCATION/$SERVICE/cache:cached
+      - $DATA_LOCATION/$SERVICE/cache:/cached
       - $DATA_LOCATION/$SERVICE/data:/home
     healthcheck:
       test: ["CMD", "imgproxy", "health"]

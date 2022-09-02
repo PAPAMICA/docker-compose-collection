@@ -555,7 +555,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://img.papamica.com/logo/duplicaty.png",
+            "logo": "https://img.papamica.com/logo/duplicati.png",
             "repository": {
                 "stackfile": "composes-files/duplicaty.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -1159,7 +1159,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://img.papamica.com/logo/healthchecks.png",
+            "logo": "https://img.papamica.com/logo/healthchecks.jpg",
             "repository": {
                 "stackfile": "composes-files/heathchecks.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -2329,7 +2329,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://img.papamica.com/logo/outline.png",
+            "logo": "https://img.papamica.com/logo/outline.webp",
             "repository": {
                 "stackfile": "composes-files/outline.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -2413,7 +2413,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://img.papamica.com/logo/overseer.png",
+            "logo": "https://img.papamica.com/logo/overseer.svg",
             "repository": {
                 "stackfile": "composes-files/overseerr.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -2461,7 +2461,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://img.papamica.com/logo/paperless.png",
+            "logo": "https://img.papamica.com/logo/paperless.peg",
             "repository": {
                 "stackfile": "composes-files/paperless-ngx.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"

@@ -2461,7 +2461,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://img.papamica.com/logo/paperless.peg",
+            "logo": "https://img.papamica.com/logo/paperless.png",
             "repository": {
                 "stackfile": "composes-files/paperless-ngx.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"

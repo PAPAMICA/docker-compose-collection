@@ -2413,7 +2413,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://img.papamica.com/logo/overseer.svg",
+            "logo": "https://img.papamica.com/logo/overseerr.svg",
             "repository": {
                 "stackfile": "composes-files/overseerr.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"

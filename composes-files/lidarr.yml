@@ -7,7 +7,7 @@
 #& note: Website: <a href='https://lidarr.audio/' target='_blank' rel='noopener'>Lidarr.audio</a>
 #& categories: SelfHosted, Mediacenter, PAPAMICA
 #& platform: linux
-#& logo: https://github.com/lidarr/Lidarr/raw/develop/Logo/400.png
+#& logo: https://img.papamica.com/logo/lidarr.png
 
 #% SERVICE: Name of the service (No spaces or points) [lidarr]
 #% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]

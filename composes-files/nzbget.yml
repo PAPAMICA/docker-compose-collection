@@ -7,7 +7,7 @@
 #& note: Website: <a href='http://nzbget.net/' target='_blank' rel='noopener'>Nzbget.net</a>
 #& categories: SelfHosted, Mediacenter, PAPAMICA
 #& platform: linux
-#& logo: https://avatars.githubusercontent.com/u/3368377?s=280&v=4
+#& logo: https://img.papamica.com/logo/nzbget.png
 
 #% SERVICE: Name of the service (No spaces or points) [nzbget]
 #% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]

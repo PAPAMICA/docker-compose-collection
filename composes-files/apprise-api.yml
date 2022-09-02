@@ -7,7 +7,7 @@
 #& note: Website: <a href='https://github.com/caronc/apprise-api' target='_blank' rel='noopener'>Github.com</a>
 #& categories: SelfHosted, PAPAMICA
 #& platform: linux
-#& logo: https://warehouse-camo.ingress.cmh1.psfhosted.org/a22d9206f80dfbb10748b6764fee932ff0ae1a8f/687474703a2f2f7265706f2e6e75787265662e636f6d2f7075622f696d672f6c6f676f2d617070726973652e706e67
+#& logo: https://img.papamica.com/logo/apprise.png
 
 #% SERVICE: Name of the service (No spaces or points) [apprise-api]
 #% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]

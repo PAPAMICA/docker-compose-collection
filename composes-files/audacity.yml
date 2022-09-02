@@ -7,7 +7,7 @@
 #& note: Website: <a href='https://www.audacityteam.org/ ' target='_blank' rel='noopener'>audacityTeam.org</a></br></br>Default user/pass: <code>abc</code> / <code>abc</code>
 #& categories: SelfHosted, PAPAMICA
 #& platform: linux
-#& logo: https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/audacity-logo.png
+#& logo: https://img.papamica.com/logo/audacity.png
 
 #% SERVICE: Name of the service (No spaces or points) [audacity]
 #% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]

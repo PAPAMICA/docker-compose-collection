@@ -7,7 +7,7 @@
 #& note: Website: <a href='https://traefik.io/traefik/' target='_blank' rel='noopener'>Traefik.io</a></br>Ports to open: 80, 443</br>You need to create these files: traefik.yml, config.yml, acme.json</br>Check my repo <a href='https://github.com/PAPAMICA/docker-environment' target='_blank' rel='noopener'>PAPAMICA/docker-environment</a>
 #& categories: SelfHosted, PAPAMICA
 #& platform: linux
-#& logo: https://blog.alterway.fr/images/traefik.logo.png
+#& logo: https://img.papamica.com/logo/traefik.png
 
 #% SERVICE: Name of the service (No spaces or points) [traefik]
 #% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]

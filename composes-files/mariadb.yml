@@ -7,7 +7,7 @@
 #& note: Website: <a href='https://mariadb.org/' target='_blank' rel='noopener'>mariadb.org</a>
 #& categories: SelfHosted, Database, PAPAMICA
 #& platform: linux
-#& logo: https://silicondales.com/wp-content/uploads/2021/05/mariadb-square.png
+#& logo: https://img.papamica.com/logo/mariadb.png
 
 #% SERVICE: Name of the service (No spaces or points) [mariadb]
 #% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]

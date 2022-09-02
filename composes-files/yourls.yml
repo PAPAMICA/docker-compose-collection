@@ -7,7 +7,7 @@
 #& note: Website: <a href='https://yourls.org/' target='_blank' rel='noopener'>YourLS.org</a>
 #& categories: SelfHosted, PAPAMICA
 #& platform: linux
-#& logo: https://images.opencollective.com/yourls/a488226/logo/256.png
+#& logo: https://img.papamica.com/logo/yourls.png
 
 #% SERVICE: Name of the service (No spaces or points) [yourls]
 #% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]

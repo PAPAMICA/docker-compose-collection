@@ -7,7 +7,7 @@
 #& note: Website: <a href='https://transmissionbt.com/' target='_blank' rel='noopener'>Transmissionbt.com</a></br></br>Port to open: <code>51413</code>
 #& categories: SelfHosted, Mediacenter, PAPAMICA
 #& platform: linux
-#& logo: https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Transmission_Icon.svg/1200px-Transmission_Icon.svg.png
+#& logo: https://img.papamica.com/logo/transmission.png
 
 #% SERVICE: Name of the service (No spaces or points) [transmission]
 #% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]

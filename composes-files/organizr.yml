@@ -7,7 +7,7 @@
 #& note: Website: <a href='https://organizr.app/' target='_blank' rel='noopener'>organizr.app</a>
 #& categories: SelfHosted, Mediacenter, PAPAMICA
 #& platform: linux
-#& logo: https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/organizr-icon.png
+#& logo: https://img.papamica.com/logo/organizr.png
 
 #% SERVICE: Name of the service (No spaces or points) [organizr]
 #% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]

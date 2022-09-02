@@ -7,7 +7,7 @@
 #& note: Website: <a href='https://getferdi.com/' target='_blank' rel='noopener'>GetFerdi.com</a>
 #& categories: SelfHosted, PAPAMICA
 #& platform: linux
-#& logo: https://github.com/getferdi/ferdi/raw/develop/build-helpers/images/icon.png
+#& logo: https://img.papamica.com/logo/ferdi.png
 
 #% SERVICE: Name of the service (No spaces or points) [ferdi]
 #% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]

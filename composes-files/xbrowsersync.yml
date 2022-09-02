@@ -7,7 +7,7 @@
 #& note: Website: <a href='https://www.xbrowsersync.org/' target='_blank' rel='noopener'>xbrowsersync.org</a></br></br>Warning! You need to clone this repo before: <a href='https://github.com/xbrowsersync/api-docker/' target='_blank' rel='noopener'>Github.com</a>
 #& categories: SelfHosted, PAPAMICA
 #& platform: linux
-#& logo: https://avatars.githubusercontent.com/u/19213777?s=200&v=4
+#& logo: https://img.papamica.com/logo/xbrowsersync.png
 
 #% SERVICE: Name of the service (No spaces or points) [xBrowserSync]
 #% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]

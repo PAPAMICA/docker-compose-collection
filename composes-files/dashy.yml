@@ -8,7 +8,7 @@
 #& note: Website: <a href='https://dashy.to/' target='_blank' rel='noopener'>Dashy.to</a>
 #& categories: SelfHosted, PAPAMICA
 #& platform: linux
-#& logo: https://camo.githubusercontent.com/6c0964f4604a6807c263c83fff293258a908bdff7587910976d11c4e67a589bb/68747470733a2f2f692e6962622e636f2f796862743643592f64617368792e706e67
+#& logo: https://img.papamica.com/logo/dashy.png
 
 #% SERVICE: Name of the service (No spaces or points) [dashy]
 #% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]

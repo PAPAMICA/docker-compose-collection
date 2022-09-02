@@ -7,7 +7,7 @@
 #& note: Website: <a href='https://www.sinusbot.com/' target='_blank' rel='noopener'>Sinusbot.com</a>
 #& categories: SelfHosted, PAPAMICA
 #& platform: linux
-#& logo: https://avatars.githubusercontent.com/u/25282695?s=280&v=4
+#& logo: https://img.papamica.com/logo/sinusbot.png
 
 #% SERVICE: Name of the service (No spaces or points) [sinusbot]
 #% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]

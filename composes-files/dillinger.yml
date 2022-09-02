@@ -7,7 +7,7 @@
 #& note: Website: <a href='https://github.com/joemccann/dillinger' target='_blank' rel='noopener'>Github.com</a>
 #& categories: SelfHosted, PAPAMICA
 #& platform: linux
-#& logo: https://d33wubrfki0l68.cloudfront.net/62334572e03c001939ed509a2a1f1009dd9bdde3/a7ee8/assets/images/tool-icons/dillinger.png
+#& logo: https://img.papamica.com/logo/dillinger.png
 
 #% SERVICE: Name of the service (No spaces or points) [dillinger]
 #% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]

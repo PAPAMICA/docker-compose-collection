@@ -7,7 +7,7 @@
 #& note: Website: <a href='https://github.com/babybuddy/babybuddy' target='_blank' rel='noopener'>Github.com</a></br></br>Default user/pass: <code>admin</code> / <code>admin</code>
 #& categories: SelfHosted, PAPAMICA
 #& platform: linux
-#& logo: https://github.com/linuxserver/docker-templates/raw/master/linuxserver.io/img/babybuddy-logo.png
+#& logo: https://img.papamica.com/logo/babybuddy.png
 
 #% SERVICE: Name of the service (No spaces or points) [babybuddy]
 #% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]

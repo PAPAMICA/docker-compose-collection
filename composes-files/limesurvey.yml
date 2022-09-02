@@ -7,7 +7,7 @@
 #& note: Website: <a href='https://github.com/LimeSurvey/LimeSurvey' target='_blank' rel='noopener'>Github.com</a>
 #& categories: SelfHosted, PAPAMICA
 #& platform: linux
-#& logo: https://upload.wikimedia.org/wikipedia/commons/d/d4/Limesurvey_logo.png
+#& logo: https://img.papamica.com/logo/limesurvey.png
 
 #% SERVICE: Name of the service (No spaces or points) [limesurvey]
 #% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]

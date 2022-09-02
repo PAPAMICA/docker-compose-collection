@@ -7,7 +7,7 @@
 #& note: Website: <a href='https://rustdesk.com/' target='_blank' rel='noopener'>rustdesk.com</a>
 #& categories: SelfHosted
 #& platform: linux
-#& logo: https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Cometohere_blue.svg/640px-Cometohere_blue.svg.png
+#& logo: https://img.papamica.com/logo/rustdesk.png
 
 #% SERVICE: Name of the service (No spaces or points) [rustdesk]
 #% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]

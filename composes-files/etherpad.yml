@@ -7,7 +7,7 @@
 #& note: Website: <a href='https://etherpad.org/' target='_blank' rel='noopener'>etherpad.org</a>
 #& categories: SelfHosted, PAPAMICA
 #& platform: linux
-#& logo: https://n30.tech/images/etherpad.png
+#& logo: https://img.papamica.com/logo/etherpad.png
 
 #% SERVICE: Name of the service (No spaces or points) [etherpad]
 #% DATA_LOCATION: data localization (Example: /apps/service) [/_data/apps]

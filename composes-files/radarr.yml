@@ -7,7 +7,7 @@
 #& note: Website: <a href='https://radarr.video/' target='_blank' rel='noopener'>Radarr.video</a>
 #& categories: SelfHosted, Mediacenter, PAPAMICA
 #& platform: linux
-#& logo: https://developer.asustor.com/uploadIcons/0020_999_1573625786_Radarr_256.png
+#& logo: https://img.papamica.com/logo/radarr.png
 
 #% SERVICE: Name of the service (No spaces or points) [radarr]
 #% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]

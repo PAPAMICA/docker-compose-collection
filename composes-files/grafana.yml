@@ -7,7 +7,7 @@
 #& note: Website: <a href='https://grafana.com/grafana/dashboards/' target='_blank' rel='noopener'>Grafana.com</a>
 #& categories: SelfHosted, Monitoring, PAPAMICA
 #& platform: linux
-#& logo: https://seeklogo.com/images/G/grafana-logo-15BA0AFA8A-seeklogo.com.png
+#& logo: https://img.papamica.com/logo/grafana.png
 
 #% SERVICE: Name of the service (No spaces or points) [grafana]
 #% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]

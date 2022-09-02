@@ -7,7 +7,7 @@
 #& note: Website: <a href='https://umami.is/' target='_blank' rel='noopener'>Umami.is</a></br></br>Warning: RTFM ! You need to add one file and restart !
 #& categories: SelfHosted, PAPAMICA
 #& platform: linux
-#& logo: https://img.stackshare.io/service/20837/umami.png
+#& logo: https://img.papamica.com/logo/umami.png
 
 #% SERVICE: Name of the service (No spaces or points) [umami]
 #% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]

@@ -7,7 +7,7 @@
 #& note: Website: <a href='https://www.bazarr.media/' target='_blank' rel='noopener'>Bazarr.media</a>
 #& categories: SelfHosted, Mediacenter, PAPAMICA
 #& platform: linux
-#& logo: https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/bazarr.png
+#& logo: https://img.papamica.com/logo/bazarr.png
 
 #% SERVICE: Name of the service (No spaces or points) [bazarr]
 #% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]

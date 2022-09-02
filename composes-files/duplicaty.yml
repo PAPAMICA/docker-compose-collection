@@ -7,7 +7,7 @@
 #& note: Website: <a href='https://www.duplicati.com/' target='_blank' rel='noopener'>Duplicati.com</a>
 #& categories: SelfHosted, PAPAMICA
 #& platform: linux
-#& logo: https://github.com/linuxserver/docker-templates/raw/master/linuxserver.io/img/duplicati-icon.png
+#& logo: https://img.papamica.com/logo/duplicaty.png
 
 #% SERVICE: Name of the service (No spaces or points) [duplicati]
 #% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]

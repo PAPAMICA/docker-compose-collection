@@ -7,7 +7,7 @@
 #& note: Website: <a href='https://sonarr.tv/' target='_blank' rel='noopener'>Sonarr.tv</a>
 #& categories: SelfHosted, Mediacenter, PAPAMICA
 #& platform: linux
-#& logo: https://forums-sonarr-tv.s3.dualstack.us-east-1.amazonaws.com/original/2X/e/ef4553fe96f04a298ec502279731579698e96a9b.png
+#& logo: https://img.papamica.com/logo/sonarr.png
 
 #% SERVICE: Name of the service (No spaces or points) [sonarr]
 #% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]

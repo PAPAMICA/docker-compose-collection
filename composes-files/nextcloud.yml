@@ -7,7 +7,7 @@
 #& note: Website: <a href='https://nextcloud.com/' target='_blank' rel='noopener'>NextCloud.com</a>
 #& categories: SelfHosted, PAPAMICA
 #& platform: linux
-#& logo: https://alternative.me/media/1280/nextcloud-screenshot-h7bxcd9k35twayd9.png
+#& logo: https://img.papamica.com/logo/nextcloud.png
 
 #% SERVICE: Name of the service (No spaces or points) [nexcloud]
 #% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]

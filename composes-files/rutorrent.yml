@@ -7,7 +7,7 @@
 #& note: Website: <a href='https://github.com/Novik/ruTorrent' target='_blank' rel='noopener'>Github.com</a></br></br>Ports to open: <code>51415</code> & <code>6881</code>
 #& categories: SelfHosted, Mediacenter, PAPAMICA
 #& platform: linux
-#& logo: https://flood.js.org/assets/img/logo.png
+#& logo: https://img.papamica.com/logo/flood.png
 
 #% SERVICE: Name of the service (No spaces or points) [rutorrent]
 #% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]

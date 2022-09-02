@@ -7,7 +7,7 @@
 #& note: Website: <a href='https://hastebin.com/about.md' target='_blank' rel='noopener'>Hastebin.com</a>
 #& categories: SelfHosted, PAPAMICA
 #& platform: linux
-#& logo: https://progsoft.net/images/hastebin-icon-b45e3f5695d3f577b2630648bd00584195822e3d.png
+#& logo: https://img.papamica.com/logo/hastebin.png
 
 #% SERVICE: Name of the service (No spaces or points) [hastebin]
 #% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]

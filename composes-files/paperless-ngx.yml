@@ -7,7 +7,7 @@
 #& note: Website: <a href='https://github.com/paperless-ngx/paperless-ngx' target='_blank' rel='noopener'>Github.com</a>
 #& categories: SelfHosted, PAPAMICA
 #& platform: linux
-#& logo: https://avatars.githubusercontent.com/u/99562962?s=280&v=4
+#& logo: https://img.papamica.com/logo/paperless.png
 
 #% SERVICE: Name of the service (No spaces or points) [paperless]
 #% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]

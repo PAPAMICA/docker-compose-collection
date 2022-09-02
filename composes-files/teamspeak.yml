@@ -7,7 +7,7 @@
 #& note: Website: <a href='https://teamspeak.com/en/' target='_blank' rel='noopener'>TeamSpeak.com</a></br>Ports to open: 9987, 10011, 30033 & 10022
 #& categories: SelfHosted, PAPAMICA
 #& platform: linux
-#& logo: https://upload.wikimedia.org/wikipedia/commons/e/ec/TeamSpeak_logo_renovado.png
+#& logo: https://img.papamica.com/logo/teamspeak.png
 
 #% SERVICE: Name of the service (No spaces or points) [teamspeak]
 #% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]

@@ -7,7 +7,7 @@
 #& note: Website: <a href='https://www.filebot.net/' target='_blank' rel='noopener'>filebot.net</a>
 #& categories: SelfHosted, PAPAMICA
 #& platform: linux
-#& logo: https://www.filebot.net/images/filebot.logo.svg
+#& logo: https://img.papamica.com/logo/filebot.svg
 
 #% SERVICE: Name of the service (No spaces or points) [filebot]
 #% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]

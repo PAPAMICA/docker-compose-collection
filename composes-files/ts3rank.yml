@@ -7,7 +7,7 @@
 #& note: Website: <a href='https://ts-ranksystem.com/' target='_blank' rel='noopener'>TS-Ranksystem.com</a></br>You need to comment "INSTALL_MODE=1" after install.
 #& categories: SelfHosted, PAPAMICA
 #& platform: linux
-#& logo: https://ts-n.net/graphics/tsn_logo.png
+#& logo: https://img.papamica.com/logo/tsnranksystem.png
 
 #% SERVICE: Name of the service (No spaces or points) [ts3rank]
 #% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]

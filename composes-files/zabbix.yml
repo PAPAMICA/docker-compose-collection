@@ -7,7 +7,7 @@
 #& note: Website: <a href='https://www.zabbix.com/' target='_blank' rel='noopener'>Zabbix.com</a>
 #& categories: SelfHosted, Monitoring, PAPAMICA
 #& platform: linux
-#& logo: https://juliebarbaroux.tech/wp-content/uploads/2020/11/zabbix.png
+#& logo: https://img.papamica.com/logo/zabbix.png
 
 #% SERVICE: Name of the service (No spaces or points) [zabbix]
 #% DATA_LOCATION: data localization (Example: /apps/service) [/_data/apps]

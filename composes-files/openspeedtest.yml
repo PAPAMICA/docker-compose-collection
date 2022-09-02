@@ -8,7 +8,7 @@
 #& note: Website: <a href='https://openspeedtest.com/' target='_blank' rel='noopener'>Openspeedtest.com</a>
 #& categories: SelfHosted, Drackorr
 #& platform: linux
-#& logo: https://image.pngaaa.com/812/7475812-middle.png
+#& logo: https://img.papamica.com/logo/openspeedtest.png
 
 #% SERVICE: Name of the service (No spaces or points) [Openspeedtest]
 #% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]

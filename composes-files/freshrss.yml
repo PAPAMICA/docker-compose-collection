@@ -7,7 +7,7 @@
 #& note: Website: <a href='https://freshrss.org/' target='_blank' rel='noopener'>FreshRSS.org</a>
 #& categories: SelfHosted, PAPAMICA
 #& platform: linux
-#& logo: https://framalibre.org/sites/default/files/leslogos/Logo%20FreshRSS.png
+#& logo: https://img.papamica.com/logo/freshrss.png
 
 #% SERVICE: Name of the service (No spaces or points) [freshrss]
 #% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]

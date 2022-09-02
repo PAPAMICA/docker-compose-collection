@@ -7,7 +7,7 @@
 #& note: Website: <a href='https://fr.matomo.org' target='_blank' rel='noopener'>Matomo.org</a>
 #& categories: SelfHosted, PAPAMICA
 #& platform: linux
-#& logo: https://cdn1.oxatis.com/Files/112496/Img/16/matomo-new.png
+#& logo: https://img.papamica.com/logo/matomo.png
 
 #% SERVICE: Name of the service (No spaces or points) [matomo]
 #% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]

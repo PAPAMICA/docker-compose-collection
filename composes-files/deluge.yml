@@ -7,7 +7,7 @@
 #& note: Website: <a href='https://deluge-torrent.org/ ' target='_blank' rel='noopener'>Deluge-Torrent.org</a></br></br>Port to open: <code>6881</code>
 #& categories: SelfHosted, Mediacenter, PAPAMICA
 #& platform: linux
-#& logo: https://avatars2.githubusercontent.com/u/6733935?v=3&s=200
+#& logo: https://img.papamica.com/logo/deluge.png
 
 #% SERVICE: Name of the service (No spaces or points) [deluge]
 #% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]

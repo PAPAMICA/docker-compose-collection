@@ -7,7 +7,7 @@
 #& note: Website: <a href='https://swagger.io/' target='_blank' rel='noopener'>Swagger.io</a>
 #& categories: SelfHosted, PAPAMICA
 #& platform: linux
-#& logo: https://upload.wikimedia.org/wikipedia/commons/a/ab/Swagger-logo.png
+#& logo: https://img.papamica.com/logo/swagger.png
 
 #% SERVICE: Name of the service (No spaces or points) [swagger]
 #% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]

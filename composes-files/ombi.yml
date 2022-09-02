@@ -7,7 +7,7 @@
 #& note: Website: <a href='https://ombi.io/' target='_blank' rel='noopener'>Ombi.io</a>
 #& categories: SelfHosted, Mediacenter, PAPAMICA
 #& platform: linux
-#& logo: https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/ombi.png
+#& logo: https://img.papamica.com/logo/ombi.png
 
 #% SERVICE: Name of the service (No spaces or points) [ombi]
 #% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]

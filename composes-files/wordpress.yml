@@ -7,7 +7,7 @@
 #& note: Website: <a href='https://wordpress.org/' target='_blank' rel='noopener'>WordPress.org</a>
 #& categories: SelfHosted, PAPAMICA
 #& platform: linux
-#& logo: https://refonteblog.mystagingwebsite.com/wp-content/uploads/2021/12/logo-wordpress.png
+#& logo: https://img.papamica.com/logo/wordpress.png
 
 #% SERVICE: Name of the service (No spaces or points) [wordpress]
 #% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]

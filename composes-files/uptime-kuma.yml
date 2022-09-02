@@ -7,7 +7,7 @@
 #& note: Website: <a href='https://github.com/louislam/uptime-kuma' target='_blank' rel='noopener'>Github.com</a>
 #& categories: SelfHosted, Monitoring, PAPAMICA
 #& platform: linux
-#& logo: https://github.com/louislam/uptime-kuma/raw/master/public/icon.svg
+#& logo: https://img.papamica.com/logo/uptimekuma.svg
 
 #% SERVICE: Name of the service (No spaces or points) [uptime]
 #% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]

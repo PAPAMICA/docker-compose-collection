@@ -7,7 +7,7 @@
 #& note: Website: <a href='https://jellyfin.org/' target='_blank' rel='noopener'>Jellyfin.org</a>
 #& categories: SelfHosted, Mediacenter, PAPAMICA
 #& platform: linux
-#& logo: https://developer.asustor.com/uploadIcons/0020_999_1568614440_Jellyfin_256.png
+#& logo: https://img.papamica.com/logo/jellyfin.png
 
 #% SERVICE: Name of the service (No spaces or points) [jellyfin]
 #% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]

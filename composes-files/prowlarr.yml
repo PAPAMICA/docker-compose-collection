@@ -7,7 +7,7 @@
 #& note: Website: <a href='https://github.com/Prowlarr/Prowlarr' target='_blank' rel='noopener'>Gitub.com</a>
 #& categories: SelfHosted, Mediacenter, PAPAMICA
 #& platform: linux
-#& logo: https://prowlarr.com/logo/256.png
+#& logo: https://img.papamica.com/logo/prowlarr.png
 
 #% SERVICE: Name of the service (No spaces or points) [prowlarr]
 #% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]

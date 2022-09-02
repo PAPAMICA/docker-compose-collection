@@ -7,7 +7,7 @@
 #& note: Website: <a href='https://github.com/itzg/docker-minecraft-server' target='_blank' rel='noopener'>Github.com</a>
 #& categories: SelfHosted, Game, PAPAMICA
 #& platform: linux
-#& logo: https://i.pinimg.com/originals/9c/b1/d1/9cb1d1a9eb6575147d6990e2700fb75c.png
+#& logo: https://img.papamica.com/logo/minecraft.png
 
 #% SERVICE: Name of the service (No spaces or points) [minecraft-server]
 #% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]

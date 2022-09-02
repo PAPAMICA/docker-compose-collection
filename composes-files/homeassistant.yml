@@ -7,7 +7,7 @@
 #& note: Website: <a href='https://www.home-assistant.io/' target='_blank' rel='noopener'>Home-Assistant.io</a></br></br>Warning: network mode host used ! </br>Accessible with port: <code>8123</code>
 #& categories: SelfHosted, Domotic, PAPAMICA
 #& platform: linux
-#& logo: https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Home_Assistant_Logo.svg/1200px-Home_Assistant_Logo.svg.png
+#& logo: https://img.papamica.com/logo/homeassistant.png
 
 #% SERVICE: Name of the service (No spaces or points) [home-assistant]
 #% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]

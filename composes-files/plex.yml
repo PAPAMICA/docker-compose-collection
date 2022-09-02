@@ -7,7 +7,7 @@
 #& note: Website: <a href='https://www.plex.tv' target='_blank' rel='noopener'>Plex.tv</a></br>Check ports to open in compose !
 #& categories: SelfHosted, Mediacenter, PAPAMICA
 #& platform: linux
-#& logo: https://www.plex.tv/wp-content/uploads/2018/01/pmp-icon-1.png
+#& logo: https://img.papamica.com/logo/plex.png
 
 #% SERVICE: Name of the service (No spaces or points) [plex]
 #% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]

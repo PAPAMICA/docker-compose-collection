@@ -7,7 +7,7 @@
 #& note: Website: <a href='https://gitlab.com/mojo42/Jirafeau' target='_blank' rel='noopener'>Gitlab.com</a>
 #& categories: SelfHosted, PAPAMICA
 #& platform: linux
-#& logo: https://api.cloudron.io/api/v1/apps/net.jirafeau.cloudronapp/versions/1.2.0/icon
+#& logo: https://img.papamica.com/logo/jirafeau.png
 
 #% SERVICE: Name of the service (No spaces or points) [jirafeau]
 #% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]

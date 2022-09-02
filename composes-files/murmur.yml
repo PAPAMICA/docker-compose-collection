@@ -7,7 +7,7 @@
 #& note: Website: <a href='https://www.mumble.com/' target='_blank' rel='noopener'>Mumble.com</a></br>Port to open:64738
 #& categories: SelfHosted, PAPAMICA
 #& platform: linux
-#& logo: https://www.pngkey.com/png/full/319-3198756_rainbow-six-siege-mumble-logo-png.png
+#& logo: https://img.papamica.com/logo/mumble.png
 
 #% SERVICE: Name of the service (No spaces or points) [mumble-server]
 #% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]

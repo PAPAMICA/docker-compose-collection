@@ -8,7 +8,7 @@
 #& note: Website: <a href='https://www.getoutline.com/' target='_blank' rel='noopener'>GetOutline.com</a></br></br>After first run, comment line <code>188</code> and configure your authentification.
 #& categories: SelfHosted, PAPAMICA
 #& platform: linux
-#& logo: https://img.papamica.com/logo/outline.png
+#& logo: https://img.papamica.com/logo/outline.webp
 
 #% SERVICE: Name of the service (No spaces or points) [outline]
 #% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]

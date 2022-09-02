@@ -7,7 +7,7 @@
 #& note: Website: <a href='https://github.com/healthchecks/healthchecks' target='_blank' rel='noopener'>Github.com</a>
 #& categories: SelfHosted, Monitoring, PAPAMICA
 #& platform: linux
-#& logo: https://img.papamica.com/logo/healthchecks.png
+#& logo: https://img.papamica.com/logo/healthchecks.jpg
 
 #% SERVICE: Name of the service (No spaces or points) [healthchecks]
 #% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]

@@ -7,7 +7,7 @@
 #& note: Website: <a href='https://overseerr.dev/' target='_blank' rel='noopener'>Overseerr.dev</a>
 #& categories: SelfHosted, Mediacenter, PAPAMICA
 #& platform: linux
-#& logo: https://img.papamica.com/logo/overseer.png
+#& logo: https://img.papamica.com/logo/overseer.svg
 
 #% SERVICE: Name of the service (No spaces or points) [overseerr]
 #% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]

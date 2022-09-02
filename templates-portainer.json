@@ -13,7 +13,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://git.spip.net/repo-avatars/1417-1f8a32370f4028c9c0c216787ad4916c",
+            "logo": "https://img.papamica.com/logo/adminer.png",
             "repository": {
                 "stackfile": "composes-files/adminer.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -49,7 +49,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://warehouse-camo.ingress.cmh1.psfhosted.org/a22d9206f80dfbb10748b6764fee932ff0ae1a8f/687474703a2f2f7265706f2e6e75787265662e636f6d2f7075622f696d672f6c6f676f2d617070726973652e706e67",
+            "logo": "https://img.papamica.com/logo/apprise.png",
             "repository": {
                 "stackfile": "composes-files/apprise-api.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -91,7 +91,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/audacity-logo.png",
+            "logo": "https://img.papamica.com/logo/audacity.png",
             "repository": {
                 "stackfile": "composes-files/audacity.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -140,7 +140,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://cdn-icons-png.flaticon.com/512/4773/4773193.png",
+            "logo": "https://img.papamica.com/logo/autoheal.png",
             "repository": {
                 "stackfile": "composes-files/autoheal.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -171,7 +171,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://github.com/linuxserver/docker-templates/raw/master/linuxserver.io/img/babybuddy-logo.png",
+            "logo": "https://img.papamica.com/logo/babybuddy.png",
             "repository": {
                 "stackfile": "composes-files/babybuddy.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -220,7 +220,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/bazarr.png",
+            "logo": "https://img.papamica.com/logo/bazarr.png",
             "repository": {
                 "stackfile": "composes-files/bazarr.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -278,7 +278,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/BookStack_logo.svg/1075px-BookStack_logo.svg.png",
+            "logo": "https://img.papamica.com/logo/bookstack.png",
             "repository": {
                 "stackfile": "composes-files/bookstack.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -340,7 +340,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Cometohere_blue.svg/640px-Cometohere_blue.svg.png",
+            "logo": "https://img.papamica.com/logo/chevereto.png",
             "repository": {
                 "stackfile": "composes-files/chevereto.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -407,7 +407,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://camo.githubusercontent.com/6c0964f4604a6807c263c83fff293258a908bdff7587910976d11c4e67a589bb/68747470733a2f2f692e6962622e636f2f796862743643592f64617368792e706e67",
+            "logo": "https://img.papamica.com/logo/dashy.png",
             "repository": {
                 "stackfile": "composes-files/dashy.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -450,7 +450,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://avatars2.githubusercontent.com/u/6733935?v=3&s=200",
+            "logo": "https://img.papamica.com/logo/deluge.png",
             "repository": {
                 "stackfile": "composes-files/deluge.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -513,7 +513,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://d33wubrfki0l68.cloudfront.net/62334572e03c001939ed509a2a1f1009dd9bdde3/a7ee8/assets/images/tool-icons/dillinger.png",
+            "logo": "https://img.papamica.com/logo/dillinger.png",
             "repository": {
                 "stackfile": "composes-files/dillinger.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -555,7 +555,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://github.com/linuxserver/docker-templates/raw/master/linuxserver.io/img/duplicati-icon.png",
+            "logo": "https://img.papamica.com/logo/duplicaty.png",
             "repository": {
                 "stackfile": "composes-files/duplicaty.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -612,7 +612,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://bonnenouvelle.fr/IMG/arton1259.png?1449679625",
+            "logo": "https://img.papamica.com/logo/email2pdf.png",
             "repository": {
                 "stackfile": "composes-files/email2pdf.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -696,7 +696,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/emby-logo.png",
+            "logo": "https://img.papamica.com/logo/emby.png",
             "repository": {
                 "stackfile": "composes-files/emby.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -755,7 +755,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/embystat-logo.png",
+            "logo": "https://img.papamica.com/logo/embystat.png",
             "repository": {
                 "stackfile": "composes-files/embystat.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -803,7 +803,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://n30.tech/images/etherpad.png",
+            "logo": "https://img.papamica.com/logo/etherpad.png",
             "repository": {
                 "stackfile": "composes-files/etherpad.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -859,7 +859,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://github.com/getferdi/ferdi/raw/develop/build-helpers/images/icon.png",
+            "logo": "https://img.papamica.com/logo/ferdi.png",
             "repository": {
                 "stackfile": "composes-files/ferdi.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -925,7 +925,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://www.filebot.net/images/filebot.logo.svg",
+            "logo": "https://img.papamica.com/logo/filebot.svg",
             "repository": {
                 "stackfile": "composes-files/filebot.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -972,7 +972,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://avatars.githubusercontent.com/u/35781395?s=200&v=4",
+            "logo": "https://img.papamica.com/logo/filebrowser.png",
             "repository": {
                 "stackfile": "composes-files/filebrowser.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -1019,7 +1019,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://framalibre.org/sites/default/files/leslogos/Logo%20FreshRSS.png",
+            "logo": "https://img.papamica.com/logo/freshrss.png",
             "repository": {
                 "stackfile": "composes-files/freshrss.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -1068,7 +1068,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://seeklogo.com/images/G/grafana-logo-15BA0AFA8A-seeklogo.com.png",
+            "logo": "https://img.papamica.com/logo/grafana.png",
             "repository": {
                 "stackfile": "composes-files/grafana.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -1116,7 +1116,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://progsoft.net/images/hastebin-icon-b45e3f5695d3f577b2630648bd00584195822e3d.png",
+            "logo": "https://img.papamica.com/logo/hastebin.png",
             "repository": {
                 "stackfile": "composes-files/hastebin.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -1159,7 +1159,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://pbs.twimg.com/profile_images/1055543716201615365/geMDWaHV_400x400.jpg",
+            "logo": "https://img.papamica.com/logo/healthchecks.png",
             "repository": {
                 "stackfile": "composes-files/heathchecks.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -1245,7 +1245,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Home_Assistant_Logo.svg/1200px-Home_Assistant_Logo.svg.png",
+            "logo": "https://img.papamica.com/logo/homeassistant.png",
             "repository": {
                 "stackfile": "composes-files/homeassistant.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -1276,7 +1276,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://avatars.githubusercontent.com/u/48099924?s=200&v=4",
+            "logo": "https://img.papamica.com/logo/imgproxy.png",
             "repository": {
                 "stackfile": "composes-files/imgproxy.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -1319,7 +1319,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://user-images.githubusercontent.com/27040483/28728094-99f3e3f6-73c7-11e7-8f8d-28912dc6ac0d.png",
+            "logo": "https://img.papamica.com/logo/jackett.png",
             "repository": {
                 "stackfile": "composes-files/jackett.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -1368,7 +1368,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://developer.asustor.com/uploadIcons/0020_999_1568614440_Jellyfin_256.png",
+            "logo": "https://img.papamica.com/logo/jellyfin.png",
             "repository": {
                 "stackfile": "composes-files/jellyfin.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -1426,7 +1426,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://api.cloudron.io/api/v1/apps/net.jirafeau.cloudronapp/versions/1.2.0/icon",
+            "logo": "https://img.papamica.com/logo/jirafeau.png",
             "repository": {
                 "stackfile": "composes-files/jirafeau.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -1468,7 +1468,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://dyltqmyl993wv.cloudfront.net/assets/stacks/keycloak/img/keycloak-stack-220x234.png",
+            "logo": "https://img.papamica.com/logo/keycloak.png",
             "repository": {
                 "stackfile": "composes-files/keycloak.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -1535,7 +1535,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://github.com/lidarr/Lidarr/raw/develop/Logo/400.png",
+            "logo": "https://img.papamica.com/logo/lidarr.png",
             "repository": {
                 "stackfile": "composes-files/lidarr.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -1593,7 +1593,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Limesurvey_logo.png",
+            "logo": "https://img.papamica.com/logo/limesurvey.png",
             "repository": {
                 "stackfile": "composes-files/limesurvey.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -1654,7 +1654,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://silicondales.com/wp-content/uploads/2021/05/mariadb-square.png",
+            "logo": "https://img.papamica.com/logo/mariadb.png",
             "repository": {
                 "stackfile": "composes-files/mariadb.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -1720,7 +1720,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://cdn1.oxatis.com/Files/112496/Img/16/matomo-new.png",
+            "logo": "https://img.papamica.com/logo/matomo.png",
             "repository": {
                 "stackfile": "composes-files/matomo.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -1773,7 +1773,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://i.pinimg.com/originals/9c/b1/d1/9cb1d1a9eb6575147d6990e2700fb75c.png",
+            "logo": "https://img.papamica.com/logo/minecraft.png",
             "repository": {
                 "stackfile": "composes-files/minecraft-java-server.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -1899,7 +1899,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://blog.natenom.com/wp-content/uploads/2015/11/256px-Logo_mumble-ruby-pluginbot.svg_.png",
+            "logo": "https://img.papamica.com/logo/mumblebot.png",
             "repository": {
                 "stackfile": "composes-files/mumble-bot.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -1935,7 +1935,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://www.pngkey.com/png/full/319-3198756_rainbow-six-siege-mumble-logo-png.png",
+            "logo": "https://img.papamica.com/logo/mumble.png",
             "repository": {
                 "stackfile": "composes-files/mumble-web.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -1981,7 +1981,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://www.pngkey.com/png/full/319-3198756_rainbow-six-siege-mumble-logo-png.png",
+            "logo": "https://img.papamica.com/logo/mumble.png",
             "repository": {
                 "stackfile": "composes-files/murmur.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -2023,7 +2023,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://alternative.me/media/1280/nextcloud-screenshot-h7bxcd9k35twayd9.png",
+            "logo": "https://img.papamica.com/logo/nextcloud.png",
             "repository": {
                 "stackfile": "composes-files/nextcloud.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -2084,7 +2084,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://avatars.githubusercontent.com/u/3368377?s=280&v=4",
+            "logo": "https://img.papamica.com/logo/nzbget.png",
             "repository": {
                 "stackfile": "composes-files/nzbget.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -2147,7 +2147,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://www.olivetin.app/resources/images/logo.png",
+            "logo": "https://img.papamica.com/logo/olivetin.png",
             "repository": {
                 "stackfile": "composes-files/olivetin.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -2190,7 +2190,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/ombi.png",
+            "logo": "https://img.papamica.com/logo/ombi.png",
             "repository": {
                 "stackfile": "composes-files/ombi.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -2238,7 +2238,7 @@
                 "Drackorr"
             ],
             "platform": "linux",
-            "logo": "https://image.pngaaa.com/812/7475812-middle.png",
+            "logo": "https://img.papamica.com/logo/openspeedtest.png",
             "repository": {
                 "stackfile": "composes-files/openspeedtest.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -2281,7 +2281,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/organizr-icon.png",
+            "logo": "https://img.papamica.com/logo/organizr.png",
             "repository": {
                 "stackfile": "composes-files/organizr.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -2329,7 +2329,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://www.saashub.com/images/app/service_logos/157/gc1s8radswwz/large.png?1600268255",
+            "logo": "https://img.papamica.com/logo/outline.png",
             "repository": {
                 "stackfile": "composes-files/outline.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -2413,7 +2413,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://overseerr.dev/_next/image?url=%2Fos_logo_filled.svg&w=48&q=75",
+            "logo": "https://img.papamica.com/logo/overseer.png",
             "repository": {
                 "stackfile": "composes-files/overseerr.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -2461,7 +2461,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://avatars.githubusercontent.com/u/99562962?s=280&v=4",
+            "logo": "https://img.papamica.com/logo/paperless.png",
             "repository": {
                 "stackfile": "composes-files/paperless-ngx.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -2510,7 +2510,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://www.plex.tv/wp-content/uploads/2018/01/pmp-icon-1.png",
+            "logo": "https://img.papamica.com/logo/plex.png",
             "repository": {
                 "stackfile": "composes-files/plex.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -2569,7 +2569,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://prowlarr.com/logo/256.png",
+            "logo": "https://img.papamica.com/logo/prowlarr.png",
             "repository": {
                 "stackfile": "composes-files/prowlarr.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -2618,7 +2618,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://developer.asustor.com/uploadIcons/0020_999_1573625786_Radarr_256.png",
+            "logo": "https://img.papamica.com/logo/radarr.png",
             "repository": {
                 "stackfile": "composes-files/radarr.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -2677,7 +2677,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://avatars.githubusercontent.com/u/57576474?s=280&v=4",
+            "logo": "https://img.papamica.com/logo/readarr.png",
             "repository": {
                 "stackfile": "composes-files/readarr.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -2736,7 +2736,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://camo.githubusercontent.com/2d3352b543a7ecb88e91a0cfd88a32b958eeba8740ee3e4e22d1288daaf6c2a7/68747470733a2f2f692e696d6775722e636f6d2f30557a4c5976772e706e67",
+            "logo": "https://img.papamica.com/logo/requestrr.png",
             "repository": {
                 "stackfile": "composes-files/requestrr.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -2784,7 +2784,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://projects.task.gda.pl/uploads/-/system/project/avatar/135/rundeck_logo_white.png",
+            "logo": "https://img.papamica.com/logo/rundeck.png",
             "repository": {
                 "stackfile": "composes-files/rundeck.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -2835,7 +2835,7 @@
                 "SelfHosted"
             ],
             "platform": "linux",
-            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Cometohere_blue.svg/640px-Cometohere_blue.svg.png",
+            "logo": "https://img.papamica.com/logo/rustdesk.png",
             "repository": {
                 "stackfile": "composes-files/rustdesk.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -2878,7 +2878,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://flood.js.org/assets/img/logo.png",
+            "logo": "https://img.papamica.com/logo/flood.png",
             "repository": {
                 "stackfile": "composes-files/rutorrent.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -2942,7 +2942,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://www.scrypted.app/images/web_hi_res_512.png",
+            "logo": "https://img.papamica.com/logo/scrypted.png",
             "repository": {
                 "stackfile": "composes-files/scrypted.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -2973,7 +2973,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://avatars.githubusercontent.com/u/25282695?s=280&v=4",
+            "logo": "https://img.papamica.com/logo/sinusbot.png",
             "repository": {
                 "stackfile": "composes-files/sinusbot.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -3016,7 +3016,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://forums-sonarr-tv.s3.dualstack.us-east-1.amazonaws.com/original/2X/e/ef4553fe96f04a298ec502279731579698e96a9b.png",
+            "logo": "https://img.papamica.com/logo/sonarr.png",
             "repository": {
                 "stackfile": "composes-files/sonarr.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -3074,7 +3074,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Swagger-logo.png",
+            "logo": "https://img.papamica.com/logo/swagger.png",
             "repository": {
                 "stackfile": "composes-files/swagger.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -3122,7 +3122,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/tautulli-icon.png",
+            "logo": "https://img.papamica.com/logo/tautulli.png",
             "repository": {
                 "stackfile": "composes-files/tautulli.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -3170,7 +3170,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://upload.wikimedia.org/wikipedia/commons/e/ec/TeamSpeak_logo_renovado.png",
+            "logo": "https://img.papamica.com/logo/teamspeak.png",
             "repository": {
                 "stackfile": "composes-files/teamspeak.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -3216,7 +3216,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://blog.alterway.fr/images/traefik.logo.png",
+            "logo": "https://img.papamica.com/logo/traefik.png",
             "repository": {
                 "stackfile": "composes-files/traefik.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -3264,7 +3264,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Transmission_Icon.svg/1200px-Transmission_Icon.svg.png",
+            "logo": "https://img.papamica.com/logo/transmission.png",
             "repository": {
                 "stackfile": "composes-files/transmission.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -3327,7 +3327,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://ts-n.net/graphics/tsn_logo.png",
+            "logo": "https://img.papamica.com/logo/tsnranksystem.png",
             "repository": {
                 "stackfile": "composes-files/ts3rank.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -3383,7 +3383,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://tsweb.papamica.com/img/icons/defaulticon-64.png",
+            "logo": "https://img.papamica.com/logo/teamspeak_alt.png",
             "repository": {
                 "stackfile": "composes-files/ts3viewer.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -3439,7 +3439,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://img.stackshare.io/service/20837/umami.png",
+            "logo": "https://img.papamica.com/logo/umami.png",
             "repository": {
                 "stackfile": "composes-files/umami.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -3486,7 +3486,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://github.com/louislam/uptime-kuma/raw/master/public/icon.svg",
+            "logo": "https://img.papamica.com/logo/uptimekuma.svg",
             "repository": {
                 "stackfile": "composes-files/uptime-kuma.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -3528,7 +3528,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://upload.wikimedia.org/wikipedia/commons/0/03/Bitwarden_Logo.png",
+            "logo": "https://img.papamica.com/logo/bitwarden.png",
             "repository": {
                 "stackfile": "composes-files/vaultwarden.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -3587,7 +3587,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://avatars.githubusercontent.com/u/41270016?s=200&v=4",
+            "logo": "https://img.papamica.com/logo/vikunja.png",
             "repository": {
                 "stackfile": "composes-files/vikunja.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -3643,7 +3643,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/2048px-Visual_Studio_Code_1.35_icon.svg.png",
+            "logo": "https://img.papamica.com/logo/vscode.png",
             "repository": {
                 "stackfile": "composes-files/vscode.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -3689,7 +3689,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "http://assets.stickpng.com/thumbs/5847f5bdcef1014c0b5e489c.png",
+            "logo": "https://img.papamica.com/logo/html.png",
             "repository": {
                 "stackfile": "composes-files/website-html.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -3731,7 +3731,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://refonteblog.mystagingwebsite.com/wp-content/uploads/2021/12/logo-wordpress.png",
+            "logo": "https://img.papamica.com/logo/wordpress.png",
             "repository": {
                 "stackfile": "composes-files/wordpress.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -3787,7 +3787,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://avatars.githubusercontent.com/u/19213777?s=200&v=4",
+            "logo": "https://img.papamica.com/logo/xbrowsersync.png",
             "repository": {
                 "stackfile": "composes-files/xbrowsersync.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -3839,7 +3839,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://images.opencollective.com/yourls/a488226/logo/256.png",
+            "logo": "https://img.papamica.com/logo/yourls.png",
             "repository": {
                 "stackfile": "composes-files/yourls.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -3906,7 +3906,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://juliebarbaroux.tech/wp-content/uploads/2020/11/zabbix.png",
+            "logo": "https://img.papamica.com/logo/zabbix.png",
             "repository": {
                 "stackfile": "composes-files/zabbix-proxy.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"
@@ -3959,7 +3959,7 @@
                 "PAPAMICA"
             ],
             "platform": "linux",
-            "logo": "https://juliebarbaroux.tech/wp-content/uploads/2020/11/zabbix.png",
+            "logo": "https://img.papamica.com/logo/zabbix.png",
             "repository": {
                 "stackfile": "composes-files/zabbix.yml",
                 "url": "https://github.com/PAPAMICA/docker-compose-collection"

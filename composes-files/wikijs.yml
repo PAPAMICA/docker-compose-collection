@@ -72,7 +72,7 @@ services:
       - "traefik.http.routers.$SERVICE.tls.certresolver=http"
       - "traefik.http.services.$SERVICE.loadbalancer.server.port=3000"
       - "traefik.docker.network=proxy"
-      
+
 networks:
   default:
     external:

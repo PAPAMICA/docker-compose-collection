@@ -3722,6 +3722,62 @@
         },
         {
             "type": 3,
+            "title": "Wiki.js",
+            "name": "Wiki.js",
+            "description": "The most powerful and extensible open source Wiki software",
+            "note": "Website: <a href='https://js.wiki/' target='_blank' rel='noopener'>js.wiki</a>",
+            "categories": [
+                "SelfHosted",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://img.papamica.com/logo/wikijs.png",
+            "repository": {
+                "stackfile": "composes-files/wikijs.yml",
+                "url": "https://github.com/PAPAMICA/docker-compose-collection"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "wikijs"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service link",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
+                },
+                {
+                    "name": "DB_USER",
+                    "label": "Database user ",
+                    "description": "No spaces or points",
+                    "default": "wikijs"
+                },
+                {
+                    "name": "DB_PASSWORD",
+                    "label": "Password for database user"
+                },
+                {
+                    "name": "DB_ROOT",
+                    "label": "Password for database root"
+                }
+            ]
+        },
+        {
+            "type": 3,
             "title": "WordPress",
             "name": "WordPress",
             "description": "WordPress is open source software you can use to create a beautiful website, blog, or app.",

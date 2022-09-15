@@ -1,0 +1,79 @@
+# Maintainer: Mickael "PAPAMICA" Asseline
+# Update: 2022-05-11
+
+#& type: 3
+#& title: Wiki.js
+#& description: The most powerful and extensible open source Wiki software
+#& note: Website: <a href='https://js.wiki/' target='_blank' rel='noopener'>js.wiki</a>
+#& categories: SelfHosted, PAPAMICA
+#& platform: linux
+#& logo: https://img.papamica.com/logo/wikijs.png
+
+#% SERVICE: Name of the service (No spaces or points) [wikijs]
+#% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
+#% URL: Service link (Example: service.papamica.fr or service.com)
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
+#% DB_USER: Database user (No spaces or points) [wikijs]
+#% DB_PASSWORD: Password for database user
+#% DB_ROOT: Password for database root
+
+# Work with Portainer
+version: "2"
+services:
+
+  wiki-db:
+    image: postgres:11-alpine
+    container_name: $SERVICE-db
+    environment:
+      POSTGRES_DB: wiki
+      POSTGRES_PASSWORD: $DB_PASSWORD
+      POSTGRES_USER: $DB_USER
+    restart: unless-stopped
+    volumes:
+      - $DATA_LOCATION/$SERVICE/db:/var/lib/postgresql/data
+    networks:
+      - default
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $DB_USER"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  wiki:
+    image: requarks/wiki:latest
+    container_name: $SERVICE
+    depends_on:
+      - wiki-db
+    environment:
+      DB_TYPE: postgres
+      DB_HOST: $SERVICE-db
+      DB_PORT: 5432
+      DB_USER: $DB_USER
+      DB_PASS: $DB_PASSWORD
+      DB_NAME: wiki
+    restart: unless-stopped
+    healthcheck:
+      test: wget -nv -t1 --spider 'http://localhost:3000'
+      interval: 1m
+      timeout: 30s
+      retries: 3
+    volumes:
+      - /apps/wiki/data/backups:/wiki/backups
+    networks:
+      - default
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+      - "traefik.enable=true"
+      - "traefik.http.routers.$SERVICE.entrypoints=https"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
+      - "traefik.http.routers.$SERVICE.tls=true"
+      - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+      - "traefik.http.services.$SERVICE.loadbalancer.server.port=3000"
+      - "traefik.docker.network=proxy"
+      
+networks:
+  default:
+    external:
+      name: $NETWORK

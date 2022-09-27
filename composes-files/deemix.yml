@@ -1,0 +1,48 @@
+# Maintainer: Quentin JOLY 
+# Update: 2022-09-27
+
+#& type: 3
+#& title: Deemix
+#& description: Download music from deezer easily
+#& note: Website: <a href='https://deemix.app/' target='_blank' rel='noopener'>deemix.app</a>
+#& categories: SelfHosted, PAPAMICA
+#& platform: linux
+#& logo: https://deemix.app/img/logo.png
+
+#% SERVICE: Name of the service (No spaces or points) [hastebin]
+#% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
+#% URL: Service URL (Example: service.papamica.fr or service.com)
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
+
+# Work with Portainer
+version: '3.8'
+services:
+  deemix:
+    image: registry.gitlab.com/bockiii/deemix-docker # official developer 
+    volumes:
+      - $DATA_LOCATION/$SERVICE/downloads/:/downloads
+      - $DATA_LOCATION/$SERVICE/config:/config
+    ports:
+      - 6595:6595
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - UMASK_SET=022
+      - DEEMIX_SINGLE_USER=true
+    healthcheck:
+      test: wget -s 'http://localhost:6595'
+      interval: 1m
+      timeout: 30s
+      retries: 3
+    networks:
+      - default
+    labels:
+        - "traefik.enable=true"
+        - "traefik.http.routers.$SERVICE.entrypoints=secure"
+        - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
+        - "traefik.http.routers.$SERVICE.tls.certresolver=cloudflare"
+        - "traefik.http.services.$SERVICE.loadbalancer.server.port=6595"
+networks:
+  default:
+    external:
+      name: $NETWORK

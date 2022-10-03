@@ -1,4 +1,4 @@
-# Maintainer: Quentin JOLY 
+# Maintainer: Quentin JOLY
 # Update: 2022-09-27
 
 #& type: 3
@@ -35,11 +35,12 @@ services:
     networks:
       - default
     labels:
-        - "traefik.enable=true"
-        - "traefik.http.routers.$SERVICE.entrypoints=https"
-        - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
-        - "traefik.http.routers.$SERVICE.tls.certresolver=http"
-        - "traefik.http.services.$SERVICE.loadbalancer.server.port=6595"
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+      - "traefik.enable=true"
+      - "traefik.http.routers.$SERVICE.entrypoints=https"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
+      - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+      - "traefik.http.services.$SERVICE.loadbalancer.server.port=6595"
 networks:
   default:
     external:

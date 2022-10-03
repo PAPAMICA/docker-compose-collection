@@ -37,7 +37,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 
 
 ## List of services availables:
-<img src="https://img.shields.io/badge/Avaibles:_76-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
+<img src="https://img.shields.io/badge/Avaibles:_77-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
 
 | Status | Service | Website | Update | Maintainer |
 |:--:|--|--|--|--|
@@ -50,6 +50,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | ✅ | <img src="https://img.papamica.com/logo/bookstack.png" alt="bookstack" width="20"/> [bookstack](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/bookstack.yml) | [Bookstackapp.com](https://www.bookstackapp.com/) | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://img.papamica.com/logo/chevereto.png" alt="chevereto" width="20"/> [chevereto](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/chevereto.yml) | [Github.com](https://github.com/rodber/chevereto-free) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://img.papamica.com/logo/dashy.png" alt="dashy" width="20"/> [dashy](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/dashy.yml) | [Dashy.to](https://dashy.to/) | 2022-05-23 |  Mickael "PAPAMICA" Asseline |
+| ✅ | <img src="https://deemix.app/img/logo.png" alt="deemix" width="20"/> [deemix](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/deemix.yml) | [deemix.app](https://deemix.app/) | 2022-09-28 |  Quentin JOLY |
 | ✅ | <img src="https://img.papamica.com/logo/deluge.png" alt="deluge" width="20"/> [deluge](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/deluge.yml) | [Deluge-Torrent.org](https://deluge-torrent.org/ ) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://img.papamica.com/logo/dillinger.png" alt="dillinger" width="20"/> [dillinger](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/dillinger.yml) | [Github.com](https://github.com/joemccann/dillinger) | 2022-05-13 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://img.papamica.com/logo/duplicati.png" alt="duplicaty" width="20"/> [duplicaty](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/duplicaty.yml) | [Duplicati.com](https://www.duplicati.com/) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
@@ -119,7 +120,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | ✅ | <img src="https://img.papamica.com/logo/zabbix.png" alt="zabbix" width="20"/> [zabbix](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/zabbix.yml) | [Zabbix.com](https://www.zabbix.com/) | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
 
 ## List of services to do:
-<img src="https://img.shields.io/badge/To_do:_188-%23FF8800.svg?style=for-the-badge&logo=vlcmediaplayer&logoColor=white">
+<img src="https://img.shields.io/badge/To_do:_187-%23FF8800.svg?style=for-the-badge&logo=vlcmediaplayer&logoColor=white">
 
 | Status | Service |
 |:--:|--|
@@ -140,7 +141,6 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | 🚸 | cyberchef |
 | 🚸 | darksky |
 | 🚸 | dashmachine |
-| 🚸 | deemix |
 | 🚸 | directus9 |
 | 🚸 | discourse |
 | 🚸 | docker_registry |

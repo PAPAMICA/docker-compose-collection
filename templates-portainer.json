@@ -440,6 +440,48 @@
         },
         {
             "type": 3,
+            "title": "Deemix",
+            "name": "Deemix",
+            "description": "Download music from deezer easily",
+            "note": "Website: <a href='https://deemix.app/' target='_blank' rel='noopener'>deemix.app</a>",
+            "categories": [
+                "SelfHosted",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://deemix.app/img/logo.png",
+            "repository": {
+                "stackfile": "composes-files/deemix.yml",
+                "url": "https://github.com/PAPAMICA/docker-compose-collection"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "deemix"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service URL",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
+                }
+            ]
+        },
+        {
+            "type": 3,
             "title": "Deluge",
             "name": "Deluge",
             "description": "Webinterface for download torrents.",

@@ -3,7 +3,7 @@
 
 #& type: 3
 #& title: Trilium
-#& description: Trilium Notes is a hierarchical note taking application 
+#& description: Trilium Notes is a hierarchical note taking application
 #& note: Website: <a href='https://github.com/zadam/trilium/' target='_blank' rel='noopener'>Github Project</a>
 #& categories: SelfHosted, PAPAMICA
 #& platform: linux
@@ -17,7 +17,7 @@
 # Work with Portainer
 version: '3.8'
 services:
-  trilium
+  trilium:
     image: zadam/trilium
     volumes:
       - $DATA_LOCATION/$SERVICE/data:/home/node/trilium-data

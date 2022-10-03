@@ -37,7 +37,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 
 
 ## List of services availables:
-<img src="https://img.shields.io/badge/Avaibles:_77-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
+<img src="https://img.shields.io/badge/Avaibles:_78-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
 
 | Status | Service | Website | Update | Maintainer |
 |:--:|--|--|--|--|
@@ -104,6 +104,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | ✅ | <img src="https://img.papamica.com/logo/teamspeak.png" alt="teamspeak" width="20"/> [teamspeak](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/teamspeak.yml) | [TeamSpeak.com](https://teamspeak.com/en/) | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://img.papamica.com/logo/traefik.png" alt="traefik" width="20"/> [traefik](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/traefik.yml) | [Traefik.io](https://traefik.io/traefik/) | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://img.papamica.com/logo/transmission.png" alt="transmission" width="20"/> [transmission](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/transmission.yml) | [Transmissionbt.com](https://transmissionbt.com/) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
+| ✅ | <img src="https://raw.githubusercontent.com/zadam/trilium/master/images/app-icons/png/128x128.png" alt="trilium" width="20"/> [trilium](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/trilium.yml) | [Github Project](https://github.com/zadam/trilium/) | 2022-10-03 |  Quentin JOLY |
 | ✅ | <img src="https://img.papamica.com/logo/tsnranksystem.png" alt="ts3rank" width="20"/> [ts3rank](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/ts3rank.yml) | [TS-Ranksystem.com](https://ts-ranksystem.com/) | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://img.papamica.com/logo/teamspeak_alt.png" alt="ts3viewer" width="20"/> [ts3viewer](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/ts3viewer.yml) | [Github.com](https://github.com/Wruczek/ts-website) | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://img.papamica.com/logo/umami.png" alt="umami" width="20"/> [umami](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/umami.yml) | [Umami.is](https://umami.is/) | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
@@ -120,7 +121,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | ✅ | <img src="https://img.papamica.com/logo/zabbix.png" alt="zabbix" width="20"/> [zabbix](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/zabbix.yml) | [Zabbix.com](https://www.zabbix.com/) | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
 
 ## List of services to do:
-<img src="https://img.shields.io/badge/To_do:_187-%23FF8800.svg?style=for-the-badge&logo=vlcmediaplayer&logoColor=white">
+<img src="https://img.shields.io/badge/To_do:_186-%23FF8800.svg?style=for-the-badge&logo=vlcmediaplayer&logoColor=white">
 
 | Status | Service |
 |:--:|--|
@@ -287,7 +288,6 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | 🚸 | tiddlywiki |
 | 🚸 | tiny-tiny-rss |
 | 🚸 | tinytinyrss |
-| 🚸 | trilium |
 | 🚸 | trilliomnotes |
 | 🚸 | turtl |
 | 🚸 | ubooquity |

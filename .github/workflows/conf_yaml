@@ -25,3 +25,4 @@ rules:
   new-line-at-end-of-file: disable
   line-length: disable
   truthy: disable
+  new-lines: disable

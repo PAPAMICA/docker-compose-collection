@@ -1,0 +1,43 @@
+# Maintainer: Quentin JOLY
+# Update: 2022-10-03
+
+#& type: 3
+#& title: Trilium
+#& description: Trilium Notes is a hierarchical note taking application 
+#& note: Website: <a href='https://github.com/zadam/trilium/' target='_blank' rel='noopener'>Github Project</a>
+#& categories: SelfHosted, PAPAMICA
+#& platform: linux
+#& logo: https://raw.githubusercontent.com/zadam/trilium/master/images/app-icons/png/128x128.png
+
+#% SERVICE: Name of the service (No spaces or points) [trilium]
+#% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
+#% URL: Service URL (Example: service.papamica.fr or service.com)
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
+
+# Work with Portainer
+version: '3.8'
+services:
+  trilium
+    image: zadam/trilium
+    volumes:
+      - $DATA_LOCATION/$SERVICE/data:/home/node/trilium-data
+    environment:
+      - TRILIUM_DATA_DIR=/home/node/trilium-data
+    healthcheck:
+      test: wget -s 'http://localhost:8080
+      interval: 1m
+      timeout: 30s
+      retries: 3
+    networks:
+      - default
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+      - "traefik.enable=true"
+      - "traefik.http.routers.$SERVICE.entrypoints=https"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
+      - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+      - "traefik.http.services.$SERVICE.loadbalancer.server.port=8080
+networks:
+  default:
+    external:
+      name: $NETWORK

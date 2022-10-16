@@ -25,6 +25,8 @@
 #% THEMES_TO_INSTALL: Themes to install (Example: hello-elementor) [hello-elementor]
 #% THEMES_TO_REMOVE: Themes to remove (Example: twentytwenty) [twentytwenty twentytwentytwo twentytwentyone]
 #% WORDPRESS_TITLE: WordPress Title
+#% PLUGINS_AUTOUPDATE: Activate autoupdate option for plugins (True / False) [True]
+#% UPDATE_AT_START: Activate update at start for core, themes and plugins (True / False) [True]
 
 # Work with Portainer
 version: "2"
@@ -74,6 +76,8 @@ services:
       THEMES_TO_REMOVE: "$THEMES_TO_REMOVE"
       WORDPRESS_URL: $URL
       WORDPRESS_TITLE: "$WORDPRESS_TITLE"
+      PLUGINS_AUTOUPDATE: $PLUGINS_AUTOUPDATE
+      UPDATE_AT_START: $UPDATE_AT_START
     healthcheck:
       test: curl --fail http://localhost:80 || exit 1
       interval: 1m

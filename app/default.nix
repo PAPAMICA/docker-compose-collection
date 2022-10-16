@@ -2,7 +2,6 @@
 with (import <nixpkgs> {});
 let
   python-packages = python-packages: with python-packages; [
-    requests
     jinja2
   ];
   python-with-packages = python39.withPackages python-packages;

@@ -37,7 +37,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 
 
 ## List of services availables:
-<img src="https://img.shields.io/badge/Avaibles:_78-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
+<img src="https://img.shields.io/badge/Avaibles:_79-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
 
 | Status | Service | Website | Update | Maintainer |
 |:--:|--|--|--|--|
@@ -99,6 +99,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | ✅ | <img src="https://img.papamica.com/logo/scrypted.png" alt="scrypted" width="20"/> [scrypted](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/scrypted.yml) | [Scrypted.app](https://www.scrypted.app) | 2022-08-29 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://img.papamica.com/logo/sinusbot.png" alt="sinusbot" width="20"/> [sinusbot](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/sinusbot.yml) | [Sinusbot.com](https://www.sinusbot.com/) | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://img.papamica.com/logo/sonarr.png" alt="sonarr" width="20"/> [sonarr](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/sonarr.yml) | [Sonarr.tv](https://sonarr.tv/) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
+| ✅ | <img src="https://img.papamica.com/logo/wordpress.png" alt="superwordpress" width="20"/> [superwordpress](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/superwordpress.yml) | [Github.com](https://github.com/PAPAMICA/SuperWordPress) | 2022-10-16 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://img.papamica.com/logo/swagger.png" alt="swagger" width="20"/> [swagger](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/swagger.yml) | [Swagger.io](https://swagger.io/) | 2022-05-30 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://img.papamica.com/logo/tautulli.png" alt="tautulli" width="20"/> [tautulli](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/tautulli.yml) | [Tautulli.com](https://tautulli.com/) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://img.papamica.com/logo/teamspeak.png" alt="teamspeak" width="20"/> [teamspeak](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/teamspeak.yml) | [TeamSpeak.com](https://teamspeak.com/en/) | 2022-05-12 |  Mickael "PAPAMICA" Asseline |

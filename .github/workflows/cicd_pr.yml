@@ -1,0 +1,27 @@
+name: CI on PR
+on:
+  pull_request:
+    types: 
+      - opened    
+  workflow_dispatch:
+jobs:
+  check-yaml:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      - name: Install yamllint
+        run: pip install yamllint
+      - name: Lint YAML files
+        run: yamllint --format github -d .github/workflows/conf_yaml ./composes-files/*
+  generate-files:
+    needs: check-yaml
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Generate json file
+        run: python3 .github/workflows/generate-template-json.py
+

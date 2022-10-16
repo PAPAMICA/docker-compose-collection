@@ -22,14 +22,12 @@ services:
     volumes:
 {%- for var in volumlist %}
   {%- if not loop.last %}
-      - $DATA_LOCATION/$SERVICE/downloads/:/downloads
+      - $DATA_LOCATION/$SERVICE/{{ var }}
   {%- endif %}
   {%- if loop.last %}
-      - {{ var }}
+      - $DATA_LOCATION/$SERVICE/{{ var }}
   {%- endif %}
 {%- endfor %}
-      - $DATA_LOCATION/$SERVICE/downloads/:/downloads
-      - $DATA_LOCATION/$SERVICE/config:/config
     environment:
 {%- for var in envvar %}
   {%- if not loop.last %}

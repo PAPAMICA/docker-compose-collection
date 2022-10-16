@@ -18,11 +18,11 @@ def volumlist():
 
 def envvar():
     envvar = []
-    user_input = "Nothing" 
-    while user_input != "":
-        user_input = input("Enter environmnet variable or press enter to exit")
-        if user_input != "":
-            envvar.append(user_input)
+    variable = "Nothing" 
+    while variable != "":
+        variable = input("Enter environment variable or press enter to exit : ")
+        if variable != "":
+            envvar.append(variable)
     print(envvar)
     return envvar
 
@@ -30,6 +30,8 @@ app_name            = "Demo_Appname"
 app_logo            = "demo_applogo"
 app_image           = "demo_appimage"
 app_port            = "8080"
+app_url             = "https://perdu.com"
+app_description     = "a very good app to have"
 maintainer_name     = "Demo_Name"
 maintainer_github   = "@Demo"
 envvar              = envvar()
@@ -39,9 +41,12 @@ data = {
         'app_name'           : app_name,
         'app_logo'           : app_logo,
         'app_image'          : app_image,
+        'app_port'           : app_port,
+        'app_url'            : app_url,
+        'app_description'    : app_description,
         'maintainer_name'    : maintainer_name,
         'maintainer_github'  : maintainer_github,
-        'envvar'             : envvar
+        'envvar'             : envvar,
         'volumlist'          : volumlist
         }
 

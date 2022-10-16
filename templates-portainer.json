@@ -1309,6 +1309,48 @@
         },
         {
             "type": 3,
+            "title": "homer",
+            "name": "homer",
+            "description": "A dead simple static HOMepage for your servER to keep your services on hand, from a simple yaml configuration file.",
+            "note": "Website: <a href='https://github.com/bastienwirtz/homer' target='_blank' rel='noopener'>homer</a>",
+            "categories": [
+                "SelfHosted",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://raw.githubusercontent.com//bastienwirtz/homer/main/public/logo.png",
+            "repository": {
+                "stackfile": "composes-files/homer.yml",
+                "url": "https://github.com/PAPAMICA/docker-compose-collection"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "homer"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service URL",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
+                }
+            ]
+        },
+        {
+            "type": 3,
             "title": "ImgProxy",
             "name": "ImgProxy",
             "description": "Proxy for images with processing.",

@@ -37,7 +37,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 
 
 ## List of services availables:
-<img src="https://img.shields.io/badge/Avaibles:_78-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
+<img src="https://img.shields.io/badge/Avaibles:_79-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
 
 | Status | Service | Website | Update | Maintainer |
 |:--:|--|--|--|--|
@@ -66,6 +66,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | ✅ | <img src="https://img.papamica.com/logo/hastebin.png" alt="hastebin" width="20"/> [hastebin](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/hastebin.yml) | [Hastebin.com](https://hastebin.com/about.md) | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://img.papamica.com/logo/healthchecks.jpg" alt="heathchecks" width="20"/> [heathchecks](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/heathchecks.yml) | [Github.com](https://github.com/healthchecks/healthchecks) | 2022-06-01 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://img.papamica.com/logo/homeassistant.png" alt="homeassistant" width="20"/> [homeassistant](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/homeassistant.yml) | [Home-Assistant.io](https://www.home-assistant.io/) | 2022-06-16 |  Mickael "PAPAMICA" Asseline |
+| ✅ | <img src="https://raw.githubusercontent.com//bastienwirtz/homer/main/public/logo.png" alt="homer" width="20"/> [homer](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/homer.yml) | [homer](https://github.com/bastienwirtz/homer) | 2022/10/16 |  Quentin JOLY - @QJoly |
 | ✅ | <img src="https://img.papamica.com/logo/imgproxy.png" alt="imgproxy" width="20"/> [imgproxy](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/imgproxy.yml) | [ImgProxy.net](https://imgproxy.net/) | 2022-09-1 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://img.papamica.com/logo/jackett.png" alt="jackett" width="20"/> [jackett](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/jackett.yml) | [Gitub.com](https://github.com/Jackett/Jackett) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://img.papamica.com/logo/jellyfin.png" alt="jellyfin" width="20"/> [jellyfin](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/jellyfin.yml) | [Jellyfin.org](https://jellyfin.org/) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
@@ -121,7 +122,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | ✅ | <img src="https://img.papamica.com/logo/zabbix.png" alt="zabbix" width="20"/> [zabbix](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/zabbix.yml) | [Zabbix.com](https://www.zabbix.com/) | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
 
 ## List of services to do:
-<img src="https://img.shields.io/badge/To_do:_186-%23FF8800.svg?style=for-the-badge&logo=vlcmediaplayer&logoColor=white">
+<img src="https://img.shields.io/badge/To_do:_185-%23FF8800.svg?style=for-the-badge&logo=vlcmediaplayer&logoColor=white">
 
 | Status | Service |
 |:--:|--|
@@ -174,7 +175,6 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | 🚸 | heimdall |
 | 🚸 | homebridge |
 | 🚸 | homedash |
-| 🚸 | homer |
 | 🚸 | httpd |
 | 🚸 | inventario |
 | 🚸 | invoice_ninja |

@@ -1,0 +1,100 @@
+# Maintainer: Mickael "PAPAMICA" Asseline
+# Update: 2022-10-16
+
+#& type: 3
+#& title: Super WordPress by PAPAMICA
+#& description: WordPress with some plugins and options for my deployement.
+#& note: Website: <a href='https://github.com/PAPAMICA/SuperWordPress' target='_blank' rel='noopener'>Github.com</a>
+#& categories: SelfHosted, PAPAMICA
+#& platform: linux
+#& logo: https://img.papamica.com/logo/wordpress.png
+
+#% SERVICE: Name of the service (No spaces or points) [superwordpress]
+#% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
+#% URL: Service link (Example: service.papamica.fr or service.com)
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
+#% DB_USER: Database user (No spaces or points) [wordpress]
+#% DB_PASSWORD: Password for database user
+#% DB_ROOT: Password for database root
+#% WORDPRESS_ADMIN_USERNAME: Admin username for WordPress
+#% WORDPRESS_ADMIN_PASSWORD: Password for WordPress admin
+#% WORDPRESS_ADMIN_EMAIL: Email for WordPress admin
+#% WORDPRESS_LANGUAGE: WordPress language (Example: en_US) [fr_FR]
+#% PLUGINS_TO_INSTALL: Plugins to install (Example: elementor jetpack)[mainwp-child elementor updraftplus header-footer-elementor envato-elements include-matomo jetpack wp-mail-smtp wordpress-seo duplicate-post autoptimize contact-form-7]
+#% PLUGINS_TO_REMOVE: Plugins to remove (Example: hello-dolly akismet) [hello-dolly akismet]
+#% THEMES_TO_INSTALL: Themes to install (Example: hello-elementor) [hello-elementor]
+#% THEMES_TO_REMOVE: Themes to remove (Example: twentytwenty) [twentytwenty twentytwentytwo twentytwentyone]
+#% WORDPRESS_TITLE: WordPress Title
+#% PLUGINS_AUTOUPDATE: Activate autoupdate option for plugins (true / false) [true]
+#% UPDATE_AT_START: Activate update at start for core, themes and plugins (true / false) [true]
+
+# Work with Portainer
+version: "2"
+
+services:
+  # Base de données
+  wordpress-db:
+    container_name: $SERVICE-db
+    image: mysql:5.7
+    volumes:
+      - $DATA_LOCATION/$SERVICE/db:/var/lib/mysql
+    restart: always
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
+    environment:
+      MYSQL_ROOT_PASSWORD: $DB_ROOT
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: $DB_USER
+      MYSQL_PASSWORD: $DB_PASSWORD
+    networks:
+      - default
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+
+  superwordpress:
+    container_name: $SERVICE
+    depends_on:
+      - wordpress-db
+    image: papamica/superwordpress:latest
+    restart: always
+    volumes:
+      - $DATA_LOCATION/$SERVICE/html:/var/www/html
+    environment:
+      WORDPRESS_DB_HOST: $SERVICE-db:3306
+      WORDPRESS_DB_USER: $DB_USER
+      WORDPRESS_DB_PASSWORD: $DB_PASSWORD
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_ADMIN_USERNAME: $WORDPRESS_ADMIN_USERNAME
+      WORDPRESS_ADMIN_PASSWORD: $WORDPRESS_ADMIN_PASSWORD
+      WORDPRESS_ADMIN_EMAIL: $WORDPRESS_ADMIN_EMAIL
+      WORDPRESS_LANGUAGE: $WORDPRESS_LANGUAGE
+      PLUGINS_TO_INSTALL: "$PLUGINS_TO_INSTALL"
+      PLUGINS_TO_REMOVE: "$PLUGINS_TO_REMOVE"
+      THEMES_TO_INSTALL: "$THEMES_TO_INSTALL"
+      THEMES_TO_REMOVE: "$THEMES_TO_REMOVE"
+      WORDPRESS_URL: $URL
+      WORDPRESS_TITLE: "$WORDPRESS_TITLE"
+      PLUGINS_AUTOUPDATE: $PLUGINS_AUTOUPDATE
+      UPDATE_AT_START: $UPDATE_AT_START
+    healthcheck:
+      test: curl --fail http://localhost:80 || exit 1
+      interval: 1m
+      timeout: 30s
+      retries: 3
+    networks:
+      - default
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+      - "traefik.enable=true"
+      - "traefik.http.routers.$SERVICE.entrypoints=https"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
+      - "traefik.http.routers.$SERVICE.tls=true"
+      - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+      - "traefik.docker.network=$NETWORK"
+
+networks:
+  default:
+    external:
+      name: $NETWORK

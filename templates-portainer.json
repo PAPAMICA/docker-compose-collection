@@ -3149,6 +3149,120 @@
         },
         {
             "type": 3,
+            "title": "Super WordPress by PAPAMICA",
+            "name": "Super WordPress by PAPAMICA",
+            "description": "WordPress with some plugins and options for my deployement.",
+            "note": "Website: <a href='https://github.com/PAPAMICA/SuperWordPress' target='_blank' rel='noopener'>Github.com</a>",
+            "categories": [
+                "SelfHosted",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://img.papamica.com/logo/wordpress.png",
+            "repository": {
+                "stackfile": "composes-files/superwordpress.yml",
+                "url": "https://github.com/PAPAMICA/docker-compose-collection"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "superwordpress"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service link",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
+                },
+                {
+                    "name": "DB_USER",
+                    "label": "Database user ",
+                    "description": "No spaces or points",
+                    "default": "wordpress"
+                },
+                {
+                    "name": "DB_PASSWORD",
+                    "label": "Password for database user"
+                },
+                {
+                    "name": "DB_ROOT",
+                    "label": "Password for database root"
+                },
+                {
+                    "name": "WORDPRESS_ADMIN_USERNAME",
+                    "label": "Admin username for WordPress"
+                },
+                {
+                    "name": "WORDPRESS_ADMIN_PASSWORD",
+                    "label": "Password for WordPress admin"
+                },
+                {
+                    "name": "WORDPRESS_ADMIN_EMAIL",
+                    "label": "Email for WordPress admin"
+                },
+                {
+                    "name": "WORDPRESS_LANGUAGE",
+                    "label": "WordPress language ",
+                    "description": "Example: en_US",
+                    "default": "fr_FR"
+                },
+                {
+                    "name": "PLUGINS_TO_INSTALL",
+                    "label": "Plugins to install ",
+                    "description": "Example: elementor jetpac",
+                    "default": "mainwp-child elementor updraftplus header-footer-elementor envato-elements include-matomo jetpack wp-mail-smtp wordpress-seo duplicate-post autoptimize contact-form-7"
+                },
+                {
+                    "name": "PLUGINS_TO_REMOVE",
+                    "label": "Plugins to remove ",
+                    "description": "Example: hello-dolly akismet",
+                    "default": "hello-dolly akismet"
+                },
+                {
+                    "name": "THEMES_TO_INSTALL",
+                    "label": "Themes to install ",
+                    "description": "Example: hello-elementor",
+                    "default": "hello-elementor"
+                },
+                {
+                    "name": "THEMES_TO_REMOVE",
+                    "label": "Themes to remove ",
+                    "description": "Example: twentytwenty",
+                    "default": "twentytwenty twentytwentytwo twentytwentyone"
+                },
+                {
+                    "name": "WORDPRESS_TITLE",
+                    "label": "WordPress Title"
+                },
+                {
+                    "name": "PLUGINS_AUTOUPDATE",
+                    "label": "Activate autoupdate option for plugins ",
+                    "description": "true / false",
+                    "default": "true"
+                },
+                {
+                    "name": "UPDATE_AT_START",
+                    "label": "Activate update at start for core, themes and plugins ",
+                    "description": "true / false",
+                    "default": "true"
+                }
+            ]
+        },
+        {
+            "type": 3,
             "title": "Swagger",
             "name": "Swagger",
             "description": "Simplify API development for users, teams, and enterprises with our open source and professional toolset.",

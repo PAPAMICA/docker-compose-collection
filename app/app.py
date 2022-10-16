@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import sys, logging, jinja2
+from datetime import date
 
 logging.basicConfig(filename='debug.log', encoding='utf-8', level=logging.DEBUG)
 logging.getLogger().addHandler(logging.StreamHandler(sys.stdout))
@@ -12,7 +13,7 @@ def volumlist():
         volume_name = input("Enter volume name or press enter to exit : ")
         if volume_name != "":
             volume_dir = input("Enter the directory mounted inside the container : ")
-            volumlist.append(f"{volume_name}:/{volume_dir}")
+            volumlist.append(f"{volume_name}:{volume_dir}")
     print(volumlist)
     return volumlist
 
@@ -26,14 +27,14 @@ def envvar():
     print(envvar)
     return envvar
 
-app_name            = "Demo_Appname"
-app_logo            = "demo_applogo"
-app_image           = "demo_appimage"
-app_port            = "8080"
-app_url             = "https://perdu.com"
-app_description     = "a very good app to have"
-maintainer_name     = "Demo_Name"
-maintainer_github   = "@Demo"
+app_name            = input("App's name : ")
+app_logo            = input("App's logo (url) : ")
+app_image           = input("App's Docker image : ")
+app_port            = input("App's port : ")
+app_url             = input("App's official website : ")
+app_description     = input("App's description : ")
+maintainer_name     = input("Maintainer's name : ")
+maintainer_github   = input("Maintainer's github profile : ")
 envvar              = envvar()
 volumlist           = volumlist()
 
@@ -47,7 +48,8 @@ data = {
         'maintainer_name'    : maintainer_name,
         'maintainer_github'  : maintainer_github,
         'envvar'             : envvar,
-        'volumlist'          : volumlist
+        'volumlist'          : volumlist,
+        'update_date'        : date.today().strftime("%Y/%m/%d")
         }
 
 templateLoader = jinja2.FileSystemLoader(searchpath="./")
@@ -56,5 +58,7 @@ TEMPLATE_FILE = "template.yml.j2"
 template = templateEnv.get_template(TEMPLATE_FILE)
 outputText = template.render(data)  
 
-print(outputText)
-
+output = open(f"./{app_name}.yml", "w")
+output.write(outputText)
+output.close()
+ 

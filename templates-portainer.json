@@ -3208,14 +3208,14 @@
                 {
                     "name": "PLUGINS_AUTOUPDATE",
                     "label": "Activate autoupdate option for plugins ",
-                    "description": "True / False",
-                    "default": "True"
+                    "description": "true / false",
+                    "default": "true"
                 },
                 {
                     "name": "UPDATE_AT_START",
                     "label": "Activate update at start for core, themes and plugins ",
-                    "description": "True / False",
-                    "default": "True"
+                    "description": "true / false",
+                    "default": "true"
                 }
             ]
         },

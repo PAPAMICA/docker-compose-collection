@@ -1,0 +1,50 @@
+# Maintainer: {{ maintainer_name }} - {{ maintainer_github }}
+# Update: {{ date }}
+
+#& type: 3
+#& title: {{ app_name  }}
+#& description: {{ app_description }}
+#& note: Website: <a href='{{ app_url }}' target='_blank' rel='noopener'>{{ app_name }}</a>
+#& categories: SelfHosted, PAPAMICA
+#& platform: linux
+#& logo: {{ app_logo }}
+
+#% SERVICE: Name of the service (No spaces or points) [{{ app_name }}]
+#% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
+#% URL: Service URL (Example: service.papamica.fr or service.com)
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
+
+# Work with Portainer
+version: '3.8'
+services:
+  deemix:
+    image: {{ app_image  }}
+    volumes:
+      - $DATA_LOCATION/$SERVICE/downloads/:/downloads
+      - $DATA_LOCATION/$SERVICE/config:/config
+    environment:
+{%- for var in envvar %}
+  {%- if not loop.last %}
+      - {{ var }}
+  {%- endif %}
+  {%- if loop.last %}
+      - {{ var }}
+  {%- endif %}
+{%- endfor %}
+    healthcheck:
+      test: wget -s 'http://localhost:{{ app_port }}'
+      interval: 1m
+      timeout: 30s
+      retries: 3
+    networks:
+      - default
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+      - "traefik.enable=true"
+      - "traefik.http.routers.$SERVICE.entrypoints=https"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
+      - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+networks:
+  default:
+    external:
+      name: $NETWORK

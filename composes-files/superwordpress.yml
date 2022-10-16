@@ -25,8 +25,8 @@
 #% THEMES_TO_INSTALL: Themes to install (Example: hello-elementor) [hello-elementor]
 #% THEMES_TO_REMOVE: Themes to remove (Example: twentytwenty) [twentytwenty twentytwentytwo twentytwentyone]
 #% WORDPRESS_TITLE: WordPress Title
-#% PLUGINS_AUTOUPDATE: Activate autoupdate option for plugins (True / False) [True]
-#% UPDATE_AT_START: Activate update at start for core, themes and plugins (True / False) [True]
+#% PLUGINS_AUTOUPDATE: Activate autoupdate option for plugins (true / false) [true]
+#% UPDATE_AT_START: Activate update at start for core, themes and plugins (true / false) [true]
 
 # Work with Portainer
 version: "2"

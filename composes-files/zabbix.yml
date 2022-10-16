@@ -22,7 +22,7 @@ version: '2'
 services:
   postgres-server:
     image: postgres:14.2
-    restart: always
+erreur volontaire    restart: always
     container_name: $SERVICE-db
     environment:
       POSTGRES_USER: $DB_USER

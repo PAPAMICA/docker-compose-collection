@@ -20,6 +20,14 @@ services:
   deemix:
     image: {{ app_image  }}
     volumes:
+{%- for var in volumlist %}
+  {%- if not loop.last %}
+      - $DATA_LOCATION/$SERVICE/downloads/:/downloads
+  {%- endif %}
+  {%- if loop.last %}
+      - {{ var }}
+  {%- endif %}
+{%- endfor %}
       - $DATA_LOCATION/$SERVICE/downloads/:/downloads
       - $DATA_LOCATION/$SERVICE/config:/config
     environment:

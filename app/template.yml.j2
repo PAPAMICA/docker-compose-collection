@@ -28,7 +28,7 @@ services:
       - $DATA_LOCATION/$SERVICE/{{ var }}
   {%- endif %}
 {%- endfor %}
-    environment:
+{% if envvar is defined and envvar|length > 0 %}    environment:{% endif %}
 {%- for var in envvar %}
   {%- if not loop.last %}
       - {{ var }}
@@ -42,6 +42,7 @@ services:
       interval: 1m
       timeout: 30s
       retries: 3
+    container_name: {{ app_name }}
     networks:
       - default
     labels:

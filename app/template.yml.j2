@@ -17,7 +17,7 @@
 # Work with Portainer
 version: '3.8'
 services:
-  deemix:
+  {{ app_name|lower }}:
     image: {{ app_image  }}
     volumes:
 {%- for var in volumlist %}

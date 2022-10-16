@@ -1,0 +1,42 @@
+# Maintainer: Quentin JOLY - @QJoly
+# Update: 2022/10/16
+
+#& type: 3
+#& title: homer
+#& description: A dead simple static HOMepage for your servER to keep your services on hand, from a simple yaml configuration file.
+#& note: Website: <a href='https://github.com/bastienwirtz/homer' target='_blank' rel='noopener'>homer</a>
+#& categories: SelfHosted, PAPAMICA
+#& platform: linux
+#& logo: https://raw.githubusercontent.com//bastienwirtz/homer/main/public/logo.png
+
+#% SERVICE: Name of the service (No spaces or points) [homer]
+#% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
+#% URL: Service URL (Example: service.papamica.fr or service.com)
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
+
+# Work with Portainer
+version: '3.8'
+services:
+  deemix:
+    image: b4bz/homer
+    volumes:
+      - $DATA_LOCATION/$SERVICE/assets:/www/assets
+    environment:
+      - INIT_ASSETS=1
+    healthcheck:
+      test: wget -s 'http://localhost:8080'
+      interval: 1m
+      timeout: 30s
+      retries: 3
+    networks:
+      - default
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+      - "traefik.enable=true"
+      - "traefik.http.routers.$SERVICE.entrypoints=https"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
+      - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+networks:
+  default:
+    external:
+      name: $NETWORK

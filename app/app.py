@@ -27,14 +27,22 @@ def envvar():
     print(envvar)
     return envvar
 
-app_name            = input("App's name : ")
-app_logo            = input("App's logo (url) : ")
-app_image           = input("App's Docker image : ")
-app_port            = input("App's port : ")
-app_url             = input("App's official github repo : ")
-app_description     = input("App's description : ")
-maintainer_name     = input("Maintainer's name : ")
-maintainer_github   = input("Maintainer's github profile : ")
+#app_name            = input("App's name : ")
+#app_logo            = input("App's logo (url) : ")
+#app_image           = input("App's Docker image : ")
+#app_port            = input("App's port : ")
+#app_url             = input("App's official github repo : ")
+#app_description     = input("App's description : ")
+#maintainer_name     = input("Maintainer's name : ")
+#maintainer_github   = input("Maintainer's github profile : ")
+app_name            = "test_name"
+app_logo            = "http://perdu.com/test.png"
+app_image           = "hello-world"
+app_port            = "1234"
+app_url             = "http:/perdu.com"
+app_description     = "a cool description"
+maintainer_name     = "Maintainer Name"
+maintainer_github   = "Maintainer profile"
 envvar              = envvar()
 volumlist           = volumlist()
 

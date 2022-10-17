@@ -26,7 +26,7 @@ services:
   {%- endif %}
   {%- if loop.last %}
       - $DATA_LOCATION/$SERVICE/{{ var }}
-  {%- endif %}
+  {%- endif -%}
 {%- endfor %}
 {% if envvar is defined and envvar|length > 0 %}    environment:{% endif %}
 {%- for var in envvar %}

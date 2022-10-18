@@ -37,7 +37,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 
 
 ## List of services availables:
-<img src="https://img.shields.io/badge/Avaibles:_81-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
+<img src="https://img.shields.io/badge/Avaibles:_82-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
 
 | Status | Service | Website | Update | Maintainer |
 |:--:|--|--|--|--|
@@ -90,6 +90,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | ✅ | <img src="https://img.papamica.com/logo/outline.webp" alt="outline" width="20"/> [outline](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/outline.yml) | [GetOutline.com](https://www.getoutline.com/) | 2022-05-24 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://img.papamica.com/logo/overseerr.svg" alt="overseerr" width="20"/> [overseerr](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/overseerr.yml) | [Overseerr.dev](https://overseerr.dev/) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://img.papamica.com/logo/paperless.png" alt="paperless-ngx" width="20"/> [paperless-ngx](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/paperless-ngx.yml) | [Github.com](https://github.com/paperless-ngx/paperless-ngx) | 2022-06-28 |  Mickael "PAPAMICA" Asseline |
+| ✅ | <img src="https://www.phpmyadmin.net/static/images/logo-og.png" alt="phpmyadmin" width="20"/> [phpmyadmin](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/phpmyadmin.yml) | [Github.com](https://github.com/phpmyadmin/phpmyadmin) | 2022-10-18 |  Quentin JOLY - @QJoly |
 | ✅ | <img src="https://img.papamica.com/logo/plex.png" alt="plex" width="20"/> [plex](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/plex.yml) | [Plex.tv](https://www.plex.tv) | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://img.papamica.com/logo/prowlarr.png" alt="prowlarr" width="20"/> [prowlarr](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/prowlarr.yml) | [Gitub.com](https://github.com/Prowlarr/Prowlarr) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://img.papamica.com/logo/radarr.png" alt="radarr" width="20"/> [radarr](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/radarr.yml) | [Radarr.video](https://radarr.video/) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
@@ -124,7 +125,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | ✅ | <img src="https://img.papamica.com/logo/zabbix.png" alt="zabbix" width="20"/> [zabbix](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/zabbix.yml) | [Zabbix.com](https://www.zabbix.com/) | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
 
 ## List of services to do:
-<img src="https://img.shields.io/badge/To_do:_184-%23FF8800.svg?style=for-the-badge&logo=vlcmediaplayer&logoColor=white">
+<img src="https://img.shields.io/badge/To_do:_183-%23FF8800.svg?style=for-the-badge&logo=vlcmediaplayer&logoColor=white">
 
 | Status | Service |
 |:--:|--|
@@ -234,7 +235,6 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | 🚸 | petio |
 | 🚸 | phabricator |
 | 🚸 | photoprism |
-| 🚸 | phpmyadmin |
 | 🚸 | pi-hole |
 | 🚸 | piwigo |
 | 🚸 | pixapop |

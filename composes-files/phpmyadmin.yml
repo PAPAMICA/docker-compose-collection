@@ -1,0 +1,39 @@
+# Maintainer: Quentin JOLY - @QJoly
+# Update: 2022-10-18
+
+#& type: 3
+#& title: phpmyadmin
+#& description: A web interface for MySQL and MariaDB
+#& note: Website: <a href='https://github.com/phpmyadmin/phpmyadmin' target='_blank' rel='noopener'>Github.com</a>
+#& categories: SelfHosted, PAPAMICA
+#& platform: linux
+#& logo: https://www.phpmyadmin.net/static/images/logo-og.png
+
+#% SERVICE: Name of the service (No spaces or points) [phpmyadmin]
+#% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
+#% URL: Service URL (Example: service.papamica.fr or service.com)
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
+
+# Work with Portainer
+version: '3.8'
+services:
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    healthcheck:
+      test: wget -q 'http://localhost:80'
+      interval: 1m
+      timeout: 30s
+      retries: 3
+    container_name: phpmyadmin
+    networks:
+      - default
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+      - "traefik.enable=true"
+      - "traefik.http.routers.$SERVICE.entrypoints=https"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
+      - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+networks:
+  default:
+    external:
+      name: $NETWORK

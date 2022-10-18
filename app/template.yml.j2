@@ -19,7 +19,7 @@ version: '3.8'
 services:
   {{ app_name|lower }}:
     image: {{ app_image  }}
-    volumes:
+{%- if volumlist is defined and envvar|length > 0 -%}    volumes:{%- endif -%}
 {%- for var in volumlist %}
   {%- if not loop.last %}
       - $DATA_LOCATION/$SERVICE/{{ var }}
@@ -28,7 +28,7 @@ services:
       - $DATA_LOCATION/$SERVICE/{{ var }}
   {%- endif -%}
 {%- endfor %}
-{% if envvar is defined and envvar|length > 0 %}    environment:{% endif %}
+{%- if envvar is defined and envvar|length > 0 -%}    environment:{%- endif -%}
 {%- for var in envvar %}
   {%- if not loop.last %}
       - {{ var }}
@@ -42,7 +42,7 @@ services:
       interval: 1m
       timeout: 30s
       retries: 3
-    container_name: {{ app_name }}
+    container_name: {{ app_name|lower }}
     networks:
       - default
     labels:

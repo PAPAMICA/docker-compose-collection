@@ -19,6 +19,7 @@ version: '3'
 services:
   ampache:
     image: ampache/ampache:latest
+    volumes:
       - $DATA_LOCATION/$SERVICE/config:/var/www/config
       - $DATA_LOCATION/$SERVICE/log:/var/log/ampache
       - $DATA_LOCATION/$SERVICE/media:/media

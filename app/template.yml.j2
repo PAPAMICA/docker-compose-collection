@@ -2,14 +2,14 @@
 # Update: {{ update_date }}
 
 #& type: 3
-#& title: {{ app_name  }}
+#& title: {{ app_name|lower }}
 #& description: {{ app_description }}
 #& note: Website: <a href='{{ app_url }}' target='_blank' rel='noopener'>Github.com</a>
 #& categories: SelfHosted, PAPAMICA
 #& platform: linux
 #& logo: {{ app_logo }}
 
-#% SERVICE: Name of the service (No spaces or points) [{{ app_name }}]
+#% SERVICE: Name of the service (No spaces or points) [{{ app_name|lower }}]
 #% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
 #% URL: Service URL (Example: service.papamica.fr or service.com)
 #% NETWORK: Your Traefik network (Example: proxy) [proxy]

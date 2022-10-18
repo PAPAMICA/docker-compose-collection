@@ -57,7 +57,7 @@ data = {
         'maintainer_github'  : maintainer_github,
         'envvar'             : envvar,
         'volumlist'          : volumlist,
-        'update_date'        : date.today().strftime("%Y/%m/%d")
+        'update_date'        : date.today().strftime("%Y-%m-%d")
         }
 
 templateLoader = jinja2.FileSystemLoader(searchpath="./")

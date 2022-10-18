@@ -28,7 +28,7 @@ services:
       - UMASK_SET=022
       - DEEMIX_SINGLE_USER=true
     healthcheck:
-      test: wget -s 'http://localhost:6595'
+      test: wget -q 'http://localhost:6595'
       interval: 1m
       timeout: 30s
       retries: 3

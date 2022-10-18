@@ -24,7 +24,7 @@ services:
     environment:
       - TRILIUM_DATA_DIR=/home/node/trilium-data
     healthcheck:
-      test: wget -s 'http://localhost:8080
+      test: wget -q 'http://localhost:8080
       interval: 1m
       timeout: 30s
       retries: 3

@@ -25,7 +25,7 @@ services:
       - $DATA_LOCATION/$SERVICE/media:/media
       - $DATA_LOCATION/$SERVICE/mysql:/var/lib/mysql
     healthcheck:
-      test: wget -s 'http://localhost:80'
+      test: wget -q 'http://localhost:80'
       interval: 1m
       timeout: 30s
       retries: 3

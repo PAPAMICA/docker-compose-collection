@@ -24,7 +24,7 @@ services:
     environment:
       - INIT_ASSETS=1
     healthcheck:
-      test: wget -s 'http://localhost:8080'
+      test: wget -q 'http://localhost:8080'
       interval: 1m
       timeout: 30s
       retries: 3

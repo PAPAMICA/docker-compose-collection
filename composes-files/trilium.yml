@@ -23,8 +23,9 @@ services:
       - $DATA_LOCATION/$SERVICE/data:/home/node/trilium-data
     environment:
       - TRILIUM_DATA_DIR=/home/node/trilium-data
+    container_name: $SERVICE
     healthcheck:
-      test: wget -q 'http://localhost:8080
+      test: wget -q 'http://localhost:8080'
       interval: 1m
       timeout: 30s
       retries: 3

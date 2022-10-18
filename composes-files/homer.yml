@@ -21,6 +21,7 @@ services:
     image: b4bz/homer
     volumes:
       - $DATA_LOCATION/$SERVICE/assets:/www/assets
+    container_name: $SERVICE
     environment:
       - INIT_ASSETS=1
     healthcheck:

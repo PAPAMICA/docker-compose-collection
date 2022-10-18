@@ -22,6 +22,7 @@ services:
     volumes:
       - $DATA_LOCATION/$SERVICE/downloads/:/downloads
       - $DATA_LOCATION/$SERVICE/config:/config
+    container_name: $SERVICE
     environment:
       - PUID=1000
       - PGID=1000

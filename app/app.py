@@ -27,22 +27,22 @@ def envvar():
     print(envvar)
     return envvar
 
-#app_name            = input("App's name : ")
-#app_logo            = input("App's logo (url) : ")
-#app_image           = input("App's Docker image : ")
-#app_port            = input("App's port : ")
-#app_url             = input("App's official github repo : ")
-#app_description     = input("App's description : ")
-#maintainer_name     = input("Maintainer's name : ")
-#maintainer_github   = input("Maintainer's github profile : ")
-app_name            = "test_name"
-app_logo            = "http://perdu.com/test.png"
-app_image           = "hello-world"
-app_port            = "1234"
-app_url             = "http:/perdu.com"
-app_description     = "a cool description"
-maintainer_name     = "Maintainer Name"
-maintainer_github   = "Maintainer profile"
+app_name            = input("App's name : ")
+app_logo            = input("App's logo (url) : ")
+app_image           = input("App's Docker image : ")
+app_port            = input("App's port : ")
+app_url             = input("App's official github repo : ")
+app_description     = input("App's description : ")
+maintainer_name     = input("Maintainer's name : ")
+maintainer_github   = input("Maintainer's github profile : ")
+#app_name            = "Ampache"
+#app_logo            = "https://ampache.org/img/logo/ampache-logo.png"
+#app_image           = "ampache/ampache:latest"
+#app_port            = "80"
+#app_url             = "https://github.com/ampache/ampache-docker"
+#app_description     = "web based audio/video streaming application and file manager allowing you to access your music & videos from anywhere, using almost any internet enabled device."
+#maintainer_name     = "Quentin JOLY"
+#maintainer_github   = "@QJoly"
 envvar              = envvar()
 volumlist           = volumlist()
 
@@ -66,7 +66,7 @@ TEMPLATE_FILE = "template.yml.j2"
 template = templateEnv.get_template(TEMPLATE_FILE)
 outputText = template.render(data)  
 
-output = open(f"./{app_name}.yml", "w")
+output = open(f"./{app_name}.yml".lower(), "w")
 output.write(outputText)
 output.close()
  

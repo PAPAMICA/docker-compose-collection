@@ -37,11 +37,12 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 
 
 ## List of services availables:
-<img src="https://img.shields.io/badge/Avaibles:_80-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
+<img src="https://img.shields.io/badge/Avaibles:_81-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
 
 | Status | Service | Website | Update | Maintainer |
 |:--:|--|--|--|--|
 | ✅ | <img src="https://img.papamica.com/logo/adminer.png" alt="adminer" width="20"/> [adminer](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/adminer.yml) | [Adminer.org](https://www.adminer.org/) | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| ✅ | <img src="https://ampache.org/img/logo/ampache-logo.png" alt="ampache" width="20"/> [ampache](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/ampache.yml) | [Github.com](https://github.com/ampache/ampache-docker) | 2022-10-18 |  Quentin JOLY - @QJoly |
 | ✅ | <img src="https://img.papamica.com/logo/apprise.png" alt="apprise-api" width="20"/> [apprise-api](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/apprise-api.yml) | [Github.com](https://github.com/caronc/apprise-api) | 2022-05-13 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://img.papamica.com/logo/audacity.png" alt="audacity" width="20"/> [audacity](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/audacity.yml) | [audacityTeam.org](https://www.audacityteam.org/ ) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://img.papamica.com/logo/autoheal.png" alt="autoheal" width="20"/> [autoheal](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/autoheal.yml) | [Github.com](https://github.com/willfarrell/docker-autoheal) | 2022-05-28 |  Mickael "PAPAMICA" Asseline |
@@ -123,14 +124,13 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | ✅ | <img src="https://img.papamica.com/logo/zabbix.png" alt="zabbix" width="20"/> [zabbix](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/zabbix.yml) | [Zabbix.com](https://www.zabbix.com/) | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
 
 ## List of services to do:
-<img src="https://img.shields.io/badge/To_do:_185-%23FF8800.svg?style=for-the-badge&logo=vlcmediaplayer&logoColor=white">
+<img src="https://img.shields.io/badge/To_do:_184-%23FF8800.svg?style=for-the-badge&logo=vlcmediaplayer&logoColor=white">
 
 | Status | Service |
 |:--:|--|
 | 🚸 | Invidious |
 | 🚸 | ackee |
 | 🚸 | alltube |
-| 🚸 | ampache |
 | 🚸 | astrat |
 | 🚸 | authelia |
 | 🚸 | baserow |

@@ -15,7 +15,7 @@
 #% NETWORK: Your Traefik network (Example: proxy) [proxy]
 
 # Work with Portainer
-version: '3.8'
+version: '3'
 services:
   ampache:
     image: ampache/ampache:latest

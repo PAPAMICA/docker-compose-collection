@@ -1,15 +1,15 @@
 # Maintainer: Quentin JOLY - @QJoly
-# Update: 2022/10/18
+# Update: 2022-10-18
 
 #& type: 3
-#& title: Ampache
+#& title: ampache
 #& description: web based audio/video streaming application and file manager allowing you to access your music & videos from anywhere, using almost any internet enabled device.
 #& note: Website: <a href='https://github.com/ampache/ampache-docker' target='_blank' rel='noopener'>Github.com</a>
 #& categories: SelfHosted, PAPAMICA
 #& platform: linux
 #& logo: https://ampache.org/img/logo/ampache-logo.png
 
-#% SERVICE: Name of the service (No spaces or points) [Ampache]
+#% SERVICE: Name of the service (No spaces or points) [ampache]
 #% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
 #% URL: Service URL (Example: service.papamica.fr or service.com)
 #% NETWORK: Your Traefik network (Example: proxy) [proxy]
@@ -19,16 +19,16 @@ version: '3.8'
 services:
   ampache:
     image: ampache/ampache:latest
-      - $DATA_LOCATION/$SERVICE/media:/media
       - $DATA_LOCATION/$SERVICE/config:/var/www/config
       - $DATA_LOCATION/$SERVICE/log:/var/log/ampache
+      - $DATA_LOCATION/$SERVICE/media:/media
       - $DATA_LOCATION/$SERVICE/mysql:/var/lib/mysql
     healthcheck:
       test: wget -s 'http://localhost:80'
       interval: 1m
       timeout: 30s
       retries: 3
-    container_name: Ampache
+    container_name: ampache
     networks:
       - default
     labels:

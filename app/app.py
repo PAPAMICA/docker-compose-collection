@@ -2,8 +2,8 @@
 import sys, logging, jinja2
 from datetime import date
 
-logging.basicConfig(filename='debug.log', encoding='utf-8', level=logging.DEBUG)
-logging.getLogger().addHandler(logging.StreamHandler(sys.stdout))
+#logging.basicConfig(filename='debug.log', encoding='utf-8', level=logging.DEBUG)
+#logging.getLogger().addHandler(logging.StreamHandler(sys.stdout))
 
 
 def volumlist():

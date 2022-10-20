@@ -1,0 +1,57 @@
+# Maintainer: Mickael "PAPAMICA" Asseline
+# Update: 2022-10-20
+
+#& type: 3
+#& title: Prometheus
+#& description: From heatmaps to histograms, graphs to geomaps: fast and furious visualizations any way you want.
+#& note: Website: <a href='https://prometheus.io/' target='_blank' rel='noopener'>Prometheus.io</a>
+#& categories: SelfHosted, Monitoring, PAPAMICA
+#& platform: linux
+#& logo: https://img.papamica.com/logo/prometheus.png
+
+#% SERVICE: Name of the service (No spaces or points) [prometheus]
+#% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
+#% PLUGINS: Plugins to install (Example: prometheus-singlestat-panel) [alexanderzobnin-zabbix-app,prometheus-singlestat-panel]
+#% URL: Service URL (Example: service.papamica.fr or service.com)
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
+
+# Work with Portainer
+version: "2"
+services:
+  prometheus:
+    image: prom/prometheus:latest
+    restart: always
+    container_name: $SERVICE
+    volumes:
+      - $DATA_LOCATION/$SERVICE/config:/etc/prometheus/
+      - $DATA_LOCATION/$SERVICE/data:/prometheus
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    command:
+      - "--web.route-prefix=/"
+      - "--web.external-url=https://$URL/prometheus"
+      - "--config.file=/etc/prometheus/prometheus.yml"
+      - "--storage.tsdb.path=/prometheus"
+      - "--web.console.libraries=/usr/share/prometheus/console_libraries"
+      - "--web.console.templates=/usr/share/prometheus/consoles"
+    healthcheck:
+      test: wget -nv -t1 --spider 'http://localhost:9090/'
+      interval: 1m
+      timeout: 30s
+      retries: 3
+    networks:
+      - default
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+      - "traefik.enable=true"
+      - "traefik.http.routers.$SERVICE.entrypoints=https"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
+      - "traefik.http.routers.$SERVICE.tls=true"
+      - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+      - "traefik.http.services.$SERVICE.loadbalancer.server.port=9090"
+      - "traefik.docker.network=$NETWORK"
+
+networks:
+  default:
+    external:
+      name: $NETWORK

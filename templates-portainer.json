@@ -2727,6 +2727,55 @@
         },
         {
             "type": 3,
+            "title": "Prometheus",
+            "name": "Prometheus",
+            "description": "From heatmaps to histograms, graphs to geomaps: fast and furious visualizations any way you want.",
+            "note": "Website: <a href='https://prometheus.io/' target='_blank' rel='noopener'>Prometheus.io</a>",
+            "categories": [
+                "SelfHosted",
+                "Monitoring",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://img.papamica.com/logo/prometheus.png",
+            "repository": {
+                "stackfile": "composes-files/prometheus_server.yml",
+                "url": "https://github.com/PAPAMICA/docker-compose-collection"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "prometheus"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
+                },
+                {
+                    "name": "PLUGINS",
+                    "label": "Plugins to install ",
+                    "description": "Example: prometheus-singlestat-panel",
+                    "default": "alexanderzobnin-zabbix-app,prometheus-singlestat-panel"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service URL",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
+                }
+            ]
+        },
+        {
+            "type": 3,
             "title": "Prowlarr",
             "name": "Prowlarr",
             "description": "Indexer for torrents and usenets.",

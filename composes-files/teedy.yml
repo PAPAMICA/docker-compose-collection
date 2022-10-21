@@ -4,7 +4,7 @@
 #& type: 3
 #& title: Teedy
 #& description: Document management
-#& note: Website: <a href='https://teedy.io/#!/' target='_blank' rel='noopener'>Teedy.io</a>
+#& note: Website: <a href='https://teedy.io/#!/' target='_blank' rel='noopener'>Teedy.io</a></br>Default identifiants: admin/admin
 #& categories: SelfHosted, PAPAMICA
 #& platform: linux
 #& logo: https://img.papamica.com/logo/teedy.png
@@ -14,10 +14,6 @@
 #% URL: Service URL (Example: service.papamica.fr or service.com)
 #% NETWORK: Your Traefik network (Example: proxy) [proxy]
 #% DB_USER: Database user (No spaces or points) [teedy]
-#% DB_PASSWORD: Database user password
-#% DB_ROOT: Database root password
-#% ADMIN_EMAIL: Admin email
-#% ADMIN_PASSWORD: Admin password
 
 # Work with Portainer
 version: "2"
@@ -29,11 +25,15 @@ services:
       - PUID=1000
       - PGID=1000
       - DOCS_BASE_URL="$URL"
-      - DOCS_ADMIN_EMAIL_INIT="$ADMIN_EMAIL"
-      - DOCS_ADMIN_PASSWORD_INIT="$ADMIN_PASSWORD"
-      - DATABASE_USER=$DB_USER
-      - DATABASE_PASSWORD=$DB_PASSWORD
-      - DATABASE_URL="jdbc:postgresql://teedy-db:5432/teedy"
+      #- DOCS_ADMIN_EMAIL_INIT="$ADMIN_EMAIL"
+      #- DOCS_ADMIN_PASSWORD_INIT="$ADMIN_PASSWORD"
+      - DOCS_SMTP_HOSTNAME=10.20.10.201
+      - DOCS_SMTP_PORT=25
+      #- DOCS_SMTP_USERNAME=
+      #- DOCS_SMTP_PASSWORD=
+      #- DATABASE_USER=$DB_USER
+      #- DATABASE_PASSWORD=$DB_PASSWORD
+      #- DATABASE_URL="jdbc:postgresql://teedy-db:5432/teedy"
       - APP_URL=https://$URL
     volumes:
       - $DATA_LOCATION/$SERVICE/data:/data
@@ -56,23 +56,6 @@ services:
       - "traefik.http.routers.$SERVICE.tls.certresolver=http"
       - "traefik.http.services.$SERVICE.loadbalancer.server.port=8080"
       - "traefik.docker.network=$NETWORK"
-
-  teedy-db:
-    image: postgres:13.1-alpine
-    container_name: $SERVICE_db
-    environment:
-      POSTGRES_USER: "$DB_USER"
-      POSTGRES_PASSWORD: "$DB_PASSWORD"
-      POSTGRES_DB: "teedy"
-    healthcheck:
-      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
-      timeout: 20s
-      retries: 10
-    volumes:
-      - $DATA_LOCATION/$SERVICE/db:/var/lib/postgresql/data
-    restart: unless-stopped
-    networks:
-      - default
 
 networks:
   default:

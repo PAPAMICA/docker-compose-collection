@@ -1,0 +1,80 @@
+# Maintainer: Mickael "PAPAMICA" Asseline
+# Update: 2022-10-21
+
+#& type: 3
+#& title: Teedy
+#& description: Document management
+#& note: Website: <a href='https://teedy.io/#!/' target='_blank' rel='noopener'>Teedy.io</a>
+#& categories: SelfHosted, PAPAMICA
+#& platform: linux
+#& logo: https://img.papamica.com/logo/teedy.png
+
+#% SERVICE: Name of the service (No spaces or points) [teedy]
+#% DATA_LOCATION: data localization (Example: /apps/service) [/_data/apps]
+#% URL: Service URL (Example: service.papamica.fr or service.com)
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
+#% DB_USER: Database user (No spaces or points) [teedy]
+#% DB_PASSWORD: Database user password
+#% DB_ROOT: Database root password
+#% ADMIN_EMAIL: Admin email
+#% ADMIN_PASSWORD: Admin password
+
+# Work with Portainer
+version: "2"
+services:
+  teedy:
+    image: sismics/docs
+    container_name: $SERVICE
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - DOCS_BASE_URL="$URL"
+      - DOCS_ADMIN_EMAIL_INIT="$ADMIN_EMAIL"
+      - DOCS_ADMIN_PASSWORD_INIT="$ADMIN_PASSWORD"
+      - DATABASE_USER=$DB_USER
+      - DATABASE_PASSWORD=$DB_PASSWORD
+      - DATABASE_URL="jdbc:postgresql://teedy-db:5432/teedy"
+      - APP_URL=https://$URL
+    volumes:
+      - $DATA_LOCATION/$SERVICE/data:/data
+    healthcheck:
+      test: wget -nv -t1 --spider 'http://localhost:8080/'
+      interval: 1m
+      timeout: 30s
+      retries: 3
+    restart: unless-stopped
+    depends_on:
+      - teedy-db
+    networks:
+      - default
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+      - "traefik.enable=true"
+      - "traefik.http.routers.$SERVICE.entrypoints=https"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
+      - "traefik.http.routers.$SERVICE.tls=true"
+      - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+      - "traefik.http.services.$SERVICE.loadbalancer.server.port=8080"
+      - "traefik.docker.network=$NETWORK"
+
+  teedy-db:
+    image: postgres:13.1-alpine
+    container_name: $SERVICE_db
+    environment:
+      POSTGRES_USER: "$DB_USER"
+      POSTGRES_PASSWORD: "$DB_PASSWORD"
+      POSTGRES_DB: "teedy"
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
+    volumes:
+      - $DATA_LOCATION/$SERVICE/db:/var/lib/postgresql/data
+    restart: unless-stopped
+    networks:
+      - default
+
+networks:
+  default:
+    external:
+      name: $NETWORK

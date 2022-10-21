@@ -3541,7 +3541,7 @@
             "title": "Teedy",
             "name": "Teedy",
             "description": "Document management",
-            "note": "Website: <a href='https://teedy.io/#!/' target='_blank' rel='noopener'>Teedy.io</a>",
+            "note": "Website: <a href='https://teedy.io/#!/' target='_blank' rel='noopener'>Teedy.io</a></br>Default identifiants: admin/admin",
             "categories": [
                 "SelfHosted",
                 "PAPAMICA"
@@ -3581,22 +3581,6 @@
                     "label": "Database user ",
                     "description": "No spaces or points",
                     "default": "teedy"
-                },
-                {
-                    "name": "DB_PASSWORD",
-                    "label": "Database user password"
-                },
-                {
-                    "name": "DB_ROOT",
-                    "label": "Database root password"
-                },
-                {
-                    "name": "ADMIN_EMAIL",
-                    "label": "Admin email"
-                },
-                {
-                    "name": "ADMIN_PASSWORD",
-                    "label": "Admin password"
                 }
             ]
         },

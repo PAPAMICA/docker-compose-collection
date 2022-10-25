@@ -373,6 +373,49 @@
         },
         {
             "type": 3,
+            "title": "Checkmk",
+            "name": "Checkmk",
+            "description": "Checkmk provides powerful monitoring of networks, servers, clouds, containers and applications. Fast. Effective.",
+            "note": "Website: <a href=''https://checkmk.com/ target='_blank' rel='noopener'>checkmk.com</a>",
+            "categories": [
+                "SelfHosted",
+                "Monitoring",
+                "LinIT"
+            ],
+            "platform": "linux",
+            "logo": "https://img.papamica.com/logo/checkmk.png",
+            "repository": {
+                "stackfile": "composes-files/checkmk.yml",
+                "url": "https://github.com/PAPAMICA/docker-compose-collection"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "checkmk"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service URL",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
+                }
+            ]
+        },
+        {
+            "type": 3,
             "title": "Chevereto",
             "name": "Chevereto",
             "description": "Chevereto is an image hosting software that allows you to create a beautiful and full-featured image hosting website on your own server.",

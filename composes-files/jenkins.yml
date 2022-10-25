@@ -1,0 +1,50 @@
+# Maintainer: Axel ROTTHIER "Drack0rr"
+# Update: 2022-10-25
+
+#& type: 3
+#& title: Jenkins
+#& description: Jenkins is an open source continuous integration/continuous delivery and deployment (CI/CD) automation software DevOps tool.
+#& note: Website: <a href='https://www.jenkins.io/' target='_blank' rel='noopener'>jenkins.io</a>
+#& categories: SelfHosted, Drack0rr
+#& platform: linux
+#& logo: https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Jenkins_logo.svg/1200px-Jenkins_logo.svg.png
+
+#% SERVICE: Name of the service (No spaces or points) [jenkins]
+#% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
+#% URL: Service URL (Example: service.papamica.fr or service.com)
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
+#% JENK_USER: Admin for Jenkins (Example: Admin) [admin]
+#% JENK_PASSWORD: The admin password (Example: My-Super-Password!) [My-Super-Password!]
+#% $JENK_MAIL: The admin mail (Example: admin@service.com)
+
+version: '3'
+
+services:
+
+  jenkins:
+    image: "docker.io/bitnami/jenkins:latest"
+    container_name: $SERVICE
+    restart: "always"
+    environment:
+      - JENKINS_USERNAME=$JENK_USER
+      - JENKINS_PASSWORD=$JENK_PASSWORD
+      - JENKINS_EMAIL=$JENK_MAIL
+      - JENKINS_HTTP_PORT_NUMBER=8080
+    volumes:
+      - $DATA_LOCATION/$SERVICE/jenkins:/bitnami/jenkins
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+      - "traefik.enable=true"
+      - "traefik.http.routers.$SERVICE.entrypoints=https"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
+      - "traefik.http.routers.$SERVICE.tls=true"
+      - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+      - "traefik.http.services.$SERVICE.loadbalancer.server.port=8080"
+      - "traefik.docker.network=$NETWORK"
+    networks:
+      - default
+
+networks:
+  default:
+    external:
+      name: $NETWORK

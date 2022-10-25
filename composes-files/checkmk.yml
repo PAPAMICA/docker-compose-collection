@@ -1,0 +1,44 @@
+# Maintainer: Kevin Allioli "linitio"
+# Update: 2022-10-25
+
+#& type: 3
+#& title: Checkmk
+#& description: Checkmk provides powerful monitoring of networks, servers, clouds, containers and applications. Fast. Effective.
+#& note: Website: <a href=''https://checkmk.com/ target='_blank' rel='noopener'>checkmk.com</a>
+#& categories: SelfHosted, Monitoring, LinIT
+#& platform: linux
+#& logo: https://img.papamica.com/logo/checkmk.png
+
+#% SERVICE: Name of the service (No spaces or points) [checkmk]
+#% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
+#% URL: Service URL (Example: service.papamica.fr or service.com)
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
+
+# Work with Portainer
+version: "3.8"
+services:
+  checkmk:
+    image: checkmk/check-mk-raw:latest
+    restart: unless-stopped
+    container_name: $SERVICE
+    tmpfs:
+      - /opt/omd/sites/cmk/tmp:uid=1000,gid=1000
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - $DATA_LOCATION/$SERVICE/data:/omd/sites
+    networks:
+      - default
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+      - "traefik.enable=true"
+      - "traefik.http.routers.$SERVICE.entrypoints=https"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
+      - "traefik.http.routers.$SERVICE.tls=true"
+      - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+      - "traefik.http.services.$SERVICE.loadbalancer.server.port=5000"
+      - "traefik.docker.network=$NETWORK"
+
+networks:
+  default:
+    external:
+      name: $NETWORK

@@ -37,7 +37,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 
 
 ## List of services availables:
-<img src="https://img.shields.io/badge/Avaibles:_85-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
+<img src="https://img.shields.io/badge/Avaibles:_86-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
 
 | Status | Service | Website | Update | Maintainer |
 |:--:|--|--|--|--|
@@ -65,6 +65,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | ✅ | <img src="https://img.papamica.com/logo/filebrowser.png" alt="filebrowser" width="20"/> [filebrowser](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/filebrowser.yml) | [Github.com](https://github.com/filebrowser/filebrowser) | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://img.papamica.com/logo/freshrss.png" alt="freshrss" width="20"/> [freshrss](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/freshrss.yml) | [FreshRSS.org](https://freshrss.org/) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://img.papamica.com/logo/grafana.png" alt="grafana" width="20"/> [grafana](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/grafana.yml) | [Grafana.com](https://grafana.com/grafana/dashboards/) | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| ✅ | <img src="https://www.tech2tech.fr/wp-content/uploads/2019/12/guac-tricolor-300x300.png" alt="guacamole" width="20"/> [guacamole](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/guacamole.yml) | [guacamole.apache.org](https://guacamole.apache.org/) | 2022-10-25 |  Axel ROTTHIER "Drack0rr" |
 | ✅ | <img src="https://img.papamica.com/logo/hastebin.png" alt="hastebin" width="20"/> [hastebin](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/hastebin.yml) | [Hastebin.com](https://hastebin.com/about.md) | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://img.papamica.com/logo/healthchecks.jpg" alt="heathchecks" width="20"/> [heathchecks](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/heathchecks.yml) | [Github.com](https://github.com/healthchecks/healthchecks) | 2022-06-01 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://img.papamica.com/logo/homeassistant.png" alt="homeassistant" width="20"/> [homeassistant](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/homeassistant.yml) | [Home-Assistant.io](https://www.home-assistant.io/) | 2022-06-16 |  Mickael "PAPAMICA" Asseline |
@@ -128,7 +129,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | ✅ | <img src="https://img.papamica.com/logo/zabbix.png" alt="zabbix" width="20"/> [zabbix](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/zabbix.yml) | [Zabbix.com](https://www.zabbix.com/) | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
 
 ## List of services to do:
-<img src="https://img.shields.io/badge/To_do:_181-%23FF8800.svg?style=for-the-badge&logo=vlcmediaplayer&logoColor=white">
+<img src="https://img.shields.io/badge/To_do:_180-%23FF8800.svg?style=for-the-badge&logo=vlcmediaplayer&logoColor=white">
 
 | Status | Service |
 |:--:|--|
@@ -175,7 +176,6 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | 🚸 | grav |
 | 🚸 | greenlight |
 | 🚸 | grocy |
-| 🚸 | guacamole |
 | 🚸 | hedgedoc |
 | 🚸 | heimdall |
 | 🚸 | homebridge |

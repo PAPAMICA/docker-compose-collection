@@ -1,15 +1,15 @@
-# Maintainer: Mickael "PAPAMICA" Asseline
-# Update: 2022-05-10
+# Maintainer: Kevin Allioli "linitio"
+# Update: 2022-10-25
 
 #& type: 3
-#& title: Grafana
-#& description: From heatmaps to histograms, graphs to geomaps: fast and furious visualizations any way you want.
-#& note: Website: <a href='https://grafana.com/grafana/dashboards/' target='_blank' rel='noopener'>Grafana.com</a>
-#& categories: SelfHosted, Monitoring, PAPAMICA
+#& title: Checkmk
+#& description: Checkmk provides powerful monitoring of networks, servers, clouds, containers and applications. Fast. Effective.
+#& note: Website: <a href=''https://checkmk.com/ target='_blank' rel='noopener'>checkmk.com</a>
+#& categories: SelfHosted, Monitoring, LinIT
 #& platform: linux
-#& logo: https://img.papamica.com/logo/grafana.png
+#& logo: https://img.papamica.com/logo/checkmk.png
 
-#% SERVICE: Name of the service (No spaces or points) [grafana]
+#% SERVICE: Name of the service (No spaces or points) [checkmk]
 #% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
 #% URL: Service URL (Example: service.papamica.fr or service.com)
 #% NETWORK: Your Traefik network (Example: proxy) [proxy]

@@ -376,7 +376,7 @@
             "title": "Checkmk",
             "name": "Checkmk",
             "description": "Checkmk provides powerful monitoring of networks, servers, clouds, containers and applications. Fast. Effective.",
-            "note": "Website: <a href=''https://checkmk.com/ target='_blank' rel='noopener'>checkmk.com</a>",
+            "note": "Website: <a href='https://checkmk.com/' target='_blank' rel='noopener'>checkmk.com</a>",
             "categories": [
                 "SelfHosted",
                 "Monitoring",

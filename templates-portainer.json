@@ -1234,6 +1234,66 @@
         },
         {
             "type": 3,
+            "title": "Guacamole",
+            "name": "Guacamole",
+            "description": "Guacamole is an HTML5 web application that provides access to desktop environments using remote desktop protocols (such as VNC or RDP).",
+            "note": "Website: <a href='https://guacamole.apache.org/' target='_blank' rel='noopener'>guacamole.apache.org</a>",
+            "categories": [
+                "SelfHosted",
+                "Drack0rr"
+            ],
+            "platform": "linux",
+            "logo": "https://www.tech2tech.fr/wp-content/uploads/2019/12/guac-tricolor-300x300.png",
+            "repository": {
+                "stackfile": "composes-files/guacamole.yml",
+                "url": "https://github.com/PAPAMICA/docker-compose-collection"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "guacamole"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service URL",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
+                },
+                {
+                    "name": "TZ",
+                    "label": "Time zone ",
+                    "description": "Exemple: Europe/Paris",
+                    "default": "Europe/Paris"
+                },
+                {
+                    "name": "GUAC_DB_PASSWORD",
+                    "label": "Your database password ",
+                    "description": "Exemple: My-Super-Password!",
+                    "default": "My-Super-Password!"
+                },
+                {
+                    "name": "TOTP",
+                    "label": "Activate 2fa ",
+                    "description": "Exemple: false",
+                    "default": "false"
+                }
+            ]
+        },
+        {
+            "type": 3,
             "title": "Hastebin",
             "name": "Hastebin",
             "description": "Share your code easily",
@@ -1581,6 +1641,65 @@
                     "name": "FOLDER_MOVIES",
                     "label": "Your movies folder",
                     "description": "Exemple: /data/movies"
+                }
+            ]
+        },
+        {
+            "type": 3,
+            "title": "Jenkins",
+            "name": "Jenkins",
+            "description": "Jenkins is an open source continuous integration/continuous delivery and deployment (CI/CD) automation software DevOps tool.",
+            "note": "Website: <a href='https://www.jenkins.io/' target='_blank' rel='noopener'>jenkins.io</a>",
+            "categories": [
+                "SelfHosted",
+                "Drack0rr"
+            ],
+            "platform": "linux",
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Jenkins_logo.svg/1200px-Jenkins_logo.svg.png",
+            "repository": {
+                "stackfile": "composes-files/jenkins.yml",
+                "url": "https://github.com/PAPAMICA/docker-compose-collection"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "jenkins"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service URL",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
+                },
+                {
+                    "name": "JENK_USER",
+                    "label": "Admin for Jenkins ",
+                    "description": "Example: Admin",
+                    "default": "admin"
+                },
+                {
+                    "name": "JENK_PASSWORD",
+                    "label": "The admin password ",
+                    "description": "Example: My-Super-Password!",
+                    "default": "My-Super-Password!"
+                },
+                {
+                    "name": "$JENK_MAIL",
+                    "label": "The admin mail",
+                    "description": "Example: admin@service.com"
                 }
             ]
         },

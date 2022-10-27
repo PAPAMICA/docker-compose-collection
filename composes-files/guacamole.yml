@@ -1,0 +1,82 @@
+# Maintainer: Axel ROTTHIER "Drack0rr"
+# Update: 2022-10-25
+
+#& type: 3
+#& title: Guacamole
+#& description: Guacamole is an HTML5 web application that provides access to desktop environments using remote desktop protocols (such as VNC or RDP).
+#& note: Website: <a href='https://guacamole.apache.org/' target='_blank' rel='noopener'>guacamole.apache.org</a>
+#& categories: SelfHosted, Drack0rr
+#& platform: linux
+#& logo: https://www.tech2tech.fr/wp-content/uploads/2019/12/guac-tricolor-300x300.png
+
+#% SERVICE: Name of the service (No spaces or points) [guacamole]
+#% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
+#% URL: Service URL (Example: service.papamica.fr or service.com)
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
+#% TZ: Time zone (Exemple: Europe/Paris) [Europe/Paris]
+#% GUAC_DB_PASSWORD: Your database password (Exemple: My-Super-Password!) [My-Super-Password!]
+#% TOTP: Activate 2fa (Exemple: false) [false]
+
+version: '3'
+
+services:
+  guacd:
+    image: guacamole/guacd:latest
+    container_name: guacd
+    restart: unless-stopped
+    volumes:
+      - $DATA_LOCATION/$SERVICE/drive:/drive:rw
+      - $DATA_LOCATION/$SERVICE/record:/record:rw
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+    networks:
+      - default
+
+  guacamole_db:
+    image: postgres:13.4
+    container_name: $SERVICE_db
+    restart: unless-stopped
+    environment:
+      PGDATA: /var/lib/postgresql/data/guacamole
+      POSTGRES_DB: $SERVICE_db
+      POSTGRES_PASSWORD: $GUAC_DB_PASSWORD
+      POSTGRES_USER: guacdb_user
+      TZ: $TZ
+    volumes:
+      - $DATA_LOCATION/$SERVICE/init:/docker-entrypoint-initdb.d:ro
+      - $DATA_LOCATION/$SERVICE/data:/var/lib/postgresql/data:rw
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+    networks:
+      - default
+
+  guacamole_app:
+    image: guacamole/guacamole:latest
+    container_name: $SERVICE_app
+    restart: unless-stopped
+    environment:
+      GUACD_HOSTNAME: guacd
+      POSTGRES_DATABASE: $SERVICE_db
+      POSTGRES_HOSTNAME: $SERVICE_db
+      POSTGRES_PASSWORD: $GUAC_DB_PASSWORD
+      POSTGRES_USER: guacdb_user
+      TOTP_ENABLED: $TOTP
+    depends_on:
+      - guacd
+      - guacamole_db
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+      - "traefik.enable=true"
+      - "traefik.http.routers.$SERVICE.entrypoints=https"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
+      - "traefik.http.routers.$SERVICE.tls=true"
+      - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+      - "traefik.http.services.$SERVICE.loadbalancer.server.port=8080"
+      - "traefik.docker.network=$NETWORK"
+    networks:
+      - default
+
+networks:
+  default:
+    external:
+      name: $NETWORK

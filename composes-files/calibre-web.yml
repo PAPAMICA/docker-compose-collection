@@ -1,0 +1,53 @@
+# Maintainer: Axel ROTTHIER "Drack0rr"
+# Update: 2022-12-05
+
+#& type: 3
+#& title: Calibre-Web
+#& description: Web library
+#& note: Website: <a href='https://github.com/janeczku/calibre-web' target='_blank' rel='noopener'>Github.com</a>
+#& categories: SelfHosted, Library, Drack0rr
+#& platform: linux
+#& logo: https://developer.asustor.com/uploadIcons/0020_999_1573465183_calibre-web_256.png
+
+#% SERVICE: Name of the service (No spaces or points) [calibre-web]
+#% DATA_LOCATION: Data localization (Example: /apps/service) [/apps]
+#% URL: Service URL (Example: service.papamica.fr or service.com)
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
+#% TIME_ZONE: Time zone (Example : Europe/Paris) [Europe/Paris]
+
+version: "3.8"
+services:
+  # Calibre-Web : https://calibre-ebook.com/
+  # Setup with New Calibre Database : https://fictionbecomesfact.com/calibre-web-container
+  calibre-web:
+    image: linuxserver/calibre-web:latest
+    container_name: $SERVICE
+    restart: unless-stopped
+    environment:
+      - TZ=$TIME_ZONE
+      - DOCKER_MODS=linuxserver/mods:universal-calibre #optional
+      - OAUTHLIB_RELAX_TOKEN_SCOPE=1 #optional
+    volumes:
+      - $DATA_LOCATION/$SERVICE/config:/config
+      - $DATA_LOCATION/$SERVICE/library:/books
+    healthcheck:
+      test: curl --fail http://localhost:8083 || exit 1
+      interval: 1m
+      timeout: 30s
+      retries: 3
+    networks:
+      - default
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+      - "traefik.enable=true"
+      - "traefik.http.routers.$SERVICE.entrypoints=https"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
+      - "traefik.http.routers.$SERVICE.tls=true"
+      - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+      - "traefik.http.services.$SERVICE.loadbalancer.server.port=8080"
+      - "traefik.docker.network=$NETWORK"
+
+networks:
+  default:
+    external:
+      name: $NETWORK

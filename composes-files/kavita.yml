@@ -1,0 +1,52 @@
+# Maintainer: Axel ROTTHIER "Drack0rr"
+# Update: 2022-12-05
+
+#& type: 3
+#& title: Kavita
+#& description: Web library
+#& note: Website: <a href='https://github.com/Kareadita/Kavita' target='_blank' rel='noopener'>Github.com</a>
+#& categories: SelfHosted, Library, Drack0rr
+#& platform: linux
+#& logo: https://www.kavitareader.com/img/logo.png
+
+#% SERVICE: Name of the service (No spaces or points) [kavita]
+#% DATA_LOCATION: Data localization (Example: /apps/service) [/apps]
+#% URL: Service URL (Example: service.papamica.fr or service.com)
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
+#% TIME_ZONE: Time zone (Example : Europe/Paris) [Europe/Paris]
+
+version: "3.8"
+services:
+  # Kavita : https://www.kavitareader.com/#home
+  kavita:
+    image: kizaing/kavita:latest
+    container_name: $SERVICE
+    restart: unless-stopped
+    environment:
+      - TZ=$TIME_ZONE
+    volumes:
+      - $DATA_LOCATION/$SERVICE/config:/kavita/config
+      - $DATA_LOCATION/$SERVICE/books:/books
+      - $DATA_LOCATION/$SERVICE/manga:/manga
+      - $DATA_LOCATION/$SERVICE/comics:/comics
+    healthcheck:
+      test: curl --fail http://localhost:5000 || exit 1
+      interval: 1m
+      timeout: 30s
+      retries: 3
+    networks:
+      - default
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+      - "traefik.enable=true"
+      - "traefik.http.routers.$SERVICE.entrypoints=https"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
+      - "traefik.http.routers.$SERVICE.tls=true"
+      - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+      - "traefik.http.services.$SERVICE.loadbalancer.server.port=8080"
+      - "traefik.docker.network=$NETWORK"
+
+networks:
+  default:
+    external:
+      name: $NETWORK

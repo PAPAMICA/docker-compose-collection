@@ -2,14 +2,14 @@
 # Update: 2022-12-05
 
 #& type: 3
-#& title: Calibre-Web
+#& title: Kavita
 #& description: Web library
-#& note: Website: <a href='https://github.com/janeczku/calibre-web' target='_blank' rel='noopener'>Github.com</a>
+#& note: Website: <a href='https://github.com/Kareadita/Kavita' target='_blank' rel='noopener'>Github.com</a>
 #& categories: SelfHosted, Library, Drack0rr
 #& platform: linux
-#& logo: https://developer.asustor.com/uploadIcons/0020_999_1573465183_calibre-web_256.png
+#& logo: https://www.kavitareader.com/img/logo.png
 
-#% SERVICE: Name of the service (No spaces or points) [calibre-web]
+#% SERVICE: Name of the service (No spaces or points) [kavita]
 #% DATA_LOCATION: Data localization (Example: /apps/service) [/apps]
 #% URL: Service URL (Example: service.papamica.fr or service.com)
 #% NETWORK: Your Traefik network (Example: proxy) [proxy]
@@ -17,21 +17,20 @@
 
 version: "3.8"
 services:
-  # Calibre-Web : https://calibre-ebook.com/
-  # Setup with New Calibre Database : https://fictionbecomesfact.com/calibre-web-container
-  calibre-web:
-    image: linuxserver/calibre-web:latest
+  # Kavita : https://www.kavitareader.com/#home
+  kavita:
+    image: kizaing/kavita:latest
     container_name: $SERVICE
     restart: unless-stopped
     environment:
       - TZ=$TIME_ZONE
-      - DOCKER_MODS=linuxserver/mods:universal-calibre #optional
-      - OAUTHLIB_RELAX_TOKEN_SCOPE=1 #optional
     volumes:
-      - $DATA_LOCATION/$SERVICE/config:/config
-      - $DATA_LOCATION/$SERVICE/library:/books
+      - $DATA_LOCATION/$SERVICE/config:/kavita/config
+      - $DATA_LOCATION/$SERVICE/books:/books
+      - $DATA_LOCATION/$SERVICE/manga:/manga
+      - $DATA_LOCATION/$SERVICE/comics:/comics
     healthcheck:
-      test: curl --fail http://localhost:8083 || exit 1
+      test: curl --fail http://localhost:5000 || exit 1
       interval: 1m
       timeout: 30s
       retries: 3

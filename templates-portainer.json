@@ -373,6 +373,55 @@
         },
         {
             "type": 3,
+            "title": "Calibre-Web",
+            "name": "Calibre-Web",
+            "description": "Web library",
+            "note": "Website: <a href='https://github.com/janeczku/calibre-web' target='_blank' rel='noopener'>Github.com</a>",
+            "categories": [
+                "SelfHosted",
+                "Library",
+                "Drack0rr"
+            ],
+            "platform": "linux",
+            "logo": "https://developer.asustor.com/uploadIcons/0020_999_1573465183_calibre-web_256.png",
+            "repository": {
+                "stackfile": "composes-files/calibre-web.yml",
+                "url": "https://github.com/PAPAMICA/docker-compose-collection"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "calibre-web"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/apps"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service URL",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
+                },
+                {
+                    "name": "TIME_ZONE",
+                    "label": "Time zone ",
+                    "description": "Example : Europe/Paris",
+                    "default": "Europe/Paris"
+                }
+            ]
+        },
+        {
+            "type": 3,
             "title": "Checkmk",
             "name": "Checkmk",
             "description": "Checkmk provides powerful monitoring of networks, servers, clouds, containers and applications. Fast. Effective.",
@@ -1742,6 +1791,55 @@
                     "label": "Your Traefik network ",
                     "description": "Example: proxy",
                     "default": "proxy"
+                }
+            ]
+        },
+        {
+            "type": 3,
+            "title": "Kavita",
+            "name": "Kavita",
+            "description": "Web library",
+            "note": "Website: <a href='https://github.com/Kareadita/Kavita' target='_blank' rel='noopener'>Github.com</a>",
+            "categories": [
+                "SelfHosted",
+                "Library",
+                "Drack0rr"
+            ],
+            "platform": "linux",
+            "logo": "https://www.kavitareader.com/img/logo.png",
+            "repository": {
+                "stackfile": "composes-files/kavita.yml",
+                "url": "https://github.com/PAPAMICA/docker-compose-collection"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "kavita"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/apps"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service URL",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
+                },
+                {
+                    "name": "TIME_ZONE",
+                    "label": "Time zone ",
+                    "description": "Example : Europe/Paris",
+                    "default": "Europe/Paris"
                 }
             ]
         },

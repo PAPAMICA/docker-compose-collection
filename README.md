@@ -37,7 +37,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 
 
 ## List of services availables:
-<img src="https://img.shields.io/badge/Avaibles:_88-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
+<img src="https://img.shields.io/badge/Avaibles:_89-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
 
 | Status | Service | Website | Update | Maintainer |
 |:--:|--|--|--|--|
@@ -49,6 +49,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | ✅ | <img src="https://img.papamica.com/logo/babybuddy.png" alt="babybuddy" width="20"/> [babybuddy](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/babybuddy.yml) | [Github.com](https://github.com/babybuddy/babybuddy) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://img.papamica.com/logo/bazarr.png" alt="bazarr" width="20"/> [bazarr](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/bazarr.yml) | [Bazarr.media](https://www.bazarr.media/) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://img.papamica.com/logo/bookstack.png" alt="bookstack" width="20"/> [bookstack](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/bookstack.yml) | [Bookstackapp.com](https://www.bookstackapp.com/) | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
+| ✅ | <img src="https://developer.asustor.com/uploadIcons/0020_999_1573465183_calibre-web_256.png" alt="calibre-web" width="20"/> [calibre-web](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/calibre-web.yml) | [Github.com](https://github.com/janeczku/calibre-web) | 2022-12-05 |  Axel ROTTHIER "Drack0rr" |
 | ✅ | <img src="https://img.papamica.com/logo/checkmk.png" alt="checkmk" width="20"/> [checkmk](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/checkmk.yml) | [checkmk.com](https://checkmk.com/) | 2022-10-25 |  Kevin Allioli @linitio |
 | ✅ | <img src="https://img.papamica.com/logo/chevereto.png" alt="chevereto" width="20"/> [chevereto](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/chevereto.yml) | [Github.com](https://github.com/rodber/chevereto-free) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://img.papamica.com/logo/dashy.png" alt="dashy" width="20"/> [dashy](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/dashy.yml) | [Dashy.to](https://dashy.to/) | 2022-05-23 |  Mickael "PAPAMICA" Asseline |
@@ -131,7 +132,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | ✅ | <img src="https://img.papamica.com/logo/zabbix.png" alt="zabbix" width="20"/> [zabbix](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/zabbix.yml) | [Zabbix.com](https://www.zabbix.com/) | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
 
 ## List of services to do:
-<img src="https://img.shields.io/badge/To_do:_179-%23FF8800.svg?style=for-the-badge&logo=vlcmediaplayer&logoColor=white">
+<img src="https://img.shields.io/badge/To_do:_178-%23FF8800.svg?style=for-the-badge&logo=vlcmediaplayer&logoColor=white">
 
 | Status | Service |
 |:--:|--|
@@ -142,7 +143,6 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | 🚸 | authelia |
 | 🚸 | baserow |
 | 🚸 | cachethq |
-| 🚸 | calibre-web |
 | 🚸 | chatwoot |
 | 🚸 | commento |
 | 🚸 | confluence |

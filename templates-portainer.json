@@ -1234,6 +1234,69 @@
         },
         {
             "type": 3,
+            "title": "Glpi",
+            "name": "Glpi",
+            "description": "IT Management",
+            "note": "Website: <a href='https://glpi-project.org/fr/' target='_blank' rel='noopener'>glpi-project.org</a>",
+            "categories": [
+                "SelfHosted",
+                "IT Management",
+                "Drack0rr"
+            ],
+            "platform": "linux",
+            "logo": "https://www.linuxtricks.fr/upload/logo-glpi.png",
+            "repository": {
+                "stackfile": "composes-files/glpi.yml",
+                "url": "https://github.com/PAPAMICA/docker-compose-collection"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "glpi"
+                },
+                {
+                    "name": "DB_USER",
+                    "label": "Database user ",
+                    "description": "No spaces or points",
+                    "default": "glpi_user"
+                },
+                {
+                    "name": "DB_PASSWORD",
+                    "label": "Database user password"
+                },
+                {
+                    "name": "DB_ROOT_PASSWORD",
+                    "label": "Database root password"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/apps"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service URL",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
+                },
+                {
+                    "name": "TIME_ZONE",
+                    "label": "Time zone ",
+                    "description": "Example : Europe/Paris",
+                    "default": "Europe/Paris"
+                }
+            ]
+        },
+        {
+            "type": 3,
             "title": "Grafana",
             "name": "Grafana",
             "description": "From heatmaps to histograms, graphs to geomaps: fast and furious visualizations any way you want.",

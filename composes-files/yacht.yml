@@ -1,0 +1,43 @@
+# Maintainer: Axel ROTTHIER "Drack0rr"
+# Update: 2022-12-09
+
+
+#& type: 3
+#& title: Yacht
+#& description: web interface for managing docker containers.
+#& note: Website: <a href='https://yacht.sh/' target='_blank' rel='noopener'>Yacht.sh</a>
+#& categories: SelfHosted, Orchestrator, Drackorr
+#& platform: linux
+#& logo: https://yacht.sh/img/logo-light.svg
+
+#% SERVICE: Name of the service (No spaces or points) [yacht]
+#% DATA_LOCATION: Data localization (Example: /apps/service) [/apps]
+#% URL: Service URL (Example: service.papamica.fr or service.com)
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
+
+# Work with Portainer
+version: "3.8"
+services:
+  yacht:
+    image: selfhostedpro/yacht:latest
+    container_name: $SERVICE
+    restart: unless-stopped
+    volumes:
+      - $DATA_LOCATION/$SERVICE/config:/config
+      - /var/run/docker.sock:/var/run/docker.sock
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+      - "traefik.enable=true"
+      - "traefik.http.routers.$SERVICE.entrypoints=https"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
+      - "traefik.http.routers.$SERVICE.tls=true"
+      - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+      - "traefik.http.services.$SERVICE.loadbalancer.server.port=8080"
+      - "traefik.docker.network=$NETWORK"
+    networks:
+      - default
+
+networks:
+  default:
+    external:
+      name: $NETWORK

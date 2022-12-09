@@ -37,7 +37,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 
 
 ## List of services availables:
-<img src="https://img.shields.io/badge/Avaibles:_91-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
+<img src="https://img.shields.io/badge/Avaibles:_92-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
 
 | Status | Service | Website | Update | Maintainer |
 |:--:|--|--|--|--|
@@ -129,6 +129,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | ✅ | <img src="https://img.papamica.com/logo/wikijs.png" alt="wikijs" width="20"/> [wikijs](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/wikijs.yml) | [js.wiki](https://js.wiki/) | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://img.papamica.com/logo/wordpress.png" alt="wordpress" width="20"/> [wordpress](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/wordpress.yml) | [WordPress.org](https://wordpress.org/) | 2022-05-11 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://img.papamica.com/logo/xbrowsersync.png" alt="xbrowsersync" width="20"/> [xbrowsersync](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/xbrowsersync.yml) | [xbrowsersync.org](https://www.xbrowsersync.org/) | 2022-06-28 |  Mickael "PAPAMICA" Asseline |
+| ✅ | <img src="https://yacht.sh/img/logo-light.svg" alt="yacht" width="20"/> [yacht](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/yacht.yml) | [Yacht.sh](https://yacht.sh/) | 2022-12-09 |  Axel ROTTHIER "Drack0rr" |
 | ✅ | <img src="https://img.papamica.com/logo/yourls.png" alt="yourls" width="20"/> [yourls](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/yourls.yml) | [YourLS.org](https://yourls.org/) | 2022-05-13 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://img.papamica.com/logo/zabbix.png" alt="zabbix-proxy" width="20"/> [zabbix-proxy](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/zabbix-proxy.yml) | [Zabbix.com](https://www.zabbix.com/) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://img.papamica.com/logo/zabbix.png" alt="zabbix" width="20"/> [zabbix](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/zabbix.yml) | [Zabbix.com](https://www.zabbix.com/) | 2022-05-11 |  Mickael "PAPAMICA" Asseline |

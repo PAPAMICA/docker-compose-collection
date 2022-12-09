@@ -4673,6 +4673,49 @@
         },
         {
             "type": 3,
+            "title": "Yacht",
+            "name": "Yacht",
+            "description": "web interface for managing docker containers.",
+            "note": "Website: <a href='https://yacht.sh/' target='_blank' rel='noopener'>Yacht.sh</a>",
+            "categories": [
+                "SelfHosted",
+                "Orchestrator",
+                "Drackorr"
+            ],
+            "platform": "linux",
+            "logo": "https://yacht.sh/img/logo-light.svg",
+            "repository": {
+                "stackfile": "composes-files/yacht.yml",
+                "url": "https://github.com/PAPAMICA/docker-compose-collection"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "yacht"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/apps"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service URL",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
+                }
+            ]
+        },
+        {
+            "type": 3,
             "title": "YourLS",
             "name": "YourLS",
             "description": "Link shorter",

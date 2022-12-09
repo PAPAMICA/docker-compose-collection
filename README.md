@@ -37,7 +37,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 
 
 ## List of services availables:
-<img src="https://img.shields.io/badge/Avaibles:_90-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
+<img src="https://img.shields.io/badge/Avaibles:_91-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
 
 | Status | Service | Website | Update | Maintainer |
 |:--:|--|--|--|--|
@@ -97,6 +97,7 @@ You can deploye a compatible Docker environment with Portainer and Traefik with:
 | ✅ | <img src="https://img.papamica.com/logo/overseerr.svg" alt="overseerr" width="20"/> [overseerr](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/overseerr.yml) | [Overseerr.dev](https://overseerr.dev/) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://img.papamica.com/logo/paperless.png" alt="paperless-ngx" width="20"/> [paperless-ngx](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/paperless-ngx.yml) | [Github.com](https://github.com/paperless-ngx/paperless-ngx) | 2022-06-28 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://www.phpmyadmin.net/static/images/logo-og.png" alt="phpmyadmin" width="20"/> [phpmyadmin](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/phpmyadmin.yml) | [Github.com](https://github.com/phpmyadmin/phpmyadmin) | 2022-10-18 |  Quentin JOLY - @QJoly |
+| ✅ | <img src="https://user-images.githubusercontent.com/58886915/166198400-c2134044-1198-4647-a8b6-da9c4a204c68.svg" alt="pigvin-share" width="20"/> [pigvin-share](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/pigvin-share.yml) | [Github.com](https://github.com/stonith404/pingvin-share) | 2022-12-09 |  Axel ROTTHIER "Drack0rr" |
 | ✅ | <img src="https://img.papamica.com/logo/plex.png" alt="plex" width="20"/> [plex](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/plex.yml) | [Plex.tv](https://www.plex.tv) | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://img.papamica.com/logo/prometheus.png" alt="prometheus_server" width="20"/> [prometheus_server](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/prometheus_server.yml) | [Prometheus.io](https://prometheus.io/) | 2022-10-20 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://img.papamica.com/logo/prowlarr.png" alt="prowlarr" width="20"/> [prowlarr](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/prowlarr.yml) | [Gitub.com](https://github.com/Prowlarr/Prowlarr) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |

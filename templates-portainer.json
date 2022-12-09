@@ -2991,6 +2991,49 @@
         },
         {
             "type": 3,
+            "title": "Pigvin Share",
+            "name": "Pigvin Share",
+            "description": "Pingvin Share is self-hosted file sharing platform and an alternative for WeTransfer.",
+            "note": "Website: <a href='https://github.com/stonith404/pingvin-share' target='_blank' rel='noopener'>Github.com</a>",
+            "categories": [
+                "SelfHosted",
+                "Transfer",
+                "Drackorr"
+            ],
+            "platform": "linux",
+            "logo": "https://user-images.githubusercontent.com/58886915/166198400-c2134044-1198-4647-a8b6-da9c4a204c68.svg",
+            "repository": {
+                "stackfile": "composes-files/pigvin-share.yml",
+                "url": "https://github.com/PAPAMICA/docker-compose-collection"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "pingvin"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/apps"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service URL",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
+                }
+            ]
+        },
+        {
+            "type": 3,
             "title": "Plex",
             "name": "Plex",
             "description": "Media server",

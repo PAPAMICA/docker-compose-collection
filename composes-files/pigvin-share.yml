@@ -1,0 +1,42 @@
+# Maintainer: Axel ROTTHIER "Drack0rr"
+# Update: 2022-12-09
+
+
+#& type: 3
+#& title: Pigvin Share
+#& description: Pingvin Share is self-hosted file sharing platform and an alternative for WeTransfer.
+#& note: Website: <a href='https://github.com/stonith404/pingvin-share' target='_blank' rel='noopener'>Github.com</a>
+#& categories: SelfHosted, Transfer, Drackorr
+#& platform: linux
+#& logo: https://user-images.githubusercontent.com/58886915/166198400-c2134044-1198-4647-a8b6-da9c4a204c68.svg
+
+#% SERVICE: Name of the service (No spaces or points) [pingvin]
+#% DATA_LOCATION: Data localization (Example: /apps/service) [/apps]
+#% URL: Service URL (Example: service.papamica.fr or service.com)
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
+
+# Work with Portainer
+version: "3.8"
+services:
+  pingvin-share:
+    image: stonith404/pingvin-share:latest
+    container_name: $SERVICE
+    restart: unless-stopped
+    volumes:
+      - $DATA_LOCATION/$SERVICE/data:/opt/app/backend/data
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+      - "traefik.enable=true"
+      - "traefik.http.routers.$SERVICE.entrypoints=https"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
+      - "traefik.http.routers.$SERVICE.tls=true"
+      - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+      - "traefik.http.services.$SERVICE.loadbalancer.server.port=8080"
+      - "traefik.docker.network=$NETWORK"
+    networks:
+      - default
+
+networks:
+  default:
+    external:
+      name: $NETWORK

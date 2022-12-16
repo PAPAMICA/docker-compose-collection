@@ -1,0 +1,75 @@
+# Maintainer: Axel ROTTHIER "Drack0rr"
+# Update: 2022-12-08
+
+#& type: 3
+#& title: Glpi
+#& description: IT Management
+#& note: Website: <a href='https://glpi-project.org/fr/' target='_blank' rel='noopener'>glpi-project.org</a>
+#& categories: SelfHosted, IT Management, Drack0rr
+#& platform: linux
+#& logo: https://www.linuxtricks.fr/upload/logo-glpi.png
+
+#% SERVICE: Name of the service (No spaces or points) [glpi]
+#% DB_USER: Database user (No spaces or points) [glpi_user]
+#% DB_PASSWORD: Database user password
+#% DB_ROOT_PASSWORD: Database root password
+#% DATA_LOCATION: Data localization (Example: /apps/service) [/apps]
+#% URL: Service URL (Example: service.papamica.fr or service.com)
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
+#% TIME_ZONE: Time zone (Example : Europe/Paris) [Europe/Paris]
+
+version: "3.8"
+
+services:
+  mariadb:
+    image: mariadb:10.9
+    container_name: $SERVICE-db
+    restart: always
+    volumes:
+      - $DATA_LOCATION/$SERVICE/db:/var/lib/mysql
+    environment:
+      - MARIADB_ROOT_PASSWORD=$DB_ROOT_PASSWORD
+      - MARIADB_DATABASE=glpi_db
+      - MARIADB_USER=$DB_USER
+      - MARIADB_PASSWORD=$DB_PASSWORD
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
+    networks:
+      - default
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+
+#GLPI Container
+  glpi:
+    image: diouxx/glpi:latest
+    container_name : $SERVICE
+    restart: always
+    volumes:
+      - $DATA_LOCATION/$SERVICE/data:/var/www/html/glpi
+    environment:
+      - TIMEZONE=$TIME_ZONE
+    depends_on:
+      - mariadb
+    healthcheck:
+      test: curl --fail http://localhost || exit 1
+      interval: 1m
+      timeout: 30s
+      retries: 3
+    networks:
+      - default
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+      - "traefik.enable=true"
+      - "traefik.http.routers.$SERVICE.entrypoints=https"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
+      - "traefik.http.routers.$SERVICE.tls=true"
+      - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+      - "traefik.http.services.$SERVICE.loadbalancer.server.port=80"
+      - "traefik.docker.network=$NETWORK"
+
+networks:
+  default:
+    external:
+      name: $NETWORK

@@ -114,12 +114,13 @@ try:
             os.remove("./README.md") 
         except:
             print ("file don't exist")
+        DATE = datetime.datetime.now().strftime("%Y_%m_%d_%Hh%M")
         nb_a = f'<img src="https://img.shields.io/badge/Avaibles:_{nb_a}-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">'
         nb_td = f'<img src="https://img.shields.io/badge/To_do:_{nb_td}-%23FF8800.svg?style=for-the-badge&logo=vlcmediaplayer&logoColor=white">'
         readme_template = open(".github/workflows/Readme-template.md", "rt")
         readme_result = open("README.md", "wt")
         for line in readme_template:
-            readme_result.write(line.replace('##SERVICES##', SERVICES).replace('##SERVICES_TODO##', SERVICES_TODO).replace('##NB_A##', nb_a).replace('##NB_TD##', nb_td))
+            readme_result.write(line.replace('##DATE##', DATE).replace('##SERVICES##', SERVICES).replace('##SERVICES_TODO##', SERVICES_TODO).replace('##NB_A##', nb_a).replace('##NB_TD##', nb_td))
         readme_template.close()
         readme_result.close()
         print ("\n ✅ README.md generated !")

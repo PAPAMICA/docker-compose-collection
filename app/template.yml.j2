@@ -16,10 +16,10 @@
 {%- if envvar is defined and envvar|length > 0 %}
   {%- for var in envvar %}
     {%- if not loop.last %}
-#% {{ var|upper }}:
+#% {{ var|upper }}: {{ var }} ({{ var }}) [{{ var }}]
     {%- endif %}
     {%- if loop.last %}
-#% {{ var|upper }}:
+#% {{ var.name|upper }}: {{ var.description }} ({{ var.hint }}) [{{ var.default_value }}]
     {%- endif %}
   {%- endfor %}
 {%- endif %}

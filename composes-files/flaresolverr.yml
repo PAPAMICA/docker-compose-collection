@@ -1,0 +1,47 @@
+# Maintainer: Mickael "PAPAMICA" Asseline
+# Update: 2023-01-13
+
+
+#& type: 3
+#& title: Flaresolverr
+#& description: FlareSolverr is a proxy server to bypass Cloudflare and DDoS-GUARD protection.
+#& note: Website: <a href='https://github.com/FlareSolverr/FlareSolverr' target='_blank' rel='noopener'>Github.com</a>
+#& categories: SelfHosted, plex, PAPAMICA
+#& platform: linux
+#& logo: https://img.papamica.com/logo/flaresolverr.png
+
+#% SERVICE: Name of the service (No spaces or points) [flaresolverr]
+#% URL: Service URL (Example: service.papamica.fr or service.com)
+#% CAPTCHA_SOLVER: Captcha solver (Check documentation on Github) [none]
+#% TZ: Time Zone (Ex : Europe/Paris) [Europe/Paris]
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
+
+# Work with Portainer
+version: "2"
+services:
+  adminer:
+    image: ghcr.io/flaresolverr/flaresolverr:latest
+    restart: always
+    container_name: $SERVICE
+    environment:
+      - LOG_LEVEL=info
+      - TZ=$TZ
+      - CAPTCHA_SOLVER=$CAPTCHA_SOLVER
+    healthcheck:
+      test: curl --fail http://localhost:8080 || exit 1
+      interval: 1m
+      timeout: 30s
+      retries: 3
+    networks:
+      - default
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+      - "traefik.enable=true"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
+      - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+      - "traefik.http.services.$SERVICE.loadbalancer.server.port=8191"
+      - "traefik.docker.network=$NETWORK"
+networks:
+  default:
+    external:
+      name: $NETWORK

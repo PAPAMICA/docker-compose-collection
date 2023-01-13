@@ -1186,6 +1186,55 @@
         },
         {
             "type": 3,
+            "title": "Flaresolverr",
+            "name": "Flaresolverr",
+            "description": "FlareSolverr is a proxy server to bypass Cloudflare and DDoS-GUARD protection.",
+            "note": "Website: <a href='https://github.com/FlareSolverr/FlareSolverr' target='_blank' rel='noopener'>Github.com</a>",
+            "categories": [
+                "SelfHosted",
+                "plex",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://img.papamica.com/logo/flaresolverr.png",
+            "repository": {
+                "stackfile": "composes-files/flaresolverr.yml",
+                "url": "https://github.com/PAPAMICA/docker-compose-collection"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "flaresolverr"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service URL",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "CAPTCHA_SOLVER",
+                    "label": "Captcha solver ",
+                    "description": "Check documentation on Github",
+                    "default": "none"
+                },
+                {
+                    "name": "TZ",
+                    "label": "Time Zone ",
+                    "description": "Ex : Europe/Paris",
+                    "default": "Europe/Paris"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
+                }
+            ]
+        },
+        {
+            "type": 3,
             "title": "FreshRSS",
             "name": "FreshRSS",
             "description": "Freshrss is a free, self-hostable aggregator for rss feeds.",

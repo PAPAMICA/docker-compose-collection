@@ -13,8 +13,8 @@
 #% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
 #% URL: Service URL (Example: service.papamica.fr or service.com)
 #% NETWORK: Your Traefik network (Example: proxy) [proxy]
-#% ['TZ', 'CAPTCHA_SOLVER']: ['Time Zone', 'Captcha solver'] (['Europe/Paris', 'Check documentation on Github']) [['Europe/Paris', 'none']]
-#% ['TZ', 'CAPTCHA_SOLVER']: ['Time Zone', 'Captcha solver'] (['Europe/Paris', 'Check documentation on Github']) [['Europe/Paris', 'none']]
+#% TZ: Time Zone (Ex : Europe/Paris) [Europe/Paris]
+#% CAPTCHA_SOLVER: Captcha solver (Check documentation on Github) [none]
 
 # Work with Portainer
 version: '3.8'
@@ -22,9 +22,10 @@ services:
   flaresolverr:
     image: ghcr.io/flaresolverr/flaresolverr:latest
     volumes:
+      - $DATA_LOCATION/$SERVICE/test:/test
     environment:
-      - ['TZ', 'CAPTCHA_SOLVER']:$['TZ', 'CAPTCHA_SOLVER']
-      - ['TZ', 'CAPTCHA_SOLVER']:$['TZ', 'CAPTCHA_SOLVER']
+      - TZ:$TZ
+      - CAPTCHA_SOLVER:$CAPTCHA_SOLVER
     healthcheck:
       test: wget -s 'http://localhost:8191'
       interval: 1m

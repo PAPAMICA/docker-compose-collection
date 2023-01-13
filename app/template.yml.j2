@@ -16,10 +16,10 @@
 {%- if envvar is defined and envvar|length > 0 %}
   {%- for var in envvar %}
     {%- if not loop.last %}
-#% {{ var|upper }}: {{ var }} ({{ var }}) [{{ var }}]
+#% {{ var[0]|upper }}: {{ var[1] }} ({{ var[2] }}) [{{ var[3] }}]
     {%- endif %}
     {%- if loop.last %}
-#% {{ var.name|upper }}: {{ var.description }} ({{ var.hint }}) [{{ var.default_value }}]
+#% {{ var[0]|upper }}: {{ var[1] }} ({{ var[2] }}) [{{ var[3] }}]
     {%- endif %}
   {%- endfor %}
 {%- endif %}
@@ -44,10 +44,10 @@ services:
     environment:
   {%- for var in envvar %}
     {%- if not loop.last %}
-      - {{ var|upper }}:${{ var|upper }}
+      - {{ var[0]|upper }}:${{ var[0]|upper }}
     {%- endif %}
     {%- if loop.last %}
-      - {{ var|upper }}:${{ var|upper }}
+      - {{ var[0]|upper }}:${{ var[0]|upper }}
     {%- endif %}
   {%- endfor %}
 {%- endif %}

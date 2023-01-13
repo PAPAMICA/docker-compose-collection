@@ -20,10 +20,10 @@ def volumlist():
 def envvar():
     envvar = []
     var_name = "Nothing" 
-    grp_var =  []
     while var_name != "":
         var_name = input("Enter environment variable or press enter to exit : ")
         if var_name != "":
+            grp_var =  []
             var_description = input(f"  Enter description of variable {var_name} : ")
             var_hint = input(f"  Enter hint of variable {var_name} : ")
             var_default = input(f"  Enter default of variable {var_name} : ")

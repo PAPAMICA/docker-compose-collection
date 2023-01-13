@@ -19,11 +19,19 @@ def volumlist():
 
 def envvar():
     envvar = []
-    variable = "Nothing" 
-    while variable != "":
-        variable = input("Enter environment variable or press enter to exit : ")
-        if variable != "":
-            envvar.append(variable)
+    var_name = "Nothing" 
+    while var_name != "":
+        var_name = input("Enter environment variable or press enter to exit : ")
+        if var_name != "":
+            grp_var =  []
+            var_description = input(f"  Enter description of variable {var_name} : ")
+            var_hint = input(f"  Enter hint of variable {var_name} : ")
+            var_default = input(f"  Enter default of variable {var_name} : ")
+            grp_var.append(var_name)
+            grp_var.append(var_description)
+            grp_var.append(var_hint)
+            grp_var.append(var_default)
+            envvar.append(grp_var)
     print(envvar)
     return envvar
 

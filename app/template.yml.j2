@@ -13,6 +13,16 @@
 #% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
 #% URL: Service URL (Example: service.papamica.fr or service.com)
 #% NETWORK: Your Traefik network (Example: proxy) [proxy]
+{%- if envvar is defined and envvar|length > 0 %}
+  {%- for var in envvar %}
+    {%- if not loop.last %}
+#% {{ var|upper }}:
+    {%- endif %}
+    {%- if loop.last %}
+#% {{ var|upper }}:
+    {%- endif %}
+  {%- endfor %}
+{%- endif %}
 
 # Work with Portainer
 version: '3.8'
@@ -34,10 +44,10 @@ services:
     environment:
   {%- for var in envvar %}
     {%- if not loop.last %}
-      - {{ var }}
+      - {{ var|upper }}:${{ var|upper }}
     {%- endif %}
     {%- if loop.last %}
-      - {{ var }}
+      - {{ var|upper }}:${{ var|upper }}
     {%- endif %}
   {%- endfor %}
 {%- endif %}

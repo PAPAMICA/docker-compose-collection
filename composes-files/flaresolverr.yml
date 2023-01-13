@@ -19,7 +19,7 @@
 # Work with Portainer
 version: "2"
 services:
-  adminer:
+  flaresolverr:
     image: ghcr.io/flaresolverr/flaresolverr:latest
     restart: always
     container_name: $SERVICE

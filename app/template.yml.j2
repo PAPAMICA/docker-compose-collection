@@ -19,24 +19,28 @@ version: '3.8'
 services:
   {{ app_name|lower }}:
     image: {{ app_image  }}
-{%- if volumlist is defined and envvar|length > 0 -%}    volumes:{%- endif -%}
-{%- for var in volumlist %}
-  {%- if not loop.last %}
+{%- if volumlist is defined and envvar|length > 0 %}
+    volumes:
+  {%- for var in volumlist %}
+    {%- if not loop.last %}
       - $DATA_LOCATION/$SERVICE/{{ var }}
-  {%- endif %}
-  {%- if loop.last %}
+    {%- endif %}
+    {%- if loop.last %}
       - $DATA_LOCATION/$SERVICE/{{ var }}
-  {%- endif -%}
-{%- endfor %}
-{%- if envvar is defined and envvar|length > 0 -%}    environment:{%- endif -%}
-{%- for var in envvar %}
-  {%- if not loop.last %}
+    {%- endif -%}
+  {%- endfor %}
+{%- endif %}
+{%- if envvar is defined and envvar|length > 0 %}
+    environment:
+  {%- for var in envvar %}
+    {%- if not loop.last %}
       - {{ var }}
-  {%- endif %}
-  {%- if loop.last %}
+    {%- endif %}
+    {%- if loop.last %}
       - {{ var }}
-  {%- endif %}
-{%- endfor %}
+    {%- endif %}
+  {%- endfor %}
+{%- endif %}
     healthcheck:
       test: wget -s 'http://localhost:{{ app_port }}'
       interval: 1m

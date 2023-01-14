@@ -8,14 +8,16 @@ class EnvVar():
         self.default     = ""
 
 class Compose():
-    def __init__(self) -> None:
-        self.app_name            = ""
-        self.app_logo            = ""
-        self.app_image           = ""
+    def __init__(self,name,logo,image,url,description,maintainer,github) -> None:
+        #obligatoires
+        self.app_name            = name
+        self.app_logo            = logo
+        self.app_image           = image
+        self.app_url             = url
+        self.app_description     = description
+        self.maintainer_name     = maintainer
+        self.maintainer_github   = github
+        #optionnels
         self.app_port            = ""
-        self.app_url             = ""
-        self.app_description     = ""
-        self.maintainer_name     = ""
-        self.maintainer_github   = ""
         self.envvar              = object()
         self.volumlist           = []

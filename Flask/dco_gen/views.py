@@ -74,9 +74,7 @@ def generate_compose():
             'app_ports'          : compose.app_ports
         }
 
-        nb_dco    = count_dco()
-        file_name = create_dco(nb_dco, data)
-
+        file_name = create_dco(data)
         return render_template('docker-compose.html',download_file=file_name,**data)
     else:
         return render_template('interactive_form.html')
@@ -86,33 +84,42 @@ def download_file(filename):
     return send_from_directory(f"{app.config['UPLOAD_FOLDER']}\docker-compose", filename, as_attachment=True)
 
 
-def count_dco():
-    if platform.system() == "Windows":
-        dir_path = f"{app.config['UPLOAD_FOLDER']}\docker-compose"
-    elif platform.system() == "Linux":
-        dir_path = f"{app.config['UPLOAD_FOLDER']}/docker-compose"
-    count = 0
-    for path in os.listdir(dir_path):
-        if os.path.isfile(os.path.join(dir_path, path)):
-            count += 1
-    return count
+# def count_dco():
+#     if platform.system() == "Windows":
+#         dir_path = f"{app.config['UPLOAD_FOLDER']}\docker-compose"
+#     elif platform.system() == "Linux":
+#         dir_path = f"{app.config['UPLOAD_FOLDER']}/docker-compose"
+#     count = 0
+#     for path in os.listdir(dir_path):
+#         if os.path.isfile(os.path.join(dir_path, path)):
+#             count += 1
+#     return count
 
-def create_dco(nb_dco, data):
+def create_dco(data):
     if platform.system() == "Windows":
+        cpt=1
         dir_path       = f"{app.config['UPLOAD_FOLDER']}\docker-compose"
         templateLoader = jinja2.FileSystemLoader(searchpath=f"{Path(__file__).resolve().parent}\\templates")
-        new_dco_path   = f'{dir_path}\docker-compose-{nb_dco}.yml'
+        new_dco_name = f"docker-compose-{data['app_name']}.yml"
+        while os.path.exists(f"{dir_path}\{new_dco_name}"):
+            new_dco_name = f"docker-compose-{data['app_name']}-{cpt}.yml"
+            cpt+=1
     elif platform.system() == "Linux":
-        dir_path = f"{app.config['UPLOAD_FOLDER']}/docker-compose"
+        cpt=1
+        dir_path       = f"{app.config['UPLOAD_FOLDER']}/docker-compose"
         templateLoader = jinja2.FileSystemLoader(searchpath=f"{Path(__file__).resolve().parent}/templates")
-        new_dco_path   = f'{dir_path}/docker-compose-{nb_dco}.yml'
+        new_dco_name = f"docker-compose-{data['app_name']}.yml"
+        while os.path.exists(f"{dir_path}/{new_dco_name}"):
+            new_dco_name = f"docker-compose-{data['app_name']}-{cpt}.yml"
+            cpt+=1
     
     templateEnv = jinja2.Environment(loader=templateLoader)
     TEMPLATE_FILE = "docker-compose.j2"
     template = templateEnv.get_template(TEMPLATE_FILE)
-    with open(f'{new_dco_path}','w') as dco:
+    with open(f"{dir_path}\{new_dco_name}",'w') as dco:
         dco.write(template.render(**data))
-    return f'docker-compose-{nb_dco}.yml'
+
+    return new_dco_name
 
 
 if __name__ == "__main__":

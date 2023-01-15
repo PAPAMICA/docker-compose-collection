@@ -1,5 +1,7 @@
 <html>
     <form method="post">
+        <input type="number" name="env_cpt" id="env_cpt" value="0">
+        <input type="number" name="volume_cpt" id="volume_cpt" value="0">
         <label for="service_name">Service name :</label>
         <input type="text" name="service_name" id="service_name" required><br>
         <label for="logo_url">Logo url :</label>
@@ -14,6 +16,41 @@
         <input type="text" name="maintainer_name" id="maintainer_name" required><br>
         <label for="maintainer_github">maintainer_github :</label>
         <input type="text" name="maintainer_github" id="maintainer_github" required><br>
+        <div id="envvars">
+        </div>
+        <div id="volumes">
+        </div>
+        <button type="button" onclick="add_env()">ajouter une variable</button>
+        <button type="button" onclick="add_volume()">ajouter un volume</button>
         <input type="submit" value="Valider">
     </form>
+    
+    <script>
+        var env_cpt = 0;
+        var volume_cpt = 0;
+        function add_env() { 
+            env_cpt+=1;
+            document.getElementById("envvars").innerHTML += 
+            `<label for="env_name_${env_cpt}">Nom de variable :</label>
+            <input type="text" name="env_name_${env_cpt}" id="env_name_${env_cpt}" required>
+            <label for="env_description_${env_cpt}">Description de variable :</label>
+            <input type="text" name="env_description_${env_cpt}" id="env_description_${env_cpt}" required>
+            <label for="env_hint_${env_cpt}">Hint de variable :</label>
+            <input type="text" name="env_hint_${env_cpt}" id="env_hint_${env_cpt}" required>
+            <label for="env_default_${env_cpt}">Valeur par défaut de variable :</label>
+            <input type="text" name="env_default_${env_cpt}" id="env_default_${env_cpt}" required><br>`;
+            document.getElementById('env_cpt').value = env_cpt;
+        }
+
+        function add_volume() { 
+            volume_cpt+=1;
+            document.getElementById("volumes").innerHTML += 
+            `<label for="volume_name_${volume_cpt}">Nom du volume :</label>
+            <input type="text" name="volume_name_${volume_cpt}" id="volume_name_${volume_cpt}" required>
+            <label for="volume_container_${volume_cpt}">Container's directory :</label>
+            <input type="text" name="volume_container_${volume_cpt}" id="volume_container_${volume_cpt}" required><br>`;
+
+            document.getElementById('volume_cpt').value = volume_cpt;
+        }
+    </script>
 </html>

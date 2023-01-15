@@ -15,14 +15,9 @@
 #% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
 #% URL: Service URL (Example: service.papamica.fr or service.com)
 #% NETWORK: Your Traefik network (Example: proxy) [proxy]
-{%- if envvar is defined and envvar|length > 0 %}
+{%- if envvar and envvar|length > 0 %}
   {%- for var in envvar %}
-    {%- if not loop.last %}
-#% {{ var[0]|upper }}: {{ var[1] }} ({{ var[2] }}) [{{ var[3] }}]
-    {%- endif %}
-    {%- if loop.last %}
-#% {{ var[0]|upper }}: {{ var[1] }} ({{ var[2] }}) [{{ var[3] }}]
-    {%- endif %}
+#% {{ var.name|upper }}: {{ var.description }} ({{ var.hint }}) [{{ var.default }}]
   {%- endfor %}
 {%- endif %}
 
@@ -34,23 +29,13 @@ services:
 {%- if volumlist is defined and volumlist|length > 0 %}
     volumes:
   {%- for var in volumlist %}
-    {%- if not loop.last %}
-      - $DATA_LOCATION/$SERVICE/{{ var }}
-    {%- endif %}
-    {%- if loop.last %}
-      - $DATA_LOCATION/$SERVICE/{{ var }}
-    {%- endif -%}
+      - $DATA_LOCATION/$SERVICE/{{ var.name }}
   {%- endfor %}
 {%- endif %}
-{%- if envvar is defined and envvar|length > 0 %}
+{%- if envvar and envvar|length > 0 %}
     environment:
   {%- for var in envvar %}
-    {%- if not loop.last %}
-      - {{ var[0]|upper }}:${{ var[0]|upper }}
-    {%- endif %}
-    {%- if loop.last %}
-      - {{ var[0]|upper }}:${{ var[0]|upper }}
-    {%- endif %}
+      - {{ var.name|upper }}:${{ var.name|upper }}
   {%- endfor %}
 {%- endif %}
     healthcheck:

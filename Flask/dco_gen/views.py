@@ -13,6 +13,10 @@ def index():
 @app.route('/generator/interactif/',methods = ['GET','POST'])
 def generate_compose():
     if request.method == 'POST':
+        EnvVar.items = []
+        Port.items   = []
+        Volume.items = []
+
         compose = Compose(request.form['service_name'],
                           request.form['logo_url'],
                           request.form['docker_image'],
@@ -33,7 +37,9 @@ def generate_compose():
                 new_var_default     = request.form[f'env_default_{envvar_cpt}']
                 new_var = EnvVar(new_var_name,new_var_hint,new_var_description,new_var_default)
                 EnvVar.items.append(new_var)
+                print(new_var.__dict__)
             compose.envvar = EnvVar.items
+            print(EnvVar.items)
 
         if nb_volumes > 0:
             for volume_cpt in range(1,nb_volumes+1):
@@ -62,7 +68,6 @@ def generate_compose():
             'envvar'             : compose.envvar,
             'app_ports'          : compose.app_ports
         }
-
 
         return render_template('template.html',**data)
     else:

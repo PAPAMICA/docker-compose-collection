@@ -18,7 +18,7 @@ class Port():
     items = []
 
     def __init__(self, port_nb) -> None:
-        self.port_number = port
+        self.port_number = port_nb
 
 class Compose():
     def __init__(self,name,logo,image,url,description,maintainer,github) -> None:

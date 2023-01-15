@@ -1,8 +1,8 @@
 <html>
     <form method="post">
-        <input type="number" name="env_cpt" id="env_cpt" value="0" hidden>
-        <input type="number" name="volume_cpt" id="volume_cpt" value="0" hidden>
-        <input type="number" name="port_cpt" id="port_cpt" value="0" hidden>
+        <input type="number" name="env_cpt" id="env_cpt" value="0" >
+        <input type="number" name="volume_cpt" id="volume_cpt" value="0" >
+        <input type="number" name="port_cpt" id="port_cpt" value="0" >
         <label for="service_name">Service name :</label>
         <input type="text" name="service_name" id="service_name" required><br>
         <label for="logo_url">Logo url :</label>
@@ -25,6 +25,7 @@
         </div>
         <button type="button" onclick="add_env()">ajouter une variable</button>
         <button type="button" onclick="add_volume()">ajouter un volume</button>
+        <button type="button" onclick="add_port()">ajouter un port</button>
         <input type="submit" value="Valider">
     </form>
     
@@ -34,7 +35,8 @@
         var port_cpt = 0;
         function add_env() { 
             env_cpt+=1;
-            document.getElementById("envvars").innerHTML += 
+            var new_envvar_div = document.createElement('div')
+            new_envvar_div.innerHTML += 
             `<label for="env_name_${env_cpt}">Nom de variable :</label>
             <input type="text" name="env_name_${env_cpt}" id="env_name_${env_cpt}" required>
             <label for="env_description_${env_cpt}">Description de variable :</label>
@@ -43,26 +45,29 @@
             <input type="text" name="env_hint_${env_cpt}" id="env_hint_${env_cpt}" required>
             <label for="env_default_${env_cpt}">Valeur par défaut de variable :</label>
             <input type="text" name="env_default_${env_cpt}" id="env_default_${env_cpt}" required><br>`;
+            document.getElementById("envvars").appendChild(new_envvar_div)
             document.getElementById('env_cpt').value = env_cpt;
         }
 
         function add_volume() { 
             volume_cpt+=1;
-            document.getElementById("volumes").innerHTML += 
+            var new_volume_div = document.createElement('div')
+            new_volume_div.innerHTML += 
             `<label for="volume_name_${volume_cpt}">Nom du volume :</label>
             <input type="text" name="volume_name_${volume_cpt}" id="volume_name_${volume_cpt}" required>
             <label for="volume_container_${volume_cpt}">Container's directory :</label>
             <input type="text" name="volume_container_${volume_cpt}" id="volume_container_${volume_cpt}" required><br>`;
-
+            document.getElementById("volumes").appendChild(new_volume_div)
             document.getElementById('volume_cpt').value = volume_cpt;
         }
 
         function add_port() { 
             port_cpt+=1;
-            document.getElementById("ports").innerHTML += 
+            var new_port_div = document.createElement('div')
+            new_port_div.innerHTML += 
             `<label for="port_${port_cpt}">Service port :</label>
             <input type="text" name="port_${port_cpt}" id="port_${port_cpt}" required><br>`;
-
+            document.getElementById("ports").appendChild(new_port_div)
             document.getElementById('port_cpt').value = port_cpt;
         }
     </script>

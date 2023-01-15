@@ -1,11 +1,24 @@
 class EnvVar():
     items = []
 
-    def __init__(self) -> None:
-        self.name        = ""
-        self.hint        = ""
-        self.descritpion = ""
-        self.default     = ""
+    def __init__(self, name, hint, description, default) -> None:
+        self.name        = name
+        self.hint        = hint
+        self.descritpion = description
+        self.default     = default
+
+class Volume():
+    items = []
+
+    def __init__(self, name, container) -> None:
+        self.name      = name
+        self.container = container
+
+class Port():
+    items = []
+
+    def __init__(self, port_nb) -> None:
+        self.port_number = port
 
 class Compose():
     def __init__(self,name,logo,image,url,description,maintainer,github) -> None:
@@ -18,6 +31,6 @@ class Compose():
         self.maintainer_name     = maintainer
         self.maintainer_github   = github
         #optionnels
-        self.app_port            = ""
-        self.envvar              = object()
+        self.app_ports           = []
+        self.envvar              = []
         self.volumlist           = []

@@ -31,7 +31,7 @@ version: '3.8'
 services:
   {{ app_name|lower }}:
     image: {{ app_image  }}
-{%- if volumlist is defined and envvar|length > 0 %}
+{%- if volumlist is defined and volumlist|length > 0 %}
     volumes:
   {%- for var in volumlist %}
     {%- if not loop.last %}

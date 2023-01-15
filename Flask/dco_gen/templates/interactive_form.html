@@ -1,7 +1,8 @@
 <html>
     <form method="post">
-        <input type="number" name="env_cpt" id="env_cpt" value="0">
-        <input type="number" name="volume_cpt" id="volume_cpt" value="0">
+        <input type="number" name="env_cpt" id="env_cpt" value="0" hidden>
+        <input type="number" name="volume_cpt" id="volume_cpt" value="0" hidden>
+        <input type="number" name="port_cpt" id="port_cpt" value="0" hidden>
         <label for="service_name">Service name :</label>
         <input type="text" name="service_name" id="service_name" required><br>
         <label for="logo_url">Logo url :</label>
@@ -16,6 +17,8 @@
         <input type="text" name="maintainer_name" id="maintainer_name" required><br>
         <label for="maintainer_github">maintainer_github :</label>
         <input type="text" name="maintainer_github" id="maintainer_github" required><br>
+        <div id="ports">
+        </div>
         <div id="envvars">
         </div>
         <div id="volumes">
@@ -28,6 +31,7 @@
     <script>
         var env_cpt = 0;
         var volume_cpt = 0;
+        var port_cpt = 0;
         function add_env() { 
             env_cpt+=1;
             document.getElementById("envvars").innerHTML += 
@@ -51,6 +55,15 @@
             <input type="text" name="volume_container_${volume_cpt}" id="volume_container_${volume_cpt}" required><br>`;
 
             document.getElementById('volume_cpt').value = volume_cpt;
+        }
+
+        function add_port() { 
+            port_cpt+=1;
+            document.getElementById("ports").innerHTML += 
+            `<label for="port_${port_cpt}">Service port :</label>
+            <input type="text" name="port_${port_cpt}" id="port_${port_cpt}" required><br>`;
+
+            document.getElementById('port_cpt').value = port_cpt;
         }
     </script>
 </html>

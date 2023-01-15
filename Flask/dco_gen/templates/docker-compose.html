@@ -58,4 +58,8 @@ networks:
     external:
       name: $NETWORK
     </pre>
+
+    <form action="{{ url_for('download_file', filename=download_file) }}">
+      <input type="submit" value="download" />
+  </form>
 </html>

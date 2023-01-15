@@ -1,9 +1,16 @@
-from flask import Flask, render_template, request
+import platform
+import os
+import jinja2
+from flask import Flask, render_template, request, send_from_directory
 from .models import EnvVar, Compose, Volume, Port
+from pathlib import Path
 
 app = Flask(__name__)
 app.config['SECRET_KEY']    = 'iVu"D[%!N*ZL18K)s\rSW=@:s'
-app.config['UPLOAD_FOLDER'] = '/static/'
+if platform.system() == "Windows":
+    app.config['UPLOAD_FOLDER'] = f'{Path(__file__).resolve().parent}\static'
+elif platform.system() == "Linux":
+    app.config['UPLOAD_FOLDER'] = f'{Path(__file__).resolve().parent}/static'
 
 @app.route('/')
 def index():
@@ -37,9 +44,7 @@ def generate_compose():
                 new_var_default     = request.form[f'env_default_{envvar_cpt}']
                 new_var = EnvVar(new_var_name,new_var_hint,new_var_description,new_var_default)
                 EnvVar.items.append(new_var)
-                print(new_var.__dict__)
             compose.envvar = EnvVar.items
-            print(EnvVar.items)
 
         if nb_volumes > 0:
             for volume_cpt in range(1,nb_volumes+1):
@@ -69,9 +74,46 @@ def generate_compose():
             'app_ports'          : compose.app_ports
         }
 
-        return render_template('template.html',**data)
+        nb_dco    = count_dco()
+        file_name = create_dco(nb_dco, data)
+
+        return render_template('docker-compose.html',download_file=file_name,**data)
     else:
         return render_template('interactive_form.html')
+
+@app.route('/download/<path:filename>')
+def download_file(filename):
+    return send_from_directory(f"{app.config['UPLOAD_FOLDER']}\docker-compose", filename, as_attachment=True)
+
+
+def count_dco():
+    if platform.system() == "Windows":
+        dir_path = f"{app.config['UPLOAD_FOLDER']}\docker-compose"
+    elif platform.system() == "Linux":
+        dir_path = f"{app.config['UPLOAD_FOLDER']}/docker-compose"
+    count = 0
+    for path in os.listdir(dir_path):
+        if os.path.isfile(os.path.join(dir_path, path)):
+            count += 1
+    return count
+
+def create_dco(nb_dco, data):
+    if platform.system() == "Windows":
+        dir_path       = f"{app.config['UPLOAD_FOLDER']}\docker-compose"
+        templateLoader = jinja2.FileSystemLoader(searchpath=f"{Path(__file__).resolve().parent}\\templates")
+        new_dco_path   = f'{dir_path}\docker-compose-{nb_dco}.yml'
+    elif platform.system() == "Linux":
+        dir_path = f"{app.config['UPLOAD_FOLDER']}/docker-compose"
+        templateLoader = jinja2.FileSystemLoader(searchpath=f"{Path(__file__).resolve().parent}/templates")
+        new_dco_path   = f'{dir_path}/docker-compose-{nb_dco}.yml'
+    
+    templateEnv = jinja2.Environment(loader=templateLoader)
+    TEMPLATE_FILE = "docker-compose.j2"
+    template = templateEnv.get_template(TEMPLATE_FILE)
+    with open(f'{new_dco_path}','w') as dco:
+        dco.write(template.render(**data))
+    return f'docker-compose-{nb_dco}.yml'
+
 
 if __name__ == "__main__":
     app.run()

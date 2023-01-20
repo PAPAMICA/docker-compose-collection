@@ -33,6 +33,7 @@
         var env_cpt = 0;
         var volume_cpt = 0;
         var port_cpt = 0;
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////
         function add_env() { 
             env_cpt+=1;
             var new_envvar_div = document.createElement('div')
@@ -96,24 +97,69 @@
             }
         }
 
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
         function add_volume() { 
             volume_cpt+=1;
             var new_volume_div = document.createElement('div')
+            new_volume_div.setAttribute("id",`volume-${volume_cpt}`)
             new_volume_div.innerHTML += 
             `<label for="volume_name_${volume_cpt}">Nom du volume :</label>
             <input type="text" name="volume_name_${volume_cpt}" id="volume_name_${volume_cpt}" required>
             <label for="volume_container_${volume_cpt}">Container's directory :</label>
-            <input type="text" name="volume_container_${volume_cpt}" id="volume_container_${volume_cpt}" required><br>`;
+            <input type="text" name="volume_container_${volume_cpt}" id="volume_container_${volume_cpt}" required><br>
+            <button type="button" onclick="remove_volume(${volume_cpt})">Supprimer</button><br>`;
             document.getElementById("volumes").appendChild(new_volume_div)
             document.getElementById('volume_cpt').value = volume_cpt;
         }
+
+        function remove_volume(index){
+            var vol_to_rm = document.getElementById(`volume-${index}`);
+            var cpt = document.getElementById('volume_cpt').value -1;
+            vol_to_rm.remove();
+            document.getElementById('volume_cpt').value = cpt;
+            update_volume_ids();
+        }
+
+        
+        function update_volume_ids() {
+            const volume_divs = document.querySelectorAll('[id^="volume-"]');
+            for (let i=0; i < volume_divs.length; i++) {
+                volume_divs[i].setAttribute('id',`volume-${i+1}`)
+                let name_labels        = volume_divs[i].querySelectorAll('[for^=volume_name_]');
+                let container_labels   = volume_divs[i].querySelectorAll('[for^=volume_container_]');
+                var labels = [{"liste":name_labels,"for_name":"volume_name_"},
+                              {"liste":container_labels,"for_name":"volume_container_"}];
+                for(let x=0; x < labels.length; x++){
+                    for (let j=0; j < labels[x].liste.length; j++) {
+                        labels[x].liste[j].setAttribute("for",`${labels[x].for_name}${i+1}`);
+                    }
+                }
+                let name_inputs        = volume_divs[i].querySelectorAll('[name^=volume_name_]');
+                let container_inputs   = volume_divs[i].querySelectorAll('[name^=volume_container_]');
+                var inputs = [{"liste":name_inputs,"name":"volume_name_"},
+                              {"liste":container_inputs,"name":"volume_container_"},]
+                for(let x=0; x < inputs.length; x++){
+                    for (let j=0; j < inputs[x].liste.length; j++) {
+                        inputs[x].liste[j].setAttribute("name",`${inputs[x].name}${i+1}`);
+                        inputs[x].liste[j].setAttribute("id",`${inputs[x].name}${i+1}`);
+                    }
+                }
+
+                let bouton = volume_divs[i].querySelector("button");
+                bouton.setAttribute("onclick",`remove_volume(${i+1})`);
+            }
+        }
+
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         function add_port() { 
             port_cpt+=1;
             var new_port_div = document.createElement('div')
             new_port_div.innerHTML += 
             `<label for="port_${port_cpt}">Service port :</label>
-            <input type="text" name="port_${port_cpt}" id="port_${port_cpt}" required><br>`;
+            <input type="text" name="port_${port_cpt}" id="port_${port_cpt}" required><br>
+            <button type="button" onclick="remove_port(${port_cpt})">Supprimer</button><br>`;
             document.getElementById("ports").appendChild(new_port_div)
             document.getElementById('port_cpt').value = port_cpt;
         }

@@ -1,5 +1,5 @@
 <html>
-  <pre id="docker-compose">
+  <textarea id="docker-compose" readonly>
 # Maintainer: {{ maintainer_name }} - {{ maintainer_github }}
 # Update: {{ update_date }}
 
@@ -57,9 +57,17 @@ networks:
   default:
     external:
       name: $NETWORK
-    </pre>
+    </textarea>
 
     <form action="{{ url_for('download_file', filename=download_file) }}">
       <input type="submit" value="download" />
   </form>
+  <button onclick="copyToClipboard()">Copier dans le presse papier</button>
+  <script>
+    function copyToClipboard() {
+      var text_to_copy = document.getElementById("docker-compose");
+      text_to_copy.select();
+      document.execCommand("copy");
+    }
+  </script>
 </html>

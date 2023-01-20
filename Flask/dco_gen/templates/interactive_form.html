@@ -36,6 +36,7 @@
         function add_env() { 
             env_cpt+=1;
             var new_envvar_div = document.createElement('div')
+            new_envvar_div.setAttribute('id',`envvar-${env_cpt}`)
             new_envvar_div.innerHTML += 
             `<label for="env_name_${env_cpt}">Nom de variable :</label>
             <input type="text" name="env_name_${env_cpt}" id="env_name_${env_cpt}" required>
@@ -44,9 +45,55 @@
             <label for="env_hint_${env_cpt}">Hint de variable :</label>
             <input type="text" name="env_hint_${env_cpt}" id="env_hint_${env_cpt}" required>
             <label for="env_default_${env_cpt}">Valeur par défaut de variable :</label>
-            <input type="text" name="env_default_${env_cpt}" id="env_default_${env_cpt}" required><br>`;
-            document.getElementById("envvars").appendChild(new_envvar_div)
+            <input type="text" name="env_default_${env_cpt}" id="env_default_${env_cpt}" required>
+            <button type="button" onclick="remove_env(${env_cpt})">Supprimer</button><br>`;
+            document.getElementById("envvars").appendChild(new_envvar_div);
             document.getElementById('env_cpt').value = env_cpt;
+        }
+
+        function remove_env(index) {
+            var env_to_rm = document.getElementById(`envvar-${index}`);
+            var cpt = document.getElementById('env_cpt').value -1;
+            env_to_rm.remove();
+            document.getElementById('env_cpt').value = cpt;
+            update_env_ids();
+        }
+
+        function update_env_ids() {
+            const env_divs = document.querySelectorAll('[id^="envvar-"]');
+            for (let i=0; i < env_divs.length; i++) {
+                env_divs[i].setAttribute('id',`envvar-${i+1}`)
+                let name_labels        = env_divs[i].querySelectorAll('[for^=env_name]');
+                let hint_labels        = env_divs[i].querySelectorAll('[for^=env_hint]');
+                let description_labels = env_divs[i].querySelectorAll('[for^=env_description]');
+                let default_labels     = env_divs[i].querySelectorAll('[for^=env_default]');
+                var labels = [{"liste":name_labels,"for_name":"env_name_"},
+                              {"liste":hint_labels,"for_name":"env_hint_"},
+                              {"liste":description_labels,"for_name":"env_description_"},
+                              {"liste":default_labels,"for_name":"env_default_"}];
+                for(let x=0; x < labels.length; x++){
+                    for (let j=0; j < labels[x].liste.length; j++) {
+                        labels[x].liste[j].setAttribute("for",`${labels[x].for_name}${i+1}`);
+                    }
+                }
+                let name_inputs        = env_divs[i].querySelectorAll('[name^=env_name]');
+                let hint_inputs        = env_divs[i].querySelectorAll('[name^=env_hint]');
+                let description_inputs = env_divs[i].querySelectorAll('[name^=env_description]');
+                let default_inputs     = env_divs[i].querySelectorAll('[name^=env_default]');
+                var inputs = [{"liste":name_inputs,"name":"env_name_"},
+                              {"liste":hint_inputs,"name":"env_hint_"},
+                              {"liste":description_inputs,"name":"env_description_"},
+                              {"liste":default_inputs,"name":"env_default_"},]
+                for(let x=0; x < inputs.length; x++){
+                    for (let j=0; j < inputs[x].liste.length; j++) {
+                        inputs[x].liste[j].setAttribute("name",`${inputs[x].name}${i+1}`);
+                        inputs[x].liste[j].setAttribute("id",`${inputs[x].name}${i+1}`);
+                    }
+                }
+
+                let bouton = env_divs[i].querySelector("button");
+                bouton.setAttribute("onclick",`remove_env(${i+1})`);
+            }
         }
 
         function add_volume() { 

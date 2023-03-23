@@ -13,7 +13,7 @@
     <a href="https://github.com/PAPAMICA/docker-compose-collection#utilisation"><img src="https://img.shields.io/badge/How_to_use-%2341454A.svg?style=for-the-badge&logo=target&logoColor=white"> </a>
     <a href="https://github.com/PAPAMICA/docker-compose-collection#add-new-docker-compose-file"><img src="https://img.shields.io/badge/Add_new_service-%2341454A.svg?style=for-the-badge&logo=target&logoColor=white"> </a>
     <br />
-  <a><img alt="Updated" src="https://img.shields.io/badge/updated-2023_01_13_20h19-%232496ED.svg?style=for-the-badge&logo=social-blade&logoColor=white" ></a> <img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/PAPAMICA/docker-compose-collection/main.yml?branch=master&label=Files%20generating&logo=files&logoColor=white&style=for-the-badge">
+  <a><img alt="Updated" src="https://img.shields.io/badge/updated-2023_03_23_11h53-%232496ED.svg?style=for-the-badge&logo=social-blade&logoColor=white" ></a> <img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/PAPAMICA/docker-compose-collection/main.yml?branch=master&label=Files%20generating&logo=files&logoColor=white&style=for-the-badge">
     <br />
     <a href="https://www.docker.com/"><img src="https://img.shields.io/badge/docker-%232496ED.svg?style=for-the-badge&logo=docker&logoColor=white"> </a>
     <a href="https://www.portainer.io/"><img src="https://img.shields.io/badge/portainer-%2313BEF9.svg?style=for-the-badge&logo=portainer&logoColor=white"> </a>
@@ -30,14 +30,14 @@ All docker-compose are commented and are configured using variables.
 
 They all include support for Traefik.
 
-You can deploye a compatible Docker environment with Portainer and Traefik with:
+You can deploy a compatible Docker environment with Portainer and Traefik with:
 <p align="center">
   <a href="https://github.com/PAPAMICA/docker-environment"><img src="https://img.shields.io/badge/docker_environment-%2300B8FC.svg?style=for-the-badge&logo=github&logoColor=white"></a>
 </p>
 
 
 ## List of services availables:
-<img src="https://img.shields.io/badge/Avaibles:_93-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
+<img src="https://img.shields.io/badge/Availables:_93-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
 
 | Status | Service | Website | Update | Maintainer |
 |:--:|--|--|--|--|
@@ -335,7 +335,7 @@ https://raw.githubusercontent.com/PAPAMICA/docker-compose-collection/master/temp
 ## Debian
 Install Git :
 ```bash
- apt install -y git
+apt install -y git
 ```
 
 Clone repo
@@ -347,16 +347,16 @@ git clone https://github.com/PAPAMICA/docker-compose-collection/
 Configuration of variables and execution of a docker-compose:
 ```bash
 cd docker-compose-collection
-nano env
-sudo docker-compose -f service.yml --env-file env up -d
+nano .env
+sudo docker-compose -f service.yml --env-file .env up -d
 ```
 ## Some useful commands:
 
 -   **docker container ls** : Show current Docker containers
 -   **docker-compose stop** : Stop the containers created with the scripts (in the script folder)
-- **docker-compose up -d** : Launch the containers created with the scripts (in the script folder)
+-   **docker-compose up -d** : Launch the containers created with the scripts (in the script folder)
 -   **docker logs -f <id_container>** : Display the container logs
--   **docker exec -it <id_container> bash** : Get a shell in container
+-   **docker exec -it <id_container> bash** : Start a shell in container
 
 ---
 # Add new docker-compose file

@@ -38,7 +38,7 @@ services:
       - MYSQL_PASSWORD=$DB_PASSWORD
       #- REMOTE_SQL=http://URL1/your.sql,https://URL2/your.sql
     healthcheck:
-      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      test: ["CMD", "mariadb-admin" ,"ping", "-h", "localhost"]
       timeout: 20s
       retries: 10
     labels:

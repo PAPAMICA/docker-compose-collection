@@ -75,5 +75,5 @@ services:
       - default
 networks:
   default:
-    external:
-      name: $NETWORK
+    name: $NETWORK
+    external: true

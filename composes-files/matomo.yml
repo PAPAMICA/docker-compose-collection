@@ -35,7 +35,7 @@ services:
     volumes:
       - $DATA_LOCATION/$SERVICE/data:/var/www/html matomo
     depends_on:
-      - $SERVICE-db
+      - matomo-db
     networks:
       - default
     labels:
@@ -72,5 +72,5 @@ services:
 
 networks:
   default:
-    external:
-      name: $NETWORK
+    external: true
+    name: $NETWORK

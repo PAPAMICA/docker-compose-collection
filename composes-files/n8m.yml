@@ -1,0 +1,48 @@
+# Maintainer: Mickael "PAPAMICA" Asseline
+# Update: 2024-06-07
+
+#& type: 3
+#& title: n8n
+#& description: Automatisation (Zapier alternative)
+#& note: Website: <a href='https://github.com/n8n-io/n8n' target='_blank' rel='noopener'>Github.com</a></br>Port to open:5678
+#& categories: SelfHosted, PAPAMICA
+#& platform: linux
+#& logo: https://avatars.githubusercontent.com/u/45487711?s=200&v=4
+
+#% SERVICE: Name of the service (No spaces or points) [mumble-server]
+#% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
+#% URL: Service URL (Example: service.papamica.fr or service.com)
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
+
+# Work with Portainer
+version: "2"
+services:
+  n8n:
+    image: docker.n8n.io/n8nio/n8n
+    restart: always
+    container_name: $SERVICE
+    volumes:
+      - $DATA_LOCATION:/home/node/.n8n
+    ports:
+      - "5678:5678"
+    environment:
+      - N8N_HOST=${URL}
+      - N8N_PORT=5678
+      - N8N_PROTOCOL=https
+      - NODE_ENV=production
+      - WEBHOOK_URL=https://${URL}/
+      - GENERIC_TIMEZONE=Europe/Paris
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+      - traefik.enable=true
+      - traefik.http.routers.$SERVICE.rule=Host(`$URL`)
+      - traefik.http.routers.$SERVICE.entryPoints=http
+      - traefik.$SERVICE.port=5678
+      - "traefik.docker.network=$NETWORK"
+    networks:
+      - default
+
+networks:
+  default:
+    external: true
+    name: $NETWORK

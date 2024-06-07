@@ -22,7 +22,7 @@ services:
     restart: always
     container_name: $SERVICE
     volumes:
-      - $DATA_LOCATION/$SERVICE:/home/node/.n8n
+      - $DATA_LOCATION:/home/node/.n8n
     ports:
       - "5678:5678"
     environment:

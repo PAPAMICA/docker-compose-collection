@@ -2531,7 +2531,7 @@
                     "name": "SERVICE",
                     "label": "Name of the service ",
                     "description": "No spaces or points",
-                    "default": "mumble-server"
+                    "default": "n8n"
                 },
                 {
                     "name": "DATA_LOCATION",

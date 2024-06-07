@@ -2512,6 +2512,48 @@
         },
         {
             "type": 3,
+            "title": "n8n",
+            "name": "n8n",
+            "description": "Automatisation (Zapier alternative)",
+            "note": "Website: <a href='https://github.com/n8n-io/n8n' target='_blank' rel='noopener'>Github.com</a></br>Port to open:5678",
+            "categories": [
+                "SelfHosted",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://avatars.githubusercontent.com/u/45487711?s=200&v=4",
+            "repository": {
+                "stackfile": "composes-files/n8m.yml",
+                "url": "https://github.com/PAPAMICA/docker-compose-collection"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "mumble-server"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service URL",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
+                }
+            ]
+        },
+        {
+            "type": 3,
             "title": "NextCloud",
             "name": "NextCloud",
             "description": "A personnal cloud, alternative to Google Drive, etc...",

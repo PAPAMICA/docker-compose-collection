@@ -9,7 +9,7 @@
 #& platform: linux
 #& logo: https://avatars.githubusercontent.com/u/45487711?s=200&v=4
 
-#% SERVICE: Name of the service (No spaces or points) [mumble-server]
+#% SERVICE: Name of the service (No spaces or points) [n8n]
 #% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
 #% URL: Service URL (Example: service.papamica.fr or service.com)
 #% NETWORK: Your Traefik network (Example: proxy) [proxy]

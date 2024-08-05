@@ -13,7 +13,7 @@
     <a href="https://github.com/PAPAMICA/docker-compose-collection#utilisation"><img src="https://img.shields.io/badge/How_to_use-%2341454A.svg?style=for-the-badge&logo=target&logoColor=white"> </a>
     <a href="https://github.com/PAPAMICA/docker-compose-collection#add-new-docker-compose-file"><img src="https://img.shields.io/badge/Add_new_service-%2341454A.svg?style=for-the-badge&logo=target&logoColor=white"> </a>
     <br />
-  <a><img alt="Updated" src="https://img.shields.io/badge/updated-2024_06_07_07h03-%232496ED.svg?style=for-the-badge&logo=social-blade&logoColor=white" ></a> <img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/PAPAMICA/docker-compose-collection/main.yml?branch=master&label=Files%20generating&logo=files&logoColor=white&style=for-the-badge">
+  <a><img alt="Updated" src="https://img.shields.io/badge/updated-2024_08_05_09h43-%232496ED.svg?style=for-the-badge&logo=social-blade&logoColor=white" ></a> <img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/PAPAMICA/docker-compose-collection/main.yml?branch=master&label=Files%20generating&logo=files&logoColor=white&style=for-the-badge">
     <br />
     <a href="https://www.docker.com/"><img src="https://img.shields.io/badge/docker-%232496ED.svg?style=for-the-badge&logo=docker&logoColor=white"> </a>
     <a href="https://www.portainer.io/"><img src="https://img.shields.io/badge/portainer-%2313BEF9.svg?style=for-the-badge&logo=portainer&logoColor=white"> </a>
@@ -37,7 +37,7 @@ You can deploy a compatible Docker environment with Portainer and Traefik with:
 
 
 ## List of services availables:
-<img src="https://img.shields.io/badge/Availables:_94-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
+<img src="https://img.shields.io/badge/Availables:_95-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
 
 | Status | Service | Website | Update | Maintainer |
 |:--:|--|--|--|--|
@@ -65,6 +65,7 @@ You can deploy a compatible Docker environment with Portainer and Traefik with:
 | ✅ | <img src="https://img.papamica.com/logo/filebot.svg" alt="filebot" width="20"/> [filebot](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/filebot.yml) | [filebot.net](https://www.filebot.net/) | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://img.papamica.com/logo/filebrowser.png" alt="filebrowser" width="20"/> [filebrowser](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/filebrowser.yml) | [Github.com](https://github.com/filebrowser/filebrowser) | 2022-05-10 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://img.papamica.com/logo/flaresolverr.png" alt="flaresolverr" width="20"/> [flaresolverr](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/flaresolverr.yml) | [Github.com](https://github.com/FlareSolverr/FlareSolverr) | 2023-01-13 |  Mickael "PAPAMICA" Asseline |
+| ✅ | <img src="https://static-00.iconduck.com/assets.00/focalboard-icon-213x256-ztsf7cez.png" alt="focalboard" width="20"/> [focalboard](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/focalboard.yml) | [Focalboard.com](https://www.focalboard.com/) | 2024-08-05 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://img.papamica.com/logo/freshrss.png" alt="freshrss" width="20"/> [freshrss](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/freshrss.yml) | [FreshRSS.org](https://freshrss.org/) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://www.linuxtricks.fr/upload/logo-glpi.png" alt="glpi" width="20"/> [glpi](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/glpi.yml) | [glpi-project.org](https://glpi-project.org/fr/) | 2022-12-08 |  Axel ROTTHIER "Drack0rr" |
 | ✅ | <img src="https://img.papamica.com/logo/grafana.png" alt="grafana" width="20"/> [grafana](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/grafana.yml) | [Grafana.com](https://grafana.com/grafana/dashboards/) | 2022-05-10 |  Mickael "PAPAMICA" Asseline |

@@ -1235,6 +1235,48 @@
         },
         {
             "type": 3,
+            "title": "Focalboard",
+            "name": "Focalboard",
+            "description": "Open source project management for technical teams",
+            "note": "Website: <a href='https://www.focalboard.com/' target='_blank' rel='noopener'>Focalboard.com</a>",
+            "categories": [
+                "SelfHosted",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://static-00.iconduck.com/assets.00/focalboard-icon-213x256-ztsf7cez.png",
+            "repository": {
+                "stackfile": "composes-files/focalboard.yml",
+                "url": "https://github.com/PAPAMICA/docker-compose-collection"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "focalboard"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service URL",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
+                }
+            ]
+        },
+        {
+            "type": 3,
             "title": "FreshRSS",
             "name": "FreshRSS",
             "description": "Freshrss is a free, self-hostable aggregator for rss feeds.",

@@ -1238,7 +1238,7 @@
             "title": "Focalboard",
             "name": "Focalboard",
             "description": "Open source project management for technical teams",
-            "note": "Website: <a href='https://www.focalboard.com/' target='_blank' rel='noopener'>Focalboard.com</a>",
+            "note": "Website: <a href='https://www.focalboard.com/' target='_blank' rel='noopener'>Focalboard.com</a></br>You need this <a href='https://github.com/mattermost/focalboard/blob/main/docker/config.json' target='_blank' rel='noopener'>config.json</a>",
             "categories": [
                 "SelfHosted",
                 "PAPAMICA"

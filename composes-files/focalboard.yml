@@ -28,9 +28,9 @@ services:
       - $DATA_LOCATION/$SERVICE/data:/opt/focalboard/data
       - $DATA_LOCATION/$SERVICE/config.json:/opt/focalboard/config.json
     healthcheck:
-      test: wget -nv -t1 --spider 'http://localhost:8000'
-      interval: 1m
-      timeout: 30s
+      test: ["CMD", "bash", "-c", "exec 5<>/dev/tcp/127.0.0.1/8000"]
+      interval: 5s
+      timeout: 5s
       retries: 3
     depends_on:
       - focalboard-db

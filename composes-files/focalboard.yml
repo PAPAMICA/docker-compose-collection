@@ -12,6 +12,8 @@
 #% SERVICE: Name of the service (No spaces or points) [focalboard]
 #% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
 #% URL: Service URL (Example: service.papamica.fr or service.com)
+#% DB_USER: Database user (No spaces or points) [focalboard]
+#% DB_PASSWORD: Database user password
 #% NETWORK: Your Traefik network (Example: proxy) [proxy]
 
 # Work with Portainer
@@ -44,8 +46,6 @@ services:
       - "traefik.http.services.$SERVICE.loadbalancer.server.port=8000"
       - "traefik.docker.network=$NETWORK"
 
-
-
   focalboard-db:
     image: postgres:latest
     container_name: $SERVICE-db
@@ -54,8 +54,8 @@ services:
       - $DATA_LOCATION/$SERVICE/db:/var/lib/postgresql/data
     environment:
       POSTGRES_DB: boards
-      POSTGRES_USER: boardsuser
-      POSTGRES_PASSWORD: boardsuser-password
+      POSTGRES_USER: $DB_USER
+      POSTGRES_PASSWORD: $DB_PASSWORD
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U $DB_USER"]
       interval: 10s

@@ -1,0 +1,48 @@
+# Maintainer: Mickael "PAPAMICA" Asseline
+# Update: 2024-08-05
+
+#& type: 3
+#& title: Focalboard
+#& description: Open source project management for technical teams
+#& note: Website: <a href='https://www.focalboard.com/' target='_blank' rel='noopener'>Focalboard.com</a>
+#& categories: SelfHosted, PAPAMICA
+#& platform: linux
+#& logo: https://static-00.iconduck.com/assets.00/focalboard-icon-213x256-ztsf7cez.png
+
+#% SERVICE: Name of the service (No spaces or points) [focalboard]
+#% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
+#% URL: Service URL (Example: service.papamica.fr or service.com)
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
+
+# Work with Portainer
+version: '2'
+
+services:
+  focalboard:
+    image: mattermost/focalboard
+    container_name: $SERVICE
+    restart: unless-stopped
+    volumes:
+      - $DATA_LOCATION/$SERVICE/data:/opt/focalboard/data
+      #- $DATA_LOCATION/$SERVICE/media:/jirafeau/media
+    healthcheck:
+      test: wget -nv -t1 --spider 'http://localhost:8000'
+      interval: 1m
+      timeout: 30s
+      retries: 3
+    networks:
+      - default
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+      - "traefik.enable=true"
+      - "traefik.http.routers.$SERVICE.entrypoints=https"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
+      - "traefik.http.routers.$SERVICE.tls=true"
+      - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+      - "traefik.http.services.$SERVICE.loadbalancer.server.port=8000"
+      - "traefik.docker.network=$NETWORK"
+
+networks:
+  default:
+    external:
+      name: $NETWORK

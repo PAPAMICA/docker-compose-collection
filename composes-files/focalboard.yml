@@ -4,7 +4,7 @@
 #& type: 3
 #& title: Focalboard
 #& description: Open source project management for technical teams
-#& note: Website: <a href='https://www.focalboard.com/' target='_blank' rel='noopener'>Focalboard.com</a>
+#& note: Website: <a href='https://www.focalboard.com/' target='_blank' rel='noopener'>Focalboard.com</a></br>You need this <a href='https://github.com/mattermost/focalboard/blob/main/docker/config.json' target='_blank' rel='noopener'>config.json</a>
 #& categories: SelfHosted, PAPAMICA
 #& platform: linux
 #& logo: https://static-00.iconduck.com/assets.00/focalboard-icon-213x256-ztsf7cez.png
@@ -24,12 +24,14 @@ services:
     restart: unless-stopped
     volumes:
       - $DATA_LOCATION/$SERVICE/data:/opt/focalboard/data
-      #- $DATA_LOCATION/$SERVICE/media:/jirafeau/media
+      - $DATA_LOCATION/$SERVICE/config.json:/opt/focalboard/config.json
     healthcheck:
       test: wget -nv -t1 --spider 'http://localhost:8000'
       interval: 1m
       timeout: 30s
       retries: 3
+    depends_on:
+      - focalboard-db
     networks:
       - default
     labels:
@@ -41,6 +43,26 @@ services:
       - "traefik.http.routers.$SERVICE.tls.certresolver=http"
       - "traefik.http.services.$SERVICE.loadbalancer.server.port=8000"
       - "traefik.docker.network=$NETWORK"
+
+
+
+  focalboard-db:
+    image: postgres:latest
+    container_name: $SERVICE-db
+    restart: unless-stopped
+    volumes:
+      - $DATA_LOCATION/$SERVICE/db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: boards
+      POSTGRES_USER: boardsuser
+      POSTGRES_PASSWORD: boardsuser-password
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $DB_USER"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - default
 
 networks:
   default:

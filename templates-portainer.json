@@ -2863,6 +2863,59 @@
         },
         {
             "type": 3,
+            "title": "OpenSupports",
+            "name": "OpenSupports",
+            "description": "Ticketing solution",
+            "note": "Website: <a href='https://www.opensupports.com/' target='_blank' rel='noopener'>OpenSupports.com</a>",
+            "categories": [
+                "SelfHosted",
+                "IT Management",
+                "PAPAMICA"
+            ],
+            "platform": "linux",
+            "logo": "https://avatars.githubusercontent.com/u/26804114?s=280&v=4",
+            "repository": {
+                "stackfile": "composes-files/opensupports.yml",
+                "url": "https://github.com/PAPAMICA/docker-compose-collection"
+            },
+            "env": [
+                {
+                    "name": "SERVICE",
+                    "label": "Name of the service ",
+                    "description": "No spaces or points",
+                    "default": "opensupport"
+                },
+                {
+                    "name": "DB_PASSWORD",
+                    "label": "Database user password"
+                },
+                {
+                    "name": "DATA_LOCATION",
+                    "label": "Data localization ",
+                    "description": "Example: /apps/service",
+                    "default": "/_data/apps"
+                },
+                {
+                    "name": "URL",
+                    "label": "Service URL",
+                    "description": "Example: service.papamica.fr or service.com"
+                },
+                {
+                    "name": "NETWORK",
+                    "label": "Your Traefik network ",
+                    "description": "Example: proxy",
+                    "default": "proxy"
+                },
+                {
+                    "name": "TIME_ZONE",
+                    "label": "Time zone ",
+                    "description": "Example : Europe/Paris",
+                    "default": "Europe/Paris"
+                }
+            ]
+        },
+        {
+            "type": 3,
             "title": "Organizr",
             "name": "Organizr",
             "description": "Dashboard for your media server.",

@@ -13,7 +13,7 @@
     <a href="https://github.com/PAPAMICA/docker-compose-collection#utilisation"><img src="https://img.shields.io/badge/How_to_use-%2341454A.svg?style=for-the-badge&logo=target&logoColor=white"> </a>
     <a href="https://github.com/PAPAMICA/docker-compose-collection#add-new-docker-compose-file"><img src="https://img.shields.io/badge/Add_new_service-%2341454A.svg?style=for-the-badge&logo=target&logoColor=white"> </a>
     <br />
-  <a><img alt="Updated" src="https://img.shields.io/badge/updated-2024_08_05_10h09-%232496ED.svg?style=for-the-badge&logo=social-blade&logoColor=white" ></a> <img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/PAPAMICA/docker-compose-collection/main.yml?branch=master&label=Files%20generating&logo=files&logoColor=white&style=for-the-badge">
+  <a><img alt="Updated" src="https://img.shields.io/badge/updated-2024_08_07_14h37-%232496ED.svg?style=for-the-badge&logo=social-blade&logoColor=white" ></a> <img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/PAPAMICA/docker-compose-collection/main.yml?branch=master&label=Files%20generating&logo=files&logoColor=white&style=for-the-badge">
     <br />
     <a href="https://www.docker.com/"><img src="https://img.shields.io/badge/docker-%232496ED.svg?style=for-the-badge&logo=docker&logoColor=white"> </a>
     <a href="https://www.portainer.io/"><img src="https://img.shields.io/badge/portainer-%2313BEF9.svg?style=for-the-badge&logo=portainer&logoColor=white"> </a>
@@ -37,7 +37,7 @@ You can deploy a compatible Docker environment with Portainer and Traefik with:
 
 
 ## List of services availables:
-<img src="https://img.shields.io/badge/Availables:_95-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
+<img src="https://img.shields.io/badge/Availables:_96-%2354B848.svg?style=for-the-badge&logo=cachet&logoColor=white">
 
 | Status | Service | Website | Update | Maintainer |
 |:--:|--|--|--|--|
@@ -95,6 +95,7 @@ You can deploy a compatible Docker environment with Portainer and Traefik with:
 | ✅ | <img src="https://img.papamica.com/logo/olivetin.png" alt="olivetin" width="20"/> [olivetin](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/olivetin.yml) | [OliveTin.app](https://www.olivetin.app/) | 2022-05-12 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://img.papamica.com/logo/ombi.png" alt="ombi" width="20"/> [ombi](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/ombi.yml) | [Ombi.io](https://ombi.io/) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://img.papamica.com/logo/openspeedtest.png" alt="openspeedtest" width="20"/> [openspeedtest](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/openspeedtest.yml) | [Openspeedtest.com](https://openspeedtest.com/) | 2022-07-26 |  Drack0rr |
+| ✅ | <img src="https://avatars.githubusercontent.com/u/26804114?s=280&v=4" alt="opensupports" width="20"/> [opensupports](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/opensupports.yml) | [OpenSupports.com](https://www.opensupports.com/) | 2024-08-07 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://img.papamica.com/logo/organizr.png" alt="organizr" width="20"/> [organizr](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/organizr.yml) | [organizr.app](https://organizr.app/) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://img.papamica.com/logo/outline.webp" alt="outline" width="20"/> [outline](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/outline.yml) | [GetOutline.com](https://www.getoutline.com/) | 2022-05-24 |  Mickael "PAPAMICA" Asseline |
 | ✅ | <img src="https://img.papamica.com/logo/overseerr.svg" alt="overseerr" width="20"/> [overseerr](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/overseerr.yml) | [Overseerr.dev](https://overseerr.dev/) | 2022-05-17 |  Mickael "PAPAMICA" Asseline |

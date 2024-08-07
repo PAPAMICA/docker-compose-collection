@@ -1,0 +1,70 @@
+# Maintainer: Mickael "PAPAMICA" Asseline
+# Update: 2024-08-07
+
+#& type: 3
+#& title: OpenSupports
+#& description: Ticketing solution
+#& note: Website: <a href='https://www.opensupports.com/' target='_blank' rel='noopener'>OpenSupports.com</a>
+#& categories: SelfHosted, IT Management, PAPAMICA
+#& platform: linux
+#& logo: https://avatars.githubusercontent.com/u/26804114?s=280&v=4
+
+#% SERVICE: Name of the service (No spaces or points) [opensupport]
+#% DB_PASSWORD: Database user password
+#% DATA_LOCATION: Data localization (Example: /apps/service) [/_data/apps]
+#% URL: Service URL (Example: service.papamica.fr or service.com)
+#% NETWORK: Your Traefik network (Example: proxy) [proxy]
+#% TIME_ZONE: Time zone (Example : Europe/Paris) [Europe/Paris]
+
+version: "3.8"
+services:
+  opensupports-db:
+    image: mariadb
+    container_name: $SERVICE-db
+    environment:
+     - MYSQL_USER=opensupports
+     - MYSQL_PASSWORD=$DB_PASSWORD
+     - MYSQL_DATABASE=opensupports
+     - MYSQL_RANDOM_ROOT_PASSWORD=true
+    volumes:
+     - $DATA_LOCATION/$SERVICE/db:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
+    networks:
+      - default
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+
+  opensupports:
+    image: 'gamelaster/opensupports:latest'
+    restart: always
+    container_name: $SERVICE
+    environment:
+      - TIMEZONE=$TIME_ZONE
+    volumes:
+     - $DATA_LOCATION/$SERVICE/config:/config
+    depends_on:
+      - opensupports-db
+    healthcheck:
+      test: curl --fail http://localhost || exit 1
+      interval: 1m
+      timeout: 30s
+      retries: 3
+    networks:
+      - default
+    labels:
+      - "autoupdate=monitor" # https://github.com/PAPAMICA/container-updater
+      - "traefik.enable=true"
+      - "traefik.http.routers.$SERVICE.entrypoints=https"
+      - "traefik.http.routers.$SERVICE.rule=Host(`$URL`)"
+      - "traefik.http.routers.$SERVICE.tls=true"
+      - "traefik.http.routers.$SERVICE.tls.certresolver=http"
+      - "traefik.http.services.$SERVICE.loadbalancer.server.port=5543"
+      - "traefik.docker.network=$NETWORK"
+
+networks:
+  default:
+    external:
+      name: $NETWORK

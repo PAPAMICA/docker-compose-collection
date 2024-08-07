@@ -22,12 +22,12 @@ services:
     image: mariadb
     container_name: $SERVICE-db
     environment:
-     - MYSQL_USER=opensupports
-     - MYSQL_PASSWORD=$DB_PASSWORD
-     - MYSQL_DATABASE=opensupports
-     - MYSQL_RANDOM_ROOT_PASSWORD=true
+      - MYSQL_USER=opensupports
+      - MYSQL_PASSWORD=$DB_PASSWORD
+      - MYSQL_DATABASE=opensupports
+      - MYSQL_RANDOM_ROOT_PASSWORD=true
     volumes:
-     - $DATA_LOCATION/$SERVICE/db:/var/lib/mysql
+      - $DATA_LOCATION/$SERVICE/db:/var/lib/mysql
     healthcheck:
       test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
       timeout: 20s
@@ -44,7 +44,7 @@ services:
     environment:
       - TIMEZONE=$TIME_ZONE
     volumes:
-     - $DATA_LOCATION/$SERVICE/config:/config
+      - $DATA_LOCATION/$SERVICE/config:/config
     depends_on:
       - opensupports-db
     healthcheck:

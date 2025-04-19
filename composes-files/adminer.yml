@@ -4,7 +4,7 @@
 
 #& type: 3
 #& title: Adminer
-#& description: Managment of MySQL
+#& description: Management of MySQL
 #& note: Website: <a href='https://www.adminer.org/' target='_blank' rel='noopener'>Adminer.org</a>
 #& categories: SelfHosted, Database, PAPAMICA
 #& platform: linux

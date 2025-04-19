@@ -15,11 +15,12 @@ try:
 except:
     print ("file don't exist")
 result = {}
-result["version"] = "2"
+result["version"] = "3"
 result["templates"] = []
 templates = []
 nb_a = 0
 nb_td = 0
+template_id = 1
 
 for filename in sorted(glob.glob("composes-files/*.y*ml")):
     try:
@@ -49,11 +50,9 @@ for filename in sorted(glob.glob("composes-files/*.y*ml")):
                         link=""
                         website=""
                     dataset[data[0]] = data[1]
-                    print(link)
                 elif data[0] == "title":
                     title = data[1]
-                    dataset[data[0]] = title
-                    dataset["name"] = title
+                    dataset[data[0]] = title.lower()
                 elif data[0] == "logo":
                     logo = data[1]
                     dataset[data[0]] = logo
@@ -66,7 +65,7 @@ for filename in sorted(glob.glob("composes-files/*.y*ml")):
             if re.search('#%', line):
                 envtemp = {}
                 dataenv=line[3:-1].split(': ', 1)
-                envtemp["name"] = dataenv[0].lower
+                envtemp["name"] = dataenv[0]
                 try:
                     envdesctotal = re.split('\(|\[', dataenv[1])
                     envdesc = envdesctotal[1]
@@ -80,18 +79,26 @@ for filename in sorted(glob.glob("composes-files/*.y*ml")):
                         envdesc = envdesctotal[1]
                         envtemp["label"] = envdesctotal[0]
                         envtemp["description"] = envdesc[:-1]
-                        envtemp["default"] = "changeme"
                     except:
                         envtemp["label"] = dataenv[1]
                 env.append(envtemp)
         if data:
+            # Set required fields for v3 format
+            dataset["id"] = template_id
+            template_id += 1
+            dataset["type"] = 3  # Stack type
+            dataset["platform"] = "linux"  # Default platform
+            
+            # Repository structure for v3
             repository = {
-                "stackfile": filename,
                 "url": GITHUB_REPOSITORY_URL,
+                "stackfile": filename
             }
             dataset["repository"] = repository
-            #dataset["type"] = 3
+            
+            # Add environment variables
             dataset["env"] = env
+            
             templates.append(dataset)
             print (f" ✅ {filename} ")
             SERVICES=SERVICES + f'\n| ✅ | <img src="{logo}" alt="{file_name}" width="20"/> [{file_name}](https://github.com/PAPAMICA/docker-compose-collection/tree/master/composes-files/{file_name}.yml) | [{website}]({link}) | {date} | {maintainer} |'

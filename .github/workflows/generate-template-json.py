@@ -66,7 +66,7 @@ for filename in sorted(glob.glob("composes-files/*.y*ml")):
             if re.search('#%', line):
                 envtemp = {}
                 dataenv=line[3:-1].split(': ', 1)
-                envtemp["name"] = dataenv[0]
+                envtemp["name"] = dataenv[0].lower
                 try:
                     envdesctotal = re.split('\(|\[', dataenv[1])
                     envdesc = envdesctotal[1]
@@ -80,6 +80,7 @@ for filename in sorted(glob.glob("composes-files/*.y*ml")):
                         envdesc = envdesctotal[1]
                         envtemp["label"] = envdesctotal[0]
                         envtemp["description"] = envdesc[:-1]
+                        envtemp["default"] = "changeme"
                     except:
                         envtemp["label"] = dataenv[1]
                 env.append(envtemp)

@@ -41,7 +41,7 @@
         {
             "type": 3,
             "title": "Ampache",
-            "name": "ampache",
+            "name": "Ampache",
             "description": "web based audio/video streaming application and file manager allowing you to access your music & videos from anywhere, using almost any internet enabled device.",
             "note": "Website: <a href='https://github.com/ampache/ampache-docker' target='_blank' rel='noopener'>Github.com</a>",
             "categories": [
@@ -70,8 +70,7 @@
                 {
                     "name": "URL",
                     "label": "Service URL",
-                    "description": "Example: service.papamica.fr or service.com",
-                    "default": "exemple.tld"
+                    "description": "Example: service.papamica.fr or service.com"
                 },
                 {
                     "name": "NETWORK",
